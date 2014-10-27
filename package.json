@@ -1,0 +1,22 @@
+{
+  "name": "vse-responsive-pilot",
+  "version": "0.0.1",
+  "description": "vse-responsive-pilot ====================",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cloudfour/vse-responsive-pilot.git"
+  },
+  "author": "Cloud Four, Inc.",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/cloudfour/vse-responsive-pilot/issues"
+  },
+  "dependencies": {
+    "gulp": "~3.8.9",
+    "browser-sync": "~1.6.0"
+  }
+}
