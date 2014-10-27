@@ -1,0 +1,11 @@
+{
+  "paths": {
+    "static" : "./static"
+  },
+  "dest": {
+    "patterns" : "./static"
+  },
+  "src": {
+    "patterns" : "./source/patterns/**/*.hbs"
+  }
+}
