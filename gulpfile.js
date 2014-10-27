@@ -2,7 +2,8 @@
 
 var gulp = require('gulp');
 
-var tasks = ['browserSync'];
+var tasks = ['browserSync',
+             'patternTemplates'];
 
 /**
  * Task modules should be in build/gulp
