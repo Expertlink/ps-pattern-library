@@ -9,7 +9,9 @@ var gutil      = require('gulp-util'),
 
 module.exports = function (data, opts) {
 
-  var options = opts || {};
+  var options = _.extend({
+    extension: '.hbs'
+  }, opts || {});
   data        = data || {};
 
   var parsePartials = function(partialDir) {
@@ -21,9 +23,9 @@ module.exports = function (data, opts) {
           stats   = fs.statSync(partial),
           key, name, template;
       if (stats && stats.isDirectory()) {
-        parsePartials(partial, keyDir + '/' + filename);
-      } else if (path.extname(filename) === '.hbs') {
-        key       = keyDir + '/' + path.basename(filename, '.hbs');
+        parsePartials(partial, partialDir + '/' + filename);
+      } else if (path.extname(filename) === options.extension) {
+        key       = keyDir + '/' + path.basename(filename, options.extension);
         template  = fs.readFileSync(partial, 'utf8');
         Handlebars.registerPartial(key, template);
       }

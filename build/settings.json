@@ -1,7 +1,8 @@
 {
   "paths": {
-    "static" : "./static",
-    "data"   : "./source/data"
+    "static"   : "./static",
+    "data"     : "./source/data",
+    "partials" : "./source/patterns"
   },
   "dest": {
     "patterns" : "./static"
