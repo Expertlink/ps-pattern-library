@@ -7,6 +7,7 @@ var util = require('gulp-util'),
   _       = require('underscore');
 
 module.exports = function (options) {
+  var cache = {};
 	options = _.extend({
 		property: 'data',
 		getRelativePath: function(file) {
@@ -15,7 +16,8 @@ module.exports = function (options) {
 	}, options || {});
 
 	return through.obj(function (file, enc, cb) {
-		var relPath, absPath, existingData;
+    var jsonData = {},
+        relPath, absPath;
 
 		if (file.isNull()) {
 			this.push(file);
@@ -27,15 +29,20 @@ module.exports = function (options) {
 			return cb();
 		}
 
-		relPath = options.getRelativePath(file);
-		absPath = path.resolve(path.dirname(file.path), relPath);
+		relPath        = options.getRelativePath(file);
+		absPath        = path.resolve(path.dirname(file.path), relPath);
 
-		try {
-      existingData = file[options.property] || {};
-			file[options.property] = _.extend(existingData, JSON.parse(fs.readFileSync(absPath)));
-		} catch (err) {
-			// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
-		}
+    if (typeof cache[absPath] !== 'undefined') {
+      jsonData = cache[absPath];
+    } else if (fs.statSync(absPath).isFile()){
+  		try {
+        jsonData       = JSON.parse(fs.readFileSync(absPath));
+        cache[absPath] = jsonData;
+  		} catch (err) {
+  			// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
+  		}
+    }
+    file[options.property] = _.extend(file[options.property] || {}, jsonData);
 
 		this.push(file);
 		cb();
