@@ -2,10 +2,9 @@
 
 var gulp         = require('gulp');
 var settings     = require('../../settings');
-var template     = require('gulp-compile-handlebars');
+var template     = require('../handlebarsCompile');
 var templateData = require('../templateData');
 var rename       = require('gulp-rename');
-
 
 module.exports = function() {
 
