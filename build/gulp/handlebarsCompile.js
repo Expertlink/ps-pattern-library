@@ -4,12 +4,35 @@ var gutil      = require('gulp-util'),
     through    = require('through2'),
     Handlebars = require('handlebars'),
     fs         = require('fs'),
+    path       = require('path'),
     _          = require('underscore');
 
 module.exports = function (data, opts) {
 
   var options = opts || {};
   data        = data || {};
+
+  var parsePartials = function(partialDir) {
+    var partialFilenames = fs.readdirSync(partialDir),
+        keyDir           = partialDir.split('/').pop();
+
+    partialFilenames.forEach(function(filename) {
+      var partial = partialDir + '/' + filename,
+          stats   = fs.statSync(partial),
+          key, name, template;
+      if (stats && stats.isDirectory()) {
+        parsePartials(partial, keyDir + '/' + filename);
+      } else if (path.extname(filename) === '.hbs') {
+        key       = keyDir + '/' + path.basename(filename, '.hbs');
+        template  = fs.readFileSync(partial, 'utf8');
+        Handlebars.registerPartial(key, template);
+      }
+    });
+  };
+
+  if (options.partialsDir) {
+    parsePartials(options.partialsDir);
+  }
 
   return through.obj(function (file, enc, cb) {
 
@@ -24,10 +47,9 @@ module.exports = function (data, opts) {
     }
 
     try {
-      var fileContents = file.contents.toString();
-      var template = Handlebars.compile(fileContents);
-      var context = file.data || {};
-      context = _.extend(context, data);
+      var fileContents = file.contents.toString(),
+          template     = Handlebars.compile(fileContents),
+          context      = _.extend(file.data || {}, data);
       file.contents = new Buffer(template(context));
     } catch (err) {
       this.emit('error', new gutil.PluginError('Handlebars Compile', err));

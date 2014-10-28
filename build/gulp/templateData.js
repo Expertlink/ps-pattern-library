@@ -20,10 +20,8 @@ module.exports = function (options) {
     var dataFiles = fs.readdirSync(dataDir);
     dataFiles.forEach(function(dataFilename) {
       var name = dataFilename.substr(0, dataFilename.lastIndexOf('.'));
-      var ext  = path.extname(dataFilename);
-      if (ext === '.json') {
+      if (path.extname(dataFilename) === '.json') {
         globalData[name] = JSON.parse(fs.readFileSync(dataDir + '/' + dataFilename));
-        //console.log(path.extname(dataFilename));
       }
     });
   };
