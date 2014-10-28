@@ -19,6 +19,8 @@
     "gulp": "~3.8.9",
     "browser-sync": "~1.6.0",
     "gulp-rename": "~1.2.0",
-    "gulp-compile-handlebars": "~0.3.3"
+    "gulp-compile-handlebars": "~0.3.3",
+    "gulp-util": "~3.0.1",
+    "through2": "~0.6.3"
   }
 }
