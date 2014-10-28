@@ -7,13 +7,30 @@ var util = require('gulp-util'),
   _       = require('underscore');
 
 module.exports = function (options) {
-  var cache = {};
+  var cache = {},
+      globalData = {};
 	options = _.extend({
 		property: 'data',
 		getRelativePath: function(file) {
 			return util.replaceExtension(path.basename(file.path), '.json');
-		}
+		},
 	}, options || {});
+
+  var parseGlobalData = function(dataDir) {
+    var dataFiles = fs.readdirSync(dataDir);
+    dataFiles.forEach(function(dataFilename) {
+      var name = dataFilename.substr(0, dataFilename.lastIndexOf('.'));
+      var ext  = path.extname(dataFilename);
+      if (ext === '.json') {
+        globalData[name] = JSON.parse(fs.readFileSync(dataDir + '/' + dataFilename));
+        //console.log(path.extname(dataFilename));
+      }
+    });
+  };
+
+  if (options.dataDir) {
+    parseGlobalData(options.dataDir);
+  }
 
 	return through.obj(function (file, enc, cb) {
     var jsonData = {},
@@ -42,7 +59,7 @@ module.exports = function (options) {
   			// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
   		}
     }
-    file[options.property] = _.extend(file[options.property] || {}, jsonData);
+    file[options.property] = _.extend(globalData, file[options.property] || {}, jsonData);
 
 		this.push(file);
 		cb();
