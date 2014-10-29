@@ -1,6 +1,6 @@
 {
   "files": {
-    "patternsPattern": "\\d+?-(.*)"
+    "patternsPattern": "\\d+?-"
   },
   "paths": {
     "static"   : "./static",
@@ -9,10 +9,12 @@
   },
   "dest": {
     "assets"   : "./static",
-    "patterns" : "./static/patterns"
+    "patterns" : "./static/patterns",
+    "css"      : "./static/css"
   },
   "src": {
     "patterns" : "./source/patterns/**/*.hbs",
-    "assets"   : "./source/assets/**/*"
+    "assets"   : "./source/assets/**/*",
+    "styles"   : "./source/styels/**/*.scss"
   }
 }

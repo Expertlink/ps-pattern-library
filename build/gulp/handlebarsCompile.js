@@ -13,12 +13,12 @@ module.exports = function (data, opts) {
   var options = _.extend({
     extension: '.hbs'
   }, opts || {});
-  var namePattern = new RegExp(settings.files.patternsPattern);
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g');
   data        = data || {};
 
   var parsePartials = function(partialDir) {
     var partialFilenames = fs.readdirSync(partialDir),
-        keyDir           = partialDir.split('/').pop().replace(namePattern, '$1');
+        keyDir           = partialDir.split('/').pop();
 
     partialFilenames.forEach(function(filename) {
       var partial = partialDir + '/' + filename,
@@ -27,11 +27,10 @@ module.exports = function (data, opts) {
       if (stats && stats.isDirectory()) {
         parsePartials(partial, partialDir + '/' + filename);
       } else if (path.extname(filename) === options.extension) {
-        name      = path.basename(filename, options.extension).replace(namePattern, '$1');
-        key       = keyDir + '/' + name;
+        name      = path.basename(filename, options.extension);
+        key       = (keyDir + '/' + name).replace(namePattern, '');
         template  = fs.readFileSync(partial, 'utf8');
         Handlebars.registerPartial(key, template);
-        //console.log('adding entry for', key);
       }
     });
   };
