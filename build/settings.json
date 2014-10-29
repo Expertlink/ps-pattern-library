@@ -15,6 +15,6 @@
   "src": {
     "patterns" : "./source/patterns/**/*.hbs",
     "assets"   : "./source/assets/**/*",
-    "styles"   : "./source/styels/**/*.scss"
+    "styles"   : "./source/styles/**/*.scss"
   }
 }
