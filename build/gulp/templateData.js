@@ -48,8 +48,9 @@ module.exports = function (options) {
 		absPath        = path.resolve(path.dirname(file.path), relPath);
 
     if (typeof cache[absPath] !== 'undefined') {
-      jsonData = cache[absPath];
-    } else if (fs.statSync(absPath).isFile()){
+      jsonData     = cache[absPath];
+    } else if (fs.existsSync(absPath) &&
+               fs.statSync(absPath).isFile() ){
   		try {
         jsonData       = JSON.parse(fs.readFileSync(absPath));
         cache[absPath] = jsonData;

@@ -1,4 +1,7 @@
 {
+  "files": {
+    "patternsPattern": "\\d+?-(.*)"
+  },
   "paths": {
     "static"   : "./static",
     "data"     : "./source/data",

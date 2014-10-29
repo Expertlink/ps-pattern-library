@@ -5,6 +5,7 @@ var gutil      = require('gulp-util'),
     Handlebars = require('handlebars'),
     fs         = require('fs'),
     path       = require('path'),
+    settings   = require('../settings'),
     _          = require('underscore');
 
 module.exports = function (data, opts) {
@@ -12,11 +13,12 @@ module.exports = function (data, opts) {
   var options = _.extend({
     extension: '.hbs'
   }, opts || {});
+  var namePattern = new RegExp(settings.files.patternsPattern);
   data        = data || {};
 
   var parsePartials = function(partialDir) {
     var partialFilenames = fs.readdirSync(partialDir),
-        keyDir           = partialDir.split('/').pop();
+        keyDir           = partialDir.split('/').pop().replace(namePattern, '$1');
 
     partialFilenames.forEach(function(filename) {
       var partial = partialDir + '/' + filename,
@@ -25,9 +27,11 @@ module.exports = function (data, opts) {
       if (stats && stats.isDirectory()) {
         parsePartials(partial, partialDir + '/' + filename);
       } else if (path.extname(filename) === options.extension) {
-        key       = keyDir + '/' + path.basename(filename, options.extension);
+        name      = path.basename(filename, options.extension).replace(namePattern, '$1');
+        key       = keyDir + '/' + name;
         template  = fs.readFileSync(partial, 'utf8');
         Handlebars.registerPartial(key, template);
+        //console.log('adding entry for', key);
       }
     });
   };
