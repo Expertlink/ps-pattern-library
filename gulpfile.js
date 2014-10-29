@@ -8,10 +8,11 @@ var watchers = {};
 var tasks = ['assets',
              'browserSync',
              'patternTemplates',
-             'styles'];
+             'styles',
+             'watch'];
 
 /**
- * Task modules should be in build/gulp
+ * Task modules should be in build/gulp/tasks
  */
 tasks.forEach(function(task) {
   task = (typeof task === 'string') ? { name: task } : task;
@@ -19,7 +20,4 @@ tasks.forEach(function(task) {
   gulp.task(task.name, task.deps, require('./build/gulp/tasks/' + task.name));
 });
 
-gulp.task('default', ['styles', 'patternTemplates', 'assets']);
-
-watchers.styles   = gulp.watch(settings.src.styles, ['styles']);
-watchers.patterns = gulp.watch(settings.src.patterns, ['patternTemplates']);
+gulp.task('default', ['styles', 'patternTemplates', 'assets', 'watch']);
