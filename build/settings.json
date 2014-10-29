@@ -5,9 +5,11 @@
     "partials" : "./source/patterns"
   },
   "dest": {
-    "patterns" : "./static"
+    "assets"   : "./static",
+    "patterns" : "./static/patterns"
   },
   "src": {
-    "patterns" : "./source/patterns/**/*.hbs"
+    "patterns" : "./source/patterns/**/*.hbs",
+    "assets"   : "./source/assets/**/*"
   }
 }

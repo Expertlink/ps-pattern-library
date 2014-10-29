@@ -10,7 +10,8 @@ module.exports = function() {
 
   return gulp.src(settings.src.patterns)
     .pipe(templateData({ dataDir: settings.paths.data }))
-    .pipe(template({'foo' : 'bar'}, { partialsDir: settings.paths.partials }))
+    .pipe(template({'foo' : 'bar'},
+                   { partialsDir: settings.paths.partials }))
     .pipe(rename({extname: '.html'}))
     .pipe(gulp.dest(settings.dest.patterns));
 };

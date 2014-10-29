@@ -2,7 +2,8 @@
 
 var gulp = require('gulp');
 
-var tasks = ['browserSync',
+var tasks = ['assets',
+             'browserSync',
              'patternTemplates'];
 
 /**
@@ -14,4 +15,4 @@ tasks.forEach(function(task) {
   gulp.task(task.name, task.deps, require('./build/gulp/tasks/' + task.name));
 });
 
-gulp.task('default', ['patternTemplates']);
+gulp.task('default', ['patternTemplates', 'assets']);
