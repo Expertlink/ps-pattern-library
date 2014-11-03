@@ -8,6 +8,7 @@ var watchers = {};
 var tasks = ['assets',
              'browserSync',
              'patternTemplates',
+             'styleGuide',
              'styles',
              'watch'];
 
