@@ -33,7 +33,8 @@ module.exports =  function() {
     var destPath     = dirPath.replace('./source/patterns/', '');
     /**
      * For each directory, take all of the pattern template files,
-     * render them, concatenate into a single index.html file stream.
+     * render them, wrap them in pattern templates,
+     * concatenate into a single index.html file stream.
      * Wrap that with the contents of the nearest `index.template`
      * and output.
      */
@@ -43,8 +44,7 @@ module.exports =  function() {
       .pipe(wrap({src: patternFile}))
       .pipe(concat('index.html'))
       .pipe(wrap({src: templateFile}))
-      .pipe(gulp.dest('./static/patterns-test/' + destPath));
-
+      .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
   });
 
   /**

@@ -7,7 +7,6 @@ var watchers = {};
 
 var tasks = ['assets',
              'browserSync',
-             'patternTemplates',
              'styleGuide',
              'styles',
              'watch'];
@@ -21,4 +20,4 @@ tasks.forEach(function(task) {
   gulp.task(task.name, task.deps, require('./build/gulp/tasks/' + task.name));
 });
 
-gulp.task('default', ['styles', 'patternTemplates', 'assets', 'watch']);
+gulp.task('default', ['styles', 'assets', 'styleGuide', 'watch']);
