@@ -13,7 +13,7 @@ module.exports = function (data, opts) {
   var options = _.extend({
     extension: '.hbs'
   }, opts || {});
-  var namePattern = new RegExp(settings.files.patternsPattern, 'g');
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g'); // @TODO Move into task
   data        = data || {};
 
   var parsePartials = function(partialDir) {
@@ -30,7 +30,7 @@ module.exports = function (data, opts) {
         name      = path.basename(filename, options.extension);
         key       = (keyDir + '/' + name).replace(namePattern, '');
         template  = fs.readFileSync(partial, 'utf8');
-        Handlebars.registerPartial(key, template);
+        Handlebars.registerPartial(key, template); // @TODO Error-detection/logging on ambiguous namespacing
       }
     });
   };
