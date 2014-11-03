@@ -29,6 +29,7 @@ module.exports =  function() {
   var tasks = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
     var templateFile = findup.sync(path.resolve(dirPath), 'index.template') + '/index.template';
+    var patternFile  = findup.sync(path.resolve(dirPath), 'pattern.template') + '/pattern.template';
     var destPath     = dirPath.replace('./source/patterns/', '');
     /**
      * For each directory, take all of the pattern template files,
@@ -39,6 +40,7 @@ module.exports =  function() {
     return gulp.src(dirPath + '/*.hbs')
       .pipe(templateData({ dataDir: settings.paths.data }))
       .pipe(template({},{ partialsDir: settings.paths.partials }))
+      .pipe(wrap({src: patternFile}))
       .pipe(concat('index.html'))
       .pipe(wrap({src: templateFile}))
       .pipe(gulp.dest('./static/patterns-test/' + destPath));
