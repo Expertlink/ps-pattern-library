@@ -1,8 +1,8 @@
 <div class="c4-pattern">
   <div class="c4-pattern-header">
-    <h2 class="c4-pattern-heading">Pattern name coming soon</h2>
+    <h2 class="c4-pattern-heading"><%= file.meta.name %></h2>
   </div>
-  <p>This is where notes/documentation will appear.</p>
+  <p><%= file.meta.description %></p>
   <div class="c4-pattern-body">
     <%= contents %>
   </div>

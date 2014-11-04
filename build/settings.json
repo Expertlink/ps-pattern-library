@@ -4,6 +4,7 @@
   },
   "paths": {
     "static"   : "./static",
+    "source"   : "./source",
     "data"     : "./source/data",
     "partials" : "./source/patterns"
   },
