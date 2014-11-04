@@ -8,6 +8,7 @@
   <title>
   </title>
     <!-- CSS Goes here -->
+    <link href="<%= paths.vendor %>/normalize.css" rel="stylesheet">
     <link href="<%= paths.css %>/patterns.css" rel="stylesheet">
     <link href="<%= paths.css %>/styles.css" rel="stylesheet">
     <link href="<%= paths.vendor %>/prism/prism.css" rel="stylesheet">
