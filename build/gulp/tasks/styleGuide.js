@@ -20,7 +20,7 @@ module.exports =  function() {
    * Build our own glob to traverse patterns *directories*
    * Filter out files that are not directories.
    */
-  var dirs = glob.sync('./source/patterns/**/*').filter(function(filePath) {
+  var dirs = glob.sync('./source/patterns/**/*').filter(function(filePath) { // @TODO Fix magic strings
     return fs.statSync(filePath).isDirectory();
   });
 
