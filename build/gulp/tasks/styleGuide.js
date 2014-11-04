@@ -26,10 +26,12 @@ var settings         = require('../../settings');
 var templateHelpers  = require('../../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {
+  var pathPattern = new RegExp('/source\/patterns\/?');
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
     return fs.statSync(filePath).isDirectory();
   });
+  dirs.push(settings.paths.patterns);
 
   /* Find local templates, build relative paths */
   var getPathData = function(dirPath) { // @TODO this might want to be its own module.
@@ -50,7 +52,8 @@ module.exports =  function() {
   var tasks = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
     var pathData     = getPathData(dirPath);
-    var destPath     = dirPath.replace('./source/patterns/', '');
+    var destPath     = dirPath.replace(pathPattern, '');
+    console.log(dirPath, destPath);
 
     return gulp.src(dirPath + '/*.hbs')
       // Convert YAML front matter into file property (meta)

@@ -1,11 +1,20 @@
 /* global $ */
 'use strict';
 $(function() {
-  $('.js-c4-pattern-source-toggle').click(function (event) {
-    var $this = $(this),
-       $parent = $this.closest('.js-c4-pattern-source'),
-       $source = $parent.find('.js-c4-pattern-source-body');
+  var $nav = $('.js-c4-nav');
+  var $navToggle = $('.js-c4-nav-toggle');
+
+  $navToggle.click(function(){
+    $nav.slideToggle(250, function(){
+      $nav.toggleClass('c4-open', $nav.is(':visible'));
+      $nav.removeAttr('style');
+    });
+  });
+
+  $('.js-c4-source-toggle').click(function (event) {
+    var $this = $(this);
+    var href = $this.attr('href');
+    $(href).toggleClass('c4-open');
     event.preventDefault();
-    $source.slideToggle(250);
   });
 });

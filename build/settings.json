@@ -12,7 +12,7 @@
   },
   "dest": {
     "assets"   : "./static",
-    "patterns" : "./static/patterns",
+    "patterns" : "./static",
     "css"      : "./static/css",
     "vendor"   : "./static/vendor"
   },
