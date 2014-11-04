@@ -1,4 +1,4 @@
-<div class="c4-pattern">
+<div class="c4-pattern" id="c4-<%= file.meta.id %>">
   <div class="c4-pattern-header">
     <h2 class="c4-pattern-heading"><%= file.meta.name %></h2>
   </div>
@@ -9,7 +9,7 @@
   <div class="c4-pattern-source js-c4-pattern-source">
     <h3 class="c4-pattern-source-heading">Source</h3>
     <div class="c4-pattern-source-body js-c4-pattern-source-body">
-    <pre><code class="language-html">Coming soon</code></pre>
+    <pre><code class="language-html"><%= file.meta.source %></code></pre>
     </div>
   </div>
 </div>
