@@ -30,7 +30,10 @@ module.exports =  function() {
       templateFile : findup.sync(path.resolve(dirPath), 'index.template') + '/index.template',
       patternFile  : findup.sync(path.resolve(dirPath), 'pattern.template') + '/pattern.template',
       paths        : {
-        css : relPath + '/css'
+        css    : relPath + '/css',
+        static : relPath,
+        vendor : relPath + '/vendor',
+        js     : relPath + '/js'
       }
     };
   };
@@ -58,8 +61,8 @@ module.exports =  function() {
         remove: true
       }))
       .pipe(templateData({ dataDir: settings.paths.data }))
-      .pipe(templateMetaData())
       .pipe(template({},{ partialsDir: settings.paths.partials }))
+      .pipe(templateMetaData())
       .pipe(wrap({src: pathData.patternFile}))
       .pipe(concat('index.html'))
       .pipe(wrap({src: pathData.templateFile}, pathData))

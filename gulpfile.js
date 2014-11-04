@@ -11,6 +11,7 @@ var tasks = ['assets',
              'styles',
              'watch'];
 
+
 /**
  * Task modules should be in build/gulp/tasks
  */
@@ -20,4 +21,15 @@ tasks.forEach(function(task) {
   gulp.task(task.name, task.deps, require('./build/gulp/tasks/' + task.name));
 });
 
-gulp.task('default', ['styles', 'assets', 'styleGuide', 'watch']);
+/**
+ * Simple tasks
+ */
+ gulp.task('vendor', function() {
+   return gulp.src(settings.src.vendor)
+     .pipe(gulp.dest(settings.dest.vendor));
+ });
+
+/**
+ * Composite tasks
+ */
+gulp.task('default', ['styles', 'assets', 'vendor', 'styleGuide', 'watch', 'browserSync']);

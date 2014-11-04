@@ -1,0 +1,131 @@
+/**
+ * variables
+ */
+
+$white: #fff;
+$blue: #529CCE;
+$gray-dark: #333;
+$gray-medium: #888;
+$gray-light: lighten(#ccc, 5%);
+$gray-lighter: #f9f9f9;
+$screen-m: (768 / 16 * 1em);
+
+/**
+ * page
+ */
+
+.c4-body {
+  background-color: darken($gray-lighter, 3%);
+}
+
+/**
+ * pattern container
+ */
+
+.c4-pattern {
+  background-color: $white;
+  border: solid $gray-light;
+  border-width: 1px 0;
+  margin-top: -1px;
+  overflow: hidden; // lean clearfix
+  position: relative;
+
+  @media (min-width: $screen-m) {
+    border-width: 1px;
+    border-radius: 0.5rem;
+
+    // this should be handled by a common container in
+    // the actual pattern library
+    margin: 1rem;
+  }
+}
+
+.c4-pattern-header,
+.c4-pattern-body {
+  margin: 1rem;
+
+  @media (min-width: $screen-m) {
+   margin: 1.5rem;
+  }
+}
+
+.c4-pattern-header {
+  color: $gray-medium;
+  font-size: 0.875rem;
+}
+
+.c4-pattern-heading {
+  color: $gray-dark;
+  font-size: 1.375rem;
+  font-weight: normal;
+  margin: 0;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+    }
+  }
+}
+
+.c4-pattern-body {
+  overflow: hidden; // lean clearfix
+  position: relative;
+}
+
+.c4-pattern-source-heading {
+  font: inherit;
+  margin: 0;
+  text-align: right;
+}
+
+.c4-pattern-source-toggle {
+  border-top-left-radius: 0.25rem;
+  color: $blue;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-top: -1rem;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+
+  &:before {
+    content: '</>';
+    font-family: monospace;
+    font-size: 1rem;
+  font-weight: bold;
+    margin-right: 0.25rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($blue, 40%);
+  }
+}
+
+.c4-pattern-source-body {
+  background-color: $gray-lighter;
+  border-top: 1px solid $gray-light;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  padding: 1rem;
+
+  @media (min-width: $screen-m) {
+   padding: 1.5rem;
+  }
+
+  pre {
+    color: $gray-medium;
+    font-size: 0.875rem;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  display: none;
+
+  .c4-pattern-source:target & {
+    display: block;
+  }
+}

@@ -6,5 +6,5 @@ var watchers   = [];
 
 module.exports = function () {
   watchers.styles   = gulp.watch(settings.src.styles, ['styles']);
-  watchers.patterns = gulp.watch(settings.src.patterns, ['patternTemplates']);
+  //watchers.patterns = gulp.watch(settings.src.patterns, ['patternTemplates']);
 };

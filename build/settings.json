@@ -11,11 +11,13 @@
   "dest": {
     "assets"   : "./static",
     "patterns" : "./static/patterns",
-    "css"      : "./static/css"
+    "css"      : "./static/css",
+    "vendor"   : "./static/vendor"
   },
   "src": {
     "patterns" : "./source/patterns/**/*.hbs",
     "assets"   : "./source/assets/**/*",
-    "styles"   : "./source/styles/**/*.scss"
+    "styles"   : "./source/styles/**/*.scss",
+    "vendor"   : "./vendor/**/*"
   }
 }
