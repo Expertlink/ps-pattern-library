@@ -29,10 +29,11 @@ taskModules.forEach(function(task) {
      .pipe(gulp.dest(settings.dest.vendor));
  });
  gulp.task('watch', function() {
-   gulp.watch(settings.src.assets,   ['assets']);
-   gulp.watch(settings.src.patterns, ['styleGuide']);
-   gulp.watch(settings.src.styles,   ['styles']);
-   gulp.watch(settings.src.vendor,   ['vendor']);
+   gulp.watch(settings.src.assets,    ['assets']);
+   gulp.watch(settings.src.patterns,  ['styleGuide']);
+   gulp.watch(settings.src.templates, ['styleGuide']);
+   gulp.watch(settings.src.styles,    ['styles']);
+   gulp.watch(settings.src.vendor,    ['vendor']);
  });
 
 /**

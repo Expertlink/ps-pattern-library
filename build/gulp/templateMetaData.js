@@ -32,9 +32,10 @@ module.exports = function (options) {
       name        : patternName(file.path),
       description : '',
       id          : patternId(file.path),
+      showHeading : true,
+      showSource  : true,
       source      : escape(file.contents.toString())
     }, file.meta || {});
-
 
     this.push(file);
     cb();

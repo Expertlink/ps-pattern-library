@@ -21,6 +21,7 @@
     "patternDirs" : "./source/patterns/**/*",
     "assets"      : "./source/assets/**/*",
     "styles"      : "./source/styles/**/*.scss",
+    "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*"
   }
 }
