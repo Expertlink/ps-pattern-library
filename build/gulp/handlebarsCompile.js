@@ -1,12 +1,13 @@
 /* global Buffer */
 'use strict';
-var gutil      = require('gulp-util'),
-    through    = require('through2'),
-    Handlebars = require('handlebars'),
-    fs         = require('fs'),
-    path       = require('path'),
-    settings   = require('../settings'),
-    _          = require('underscore');
+var gutil       = require('gulp-util'),
+    through     = require('through2'),
+    Handlebars  = require('handlebars'),
+    frontMatter = require('front-matter'),
+    fs          = require('fs'),
+    path        = require('path'),
+    settings    = require('../settings'),
+    _           = require('underscore');
 
 module.exports = function (data, opts) {
 
@@ -23,14 +24,15 @@ module.exports = function (data, opts) {
     partialFilenames.forEach(function(filename) {
       var partial = partialDir + '/' + filename,
           stats   = fs.statSync(partial),
-          key, name, template;
+          key, name, content, template;
       if (stats && stats.isDirectory()) {
         parsePartials(partial, partialDir + '/' + filename);
       } else if (path.extname(filename) === options.extension) {
         name      = path.basename(filename, options.extension);
         key       = (keyDir + '/' + name).replace(namePattern, '');
         template  = fs.readFileSync(partial, 'utf8');
-        Handlebars.registerPartial(key, template); // @TODO Error-detection/logging on ambiguous namespacing
+        content   = frontMatter(template); // Strip out any YAML front matter
+        Handlebars.registerPartial(key, content.body); // @TODO Error-detection/logging on ambiguous namespacing
       }
     });
   };

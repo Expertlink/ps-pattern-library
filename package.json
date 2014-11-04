@@ -31,6 +31,7 @@
     "gulp-wrap": "~0.5.0",
     "gulp-front-matter": "~1.0.0",
     "escape-html": "~1.0.1",
-    "gulp-autoprefixer": "~1.0.1"
+    "gulp-autoprefixer": "~1.0.1",
+    "front-matter": "~0.2.0"
   }
 }
