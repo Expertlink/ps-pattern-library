@@ -3,10 +3,12 @@
     "patternsPattern": "\\d+?-"
   },
   "paths": {
-    "static"   : "./static",
-    "source"   : "./source",
     "data"     : "./source/data",
-    "partials" : "./source/patterns"
+    "gulpTasks": "./build/gulp/tasks",
+    "partials" : "./source/patterns",
+    "patterns" : "./source/patterns",
+    "source"   : "./source",
+    "static"   : "./static"
   },
   "dest": {
     "assets"   : "./static",
@@ -15,9 +17,10 @@
     "vendor"   : "./static/vendor"
   },
   "src": {
-    "patterns" : "./source/patterns/**/*.hbs",
-    "assets"   : "./source/assets/**/*",
-    "styles"   : "./source/styles/**/*.scss",
-    "vendor"   : "./vendor/**/*"
+    "patterns"    : "./source/patterns/**/*.hbs",
+    "patternDirs" : "./source/patterns/**/*",
+    "assets"      : "./source/assets/**/*",
+    "styles"      : "./source/styles/**/*.scss",
+    "vendor"      : "./vendor/**/*"
   }
 }

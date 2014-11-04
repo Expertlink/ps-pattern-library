@@ -16,6 +16,16 @@ module.exports.patternName = function patternName(filename) {
   return name;
 };
 
+module.exports.relPaths = function pathData(dirPath, rootPath) {
+  var relPath = path.relative(path.resolve(dirPath), path.resolve(rootPath));
+  return {
+    css    : relPath + '/css',
+    js     : relPath + '/js',
+    vendor : relPath + '/vendor',
+    root   : relPath
+  };
+};
+
 module.exports.patternId = (function() {
   var ids = {};
   return function patternId(filename) {

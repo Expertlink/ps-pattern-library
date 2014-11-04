@@ -8,14 +8,13 @@ var watchers = {};
 var taskModules = ['browserSync',
                    'styleGuide',
                    'styles'];
-
 /**
  * Task modules should be in build/gulp/tasks
  */
 taskModules.forEach(function(task) {
   task = (typeof task === 'string') ? { name: task } : task;
   task.deps = task.deps || [];
-  gulp.task(task.name, task.deps, require('./build/gulp/tasks/' + task.name));
+  gulp.task(task.name, task.deps, require(settings.paths.gulpTasks + '/' + task.name));
 });
 
 /**
@@ -30,10 +29,10 @@ taskModules.forEach(function(task) {
      .pipe(gulp.dest(settings.dest.vendor));
  });
  gulp.task('watch', function() {
-   gulp.watch(settings.src.assets, ['assets']);
+   gulp.watch(settings.src.assets,   ['assets']);
    gulp.watch(settings.src.patterns, ['styleGuide']);
-   gulp.watch(settings.src.styles, ['styles']);
-   gulp.watch(settings.src.vendor, ['vendor']);
+   gulp.watch(settings.src.styles,   ['styles']);
+   gulp.watch(settings.src.vendor,   ['vendor']);
  });
 
 /**

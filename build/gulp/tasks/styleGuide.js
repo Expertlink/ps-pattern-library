@@ -1,45 +1,49 @@
 'use strict';
 
 var gulp             = require('gulp');
+
+// node
 var fs               = require('fs');
 var path             = require('path');
-var merge            = require('merge-stream');
-var concat           = require('gulp-concat');
-var glob             = require('glob');
+
+// npm
 var findup           = require('findup');
+var glob             = require('glob');
+var merge            = require('merge-stream');
+
+// npm gulp-*
+var concat           = require('gulp-concat');
+var frontMatter      = require('gulp-front-matter');
 var wrap             = require('gulp-wrap');
-var settings         = require('../../settings');
+
+// local
 var templateData     = require('../templateData');
 var templateMetaData = require('../templateMetaData');
 var template         = require('../handlebarsCompile');
-var frontMatter      = require('gulp-front-matter');
+var relPaths         = require('../../util').relPaths;
 
+var settings         = require('../../settings');
+var templateHelpers  = require('../../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {
-  /**
-   * Build our own glob to traverse patterns *directories*
-   * Filter out files that are not directories.
-   */
-  var dirs = glob.sync('./source/patterns/**/*').filter(function(filePath) { // @TODO Fix magic strings
+  /* Glob and traverse directories and filter to only directories (not files) */
+  var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
     return fs.statSync(filePath).isDirectory();
   });
 
+  /* Find local templates, build relative paths */
   var getPathData = function(dirPath) { // @TODO this might want to be its own module.
-    var relPath = path.relative(path.resolve(dirPath), path.resolve(settings.paths.source));
+    var paths = relPaths(dirPath, settings.paths.source);
     return {
       templateFile : findup.sync(path.resolve(dirPath), 'index.template') + '/index.template',
       patternFile  : findup.sync(path.resolve(dirPath), 'pattern.template') + '/pattern.template',
-      paths        : {
-        css    : relPath + '/css',
-        static : relPath,
-        vendor : relPath + '/vendor',
-        js     : relPath + '/js'
-      }
+      paths        : paths
     };
   };
 
   /**
-   * Lightly based on this recipe: https://github.com/gulpjs/gulp/blob/master/docs/recipes/running-task-steps-per-folder.md
+   * Lightly based on this recipe:
+   * https://github.com/gulpjs/gulp/blob/master/docs/recipes/running-task-steps-per-folder.md
    * We need to create streams for the operations we're going to take on each
    * directory full of pattern files.
    */
@@ -47,25 +51,29 @@ module.exports =  function() {
     // Find nearest index.template, going up.
     var pathData     = getPathData(dirPath);
     var destPath     = dirPath.replace('./source/patterns/', '');
-    /**
-     * For each directory, take all of the pattern template files,
-     * extract YAML front matter,
-     * render them, wrap them in pattern templates,
-     * concatenate into a single index.html file stream.
-     * Wrap that with the contents of the nearest `index.template`
-     * and output.
-     */
+
     return gulp.src(dirPath + '/*.hbs')
+      // Convert YAML front matter into file property (meta)
       .pipe(frontMatter({
         property: 'meta',
         remove: true
       }))
+      // Get template data for this template
       .pipe(templateData({ dataDir: settings.paths.data }))
-      .pipe(template({},{ partialsDir: settings.paths.partials }))
+      // compile the template
+      .pipe(template({},{
+        partialsDir: settings.paths.partials,
+        helpers    : templateHelpers
+      }))
+      // Process template metadata
       .pipe(templateMetaData())
+      // Wrap each pattern with the nearest pattern template
       .pipe(wrap({src: pathData.patternFile}))
+      // Concat all compiled, wrapped patterns in this dir into a single output file
       .pipe(concat('index.html'))
+      // Wrap concatenated patterns in nearest index template
       .pipe(wrap({src: pathData.templateFile}, pathData))
+      // And done.
       .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
   });
 

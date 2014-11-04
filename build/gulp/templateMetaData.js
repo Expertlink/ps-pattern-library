@@ -29,10 +29,10 @@ module.exports = function (options) {
     }
 
     file[options.property] = _.extend({
-      name: patternName(file.path),
-      description: '',
-      id: patternId(file.path),
-      source: escape(file.contents.toString())
+      name        : patternName(file.path),
+      description : '',
+      id          : patternId(file.path),
+      source      : escape(file.contents.toString())
     }, file.meta || {});
 
 

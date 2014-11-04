@@ -14,6 +14,7 @@ module.exports = function (data, opts) {
   var options = _.extend({
     extension: '.hbs'
   }, opts || {});
+
   var namePattern = new RegExp(settings.files.patternsPattern, 'g'); // @TODO Move into task
   data        = data || {};
 
@@ -31,7 +32,7 @@ module.exports = function (data, opts) {
         name      = path.basename(filename, options.extension);
         key       = (keyDir + '/' + name).replace(namePattern, '');
         template  = fs.readFileSync(partial, 'utf8');
-        content   = frontMatter(template); // Strip out any YAML front matter
+        content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
         Handlebars.registerPartial(key, content.body); // @TODO Error-detection/logging on ambiguous namespacing
       }
     });
@@ -40,6 +41,13 @@ module.exports = function (data, opts) {
   if (options.partialsDir) {
     parsePartials(options.partialsDir);
   }
+
+  if (options.helpers) {
+    for (var helper in options.helpers) {
+      Handlebars.registerHelper(helper, options.helpers[helper]);
+    }
+  }
+
 
   return through.obj(function (file, enc, cb) {
 
