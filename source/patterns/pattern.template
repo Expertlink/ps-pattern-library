@@ -10,7 +10,7 @@
   </div>
   <% if(file.meta.showSource) { %>
   <div class="c4-pattern-source js-c4-pattern-source" id="<%= file.meta.id %>-source">
-    <h3 class="c4-pattern-source-heading"><a class="c4-pattern-source-toggle js-c4-pattern-source-toggle"
+    <h3 class="c4-pattern-source-heading"><a class="c4-source-toggle js-c4-source-toggle"
        href="<%= file.meta.id %>-source">Source</a></h3>
     <div class="c4-pattern-source-body js-c4-pattern-source-body">
     <pre><code class="language-markup"><%= file.meta.source %></code></pre>

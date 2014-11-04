@@ -20,6 +20,7 @@ var wrap             = require('gulp-wrap');
 var templateData     = require('../templateData');
 var templateMetaData = require('../templateMetaData');
 var template         = require('../handlebarsCompile');
+var buildNav          = require('../../nav');
 var relPaths         = require('../../util').relPaths;
 
 var settings         = require('../../settings');
@@ -31,6 +32,7 @@ module.exports =  function() {
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
     return fs.statSync(filePath).isDirectory();
   });
+
   dirs.push(settings.paths.patterns);
 
   /* Find local templates, build relative paths */
@@ -53,6 +55,7 @@ module.exports =  function() {
     // Find nearest index.template, going up.
     var pathData     = getPathData(dirPath);
     var destPath     = dirPath.replace(pathPattern, '');
+
     return gulp.src(dirPath + '/*.hbs')
       // Convert YAML front matter into file property (meta)
       .pipe(frontMatter({

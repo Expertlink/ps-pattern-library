@@ -1,13 +1,13 @@
 'use strict';
 
-var util        = require('gulp-util');
-var through     = require('through2');
-var path        = require('path');
-var _           = require('underscore');
-var settings    = require('../settings');
-var patternName = require('../util').patternName;
-var patternId   = require('../util').patternId;
-var escape      = require('escape-html');
+var util            = require('gulp-util');
+var through         = require('through2');
+var path            = require('path');
+var _               = require('underscore');
+var settings        = require('../settings');
+var patternFileName = require('../util').patternFileName;
+var patternId       = require('../util').patternId;
+var escape          = require('escape-html');
 
 module.exports = function (options) {
   options = _.extend({
@@ -29,7 +29,7 @@ module.exports = function (options) {
     }
 
     file[options.property] = _.extend({
-      name        : patternName(file.path),
+      name        : patternFileName(file.path),
       description : '',
       id          : patternId(file.path),
       showHeading : true,
