@@ -6,15 +6,17 @@ $(function() {
 
   $navToggle.click(function(){
     $nav.slideToggle(250, function(){
-      $nav.toggleClass('c4-open', $nav.is(':visible'));
+      $nav.toggleClass('c4-is-open', $nav.is(':visible'));
       $nav.removeAttr('style');
     });
   });
 
   $('.js-c4-source-toggle').click(function (event) {
-    var $this = $(this);
-    var href = $this.attr('href');
-    $(href).toggleClass('c4-open');
+    var $content = $($(this).attr('href')).find('.js-c4-source-content');
     event.preventDefault();
+    $content.slideToggle(250, function(){
+      $content.toggleClass('c4-is-open', $content.is(':visible'));
+      $content.removeAttr('style');
+    });
   });
 });
