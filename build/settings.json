@@ -3,12 +3,13 @@
     "patternsPattern": "\\d+?-"
   },
   "paths": {
-    "data"     : "./source/data",
-    "gulpTasks": "./build/gulp/tasks",
-    "partials" : "./source/patterns",
-    "patterns" : "./source/patterns",
-    "source"   : "./source",
-    "static"   : "./static"
+    "data"       : "./source/data",
+    "gulpTasks"  : "./build/gulp",
+    "partials"   : "./source/patterns",
+    "patterns"   : "./source/patterns",
+    "source"     : "./source",
+    "static"     : "./static",
+    "styleGuide" : "./build/styleGuide"
   },
   "dest": {
     "assets"   : "./static",

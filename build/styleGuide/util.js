@@ -1,7 +1,7 @@
 'use strict';
 
 var path     = require('path');
-var settings = require('./settings');
+var settings = require('../settings');
 var _        = require('underscore');
 
 module.exports = {};

@@ -4,10 +4,8 @@ var gulp             = require('gulp');
 
 // node
 var fs               = require('fs');
-var path             = require('path');
 
 // npm
-var findup           = require('findup');
 var glob             = require('glob');
 var merge            = require('merge-stream');
 
@@ -17,18 +15,16 @@ var frontMatter      = require('gulp-front-matter');
 var wrap             = require('gulp-wrap');
 
 // local
-var templateData     = require('../templateData');
-var templateMetaData = require('../templateMetaData');
-var template         = require('../handlebarsCompile');
-var buildNav         = require('../../nav');
-var pathRoot         = require('../../util').pathRoot;
+var templateData     = require('./templateData');
+var templateMetaData = require('./templateMetaData');
+var template         = require('./handlebarsCompile');
+var templateUtil     = require('./templateUtil');
 
-var settings         = require('../../settings');
-var templateHelpers  = require('../../../' + settings.paths.patterns + '/templateHelpers');
+var settings         = require('../settings');
+var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {
   var pathPattern = new RegExp('\./source\/patterns\/?');
-  var nav         = buildNav();
 
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
@@ -36,17 +32,6 @@ module.exports =  function() {
   });
 
   dirs.push(settings.paths.patterns);
-
-  /* Find local templates, build relative paths */
-  var getPathData = function(dirPath) { // @TODO this might want to be its own module.
-    var root = pathRoot(dirPath, settings.paths.patterns);
-    return {
-      templateFile : findup.sync(path.resolve(dirPath), '__INDEX.template') + '/__INDEX.template',
-      patternFile  : findup.sync(path.resolve(dirPath), '__PATTERN.template') + '/__PATTERN.template',
-      pathRoot     : root,
-      nav          : nav
-    };
-  };
 
   /**
    * Lightly based on this recipe:
@@ -56,10 +41,10 @@ module.exports =  function() {
    */
   var tasks = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
-    var pathData        = getPathData(dirPath);
+    var pathData        = templateUtil.pathData(dirPath);
     var destPath        = dirPath.replace(pathPattern, '');
     var templateContext = {
-      nav      : nav,
+      nav      : pathData.nav,
       pathRoot : pathData.pathRoot
     };
     var templateOptions = {

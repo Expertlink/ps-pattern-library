@@ -3,7 +3,7 @@
 var fs       = require('fs');
 var glob     = require('glob');
 var path     = require('path');
-var settings = require('./settings');
+var settings = require('../settings');
 var dirName  = require('./util').patternName;
 
 /* For a given fully-resolved path, return any directories in it */
@@ -54,6 +54,5 @@ module.exports = function buildNav() {
   structure = structure.filter(function(topDir) {
     return topDir.children.length;
   });
-
   return structure;
 };

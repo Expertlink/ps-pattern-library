@@ -6,7 +6,6 @@ var settings = require('./build/settings');
 var watchers = {};
 
 var taskModules = ['browserSync',
-                   'styleGuide',
                    'styles'];
 /**
  * Task modules should be in build/gulp/tasks
@@ -17,6 +16,10 @@ taskModules.forEach(function(task) {
   gulp.task(task.name, task.deps, require(settings.paths.gulpTasks + '/' + task.name));
 });
 
+/**
+ * Style guide support
+ */
+gulp.task('styleGuide', [], require(settings.paths.styleGuide + '/styleGuide'));
 /**
  * Simple tasks not worthy of module
  */

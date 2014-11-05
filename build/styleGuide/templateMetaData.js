@@ -5,8 +5,8 @@ var through         = require('through2');
 var path            = require('path');
 var _               = require('underscore');
 var settings        = require('../settings');
-var patternFileName = require('../util').patternFileName;
-var patternId       = require('../util').patternId;
+var patternFileName = require('./util').patternFileName;
+var patternId       = require('./util').patternId;
 var escape          = require('escape-html');
 
 module.exports = function (options) {
