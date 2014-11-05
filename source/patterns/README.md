@@ -31,6 +31,19 @@ You can use YAML front matter in patterns. Supported currently:
 * `showSource`: Render syntax-highlighted source (default `true`).
 * `showHeader`: Render the pattern's name and description (default `true`).
 
+##### Example
+
+```
+---
+name: My custom pattern name
+description: This pattern does this for this reason so you want to use it in this way
+---
+
+<h1>Pattern contents...</h1>
+```
+
+YAML front matter goes at the top of `.hbs` files as in the example above.
+
 #### The somewhat-special "welcome" pattern
 
 There is only one non-hidden pattern at the root level (at the start of things, anyway). This is `welcome.hbs` and by default it is set to hide its heading and source. You can use it as a place to put content you'd like to render on a landing page.
@@ -66,7 +79,11 @@ in those templates. Do not remove this. It's what renders the, uh, content!
 
 In addition, there are some other metadata available in the EJS-compiled `__PATTERN` template. The `file.meta` object represents the YAML front matter for the template at hand.
 
-Summary: `<%= contents %>` needs to remain in these templates, `file.meta` is an object with data available _only_ in EJS within the `__PATTERN` template. Otherwise you can use Handlebars syntax to work with these templates.
+**Summary:**
+
+* `<%= contents %>` needs to remain in these templates
+* `file.meta` is an object with data available _only_ in EJS within the `__PATTERN` template.
+* Otherwise you can use Handlebars syntax to work with any and all templates.
 
 ##### Overriding and Customizing
 
