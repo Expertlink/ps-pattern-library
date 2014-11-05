@@ -1,0 +1,23 @@
+.text-cursive {
+  font-family: $cursive;
+}
+.text-success {
+  color: $green;
+}
+.text-info {
+  color: $orange;
+}
+.text-warning, .text-error {
+  color: red;
+}
+.text-muted {
+  opacity: 0.6;
+}
+
+
+p {
+  font: 400 $font-base $sans-serif;
+  margin: 0 0 1.15em;
+  line-height: 1.3em;
+  color: $grey-dark;
+}

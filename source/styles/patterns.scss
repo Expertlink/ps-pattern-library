@@ -80,7 +80,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
   padding: 0.5rem;
 
   a {
-    color: inherit;
+    color: inherit !important;
     text-decoration: none;
   }
 }
@@ -101,6 +101,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 .c4-header__title-segment {
+  color: inherit !important;
   display: inline-block;
   font-size: 1.125rem;
   font-weight: normal;
@@ -109,16 +110,16 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 a.c4-header__title-segment {
-  color: lighten($blue, 35%);
+  color: lighten($blue, 35%) !important;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $white;
+    color: $white !important;
   }
 
   &:after {
-    color: lighten($blue, 20%);
+    color: lighten($blue, 20%) !important;
     content: '\00a0/\00a0';
   }
 }
@@ -126,10 +127,10 @@ a.c4-header__title-segment {
 .c4-header__menu-button {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: transparent;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M22 7c0 .6-.5 1-1 1H3c-.5 0-1-.4-1-1V6c0-.6.5-1 1-1h18c.5 0 1 .4 1 1v1zM22 13c0 .6-.5 1-1 1H3c-.5 0-1-.4-1-1v-1c0-.6.5-1 1-1h18c.5 0 1 .4 1 1v1zM22 19c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1c0-.5.5-1 1-1h18c.5 0 1 .5 1 1v1z"/></svg>');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: transparent !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M22 7c0 .6-.5 1-1 1H3c-.5 0-1-.4-1-1V6c0-.6.5-1 1-1h18c.5 0 1 .4 1 1v1zM22 13c0 .6-.5 1-1 1H3c-.5 0-1-.4-1-1v-1c0-.6.5-1 1-1h18c.5 0 1 .4 1 1v1zM22 19c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1c0-.5.5-1 1-1h18c.5 0 1 .5 1 1v1z"/></svg>') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   border: 0;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -141,7 +142,7 @@ a.c4-header__title-segment {
 
   &:hover,
   &:focus {
-    background-color: lighten($blue, 20%);
+    background-color: lighten($blue, 20%) !important;
   }
 }
 
@@ -190,7 +191,7 @@ a.c4-header__title-segment {
 }
 
 .c4-nav__item {
-  color: $blue;
+  color: $blue !important;
   display: block;
   position: relative;
   text-decoration: none;
@@ -198,14 +199,14 @@ a.c4-header__title-segment {
   &:hover,
   &:focus {
     background-color: darken($gray-lighter, 3%);
-    color: darken($blue, 3%);
+    color: darken($blue, 3%) !important;
   }
 
   &.c4-is-current {
     background-color: $white;
     border-radius: 0 2px 2px 0;
     box-shadow: 0 2px rgba(0,0,0,0.05);
-    color: $orange;
+    color: $orange !important;
     border-right: 4px solid $orange;
     margin-right: -4px;
     z-index: 2;
@@ -283,6 +284,7 @@ a.c4-header__title-segment {
   p,
   ul,
   ol {
+    font-family: inherit !important;
     margin-bottom: 1rem;
     margin-top: 0;
   }
@@ -303,7 +305,7 @@ a.c4-header__title-segment {
 }
 
 .c4-pattern__source__toggle {
-  color: $blue;
+  color: $blue !important;
   text-decoration: none;
 
   &:before {
@@ -355,11 +357,13 @@ a.c4-header__title-segment {
   padding: 1rem;
 
   p {
+    color: inherit !important;
+    font-family: inherit !important;
     margin: 0;
   }
 
   a {
-    color: $blue;
+    color: $blue !important;
     text-decoration: none;
 
     &:after {

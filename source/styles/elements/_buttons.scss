@@ -1,0 +1,28 @@
+button, input[type="submit"], .btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-decoration: none;
+  border: 1px solid $grey;
+  border-radius: 1em;
+  font-weight: bold;
+  background: $red;
+  background: linear-gradient(to bottom, lighten($red, 20%) 0%, darken($red, 20%) 100%);
+  color: white;
+  display: inline-block;
+  padding: 0.2em 1em 0.3em;
+  line-height: 1.2em;
+  cursor: pointer;
+  &:hover, &:focus {
+    background: linear-gradient(to bottom, lighten($red-bright, 20%) 0%, darken($red-bright, 20%) 100%);
+  }
+}
+a.btn, a.btn:link, a.btn:hover, a.btn:visited {
+  color: white;
+}
+.btn-lg {
+  font-size: $font-large;
+}
+.btn-sm {
+  font-size: $font-xsmall;
+  font-weight: normal;
+}
