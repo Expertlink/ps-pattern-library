@@ -28,6 +28,7 @@ var templateHelpers  = require('../../../' + settings.paths.patterns + '/templat
 
 module.exports =  function() {
   var pathPattern = new RegExp('\./source\/patterns\/?');
+  var nav         = buildNav();
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
     return fs.statSync(filePath).isDirectory();
@@ -37,11 +38,12 @@ module.exports =  function() {
 
   /* Find local templates, build relative paths */
   var getPathData = function(dirPath) { // @TODO this might want to be its own module.
-    var paths = relPaths(dirPath, settings.paths.source);
+    var paths = relPaths(dirPath, settings.paths.patterns);
     return {
       templateFile : findup.sync(path.resolve(dirPath), 'index.template') + '/index.template',
       patternFile  : findup.sync(path.resolve(dirPath), 'pattern.template') + '/pattern.template',
-      paths        : paths
+      paths        : paths,
+      nav          : nav
     };
   };
 
@@ -53,10 +55,18 @@ module.exports =  function() {
    */
   var tasks = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
-    var pathData     = getPathData(dirPath);
-    var destPath     = dirPath.replace(pathPattern, '');
+    var pathData        = getPathData(dirPath);
+    var destPath        = dirPath.replace(pathPattern, '');
+    var templateContext = {
+      nav      : nav,
+      pathRoot : pathData.paths.root
+    };
+    var templateOptions = {
+      partialsDir: settings.paths.partials,
+      helpers    : templateHelpers
+    };
 
-    return gulp.src(dirPath + '/*.hbs')
+    return gulp.src([dirPath + '/*.hbs', '!' + dirPath + '/_*.hbs'])
       // Convert YAML front matter into file property (meta)
       .pipe(frontMatter({
         property: 'meta',
@@ -65,10 +75,7 @@ module.exports =  function() {
       // Get template data for this template
       .pipe(templateData({ dataDir: settings.paths.data }))
       // compile the template
-      .pipe(template({},{
-        partialsDir: settings.paths.partials,
-        helpers    : templateHelpers
-      }))
+      .pipe(template(templateContext, templateOptions))
       // Process template metadata
       .pipe(templateMetaData())
       // Wrap each pattern with the nearest pattern template
@@ -77,6 +84,8 @@ module.exports =  function() {
       .pipe(concat('index.html'))
       // Wrap concatenated patterns in nearest index template
       .pipe(wrap({src: pathData.templateFile}, pathData))
+      // Compile the index template as hbs
+      .pipe(template(templateContext, templateOptions))
       // And done.
       .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
   });

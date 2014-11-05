@@ -1,0 +1,8 @@
+{{#each nav}}
+   <h4 class="c4-nav-heading">{{name}}</h4>
+   <ul class="c4-nav-list">
+   {{#each children}}
+     <li><a class="c4-nav-item" href="{{ ../../pathRoot }}/{{ dir }}">{{name}}</a></li>
+   {{/each}}
+   </ul>
+{{/each}}

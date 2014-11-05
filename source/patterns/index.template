@@ -28,15 +28,24 @@
   </head>
 <body>
 
-  <header role="banner">
-    <nav role="navigation">
-      <ul class="nav navbar-nav">
-
-      </ul>
-    </nav>
+  <header class="c4-banner" id="c4-top">
+    <a class="c4-logo" href="http://cloudfour.com"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/c4-icon-white-opt.svg" alt="Cloud Four"></a>
+    <h1 class="c4-masthead"><a href="">VSE Responsive Pilot Pattern Library</a></h1>
+    <button type="button" class="c4-menu-button js-c4-nav-toggle"><span>Menu</span></button>
   </header>
-  <h1>Well, Hello!</h1>
-  <%= contents %>
+
+  <nav class="c4-nav js-c4-nav">
+    <ul class="c4-nav-list">
+      <li><a class="c4-nav-item" href="<%= paths.root %>">Welcome</a></li>
+    </ul>
+    {{> patterns/_nav }}
+  </nav>
+
+  <main class="c4-main">
+    <h1>Well, Hello!</h1>
+    <%= contents %>
+  </main>
 </body>
+
 
 </html>

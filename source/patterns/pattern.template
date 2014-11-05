@@ -1,20 +1,23 @@
 <div class="c4-pattern" id="c4-<%= file.meta.id %>">
+
   <% if(file.meta.showHeading) { %>
-    <div class="c4-pattern-header">
-      <h2 class="c4-pattern-heading"><%= file.meta.name %></h2>
+    <div class="c4-pattern-description">
+      <h2 class="c4-pattern-title"><%= file.meta.name %></h2>
       <p><%= file.meta.description %></p>
     </div>
   <% } %>
+
   <div class="c4-pattern-body">
     <%= contents %>
   </div>
+
   <% if(file.meta.showSource) { %>
-  <div class="c4-pattern-source js-c4-pattern-source" id="<%= file.meta.id %>-source">
-    <h3 class="c4-pattern-source-heading"><a class="c4-source-toggle js-c4-source-toggle"
-       href="<%= file.meta.id %>-source">Source</a></h3>
-    <div class="c4-pattern-source-body js-c4-pattern-source-body">
-    <pre><code class="language-markup"><%= file.meta.source %></code></pre>
+    <div class="c4-pattern-source" id="c4-pattern-<%= file.meta.id %>-source">
+      <a class="c4-pattern-source-toggle js-c4-source-toggle" href="#c4-pattern-<%= file.meta.id %>-source">Source</a>
+      <div class="c4-pattern-source-body js-c4-pattern-source-body">
+      <pre><code class="language-markup"><%= file.meta.source %></code></pre>
+      </div>
     </div>
-  </div>
   <% } %>
+  
 </div>

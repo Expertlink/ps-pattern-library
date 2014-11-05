@@ -48,7 +48,6 @@ module.exports = function (data, opts) {
     }
   }
 
-
   return through.obj(function (file, enc, cb) {
 
     if (file.isNull()) {
