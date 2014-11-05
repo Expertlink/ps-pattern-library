@@ -8,10 +8,10 @@
   <title>
   </title>
     <!-- CSS Goes here -->
-    <link href="<%= paths.vendor %>/normalize.css" rel="stylesheet">
-    <link href="<%= paths.css %>/patterns.css" rel="stylesheet">
-    <link href="<%= paths.css %>/styles.css" rel="stylesheet">
-    <link href="<%= paths.vendor %>/prism/prism.css" rel="stylesheet">
+    <link href="{{ pathRoot }}/vendor/normalize.css" rel="stylesheet">
+    <link href="{{ pathRoot }}/css/patterns.css" rel="stylesheet">
+    <link href="{{ pathRoot }}/css/styles.css" rel="stylesheet">
+    <link href="{{ pathRoot }}/vendor/prism/prism.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,8 +22,8 @@
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="<%= paths.js %>/patterns.js"></script>
-    <script src="<%= paths.vendor %>/prism/prism.js"></script>
+    <script src="{{ pathRoot }}/js/patterns.js"></script>
+    <script src="{{ pathRoot }}/vendor/prism/prism.js"></script>
 
   </head>
 <body>
@@ -36,9 +36,9 @@
 
   <nav class="c4-nav js-c4-nav">
     <ul class="c4-nav-list">
-      <li><a class="c4-nav-item" href="<%= paths.root %>">Welcome</a></li>
+      <li><a class="c4-nav-item" href="{{ pathRoot }}">Welcome</a></li>
     </ul>
-    {{> patterns/_nav }}
+    {{> patterns/__NAV }}
   </nav>
 
   <main class="c4-main">

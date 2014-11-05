@@ -20,8 +20,8 @@ var wrap             = require('gulp-wrap');
 var templateData     = require('../templateData');
 var templateMetaData = require('../templateMetaData');
 var template         = require('../handlebarsCompile');
-var buildNav          = require('../../nav');
-var relPaths         = require('../../util').relPaths;
+var buildNav         = require('../../nav');
+var pathRoot         = require('../../util').pathRoot;
 
 var settings         = require('../../settings');
 var templateHelpers  = require('../../../' + settings.paths.patterns + '/templateHelpers');
@@ -38,11 +38,11 @@ module.exports =  function() {
 
   /* Find local templates, build relative paths */
   var getPathData = function(dirPath) { // @TODO this might want to be its own module.
-    var paths = relPaths(dirPath, settings.paths.patterns);
+    var root = pathRoot(dirPath, settings.paths.patterns);
     return {
-      templateFile : findup.sync(path.resolve(dirPath), 'index.template') + '/index.template',
-      patternFile  : findup.sync(path.resolve(dirPath), 'pattern.template') + '/pattern.template',
-      paths        : paths,
+      templateFile : findup.sync(path.resolve(dirPath), '__INDEX.template') + '/__INDEX.template',
+      patternFile  : findup.sync(path.resolve(dirPath), '__PATTERN.template') + '/__PATTERN.template',
+      pathRoot     : root,
       nav          : nav
     };
   };
@@ -59,7 +59,7 @@ module.exports =  function() {
     var destPath        = dirPath.replace(pathPattern, '');
     var templateContext = {
       nav      : nav,
-      pathRoot : pathData.paths.root
+      pathRoot : pathData.pathRoot
     };
     var templateOptions = {
       partialsDir: settings.paths.partials,

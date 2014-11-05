@@ -24,14 +24,9 @@ module.exports.patternFileName = function patternFileName(filename) {
   return formatName(name);
 };
 
-module.exports.relPaths = function pathData(dirPath, rootPath) {
-  var relPath = path.relative(path.resolve(dirPath), path.resolve(rootPath));
-  return {
-    css    : relPath + '/css',
-    js     : relPath + '/js',
-    vendor : relPath + '/vendor',
-    root   : relPath
-  };
+module.exports.pathRoot = function pathRoot(dirPath, rootPath) {
+  var relative =  path.relative(path.resolve(dirPath), path.resolve(rootPath));
+  return relative || '.';
 };
 
 module.exports.patternId = (function() {
