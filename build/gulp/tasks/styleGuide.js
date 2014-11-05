@@ -29,6 +29,7 @@ var templateHelpers  = require('../../../' + settings.paths.patterns + '/templat
 module.exports =  function() {
   var pathPattern = new RegExp('\./source\/patterns\/?');
   var nav         = buildNav();
+
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
     return fs.statSync(filePath).isDirectory();

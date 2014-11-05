@@ -15,8 +15,8 @@ module.exports = function (data, opts) {
     extension: '.hbs'
   }, opts || {});
 
-  var namePattern = new RegExp(settings.files.patternsPattern, 'g'); // @TODO Move into task
-  data        = data || {};
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g');
+  data            = data || {};
 
   var parsePartials = function(partialDir) {
     var partialFilenames = fs.readdirSync(partialDir),
