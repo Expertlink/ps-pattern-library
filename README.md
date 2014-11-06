@@ -5,22 +5,30 @@ vse-responsive-pilot
 
 ### Requirements
 
-* Make sure you have [`node`](http://nodejs.org/) installed, which comes with `npm`
-* You'll need [`ruby`](https://www.ruby-lang.org/en/) and the SASS gem to compile `SASS`
-* Install `gulp` globally. This can be done by typing `npm install -g gulp` in a terminal.
+You'll need a few things installed before you can run the project locally:
+
+* [node.js](http://nodejs.org/)
+* [Ruby](https://www.ruby-lang.org/en/)
+* [Sass](http://sass-lang.com/): `gem install sass`
+* [Gulp](http://gulpjs.com/): `npm install -g gulp`
 
 ### Installation
 
-1. Clone repository from github
-2. `$ npm install`
+1. Clone the repository from GitHub
+2. `cd` to the project directory
+3. Run `npm install`
 
 ## Usage
 
 Run the development environment by going to the project directory in a terminal and typing:
 
-`gulp`
+```
+gulp
+```
 
-That's it. `Ctrl-c` to quit the process.
+That's it! A local webserver will start (it should open in your default browser), and will remain open as long as you'd like. Changes to source files should automatically refresh the page in your browser.
+
+To quit the process, tap `ctrl`+`c` with your terminal focused.
 
 ## Pattern Library Documentation
 
