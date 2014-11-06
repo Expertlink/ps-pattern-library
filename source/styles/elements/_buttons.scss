@@ -12,6 +12,7 @@ button, input[type="submit"], .btn {
   padding: 0.2em 1em 0.3em;
   line-height: 1.2em;
   cursor: pointer;
+  text-align:center;
   &:hover, &:focus {
     background: linear-gradient(to bottom, lighten($red-bright, 20%) 0%, darken($red-bright, 20%) 100%);
   }
@@ -25,4 +26,7 @@ a.btn, a.btn:link, a.btn:hover, a.btn:visited {
 .btn-sm {
   font-size: $font-xsmall;
   font-weight: normal;
+}
+.btn-full {
+  display:block;
 }
