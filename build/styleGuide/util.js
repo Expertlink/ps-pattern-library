@@ -14,6 +14,11 @@ function formatName(name) {
   return name;
 }
 
+module.exports.isPatternPage = function isPatternPage(dirPath) {
+  var pagePattern = new RegExp(settings.paths.patterns + '/pages');
+  return !dirPath.match(pagePattern);
+};
+
 module.exports.patternName = function patternName(name) {
   return formatName(name);
 };

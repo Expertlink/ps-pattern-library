@@ -12,6 +12,8 @@ var merge            = require('merge-stream');
 // npm gulp-*
 var concat           = require('gulp-concat');
 var frontMatter      = require('gulp-front-matter');
+var gulpif           = require('gulp-if');
+var rename           = require('gulp-rename');
 var wrap             = require('gulp-wrap');
 
 // local
@@ -31,7 +33,7 @@ module.exports =  function() {
     return fs.statSync(filePath).isDirectory();
   });
 
-  dirs.push(settings.paths.patterns);
+  dirs.push(settings.paths.patterns); // Add the top-level patterns directory
 
   /**
    * Lightly based on this recipe:
@@ -39,7 +41,7 @@ module.exports =  function() {
    * We need to create streams for the operations we're going to take on each
    * directory full of pattern files.
    */
-  var tasks = dirs.map(function(dirPath) {
+  var patternPages = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
     var pathData        = templateUtil.pathData(dirPath);
     var destPath        = util.pathName(dirPath);
@@ -52,6 +54,10 @@ module.exports =  function() {
       partialsDir: settings.paths.partials,
       helpers    : templateHelpers
     };
+    // Note that a few steps below will not take place if this
+    // is not a pattern page—that is, if it is a composed "page"
+    // in the pages directory
+    var isPatternPage = util.isPatternPage(dirPath);
 
     return gulp.src([dirPath + '/*.hbs', '!' + dirPath + '/_*.hbs'])
       // Convert YAML front matter into file property (meta)
@@ -66,14 +72,15 @@ module.exports =  function() {
       // Process template metadata
       .pipe(templateMetaData())
       // Wrap each pattern with the nearest pattern template
-      .pipe(wrap({src: pathData.patternFile}))
+      .pipe(gulpif(isPatternPage, wrap({src: pathData.patternFile})))
       // Concat all compiled, wrapped patterns in this dir into a single output file
-      .pipe(concat('index.html'))
+      .pipe(gulpif(isPatternPage, concat('index.html')))
       // Wrap concatenated patterns in nearest index template
-      .pipe(wrap({src: pathData.templateFile}, pathData))
+      .pipe(gulpif(isPatternPage, wrap({src: pathData.templateFile}, pathData)))
       // Compile the index template as hbs
-      .pipe(template(templateContext, templateOptions))
+      .pipe(gulpif(isPatternPage, template(templateContext, templateOptions)))
       // And done.
+      .pipe(gulpif(!isPatternPage, rename({extname: '.html'}))) // Only in the "pages" dirs
       .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
   });
 
@@ -83,5 +90,5 @@ module.exports =  function() {
    * an individual stream. Merge
    * all of these tasks streams into one stream and return.
    */
-  return merge(tasks);
+  return merge(patternPages);
 };
