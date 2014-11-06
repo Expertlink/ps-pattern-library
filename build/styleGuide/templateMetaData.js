@@ -27,9 +27,9 @@ module.exports = function (options) {
       this.emit('error', new util.PluginError('Template Data', 'Streaming not supported'));
       return cb();
     }
-
     file[options.property] = _.extend({
       name        : patternFileName(file.path),
+      filename    : path.basename(file.path),
       description : '',
       id          : patternId(file.path),
       showHeading : true,

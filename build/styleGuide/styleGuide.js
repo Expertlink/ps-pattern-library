@@ -35,8 +35,17 @@ module.exports =  function() {
 
   dirs.push(settings.paths.patterns); // Add the top-level patterns directory
 
+  /**
+   * Build out the style guide for the directory dirPath.
+   *
+   * @param {string} dirPath
+   * @param {Boolean} isPatternPage   Should this path be treated
+   *                                  as one containing patterns to be
+   *                                  wrapped and indexed?
+   * @return Vinyl stream
+   */
   var styleStream = function(dirPath, isPatternPage) {
-    // Find nearest index.template, going up.
+    // Build context for this directory and its files
     var pathData        = templateUtil.pathData(dirPath);
     var destPath        = util.pathName(dirPath);
     var templateContext = {
@@ -49,25 +58,26 @@ module.exports =  function() {
       helpers    : templateHelpers
     };
 
+    // Note several of the following steps are conditional upon isPatternPage
     return gulp.src([dirPath + '/*.hbs', '!' + dirPath + '/_*.hbs'])
       // Convert YAML front matter into file property (meta)
       .pipe(frontMatter({
         property: 'meta',
         remove: true
       }))
-      // Get template data for this template
+      // Get template context data for this template
       .pipe(templateData({ dataDir: settings.paths.data }))
-      // compile the template
+      // compile the individual template
       .pipe(template(templateContext, templateOptions))
       // Process template metadata
       .pipe(templateMetaData())
-      // Wrap each pattern with the nearest pattern template
+      // Wrap each pattern with the nearest pattern template (if pattern dir)
       .pipe(gulpif(isPatternPage, wrap({src: pathData.patternFile})))
-      // Concat all compiled, wrapped patterns in this dir into a single output file
+      // Concat all compiled, wrapped patterns in this dir into a single output file (if pattern dir)
       .pipe(gulpif(isPatternPage, concat('index.html')))
-      // Wrap concatenated patterns in nearest index template
+      // Wrap concatenated patterns in nearest index template (if pattern dir)
       .pipe(gulpif(isPatternPage, wrap({src: pathData.templateFile}, pathData)))
-      // Compile the index template as hbs
+      // Compile the index template as hbs (if pattern dir)
       .pipe(gulpif(isPatternPage, template(templateContext, templateOptions)))
       // And done.
       .pipe(gulpif(!isPatternPage, rename({extname: '.html'}))) // Only in the "pages" dirs
@@ -88,6 +98,13 @@ module.exports =  function() {
 
     var patternStream = styleStream(dirPath, isPatternPage);
     if (!isPatternPage) {
+      // Page/templates/composed things need to go through the style
+      // building process twice: Once to generate HTML output for the
+      // Individual templates (NOT wrapping them with __INDEX or
+      // __PATTERN), and then again as if they were pattern pages,
+      // to get an index file generated.
+      // Note setting isPatternPage to true
+      // We need to merge the second stream into the first before returning
       return(merge(patternStream, styleStream(dirPath, true)));
     } else {
       return patternStream;
