@@ -8,6 +8,7 @@ var settings        = require('../settings');
 var patternFileName = require('./util').patternFileName;
 var patternId       = require('./util').patternId;
 var escape          = require('escape-html');
+var pathRoot        = require('./util').pathRoot;
 
 module.exports = function (options) {
   options = _.extend({
@@ -30,13 +31,13 @@ module.exports = function (options) {
     file[options.property] = _.extend({
       name        : patternFileName(file.path),
       filename    : path.basename(file.path),
+      link        : path.basename(file.path, '.hbs') + '.html',
       description : '',
       id          : patternId(file.path),
       showHeading : true,
       showSource  : true,
       source      : escape(file.contents.toString())
     }, file.meta || {});
-
     this.push(file);
     cb();
   });
