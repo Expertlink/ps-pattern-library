@@ -24,6 +24,10 @@ module.exports.patternFileName = function patternFileName(filename) {
   return formatName(name);
 };
 
+module.exports.pathName = function pathName(dir) {
+  return dir.replace(/\.\/source\/patterns\/?/, '');
+};
+
 module.exports.pathRoot = function pathRoot(dirPath, rootPath) {
   var relative =  path.relative(path.resolve(dirPath), path.resolve(rootPath));
   return relative || '.';

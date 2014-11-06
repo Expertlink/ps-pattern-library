@@ -85,6 +85,13 @@ in those templates. Do not remove this. It's what renders the, uh, content!
 
 In addition, there are some other metadata available in the EJS-compiled `__PATTERN` template. The `file.meta` object represents the YAML front matter for the template at hand.
 
+###### Navigation object
+
+The `nav` object is available to patterns but is probably most useful to templates for the pattern library. You can learn more about the structure of the object, should you need to, by perusing the `navigation.js` util building function in `build/styleGuide`. It is used heavily by the `__NAV.hbs` template.
+
+* Each (linked/clickable) nav item has a Boolean `isCurrent` property for applying active nav classes, etc.
+* There is a top-level `nav.isHome` Boolean that is `true` on the landing page only. This allows for selective styling of the `Welcome` nav item.
+
 **Summary:**
 
 * `<%= contents %>` needs to remain in these templates

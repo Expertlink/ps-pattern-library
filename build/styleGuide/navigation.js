@@ -4,7 +4,7 @@ var fs       = require('fs');
 var glob     = require('glob');
 var path     = require('path');
 var settings = require('../settings');
-var dirName  = require('./util').patternName;
+var util     = require('./util');
 
 /* For a given fully-resolved path, return any directories in it */
 var getDirs = function getDirs(fullPath) {
@@ -14,7 +14,7 @@ var getDirs = function getDirs(fullPath) {
   });
 };
 
-module.exports = function buildNav() {
+module.exports.buildNav = function buildNav(currentDir) {
   var topPath = path.resolve(settings.paths.patterns);
   var topDirs = getDirs(topPath);
 
@@ -33,10 +33,13 @@ module.exports = function buildNav() {
      * Flesh out the information object about each of these content dirs
      */
     contentDirs = contentDirs.map(function(contentDir) {
+      var link = dir + '/' + contentDir;
       return {
-        dir: dir + '/' + contentDir,
-        name: dirName(contentDir)
+        dir: link,
+        name: util.patternName(contentDir),
+        isCurrent: (link === util.pathName(currentDir))
       };
+
     });
     /**
      * Back to the heading-level directories. Flesh out the objects
@@ -44,9 +47,10 @@ module.exports = function buildNav() {
      */
     return {
       dir      : dir,
-      name     : dirName(dir),
+      name     : util.patternName(dir),
       children : contentDirs
     };
+
   });
   /**
    * Prune any heading-level directories that have no children.
@@ -54,5 +58,11 @@ module.exports = function buildNav() {
   structure = structure.filter(function(topDir) {
     return topDir.children.length;
   });
+
+  /**
+   * Are we on the landing page?
+   */
+  structure.isHome = (currentDir === settings.paths.patterns);
+
   return structure;
 };

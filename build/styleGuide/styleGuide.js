@@ -19,12 +19,12 @@ var templateData     = require('./templateData');
 var templateMetaData = require('./templateMetaData');
 var template         = require('./handlebarsCompile');
 var templateUtil     = require('./templateUtil');
+var util             = require('./util');
 
 var settings         = require('../settings');
 var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {
-  var pathPattern = new RegExp('\./source\/patterns\/?');
 
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
@@ -42,7 +42,7 @@ module.exports =  function() {
   var tasks = dirs.map(function(dirPath) {
     // Find nearest index.template, going up.
     var pathData        = templateUtil.pathData(dirPath);
-    var destPath        = dirPath.replace(pathPattern, '');
+    var destPath        = util.pathName(dirPath);
     var templateContext = {
       nav      : pathData.nav,
       pathRoot : pathData.pathRoot,

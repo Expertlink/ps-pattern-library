@@ -54,7 +54,7 @@
 
   <nav class="c4-nav  js-c4-nav">
     <ul class="c4-nav__list">
-      <li><a class="c4-nav__item  c4-is-current" href="{{ pathRoot }}">Welcome</a></li>
+      <li><a class="c4-nav__item {{#if nav.isHome}}c4-is-current{{/if}}" href="{{ pathRoot }}">Welcome</a></li>
     </ul>
     {{> patterns/__NAV }}
   </nav>
