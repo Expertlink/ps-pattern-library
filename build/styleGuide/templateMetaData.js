@@ -1,6 +1,7 @@
 'use strict';
 
 var util            = require('gulp-util');
+var marked          = require('marked');
 var through         = require('through2');
 var path            = require('path');
 var _               = require('underscore');
@@ -30,16 +31,17 @@ module.exports = function (options) {
       return cb();
     }
     file[options.property] = _.extend({
-      name        : patternFileName(file.path),
-      filename    : path.basename(file.path),
       compileTime : moment().format(settings.dateFormat),
-      link        : path.basename(file.path, '.hbs') + '.html',
       description : '',
+      filename    : path.basename(file.path),
       id          : patternId(file.path),
+      link        : path.basename(file.path, '.hbs') + '.html',
+      name        : patternFileName(file.path),
       showHeading : true,
       showSource  : true,
       source      : escape(file.contents.toString())
     }, file.meta || {});
+    file[options.property].description = marked(file[options.property].description);
     this.push(file);
     cb();
   });
