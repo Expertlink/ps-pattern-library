@@ -1,43 +1,70 @@
-## Using the pattern library
+# Using the pattern library
 
-### Patterns
+The pattern library is a fun and fast way to quickly create and document reusable front-end patterns. You can organize code snippets for display in the style guide, or entire self-contained pages. You can include patterns inside of other patterns, or patterns inside of pages.
 
-* Any file with the extension `.hbs` within the patterns source directory structure will be treated as a pattern.
-* Patterns use Handlebars templating. [Read more about Handlebars](http://handlebarsjs.com/).
-* Pattern filenames beginning with `_` will be treated as hidden or special items. They are available as partials but do not show up in rendered patterns.
-* Patterns will show up in the pattern library ordered by their filenames. To make sure patterns appear in the order you desire, prefix them with digits and a dash, e.g. `04-a-pattern.hbs` or `003-another-pattern.hbs`.
+## Organization
 
-#### Partials
+All webpages are made up of various components (navigation, sidebar, article), which themselves are made up of even smaller elements (heading, button, paragraph, text field). It's important to see how all of these components work in context, but it's also important we see them on their own to ensure that they're flexible (and to document them for future use).
 
-* All `.hbs` files are available as partials, also, and may be used from any other `.hbs` file.
-* Partials are keyed as `<parentDirectory>/<partialName>` where `<parentDirectory>` is the immediate parent directory name, and `<partialName>` is the partial's filename, without extension. Both `<parentDirectory>` and `<partialName>` are exclusive of leading digits, e.g. `03-a-directory/02-a-pattern` is available as `a-directory/a-pattern`.
+Pattern templates use the file extension `.hbs` and are organized as follows:
 
-#### Pages
+```
+source/patterns/[pattern type]/[pattern group]/[pattern name].hbs
+```
 
-You can combine patterns together to build standalone templates within the `pages` directory.
+These templates all use Handlebars (a simple and easy form of HTML templating), which [you can read about here](http://handlebarsjs.com/).
 
-Handlebars templates (`*.hbs`) files in these directories will be output without being wrapped with pattern library templates.
+### Re-ordering
 
-#### Helpers
+By default, patterns will be ordered alphabetically by filename. If you'd like to control the order, you can prefix folders and/or filenames with digits and a dash:
 
-* Any handlebars helper function defined and exported in the `templateHelpers.js` script in the patterns source root is available to all patterns and partials.
+```
+01-unordered-list.hbs
+02-ordered-list.hbs
+definition-list.hbs
+```
 
-#### Data (More Advanced)
+### Including patterns in patterns
 
-You can use data in partials if you desire.
+Any pattern can include any other pattern within it as a partial by its parent directory and filename. So if you wanted to include the `components/forms/search.hbs` pattern in another, you can do so:
 
-* Global data lives in the `source/data` directory in JSON files. This data is namespaced by JSON filename (e.g. `foo.json` is available on the `foo` object) and available to all templates.
-* Local data is available by creating a JSON file with the same name as the pattern it's for, in the same directory. Properties from local data are available at the top level.
-* Local data will supersede global data in the case of a namespace conflict.
+```hbs
+<div>
+  <h3>Search form</h3>
+  {{> forms/search }}
+</div>
+```
 
-##### Pre-defined Data
+### "Hidden" patterns
+
+If you'd like to hide a pattern from the navigation and styleguide, prefix it with an underscore (`_`). These patterns can still be included like any other:
+
+```hbs
+{{> components/_header }}
+```
+
+### Pages
+
+There is a special type of pattern organized in the `source/patterns/pages` directory. This is intended for full, self-contained pages and will not be output with the pattern library header, footer or navigation. Otherwise, they behave and have all the capabilities of any other pattern.
+
+## Including data
+
+If you've mastered the basics of pattern organization, you may find instances where it would be helpful to have some placeholder or other types of data in your templates.
+
+Global data lives in the `source/data` directory in JSON files. This data is namespaced by JSON filename (e.g. `foo.json` is available on the `foo` object) and available to all templates.
+
+Local data is available by creating a JSON file with the same name as the pattern it's for, in the same directory. Properties from local data are available at the top level.
+
+Local data will supersede global data in the case of a namespace conflict.
+
+### Pre-defined Data
 
 The following variables are available to patterns and templates:
 
 * `{{ pathRoot }}`: is available to patterns to create a relative path to the top of the pattern library.
 * `{{ dirName }}`: Name of the "page" or immediate parent directory, formatted in the same way that nav items are. Used to create page titles. Note that the top-level page is currently hard-coded to be named 'Welcome' (not 'Patterns' as it would be without hard-coding it).
 
-#### Front Matter
+### Front Matter
 
 You can use YAML front matter in patterns. Here's what you can use and what it does:
 
@@ -46,7 +73,7 @@ You can use YAML front matter in patterns. Here's what you can use and what it d
 * `showSource`: Render syntax-highlighted source (default `true`). Set to `false` to hide source for a pattern.
 * `showHeader`: Render the pattern's name and description (default `true`). Set to `false` to hide the name and description for a given pattern.
 
-##### Example
+#### Example
 
 ```
 ---
@@ -59,7 +86,11 @@ description: This pattern does this for this reason so you want to use it in thi
 
 YAML front matter goes at the top of `.hbs` files as in the example above.
 
-#### The somewhat-special "welcome" pattern
+## <del>Dangerous</del> Advanced topics
+
+> Perhaps ye knows too much... ye've seen the cursed treasure, you know where it be hidden. Now proceed at your own risk. These be the last 'friendly' words ye'll hear. Ye may not survive to pass this way again...
+
+### The somewhat-special "welcome" pattern
 
 There is only one non-hidden pattern at the root level (at the start of things, anyway). This is `welcome.hbs` and by default it is set to hide its heading and source. You can use it as a place to put content you'd like to render on a landing page.
 
