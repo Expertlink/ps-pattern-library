@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
+    VSE Responsive Pilot Pattern Library{{#unless nav.isHome}}: {{ dirName }}{{/unless}}
   </title>
     <!-- CSS Goes here -->
     <link href="{{ pathRoot }}/vendor/normalize.css" rel="stylesheet">
