@@ -4,6 +4,7 @@ var util            = require('gulp-util');
 var through         = require('through2');
 var path            = require('path');
 var _               = require('underscore');
+var moment          = require('moment');
 var settings        = require('../settings');
 var patternFileName = require('./util').patternFileName;
 var patternId       = require('./util').patternId;
@@ -31,6 +32,7 @@ module.exports = function (options) {
     file[options.property] = _.extend({
       name        : patternFileName(file.path),
       filename    : path.basename(file.path),
+      compileTime : moment().format(settings.dateFormat),
       link        : path.basename(file.path, '.hbs') + '.html',
       description : '',
       id          : patternId(file.path),
