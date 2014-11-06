@@ -226,7 +226,57 @@ a.c4-header__title-segment {
   }
 }
 
-/* Welcome/showcase */
+/* Welcome */
+
+.c4-welcome {
+  background-color: $gray-lighter;
+  color: $gray-medium !important;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+
+  &,
+  > * {
+    font-family: $sans !important;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-md) {
+    border-radius: 0.5rem;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    max-width: 36rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    color: $gray-dark !important;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 1rem 0 0.25em;
+  }
+
+  p {
+    color: inherit !important;
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: $blue !important;
+    text-decoration: none;
+  }
+}
 
 /* Patterns */
 
