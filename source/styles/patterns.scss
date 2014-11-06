@@ -395,6 +395,62 @@ a.c4-header__title-segment {
 
 /* Pages */
 
+.c4-page-tile {
+  background-color: $gray-lighter;
+  box-sizing: border-box;
+  height: 10rem;
+  font-family: $sans !important;
+  margin: 1rem;
+  position: relative;
+  width: auto;
+
+  @media (min-width: $screen-md) {
+    float: left;
+    margin: 1.5rem;
+    width: 20rem;
+  }
+
+  iframe {
+    border: 0;
+    height: 200%;
+    width: 200%;
+
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+
+  a {
+    bottom: 0;
+    box-shadow: inset 0 0 0 2px rgba(#000, 0.05);
+    color: $blue !important;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+
+    span {
+      background-color: $gray-lighter;
+      background-color: rgba($gray-lighter, 0.9);
+      bottom: 0;
+      display: block;
+      left: 0;
+      padding: 1rem;
+      position: absolute;
+      right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        background-color: rgba(darken($gray-lighter, 3%), 0.9);
+        color: darken($blue, 3%) !important;
+      }
+    }
+  }
+}
+
 /* Footer */
 
 .c4-footer {
