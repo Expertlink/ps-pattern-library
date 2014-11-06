@@ -20,7 +20,13 @@
 * Global data lives in the `source/data` directory in JSON files. This data is namespaced by JSON filename (e.g. `foo.json` is available on the `foo` object) and available to all templates.
 * Local data is available by creating a JSON file with the same name as the pattern it's for, in the same directory. Properties from local data are available at the top level.
 * Local data will supersede global data in the case of a namespace conflict.
-* The variable `{{ pathRoot }}` is available to patterns to create a relative path to the top of the pattern library.
+
+##### Pre-defined Data
+
+The following variables are available to patterns and templates:
+
+* `{{ pathRoot }}`: is available to patterns to create a relative path to the top of the pattern library.
+* `{{ dirName }}`: Name of the "page" or immediate parent directory, formatted in the same way that nav items are. Used to create page titles. Note that the top-level page is currently hard-coded to be named 'Welcome' (not 'Patterns' as it would be without hard-coding it).
 
 #### Front Matter
 

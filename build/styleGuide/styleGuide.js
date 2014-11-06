@@ -45,7 +45,8 @@ module.exports =  function() {
     var destPath        = dirPath.replace(pathPattern, '');
     var templateContext = {
       nav      : pathData.nav,
-      pathRoot : pathData.pathRoot
+      pathRoot : pathData.pathRoot,
+      dirName : pathData.name
     };
     var templateOptions = {
       partialsDir: settings.paths.partials,
