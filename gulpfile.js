@@ -6,7 +6,8 @@ var settings = require('./build/settings');
 var watchers = {};
 
 var taskModules = ['browserSync',
-                   'styles'];
+                   'styles',
+                   'watch'];
 /**
  * Task modules should be in build/gulp/tasks
  */
@@ -30,13 +31,6 @@ gulp.task('styleGuide', [], require(settings.paths.styleGuide + '/styleGuide'));
  gulp.task('vendor', function() {
    return gulp.src(settings.src.vendor)
      .pipe(gulp.dest(settings.dest.vendor));
- });
- gulp.task('watch', function() {
-   gulp.watch(settings.src.assets,    ['assets']);
-   gulp.watch(settings.src.patterns,  ['styleGuide']);
-   gulp.watch(settings.src.templates, ['styleGuide']);
-   gulp.watch(settings.src.styles,    ['styles']);
-   gulp.watch(settings.src.vendor,    ['vendor']);
  });
 
 /**
