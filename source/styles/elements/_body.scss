@@ -1,5 +1,11 @@
-body, .c4-pattern-body {
+* {
+  outline:none;
+}
+body {
   font: 400 $font-base $sans-serif;
   background: white;
   color: $grey-dark;
+}
+img, video, object {
+  max-width: 100%;
 }
