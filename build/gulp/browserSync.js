@@ -7,6 +7,7 @@ module.exports = function() {
   browserSync({
     server: {
       baseDir: settings.paths.static
-    }
+    },
+    notify: false
   });
 };
