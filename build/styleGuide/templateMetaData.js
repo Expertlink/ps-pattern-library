@@ -11,7 +11,13 @@ var patternFileName = require('./util').patternFileName;
 var patternId       = require('./util').patternId;
 var escape          = require('escape-html');
 var pathRoot        = require('./util').pathRoot;
+var metaData        = require('./templateUtil').metaData;
 
+/**
+ * This gulp PLUGIN sets reasonable defaults on a file
+ * object's meta property (or whatever is passed as options.property)
+ * YAML should already have been stripped from the file when it gets here
+ */
 module.exports = function (options) {
   options = _.extend({
     property: 'meta'
@@ -30,18 +36,11 @@ module.exports = function (options) {
       this.emit('error', new util.PluginError('Template Data', 'Streaming not supported'));
       return cb();
     }
-    file[options.property] = _.extend({
-      compileTime : moment().format(settings.dateFormat),
-      description : '',
-      filename    : path.basename(file.path),
-      id          : patternId(file.path),
-      link        : path.basename(file.path, '.hbs') + '.html',
-      name        : patternFileName(file.path),
-      showHeading : true,
-      showSource  : true,
-      source      : escape(file.contents.toString())
-    }, file.meta || {});
-    file[options.property].description = marked(file[options.property].description);
+    file[options.property] = metaData(file.path, {
+      format: true,
+      meta: file[options.property],
+      contents: file.contents.toString()
+    });
     this.push(file);
     cb();
   });
