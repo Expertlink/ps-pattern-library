@@ -25,5 +25,5 @@ var auth = function (req, res, next) {
 };
 
 app.use(auth);
-app.use(express.static('dist'));
+app.use(express.static('../dist'));
 app.listen(process.env.PORT || settings.port);
