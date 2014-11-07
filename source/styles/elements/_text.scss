@@ -13,7 +13,10 @@
 .text-muted {
   opacity: 0.6;
 }
-
+.text-caption {
+  text-align: center;
+  font-size: $font-small;
+}
 
 p {
   font: 400 $font-base $sans-serif;
