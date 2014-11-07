@@ -1,9 +1,9 @@
 'use strict';
 var express  = require('express'),
-    settings = require('./build-settings');
+    settings = require('./heroku-server');
 
 var app            = express();
-var basicAuth = require('basic-auth');
+var basicAuth      = require('basic-auth');
 
 var auth = function (req, res, next) {
     function unauthorized(res) {
@@ -17,7 +17,7 @@ var auth = function (req, res, next) {
         return unauthorized(res);
     }
 
-    if (user.name === settings.server.username && user.pass === settings.server.password) {
+    if (user.name === settings.username && user.pass === settings.password) {
         return next();
     } else {
         return unauthorized(res);
@@ -25,5 +25,5 @@ var auth = function (req, res, next) {
 };
 
 app.use(auth);
-app.use(express.static(settings.paths.out));
-app.listen(process.env.PORT || settings.server.port);
+app.use(express.static('dist'));
+app.listen(process.env.PORT || settings.port);
