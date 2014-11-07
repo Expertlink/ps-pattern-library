@@ -1,0 +1,71 @@
+.bdr {
+  border-width: 1px;
+}
+.bdr-bottom-dotted {
+  border-bottom: 1px dotted $tan;
+  padding-bottom: 0.5em;
+}
+
+.box {
+  display:block; 
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  p:last-of-type {
+    margin-bottom:0;
+  }
+}
+
+.box-border {
+  border: 2px solid $blue;
+  border-radius: 0.5em;
+}
+
+.box-drop-shadow {
+  box-shadow: 5px 5px 5px #ececec;
+  border: 1px solid #d4ddde;
+}
+
+.box-bottom-stars, .box-top-flourish {
+  border:1px solid $blue-grey;
+  position: relative;
+  &:before, > *:first-of-type:after, > *:last-of-type:after {
+    position: absolute;
+    display: block;
+    text-indent: -20em;
+    overflow:hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+.box-bottom-stars {  
+  > *:first-of-type:after, > *:last-of-type:after {
+    content:"*";
+    bottom: -0.8em;
+    width: 2em;
+    height: 2em;
+  }
+  > *:first-of-type:after {
+    right: -0.8em;
+    background-image: url(/images/fleurons/star-corner-red.svg);
+  }
+  > *:last-of-type:after {
+    left: -0.8em;
+    background-image: url(/images/fleurons/star-corner-orange.svg);
+  }
+}
+
+.box-top-flourish {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  &:before {
+    content: "***";
+    width: 12em;
+    height: 3em;
+    top: -1.5em;
+    left: 50%;
+    margin-left: -6em;
+    background-image: url(/images/fleurons/top-flourish.png);
+  }
+}

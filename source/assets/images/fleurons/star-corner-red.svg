@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="50px" height="50px" viewBox="-0.583 -0.583 50 50"
+	 overflow="visible" enable-background="new -0.583 -0.583 50 50" xml:space="preserve">
+<defs>
+</defs>
+<radialGradient id="SVGID_1_" cx="24.417" cy="24.417" r="24.417" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.5153" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+</radialGradient>
+<circle fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" cx="24.417" cy="24.417" r="24.417"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#B85D57" d="M27.477,27.782l3.489,18.691l-8.102-17.365L8.468,40.842
+	l10.803-15.118l-17.896-6.96l18.891,2.269L16.764,2.36l8.104,17.37L39.262,7.974L28.485,23.099l17.889,6.97L27.477,27.782z
+	 M25.136,25.533l6.498,0.828l-6.16-2.455l3.742-5.201l-4.968,4.064l-2.813-5.946l1.21,6.442l-6.496-0.776l6.138,2.429l-3.636,5.063
+	l4.854-3.945l2.776,5.85L25.136,25.533z"/>
+<path fill="#B85D57" d="M22.785,29.457L8.606,41.012l-0.317-0.298l10.639-14.888L1.294,18.968L1.4,18.545l18.593,2.233L16.548,2.401
+	l0.415-0.133l7.984,17.114L39.122,7.804l0.318,0.297L28.827,22.997l17.627,6.867l-0.106,0.423l-18.601-2.251l3.435,18.397
+	l-0.415,0.133L22.785,29.457z M44.673,29.643l-16.531-6.441l9.992-14.022l-13.346,10.9L17.3,4.03l3.236,17.257L3.074,19.189
+	l16.539,6.432L9.599,39.637l13.127-10.698l0.218-0.179l7.488,16.05l-3.226-17.281L44.673,29.643z M23.426,26.383l-4.637,3.77
+	l-0.317-0.299l3.472-4.835l-5.876-2.325l0.107-0.422l6.199,0.741l-1.155-6.148l0.414-0.134l2.693,5.692l4.751-3.886l0.316,0.298
+	l-3.577,4.972l5.899,2.351l-0.109,0.422l-6.201-0.79l1.092,6.058l-0.415,0.133L23.426,26.383z M29.945,25.925l-4.813-1.918
+	l2.93-4.073l-3.893,3.185l-2.204-4.659l0.951,5.061l-5.111-0.611l4.824,1.909l-2.841,3.956l3.795-3.084l2.189,4.612l-0.905-5.024
+	L29.945,25.925z"/>
+</svg>
