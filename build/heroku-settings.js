@@ -2,6 +2,6 @@
 
 module.exports = {
   port: 3000,
-  username: 'cloudfour',
-  password: 'c4heroku'
+  username: 'vse',
+  password: 'patterns4eva'
 };
