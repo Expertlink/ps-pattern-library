@@ -5,6 +5,7 @@
   },
   "paths": {
     "data"       : "./source/data",
+    "dist"       : "./dist",
     "gulpTasks"  : "./build/gulp",
     "partials"   : "./source/patterns",
     "patterns"   : "./source/patterns",
@@ -22,6 +23,7 @@
     "patterns"    : "./source/patterns/**/*.hbs",
     "patternDirs" : "./source/patterns/**/*",
     "assets"      : "./source/assets/**/*",
+    "static"      : "./static/**",
     "styles"      : "./source/styles/**/*.scss",
     "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*"

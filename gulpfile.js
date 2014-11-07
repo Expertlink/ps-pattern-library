@@ -18,21 +18,25 @@ taskModules.forEach(function(task) {
 });
 
 /**
- * Style guide support
+ * Style guide support. Keeping this separate because it's its own thing.
  */
 gulp.task('styleGuide', [], require(settings.paths.styleGuide + '/styleGuide'));
+
 /**
  * Simple tasks not worthy of module
  */
- gulp.task('assets', function() {
-   return gulp.src(settings.src.assets)
-     .pipe(gulp.dest(settings.dest.assets));
- });
- gulp.task('vendor', function() {
-   return gulp.src(settings.src.vendor)
-     .pipe(gulp.dest(settings.dest.vendor));
- });
-
+gulp.task('assets', function() {
+  return gulp.src(settings.src.assets)
+    .pipe(gulp.dest(settings.dest.assets));
+});
+gulp.task('vendor', function() {
+  return gulp.src(settings.src.vendor)
+    .pipe(gulp.dest(settings.dest.vendor));
+});
+gulp.task('dist', function() {
+  return gulp.src(settings.src.static)
+    .pipe(gulp.dest(settings.paths.dist));
+});
 /**
  * Composite tasks
  */

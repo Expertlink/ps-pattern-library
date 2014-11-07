@@ -31,6 +31,7 @@ module.exports.buildNav = function buildNav(currentDir) {
     });
     /**
      * Flesh out the information object about each of these content dirs
+     * These are the actual nav elements here. 
      */
     contentDirs = contentDirs.map(function(contentDir) {
       var link = dir + '/' + contentDir;

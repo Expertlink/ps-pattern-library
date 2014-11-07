@@ -34,6 +34,23 @@ To quit the process, tap `ctrl`+`c` with your terminal focused.
 
 See [the README in source/patterns](source/patterns).
 
+## Build and Deploy
+
+https://vse-responsive-pilot.herokuapp.com
+
+### Pre-Requisites
+
+* You need to be a collaborator or better on the heroku project `vse-responsive-pilot`
+* You need to have the heroku remote set up
+
+
+### Do It
+
+* `$ gulp dist`
+* `$ git commit` (Commit the dist build)
+* `$ git push heroku`
+
+
 ## Troubleshooting
 
 Having trouble running the `gulp` command?
