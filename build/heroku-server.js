@@ -1,6 +1,6 @@
 'use strict';
 var express  = require('express'),
-    settings = require('./heroku-server');
+    settings = require('./heroku-settings');
 
 var app            = express();
 var basicAuth      = require('basic-auth');
@@ -8,7 +8,7 @@ var basicAuth      = require('basic-auth');
 var auth = function (req, res, next) {
     function unauthorized(res) {
         res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
-        return res.send(401);
+        return res.sendStatus(401);
     }
 
     var user = basicAuth(req);
@@ -25,5 +25,5 @@ var auth = function (req, res, next) {
 };
 
 app.use(auth);
-app.use(express.static('../dist'));
-app.listen(process.env.PORT || settings.port);
+app.use(express.static('dist'));
+app.listen(process.env.PORT || 3000);
