@@ -61,11 +61,12 @@
   padding-top: 1.5em;
   &:before {
     content: "***";
-    width: 12em;
     height: 3em;
-    top: -1.5em;
+    top: -1.25em;
     left: 50%;
+    width: 12em;
     margin-left: -6em;
-    background-image: url(/images/fleurons/top-flourish.png);
+    background-image: url(/images/fleurons/top-flourish.svg);
+    background-size: auto 100%;
   }
 }
