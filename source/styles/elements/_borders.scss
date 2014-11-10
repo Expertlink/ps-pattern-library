@@ -79,3 +79,21 @@
   margin-right: -2.4em;
 
 }
+
+.box-scroll-bottom, .box-scroll-top {
+  background-image: url(/images/fleurons/scroll.svg), url(/images/fleurons/scroll.svg);
+  background-repeat: repeat-x, repeat-x;
+}
+
+.box-scroll-bottom {
+  background-position: -5px bottom;
+  padding-bottom: 30px;
+}
+
+.box-scroll-top {
+  background-position: -5px top;
+  padding-top: 30px;
+}
+.box-scroll-bottom.box-scroll-top {
+  background-position: -5px bottom, -5px top;
+}
