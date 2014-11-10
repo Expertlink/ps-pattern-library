@@ -17,10 +17,48 @@
   text-align: center;
   font-size: $font-small;
 }
+.text-small {
+  font-size: $font-small;
+}
 
 p {
   font: 400 $font-base $sans-serif;
   margin: 0 0 1.15em;
   line-height: 1.3em;
   color: $grey-dark;
+}
+
+strong, bold, b {
+  font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+blockquote {
+  display:block;
+  border-top: 1px dotted $tan;
+  border-bottom: 1px dotted $tan;
+  padding: 1em 2em;
+  margin: 0 0 1.15em;
+  line-height: 1.3em;
+}
+
+quote, .text-quote {
+  display: block;
+  color: $red;
+  font-weight: bold;
+  font-style: italic;
+  text-align:center;
+  line-height: 1.3em;
+  padding: 1em 2em 0;
+}
+cite, .text-cite {
+  text-align:center;
+  display:block;
+  font-style: normal;
+  line-height: 1.3em;
+  margin: 0 0 1.15em;
+  padding: 0 2em;
 }
