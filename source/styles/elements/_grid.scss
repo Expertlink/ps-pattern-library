@@ -19,13 +19,6 @@
 
 // on everything but the narrowests of screens, columns get some left and right padding
 @media only screen and (min-width: $bp-xs) {
-  .xs-column {
-    float:left;
-    clear:none;
-    &.col-last {
-      float: right;
-    }
-  }
   .col {
     padding: 0 $gap;
   }
@@ -38,6 +31,13 @@
   .col > .grid {
     margin-left: -($gap);
     margin-right: -($gap);
+  }
+  .xs-column {
+    float:left;
+    clear:none;
+    &.col-last {
+      float: right;
+    }
   }
   .col-4of12, .col-6of12, .col-8of12 {
     @extend .xs-column;
