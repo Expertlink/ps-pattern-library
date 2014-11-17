@@ -1,9 +1,12 @@
+// Core variables
 @import "base/variables";
-@import "base/helpers";
 
-@import "elements/body";
+// Dependencies
+@import "vendor/bootstrap-custom";
+
+/*
+@import "base/helpers";
 @import "elements/text";
-@import "elements/links";
 @import "elements/headings";
 @import "elements/forms";
 @import "elements/buttons";
@@ -11,4 +14,4 @@
 @import "elements/icons";
 @import "elements/borders";
 @import "elements/logo";
-@import "elements/grid";
+*/

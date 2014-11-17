@@ -1,36 +1,58 @@
-$grey: #84796d;
-$grey-dark: #333;
-$grey-medium: #bbb;
-$grey-light: #d4ddde;
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+
+$gray-dark: #333;
+$gray: #84796d;
+$gray-light: #bbb;
+$gray-lighter: #d4ddde;
+
 $red: #bf4646;
 $red-bright: #e33c3c;
 $red-dark: #8b1d3a;
-$red-very-dark: #531917;
+$red-darker: #531917;
+
 $tan: #d8c3a7;
 $tan-light: #feeed7;
+
 $orange: #f87f25;
 $orange-light: #fdf6e4;
+
 $blue: #3d6682;
 $blue-light: #aec1c4;
 $blue-dark: #205072;
-$blue-grey: #89a5a8;
+$blue-gray: #89a5a8;
+
 $teal: #44a6d4;
+
 $green: #390;
 
-$sans-serif: Verdana, Arial, sans-serif;
-$cursive: 'Dancing Script',cursive;
+//== Scaffolding
 
-$font-xsmall: 0.8em;
-$font-small: 0.9em;
-$font-base: 13px;
-$font-large: 1.3em;
-$font-xlarge: 1.6em;
-$font-xxlarge: 2em;
+$link-color: $red-dark;
+$link-hover-color: $red-bright;
+$link-hover-decoration: none;
 
-$gap: 10px;
+//== Typography
 
-$bp-xs: 24em;
-$bp-sm: 32em;
-$bp-med: 58em;
-$bp-lg: 69em;
-$bp-xl: 75em;
+$font-family-sans-serif: Verdana, Arial, sans-serif;
+$font-family-cursive: 'Dancing Script', cursive;
+
+$font-size-base: 13px;
+
+/* \$font-xsmall: 0.8em;
+\$font-small: 0.9em;
+\$font-base: 13px;
+\$font-large: 1.3em;
+\$font-xlarge: 1.6em;
+\$font-xxlarge: 2em;
+
+\$gap: 10px;
+
+\$bp-xs: 24em;
+\$bp-sm: 32em;
+\$bp-med: 58em;
+\$bp-lg: 69em;
+\$bp-xl: 75em; */
