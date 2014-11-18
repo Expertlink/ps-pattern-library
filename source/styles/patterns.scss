@@ -523,3 +523,16 @@ a.c4-header__title-segment {
     display: none;
   }
 }
+
+/* Demo styles */
+
+.demo-show-grid {
+  margin-bottom: 1em;
+
+  [class^=col-] {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-light;
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+}
