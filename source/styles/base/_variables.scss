@@ -29,6 +29,8 @@ $teal: #44a6d4;
 
 $green: #390;
 
+$brand-primary: $red;
+
 //== Scaffolding
 
 $link-color: $red-dark;
@@ -42,13 +44,26 @@ $font-family-cursive: 'Dancing Script', cursive;
 
 $font-size-base: 13px;
 
-/* \$font-xsmall: 0.8em;
-\$font-small: 0.9em;
-\$font-base: 13px;
-\$font-large: 1.3em;
-\$font-xlarge: 1.6em;
-\$font-xxlarge: 2em;
+$headings-font-weight: bold;
 
+$font-size-h1: 1.6em;
+$font-size-h2: 1.3em;
+$font-size-h3: 1.3em;
+$font-size-h4: 1em;
+$font-size-h5: 1em;
+$font-size-h6: 1em;
+
+//== Form states and alerts
+
+$state-success-text: $green;
+
+$state-info-text: $teal;
+
+$state-warning-text: $orange;
+
+$state-danger-text: $red;
+
+/*
 \$gap: 10px;
 
 \$bp-xs: 24em;
