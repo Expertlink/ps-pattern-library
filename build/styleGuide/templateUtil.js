@@ -59,7 +59,7 @@ module.exports.metaData = function metaData(filePath, options) {
   if (options.format) {
     data.description = marked(data.description);
     if (options.contents) {
-      data.source = escape(options.contents);
+      data.source = escape(options.contents).trim();
     }
   }
   return data;
