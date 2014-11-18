@@ -1,0 +1,153 @@
+.box {
+  border: 1px solid transparent;
+  border-radius: $border-radius-large;
+  margin-bottom: ($line-height-computed / 2);
+  padding: ($line-height-computed / 2) $line-height-computed;
+  position: relative;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//== Sizes
+
+.box-md {
+  padding: $line-height-computed;
+}
+
+//== Colors
+
+.box-em {
+  border-color: $blue;
+}
+
+.box-em-light {
+  border-color: $blue-gray;
+}
+
+.box-light {
+  border-color: $gray-light;
+}
+
+//== Style variants
+
+.box-thick {
+  border-width: 2px;
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+.box-leaf-tr {
+  background: transparent url(/images/fleurons/top-right-leaf.svg) top right no-repeat;
+  background-size: 23em auto;
+  margin-right: -2.4em;
+  padding-right: 4em;
+  padding-top: 2.8em;
+}
+
+.box-scroll:before,
+.box-scroll:after,
+.box-scroll-top:before,
+.box-scroll-bottom:after {
+  background: url(/images/fleurons/scroll.svg) center repeat-x;
+  content: '';
+  display: block;
+  height: 30px;
+  margin: ($line-height-computed / 2) ($line-height-computed * -1);
+  width: auto;
+}
+
+//== Inner fleurons
+
+%fleuron {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+  &.top,
+  &.right,
+  &.bottom,
+  &.left {
+    position: absolute;
+  }
+  &.top,
+  &.bottom {
+    left: 50%;
+  }
+  &.top {
+    top: 0;
+  }
+  &.right {
+    right: 0;
+    left: auto;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+}
+
+.fleuron-star,
+.fleuron-star-alt {
+  @extend %fleuron;
+  height: 2em;
+  width: 2em;
+
+  &.top,
+  &.bottom {
+    margin-left: -1em;
+  }
+  &.top {
+    margin-top: -0.8em;
+  }
+  &.right {
+    margin-left: auto;
+    margin-right: -0.8em;
+  }
+  &.bottom {
+    margin-bottom: -0.8em;
+  }
+  &.left {
+    margin-left: -0.8em;
+  }
+}
+
+.fleuron-star {
+  background-image: url(/images/fleurons/star-corner-orange.svg);
+}
+
+.fleuron-star-alt {
+  background-image: url(/images/fleurons/star-corner-red.svg);
+}
+
+.fleuron-star-wide {
+  @extend %fleuron;
+  background-image: url(/images/fleurons/top-flourish.svg);
+  height: 3em;
+  width: 12em;
+
+  &.top,
+  &.bottom {
+    margin-left: -6em;
+  }
+  &.top {
+    margin-top: -1.25em;
+  }
+  &.right {
+    margin-left: auto;
+    margin-right: 1em;
+  }
+  &.bottom {
+    margin-bottom: -1.25em;
+  }
+  &.left {
+    margin-left: 1em;
+  }
+}
