@@ -62,7 +62,7 @@
 
 //== Inner fleurons
 
-%fleuron {
+%fleuron-base {
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -79,6 +79,10 @@
   &.bottom {
     left: 50%;
   }
+  &.right,
+  &.left {
+    top: 50%;
+  }
   &.top {
     top: 0;
   }
@@ -87,6 +91,7 @@
     left: auto;
   }
   &.bottom {
+    top: auto;
     bottom: 0;
   }
   &.left {
@@ -94,60 +99,72 @@
   }
 }
 
-.fleuron-star,
-.fleuron-star-alt {
-  @extend %fleuron;
-  height: 2em;
-  width: 2em;
+@mixin fleuron (
+  $width,
+  $height: null,
+  $url: false,
+  $edge-adjust-x: 0,
+  $edge-adjust-y: 0
+) {
+
+  @if $height == null {
+    $height: $width;
+  }
+
+  @extend %fleuron-base;
+
+  width: $width;
+  height: $height;
+
+  @if $url {
+    background-image: url($url);
+  }
 
   &.top,
   &.bottom {
-    margin-left: -1em;
+    margin-left: ($width / -2);
+  }
+  &.right,
+  &.left {
+    margin-top: ($height / -2);
   }
   &.top {
-    margin-top: -0.8em;
+    margin-top: ($height / -2 + $edge-adjust-y);
   }
   &.right {
+    margin-right: ($width / -2 + $edge-adjust-x);
     margin-left: auto;
-    margin-right: -0.8em;
   }
   &.bottom {
-    margin-bottom: -0.8em;
+    margin-top: auto;
+    margin-bottom: ($height / -2 + $edge-adjust-y);
   }
   &.left {
-    margin-left: -0.8em;
+    margin-left: ($width / -2 + $edge-adjust-x);
   }
 }
 
-.fleuron-star {
-  background-image: url(/images/fleurons/star-corner-orange.svg);
-}
-
+.fleuron-star,
 .fleuron-star-alt {
-  background-image: url(/images/fleurons/star-corner-red.svg);
+  @include fleuron(
+    $width: 2em,
+    $edge-adjust-x: 0.15em,
+    $edge-adjust-y: 0.1em
+  );
+}
+.fleuron-star {
+  background-image: url('/images/fleurons/star-corner-orange.svg');
+}
+.fleuron-star-alt {
+  background-image: url('/images/fleurons/star-corner-red.svg');
 }
 
 .fleuron-star-wide {
-  @extend %fleuron;
-  background-image: url(/images/fleurons/top-flourish.svg);
-  height: 3em;
-  width: 12em;
-
-  &.top,
-  &.bottom {
-    margin-left: -6em;
-  }
-  &.top {
-    margin-top: -1.25em;
-  }
-  &.right {
-    margin-left: auto;
-    margin-right: 1em;
-  }
-  &.bottom {
-    margin-bottom: -1.25em;
-  }
-  &.left {
-    margin-left: 1em;
-  }
+  @include fleuron(
+    $width: 12em,
+    $height: 3em,
+    $url: '/images/fleurons/top-flourish.svg',
+    $edge-adjust-x: 6.5em,
+    $edge-adjust-y: 0.2em
+  );
 }
