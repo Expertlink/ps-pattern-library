@@ -1,62 +1,11 @@
-button, input[type="submit"], .btn {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-decoration: none;
-  border: 1px solid $grey;
-  border-radius: 0.8em;
-  font-weight: bold;
-  background: $red;
-  background: linear-gradient(to bottom, #d68f79 0%, #be4645 100%);
-  color: white;
-  display: inline-block;
-  padding: 0.2em 1em 0.3em;
-  line-height: 1.2em;
-  cursor: pointer;
-  text-align:center;
-  &:hover, &:focus {
-    background: linear-gradient(to bottom, #ea927d 0%, #e34240 100%);
-  }
-}
-a.btn, a.btn:link, a.btn:hover, a.btn:visited {
-  color: white;
-}
-.btn-lg {
-  font-size: $font-large;
-}
-.btn-sm {
-  font-size: $font-xsmall;
-  font-weight: normal;
-}
-.btn-full {
-  display:block;
+// These styles extend Bootstrap's core button classes.
+
+.btn-shaded {
+  background-image: linear-gradient(to bottom, rgba(#fff, 0.15), rgba(#fff, 0) 50%, rgba(#000, 0) 50%, rgba(#000, 0.12));
 }
 
-button:disabled, input[type="submit"]:disabled, .btn-disabled, .btn-disabled:hover, .btn-disabled:focus {
-  background: linear-gradient(to bottom, lighten($grey-medium, 20%) 0%, darken($grey-medium, 20%) 100%);
-  cursor: default;
-  border-color: $grey-medium;
-}
-
-.btn-icon {
-  background: linear-gradient(to bottom, lighten($grey, 60%) 0%, lighten($grey, 40%) 100%);
-  border-color: lighten($grey, 40%);
-  border-radius: 0.4em;
-  font-size: $font-xsmall;
-  padding: 1.25em 0.5em;
-  &:hover, &:focus {
-    background: linear-gradient(to bottom, lighten($teal, 40%) 0%, lighten($teal, 10%) 100%);
-    border-color: $teal;
-  }
-}
-
-a.btn-icon, a.btn-icon:link, a.btn-icon:hover, a.btn-icon:visited {
-  color: black;
-}
-
-.btn-icon i {
-  display:inline-block;
-  width: 3em;
-  height: 3em;
-  margin: -0.75em 0.25em -0.75em 0;
-  vertical-align:middle;
+.btn-rounded {
+  border-radius: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
