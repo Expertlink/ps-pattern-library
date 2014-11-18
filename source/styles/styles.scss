@@ -1,14 +1,13 @@
+// Core variables
 @import "base/variables";
-@import "base/helpers";
 
-@import "elements/body";
-@import "elements/text";
-@import "elements/links";
-@import "elements/headings";
-@import "elements/forms";
-@import "elements/buttons";
-@import "elements/tables";
+// Dependencies
+@import "vendor/bootstrap-custom"; // see file for inclusions
+
+// Basic elements
+@import "elements/type";
 @import "elements/icons";
+@import "elements/buttons";
 @import "elements/borders";
+@import "elements/boxes";
 @import "elements/logo";
-@import "elements/grid";

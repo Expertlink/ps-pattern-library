@@ -1,99 +1,38 @@
-.bdr {
-  border-width: 1px;
-}
-.bdr-bottom-dotted {
-  border-bottom: 1px dotted $tan;
-  padding-bottom: 0.5em;
-}
-
-.box {
-  display:block; 
-  padding: 1em;
-  border-radius: 0.5em;
-  margin-bottom: 1em;
-  p:last-of-type {
-    margin-bottom:0;
-  }
+.border,
+.border-bottom,
+.border-top,
+.border-left,
+.border-right,
+.border-ends,
+.border-sides,
+.no-border {
+  border: 0 dotted $tan;
 }
 
-.box-border {
-  border: 2px solid $blue;
-  border-radius: 0.5em;
+.border,
+.border-top,
+.border-ends {
+  border-top-width: 1px;
+  padding-top: ($line-height-computed / 2);
 }
 
-.box-drop-shadow {
-  box-shadow: 5px 5px 5px #ececec;
-  border: 1px solid #d4ddde;
+.border,
+.border-right,
+.border-sides {
+  border-right-width: 1px;
+  padding-right: $line-height-computed;
 }
 
-.box-bottom-stars, .box-top-flourish {
-  border:1px solid $blue-grey;
-  position: relative;
-  &:before, > *:first-of-type:after, > *:last-of-type:after {
-    position: absolute;
-    display: block;
-    text-indent: -20em;
-    overflow:hidden;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-  }
-}
-.box-bottom-stars {  
-  > *:first-of-type:after, > *:last-of-type:after {
-    content:"*";
-    bottom: -0.8em;
-    width: 2em;
-    height: 2em;
-  }
-  > *:first-of-type:after {
-    right: -0.8em;
-    background-image: url(/images/fleurons/star-corner-red.svg);
-  }
-  > *:last-of-type:after {
-    left: -0.8em;
-    background-image: url(/images/fleurons/star-corner-orange.svg);
-  }
+.border,
+.border-bottom,
+.border-ends {
+  border-bottom-width: 1px;
+  padding-bottom: ($line-height-computed / 2);
 }
 
-.box-top-flourish {
-  margin-top: 2em;
-  padding-top: 1.5em;
-  &:before {
-    content: "***";
-    height: 3em;
-    top: -1.25em;
-    left: 50%;
-    width: 12em;
-    margin-left: -6em;
-    background-image: url(/images/fleurons/top-flourish.svg);
-    background-size: auto 100%;
-  }
-}
-
-.box-top-right-leaf {
-  background: url(/images/fleurons/top-right-leaf.svg) right 0 no-repeat transparent;
-  background-size: 23em auto;
-  padding-top: 2.8em;
-  padding-right: 4em;
-  margin-right: -2.4em;
-
-}
-
-.box-scroll-bottom, .box-scroll-top {
-  background-image: url(/images/fleurons/scroll.svg), url(/images/fleurons/scroll.svg);
-  background-repeat: repeat-x, repeat-x;
-}
-
-.box-scroll-bottom {
-  background-position: -5px bottom;
-  padding-bottom: 30px;
-}
-
-.box-scroll-top {
-  background-position: -5px top;
-  padding-top: 30px;
-}
-.box-scroll-bottom.box-scroll-top {
-  background-position: -5px bottom, -5px top;
+.border,
+.border-left,
+.border-sides {
+  border-left-width: 1px;
+  padding-left: $line-height-computed;
 }

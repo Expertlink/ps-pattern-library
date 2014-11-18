@@ -1,126 +1,22 @@
 ---
 status: inprogress
+description: This project uses the [Bootstrap grid](http://getbootstrap.com/css/#grid), allowing you to define columns [for different breakpoints](http://getbootstrap.com/css/#grid-options).
 ---
-<p>This is a 12-column grid, borrowing heavily from <a href="http://getbootstrap.com/examples/grid/">Bootstrap's grid</a>. The last column in a grid set
-should get a class of col-last to correct for rounding errors. Grids can be nested. The background colors and borders are for demonstration purposes only.</p>
-<div class="grid background-on">
-  <div class="col col-6of12">
-    This is an example of a two-column grid
-  </div>
-  <div class="col col-6of12 col-last">
-    This is an example of a  two-column grid
-  </div>
-</div>    
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row demo-show-grid">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
 
-<div class="grid background-on">
-  <div class="col col-4of12 col-pull-left">
-    This is an example of a three-column grid. This column has no left padding because sometimes we want that.
-  </div>
-  <div class="col col-4of12">
-    This is an example of a three-column grid.
-  </div>
-  <div class="col col-4of12 col-last col-pull-right">
-    This is an example of a three-column grid. This column has no right padding because sometimes we want that, too.
-  </div>
-</div>    
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row demo-show-grid">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
 
-<div class="grid background-on">
-  <div class="col col-3of12 col-first">
-    This is an example of a four-column grid
-  </div>
-  <div class="col col-3of12">
-    This is an example of a four-column grid
-  </div>
-  <div class="col col-3of12">
-    This is an example of a four-column grid
-  </div>
-  <div class="col col-3of12 col-last">
-    This is an example of a four-column grid
-  </div>
-</div>    
-
-<div class="grid background-on">
-  <div class="col col-2of12">
-    This is an example of a six-column grid
-  </div>
-  <div class="col col-2of12">
-    This is an example of a six-column grid
-  </div>
-   <div class="col col-2of12">
-    This is an example of a six-column grid
-  </div>
-  <div class="col col-2of12">
-    This is an example of a six-column grid
-  </div>
-  <div class="col col-2of12">
-    This is an example of a six-column grid
-  </div>
-  <div class="col col-2of12 col-last">
-    This is an example of a six-column grid
-  </div>
-</div>  
-
-
-<div class="grid background-on">
-  <div class="col col-8of12">
-    This is an example of a grid. The first column has more text to demonstrate float clearing. Float clearing is a real problem.  
-  </div>
-  <div class="col col-4of12 col-last">
-    This is an example of a grid
-  </div>
-</div>    
-
-<div class="grid background-on">
-  <div class="col col-8of12">
-    <div class="grid">
-     <div class="col col-6of12">
-        This is an example of a nested 2-column grid.
-      </div>
-      <div class="col col-6of12 col-last">
-        This is an example of a nested 2-column grid.
-      </div> 
-    </div>  
-  </div>
-  <div class="col col-4of12 col-last">
-    This is an example of a 2/3 1/3 two-column grid
-  </div>
-</div> 
-
-
-<div class="grid background-on">
-  <div class="col col-8of12">
-    <div class="grid">
-      <div class="col col-3of12">
-        This is an example of a nested 4-column grid.
-      </div>
-      <div class="col col-3of12">
-        This is an example of a nested 4-column grid.
-      </div>
-      <div class="col col-3of12">
-        This is an example of a nested 4-column grid.
-      </div>
-      <div class="col col-3of12 col-last">
-        This is an example of a nested 4-column grid.
-      </div> 
-    </div>  
-  </div>
-  <div class="col col-4of12 col-last">
-    This is an example of a 2/3 1/3 two-column grid
-  </div>
-</div> 
-
-
-<div class="grid background-on">
-  <div class="col col-1of12">
-    There are all sorts of columns widths in here.
-  </div>
-  <div class="col col-3of12">
-    There are all sorts of columns widths in here.
-  </div>
-   <div class="col col-7of12">
-    There are all sorts of columns widths in here.
-  </div>
-  <div class="col col-1of12 col-last">
-    There are all sorts of columns widths in here.
-  </div>
-</div>    
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row demo-show-grid">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>

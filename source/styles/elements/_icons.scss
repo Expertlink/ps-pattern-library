@@ -1,14 +1,21 @@
-.icon {
-  display:inline-block;
+// TODO: Determine sustainable icon solution
+
+[class^=icon-] {
+  display: inline-block;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 100% auto;
+  background-size: contain;
+  vertical-align: middle;
 }
 
-.icon-fave-add {
+.icon-fave {
   background-image: url(/images/icons/icon-fave-add.svg);
+  height: 32px;
+  width: 32px;
 }
 
+.active > .icon-fave,
+.icon-fave.active,
 .icon-fave-remove {
   background-image: url(/images/icons/icon-fave-remove.svg);
 }

@@ -1,0 +1,170 @@
+.box {
+  border: 1px solid transparent;
+  border-radius: $border-radius-large;
+  margin-bottom: ($line-height-computed / 2);
+  padding: ($line-height-computed / 2) $line-height-computed;
+  position: relative;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//== Sizes
+
+.box-md {
+  padding: $line-height-computed;
+}
+
+//== Colors
+
+.box-em {
+  border-color: $blue;
+}
+
+.box-em-light {
+  border-color: $blue-gray;
+}
+
+.box-light {
+  border-color: $gray-light;
+}
+
+//== Style variants
+
+.box-thick {
+  border-width: 2px;
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+.box-leaf-tr {
+  background: transparent url(/images/fleurons/top-right-leaf.svg) top right no-repeat;
+  background-size: 23em auto;
+  margin-right: -2.4em;
+  padding-right: 4em;
+  padding-top: 2.8em;
+}
+
+.box-scroll:before,
+.box-scroll:after,
+.box-scroll-top:before,
+.box-scroll-bottom:after {
+  background: url(/images/fleurons/scroll.svg) center repeat-x;
+  content: '';
+  display: block;
+  height: 30px;
+  margin: ($line-height-computed / 2) ($line-height-computed * -1);
+  width: auto;
+}
+
+//== Inner fleurons
+
+%fleuron-base {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+  &.top,
+  &.right,
+  &.bottom,
+  &.left {
+    position: absolute;
+  }
+  &.top,
+  &.bottom {
+    left: 50%;
+  }
+  &.right,
+  &.left {
+    top: 50%;
+  }
+  &.top {
+    top: 0;
+  }
+  &.right {
+    right: 0;
+    left: auto;
+  }
+  &.bottom {
+    top: auto;
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+}
+
+@mixin fleuron (
+  $width,
+  $height: null,
+  $url: false,
+  $edge-adjust-x: 0,
+  $edge-adjust-y: 0
+) {
+
+  @if $height == null {
+    $height: $width;
+  }
+
+  @extend %fleuron-base;
+
+  width: $width;
+  height: $height;
+
+  @if $url {
+    background-image: url($url);
+  }
+
+  &.top,
+  &.bottom {
+    margin-left: ($width / -2);
+  }
+  &.right,
+  &.left {
+    margin-top: ($height / -2);
+  }
+  &.top {
+    margin-top: ($height / -2 + $edge-adjust-y);
+  }
+  &.right {
+    margin-right: ($width / -2 + $edge-adjust-x);
+    margin-left: auto;
+  }
+  &.bottom {
+    margin-top: auto;
+    margin-bottom: ($height / -2 + $edge-adjust-y);
+  }
+  &.left {
+    margin-left: ($width / -2 + $edge-adjust-x);
+  }
+}
+
+.fleuron-star,
+.fleuron-star-alt {
+  @include fleuron(
+    $width: 2em,
+    $edge-adjust-x: 0.15em,
+    $edge-adjust-y: 0.1em
+  );
+}
+.fleuron-star {
+  background-image: url('/images/fleurons/star-corner-orange.svg');
+}
+.fleuron-star-alt {
+  background-image: url('/images/fleurons/star-corner-red.svg');
+}
+
+.fleuron-star-wide {
+  @include fleuron(
+    $width: 12em,
+    $height: 3em,
+    $url: '/images/fleurons/top-flourish.svg',
+    $edge-adjust-x: 6.5em,
+    $edge-adjust-y: 0.2em
+  );
+}
