@@ -5,16 +5,14 @@
 @import "vendor/bootstrap-custom"; // see file for inclusions
 
 // Basic elements
+@import "elements/borders";
 @import "elements/type";
 
 /*
-@import "base/helpers";      // [x] elements/type
-@import "elements/text";     // [-] elements/type
-@import "elements/headings"; // [x] elements/type
 @import "elements/forms";    // [ ] Bootstrap?
 @import "elements/buttons";  // [ ] Bootstrap?
 @import "elements/tables";   // [ ] ???
 @import "elements/icons";    // [ ] ???
-@import "elements/borders";  // [ ] update
+@import "elements/borders";  // [-] update
 @import "elements/logo";     // [ ] update
 */

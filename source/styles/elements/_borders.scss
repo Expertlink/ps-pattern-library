@@ -1,13 +1,48 @@
-.bdr {
+.border,
+.border-bottom,
+.border-top,
+.border-left,
+.border-right,
+.border-ends,
+.border-sides,
+.no-border {
+  border: 0 dotted $tan;
+}
+
+.border,
+.border-top,
+.border-ends {
+  border-top-width: 1px;
+}
+
+.border,
+.border-right,
+.border-sides {
+  border-right-width: 1px;
+}
+
+.border,
+.border-bottom,
+.border-ends {
+  border-bottom-width: 1px;
+}
+
+.border,
+.border-left,
+.border-sides {
+  border-left-width: 1px;
+}
+
+/* .bdr {
   border-width: 1px;
 }
 .bdr-bottom-dotted {
-  border-bottom: 1px dotted $tan;
+  border-bottom: 1px dotted \$tan;
   padding-bottom: 0.5em;
 }
 
 .box {
-  display:block; 
+  display:block;
   padding: 1em;
   border-radius: 0.5em;
   margin-bottom: 1em;
@@ -17,7 +52,7 @@
 }
 
 .box-border {
-  border: 2px solid $blue;
+  border: 2px solid \$blue;
   border-radius: 0.5em;
 }
 
@@ -27,7 +62,7 @@
 }
 
 .box-bottom-stars, .box-top-flourish {
-  border:1px solid $blue-grey;
+  border:1px solid \$blue-grey;
   position: relative;
   &:before, > *:first-of-type:after, > *:last-of-type:after {
     position: absolute;
@@ -39,7 +74,7 @@
     background-size: 100% auto;
   }
 }
-.box-bottom-stars {  
+.box-bottom-stars {
   > *:first-of-type:after, > *:last-of-type:after {
     content:"*";
     bottom: -0.8em;
@@ -96,4 +131,4 @@
 }
 .box-scroll-bottom.box-scroll-top {
   background-position: -5px bottom, -5px top;
-}
+} */
