@@ -51,7 +51,7 @@ module.exports =  function() {
     var templateContext = {
       nav      : pathData.nav,
       pathRoot : pathData.pathRoot,
-      dirName : pathData.name
+      dirName  : pathData.name
     };
     var templateOptions = {
       partialsDir: settings.paths.partials,
@@ -89,6 +89,8 @@ module.exports =  function() {
    * https://github.com/gulpjs/gulp/blob/master/docs/recipes/running-task-steps-per-folder.md
    * We need to create streams for the operations we're going to take on each
    * directory full of pattern files.
+   *
+   * Constructs an array of streams
    */
   var patternPages = dirs.map(function(dirPath) {
     // Note that a few steps below will not take place if this
@@ -103,8 +105,8 @@ module.exports =  function() {
       // Individual templates (NOT wrapping them with __INDEX or
       // __PATTERN), and then again as if they were pattern pages,
       // to get an index file generated.
-      // Note setting isPatternPage to true
-      // We need to merge the second stream into the first before returning
+      // Explicitly set isPatternPage argument to true; merge into
+      // previous stream
       return(merge(patternStream, styleStream(dirPath, true)));
     } else {
       return patternStream;

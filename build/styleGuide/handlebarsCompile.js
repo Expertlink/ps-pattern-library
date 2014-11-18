@@ -9,6 +9,8 @@ var gutil       = require('gulp-util'),
     settings    = require('../settings'),
     _           = require('underscore');
 
+var partials = {};
+
 module.exports = function (data, opts) {
 
   var options = _.extend({
@@ -31,9 +33,12 @@ module.exports = function (data, opts) {
       } else if (path.extname(filename) === options.extension) {
         name      = path.basename(filename, options.extension);
         key       = (keyDir + '/' + name).replace(namePattern, '');
-        template  = fs.readFileSync(partial, 'utf8');
-        content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
-        Handlebars.registerPartial(key, content.body); // @TODO Error-detection/logging on ambiguous namespacing
+        if (typeof partials[key] === 'undefined') {
+          template  = fs.readFileSync(partial, 'utf8');
+          content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
+          Handlebars.registerPartial(key, content.body);
+        }
+        partials[key] = (partials[key] || 0) + 1;
       }
     });
   };
