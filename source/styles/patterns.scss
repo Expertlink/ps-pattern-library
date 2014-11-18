@@ -85,7 +85,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
   a {
     color: inherit !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -115,7 +115,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
 a.c4-header__title-segment {
   color: lighten($blue, 35%) !important;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover,
   &:focus {
@@ -199,7 +199,7 @@ a.c4-header__title-segment {
   color: $blue !important;
   display: block;
   position: relative;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover,
   &:focus {
@@ -279,7 +279,7 @@ a.c4-header__title-segment {
 
   a {
     color: $blue !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -307,8 +307,8 @@ a.c4-header__title-segment {
   }
 
   a {
-    color: $blue;
-    text-decoration: none;
+    color: $blue !important;
+    text-decoration: none !important;
   }
 
   h1,
@@ -361,7 +361,7 @@ a.c4-header__title-segment {
 
 .c4-pattern__source__toggle {
   color: $blue !important;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:before {
     content: '</>';
@@ -432,7 +432,7 @@ a.c4-header__title-segment {
     left: 0;
     position: absolute;
     right: 0;
-    text-decoration: none;
+    text-decoration: none !important;
     top: 0;
 
     span {
@@ -475,7 +475,7 @@ a.c4-header__title-segment {
 
   a {
     color: $blue !important;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:after {
       content: '\00a0\2191';
