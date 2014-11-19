@@ -46,13 +46,10 @@ module.exports =  function() {
    */
   var styleStream = function(dirPath, isPatternPage) {
     // Build context for this directory and its files
-    var pathData        = templateUtil.pathData(dirPath);
+    var templateContext = templateUtil.pathData(dirPath);
+    var pathTemplates   = templateUtil.pathTemplates(dirPath);
     var destPath        = util.pathName(dirPath);
-    var templateContext = {
-      nav      : pathData.nav,
-      pathRoot : pathData.pathRoot,
-      dirName  : pathData.name
-    };
+
     var templateOptions = {
       partialsDir: settings.paths.partials,
       helpers    : templateHelpers
@@ -72,11 +69,11 @@ module.exports =  function() {
       // Process template metadata
       .pipe(templateMetaData())
       // Wrap each pattern with the nearest pattern template (if pattern dir)
-      .pipe(gulpif(isPatternPage, wrap({src: pathData.patternFile})))
+      .pipe(gulpif(isPatternPage, wrap({src: pathTemplates.patternFile})))
       // Concat all compiled, wrapped patterns in this dir into a single output file (if pattern dir)
       .pipe(gulpif(isPatternPage, concat('index.html')))
       // Wrap concatenated patterns in nearest index template (if pattern dir)
-      .pipe(gulpif(isPatternPage, wrap({src: pathData.templateFile}, pathData)))
+      .pipe(gulpif(isPatternPage, wrap({src: pathTemplates.templateFile}, templateContext)))
       // Compile the index template as hbs (if pattern dir)
       .pipe(gulpif(isPatternPage, template(templateContext, templateOptions)))
       // And done.

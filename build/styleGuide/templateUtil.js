@@ -7,24 +7,26 @@ var marked = require('marked');
 var moment = require('moment');
 var _      = require('underscore');
 
-
 var settings    = require('../settings');
 var navigation  = require('./navigation');
 var util        = require('./util');
 
-module.exports.registerPartial = function registerPartial(filename) {};
-
 module.exports.pathData        = function pathData(dirPath) {
-  var nav = navigation.buildNav(dirPath);
-  var root = util.pathRoot(dirPath, settings.paths.patterns);
+  var nav     = navigation.buildNav(dirPath);
+  var root    = util.pathRoot(dirPath, settings.paths.patterns);
   var dirName = util.patternName(dirPath.split('/').pop());
   dirName = (dirName === 'Patterns') ? 'Welcome' : dirName;
   return {
-    templateFile : findup.sync(path.resolve(dirPath), '__INDEX.template') + '/__INDEX.template',
-    patternFile  : findup.sync(path.resolve(dirPath), '__PATTERN.template') + '/__PATTERN.template',
     pathRoot     : root,
-    name         : dirName,
+    dirName      : dirName,
     nav          : nav
+  };
+};
+
+module.exports.pathTemplates = function pathTemplates(dirPath) {
+  return {
+    templateFile : findup.sync(path.resolve(dirPath), '__INDEX.template') + '/__INDEX.template',
+    patternFile  : findup.sync(path.resolve(dirPath), '__PATTERN.template') + '/__PATTERN.template'
   };
 };
 
