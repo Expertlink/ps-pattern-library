@@ -30,9 +30,23 @@ That's it! A local webserver will start (it should open in your default browser)
 
 To quit the process, tap `ctrl`+`c` with your terminal focused.
 
-## Pattern Library Documentation
+## Contributing
 
-See [the README in source/patterns](source/patterns).
+### Code Guides
+
+* [Pattern Library Documentation](source/patterns/README.md)
+* [CSS Guidelines](source/styles/README.md)
+
+### Git Guide
+
+Follow these steps to contribute to the repository:
+
+1. Before you start, be sure to `git pull` to make sure you have the latest changes from `master`.
+2. Create and checkout a new branch. (You can do this from [the terminal](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), [GitHub](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) or your Git application of choice.)
+3. Do your work, committing changes as you go. (Be sure to write [good commit messages](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message), you'll thank yourself later!)
+4. When your branch is ready to merge, [create a pull request](https://help.github.com/articles/creating-a-pull-request/) with a title and description of the changes made.
+5. A Cloud Four team member will review the pull request and may provide feedback.
+6. Once you've received the thumbs-up, you may [merge the pull request](https://help.github.com/articles/merging-a-pull-request/). Yay!!
 
 ## Build and Deploy
 

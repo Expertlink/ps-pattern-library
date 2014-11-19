@@ -65,6 +65,10 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
 /* Body */
 
+.c4-html {
+  font-size: 16px;
+}
+
 .c4-body {
   background: $white;
   margin: 0;
@@ -81,7 +85,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
   a {
     color: inherit !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -111,7 +115,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
 a.c4-header__title-segment {
   color: lighten($blue, 35%) !important;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover,
   &:focus {
@@ -195,7 +199,7 @@ a.c4-header__title-segment {
   color: $blue !important;
   display: block;
   position: relative;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover,
   &:focus {
@@ -275,7 +279,7 @@ a.c4-header__title-segment {
 
   a {
     color: $blue !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -303,8 +307,8 @@ a.c4-header__title-segment {
   }
 
   a {
-    color: $blue;
-    text-decoration: none;
+    color: $blue !important;
+    text-decoration: none !important;
   }
 
   h1,
@@ -357,7 +361,7 @@ a.c4-header__title-segment {
 
 .c4-pattern__source__toggle {
   color: $blue !important;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:before {
     content: '</>';
@@ -394,6 +398,48 @@ a.c4-header__title-segment {
   }
 }
 
+/* Status badges */
+
+.c4-status {
+  color: $gray-light;
+  display: inline-block;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:last-child {
+    margin-left: 0.25rem;
+  }
+
+  &:before {
+    background-color: $gray-light;
+    border-radius: 1em;
+    content: '';
+    display: inline-block;
+    height: 1em;
+    margin-right: 0.125rem;
+    vertical-align: -0.1em;
+    width: 1em;
+  }
+}
+
+.c4-status--none {
+  display: none;
+}
+
+.c4-status--inprogress:before {
+  background-color: #FF4136;
+}
+
+.c4-status--inreview:before {
+  background-color: #FFDC00;
+}
+
+.c4-status--complete:before {
+  background-color: #2ECC40;
+}
+
 /* Pages */
 
 .c4-page-tile {
@@ -428,7 +474,7 @@ a.c4-header__title-segment {
     left: 0;
     position: absolute;
     right: 0;
-    text-decoration: none;
+    text-decoration: none !important;
     top: 0;
 
     span {
@@ -471,7 +517,7 @@ a.c4-header__title-segment {
 
   a {
     color: $blue !important;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:after {
       content: '\00a0\2191';
@@ -517,5 +563,18 @@ a.c4-header__title-segment {
 .c4-hidden-xl {
   @media (min-width: $screen-xl) {
     display: none;
+  }
+}
+
+/* Demo styles */
+
+.demo-show-grid {
+  margin-bottom: 1em;
+
+  [class^=col-] {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-light;
+    padding-bottom: 1em;
+    padding-top: 1em;
   }
 }
