@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    VSE Responsive Pilot Pattern Library: Example
+    VSE Responsive Pilot Pattern Library: Grid
   </title>
     <!-- CSS Goes here -->
     <link href="../../css/patterns.css" rel="stylesheet">
@@ -41,7 +41,7 @@
           VSE Responsive Pilot Pattern Library
         </a>
         <h1 class="c4-header__title-segment">
-          Example
+          Grid
         </h1>
       </div>
       <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
@@ -62,7 +62,7 @@
          <li><a class="c4-nav__item " href="../../01-elements/02-headings">Headings</a></li>
          <li><a class="c4-nav__item " href="../../01-elements/03-buttons">Buttons</a></li>
          <li><a class="c4-nav__item " href="../../01-elements/04-forms">Forms</a></li>
-         <li><a class="c4-nav__item " href="../../01-elements/05-grid">Grid</a></li>
+         <li><a class="c4-nav__item c4-is-current" href="../../01-elements/05-grid">Grid</a></li>
          <li><a class="c4-nav__item " href="../../01-elements/06-borders">Borders</a></li>
          <li><a class="c4-nav__item " href="../../01-elements/07-logo">Logo</a></li>
          <li><a class="c4-nav__item " href="../../01-elements/08-tables">Tables</a></li>
@@ -70,14 +70,76 @@
        </ul>
        <h4 class="c4-nav__heading">Pages</h4>
        <ul class="c4-nav__list">
-         <li><a class="c4-nav__item c4-is-current" href="../../pages/example">Example</a></li>
+         <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
        </ul>
   </nav>
 
   <main class="c4-main">
-    <div class="c4-page-tile">
-  <iframe src="sample.html" allowfullscreen="true" allowtransparency="true"></iframe>
-  <a href="sample.html"><span>Sample</span></a>
+    <div class="c4-pattern" id="c4-pattern_5">
+
+  
+    <div class="c4-pattern__header">
+      <h2 class="c4-pattern__status c4-pattern__status-inprogress">
+        <a href="#c4-pattern_5">Grid</a>
+        <span class="c4-status c4-status--inprogress">
+          
+            In progress
+          
+        </span>
+      </h2>
+      <p><p>This project uses the <a href="http://getbootstrap.com/css/#grid">Bootstrap grid</a>, allowing you to define columns <a href="http://getbootstrap.com/css/#grid-options">for different breakpoints</a>.</p>
+</p>
+    </div>
+  
+
+  <div class="c4-pattern__body">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row demo-show-grid">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row demo-show-grid">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row demo-show-grid">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
+
+  </div>
+
+  
+    <div class="c4-pattern__source" id="c4-pattern-pattern_5-source">
+      <h3 class="c4-pattern__source__heading">
+        <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-pattern_5-source">Source</a>
+      </h3>
+      <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+&lt;div class=&quot;row demo-show-grid&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-md-8&quot;&gt;.col-xs-12 .col-md-8&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;
+&lt;div class=&quot;row demo-show-grid&quot;&gt;
+  &lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;
+&lt;div class=&quot;row demo-show-grid&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;.col-xs-6&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;.col-xs-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  
+
 </div>
 
   </main>

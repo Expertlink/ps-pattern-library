@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="c4-html" lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    VSE Responsive Pilot Pattern Library: Buttons
+    VSE Responsive Pilot Pattern Library: Tables
   </title>
     <!-- CSS Goes here -->
-    <link href="../../vendor/normalize.css" rel="stylesheet">
     <link href="../../css/patterns.css" rel="stylesheet">
     <link href="../../css/styles.css" rel="stylesheet">
     <link href="../../vendor/prism/prism.css" rel="stylesheet">
@@ -42,7 +41,7 @@
           VSE Responsive Pilot Pattern Library
         </a>
         <h1 class="c4-header__title-segment">
-          Buttons
+          Tables
         </h1>
       </div>
       <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
@@ -59,8 +58,15 @@
     </ul>
        <h4 class="c4-nav__heading">Elements</h4>
        <ul class="c4-nav__list">
-         <li><a class="c4-nav__item c4-is-current" href="../../01-elements/buttons">Buttons</a></li>
-         <li><a class="c4-nav__item " href="../../01-elements/headings">Headings</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/01-text">Text</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/02-headings">Headings</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/03-buttons">Buttons</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/04-forms">Forms</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/05-grid">Grid</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/06-borders">Borders</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/07-logo">Logo</a></li>
+         <li><a class="c4-nav__item c4-is-current" href="../../01-elements/08-tables">Tables</a></li>
+         <li><a class="c4-nav__item " href="../../01-elements/09-media">Media</a></li>
        </ul>
        <h4 class="c4-nav__heading">Pages</h4>
        <ul class="c4-nav__list">
@@ -69,75 +75,92 @@
   </nav>
 
   <main class="c4-main">
-    <div class="c4-pattern" id="c4-pattern_1">
+    <div class="c4-pattern" id="c4-pattern_8">
 
   
     <div class="c4-pattern__header">
-      <h2 class="c4-pattern__status c4-pattern__status-inprogress"><a href="#c4-pattern_1">Buttons</a></h2>
+      <h2 class="c4-pattern__status c4-pattern__status-inprogress">
+        <a href="#c4-pattern_8">Table</a>
+        <span class="c4-status c4-status--inprogress">
+          
+            In progress
+          
+        </span>
+      </h2>
       <p></p>
     </div>
   
 
   <div class="c4-pattern__body">
     
-<p>
-  <button>I am a button</button>
-  <a href="#" class="btn">I am a link</a>
-  <input type="submit" value="I am a submit form element" />
-</p>
-<p>
-  <a href="#" class="btn btn-lg">I am a large button</a>
-  <a href="#" class="btn btn-sm">I am a small button</a>
-</p>
-
-<p>
-  <a href="#" class="btn btn-full">I am a full width button</a>
-</p>
-
-<p>
-  <button disabled>I am disabled using a disabled attribute</button>
-  <button class="btn btn-disabled">I am disabled using a disabled class</button>
-</p>
-
-<p>
-  <a href="#" class="btn btn-icon"><i class="icon icon-fave-add"></i>Add to Favorites</a>
-  <a href="#" class="btn btn-icon"><i class="icon icon-fave-remove"></i>Remove Favorite</a>
-</p>  
-
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th class="text-right" scope="row">Sun</th>
+    <td>No schedule</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Mon</th>
+    <td>11:00AM - 6:00PM</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Tue</th>
+    <td>11:00AM - 6:00PM</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Wed</th>
+    <td>No schedule</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Thu</th>
+    <td>No schedule</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Fri</th>
+    <td>No schedule</td>
+  </tr>
+  <tr>
+    <th class="text-right" scope="row">Sat</th>
+    <td>No schedule</td>
+  </tr>
+</table>
 
   </div>
 
   
-    <div class="c4-pattern__source" id="c4-pattern-pattern_1-source">
+    <div class="c4-pattern__source" id="c4-pattern-pattern_8-source">
       <h3 class="c4-pattern__source__heading">
-        <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-pattern_1-source">Source</a>
+        <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-pattern_8-source">Source</a>
       </h3>
-      <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup">
-&lt;p&gt;
-  &lt;button&gt;I am a button&lt;/button&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;I am a link&lt;/a&gt;
-  &lt;input type=&quot;submit&quot; value=&quot;I am a submit form element&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn btn-lg&quot;&gt;I am a large button&lt;/a&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn btn-sm&quot;&gt;I am a small button&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn btn-full&quot;&gt;I am a full width button&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-  &lt;button disabled&gt;I am disabled using a disabled attribute&lt;/button&gt;
-  &lt;button class=&quot;btn btn-disabled&quot;&gt;I am disabled using a disabled class&lt;/button&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn btn-icon&quot;&gt;&lt;i class=&quot;icon icon-fave-add&quot;&gt;&lt;/i&gt;Add to Favorites&lt;/a&gt;
-  &lt;a href=&quot;#&quot; class=&quot;btn btn-icon&quot;&gt;&lt;i class=&quot;icon icon-fave-remove&quot;&gt;&lt;/i&gt;Remove Favorite&lt;/a&gt;
-&lt;/p&gt;  
-
-</code></pre>
+      <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup">&lt;table class=&quot;table table-condensed table-bordered table-striped&quot;&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Sun&lt;/th&gt;
+    &lt;td&gt;No schedule&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Mon&lt;/th&gt;
+    &lt;td&gt;11:00AM - 6:00PM&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Tue&lt;/th&gt;
+    &lt;td&gt;11:00AM - 6:00PM&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Wed&lt;/th&gt;
+    &lt;td&gt;No schedule&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Thu&lt;/th&gt;
+    &lt;td&gt;No schedule&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Fri&lt;/th&gt;
+    &lt;td&gt;No schedule&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;text-right&quot; scope=&quot;row&quot;&gt;Sat&lt;/th&gt;
+    &lt;td&gt;No schedule&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
     </div>
   
 
@@ -147,7 +170,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, November 7th, 2014, 12:05PM (PST).
+      This page was generated Wednesday, November 19th, 2014, 2:04PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
