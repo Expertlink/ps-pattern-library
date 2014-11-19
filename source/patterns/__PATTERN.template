@@ -2,7 +2,7 @@
 
   <% if(file.meta.showHeading) { %>
     <div class="c4-pattern__header">
-      <h2 class="c4-pattern__status c4-pattern__status-<%= file.meta.status %>">
+      <h2 class="c4-pattern__heading">
         <a href="#c4-<%= file.meta.id %>"><%= file.meta.name %></a>
         <span class="c4-status c4-status--<%= file.meta.status %>">
           <% if(file.meta.status === 'inprogress') { %>

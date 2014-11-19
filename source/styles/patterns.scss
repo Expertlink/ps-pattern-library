@@ -192,7 +192,7 @@ a.c4-header__title-segment {
 
 .c4-nav__heading {
   font-size: 0.875rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .c4-nav__item {
@@ -344,6 +344,20 @@ a.c4-header__title-segment {
     margin-top: 0;
   }
 
+}
+
+.c4-pattern__heading {
+  font-size: 1.25rem !important;
+  margin: .1875rem 0 !important;
+
+  > a {
+    color: inherit !important;
+
+    &:hover,
+    &:focus {
+      color: $blue !important;
+    }
+  }
 }
 
 .c4-pattern__body {
