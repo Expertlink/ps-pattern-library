@@ -346,13 +346,13 @@ a.c4-header__title-segment {
 
   code {
     background: $gray-lighter;
-    border: 1px solid darken($gray-lighter, 5%);
-    border-radius: 0.25rem;
+    // border: 1px solid darken($gray-lighter, 5%);
+    border-radius: 0.25em;
     color: #F012BE;
     font-family: $mono;
     font-size: (14 / 16 * 1em);
-    padding-left: 0.125rem;
-    padding-right: 0.125rem;
+    padding-left: 0.375em;
+    padding-right: 0.375em;
   }
 
 }
