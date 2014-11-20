@@ -12,6 +12,8 @@ You'll need a few things installed before you can run the project locally:
 * [Sass](http://sass-lang.com/): `gem install sass`
 * [Gulp](http://gulpjs.com/): `npm install -g gulp`
 
+Note: Depending on how you installed Ruby or Node, some OS X users may see permission errors unless they prepend either installation command with `sudo`.
+
 ### Installation
 
 1. Clone the repository from GitHub
