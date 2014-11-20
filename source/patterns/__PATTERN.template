@@ -1,39 +1,38 @@
-<div class="c4-pattern" id="c4-<%= file.meta.id %>">
 <% if(file.meta.isPattern) { %>
-  <% if(file.meta.showHeading) { %>
-    <div class="c4-pattern__header">
-      <h2 class="c4-pattern__heading">
-        <a href="#c4-<%= file.meta.id %>"><%= file.meta.name %></a>
-        <span class="c4-status c4-status--<%= file.meta.status %>">
-          <% if(file.meta.status === 'inprogress') { %>
-            In progress
-          <% } else if(file.meta.status === 'inreview') { %>
-            In review
-          <% } else if(file.meta.status === 'complete') { %>
-            Complete
-          <% } %>
-        </span>
-      </h2>
-      <p><%= file.meta.description %></p>
-    </div>
-  <% } %>
+  <div class="c4-pattern" id="c4-<%= file.meta.id %>">
+    <% if(file.meta.showHeading) { %>
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-<%= file.meta.id %>"><%= file.meta.name %></a>
+          <span class="c4-status c4-status--<%= file.meta.status %>">
+            <% if(file.meta.status === 'inprogress') { %>
+              In progress
+            <% } else if(file.meta.status === 'inreview') { %>
+              In review
+            <% } else if(file.meta.status === 'complete') { %>
+              Complete
+            <% } %>
+          </span>
+        </h2>
+        <p><%= file.meta.description %></p>
+      </div>
+    <% } %>
 
-  <div class="c4-pattern__body">
-    <%= contents %>
+    <div class="c4-pattern__body">
+      <%= contents %>
+    </div>
+
+    <% if(file.meta.showSource) { %>
+      <div class="c4-pattern__source" id="c4-pattern-<%= file.meta.id %>-source">
+        <h3 class="c4-pattern__source__heading">
+          <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-<%= file.meta.id %>-source">Source</a>
+        </h3>
+        <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup"><%= file.meta.source %></code></pre>
+      </div>
+    <% } %>
   </div>
-
-  <% if(file.meta.showSource) { %>
-    <div class="c4-pattern__source" id="c4-pattern-<%= file.meta.id %>-source">
-      <h3 class="c4-pattern__source__heading">
-        <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-<%= file.meta.id %>-source">Source</a>
-      </h3>
-      <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup"><%= file.meta.source %></code></pre>
-    </div>
-  <% } %>
 <%  // End if isPattern
   } else {
 %>
   <%= contents %>
 <% } %>
-
-</div>
