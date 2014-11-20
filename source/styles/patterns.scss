@@ -281,6 +281,27 @@ a.c4-header__title-segment {
     color: $blue !important;
     text-decoration: none !important;
   }
+
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    font-size: (14 / 16 * 1rem);
+    margin-top: 1.5rem;
+  }
+
+  li {
+    border-left: 1px solid darken($gray-lighter, 15%);
+    display: inline-block;
+    padding: 0 0.75rem;
+
+    &:first-child {
+      border-left-width: 0;
+    }
+  }
 }
 
 /* Patterns */
