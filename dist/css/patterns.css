@@ -30,13 +30,13 @@
   font-size: 16px; }
 
 .c4-body {
-  background: white;
+  background: #fff;
   margin: 0; }
 
 /* Header */
 .c4-header {
   background-color: #7ab3d9;
-  color: white;
+  color: #fff;
   font-family: sans-serif;
   font-size: 1rem;
   padding: 0.5rem; }
@@ -67,7 +67,7 @@ a.c4-header__title-segment {
   color: #ddecf5 !important;
   text-decoration: none !important; }
   a.c4-header__title-segment:hover, a.c4-header__title-segment:focus {
-    color: white !important; }
+    color: #fff !important; }
   a.c4-header__title-segment:after {
     color: #a1c9e5 !important;
     content: '\00a0/\00a0'; }
@@ -93,7 +93,7 @@ a.c4-header__title-segment {
 /* Nav */
 .c4-nav {
   background-color: #f9f9f9;
-  color: #333333;
+  color: #333;
   display: none;
   font-family: sans-serif;
   font-size: 1rem;
@@ -124,10 +124,10 @@ a.c4-header__title-segment {
 
 .c4-nav__heading {
   font-size: 0.875rem;
-  margin-top: 0.5rem; }
+  margin-top: 0.25rem; }
 
 .c4-nav__item {
-  color: #529cce !important;
+  color: #529CCE !important;
   display: block;
   position: relative;
   text-decoration: none !important; }
@@ -135,11 +135,11 @@ a.c4-header__title-segment {
     background-color: #f1f1f1;
     color: #4695cb !important; }
   .c4-nav__item.c4-is-current {
-    background-color: white;
+    background-color: #fff;
     border-radius: 0 2px 2px 0;
     box-shadow: 0 2px rgba(0, 0, 0, 0.05);
-    color: #ff5f25 !important;
-    border-right: 4px solid #ff5f25;
+    color: #FF5F25 !important;
+    border-right: 4px solid #FF5F25;
     margin-right: -4px;
     z-index: 2; }
 
@@ -155,7 +155,7 @@ a.c4-header__title-segment {
 /* Welcome */
 .c4-welcome {
   background-color: #f9f9f9;
-  color: #888888 !important;
+  color: #888 !important;
   margin: 0 auto;
   padding: 1.5rem;
   text-align: center; }
@@ -175,7 +175,7 @@ a.c4-header__title-segment {
   .c4-welcome img {
     max-width: 100%; }
   .c4-welcome h1 {
-    color: #333333 !important;
+    color: #333 !important;
     font-size: 1.5rem;
     font-weight: normal;
     margin: 1rem 0 0.25em; }
@@ -184,8 +184,21 @@ a.c4-header__title-segment {
     font-size: 1.125rem;
     line-height: 1.5; }
   .c4-welcome a {
-    color: #529cce !important;
+    color: #529CCE !important;
     text-decoration: none !important; }
+  .c4-welcome ul, .c4-welcome li {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .c4-welcome ul {
+    font-size: 0.875rem;
+    margin-top: 1.5rem; }
+  .c4-welcome li {
+    border-left: 1px solid lightgray;
+    display: inline-block;
+    padding: 0 0.75rem; }
+    .c4-welcome li:first-child {
+      border-left-width: 0; }
 
 /* Patterns */
 .c4-pattern {
@@ -198,12 +211,12 @@ a.c4-header__title-segment {
       padding: 1.5rem 2rem 0; } }
 
 .c4-pattern__header {
-  color: #888888;
+  color: #888;
   font-family: sans-serif; }
   .c4-pattern__header > *:first-child {
     margin-top: 0; }
   .c4-pattern__header a {
-    color: #529cce !important;
+    color: #529CCE !important;
     text-decoration: none !important; }
   .c4-pattern__header h1,
   .c4-pattern__header h2,
@@ -211,7 +224,7 @@ a.c4-header__title-segment {
   .c4-pattern__header h4,
   .c4-pattern__header h5,
   .c4-pattern__header h6 {
-    color: #333333;
+    color: #333;
     font-weight: normal; }
     .c4-pattern__header h1 a,
     .c4-pattern__header h2 a,
@@ -231,7 +244,7 @@ a.c4-header__title-segment {
       .c4-pattern__header h5 a:focus,
       .c4-pattern__header h6 a:hover,
       .c4-pattern__header h6 a:focus {
-        color: #529cce; }
+        color: #529CCE; }
   .c4-pattern__header h1,
   .c4-pattern__header h2,
   .c4-pattern__header h3,
@@ -244,6 +257,22 @@ a.c4-header__title-segment {
     font-family: inherit !important;
     margin-bottom: 1rem;
     margin-top: 0; }
+  .c4-pattern__header code {
+    background: #f9f9f9;
+    border-radius: 0.25em;
+    color: #F012BE;
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
+    font-size: 0.875em;
+    padding-left: 0.375em;
+    padding-right: 0.375em; }
+
+.c4-pattern__heading {
+  font-size: 1.25rem !important;
+  margin: .1875rem 0 !important; }
+  .c4-pattern__heading > a {
+    color: inherit !important; }
+    .c4-pattern__heading > a:hover, .c4-pattern__heading > a:focus {
+      color: #529CCE !important; }
 
 .c4-pattern__body {
   margin-bottom: 1.5rem;
@@ -257,7 +286,7 @@ a.c4-header__title-segment {
   margin: 0 0 1rem; }
 
 .c4-pattern__source__toggle {
-  color: #529cce !important;
+  color: #529CCE !important;
   text-decoration: none !important; }
   .c4-pattern__source__toggle:before {
     content: '</>';
@@ -270,7 +299,7 @@ a.c4-header__title-segment {
 .c4-pattern__source__body {
   background-color: #f9f9f9 !important;
   box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.05);
-  color: #888888;
+  color: #888;
   display: none;
   font-family: Consolas, Monaco, "Andale Mono", monospace;
   font-size: 0.875rem;
@@ -288,7 +317,7 @@ a.c4-header__title-segment {
 
 /* Status badges */
 .c4-status {
-  color: #bbbbbb;
+  color: #bbb;
   display: inline-block;
   font-size: 0.625rem;
   text-transform: uppercase;
@@ -297,7 +326,7 @@ a.c4-header__title-segment {
   .c4-status:last-child {
     margin-left: 0.25rem; }
   .c4-status:before {
-    background-color: #bbbbbb;
+    background-color: #bbb;
     border-radius: 1em;
     content: '';
     display: inline-block;
@@ -345,7 +374,7 @@ a.c4-header__title-segment {
   .c4-page-tile a {
     bottom: 0;
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
-    color: #529cce !important;
+    color: #529CCE !important;
     display: block;
     left: 0;
     position: absolute;
@@ -369,7 +398,7 @@ a.c4-header__title-segment {
 .c4-footer {
   border-top: 1px solid #ececec;
   clear: both;
-  color: #bbbbbb;
+  color: #bbb;
   font-family: sans-serif;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -379,7 +408,7 @@ a.c4-header__title-segment {
     font-family: inherit !important;
     margin: 0; }
   .c4-footer a {
-    color: #529cce !important;
+    color: #529CCE !important;
     text-decoration: none !important; }
     .c4-footer a:after {
       content: '\00a0\2191'; }
@@ -424,6 +453,6 @@ a.c4-header__title-segment {
   margin-bottom: 1em; }
   .demo-show-grid [class^=col-] {
     background-color: #f9f9f9;
-    border: 1px solid #bbbbbb;
+    border: 1px solid #bbb;
     padding-bottom: 1em;
     padding-top: 1em; }
