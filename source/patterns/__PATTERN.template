@@ -1,5 +1,5 @@
 <div class="c4-pattern" id="c4-<%= file.meta.id %>">
-
+<% if(file.meta.isPattern) { %>
   <% if(file.meta.showHeading) { %>
     <div class="c4-pattern__header">
       <h2 class="c4-pattern__heading">
@@ -30,5 +30,10 @@
       <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup"><%= file.meta.source %></code></pre>
     </div>
   <% } %>
+<%  // End if isPattern
+  } else {
+%>
+  <%= contents %>
+<% } %>
 
 </div>

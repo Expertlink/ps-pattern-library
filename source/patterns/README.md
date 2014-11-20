@@ -72,6 +72,7 @@ You can use YAML front matter in patterns. Here's what you can use and what it d
 * `description`: Documentation/notes to render with the template in the pattern library (TODO markdown support).
 * `showSource`: Render syntax-highlighted source (default `true`). Set to `false` to hide source for a pattern.
 * `showHeader`: Render the pattern's name and description (default `true`). Set to `false` to hide the name and description for a given pattern.
+* `isPattern`: (default `true`). When set to `false`, the contents of the template will not be "wrapped" in as much pattern-like layout by the `_PATTERN.template` wrapper. Useful for the "welcome" message (see below) and any time you want to include content that isn't really a "pattern" in index pages.
 
 #### Example
 
@@ -90,9 +91,14 @@ YAML front matter goes at the top of `.hbs` files as in the example above.
 
 > Perhaps ye knows too much... ye've seen the cursed treasure, you know where it be hidden. Now proceed at your own risk. These be the last 'friendly' words ye'll hear. Ye may not survive to pass this way again...
 
-### The somewhat-special "welcome" pattern
 
-There is only one non-hidden pattern at the root level (at the start of things, anyway). This is `welcome.hbs` and by default it is set to hide its heading and source. You can use it as a place to put content you'd like to render on a landing page.
+### Non-pattern files
+
+`isPattern` is a metadata value available for any template and defaults to `true` when not present. When it is `false`, the default `_PATTERN.template` will not wrap the contents of the file in (as much) pattern-like layout.
+
+#### The somewhat-special "welcome" pattern
+
+There is only one non-hidden pattern at the root level (at the start of things, anyway). This is `welcome.hbs` and by default it sets its `isPattern` metadata value to `false`. This keeps this pattern from being wrapped in (most of) the `_PATTERN.template`.
 
 Of course, any other non-hidden patterns (`.hbs` files) you put in this directory will also render onto the landing page.
 

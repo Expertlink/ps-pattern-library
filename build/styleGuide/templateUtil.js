@@ -55,6 +55,7 @@ module.exports.metaData = function metaData(filePath, options) {
   if (options.format) {
     defaults.showHeading = true;
     defaults.showSource = true;
+    defaults.isPattern  = true;
   }
 
   data = _.defaults(options.meta, defaults);
