@@ -1,0 +1,11 @@
+// Note: Many scaffolding styles are defined as part of Bootstrap and
+// configured using variables. This includes only VSE-specific customization.
+
+body {
+  // included first as fallback
+  background-image: url(/images/main-back.png);
+  // multiple background images where supported
+  background-image: url(/images/header.jpg), url(/images/main-back.png);
+  background-position: top center;
+  background-repeat: repeat-x;
+}
