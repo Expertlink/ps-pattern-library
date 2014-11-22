@@ -15,9 +15,6 @@
           </span>
         </h2>
         <%= file.meta.description %>
-        <% if (file.meta.bootstrap) { %>
-          <p><a class="c4-bootstrap-link c4-outbound-link" href="<%= file.meta.bootstrap %>">Bootstrap documentation</a></p>
-        <% } %>
       </div>
     <% } %>
 
@@ -25,14 +22,23 @@
       <%= contents %>
     </div>
 
-    <% if(file.meta.showSource) { %>
-      <div class="c4-pattern__source" id="c4-pattern-<%= file.meta.id %>-source">
-        <h3 class="c4-pattern__source__heading">
-          <a class="c4-pattern__source__toggle  js-c4-source-toggle" href="#c4-pattern-<%= file.meta.id %>-source">Source</a>
-        </h3>
-        <pre class="c4-pattern__source__body  js-c4-source-content"><code class="language-markup"><%= file.meta.source %></code></pre>
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        <% if (file.meta.showSource) { %>
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="<%= file.meta.id %>" type="button">
+            Source
+          </button>
+        <% } %>
+        <% if (file.meta.bootstrap) { %>
+          <a class="c4-pattern__footer__action  c4-pattern__footer__action--bootstrap" href="<%= file.meta.bootstrap %>">
+            Bootstrap docs
+          </a>
+        <% } %>
       </div>
-    <% } %>
+      <% if (file.meta.showSource) { %>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="<%= file.meta.id %>"><code class="language-markup"><%= file.meta.source %></code></pre>
+      <% } %>
+    </div>
   </div>
 <%  // End if isPattern
   } else {
