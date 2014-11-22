@@ -14,7 +14,12 @@
             <% } %>
           </span>
         </h2>
-        <p><%= file.meta.description %></p>
+        <% if (file.meta.description) { %>
+          <p><%= file.meta.description %></p>
+        <% } %>
+        <% if (file.meta.bootstrap) { %>
+          <p><a class="c4-bootstrap-link c4-outbound-link" href="<%= file.meta.bootstrap %>">Bootstrap documentation</a></p>
+        <% } %>
       </div>
     <% } %>
 

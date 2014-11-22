@@ -444,6 +444,32 @@ a.c4-header__title-segment {
   }
 }
 
+/* Link helpers */
+
+.c4-bootstrap-link {
+  &:before {
+    background: #6f5499;
+    border-radius: 3px;
+    color: #fff;
+    content: 'B';
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    height: 16px;
+    line-height: 1;
+    margin-right: 0.375em;
+    padding: 2px;
+    text-align: center;
+    width: 16px;
+  }
+}
+
+.c4-outbound-link {
+  &:after {
+    content: '\00a0\2192';
+  }
+}
+
 /* Status badges */
 
 .c4-status {
