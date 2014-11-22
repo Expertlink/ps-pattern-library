@@ -14,9 +14,7 @@
             <% } %>
           </span>
         </h2>
-        <% if (file.meta.description) { %>
-          <p><%= file.meta.description %></p>
-        <% } %>
+        <%= file.meta.description %>
         <% if (file.meta.bootstrap) { %>
           <p><a class="c4-bootstrap-link c4-outbound-link" href="<%= file.meta.bootstrap %>">Bootstrap documentation</a></p>
         <% } %>
