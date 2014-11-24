@@ -2040,6 +2040,45 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
+.media {
+  margin-top: 15px; }
+  .media:first-child {
+    margin-top: 0; }
+
+.media-right,
+.media > .pull-right {
+  padding-left: 10px; }
+
+.media-left,
+.media > .pull-left {
+  padding-right: 10px; }
+
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top; }
+
+.media-middle {
+  vertical-align: middle; }
+
+.media-bottom {
+  vertical-align: bottom; }
+
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px; }
+
+.media-list {
+  padding-left: 0;
+  list-style: none; }
+
+body {
+  background-image: url(/images/main-back.png);
+  background-image: url(/images/header.jpg), url(/images/main-back.png);
+  background-position: top center;
+  background-repeat: repeat-x; }
+
 .text-cursive {
   font-family: "Dancing Script", cursive; }
 
@@ -2130,17 +2169,17 @@ h6.text-cursive, .h6.text-cursive {
   .box > *:last-child {
     margin-bottom: 0; }
 
-.box-md {
-  padding: 18px; }
-
-.box-em {
+.box-dark {
   border-color: #3d6682; }
 
-.box-em-light {
+.box-light {
   border-color: #89a5a8; }
 
-.box-light {
+.box-lighter {
   border-color: #bbb; }
+
+.box-md {
+  padding: 18px; }
 
 .box-thick {
   border-width: 2px; }
@@ -2253,6 +2292,9 @@ h6.text-cursive, .h6.text-cursive {
     margin-bottom: -1.3em; }
   .fleuron-star-wide.left {
     margin-left: 0.5em; }
+
+.img-shadow {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); }
 
 .logo {
   display: block;

@@ -11,11 +11,15 @@ $(function() {
     });
   });
 
-  $('.js-c4-source-toggle').click(function (event) {
-    var $content = $($(this).attr('href')).find('.js-c4-source-content');
-    event.preventDefault();
+  $('[data-c4-toggle-source]').click(function(){
+    var $toggle = $(this);
+    var id = $toggle.data('c4-toggle-source');
+    var $content = $('[data-c4-source-id="' + id + '"]');
+    $toggle.toggleClass('c4-is-active');
     $content.slideToggle(250, function(){
-      $content.toggleClass('c4-is-open', $content.is(':visible'));
+      var isVisible = $content.is(':visible');
+      $toggle.toggleClass('c4-is-active', isVisible);
+      $content.toggleClass('c4-is-open');
       $content.removeAttr('style');
     });
   });
