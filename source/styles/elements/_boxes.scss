@@ -1,4 +1,5 @@
 .box {
+  background-color: #fff;
   border: 1px solid transparent;
   border-radius: $border-radius-large;
   margin-bottom: ($line-height-computed / 2);
@@ -36,6 +37,20 @@
 
 .box-shadow {
   box-shadow: $box-shadow;
+}
+
+//== Background Modifiers
+
+.box-trans {
+  background-color:transparent;
+}
+
+.box-teal {
+  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
+}
+
+.box-tan {
+  background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);    
 }
 
 //== Style variants
