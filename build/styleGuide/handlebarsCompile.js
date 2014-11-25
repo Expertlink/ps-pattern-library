@@ -15,10 +15,9 @@ module.exports = function (data, opts) {
     extension: '.hbs'
   }, opts || {});
 
-  var namePattern = new RegExp(settings.files.patternsPattern, 'g');
-  data            = data || {};
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g'),
 
-  var parsePartials = function(partialDir) {
+  parsePartials = function(partialDir) {
     var partialFilenames = fs.readdirSync(partialDir),
         keyDir           = partialDir.split('/').pop();
 
@@ -35,7 +34,6 @@ module.exports = function (data, opts) {
         template  = fs.readFileSync(partial, 'utf8');
         content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
         Handlebars.registerPartial(key, content.body);
-
       }
     });
   };
@@ -49,6 +47,8 @@ module.exports = function (data, opts) {
       Handlebars.registerHelper(helper, options.helpers[helper]);
     }
   }
+
+  data            = data || {};
 
   return through.obj(function (file, enc, cb) {
 
