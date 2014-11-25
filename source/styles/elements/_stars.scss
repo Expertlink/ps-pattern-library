@@ -1,0 +1,53 @@
+$star-width: 16px !default;
+$star-height: $star-width !default;
+$star-rating-min: 0 !default;
+$star-rating-max: 5 !default;
+$star-rating-step: .5 !default;
+
+.stars {
+  display: inline-block;
+  overflow: hidden;
+  height: $star-height;
+  position: relative;
+  width: ($star-width * $star-rating-max);
+
+  @include text-hide(); // Bootstrap mixin for hiding text
+
+  &:before,
+  &:after {
+    // TODO: For performance, we should consider using data-uri's for small
+    // SVG assets like this.
+    background: url(/images/star.svg) repeat-x;
+    content: '';
+    display: block;
+    float: left;
+    height: 100%;
+  }
+
+  &:before {
+    background-position: left;
+    width: 0;
+  }
+
+  &:after {
+    background-position: right;
+    opacity: .3;
+    width: 100%;
+  }
+}
+
+@for $i from $star-rating-min through ($star-rating-max / $star-rating-step) {
+  $step: ($i * $star-rating-step);
+  $step-string: str-replace('#{$step}', '.', '-');
+  $step-percentage: ($step / $star-rating-max * 100%);
+
+  .stars-#{$step-string} {
+    &:before {
+      width: $step-percentage;
+    }
+
+    &:after {
+      width: (100% - $step-percentage);
+    }
+  }
+}

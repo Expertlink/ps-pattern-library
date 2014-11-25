@@ -1,0 +1,21 @@
+/**
+* Replace `$search` with `$replace` in `$string`.
+* Case sensitive.
+*
+* @param {String} $string - haystack
+* @param {String} $search - needle
+* @param {String} $replace ('') - replacement
+*
+* @return {String}
+*/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  $slice: $string;
+
+  @while $index {
+    $slice: if($index == 1, '', str-slice($slice, 0, $index - 1)) + $replace + str-slice($slice, $index + max(str-length($replace), 1));
+    $index: str-index($slice, $search);
+  }
+
+  @return $slice;
+}
