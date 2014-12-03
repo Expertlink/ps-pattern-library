@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    VSE Responsive Pilot Pattern Library: Images
+    VSE Responsive Pilot Pattern Library: Ratings
   </title>
     <!-- CSS Goes here -->
     <link href="../../css/patterns.css" rel="stylesheet">
@@ -41,7 +41,7 @@
           VSE Responsive Pilot Pattern Library
         </a>
         <h1 class="c4-header__title-segment">
-          Images
+          Ratings
         </h1>
       </div>
       <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
@@ -65,11 +65,11 @@
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/forms">Forms</a></li>
-      <li><a class="c4-nav__item c4-is-current" href="../../01-elements/images">Images</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/ratings">Ratings</a></li>
+      <li><a class="c4-nav__item c4-is-current" href="../../01-elements/ratings">Ratings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/tables">Tables</a></li>
     </ul>
     <h4 class="c4-nav__heading">Components</h4>
@@ -84,45 +84,56 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_8">
+  <div class="c4-pattern" id="c4-pattern_12">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_8">Image Shapes</a>
+          <a href="#c4-pattern_12">Star ratings</a>
           <span class="c4-status c4-status--none">
             
           </span>
         </h2>
-        <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
+        <p>Min, max and step (currently &frac12;) can be adjusted via Sass variables. Star uses SVG format so it will look nice at any resolution.</p>
 
       </div>
     
 
     <div class="c4-pattern__body">
-      
-<img src="http://placeimg.com/140/140/nature" alt="..." class="img-rounded img-shadow">
-<img src="http://placeimg.com/140/140/animals" alt="..." class="img-circle">
-<img src="http://placeimg.com/140/140/arch" alt="..." class="img-thumbnail">
+      <p><span class="stars">No stars</span></p>
+<p><span class="stars stars-0-5">&frac12; star</span></p>
+<p><span class="stars stars-1">1 star</span></p>
+<p><span class="stars stars-1-5">1&frac12; stars</span></p>
+<p><span class="stars stars-2">2 stars</span></p>
+<p><span class="stars stars-2-5">2&frac12; stars</span></p>
+<p><span class="stars stars-3">3 stars</span></p>
+<p><span class="stars stars-3-5">3&frac12; stars</span></p>
+<p><span class="stars stars-4">4 stars</span></p>
+<p><span class="stars stars-4-5">4&frac12; stars</span></p>
+<p><span class="stars stars-5">5 stars</span></p>
 
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_8" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_12" type="button">
             Source
           </button>
         
         
-          <a class="c4-pattern__footer__action  c4-pattern__footer__action--bootstrap" href="http://getbootstrap.com/css/#images">
-            Bootstrap docs
-          </a>
-        
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_8"><code class="language-markup">&lt;img src=&quot;http://placeimg.com/140/140/nature&quot; alt=&quot;...&quot; class=&quot;img-rounded img-shadow&quot;&gt;
-&lt;img src=&quot;http://placeimg.com/140/140/animals&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt;
-&lt;img src=&quot;http://placeimg.com/140/140/arch&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt;</code></pre>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_12"><code class="language-markup">&lt;p&gt;&lt;span class=&quot;stars&quot;&gt;No stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-0-5&quot;&gt;&amp;frac12; star&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-1&quot;&gt;1 star&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-1-5&quot;&gt;1&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-2&quot;&gt;2 stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-2-5&quot;&gt;2&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-3&quot;&gt;3 stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-3-5&quot;&gt;3&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-4&quot;&gt;4 stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-4-5&quot;&gt;4&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-5&quot;&gt;5 stars&lt;/span&gt;&lt;/p&gt;</code></pre>
       
     </div>
   </div>

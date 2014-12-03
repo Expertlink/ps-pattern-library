@@ -1,3 +1,13 @@
+/**
+* Replace `$search` with `$replace` in `$string`.
+* Case sensitive.
+*
+* @param {String} $string - haystack
+* @param {String} $search - needle
+* @param {String} $replace ('') - replacement
+*
+* @return {String}
+*/
 /*
 \$gap: 10px;
 
@@ -2079,6 +2089,9 @@ body {
   background-position: top center;
   background-repeat: repeat-x; }
 
+a {
+  text-decoration: underline; }
+
 .text-cursive {
   font-family: "Dancing Script", cursive; }
 
@@ -2305,7 +2318,7 @@ h6.text-cursive, .h6.text-cursive {
 
 @media (min-width: 768px) {
   .logo {
-    background: url(/images/logo/ps-logo.png) 0 50% no-repeat;
+    background: url(/images/logo/ps-logo-tagline-stacked.png) 0 50% no-repeat;
     background-size: 100% auto;
     position: relative;
     overflow: hidden;
@@ -2316,8 +2329,84 @@ h6.text-cursive, .h6.text-cursive {
       display: inline-block; } }
 @media (min-width: 992px) {
   .logo {
-    background-image: url(/images/logo/ps-logo-tagline-stacked.png); } }
-@media (min-width: 1200px) {
-  .logo {
     width: 40%;
     background-image: url(/images/logo/ps-logo-tagline.png); } }
+.stars {
+  display: inline-block;
+  overflow: hidden;
+  height: 16px;
+  position: relative;
+  width: 80px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+  .stars:before, .stars:after {
+    background: url(/images/star.svg) repeat-x;
+    content: '';
+    display: block;
+    float: left;
+    height: 100%; }
+  .stars:before {
+    background-position: left;
+    width: 0; }
+  .stars:after {
+    background-position: right;
+    opacity: .3;
+    width: 100%; }
+
+.stars-0:before {
+  width: 0%; }
+.stars-0:after {
+  width: 100%; }
+
+.stars-0-5:before {
+  width: 10%; }
+.stars-0-5:after {
+  width: 90%; }
+
+.stars-1:before {
+  width: 20%; }
+.stars-1:after {
+  width: 80%; }
+
+.stars-1-5:before {
+  width: 30%; }
+.stars-1-5:after {
+  width: 70%; }
+
+.stars-2:before {
+  width: 40%; }
+.stars-2:after {
+  width: 60%; }
+
+.stars-2-5:before {
+  width: 50%; }
+.stars-2-5:after {
+  width: 50%; }
+
+.stars-3:before {
+  width: 60%; }
+.stars-3:after {
+  width: 40%; }
+
+.stars-3-5:before {
+  width: 70%; }
+.stars-3-5:after {
+  width: 30%; }
+
+.stars-4:before {
+  width: 80%; }
+.stars-4:after {
+  width: 20%; }
+
+.stars-4-5:before {
+  width: 90%; }
+.stars-4-5:after {
+  width: 10%; }
+
+.stars-5:before {
+  width: 100%; }
+.stars-5:after {
+  width: 0%; }
