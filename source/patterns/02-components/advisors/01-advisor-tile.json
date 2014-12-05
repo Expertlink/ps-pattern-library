@@ -1,0 +1,15 @@
+{
+  "photo": "http://www.psychicsource.com/images/psychics/7777-sml.jpg",
+  "showcase": true,
+  "staffPick": true,
+  "name": "Mystery Reader",
+  "ext": 7777,
+  "rating": 4.5,
+  "phone": true,
+  "chat": true,
+  "available": true,
+  "availableTill": "8:29pm",
+  "inReading": false,
+  "rate": 7.45,
+  "promoRate": 1
+}
