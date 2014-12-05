@@ -1,0 +1,77 @@
+.advisor-tile {
+  overflow: hidden;
+}
+
+.advisor-tile-object {
+  float: left;
+  width: 25%;
+  max-width: (80px / $font-size-base * 1em);
+  margin: 0 $line-height-computed $line-height-computed 0;
+
+  @include clearfix();
+
+  @media (min-width: $screen-sm) {
+    float: none;
+    margin-right: 0;
+    max-width: none;
+    text-align: center;
+    width: auto;
+
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.advisor-tile-heading {
+  margin-top: 0;
+
+  @media (min-width: $screen-sm) {
+    float: left;
+  }
+}
+
+.advisor-tile-rating {
+  @media (min-width: $screen-sm) {
+    margin-top: 3px;
+    float: right;
+  }
+}
+
+.advisor-tile-availability {
+  @media (min-width: $screen-sm) {
+    clear: both;
+  }
+}
+
+.advisor-tile-actions {
+  clear: both;
+  margin: 0 ($line-height-computed / -2);
+
+  // li {
+  //   margin-top: ($line-height-computed / 2);
+  // }
+
+  ul {
+    display: table;
+    margin-left: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  li {
+    display: table-cell;
+    list-style: none;
+    padding-left: ($line-height-computed / 2);
+    padding-right: ($line-height-computed / 2);
+  }
+}
+
+// .btn-success .text-muted {
+//   color: lighten($green, 50%);
+// }
+//
+// .btn del {
+//   font-weight: normal;
+// }
