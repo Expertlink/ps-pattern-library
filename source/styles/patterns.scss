@@ -41,6 +41,17 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
   margin: -1px; padding: 0; border: 0;
 }
 
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 /* Utilities */
 
 .c4-arrange {
@@ -393,6 +404,7 @@ a.c4-header__title-segment {
 }
 
 .c4-pattern__body {
+  @include clearfix();
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 }
