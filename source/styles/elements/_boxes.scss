@@ -74,7 +74,7 @@
   background: url(/images/fleurons/scroll.svg) center repeat-x;
   content: '';
   display: block;
-  height: 30px;
+  height: 14px;
   margin: ($line-height-computed / 2) ($line-height-computed * -1);
   width: auto;
 }
@@ -166,7 +166,7 @@
 .fleuron-star,
 .fleuron-star-alt {
   @include fleuron(
-    $width: 2em,
+    $width: 1.6em,
     $edge-adjust-x: 0.15em,
     $edge-adjust-y: 0.1em
   );
@@ -180,10 +180,10 @@
 
 .fleuron-star-wide {
   @include fleuron(
-    $width: 12em,
-    $height: 3em,
+    $width: em(156px),
+    $height: em(26px),
     $url: '/images/fleurons/top-flourish.svg',
     $edge-adjust-x: 6.5em,
-    $edge-adjust-y: 0.2em
+    $edge-adjust-y: 0.1em
   );
 }
