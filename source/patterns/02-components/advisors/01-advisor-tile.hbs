@@ -26,16 +26,18 @@
   </div>
   <div class="advisor-tile-actions">
     <ul>
-      <li>
-        <a class="btn btn-block btn-success btn-shaded" href="#">
-          Chat Now
-        </a>
-      </li>
-      <li>
-        <a class="btn btn-block btn-success btn-shaded" href="#">
-          Call Me Now
-        </a>
-      </li>
+      {{#randomIf}}
+        <li>
+          <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
+        </li>
+        <li>
+          <a class="btn btn-block btn-success btn-shaded" href="#">Call Me Now</a>
+        </li>
+      {{else}}
+        <li>
+          <a class="btn btn-block btn-info btn-shaded" href="#">View Schedule</a>
+        </li>
+      {{/randomIf}}
     </ul>
     {{!-- <p class="text-center small">
       <del class="text-muted">$7.45</del>
