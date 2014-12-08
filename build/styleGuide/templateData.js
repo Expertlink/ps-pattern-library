@@ -1,14 +1,15 @@
 'use strict';
 
-var util = require('gulp-util'),
-	through = require('through2'),
-	path    = require('path'),
-	fs      = require('fs'),
-  _       = require('underscore');
+var util       = require('gulp-util'),
+	through      = require('through2'),
+	path         = require('path'),
+	fs           = require('fs'),
+  _            = require('underscore'),
+	templateUtil = require('./templateUtil');
 
 module.exports = function (options) {
   var cache = {},
-      globalData = {};
+      contextData = {};
 	options = _.extend({
 		property: 'data',
 		getRelativePath: function(file) {
@@ -21,14 +22,36 @@ module.exports = function (options) {
     dataFiles.forEach(function(dataFilename) {
       var name = dataFilename.substr(0, dataFilename.lastIndexOf('.'));
       if (path.extname(dataFilename) === '.json') {
-        globalData[name] = JSON.parse(fs.readFileSync(dataDir + '/' + dataFilename));
+        contextData[name] = JSON.parse(fs.readFileSync(dataDir + '/' + dataFilename));
       }
     });
   };
 
+	var parseLocalData = function(localDataDir) {
+		var filenames = fs.readdirSync(localDataDir);
+		filenames.forEach(function(filename) {
+			var candidate = localDataDir + '/' + filename,
+			stats   = fs.statSync(candidate),
+			key, parentKey, fileKey;
+			if (stats && stats.isDirectory()) {
+				parseLocalData(localDataDir + '/' + filename);
+			} else if (path.extname(filename) === '.json') {
+				key = templateUtil.templateKey(localDataDir + '/' + filename).split('/');
+				fileKey = key.pop();
+				parentKey = key.pop();
+
+
+			}
+		});
+	};
+
   if (options.dataDir) {
     parseGlobalData(options.dataDir);
   }
+
+	if (options.localDataDir) {
+		parseLocalData(options.localDataDir);
+	}
 
 	return through.obj(function (file, enc, cb) {
     var jsonData = {},
@@ -58,7 +81,7 @@ module.exports = function (options) {
   			// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
   		}
     }
-    file[options.property] = _.extend(globalData, file[options.property] || {}, jsonData);
+    file[options.property] = _.extend(contextData, file[options.property] || {}, jsonData);
 
 		this.push(file);
 		cb();

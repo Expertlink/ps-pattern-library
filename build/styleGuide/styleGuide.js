@@ -63,7 +63,7 @@ module.exports =  function() {
         remove: true
       }))
       // Get template context data for this template
-      .pipe(templateData({ dataDir: settings.paths.data }))
+      .pipe(templateData({ dataDir: settings.paths.data, localDataDir: settings.paths.partials }))
       // compile the individual template
       .pipe(template(templateContext, templateOptions))
       // Process template metadata
