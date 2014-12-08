@@ -23,6 +23,15 @@ module.exports.pathData        = function pathData(dirPath) {
   };
 };
 
+
+module.exports.templateKey   = function templateKey(filePath) {
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g'),
+      keyDir      = path.dirname(filePath).split('/').pop(),
+      name        = path.basename(filePath, path.extname(filePath)),
+      key         = (keyDir + '/' + name).replace(namePattern, '');
+  return key;
+};
+
 module.exports.pathTemplates = function pathTemplates(dirPath) {
   return {
     templateFile : findup.sync(path.resolve(dirPath), '__INDEX.template') + '/__INDEX.template',
