@@ -670,10 +670,15 @@ a.c4-header__title-segment {
 .demo-show-grid {
   margin-bottom: 1em;
 
-  [class^=col-] {
+  [class^=col-],
+  [class^=arrange-] {
     background-color: $gray-lighter;
     border: 1px solid $gray-light;
-    padding-bottom: 1em;
-    padding-top: 1em;
+    padding-bottom: 1em !important;
+    padding-top: 1em !important;
+  }
+
+  [class^=arrange-] {
+    white-space: nowrap;
   }
 }
