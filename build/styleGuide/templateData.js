@@ -31,15 +31,23 @@ module.exports = function (options) {
 		var filenames = fs.readdirSync(localDataDir);
 		filenames.forEach(function(filename) {
 			var candidate = localDataDir + '/' + filename,
-			stats   = fs.statSync(candidate),
-			key, parentKey, fileKey;
+			    stats     = fs.statSync(candidate),
+			    key, parentKey, fileKey, jsonData;
 			if (stats && stats.isDirectory()) {
 				parseLocalData(localDataDir + '/' + filename);
-			} else if (path.extname(filename) === '.json') {
-				key = templateUtil.templateKey(localDataDir + '/' + filename).split('/');
-				fileKey = key.pop();
+			} else if (stats && path.extname(filename) === '.json') {
+				key       = templateUtil.templateKey(localDataDir + '/' + filename).split('/');
+				fileKey   = key.pop();
 				parentKey = key.pop();
-
+				try {
+					var resolved                            = path.resolve(localDataDir + '/' + filename);
+					jsonData                                = JSON.parse(fs.readFileSync(resolved));
+					contextData.pattern                     = contextData.pattern || {};
+					contextData.pattern[parentKey]          = contextData.pattern[parentKey] || {};
+					contextData.pattern[parentKey][fileKey] = jsonData;
+				} catch (err) {
+					// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
+				}
 
 			}
 		});
@@ -55,7 +63,7 @@ module.exports = function (options) {
 
 	return through.obj(function (file, enc, cb) {
     var jsonData = {},
-        relPath, absPath;
+        relPath, absPath, templateContext;
 
 		if (file.isNull()) {
 			this.push(file);
@@ -81,7 +89,8 @@ module.exports = function (options) {
   			// this.emit('error', new util.PluginError(PLUGIN_NAME, err));
   		}
     }
-    file[options.property] = _.extend(contextData, file[options.property] || {}, jsonData);
+		templateContext = _.extend(contextData, file[options.property] || {}, jsonData);
+    file[options.property] =  templateContext;
 
 		this.push(file);
 		cb();
