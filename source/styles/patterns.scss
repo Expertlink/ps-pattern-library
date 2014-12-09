@@ -409,6 +409,16 @@ a.c4-header__title-segment {
   margin-top: 1.5rem;
 }
 
+.c4-pattern__body--full-width {
+  margin-left: -1rem;
+  margin-right: -1rem;
+
+  @media (min-width: $screen-md) {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
 .c4-pattern__footer__actions {
   margin-bottom: 1rem;
 }
