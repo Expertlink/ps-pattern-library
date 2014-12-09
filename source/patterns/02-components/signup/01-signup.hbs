@@ -32,8 +32,12 @@ description: The signup form for new customers.
       </label>
     </div>
      <p class="help-block"><a href="#">Have a promo code?</a></p>
-   
-  </div> 
+     <p class="help-block hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
+     <div class="form-group arrange hidden">
+        <div class="arrange-fill"><input type="text" class="form-control" id="signupPromo" placeholder="Promo code" /></div>
+        <div class="arrange-fill"> <button class="btn btn-primary">Apply</button></div>
+     </div> 
+    </div> 
   <div class="form-group">
     <label for="signupName">Your name</label>
     <input type="text" class="form-control" id="signupName" />
@@ -95,9 +99,16 @@ description: The signup form for new customers.
   <div class="form-group">
    <div class="checkbox">
       <label>
-        <input type="checkbox" /> I am 18 years of age or older and I agree to Psychic Source <a href="#">terms and conditions</a>.
+        <input type="checkbox" /> I am 18 years of age or older and I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>.
       </label>
-    </div>
+      <div class="toggle-content hidden">
+        <p><strong>Conditions of Sale and Payment Terms</strong></p>
+        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+        <p><strong>Methods of Payment, Credit Card Terms</strong></p>
+        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+        <p><strong>Order Acceptance Policy</strong></p>
+        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+      </div>
   </div>  
   <div class="form-group">
     <button class="btn btn-primary">Create your account</button>
