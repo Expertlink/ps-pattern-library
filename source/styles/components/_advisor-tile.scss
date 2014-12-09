@@ -1,5 +1,12 @@
 $advisor-tile-padding: $line-height-computed !default;
 
+.advisor-tiles {
+  @media (min-width: $screen-sm) {
+    margin-left: $grid-gutter-width;
+    margin-right: $grid-gutter-width;
+  }
+}
+
 .advisor-tile {
   background-color: #fff;
   border-color: $gray-lighter;
