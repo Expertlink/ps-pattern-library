@@ -67,24 +67,13 @@ $advisor-tile-padding: $line-height-computed !default;
 
 .advisor-tile-main-object {
   padding-right: $line-height-computed;
+  text-align: center;
   width: 1%;
 
   @media (min-width: $screen-sm) {
     margin-bottom: ($line-height-computed / 1.5);
     padding-right: 0;
     width: 100%;
-  }
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: em(72px - $line-height-computed);
-
-    @media (min-width: $screen-sm) {
-      max-width: 100%;
-      width: auto;
-    }
   }
 }
 
@@ -94,6 +83,60 @@ $advisor-tile-padding: $line-height-computed !default;
   }
   > *:last-child {
     margin-bottom: 0;
+  }
+}
+
+.advisor-tile-photo {
+  display: inline-block;
+  position: relative;
+  width: em(72px - $line-height-computed);
+
+  @media (min-width: $screen-sm) {
+    max-width: 100%;
+    width: auto;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.advisor-tile-staff-pick,
+.advisor-tile-showcase {
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+
+  @include text-hide();
+}
+
+.advisor-tile-staff-pick {
+  background-image: url(/images/badges/staffpick.svg);
+  height: 35px;
+  left: -10px;
+  top: -10px;
+  width: 35px;
+
+  @media (min-width: $screen-sm) {
+    left: -20px;
+    height: 54px;
+    width: 54px;
+  }
+}
+
+.advisor-tile-showcase {
+  background-image: url(/images/badges/showcase.svg);
+  bottom: -6px;
+  height: (52 / 117 * 64px);
+  left: -7px;
+  width: 64px;
+
+  @media (min-width: $screen-sm) {
+    bottom: -4px;
+    height: 52px;
+    left: -20px;
+    width: 117px;
   }
 }
 
