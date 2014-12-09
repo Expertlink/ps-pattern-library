@@ -1,41 +1,30 @@
 <div class="advisor-tile">
-  <div class="advisor-tile-object">
-    <a href="">
-      <img src="{{photo}}" alt=" " class="img-responsive img-rounded img-shadow">
-    </a>
-  </div>
-  <div class="advisor-tile-body">
-    <div class="advisor-tile-heading">
-      <h4 class="advisor-tile-heading-name">
-        <a href="">{{name}} x{{ext}}</a>
-      </h4>
-      <p class="advisor-tile-heading-rating">
-        <a href="" class="stars stars-4-5">4&frac12; stars</a>
-      </p>
+  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+    <div class="advisor-tile-main-object">
+      <img
+        class="img-rounded img-shadow"
+        src="http://www.psychicsource.com/images/psychics/7777-sml.jpg"
+        alt=" ">
     </div>
-    <p class="advisor-tile-availability text-success" style="margin-bottom: 0.25em;">
-      <b>I&rsquo;m Available</b>
-      <small>until 7:42pm</small>
-    </p>
-    <p class="small" style="margin-top: 0;">
-      <del class="text-muted">${{rate}}</del>
-      <b>${{promoRate}}/min</b>
-    </p>
-  </div>
-  <div class="advisor-tile-actions">
-    <ul>
-      {{#randomIf}}
-        <li>
-          <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-        </li>
-        <li>
-          <a class="btn btn-block btn-success btn-shaded" href="#">Call Me Now</a>
-        </li>
-      {{else}}
-        <li>
-          <a class="btn btn-block btn-info btn-shaded" href="#">View Schedule</a>
-        </li>
-      {{/randomIf}}
-    </ul>
-  </div>
+    <div class="advisor-tile-main-body">
+      <h4 class="text-primary">Mystery Reader x7777</h4>
+      <div class="advisor-tile-meta">
+        <p class="advisor-tile-meta-group stars stars-4-5">
+          4&frac12; stars
+        </p>
+        <p class="advisor-tile-meta-group">
+          <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+        </p>
+      </div>
+      <p class="text-success"><b>Available</b> till 7:45pm</p>
+    </div>
+  </a>
+  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+    <li class="arrange-fill">
+      <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
+    </li>
+    <li class="arrange-fill">
+      <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
+    </li>
+  </ul>
 </div>

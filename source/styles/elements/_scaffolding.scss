@@ -13,3 +13,36 @@ body {
 // a {
 //   text-decoration: underline;
 // }
+
+/**
+ * Style links that contain complex block elements.
+ */
+.link-block {
+  display: block;
+
+  &,
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+
+/**
+ * Style elements nested within .link-block to act like links on hover of
+ * the link block.
+ */
+// .link-block-link {
+//   color: $link-color;
+//   text-decoration: none;
+//
+//   .link-block:hover &,
+//   .link-block:focus & {
+//     color: $link-hover-color;
+//     text-decoration: $link-hover-decoration;
+//   }
+//
+//   .link-block:focus & {
+//     @include tab-focus;
+//   }
+// }
