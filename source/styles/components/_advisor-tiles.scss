@@ -28,6 +28,14 @@ $advisor-tile-padding: $line-height-computed !default;
     margin-bottom: ($grid-gutter-width / 2);
     margin-top: ($grid-gutter-width / 2);
   }
+
+  /**
+   * TODO: This should be a utility class or a .btn modifier.
+   */
+  .btn-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .advisor-tile-group {
