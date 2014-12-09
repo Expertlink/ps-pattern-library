@@ -3,8 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-<polygon fill="#BFB5AC" stroke="#BFB5AC" stroke-linejoin="round" points="4,15.1 4.8,10.2 1.2,6.8 6.1,6.1 8.3,1.6 10.5,6 
-	15.4,6.7 11.9,10.2 12.8,15 8.4,12.8 "/>
 <radialGradient id="SVGID_1_" cx="39.587" cy="198.439" r="13.6985" gradientTransform="matrix(0.9256 3.918997e-02 3.918997e-02 -0.9256 -36.8643 196.5482)" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#FF2817"/>
 	<stop  offset="0.1069" style="stop-color:#FF5737"/>
