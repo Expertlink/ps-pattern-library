@@ -10,6 +10,10 @@ body {
   background-repeat: repeat-x;
 }
 
+/**
+ * TODO: Determine if this is viable or not. Temporarily (?) commented out to
+ * avoid repetitive overrides.
+ */
 // a {
 //   text-decoration: underline;
 // }
@@ -27,22 +31,3 @@ body {
     text-decoration: inherit;
   }
 }
-
-/**
- * Style elements nested within .link-block to act like links on hover of
- * the link block.
- */
-// .link-block-link {
-//   color: $link-color;
-//   text-decoration: none;
-//
-//   .link-block:hover &,
-//   .link-block:focus & {
-//     color: $link-hover-color;
-//     text-decoration: $link-hover-decoration;
-//   }
-//
-//   .link-block:focus & {
-//     @include tab-focus;
-//   }
-// }
