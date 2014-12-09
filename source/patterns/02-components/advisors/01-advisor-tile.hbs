@@ -14,11 +14,11 @@ status: inprogress
     <div class="advisor-tile-main-body">
       <h4 class="text-primary">Mystery Reader x7777</h4>
       <div class="advisor-tile-meta">
-        <p class="advisor-tile-meta-group stars stars-4-5">
-          4&frac12; stars
+        <p class="advisor-tile-meta-group stars stars-{{replace 4.5 "." "-"}}">
+          {{{formatFraction 4.5}}} stars
         </p>
         <p class="advisor-tile-meta-group">
-          <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+          <del class="text-muted">${{formatCurrency 7.45}}</del> <b>${{formatCurrency 1}}/min</b>
         </p>
       </div>
       <p class="text-success"><b>Available</b> till 7:45pm</p>
