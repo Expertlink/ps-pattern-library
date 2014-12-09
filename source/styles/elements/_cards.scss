@@ -1,0 +1,59 @@
+.ccards {
+  margin:0;
+  padding: (0.5 * $arrange-gutter-size) 0 0;
+  list-style: none;
+}
+
+.ccard {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  background-color: $gray-light;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 1px solid $gray-light;
+  text-indent: -999em;
+  overflow: hidden;
+  margin: 0 (0.5 * $arrange-gutter-size) 0 0;
+  padding:0;
+  &.ccard--visa {
+    background-image: url(/images/cards/visa.svg);
+  }
+  &.ccard--mastercard {
+    background-image: url(/images/cards/mastercard.svg);
+  }
+  &.ccard--cvv {
+    background-image: url(/images/cards/cvv.svg);
+  }
+}
+/**
+ * When the first four digits of the card are entered, we know what type of card it is.
+ * The other cards are greyed out, highlighting the correct card type
+ */
+ 
+.knows-card .ccard {
+  opacity: 0.25;
+}
+.is-visa .ccard.ccard--visa,
+.is-mastercard .ccard.ccard--mastercard,
+.is-discover .ccard.ccard--discover,
+.is-amex .ccard.ccard--amex,
+.is-dinersclub .ccard.ccard--dinersclub {
+  opacity: 1;
+}
+
+/**
+ * Positions the CVV hint icon inside the text input
+ */
+
+.form-group--signupCCCode {
+  position: relative;
+  .ccard--cvv {
+    position: absolute;
+    top: 2.2em;
+    left: $arrange-gutter-size;
+  }
+  input {
+    padding-left: 44px;
+  }
+}

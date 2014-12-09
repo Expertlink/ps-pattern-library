@@ -50,7 +50,7 @@ description: The signup form for new customers.
     </div>
   <div class="form-group">
     <label for="signupPassword">Choose a password</label>
-    <input type="password" class="form-control" id="signupPassword" />
+    <input class="form-control" id="signupPassword" type="password" placeholder="Password" />
     <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
   </div>
   
@@ -70,24 +70,20 @@ description: The signup form for new customers.
     <label for="signupCCName">Name on card</label>
     <input type="text" class="form-control" id="signupCCName" value="Aileen Jeffries" >
   </div>
-  <div class="form-group">
+  <div class="form-group has-cards knows-card is-visa">
     <label for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-    <ul class="ccards  inline-list">
-        <li class="ccard  ccard--visa">Visa</li>
-        <li class="ccard  ccard--mastercard">MasterCard</li>
-        <li class="ccard  ccard--discover">Discover</li>
-        <li class="ccard  ccard--amex">American Express</li>
-        <li class="ccard  ccard--dinersclub">Diner's Club</li>
+    <ul class="ccards">
+      <li class="ccard  ccard--visa">Visa</li><li class="ccard  ccard--mastercard">MasterCard</li><li class="ccard  ccard--discover">Discover</li><li class="ccard  ccard--amex">American Express</li><li class="ccard  ccard--dinersclub">Diner's Club</li>
     </ul>
   </div>
-  <div class="form-group">
-    <div class="form-group data-mask data-mask-type="expiration-date">
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group arrange-fill data-mask data-mask-type="expiration-date">
       <label for="signupCCExp">Expiration</label>
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
     </div> 
-    <div class="form-group">
-      <label for="signupCCCode">Security code<a href="#">?</a></label>
+    <div class="form-group form-group--signupCCCode arrange-fill">
+      <label for="signupCCCode">Security code</label>
       <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
       <span class="ccard  ccard--cvv" aria-hidden="true"></span>
     </div>  
@@ -104,3 +100,12 @@ description: The signup form for new customers.
     </div>
   </div>  
 </form>
+
+
+<script>
+
+$('#signupPassword').showPassword('focus', {
+  toggle: { className: 'my-toggle' }
+});
+
+</script>
