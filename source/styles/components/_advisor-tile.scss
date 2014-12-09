@@ -6,21 +6,42 @@
 .advisor-tile-main {
   display: table;
   width: 100%;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
 }
 
 .advisor-tile-main-object,
 .advisor-tile-main-body {
   display: table-cell;
   vertical-align: middle;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
 }
 
 .advisor-tile-main-object {
   padding-right: $line-height-computed;
   width: 1%;
 
+  @media (min-width: $screen-sm) {
+    margin-bottom: ($line-height-computed / 1.5);
+    padding-right: 0;
+    width: 100%;
+  }
+
   img {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: em(72px - $line-height-computed);
+
+    @media (min-width: $screen-sm) {
+      max-width: 100%;
+      width: auto;
+    }
   }
 }
 
