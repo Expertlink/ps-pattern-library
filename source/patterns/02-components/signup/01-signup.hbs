@@ -1,0 +1,129 @@
+---
+description: The signup form for new customers.
+---
+
+<form role="form">
+ <div class="box box-scroll">
+  <div class="media">
+    <a class="media-left" href="#">
+      <img src="/images/satisfaction-seal.png" width="120" alt="Satisfaction Guarantee" />
+    </a>
+    <div class="media-body">
+      <h2 class="media-heading text-cursive text-primary">Truly Risk Free!</h2>
+      If you're unhappy with your last live purchased psychic reading, we will refund your money from that reading or give you the time back to try us again.
+    </div>
+  </div>
+ </div> 
+  <div class="form-group">
+    <label>How many minutes would you like to start with?</label>
+    <div class="radio">
+      <label>
+        <input type="radio" value="30" checked="checked" /> 30 minutes <strong>plus 3 minutes free</strong> for $30.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="20" /> 20 minutes <strong>plus 3 minutes free</strong> for $20.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="10" /> 10 minutes <strong>plus 3 minutes free</strong> for $10.00
+      </label>
+    </div>
+     <p class="help-block"><a href="#">Have a promo code?</a></p>
+     <p class="help-block hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
+     <div class="form-group arrange hidden">
+        <div class="arrange-fill">
+          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error hidden">Invalid code.</p>
+        </div>
+        <div class="arrange-fill"> <button class="btn btn-primary">Apply</button></div>
+     </div> 
+    </div> 
+  <div class="form-group">
+    <label for="signupName">Your name</label>
+    <input type="text" class="form-control" id="signupName" />
+  </div>
+  <div class="form-group">
+    <label for="signupEmail">Email address</label>
+    <input type="email" class="form-control" id="signupEmail" />
+    <div class="help-block">
+      <div class="checkbox">
+      <label for="signupOptIn">
+        <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
+      </label>
+      </div>
+    </div>
+  <div class="form-group">
+    <label for="signupPassword">Choose a password</label>
+    <input class="form-control" id="signupPassword" type="password" placeholder="Password" />
+    <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
+  </div>
+  
+  <div class="box box-scroll">  
+  <div class="media">
+    <a class="media-left" href="https://www.youtube.com/watch?v=vzNICdAV-XE" target="_new">
+      <img src="/images/how-it-works-thumbnail.png" width="120" alt="How it Works" />
+    </a>
+    <div class="media-body">
+      <h2 class="media-heading text-cursive text-primary">No Hidden Fees</h2>
+      At Psychic Source you control how much you spend, and you're only charged for the time you talk with an advisor. No hidden fees. No surprise charges.
+    </div>
+  </div>
+ </div> 
+ <h3>Billing Information</h3>
+ <div class="form-group">
+    <label for="signupCCName">Name on card</label>
+    <input type="text" class="form-control" id="signupCCName" value="Aileen Jeffries" >
+  </div>
+  <div class="form-group has-cards knows-card is-visa">
+    <label for="signupCCNumber">Credit card number</label>
+    <input type="text" class="form-control" id="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
+    <ul class="creditcards">
+      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+    </ul>
+  </div>
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group arrange-fill data-mask data-mask-type="expiration-date">
+      <label for="signupCCExp">Expiration</label>
+      <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
+    </div> 
+    <div class="form-group form-group-signupCCCode arrange-fill">
+      <label for="signupCCCode">Security code</label>
+      <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
+      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
+    </div>  
+  </div>
+  <div class="form-group">
+    <label for="signupCCZip">Billing zip or postal code</label>
+    <input type="text" class="form-control" id="signupCCZip" />
+  </div>
+  <div class="form-group">
+   <div class="checkbox">
+      <label>
+        <input type="checkbox" /> I am 18 years of age or older and I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>.
+      </label>
+      <div class="toggle-content hidden">
+        <p><strong>Conditions of Sale and Payment Terms</strong></p>
+        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+        <p><strong>Methods of Payment, Credit Card Terms</strong></p>
+        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+        <p><strong>Order Acceptance Policy</strong></p>
+        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+      </div>
+  </div>  
+  <div class="form-group">
+    <p class="help-block">Charges on your credit card will appear as Expert Link, Inc. You will receive a confirmation email after completing the next step.</p>
+    <button class="btn btn-primary">Create your account</button>
+  </div>
+</form>
+
+
+<script>
+
+$('#signupPassword').showPassword('focus', {
+  toggle: { className: 'hideShowPassword-toggle' }
+});
+
+</script>

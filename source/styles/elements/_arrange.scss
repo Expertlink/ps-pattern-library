@@ -27,7 +27,8 @@ $arrange-gutter-size: 10px !default;
 .arrange {
   box-sizing: border-box; /* 1 */
   display: table; /* 2 */
-  margin: 0; /* 3 */
+  margin-left: 0; /* 3 */
+  margin-right: 0; /* 3 */
   min-width: 100%; /* 4 */
   padding: 0; /* 3 */
   table-layout: auto; /* 5 */
@@ -136,12 +137,14 @@ $arrange-gutter-size: 10px !default;
  */
 
 .arrange-gutter {
-  margin: 0 (-0.5 * $arrange-gutter-size);
+  margin-left: (-0.5 * $arrange-gutter-size);
+  margin-right: (-0.5 * $arrange-gutter-size);
 }
 
 .arrange-gutter > .arrange-fit,
 .arrange-gutter > .arrange-fill {
-  padding: 0 (0.5 * $arrange-gutter-size);
+  padding-left:  (0.5 * $arrange-gutter-size);
+  padding-right:  (0.5 * $arrange-gutter-size);
 }
 
 .arrange-gutter.arrange-equal {
