@@ -1,10 +1,10 @@
-.ccards {
+.creditcards {
   margin:0;
   padding: (0.5 * $arrange-gutter-size) 0 0;
   list-style: none;
 }
 
-.ccard {
+.creditcard {
   display: inline-block;
   width: 32px;
   height: 20px;
@@ -16,13 +16,13 @@
   overflow: hidden;
   margin: 0 (0.5 * $arrange-gutter-size) 0 0;
   padding:0;
-  &.ccard--visa {
+  &.creditcard-visa {
     background-image: url(/images/cards/visa.svg);
   }
-  &.ccard--mastercard {
+  &.creditcard-mastercard {
     background-image: url(/images/cards/mastercard.svg);
   }
-  &.ccard--cvv {
+  &.creditcard-cvv {
     background-image: url(/images/cards/cvv.svg);
   }
 }
@@ -31,14 +31,14 @@
  * The other cards are greyed out, highlighting the correct card type
  */
  
-.knows-card .ccard {
+.knows-card .creditcard {
   opacity: 0.25;
 }
-.is-visa .ccard.ccard--visa,
-.is-mastercard .ccard.ccard--mastercard,
-.is-discover .ccard.ccard--discover,
-.is-amex .ccard.ccard--amex,
-.is-dinersclub .ccard.ccard--dinersclub {
+.is-visa .creditcard.creditcard-visa,
+.is-mastercard .creditcard.creditcard-mastercard,
+.is-discover .creditcard.creditcard-discover,
+.is-amex .creditcard.creditcard-amex,
+.is-dinersclub .creditcard.creditcard-dinersclub {
   opacity: 1;
 }
 
@@ -46,9 +46,9 @@
  * Positions the CVV hint icon inside the text input
  */
 
-.form-group--signupCCCode {
+.form-group-signupCCCode {
   position: relative;
-  .ccard--cvv {
+  .creditcard-cvv {
     position: absolute;
     top: 2.2em;
     left: $arrange-gutter-size;

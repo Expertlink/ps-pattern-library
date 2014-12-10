@@ -34,7 +34,10 @@ description: The signup form for new customers.
      <p class="help-block"><a href="#">Have a promo code?</a></p>
      <p class="help-block hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
      <div class="form-group arrange hidden">
-        <div class="arrange-fill"><input type="text" class="form-control" id="signupPromo" placeholder="Promo code" /></div>
+        <div class="arrange-fill">
+          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error hidden">Invalid code.</p>
+        </div>
         <div class="arrange-fill"> <button class="btn btn-primary">Apply</button></div>
      </div> 
     </div> 
@@ -45,7 +48,7 @@ description: The signup form for new customers.
   <div class="form-group">
     <label for="signupEmail">Email address</label>
     <input type="email" class="form-control" id="signupEmail" />
-    <div class="help-block"">
+    <div class="help-block">
       <div class="checkbox">
       <label for="signupOptIn">
         <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
@@ -77,8 +80,8 @@ description: The signup form for new customers.
   <div class="form-group has-cards knows-card is-visa">
     <label for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-    <ul class="ccards">
-      <li class="ccard  ccard--visa">Visa</li><li class="ccard  ccard--mastercard">MasterCard</li><li class="ccard  ccard--discover">Discover</li><li class="ccard  ccard--amex">American Express</li><li class="ccard  ccard--dinersclub">Diner's Club</li>
+    <ul class="creditcards">
+      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
     </ul>
   </div>
   <div class="form-group arrange arrange-equal arrange-gutter">
@@ -86,10 +89,10 @@ description: The signup form for new customers.
       <label for="signupCCExp">Expiration</label>
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
     </div> 
-    <div class="form-group form-group--signupCCCode arrange-fill">
+    <div class="form-group form-group-signupCCCode arrange-fill">
       <label for="signupCCCode">Security code</label>
       <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
-      <span class="ccard  ccard--cvv" aria-hidden="true"></span>
+      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
     </div>  
   </div>
   <div class="form-group">
@@ -120,7 +123,7 @@ description: The signup form for new customers.
 <script>
 
 $('#signupPassword').showPassword('focus', {
-  toggle: { className: 'my-toggle' }
+  toggle: { className: 'hideShowPassword-toggle' }
 });
 
 </script>

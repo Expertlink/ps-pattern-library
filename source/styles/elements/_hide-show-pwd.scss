@@ -3,7 +3,7 @@
   display: none !important;
 }
 
-.my-toggle {
+.hideShowPassword-toggle {
   background: transparent;
   border: 0;
   border-radius: 0.25em;
@@ -18,8 +18,8 @@
   -webkit-appearance: none;
 }
 
-.my-toggle:hover,
-.my-toggle:focus {
+.hideShowPassword-toggle:hover,
+.hideShowPassword-toggle:focus {
   background-color: $gray-lighter;
   color: $gray-dark;
   outline: transparent;
