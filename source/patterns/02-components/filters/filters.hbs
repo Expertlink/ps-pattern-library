@@ -1,0 +1,47 @@
+---
+fullWidth: true
+status: inprogress
+---
+<div class="filters js-filter-container">
+  {{#each filters.groups}}
+    <h4 class="filter-item filter-parent filter-heading js-filter-parent">
+      {{title}}
+      <span class="badge js-filter-badge"></span>
+    </h4>
+    {{> filters/_filter-list}}
+  {{/each}}
+</div>
+
+<script>
+
+(function($, window){
+
+  var $container = $('.js-filter-container');
+  var $parents = $container.find('.js-filter-parent');
+  var $lists = $container.find('.js-filter-list');
+  var $controls = $container.find('[type="checkbox"], [type="radio"]');
+
+  $parents.addClass('collapsed');
+  $lists.hide();
+
+  $parents.click(function(){
+    var $parent = $(this);
+    var $list = $parent.next('.js-filter-list');
+    $list.slideToggle(250, function(){
+      $parent.toggleClass('collapsed', !$(this).is(':visible'));
+    });
+  });
+
+  $controls.on('click change', function(){
+    $parents.each(function(){
+      var $parent = $(this);
+      var $badge = $parent.find('.js-filter-badge');
+      var $list = $parent.next('.js-filter-list');
+      var checked = $list.find('[type="checkbox"], [type="radio"]').filter(':checked');
+      $badge.text(checked.length || '');
+    });
+  });
+
+}(jQuery, window));
+
+</script>

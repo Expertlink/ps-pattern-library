@@ -1,0 +1,78 @@
+$filter-padding-vertical: ($line-height-computed / 2) !default;
+$filter-padding-horizontal: $padding-base-horizontal !default;
+
+.filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-item {
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: $line-height-base;
+  margin: -1px 0 0;
+  overflow: hidden;
+  padding: $filter-padding-vertical $filter-padding-horizontal;
+  position: relative;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    float: right;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $tan-light;
+    border-color: $tan;
+    z-index: 2;
+  }
+
+  .filter-list .filter-list & {
+    padding-left: ($filter-padding-horizontal * 2);
+  }
+}
+
+.filter-parent {
+  &:before {
+    content: '\2013';
+    float: right;
+    font-weight: bold;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include visuallyhidden();
+  }
+
+  &.collapsed:before {
+    content: '+';
+  }
+}
+
+.filter-heading {
+  background-color: lighten($gray-lighter, 10%);
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(to bottom, #fff, $tan-light);
+  }
+
+  .badge {
+    background-color: rgba(#000, 0.25);
+  }
+}
+
+// .filter-badge {
+//   background-color: $gray-light;
+// }

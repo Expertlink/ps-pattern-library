@@ -1,0 +1,14 @@
+<li>
+  {{#if items}}
+    <h5 class="filter-item filter-parent js-filter-parent">
+      {{title}}
+      <span class="badge js-filter-badge"></span>
+    </h5>
+    {{> filters/_filter-list}}
+  {{else}}
+    <label class="filter-item">
+      <input type="checkbox">
+      {{title}}
+    </label>
+  {{/if}}
+</li>
