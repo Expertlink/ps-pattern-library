@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    VSE Responsive Pilot Pattern Library: Borders
+    VSE Responsive Pilot Pattern Library: Arrange
   </title>
     <!-- CSS Goes here -->
     <link href="../../css/patterns.css" rel="stylesheet">
@@ -41,7 +41,7 @@
           VSE Responsive Pilot Pattern Library
         </a>
         <h1 class="c4-header__title-segment">
-          Borders
+          Arrange
         </h1>
       </div>
       <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
@@ -61,8 +61,8 @@
       <li><a class="c4-nav__item " href="../../01-elements/01-grid">Grid</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/02-text">Text</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/03-headings">Headings</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/04-arrange">Arrange</a></li>
-      <li><a class="c4-nav__item c4-is-current" href="../../01-elements/borders">Borders</a></li>
+      <li><a class="c4-nav__item c4-is-current" href="../../01-elements/04-arrange">Arrange</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/forms">Forms</a></li>
@@ -86,47 +86,108 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_5">
+  <div class="c4-pattern" id="c4-pattern_4">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_5">Borders</a>
+          <a href="#c4-pattern_4">Arrange</a>
           <span class="c4-status c4-status--none">
             
           </span>
         </h2>
-        
+        <p>This pattern (based on <a href="https://github.com/suitcss/components-arrange/">the SUIT CSS <code>Arrange</code> component</a>) allows for horizontally and vertically arranging a single row of cells. Includes modifier classes for equal-width cells and gutter-separated cells. Makes use of CSS table layout.</p>
+
       </div>
     
 
     <div class="c4-pattern__body ">
-      <h1 class="border-bottom">
-  I am an H1 with a dotted bottom border
-</h1>
-
-<p class="border-bottom">
-  Every psychic reader at Psychic Source uses a variety of gifts and tools to give you the most insightful, revealing, and helpful reading possible. Many of our gifted psychic readers were born with their psychic gifts, discovering that they possessed these special abilities at an early age. Often the psychic gifts run in the family and are passed down from generation to generation.
-</p>
+      
+<div class="arrange arrange-middle arrange-gutter demo-show-grid">
+  <div class="arrange-fit">
+    .arrange-fit
+  </div>
+  <div class="arrange-fill">
+    .arrange-fill
+  </div>
+</div>
 
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_5" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_4" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_5"><code class="language-markup">&lt;h1 class=&quot;border-bottom&quot;&gt;
-  I am an H1 with a dotted bottom border
-&lt;/h1&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_4"><code class="language-markup">&lt;div class=&quot;arrange arrange-middle arrange-gutter demo-show-grid&quot;&gt;
+  &lt;div class=&quot;arrange-fit&quot;&gt;
+    .arrange-fit
+  &lt;/div&gt;
+  &lt;div class=&quot;arrange-fill&quot;&gt;
+    .arrange-fill
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
 
-&lt;p class=&quot;border-bottom&quot;&gt;
-  Every psychic reader at Psychic Source uses a variety of gifts and tools to give you the most insightful, revealing, and helpful reading possible. Many of our gifted psychic readers were born with their psychic gifts, discovering that they possessed these special abilities at an early age. Often the psychic gifts run in the family and are passed down from generation to generation.
-&lt;/p&gt;</code></pre>
+
+
+  <div class="c4-pattern" id="c4-pattern_21">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_21">Equally Spaced Arrange</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Variation that is useful if you want an equally spaced row of buttons, icons, etc.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<ul class="arrange arrange-equal arrange-gutter">
+  <li class="arrange-fill">
+    <button class="btn btn-block btn-default">Like</button>
+  </li>
+  <li class="arrange-fill">
+    <button class="btn btn-block btn-success">Save</button>
+  </li>
+  <li class="arrange-fill">
+    <button class="btn btn-block btn-danger">Remove</button>
+  </li>
+</ul>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_21" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_21"><code class="language-markup">&lt;ul class=&quot;arrange arrange-equal arrange-gutter&quot;&gt;
+  &lt;li class=&quot;arrange-fill&quot;&gt;
+    &lt;button class=&quot;btn btn-block btn-default&quot;&gt;Like&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;arrange-fill&quot;&gt;
+    &lt;button class=&quot;btn btn-block btn-success&quot;&gt;Save&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;arrange-fill&quot;&gt;
+    &lt;button class=&quot;btn btn-block btn-danger&quot;&gt;Remove&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
       
     </div>
   </div>

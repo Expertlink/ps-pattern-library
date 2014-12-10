@@ -372,7 +372,7 @@ p {
 
 small,
 .small {
-  font-size: 92%; }
+  font-size: 84%; }
 
 mark,
 .mark {
@@ -1560,7 +1560,7 @@ input[type="search"] {
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
   input[type="month"].input-sm {
-    line-height: 30px; }
+    line-height: 28px; }
 
   input[type="date"].input-lg,
   input[type="time"].input-lg,
@@ -1635,30 +1635,30 @@ input[type="checkbox"] {
     padding-right: 0; }
 
 .input-sm {
-  height: 30px;
+  height: 28px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px; }
 
 select.input-sm {
-  height: 30px;
-  line-height: 30px; }
+  height: 28px;
+  line-height: 28px; }
 
 textarea.input-sm,
 select[multiple].input-sm {
   height: auto; }
 
 .form-group-sm .form-control {
-  height: 30px;
+  height: 28px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px; }
 
 select.form-group-sm .form-control {
-  height: 30px;
-  line-height: 30px; }
+  height: 28px;
+  line-height: 28px; }
 
 textarea.form-group-sm .form-control,
 select[multiple].form-group-sm .form-control {
@@ -1717,9 +1717,9 @@ select[multiple].form-group-lg .form-control {
   line-height: 45px; }
 
 .input-sm + .form-control-feedback {
-  width: 30px;
-  height: 30px;
-  line-height: 30px; }
+  width: 28px;
+  height: 28px;
+  line-height: 28px; }
 
 .has-success .help-block,
 .has-success .control-label,
@@ -2028,13 +2028,13 @@ select[multiple].form-group-lg .form-control {
 
 .btn-sm {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px; }
 
 .btn-xs {
   padding: 1px 5px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px; }
 
@@ -2083,14 +2083,241 @@ input[type="button"].btn-block {
   padding-left: 0;
   list-style: none; }
 
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.pull-right {
+  float: right !important; }
+
+.pull-left {
+  float: left !important; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+.invisible {
+  visibility: hidden; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
+.affix {
+  position: fixed; }
+
+@-ms-viewport {
+  width: device-width; }
+.visible-xs {
+  display: none !important; }
+
+.visible-sm {
+  display: none !important; }
+
+.visible-md {
+  display: none !important; }
+
+.visible-lg {
+  display: none !important; }
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important; }
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important; }
+
+  table.visible-xs {
+    display: table; }
+
+  tr.visible-xs {
+    display: table-row !important; }
+
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important; } }
+@media (max-width: 767px) {
+  .visible-xs-block {
+    display: block !important; } }
+
+@media (max-width: 767px) {
+  .visible-xs-inline {
+    display: inline !important; } }
+
+@media (max-width: 767px) {
+  .visible-xs-inline-block {
+    display: inline-block !important; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important; }
+
+  table.visible-sm {
+    display: table; }
+
+  tr.visible-sm {
+    display: table-row !important; }
+
+  th.visible-sm,
+  td.visible-sm {
+    display: table-cell !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-block {
+    display: block !important; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline {
+    display: inline !important; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline-block {
+    display: inline-block !important; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md {
+    display: block !important; }
+
+  table.visible-md {
+    display: table; }
+
+  tr.visible-md {
+    display: table-row !important; }
+
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-block {
+    display: block !important; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-inline {
+    display: inline !important; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-inline-block {
+    display: inline-block !important; } }
+
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important; }
+
+  table.visible-lg {
+    display: table; }
+
+  tr.visible-lg {
+    display: table-row !important; }
+
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important; } }
+@media (min-width: 1200px) {
+  .visible-lg-block {
+    display: block !important; } }
+
+@media (min-width: 1200px) {
+  .visible-lg-inline {
+    display: inline !important; } }
+
+@media (min-width: 1200px) {
+  .visible-lg-inline-block {
+    display: inline-block !important; } }
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important; } }
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important; } }
+.visible-print {
+  display: none !important; }
+
+@media print {
+  .visible-print {
+    display: block !important; }
+
+  table.visible-print {
+    display: table; }
+
+  tr.visible-print {
+    display: table-row !important; }
+
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important; } }
+.visible-print-block {
+  display: none !important; }
+  @media print {
+    .visible-print-block {
+      display: block !important; } }
+
+.visible-print-inline {
+  display: none !important; }
+  @media print {
+    .visible-print-inline {
+      display: inline !important; } }
+
+.visible-print-inline-block {
+  display: none !important; }
+  @media print {
+    .visible-print-inline-block {
+      display: inline-block !important; } }
+
+@media print {
+  .hidden-print {
+    display: none !important; } }
 body {
   background-image: url(/images/main-back.png);
   background-image: url(/images/header.jpg), url(/images/main-back.png);
   background-position: top center;
   background-repeat: repeat-x; }
 
-a {
-  text-decoration: underline; }
+/**
+ * TODO: Determine if this is viable or not. Temporarily (?) commented out to
+ * avoid repetitive overrides.
+ */
+/**
+ * Style links that contain complex block elements.
+ */
+.link-block {
+  display: block; }
+  .link-block, .link-block:hover, .link-block:focus {
+    color: inherit;
+    text-decoration: inherit; }
 
 .text-cursive {
   font-family: "Dancing Script", cursive; }
@@ -2112,6 +2339,138 @@ h5.text-cursive, .h5.text-cursive {
 
 h6.text-cursive, .h6.text-cursive {
   font-size: 1.25em; }
+
+/**
+ * Based on the suitcss Arrange component, but written in Sass with
+ * Bootstrap-like class-names specifically for this project.
+ *
+ * https://github.com/suitcss/components-arrange
+ */
+/**
+ * This component lets you lay out a row of cells in various ways. You can
+ * specify whether a cell should be wide enough to fit its content, or take up
+ * the remaining space in the row. It's also possible to give all cells an
+ * equal width, and to control their vertical alignment.
+ */
+/**
+ * 1. Protect against the component expanding beyond the confines of its
+ *    container if properties affecting the box-model are applied to the
+ *    component. Mainly necessary because of (5).
+ * 2. Rely on table layout.
+ * 3. Zero out the default spacing that might be on an element (e.g., `ul`).
+ * 4. Make sure the component fills at least the full width of its parent.
+ * 5. Reset the table-layout algorithm in case a component is nested.
+ */
+.arrange {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  min-width: 100%;
+  /* 4 */
+  padding: 0;
+  /* 3 */
+  table-layout: auto;
+  /* 5 */ }
+
+/**
+ * There are two possible types of child. `sizeFill` will expand to fill all
+ * of the remaining space not filled by `sizeFit` elements.
+ *
+ * 1. Zero out any default spacing that might be on an element (e.g., `li`);
+ *    Margin has no effect when coupled with `display: table-cell`.
+ * 2. All cells are top-aligned by default
+ */
+.arrange-fill,
+.arrange-fit {
+  display: table-cell;
+  padding: 0;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/**
+ * Make sure the main content block expands to fill the remaining space.
+ */
+.arrange-fill {
+  width: 100%; }
+
+/**
+ * Where possible, protect against large images breaking the layout. Prevent them from
+ * exceeding the width of the main content block by making them fluid.
+ *
+ * Only work for all browsers with the `Arrange-equally` variant. For Firefox
+ * and IE to constrain image dimensions for other layouts, large images will
+ * need their width set to `100%`.
+ */
+.arrange-fill img {
+  height: auto;
+  max-width: 100%; }
+
+/**
+ * Defend against a side-effect of this layout pattern: images in
+ * 'Arrange-fit' cannot be fluid, otherwise they lose their ability to
+ * provide size to a cell.
+ */
+.arrange-fit img {
+  max-width: none !important;
+  width: auto !important; }
+
+/* Vertical alignment modifiers
+   ========================================================================== */
+.arrange-middle .arrange-fill,
+.arrange-middle .arrange-fit {
+  vertical-align: middle; }
+
+.arrange-bottom .arrange-fill,
+.arrange-bottom .arrange-fit {
+  vertical-align: bottom; }
+
+/* Equal-width modifier
+   ========================================================================== */
+/**
+ * This layout algorithm will create equal-width table cells, irrespective of
+ * the width of their content.
+ *
+ * 1. The layout algorithm requires a set width to correctly calculate table
+ *    cell width.
+ */
+.arrange-equal {
+  table-layout: fixed;
+  width: 100%;
+  /* 1 */ }
+
+/**
+ * Give the cells an equal width. This value ensures that Arrange is still 100%
+ * wide when gutters are used in conjunctions with equal-width cells.
+ *
+ * It's recommended that only 'Arrange-fill' be used for equal width cells.
+ * Their inner images will automatically be responsive.
+ */
+.arrange-equal > .arrange-fill,
+.arrange-equal > .arrange-fit {
+  width: 1%; }
+
+/* Gutter modifier
+   ========================================================================== */
+/**
+ * Add a gutter between cells
+ *
+ * NOTE: this can trigger a horizontal scrollbar if the component is as wide as
+ * the viewport. Use padding on a container, or `overflow-x:hidden` to protect
+ * against it.
+ */
+.arrange-gutter {
+  margin: 0 -5px; }
+
+.arrange-gutter > .arrange-fit,
+.arrange-gutter > .arrange-fill {
+  padding: 0 5px; }
+
+.arrange-gutter.arrange-equal {
+  width: calc(100% + 10px); }
 
 [class^=icon-] {
   display: inline-block;
@@ -2174,6 +2533,7 @@ h6.text-cursive, .h6.text-cursive {
   padding-left: 18px; }
 
 .box {
+  background-color: #fff;
   border: 1px solid transparent;
   border-radius: 6px;
   margin-bottom: 9px;
@@ -2200,12 +2560,26 @@ h6.text-cursive, .h6.text-cursive {
 .box-shadow {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); }
 
+.box-trans {
+  background-color: transparent; }
+
+.box-teal {
+  background: -webkit-linear-gradient(top, #fff, #fff 50%, #e9f2ef);
+  background: linear-gradient(to bottom, #fff, #fff 50%, #e9f2ef); }
+
+.box-tan {
+  background: -webkit-linear-gradient(top, #fff, #fff 50%, #feeed7);
+  background: linear-gradient(to bottom, #fff, #fff 50%, #feeed7); }
+
 .box-leaf-tr {
   background: transparent url(/images/fleurons/top-right-leaf.svg) top right no-repeat;
   background-size: 23em auto;
   margin-right: -2.4em;
   padding-right: 4em;
   padding-top: 2.8em; }
+
+.box-scroll {
+  background-color: transparent; }
 
 .box-scroll:before,
 .box-scroll:after,
@@ -2214,7 +2588,7 @@ h6.text-cursive, .h6.text-cursive {
   background: url(/images/fleurons/scroll.svg) center repeat-x;
   content: '';
   display: block;
-  height: 30px;
+  height: 14px;
   margin: 9px -18px;
   width: auto; }
 
@@ -2256,30 +2630,30 @@ h6.text-cursive, .h6.text-cursive {
 
 .fleuron-star,
 .fleuron-star-alt {
-  width: 2em;
-  height: 2em; }
+  width: 1.6em;
+  height: 1.6em; }
   .fleuron-star.top, .fleuron-star.bottom,
   .fleuron-star-alt.top,
   .fleuron-star-alt.bottom {
-    margin-left: -1em; }
+    margin-left: -0.8em; }
   .fleuron-star.right, .fleuron-star.left,
   .fleuron-star-alt.right,
   .fleuron-star-alt.left {
-    margin-top: -1em; }
+    margin-top: -0.8em; }
   .fleuron-star.top,
   .fleuron-star-alt.top {
-    margin-top: -0.9em; }
+    margin-top: -0.7em; }
   .fleuron-star.right,
   .fleuron-star-alt.right {
-    margin-right: -0.85em;
+    margin-right: -0.65em;
     margin-left: auto; }
   .fleuron-star.bottom,
   .fleuron-star-alt.bottom {
     margin-top: auto;
-    margin-bottom: -0.9em; }
+    margin-bottom: -0.7em; }
   .fleuron-star.left,
   .fleuron-star-alt.left {
-    margin-left: -0.85em; }
+    margin-left: -0.65em; }
 
 .fleuron-star {
   background-image: url("/images/fleurons/star-corner-orange.svg"); }
@@ -2289,20 +2663,20 @@ h6.text-cursive, .h6.text-cursive {
 
 .fleuron-star-wide {
   width: 12em;
-  height: 3em;
+  height: 2em;
   background-image: url("/images/fleurons/top-flourish.svg"); }
   .fleuron-star-wide.top, .fleuron-star-wide.bottom {
     margin-left: -6em; }
   .fleuron-star-wide.right, .fleuron-star-wide.left {
-    margin-top: -1.5em; }
+    margin-top: -1em; }
   .fleuron-star-wide.top {
-    margin-top: -1.3em; }
+    margin-top: -0.9em; }
   .fleuron-star-wide.right {
     margin-right: 0.5em;
     margin-left: auto; }
   .fleuron-star-wide.bottom {
     margin-top: auto;
-    margin-bottom: -1.3em; }
+    margin-bottom: -0.9em; }
   .fleuron-star-wide.left {
     margin-left: 0.5em; }
 
@@ -2353,8 +2727,8 @@ h6.text-cursive, .h6.text-cursive {
     width: 0; }
   .stars:after {
     background-position: right;
-    opacity: .3;
-    width: 100%; }
+    width: 100%;
+    background-image: url(/images/star-empty.svg); }
 
 .stars-0:before {
   width: 0%; }
@@ -2410,3 +2784,108 @@ h6.text-cursive, .h6.text-cursive {
   width: 100%; }
 .stars-5:after {
   width: 0%; }
+
+@media (min-width: 768px) {
+  .advisor-tiles {
+    margin-left: 30px;
+    margin-right: 30px; } }
+
+.advisor-tile {
+  background-color: #fff;
+  border-color: #d4ddde;
+  border-style: solid;
+  border-width: 1px 0;
+  margin-top: -1px;
+  position: relative;
+  /**
+   * TODO: This should be a utility class or a .btn modifier.
+   */ }
+  .advisor-tile:hover, .advisor-tile:focus {
+    background-color: #fdf6e4;
+    border-color: #d8c3a7;
+    z-index: 2; }
+  @media (min-width: 768px) {
+    .advisor-tile {
+      border-radius: 6px;
+      border-width: 0 1px 1px 0;
+      margin-bottom: 15px;
+      margin-top: 15px; } }
+  .advisor-tile .btn-block {
+    padding-left: 0;
+    padding-right: 0; }
+
+.advisor-tile-group {
+  padding: 0 18px 18px; }
+  .advisor-tile-group:first-child {
+    padding-top: 18px; }
+
+.advisor-tile-main {
+  display: table;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .advisor-tile-main {
+      display: block; } }
+
+.advisor-tile-main-object,
+.advisor-tile-main-body {
+  display: table-cell;
+  vertical-align: middle; }
+  @media (min-width: 768px) {
+    .advisor-tile-main-object,
+    .advisor-tile-main-body {
+      display: block; } }
+
+.advisor-tile-main-object {
+  padding-right: 18px;
+  width: 1%; }
+  @media (min-width: 768px) {
+    .advisor-tile-main-object {
+      margin-bottom: 12px;
+      padding-right: 0;
+      width: 100%; } }
+  .advisor-tile-main-object img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 4.15385em; }
+    @media (min-width: 768px) {
+      .advisor-tile-main-object img {
+        max-width: 100%;
+        width: auto; } }
+
+.advisor-tile-main-body > *:first-child {
+  margin-top: 0; }
+.advisor-tile-main-body > *:last-child {
+  margin-bottom: 0; }
+
+.advisor-tile-meta-group {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+  white-space: nowrap; }
+  .advisor-tile-meta-group:last-child {
+    margin-right: 0; }
+
+.filter-item {
+  background-color: #fff;
+  border-color: #d4ddde;
+  border-style: solid;
+  border-width: 1px 0;
+  cursor: pointer;
+  display: block;
+  font-weight: inherit;
+  margin: -1px 0 0;
+  padding: 6px 12px 6px 30px;
+  position: relative; }
+  .filter-item input[type="checkbox"],
+  .filter-item input[type="radio"], .filter-item:before {
+    float: left;
+    margin-left: -18px; }
+
+.filter-parent {
+  font-weight: bold; }
+  .filter-parent input[type="checkbox"],
+  .filter-parent input[type="radio"] {
+    display: none; }
+  .filter-parent:before {
+    content: '\2014'; }
