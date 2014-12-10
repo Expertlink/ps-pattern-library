@@ -1,0 +1,109 @@
+$advisor-tile-padding: $line-height-computed !default;
+
+.advisor-tiles {
+  @media (min-width: $screen-sm) {
+    margin-left: $grid-gutter-width;
+    margin-right: $grid-gutter-width;
+  }
+}
+
+.advisor-tile {
+  background-color: #fff;
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  margin-top: -1px;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: $orange-light;
+    border-color: $tan;
+    z-index: 2;
+  }
+
+  @media (min-width: $screen-sm) {
+    border-radius: $border-radius-large;
+    border-width: 0 1px 1px 0;
+    margin-bottom: ($grid-gutter-width / 2);
+    margin-top: ($grid-gutter-width / 2);
+  }
+
+  /**
+   * TODO: This should be a utility class or a .btn modifier.
+   */
+  .btn-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.advisor-tile-group {
+  padding: 0 $advisor-tile-padding $advisor-tile-padding;
+
+  &:first-child {
+    padding-top: $advisor-tile-padding;
+  }
+}
+
+.advisor-tile-main {
+  display: table;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
+}
+
+.advisor-tile-main-object,
+.advisor-tile-main-body {
+  display: table-cell;
+  vertical-align: middle;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
+}
+
+.advisor-tile-main-object {
+  padding-right: $line-height-computed;
+  width: 1%;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: ($line-height-computed / 1.5);
+    padding-right: 0;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: em(72px - $line-height-computed);
+
+    @media (min-width: $screen-sm) {
+      max-width: 100%;
+      width: auto;
+    }
+  }
+}
+
+.advisor-tile-main-body {
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.advisor-tile-meta-group {
+  display: inline-block;
+  margin-right: ($line-height-computed / 3);
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

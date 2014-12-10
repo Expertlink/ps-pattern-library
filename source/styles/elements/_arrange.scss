@@ -146,3 +146,7 @@ $arrange-gutter-size: 10px !default;
   padding-left:  (0.5 * $arrange-gutter-size);
   padding-right:  (0.5 * $arrange-gutter-size);
 }
+
+.arrange-gutter.arrange-equal {
+  width: calc(100% + #{$arrange-gutter-size});
+}
