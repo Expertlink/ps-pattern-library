@@ -22,6 +22,15 @@
   &.creditcard-mastercard {
     background-image: url(/images/cards/mastercard.svg);
   }
+  &.creditcard-amex {
+    background-image: url(/images/cards/amex.svg);
+  }
+  &.creditcard-discover {
+    background-image: url(/images/cards/discover.svg);
+  }
+  &.creditcard-dinersclub {
+    background-image: url(/images/cards/diner.svg);
+  }
   &.creditcard-cvv {
     background-image: url(/images/cards/cvv.svg);
   }
