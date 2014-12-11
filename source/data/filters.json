@@ -1,0 +1,101 @@
+{
+  "groups": [
+    {
+      "title": "Specialties",
+      "items": [
+        { "title": "Career Psychic" },
+        { "title": "Clairaudient" },
+        { "title": "Clairsentient" },
+        { "title": "Clairvoyant" },
+        { "title": "Intuitive/Empath" },
+        { "title": "Love Psychic" },
+        { "title": "Pet Psychic" },
+        { "title": "Psychic Medium" }
+      ]
+    },
+    {
+      "title": "Subject/Expertises",
+      "items": [
+        {
+          "title": "Love, Relationships & Family",
+          "items": [
+            { "title": "Breakups/Divorce" },
+            { "title": "Cheating/Wandering Hearts" },
+            { "title": "Finding love/Soulmates" },
+            { "title": "LGBT Relationships" },
+            { "title": "Sex/Intimacy" },
+            { "title": "Sibling/Parental Issues" },
+            { "title": "Social Media Influence" },
+            { "title": "Toxic Relationships" }
+          ]
+        },
+        {
+          "title": "Career & Finance",
+          "items": [
+            { "title": "Career Changes" },
+            { "title": "Co-Worker Disputes" },
+            { "title": "Financial Stress" },
+            { "title": "Harassment" },
+            { "title": "Manifesting Wealth" },
+            { "title": "New Job" },
+            { "title": "Office Romance" },
+            { "title": "Work/Life Balance" }
+          ]
+        },
+        {
+          "title": "Life, Destiny & Meaning",
+          "items": [
+            { "title": "Embracing Change/Getting Unstuck" },
+            { "title": "Law of Attraction" },
+            { "title": "Life coaching" },
+            { "title": "Reiki/Healing" },
+            { "title": "Spirituality" },
+            { "title": "Unlocking psychic abilities" }
+          ]
+        },
+        {
+          "title": "Loss & Grieving",
+          "items": [
+            { "title": "Coping with Death" },
+            { "title": "Incomplete goodbyes" },
+            { "title": "Loss of a pet" },
+            { "title": "Moving past grief" },
+            { "title": "Signs of Connections" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tools",
+      "items": [
+        { "title": "Angel Cards" },
+        { "title": "Astrology" },
+        { "title": "Cartomancy" },
+        { "title": "Dream Interpretation" },
+        { "title": "Lost Object" },
+        { "title": "Numerology" },
+        { "title": "Past Life Interpretation" },
+        { "title": "Spirit Guides" },
+        { "title": "Tarot" },
+        { "title": "Uses No Tools" }
+      ]
+    },
+    {
+      "title": "Language",
+      "items": [
+        { "title": "English" },
+        { "title": "Spanish" }
+      ]
+    },
+    {
+      "title": "Reading Style",
+      "items": [
+        { "title": "Compassionate" },
+        { "title": "Direct" },
+        { "title": "Expressive" },
+        { "title": "Thoughtful" },
+        { "title": "Wise" }
+      ]
+    }
+  ]
+}

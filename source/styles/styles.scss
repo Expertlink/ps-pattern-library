@@ -1,5 +1,6 @@
 // Core variables
 @import "base/functions";
+@import "base/mixins";
 @import "base/variables";
 
 // Dependencies
@@ -24,4 +25,4 @@
 
 // Components
 @import "components/advisor-tiles";
-
+@import "components/filters";
