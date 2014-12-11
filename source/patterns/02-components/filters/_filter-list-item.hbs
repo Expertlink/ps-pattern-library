@@ -9,7 +9,10 @@
     {{> filters/_filter-list}}
   {{else}}
     <label class="filter-item">
-      <input type="checkbox" class="js-filter-control">
+      <span class="filter-checkbox">
+        <input type="checkbox" class="js-filter-control">
+        <span class="filter-checkbox-value" aria-hidden="true"></span>
+      </span>
       {{title}}
     </label>
   {{/if}}
