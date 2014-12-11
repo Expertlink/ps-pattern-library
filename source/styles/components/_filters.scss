@@ -1,10 +1,15 @@
 $filter-padding-vertical: ($line-height-computed / 2) !default;
 $filter-padding-horizontal: $padding-base-horizontal !default;
+$filter-max-depth: 2 !default;
+
+.filter-heading,
+.filter-list {
+  margin: 0;
+  padding: 0;
+}
 
 .filter-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .filter-item {
@@ -20,9 +25,11 @@ $filter-padding-horizontal: $padding-base-horizontal !default;
   padding: $filter-padding-vertical $filter-padding-horizontal;
   position: relative;
 
-  input[type="checkbox"],
-  input[type="radio"] {
-    float: right;
+  &,
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
   }
 
   &:hover,
@@ -32,29 +39,22 @@ $filter-padding-horizontal: $padding-base-horizontal !default;
     z-index: 2;
   }
 
-  .filter-list .filter-list & {
-    padding-left: ($filter-padding-horizontal * 2);
-  }
-}
-
-.filter-parent {
-  &:before {
-    content: '\2013';
-    float: right;
-    font-weight: bold;
-  }
-
   input[type="checkbox"],
-  input[type="radio"] {
-    @include visuallyhidden();
+  input[type="radio"],
+  &:before {
+    float: right;
   }
 
-  &.collapsed:before {
-    content: '+';
+  $nested-selector: ".filter-list";
+  @for $i from 2 through $filter-max-depth {
+    $nested-selector: $nested-selector " .filter-list";
+    #{$nested-selector} & {
+      padding-left: ($filter-padding-horizontal * $i);
+    }
   }
 }
 
-.filter-heading {
+.filter-primary {
   background-color: lighten($gray-lighter, 10%);
   background-image: linear-gradient(
     to bottom,
@@ -67,12 +67,15 @@ $filter-padding-horizontal: $padding-base-horizontal !default;
   &:focus {
     background-image: linear-gradient(to bottom, #fff, $tan-light);
   }
-
-  .badge {
-    background-color: rgba(#000, 0.25);
-  }
 }
 
-// .filter-badge {
-//   background-color: $gray-light;
-// }
+.filter-parent.collapsible {
+  &:before {
+    content: '\2013';
+    font-weight: bold;
+  }
+
+  &.collapsed:before {
+    content: '+';
+  }
+}

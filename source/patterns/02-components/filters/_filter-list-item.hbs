@@ -1,13 +1,15 @@
 <li>
   {{#if items}}
-    <h5 class="filter-item filter-parent js-filter-parent">
-      {{title}}
-      <span class="badge js-filter-badge"></span>
+    <h5 class="filter-heading">
+      <a class="filter-item filter-parent js-filter-parent" href="#filters-{{formatSlug title}}">
+        {{title}}
+        <span class="badge js-filter-badge"></span>
+      </a>
     </h5>
     {{> filters/_filter-list}}
   {{else}}
     <label class="filter-item">
-      <input type="checkbox">
+      <input type="checkbox" class="js-filter-control">
       {{title}}
     </label>
   {{/if}}
