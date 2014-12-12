@@ -4,10 +4,10 @@ status: inprogress
 ---
 <div class="advisor-tiles">
   <div class="row">
-    {{#times 6}}
+    {{#each advisor.list}}
       <div class="col-xs-12 col-sm-6 col-md-4">
-        {{> advisors/advisor-tile}}
+        {{> advisors/_advisor-tile}}
       </div>
-    {{/times}}
+    {{/each}}
   </div>
 </div>
