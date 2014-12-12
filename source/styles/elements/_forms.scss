@@ -4,3 +4,8 @@
 .form-group-required .form-label  {
   font-weight:bold;
 }
+
+.error {
+  color: $red;
+  border-color: $red;
+}

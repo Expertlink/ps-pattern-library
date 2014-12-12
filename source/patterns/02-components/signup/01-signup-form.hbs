@@ -15,30 +15,32 @@ description: The signup form for new customers.
     </div>
   </div> 
   <div class="form-group form-group-required">
-    <label>How many minutes would you like to start with?</label>
+ 
+    <label style="display:block">Select an offer </label>
     <div class="radio">
       <label>
-        <input type="radio" value="30" checked="checked" /> 30 minutes <strong>plus 3 minutes free</strong> for $30.00
+        <input type="radio" value="30" checked="checked" /> 30 minutes  for $30.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" value="20" /> 20 minutes <strong>plus 3 minutes free</strong> for $20.00
+        <input type="radio" value="20" /> 20 minutes  for $20.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" value="10" /> 10 minutes <strong>plus 3 minutes free</strong> for $10.00
+        <input type="radio" value="10" /> 10 minutes  for $10.00
       </label>
     </div>
-     <p class="help-block"><a href="#">Have a promo code?</a></p>
-     <p class="help-block hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
-     <div class="form-group arrange arrange-auto-width hidden">
-        <div class="arrange-fill">
-          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-          <p class="help-block error hidden">Invalid code.</p>
+    <p><strong class="text-primary">+&nbsp;&nbsp;3 minutes free!</strong></p>
+     <p><a href="#">Have a promo code?</a></p>
+     <p class="help-block  hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
+     <div class="form-group arrange arrange-width-auto hidden">
+        <div class="arrange-fit">
+          <input type="text" class="form-control error" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error">Invalid code.</p>
         </div>
-        <div class="arrange-fill">
+        <div class="arrange-fit">
           <button class="btn btn-primary">Apply</button>
         </div>
     </div> 
@@ -464,7 +466,7 @@ description: The signup form for new customers.
   <div class="form-group form-group-required">
    <div class="checkbox">
       <label>
-        <input type="checkbox" /> I am 18 years of age or older and I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>.
+        <input type="checkbox" />I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>
       </label>
       <div class="toggle-content hidden">
         <p><strong>Conditions of Sale and Payment Terms</strong></p>
