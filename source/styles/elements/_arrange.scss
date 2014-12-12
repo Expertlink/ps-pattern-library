@@ -27,7 +27,8 @@ $arrange-gutter-size: 10px !default;
 .arrange {
   box-sizing: border-box; /* 1 */
   display: table; /* 2 */
-  margin: 0; /* 3 */
+  margin-left: 0; /* 3 */
+  margin-right: 0; /* 3 */
   min-width: 100%; /* 4 */
   padding: 0; /* 3 */
   table-layout: auto; /* 5 */
@@ -95,6 +96,15 @@ $arrange-gutter-size: 10px !default;
   vertical-align: bottom;
 }
 
+/* Horizontal alignment modifiers
+   ========================================================================== */
+.arrange-center {
+  text-align: center;
+}   
+.arrange-right {
+  text-align: right;
+}
+
 /* Equal-width modifier
    ========================================================================== */
 
@@ -136,14 +146,26 @@ $arrange-gutter-size: 10px !default;
  */
 
 .arrange-gutter {
-  margin: 0 (-0.5 * $arrange-gutter-size);
+  margin-left: (-0.5 * $arrange-gutter-size);
+  margin-right: (-0.5 * $arrange-gutter-size);
 }
 
 .arrange-gutter > .arrange-fit,
 .arrange-gutter > .arrange-fill {
-  padding: 0 (0.5 * $arrange-gutter-size);
+  padding-left:  (0.5 * $arrange-gutter-size);
+  padding-right:  (0.5 * $arrange-gutter-size);
 }
 
 .arrange-gutter.arrange-equal {
   width: calc(100% + #{$arrange-gutter-size});
 }
+
+/* Not full width modifier
+   ========================================================================== */
+.arrange.arrange-width-auto {
+  min-width:0;
+  .arrange-fit {
+    width: auto;
+    padding-right: (2 * $arrange-gutter-size);
+  }
+}   

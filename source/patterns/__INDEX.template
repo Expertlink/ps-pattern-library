@@ -24,6 +24,7 @@
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="{{ pathRoot }}/js/patterns.js"></script>
+     <script src="{{ pathRoot }}/vendor/hideShowPassword/hideShowPassword.js"></script>
     <script src="{{ pathRoot }}/vendor/prism/prism.js"></script>
 
   </head>
