@@ -1,0 +1,44 @@
+{
+  "firstName": "Mystery Reader",
+  "ext": "7777",
+  "photo": "/images/fpo/7777-sml.jpg",
+  "staffPick": true,
+  "showcase": true,
+  "rating": 4.5,
+  "basePrice": 7.45,
+  "promoPrice": 1,
+  "available": true,
+  "availableTill": "7:45pm",
+  "chat": true,
+  "call": true,
+
+  "list": [
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "staffPick": false,
+      "showcase": true,
+      "rating": 4.5,
+      "basePrice": 7.45,
+      "promoPrice": 1,
+      "online": true,
+      "availableTill": "7:45pm",
+      "chat": true,
+      "call": true
+    },
+    {
+      "firstName": "Zaphod Beeblebrox",
+      "ext": "1337",
+      "photo": "http://placeimg.com/164/216/animals",
+      "staffPick": true,
+      "showcase": false,
+      "rating": 2,
+      "basePrice": 9.45,
+      "online": false,
+      "availableTill": "2:30pm",
+      "viewSchedule": true,
+      "returnCall": true
+    }
+  ]
+}
