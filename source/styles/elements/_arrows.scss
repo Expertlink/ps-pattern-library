@@ -1,0 +1,34 @@
+%arrow-base {
+  @include triangle();
+}
+
+@each $arrow-direction in up, down, left, right {
+  .arrow-#{$arrow-direction} {
+    @extend %arrow-base;
+    @include triangle(
+      $triangle-direction: $arrow-direction,
+      $triangle-reset: false
+    );
+  }
+  .arrow-#{$arrow-direction}-equilateral {
+    @extend %arrow-base;
+    @include triangle(
+      $triangle-direction: $arrow-direction,
+      $triangle-type: equilateral,
+      $triangle-reset: false
+    );
+  }
+}
+
+// .arrow-up {
+//   @include triangle($triangle-direction: up);
+// }
+// .arrow-right {
+//   @include triangle($triangle-direction: right, $triangle-type: equilateral);
+// }
+// .arrow-left {
+//   @include triangle($triangle-direction: left, $triangle-type: equilateral);
+// }
+// .arrow-down {
+//   @include triangle($triangle-direction: down);
+// }
