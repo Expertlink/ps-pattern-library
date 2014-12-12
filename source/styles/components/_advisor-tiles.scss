@@ -39,10 +39,15 @@ $advisor-tile-padding: $line-height-computed !default;
 }
 
 .advisor-tile-group {
-  padding: 0 $advisor-tile-padding $advisor-tile-padding;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0 $advisor-tile-padding ($advisor-tile-padding / 1.5);
 
   &:first-child {
     padding-top: $advisor-tile-padding;
+  }
+  &:last-child {
+    padding-bottom: $advisor-tile-padding;
   }
 }
 
@@ -66,7 +71,7 @@ $advisor-tile-padding: $line-height-computed !default;
 }
 
 .advisor-tile-main-object {
-  padding-right: $line-height-computed;
+  padding-right: ($line-height-computed / 2);
   text-align: center;
   width: 1%;
 
@@ -89,7 +94,7 @@ $advisor-tile-padding: $line-height-computed !default;
 .advisor-tile-photo {
   display: inline-block;
   position: relative;
-  width: em(72px - $line-height-computed);
+  width: em(72px - ($line-height-computed / 2));
 
   @media (min-width: $screen-sm) {
     max-width: 100%;
