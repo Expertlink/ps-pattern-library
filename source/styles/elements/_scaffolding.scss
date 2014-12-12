@@ -31,3 +31,10 @@ body {
     text-decoration: inherit;
   }
 }
+
+/**
+ * Max-width helper to constrain container-fluid on page containers.
+ */
+.container-max {
+  max-width: $screen-md;
+}

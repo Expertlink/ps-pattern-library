@@ -27,6 +27,10 @@
 
 //== Modifiers
 
+.box-trim {
+  padding: 0;
+}
+
 .box-md {
   padding: $line-height-computed;
 }
@@ -46,11 +50,11 @@
 }
 
 .box-teal {
-  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
+  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
 }
 
 .box-tan {
-  background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);    
+  background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
 }
 
 //== Style variants
