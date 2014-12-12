@@ -1,5 +1,5 @@
-.table.table-collapse {
-  @media (max-width: $screen-sm) {
+.table.table-collapse-xs {
+  @media (max-width: $screen-xs) {
     display: block;
     tr {
       display:block;
@@ -13,6 +13,6 @@
   }
 }
 
-.table-collapse strong {
+.table-collapse-xs strong {
   white-space: nowrap;
 }

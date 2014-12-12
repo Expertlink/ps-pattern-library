@@ -4,12 +4,5 @@
 
 .toggle-trigger {
   display:inline-block;
-  &:after {
-    content: "\25BC";
-    display: inline-block;
-    margin-left: 0.2em;
-  }
-  &.open:after {
-    content: "\25B2";
-  }
+
 }

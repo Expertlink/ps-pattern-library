@@ -53,6 +53,13 @@
   background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);    
 }
 
+.box-modal {
+  background: linear-gradient(to bottom, #fff, lighten($tan-light, 20) 10%, $tan-light);  
+  border-width: 2px;
+  border-color: $tan; 
+  position: relative; 
+}
+
 //== Style variants
 
 .box-leaf-tr {
