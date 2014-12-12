@@ -33,29 +33,45 @@
           {{/if}}
         </p>
       </div>
-      <p class="text-success"><b>Available</b> till {{availableTill}}</p>
+      {{#if online}}
+        {{#if available}}
+          <p class="text-success"><b>Available</b> till {{loggedInTill}}</p>
+        {{else}}
+          <p class="text-danger"><b>Busy</b> logged on till {{loggedInTill}}</p>
+        {{/if}}
+      {{else}}
+        <p class="text-muted"><b>Offline</b></p>
+      {{/if}}
     </div>
   </a>
   <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-    {{#if viewSchedule}}
-      <li class="arrange-fill">
-        <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
-      </li>
-    {{/if}}
-    {{#if chat}}
-      <li class="arrange-fill">
-        <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
-      </li>
-    {{/if}}
-    {{#if call}}
-      <li class="arrange-fill">
-        <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
-      </li>
-    {{/if}}
-    {{#if returnCall}}
-      <li class="arrange-fill">
-        <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
-      </li>
+    {{#if available}}
+      {{#if chat}}
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
+        </li>
+      {{/if}}
+      {{#if call}}
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
+        </li>
+      {{else}}
+        {{#if returnCall}}
+          <li class="arrange-fill">
+            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+          </li>
+        {{/if}}
+      {{/if}}
+    {{else}}
+      {{#if returnCall}}
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+        </li>
+      {{else}}
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
+        </li>
+      {{/if}}
     {{/if}}
   </ul>
 </div>
