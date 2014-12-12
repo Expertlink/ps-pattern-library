@@ -13,3 +13,49 @@
   position: absolute;
   width: 1px;
 }
+
+/*
+ * Generate a CSS triangle using borders. Based on a similar mixin
+ * found in Zurb Foundation but with significant liberties taken.
+ */
+
+@mixin triangle (
+  $triangle-direction: false,
+  $triangle-size: 0.5em,
+  $triangle-color: currentColor,
+  $triangle-type: isosceles,
+  $triangle-reset: true
+) {
+  @if $triangle-reset {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    vertical-align: middle;
+    border-style: solid;
+  }
+
+  // if this is an isosceles triangle, the fill size is the same
+  $triangle-fill-size: $triangle-size;
+  // otherwise, we calculate it
+  @if $triangle-type == equilateral {
+    $triangle-fill-size: ($triangle-size * 2 * 0.866);
+  }
+
+  // direction-specific styles
+  @if $triangle-direction == up {
+    border-width: 0 $triangle-size $triangle-fill-size $triangle-size;
+    border-color: transparent transparent $triangle-color transparent;
+  }
+  @if $triangle-direction == down {
+    border-width: $triangle-fill-size $triangle-size 0 $triangle-size;
+    border-color: $triangle-color transparent transparent transparent;
+  }
+  @if $triangle-direction == left {
+    border-width: $triangle-size $triangle-fill-size $triangle-size 0;
+    border-color: transparent $triangle-color transparent transparent;
+  }
+  @if $triangle-direction == right {
+    border-width: $triangle-size 0 $triangle-size $triangle-fill-size;
+    border-color: transparent transparent transparent $triangle-color;
+  }
+}

@@ -92,6 +92,24 @@ $blockquote-font-size: 1em;
 //** Blockquote border color
 $blockquote-border-color: $tan;
 
+//== Pagination
+
+$pagination-color:            $blue-dark;
+$pagination-bg:               #fff;
+$pagination-border:           $gray-lighter;
+
+$pagination-hover-color:      $blue;
+$pagination-hover-bg:         lighten($gray-lighter, 10%);
+$pagination-hover-border:     $gray-lighter;
+
+$pagination-active-color:     #fff;
+$pagination-active-bg:        $blue-gray;
+$pagination-active-border:    $blue-gray;
+
+$pagination-disabled-color:   $gray-lighter;
+$pagination-disabled-bg:      #fff;
+$pagination-disabled-border:  $gray-lighter;
+
 /*
 \$gap: 10px;
 
