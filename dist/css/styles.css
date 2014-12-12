@@ -9,6 +9,14 @@
 * @return {String}
 */
 /*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/*
+ * Generate a CSS triangle using borders. Based on a similar mixin
+ * found in Zurb Foundation but with significant liberties taken.
+ */
+/*
 \$gap: 10px;
 
 \$bp-xs: 24em;
@@ -2050,6 +2058,121 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 18px 0;
+  border-radius: 4px; }
+  .pagination > li {
+    display: inline; }
+    .pagination > li > a,
+    .pagination > li > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      line-height: 1.42857;
+      text-decoration: none;
+      color: #205072;
+      background-color: #fff;
+      border: 1px solid #d4ddde;
+      margin-left: -1px; }
+    .pagination > li:first-child > a,
+    .pagination > li:first-child > span {
+      margin-left: 0;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
+    .pagination > li:last-child > a,
+    .pagination > li:last-child > span {
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px; }
+  .pagination > li > a:hover, .pagination > li > a:focus,
+  .pagination > li > span:hover,
+  .pagination > li > span:focus {
+    color: #3d6682;
+    background-color: #f1f4f4;
+    border-color: #d4ddde; }
+  .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
+  .pagination > .active > span,
+  .pagination > .active > span:hover,
+  .pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #89a5a8;
+    border-color: #89a5a8;
+    cursor: default; }
+  .pagination > .disabled > span,
+  .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus,
+  .pagination > .disabled > a,
+  .pagination > .disabled > a:hover,
+  .pagination > .disabled > a:focus {
+    color: #d4ddde;
+    background-color: #fff;
+    border-color: #d4ddde;
+    cursor: not-allowed; }
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 17px; }
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px; }
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px; }
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 11px; }
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px; }
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px; }
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #bbb;
+  border-radius: 10px; }
+  .badge:empty {
+    display: none; }
+  .btn .badge {
+    position: relative;
+    top: -1px; }
+  .btn-xs .badge {
+    top: 0;
+    padding: 1px 5px; }
+  .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
+    color: #8b1d3a;
+    background-color: #fff; }
+  .list-group-item > .badge {
+    float: right; }
+  .list-group-item > .badge + .badge {
+    margin-right: 5px; }
+  .nav-pills > li > a > .badge {
+    margin-left: 3px; }
+
+a.badge:hover, a.badge:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer; }
+
 .media {
   margin-top: 15px; }
   .media:first-child {
@@ -2319,6 +2442,12 @@ body {
     color: inherit;
     text-decoration: inherit; }
 
+/**
+ * Max-width helper to constrain container-fluid on page containers.
+ */
+.container-max {
+  max-width: 992px; }
+
 .text-cursive {
   font-family: "Dancing Script", cursive; }
 
@@ -2366,7 +2495,9 @@ h6.text-cursive, .h6.text-cursive {
   /* 1 */
   display: table;
   /* 2 */
-  margin: 0;
+  margin-left: 0;
+  /* 3 */
+  margin-right: 0;
   /* 3 */
   min-width: 100%;
   /* 4 */
@@ -2428,6 +2559,14 @@ h6.text-cursive, .h6.text-cursive {
 .arrange-bottom .arrange-fit {
   vertical-align: bottom; }
 
+/* Horizontal alignment modifiers
+   ========================================================================== */
+.arrange-center {
+  text-align: center; }
+
+.arrange-right {
+  text-align: right; }
+
 /* Equal-width modifier
    ========================================================================== */
 /**
@@ -2463,14 +2602,63 @@ h6.text-cursive, .h6.text-cursive {
  * against it.
  */
 .arrange-gutter {
-  margin: 0 -5px; }
+  margin-left: -5px;
+  margin-right: -5px; }
 
 .arrange-gutter > .arrange-fit,
 .arrange-gutter > .arrange-fill {
-  padding: 0 5px; }
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .arrange-gutter.arrange-equal {
   width: calc(100% + 10px); }
+
+/* Not full width modifier
+   ========================================================================== */
+.arrange.arrange-width-auto {
+  min-width: 0; }
+  .arrange.arrange-width-auto .arrange-fit {
+    width: auto;
+    padding-right: 20px; }
+
+.arrow-up, .arrow-up-equilateral, .arrow-down, .arrow-down-equilateral, .arrow-left, .arrow-left-equilateral, .arrow-right, .arrow-right-equilateral {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-style: solid; }
+
+.arrow-up {
+  border-width: 0 0.5em 0.5em 0.5em;
+  border-color: transparent transparent currentColor transparent; }
+
+.arrow-up-equilateral {
+  border-width: 0 0.5em 0.866em 0.5em;
+  border-color: transparent transparent currentColor transparent; }
+
+.arrow-down {
+  border-width: 0.5em 0.5em 0 0.5em;
+  border-color: currentColor transparent transparent transparent; }
+
+.arrow-down-equilateral {
+  border-width: 0.866em 0.5em 0 0.5em;
+  border-color: currentColor transparent transparent transparent; }
+
+.arrow-left {
+  border-width: 0.5em 0.5em 0.5em 0;
+  border-color: transparent currentColor transparent transparent; }
+
+.arrow-left-equilateral {
+  border-width: 0.5em 0.866em 0.5em 0;
+  border-color: transparent currentColor transparent transparent; }
+
+.arrow-right {
+  border-width: 0.5em 0 0.5em 0.5em;
+  border-color: transparent transparent transparent currentColor; }
+
+.arrow-right-equilateral {
+  border-width: 0.5em 0 0.5em 0.866em;
+  border-color: transparent transparent transparent currentColor; }
 
 [class^=icon-] {
   display: inline-block;
@@ -2550,6 +2738,9 @@ h6.text-cursive, .h6.text-cursive {
 
 .box-lighter {
   border-color: #bbb; }
+
+.box-trim {
+  padding: 0; }
 
 .box-md {
   padding: 18px; }
@@ -2785,6 +2976,122 @@ h6.text-cursive, .h6.text-cursive {
 .stars-5:after {
   width: 0%; }
 
+.creditcards {
+  margin: 0;
+  padding: 5px 0 0;
+  list-style: none; }
+
+.creditcard {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  background-color: #bbb;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 1px solid #bbb;
+  text-indent: -999em;
+  overflow: hidden;
+  margin: 0 5px 0 0;
+  padding: 0; }
+  .creditcard.creditcard-visa {
+    background-image: url(/images/cards/visa.svg); }
+  .creditcard.creditcard-mastercard {
+    background-image: url(/images/cards/mastercard.svg); }
+  .creditcard.creditcard-amex {
+    background-image: url(/images/cards/amex.svg); }
+  .creditcard.creditcard-discover {
+    background-image: url(/images/cards/discover.svg); }
+  .creditcard.creditcard-dinersclub {
+    background-image: url(/images/cards/diner.svg); }
+  .creditcard.creditcard-cvv {
+    background-image: url(/images/cards/cvv.svg); }
+
+/**
+ * When the first four digits of the card are entered, we know what type of card it is.
+ * The other cards are greyed out, highlighting the correct card type
+ */
+.knows-card .creditcard {
+  opacity: 0.25; }
+
+.is-visa .creditcard.creditcard-visa,
+.is-mastercard .creditcard.creditcard-mastercard,
+.is-discover .creditcard.creditcard-discover,
+.is-amex .creditcard.creditcard-amex,
+.is-dinersclub .creditcard.creditcard-dinersclub {
+  opacity: 1; }
+
+/**
+ * Positions the CVV hint icon inside the text input
+ */
+.form-group-signupCCCode {
+  position: relative; }
+  .form-group-signupCCCode .creditcard-cvv {
+    position: absolute;
+    top: 2.2em;
+    left: 10px; }
+  .form-group-signupCCCode input {
+    padding-left: 44px; }
+
+::-ms-reveal,
+::-ms-clear {
+  display: none !important; }
+
+.hideShowPassword-toggle {
+  background: transparent;
+  border: 0;
+  border-radius: 0.25em;
+  color: #84796d;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  text-transform: uppercase;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.hideShowPassword-toggle:hover,
+.hideShowPassword-toggle:focus {
+  background-color: #d4ddde;
+  color: #333;
+  outline: transparent; }
+
+.hidden {
+  display: none; }
+
+.toggle-trigger {
+  display: inline-block; }
+  .toggle-trigger:after {
+    content: "\25BC";
+    display: inline-block;
+    margin-left: 0.2em; }
+  .toggle-trigger.open:after {
+    content: "\25B2"; }
+
+.form-group .form-label {
+  font-weight: normal; }
+
+.form-group-required .form-label {
+  font-weight: bold; }
+
+.error {
+  color: #bf4646;
+  border-color: #bf4646; }
+
+@media (max-width: 768px) {
+  .table.table-collapse {
+    display: block; }
+    .table.table-collapse tr {
+      display: block;
+      padding-bottom: 10px; }
+    .table.table-collapse td {
+      display: block;
+      padding: 0;
+      border: 0; } }
+
+.table-collapse strong {
+  white-space: nowrap; }
+
 @media (min-width: 768px) {
   .advisor-tiles {
     margin-left: 30px;
@@ -2815,9 +3122,13 @@ h6.text-cursive, .h6.text-cursive {
     padding-right: 0; }
 
 .advisor-tile-group {
-  padding: 0 18px 18px; }
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0 18px 12px; }
   .advisor-tile-group:first-child {
     padding-top: 18px; }
+  .advisor-tile-group:last-child {
+    padding-bottom: 18px; }
 
 .advisor-tile-main {
   display: table;
@@ -2836,27 +3147,67 @@ h6.text-cursive, .h6.text-cursive {
       display: block; } }
 
 .advisor-tile-main-object {
-  padding-right: 18px;
+  padding-right: 9px;
+  text-align: center;
   width: 1%; }
   @media (min-width: 768px) {
     .advisor-tile-main-object {
       margin-bottom: 12px;
       padding-right: 0;
       width: 100%; } }
-  .advisor-tile-main-object img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 4.15385em; }
-    @media (min-width: 768px) {
-      .advisor-tile-main-object img {
-        max-width: 100%;
-        width: auto; } }
 
 .advisor-tile-main-body > *:first-child {
   margin-top: 0; }
 .advisor-tile-main-body > *:last-child {
   margin-bottom: 0; }
+
+.advisor-tile-photo {
+  display: inline-block;
+  position: relative;
+  width: 4.84615em; }
+  @media (min-width: 768px) {
+    .advisor-tile-photo {
+      max-width: 100%;
+      width: auto; } }
+  .advisor-tile-photo img {
+    display: block;
+    max-width: 100%; }
+
+.advisor-tile-staff-pick,
+.advisor-tile-showcase {
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.advisor-tile-staff-pick {
+  background-image: url(/images/badges/staffpick.svg);
+  height: 35px;
+  left: -10px;
+  top: -10px;
+  width: 35px; }
+  @media (min-width: 768px) {
+    .advisor-tile-staff-pick {
+      left: -20px;
+      height: 54px;
+      width: 54px; } }
+
+.advisor-tile-showcase {
+  background-image: url(/images/badges/showcase.svg);
+  bottom: -6px;
+  height: 28.44444px;
+  left: -7px;
+  width: 64px; }
+  @media (min-width: 768px) {
+    .advisor-tile-showcase {
+      bottom: -4px;
+      height: 52px;
+      left: -20px;
+      width: 117px; } }
 
 .advisor-tile-meta-group {
   display: inline-block;
@@ -2866,26 +3217,86 @@ h6.text-cursive, .h6.text-cursive {
   .advisor-tile-meta-group:last-child {
     margin-right: 0; }
 
+.filter-heading,
+.filter-list {
+  margin: 0;
+  padding: 0; }
+
+.filter-list {
+  list-style: none; }
+
 .filter-item {
-  background-color: #fff;
   border-color: #d4ddde;
   border-style: solid;
   border-width: 1px 0;
   cursor: pointer;
   display: block;
-  font-weight: inherit;
+  font-weight: normal;
+  line-height: 1.42857;
   margin: -1px 0 0;
-  padding: 6px 12px 6px 30px;
+  overflow: hidden;
+  padding: 9px 38px 9px 12px;
   position: relative; }
-  .filter-item input[type="checkbox"],
-  .filter-item input[type="radio"], .filter-item:before {
-    float: left;
-    margin-left: -18px; }
+  .filter-item, .filter-item:hover, .filter-item:focus {
+    color: inherit;
+    text-decoration: none; }
+  .filter-item:hover, .filter-item:focus {
+    background-color: #feeed7;
+    border-color: #d8c3a7;
+    z-index: 2; }
+  .filter-list .filter-list .filter-item {
+    padding-left: 24px; }
 
-.filter-parent {
+.filter-primary {
+  background-color: #f1f4f4;
+  background-image: -webkit-linear-gradient(top, white, #f1f4f4);
+  background-image: linear-gradient(to bottom, white, #f1f4f4);
   font-weight: bold; }
-  .filter-parent input[type="checkbox"],
-  .filter-parent input[type="radio"] {
-    display: none; }
-  .filter-parent:before {
-    content: '\2014'; }
+  .filter-primary:hover, .filter-primary:focus {
+    background-image: -webkit-linear-gradient(top, #fff, #feeed7);
+    background-image: linear-gradient(to bottom, #fff, #feeed7); }
+
+.filter-checkbox,
+.filter-parent.collapsible:after {
+  margin-top: -10px;
+  right: 12px;
+  position: absolute;
+  top: 50%; }
+
+.filter-checkbox input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.filter-checkbox-value {
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  height: 20px;
+  width: 20px; }
+  input:focus + .filter-checkbox-value {
+    border-color: #44a6d4;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 3px #acd7ec; }
+  input:checked + .filter-checkbox-value {
+    background-color: #59b0d9;
+    background-image: url(/images/filter-check.svg);
+    border-color: #2b8cba; }
+
+.filter-parent.collapsible:after {
+  content: '\2013';
+  height: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  width: 20px; }
+.filter-parent.collapsible.collapsed:after {
+  content: '+'; }

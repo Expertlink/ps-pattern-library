@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html class="c4-html" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    VSE Responsive Pilot Pattern Library: Signup
+  </title>
+    <!-- CSS Goes here -->
+    <link href="../../css/patterns.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../vendor/prism/prism.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons can go here if desired -->
+    <!-- Any desired scripts in HEAD -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="../../js/patterns.js"></script>
+     <script src="../../vendor/hideShowPassword/hideShowPassword.js"></script>
+    <script src="../../vendor/prism/prism.js"></script>
+
+  </head>
+<body class="c4-body">
+
+  <header class="c4-header" id="c4-top">
+    <div class="c4-arrange">
+      <div class="c4-arrange__size-fit  c4-header__segment">
+        <a class="c4-header__logo" href="/">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 386 256" enable-background="new 0 0 386 256"><g><path d="M385.8 143.6c0-78.5-77.2-86.8-77.2-86.8s-9.2-19.1-34.4-35.1c-6.8 24.5-24.8 89.6-25.8 101.9h26.9s4.3 0 3.1 5.2c-2.6 12.1-9.3 41.2-23.8 42.2-3.3.2-10.1.7-18.9 1.2-5.3 21.5-10.9 44-15 60.4 2 1.7 17.8 14.5 48.8 14.5 36.3 0 53.8-19.6 53.8-19.6 64.6-10.5 62.5-83.9 62.5-83.9zM158.2 243.2c6.5-16.5 15.7-41.4 25.4-68.1-35.4 1.9-71.1 3.5-74.8 2.8-7-1.3-25.3-20.2-30.7-36.7 0 0 .2-7 8.4-16.4C94.1 116.1 183.9 19 222.1 2.4 212.9.9 202.8 0 191.7 0 79.4 0 68.5 79.8 68.5 79.8S.2 100.9.2 162.8C.2 251.5 110 256 110 256c21 0 23.8-.5 33.9-1.5 2.6-.4 9.7-2.5 14.3-11.3zM227.9 49.9s-.6-4-4.4-4c-3.8 0-64.9 61.4-80.1 82.1l57.9-2.3c11.7-33.2 22-62.8 26.6-75.8z"/></g></svg>
+        </a>
+      </div>
+      <div class="c4-arrange__size-fill  c4-header__segment">
+        <a class="c4-header__title-segment  c4-hidden-xs  c4-hidden-sm" href="/">
+          VSE Responsive Pilot Pattern Library
+        </a>
+        <h1 class="c4-header__title-segment">
+          Signup
+        </h1>
+      </div>
+      <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
+        <button class="c4-header__menu-button  js-c4-nav-toggle" type="button">
+          <span class="c4-visuallyhidden">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="c4-nav  js-c4-nav">
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../..">Welcome</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Elements</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../01-elements/01-grid">Grid</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/02-text">Text</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/03-headings">Headings</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/04-arrange">Arrange</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/arrows">Arrows</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/ratings">Ratings</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/tables">Tables</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Components</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../02-components/advisors">Advisors</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
+      <li><a class="c4-nav__item c4-is-current" href="../../02-components/signup">Signup</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Pages</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
+      <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
+    </ul>
+  </nav>
+
+  <main class="c4-main">
+    
+  <div class="c4-pattern" id="c4-pattern_21">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_21">Signup Form</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>The signup form for new customers.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<form role="form">
+  <div class="box box-scroll">
+    <div class="media">
+      <a class="media-left" href="#">
+        <img src="/images/satisfaction-seal.png" width="120" alt="Satisfaction Guarantee" />
+      </a>
+      <div class="media-body">
+        <h2 class="media-heading text-cursive text-primary">Truly Risk Free!</h2>
+        If you're unhappy with your last live purchased psychic reading, we will refund your money from that reading or give you the time back to try us again.
+      </div>
+    </div>
+  </div> 
+  <div class="form-group form-group-required">
+ 
+    <label style="display:block">Select an offer </label>
+    <div class="radio">
+      <label>
+        <input type="radio" value="30" checked="checked" /> 30 minutes  for $30.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="20" /> 20 minutes  for $20.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="10" /> 10 minutes  for $10.00
+      </label>
+    </div>
+    <p><strong class="text-primary">+&nbsp;&nbsp;3 minutes free!</strong></p>
+     <p><a href="#">Have a promo code?</a></p>
+     <p class="help-block  hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
+     <div class="form-group arrange arrange-width-auto hidden">
+        <div class="arrange-fit">
+          <input type="text" class="form-control error" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error">Invalid code.</p>
+        </div>
+        <div class="arrange-fit">
+          <button class="btn btn-primary">Apply</button>
+        </div>
+    </div> 
+  </div> 
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupName">Your name</label>
+    <input type="text" class="form-control" id="signupName" />
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupEmail">Email address</label>
+    <input type="email" class="form-control" id="signupEmail" />
+  </div>  
+  <div class="form-group">
+    <div class="checkbox">
+      <label for="signupOptIn">
+        <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
+      </label>
+    </div>
+  </div>  
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupPassword">Choose a password</label>
+    <input class="form-control" id="signupPassword" type="password" placeholder="Password" />
+    <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
+  </div>
+   <div class="form-group form-group-required">
+    <label>Gender</label>
+    <div class="form-group arrange arrange-width-auto">
+      <div class="radio arrange-fit">
+        <label>
+         <input type="radio" value="female" checked="checked" /> Female
+        </label>
+      </div>
+      <div class="radio arrange-fit">
+        <label>
+          <input type="radio" value="male" /> Male
+        </label>
+      </div>
+    </div>  
+  </div>  
+   <div class="form-group form-group-required">
+    <label class="form-label" for="signupDOB">Date of birth</label>
+    <input type="date" class="form-control" id="signupDOB" />
+  </div>
+  <div class="box box-scroll">  
+  <div class="media">
+    <a class="media-left" href="https://www.youtube.com/watch?v=vzNICdAV-XE" target="_new">
+      <img src="/images/how-it-works-thumbnail.png" width="120" alt="How it Works" />
+    </a>
+    <div class="media-body">
+      <h2 class="media-heading text-cursive text-primary">No Hidden Fees</h2>
+      At Psychic Source you control how much you spend, and you're only charged for the time you talk with an advisor. No hidden fees. No surprise charges.
+    </div>
+  </div>
+ </div> 
+ <h3>Billing Information</h3>
+ <div class="form-group form-group-required">
+    <label class="form-label" for="signupCCName">Name on card</label>
+    <input type="text" class="form-control" id="signupCCName" value="Aileen Jeffries" >
+  </div>
+  <div class="form-group form-group-required has-cards knows-card is-visa">
+    <label class="form-label" for="signupCCNumber">Credit card number</label>
+    <input type="text" class="form-control" id="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
+    <ul class="creditcards">
+      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+    </ul>
+  </div>
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fill data-mask data-mask-type="expiration-date">
+      <label class="form-label" for="signupCCExp">Expiration</label>
+      <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
+    </div> 
+    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill">
+      <label class="form-label" for="signupCCCode">Security code</label>
+      <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
+      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
+    </div>  
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupStreet">Street address 1</label>
+    <input type="text" class="form-control" id="signupStreet" />
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="signupStreet2">Street address 2</label>
+    <input type="text" class="form-control" id="signupStreet2" />
+  </div>
+   <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCity">City</label>
+      <input type="text" class="form-control" id="signupCity" />
+    </div>
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCCZip">Zip or postal code</label>
+      <input type="text" class="form-control" id="signupCCZip" />
+    </div>  
+  </div>
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCountry">Country</label>
+      <select id="signupCountry" class="form-control">
+			<option value="11">Albania</option>
+			<option value="12">Algeria</option>
+			<option value="13">American Samoa</option>
+			<option value="14">Andorra</option>
+			<option value="15">Angola</option>
+			<option value="16">Anguilla</option>
+			<option value="17">Antarctica</option>
+			<option value="18">Antigua and Barbuda</option>
+			<option value="19">Argentina</option>
+			<option value="20">Armenia</option>
+			<option value="21">Aruba</option>
+			<option value="6">Australia</option>
+			<option value="22">Austria</option>
+			<option value="23">Azerbaijan</option>
+			<option value="24">Bahrain</option>
+			<option value="25">Bangladesh</option>
+			<option value="26">Barbados</option>
+			<option value="27">Belarus</option>
+			<option value="28">Belgium</option>
+			<option value="29">Belize</option>
+			<option value="30">Benin</option>
+			<option value="31">Bermuda</option>
+			<option value="32">Bhutan</option>
+			<option value="33">Bolivia</option>
+			<option value="34">Bosnia and Herzegovina</option>
+			<option value="35">Botswana</option>
+			<option value="36">Bouvet Island</option>
+			<option value="37">Brazil</option>
+			<option value="38">British Indian Ocean Territory</option>
+			<option value="39">British Virgin Islands</option>
+			<option value="40">Brunei</option>
+			<option value="41">Bulgaria</option>
+			<option value="42">Burkina Faso</option>
+			<option value="43">Burundi</option>
+			<option value="44">Cambodia</option>
+			<option value="45">Cameroon</option>
+			<option value="2">Canada</option>
+			<option value="46">Cape Verde</option>
+			<option value="47">Cayman Islands</option>
+			<option value="48">Central African Republic</option>
+			<option value="49">Chad</option>
+			<option value="50">Chile</option>
+			<option value="51">China</option>
+			<option value="52">Christmas Island</option>
+			<option value="53">Cocos (Keeling) Islands</option>
+			<option value="54">Colombia</option>
+			<option value="55">Comoros</option>
+			<option value="56">Congo (Brazzaville)</option>
+			<option value="57">Congo (Kinshasa)</option>
+			<option value="58">Cook Islands</option>
+			<option value="59">Costa Rica</option>
+			<option value="60">Cote D'Ivoire</option>
+			<option value="61">Croatia</option>
+			<option value="62">Cuba</option>
+			<option value="63">Cyprus</option>
+			<option value="64">Czech Republic</option>
+			<option value="65">Denmark</option>
+			<option value="66">Djibouti</option>
+			<option value="67">Dominica</option>
+			<option value="68">Dominican Republic</option>
+			<option value="69">East Timor</option>
+			<option value="70">Ecuador</option>
+			<option value="71">Egypt</option>
+			<option value="72">El Salvador</option>
+			<option value="73">Equatorial Guinea</option>
+			<option value="74">Eritrea</option>
+			<option value="75">Estonia</option>
+			<option value="76">Ethiopia</option>
+			<option value="77">Falkland Islands (Islas Malvinas)</option>
+			<option value="78">Faroe Islands</option>
+			<option value="79">Fiji</option>
+			<option value="80">Finland</option>
+			<option value="3">France</option>
+			<option value="81">French Guiana</option>
+			<option value="82">French Polynesia</option>
+			<option value="83">French Southern and Antarctic Lands</option>
+			<option value="84">Gabon</option>
+			<option value="85">Gaza Strip</option>
+			<option value="86">Georgia</option>
+			<option value="87">Germany</option>
+			<option value="88">Ghana</option>
+			<option value="89">Gibraltar</option>
+			<option value="90">Greece</option>
+			<option value="91">Greenland</option>
+			<option value="92">Grenada</option>
+			<option value="93">Guadeloupe</option>
+			<option value="94">Guam</option>
+			<option value="95">Guatemala</option>
+			<option value="96">Guernsey</option>
+			<option value="97">Guinea</option>
+			<option value="98">Guinea-Bissau</option>
+			<option value="99">Guyana</option>
+			<option value="100">Haiti</option>
+			<option value="101">Heard Island and McDonald Islands</option>
+			<option value="102">Holy See (Vatican City)</option>
+			<option value="103">Honduras</option>
+			<option value="104">Hong Kong</option>
+			<option value="105">Hungary</option>
+			<option value="106">Iceland</option>
+			<option value="107">India</option>
+			<option value="108">Indonesia</option>
+			<option value="109">Iran</option>
+			<option value="110">Iraq</option>
+			<option value="111">Ireland</option>
+			<option value="112">Isle of Man</option>
+			<option value="113">Israel</option>
+			<option value="114">Italy</option>
+			<option value="115">Jamaica</option>
+			<option value="116">Jan Mayen</option>
+			<option value="117">Japan</option>
+			<option value="118">Jersey</option>
+			<option value="119">Jordan</option>
+			<option value="120">Kazakhstan</option>
+			<option value="121">Kenya</option>
+			<option value="122">Kiribati</option>
+			<option value="123">Kosovo</option>
+			<option value="124">Kuwait</option>
+			<option value="125">Kyrgyzstan</option>
+			<option value="126">Laos</option>
+			<option value="127">Latvia</option>
+			<option value="128">Lebanon</option>
+			<option value="129">Lesotho</option>
+			<option value="130">Liberia</option>
+			<option value="131">Libya</option>
+			<option value="132">Liechtenstein</option>
+			<option value="133">Lithuania</option>
+			<option value="134">Luxembourg</option>
+			<option value="135">Macau</option>
+			<option value="136">Macedonia</option>
+			<option value="137">Madagascar</option>
+			<option value="138">Malawi</option>
+			<option value="139">Malaysia</option>
+			<option value="140">Maldives</option>
+			<option value="141">Mali</option>
+			<option value="142">Malta</option>
+			<option value="143">Marshall Islands</option>
+			<option value="144">Martinique</option>
+			<option value="145">Mauritania</option>
+			<option value="146">Mauritius</option>
+			<option value="147">Mayotte</option>
+			<option value="9">Mexico</option>
+			<option value="148">Micronesia</option>
+			<option value="149">Moldova</option>
+			<option value="150">Monaco</option>
+			<option value="151">Mongolia</option>
+			<option value="152">Montenegro</option>
+			<option value="153">Montserrat</option>
+			<option value="154">Morocco</option>
+			<option value="155">Mozambique</option>
+			<option value="156">Myanmar (Burma)</option>
+			<option value="157">Namibia</option>
+			<option value="158">Nauru</option>
+			<option value="159">Nepal</option>
+			<option value="160">Netherlands</option>
+			<option value="161">Netherlands Antilles</option>
+			<option value="162">New Caledonia</option>
+			<option value="7">New Zealand</option>
+			<option value="163">Nicaragua</option>
+			<option value="164">Niger</option>
+			<option value="165">Nigeria</option>
+			<option value="166">Niue</option>
+			<option value="167">Norfolk Island</option>
+			<option value="168">North Korea</option>
+			<option value="169">Northern Mariana Islands</option>
+			<option value="170">Norway</option>
+			<option value="171">Oman</option>
+			<option value="5">Other</option>
+			<option value="172">Pakistan</option>
+			<option value="173">Paluau</option>
+			<option value="174">Panama</option>
+			<option value="175">Papua New Guinea</option>
+			<option value="176">Paraguay</option>
+			<option value="177">Peru</option>
+			<option value="178">Philippines</option>
+			<option value="179">Pitcairn Islands</option>
+			<option value="180">Poland</option>
+			<option value="181">Portugal</option>
+			<option value="182">Puerto Rico</option>
+			<option value="183">Qatar</option>
+			<option value="184">Reunion</option>
+			<option value="185">Romania</option>
+			<option value="186">Russia</option>
+			<option value="187">Rwanda</option>
+			<option value="188">Saint Barthelemy</option>
+			<option value="189">Saint Helena</option>
+			<option value="190">Saint Kitts and Nevis</option>
+			<option value="191">Saint Lucia</option>
+			<option value="192">Saint Martin</option>
+			<option value="193">Saint Pierre and Miquelon</option>
+			<option value="194">Saint Vincent and the Grenadines</option>
+			<option value="195">Samoa</option>
+			<option value="196">San Marino</option>
+			<option value="197">Sao Tome and Principe</option>
+			<option value="198">Saudi Arabia</option>
+			<option value="199">Senegal</option>
+			<option value="200">Serbia</option>
+			<option value="201">Seychelles</option>
+			<option value="202">Sierra Leone</option>
+			<option value="203">Singapore</option>
+			<option value="204">Slovakia</option>
+			<option value="205">Slovenia</option>
+			<option value="206">Solomon Islands</option>
+			<option value="207">Somalia</option>
+			<option value="10">South Africa</option>
+			<option value="208">South Africa</option>
+			<option value="209">South Georgia and the South Sandwich Islands</option>
+			<option value="210">South Korea</option>
+			<option value="8">Spain</option>
+			<option value="211">Sri Lanka</option>
+			<option value="212">Sudan</option>
+			<option value="213">Suriname</option>
+			<option value="214">Svalbard</option>
+			<option value="215">Swaziland</option>
+			<option value="216">Sweden</option>
+			<option value="217">Switzerland</option>
+			<option value="218">Syria</option>
+			<option value="219">Taiwan</option>
+			<option value="220">Tajikistan</option>
+			<option value="221">Tanzania</option>
+			<option value="222">Thailand</option>
+			<option value="223">The Bahamas</option>
+			<option value="224">The Gambia</option>
+			<option value="225">Togo</option>
+			<option value="226">Tokelau</option>
+			<option value="227">Tonga</option>
+			<option value="228">Trinidad and Tobago</option>
+			<option value="229">Tunisia</option>
+			<option value="230">Turkey</option>
+			<option value="231">Turkmenistan</option>
+			<option value="232">Turks and Caicos Islands</option>
+			<option value="233">Tuvalu</option>
+			<option value="234">Uganda</option>
+			<option value="235">Ukraine</option>
+			<option value="236">United Arab Emirates</option>
+			<option value="4">United Kingdom</option>
+			<option selected="selected" value="1">United States</option>
+			<option value="237">Uruguay</option>
+			<option value="238">US Virgin Islands</option>
+			<option value="239">Uzbekistan</option>
+			<option value="240">Vanuatu</option>
+			<option value="241">Venezuela</option>
+			<option value="242">Vietnam</option>
+			<option value="243">Wallis and Futuna</option>
+			<option value="244">West Bank</option>
+			<option value="245">Western Sahara</option>
+			<option value="246">Yemen</option>
+			<option value="247">Zambia</option>
+			<option value="248">Zimbabwe</option>
+      </select>
+	  </div>	
+	  <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupState">State or province</label>
+      <select id="signupState"  class="form-control">
+    	<option selected="selected" value="">Select</option>
+			<option value="1">Other</option>
+			<option value="3">Alaska</option>
+			<option value="4">Alabama</option>
+			<option value="5">Arkansas</option>
+			<option value="6">Arizona</option>
+			<option value="8">Bermuda</option>
+			<option value="9">California</option>
+			<option value="11">Colorado</option>
+			<option value="12">Connecticut</option>
+			<option value="13">District of Columbia</option>
+			<option value="14">Delaware</option>
+			<option value="15">Florida</option>
+			<option value="16">Georgia</option>
+			<option value="17">Grand Cayman Islands, BWI</option>
+			<option value="18">Guam</option>
+			<option value="19">Hawaii</option>
+			<option value="20">Iowa</option>
+			<option value="21">Idaho</option>
+			<option value="22">Illinois</option>
+			<option value="23">Indiana</option>
+			<option value="24">Kansas</option>
+			<option value="25">Kentucky</option>
+			<option value="26">Louisiana</option>
+			<option value="27">Massachusetts</option>
+			<option value="29">Maryland</option>
+			<option value="30">Maine</option>
+			<option value="31">Marshall Islands</option>
+			<option value="32">Michigan</option>
+			<option value="33">Minnesota</option>
+			<option value="34">Missouri</option>
+			<option value="35">Northern Mariana Isl</option>
+			<option value="36">Mississippi</option>
+			<option value="37">Montana</option>
+			<option value="38">Military Identification</option>
+			<option value="40">North Carolina</option>
+			<option value="41">North Dakota</option>
+			<option value="42">Nebraska</option>
+			<option value="44">New Hampshire</option>
+			<option value="45">New Jersey</option>
+			<option value="46">New Mexico</option>
+			<option value="49">Nevada</option>
+			<option value="50">New York</option>
+			<option value="51">Ohio</option>
+			<option value="52">Oklahoma</option>
+			<option value="54">Oregon</option>
+			<option value="55">Pennsylvania</option>
+			<option value="57">Puerto Rico</option>
+			<option value="58">Palau</option>
+			<option value="60">Rhode Island</option>
+			<option value="61">South Carolina</option>
+			<option value="62">South Dakota</option>
+			<option value="64">Tennessee</option>
+			<option value="65">Texas</option>
+			<option value="66">Utah</option>
+			<option value="67">Virginia</option>
+			<option value="68">Virgin Islands</option>
+			<option value="69">Vermont</option>
+			<option value="70">Washington</option>
+			<option value="71">Wisconsin</option>
+			<option value="72">West Virginia</option>
+			<option value="73">Wyoming</option>
+			<option value="75">American Samoa</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupPhone">Phone number</label>
+    <input type="text" class="form-control" id="signupPhone" />
+  </div>
+  <div class="form-group form-group-required">
+   <div class="checkbox">
+      <label>
+        <input type="checkbox" />I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>
+      </label>
+      <div class="toggle-content hidden">
+        <p><strong>Conditions of Sale and Payment Terms</strong></p>
+        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+        <p><strong>Methods of Payment, Credit Card Terms</strong></p>
+        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+        <p><strong>Order Acceptance Policy</strong></p>
+        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+      </div>
+    </div>  
+  </div>  
+  <div class="form-group">
+    <p class="help-block">Charges on your credit card will appear as Expert Link, Inc. You will receive a confirmation email after completing the next step.</p>
+    <button class="btn btn-primary">Review information</button>
+  </div>
+</form>
+
+
+<script>
+
+$('#signupPassword').showPassword('focus', {
+  toggle: { className: 'hideShowPassword-toggle' }
+});
+
+</script>
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_21" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_21"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
+  &lt;div class=&quot;box box-scroll&quot;&gt;
+    &lt;div class=&quot;media&quot;&gt;
+      &lt;a class=&quot;media-left&quot; href=&quot;#&quot;&gt;
+        &lt;img src=&quot;/images/satisfaction-seal.png&quot; width=&quot;120&quot; alt=&quot;Satisfaction Guarantee&quot; /&gt;
+      &lt;/a&gt;
+      &lt;div class=&quot;media-body&quot;&gt;
+        &lt;h2 class=&quot;media-heading text-cursive text-primary&quot;&gt;Truly Risk Free!&lt;/h2&gt;
+        If you&#39;re unhappy with your last live purchased psychic reading, we will refund your money from that reading or give you the time back to try us again.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; 
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+ 
+    &lt;label style=&quot;display:block&quot;&gt;Select an offer &lt;/label&gt;
+    &lt;div class=&quot;radio&quot;&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;30&quot; checked=&quot;checked&quot; /&gt; 30 minutes  for $30.00
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;radio&quot;&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;20&quot; /&gt; 20 minutes  for $20.00
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;radio&quot;&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;10&quot; /&gt; 10 minutes  for $10.00
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;strong class=&quot;text-primary&quot;&gt;+&amp;nbsp;&amp;nbsp;3 minutes free!&lt;/strong&gt;&lt;/p&gt;
+     &lt;p&gt;&lt;a href=&quot;#&quot;&gt;Have a promo code?&lt;/a&gt;&lt;/p&gt;
+     &lt;p class=&quot;help-block  hidden&quot;&gt;Promo code &lt;strong&gt;654123&lt;/strong&gt; applied. &lt;a href=&quot;#&quot;&gt;Change code&lt;/a&gt;.&lt;/p&gt;
+     &lt;div class=&quot;form-group arrange arrange-width-auto hidden&quot;&gt;
+        &lt;div class=&quot;arrange-fit&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;form-control error&quot; id=&quot;signupPromo&quot; placeholder=&quot;Promo code&quot; /&gt;
+          &lt;p class=&quot;help-block error&quot;&gt;Invalid code.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;arrange-fit&quot;&gt;
+          &lt;button class=&quot;btn btn-primary&quot;&gt;Apply&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupName&quot;&gt;Your name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupName&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupEmail&quot;&gt;Email address&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;signupEmail&quot; /&gt;
+  &lt;/div&gt;  
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;div class=&quot;checkbox&quot;&gt;
+      &lt;label for=&quot;signupOptIn&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;signupOptIn&quot; /&gt; Yes! Sign me up for News and Promotions, so I can start earning &lt;a href=&quot;#&quot;&gt;Membership Rewards&lt;/a&gt; towards my readings
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;  
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupPassword&quot;&gt;Choose a password&lt;/label&gt;
+    &lt;input class=&quot;form-control&quot; id=&quot;signupPassword&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+    &lt;p class=&quot;help-block&quot;&gt;Password must be at least one letter and one digit, minimum 6 characters.&lt;/p&gt;
+  &lt;/div&gt;
+   &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label&gt;Gender&lt;/label&gt;
+    &lt;div class=&quot;form-group arrange arrange-width-auto&quot;&gt;
+      &lt;div class=&quot;radio arrange-fit&quot;&gt;
+        &lt;label&gt;
+         &lt;input type=&quot;radio&quot; value=&quot;female&quot; checked=&quot;checked&quot; /&gt; Female
+        &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;radio arrange-fit&quot;&gt;
+        &lt;label&gt;
+          &lt;input type=&quot;radio&quot; value=&quot;male&quot; /&gt; Male
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;  
+   &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupDOB&quot;&gt;Date of birth&lt;/label&gt;
+    &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;signupDOB&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;box box-scroll&quot;&gt;  
+  &lt;div class=&quot;media&quot;&gt;
+    &lt;a class=&quot;media-left&quot; href=&quot;https://www.youtube.com/watch?v=vzNICdAV-XE&quot; target=&quot;_new&quot;&gt;
+      &lt;img src=&quot;/images/how-it-works-thumbnail.png&quot; width=&quot;120&quot; alt=&quot;How it Works&quot; /&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;media-body&quot;&gt;
+      &lt;h2 class=&quot;media-heading text-cursive text-primary&quot;&gt;No Hidden Fees&lt;/h2&gt;
+      At Psychic Source you control how much you spend, and you&#39;re only charged for the time you talk with an advisor. No hidden fees. No surprise charges.
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt; 
+ &lt;h3&gt;Billing Information&lt;/h3&gt;
+ &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupCCName&quot;&gt;Name on card&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCName&quot; value=&quot;Aileen Jeffries&quot; &gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group form-group-required has-cards knows-card is-visa&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupCCNumber&quot;&gt;Credit card number&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCNumber&quot; placeholder=&quot;1234 5678 9012 3456&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;19&quot; /&gt;
+    &lt;ul class=&quot;creditcards&quot;&gt;
+      &lt;li class=&quot;creditcard  creditcard-visa&quot;&gt;Visa&lt;/li&gt;&lt;li class=&quot;creditcard  creditcard-mastercard&quot;&gt;MasterCard&lt;/li&gt;&lt;li class=&quot;creditcard  creditcard-discover&quot;&gt;Discover&lt;/li&gt;&lt;li class=&quot;creditcard  creditcard-amex&quot;&gt;American Express&lt;/li&gt;&lt;li class=&quot;creditcard  creditcard-dinersclub&quot;&gt;Diner&#39;s Club&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
+    &lt;div class=&quot;form-group form-group-required arrange-fill data-mask data-mask-type=&quot;expiration-date&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupCCExp&quot;&gt;Expiration&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCExp&quot; placeholder=&quot;MM / YY&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;5&quot; /&gt;
+    &lt;/div&gt; 
+    &lt;div class=&quot;form-group form-group-required form-group form-group-signupCCCode arrange-fill&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupCCCode&quot;&gt;Security code&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCCode&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;5&quot; /&gt;
+      &lt;span class=&quot;creditcard  creditcard-cvv&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupStreet&quot;&gt;Street address 1&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupStreet&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupStreet2&quot;&gt;Street address 2&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupStreet2&quot; /&gt;
+  &lt;/div&gt;
+   &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
+    &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupCity&quot;&gt;City&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCity&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupCCZip&quot;&gt;Zip or postal code&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCZip&quot; /&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
+    &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupCountry&quot;&gt;Country&lt;/label&gt;
+      &lt;select id=&quot;signupCountry&quot; class=&quot;form-control&quot;&gt;
+			&lt;option value=&quot;11&quot;&gt;Albania&lt;/option&gt;
+			&lt;option value=&quot;12&quot;&gt;Algeria&lt;/option&gt;
+			&lt;option value=&quot;13&quot;&gt;American Samoa&lt;/option&gt;
+			&lt;option value=&quot;14&quot;&gt;Andorra&lt;/option&gt;
+			&lt;option value=&quot;15&quot;&gt;Angola&lt;/option&gt;
+			&lt;option value=&quot;16&quot;&gt;Anguilla&lt;/option&gt;
+			&lt;option value=&quot;17&quot;&gt;Antarctica&lt;/option&gt;
+			&lt;option value=&quot;18&quot;&gt;Antigua and Barbuda&lt;/option&gt;
+			&lt;option value=&quot;19&quot;&gt;Argentina&lt;/option&gt;
+			&lt;option value=&quot;20&quot;&gt;Armenia&lt;/option&gt;
+			&lt;option value=&quot;21&quot;&gt;Aruba&lt;/option&gt;
+			&lt;option value=&quot;6&quot;&gt;Australia&lt;/option&gt;
+			&lt;option value=&quot;22&quot;&gt;Austria&lt;/option&gt;
+			&lt;option value=&quot;23&quot;&gt;Azerbaijan&lt;/option&gt;
+			&lt;option value=&quot;24&quot;&gt;Bahrain&lt;/option&gt;
+			&lt;option value=&quot;25&quot;&gt;Bangladesh&lt;/option&gt;
+			&lt;option value=&quot;26&quot;&gt;Barbados&lt;/option&gt;
+			&lt;option value=&quot;27&quot;&gt;Belarus&lt;/option&gt;
+			&lt;option value=&quot;28&quot;&gt;Belgium&lt;/option&gt;
+			&lt;option value=&quot;29&quot;&gt;Belize&lt;/option&gt;
+			&lt;option value=&quot;30&quot;&gt;Benin&lt;/option&gt;
+			&lt;option value=&quot;31&quot;&gt;Bermuda&lt;/option&gt;
+			&lt;option value=&quot;32&quot;&gt;Bhutan&lt;/option&gt;
+			&lt;option value=&quot;33&quot;&gt;Bolivia&lt;/option&gt;
+			&lt;option value=&quot;34&quot;&gt;Bosnia and Herzegovina&lt;/option&gt;
+			&lt;option value=&quot;35&quot;&gt;Botswana&lt;/option&gt;
+			&lt;option value=&quot;36&quot;&gt;Bouvet Island&lt;/option&gt;
+			&lt;option value=&quot;37&quot;&gt;Brazil&lt;/option&gt;
+			&lt;option value=&quot;38&quot;&gt;British Indian Ocean Territory&lt;/option&gt;
+			&lt;option value=&quot;39&quot;&gt;British Virgin Islands&lt;/option&gt;
+			&lt;option value=&quot;40&quot;&gt;Brunei&lt;/option&gt;
+			&lt;option value=&quot;41&quot;&gt;Bulgaria&lt;/option&gt;
+			&lt;option value=&quot;42&quot;&gt;Burkina Faso&lt;/option&gt;
+			&lt;option value=&quot;43&quot;&gt;Burundi&lt;/option&gt;
+			&lt;option value=&quot;44&quot;&gt;Cambodia&lt;/option&gt;
+			&lt;option value=&quot;45&quot;&gt;Cameroon&lt;/option&gt;
+			&lt;option value=&quot;2&quot;&gt;Canada&lt;/option&gt;
+			&lt;option value=&quot;46&quot;&gt;Cape Verde&lt;/option&gt;
+			&lt;option value=&quot;47&quot;&gt;Cayman Islands&lt;/option&gt;
+			&lt;option value=&quot;48&quot;&gt;Central African Republic&lt;/option&gt;
+			&lt;option value=&quot;49&quot;&gt;Chad&lt;/option&gt;
+			&lt;option value=&quot;50&quot;&gt;Chile&lt;/option&gt;
+			&lt;option value=&quot;51&quot;&gt;China&lt;/option&gt;
+			&lt;option value=&quot;52&quot;&gt;Christmas Island&lt;/option&gt;
+			&lt;option value=&quot;53&quot;&gt;Cocos (Keeling) Islands&lt;/option&gt;
+			&lt;option value=&quot;54&quot;&gt;Colombia&lt;/option&gt;
+			&lt;option value=&quot;55&quot;&gt;Comoros&lt;/option&gt;
+			&lt;option value=&quot;56&quot;&gt;Congo (Brazzaville)&lt;/option&gt;
+			&lt;option value=&quot;57&quot;&gt;Congo (Kinshasa)&lt;/option&gt;
+			&lt;option value=&quot;58&quot;&gt;Cook Islands&lt;/option&gt;
+			&lt;option value=&quot;59&quot;&gt;Costa Rica&lt;/option&gt;
+			&lt;option value=&quot;60&quot;&gt;Cote D&#39;Ivoire&lt;/option&gt;
+			&lt;option value=&quot;61&quot;&gt;Croatia&lt;/option&gt;
+			&lt;option value=&quot;62&quot;&gt;Cuba&lt;/option&gt;
+			&lt;option value=&quot;63&quot;&gt;Cyprus&lt;/option&gt;
+			&lt;option value=&quot;64&quot;&gt;Czech Republic&lt;/option&gt;
+			&lt;option value=&quot;65&quot;&gt;Denmark&lt;/option&gt;
+			&lt;option value=&quot;66&quot;&gt;Djibouti&lt;/option&gt;
+			&lt;option value=&quot;67&quot;&gt;Dominica&lt;/option&gt;
+			&lt;option value=&quot;68&quot;&gt;Dominican Republic&lt;/option&gt;
+			&lt;option value=&quot;69&quot;&gt;East Timor&lt;/option&gt;
+			&lt;option value=&quot;70&quot;&gt;Ecuador&lt;/option&gt;
+			&lt;option value=&quot;71&quot;&gt;Egypt&lt;/option&gt;
+			&lt;option value=&quot;72&quot;&gt;El Salvador&lt;/option&gt;
+			&lt;option value=&quot;73&quot;&gt;Equatorial Guinea&lt;/option&gt;
+			&lt;option value=&quot;74&quot;&gt;Eritrea&lt;/option&gt;
+			&lt;option value=&quot;75&quot;&gt;Estonia&lt;/option&gt;
+			&lt;option value=&quot;76&quot;&gt;Ethiopia&lt;/option&gt;
+			&lt;option value=&quot;77&quot;&gt;Falkland Islands (Islas Malvinas)&lt;/option&gt;
+			&lt;option value=&quot;78&quot;&gt;Faroe Islands&lt;/option&gt;
+			&lt;option value=&quot;79&quot;&gt;Fiji&lt;/option&gt;
+			&lt;option value=&quot;80&quot;&gt;Finland&lt;/option&gt;
+			&lt;option value=&quot;3&quot;&gt;France&lt;/option&gt;
+			&lt;option value=&quot;81&quot;&gt;French Guiana&lt;/option&gt;
+			&lt;option value=&quot;82&quot;&gt;French Polynesia&lt;/option&gt;
+			&lt;option value=&quot;83&quot;&gt;French Southern and Antarctic Lands&lt;/option&gt;
+			&lt;option value=&quot;84&quot;&gt;Gabon&lt;/option&gt;
+			&lt;option value=&quot;85&quot;&gt;Gaza Strip&lt;/option&gt;
+			&lt;option value=&quot;86&quot;&gt;Georgia&lt;/option&gt;
+			&lt;option value=&quot;87&quot;&gt;Germany&lt;/option&gt;
+			&lt;option value=&quot;88&quot;&gt;Ghana&lt;/option&gt;
+			&lt;option value=&quot;89&quot;&gt;Gibraltar&lt;/option&gt;
+			&lt;option value=&quot;90&quot;&gt;Greece&lt;/option&gt;
+			&lt;option value=&quot;91&quot;&gt;Greenland&lt;/option&gt;
+			&lt;option value=&quot;92&quot;&gt;Grenada&lt;/option&gt;
+			&lt;option value=&quot;93&quot;&gt;Guadeloupe&lt;/option&gt;
+			&lt;option value=&quot;94&quot;&gt;Guam&lt;/option&gt;
+			&lt;option value=&quot;95&quot;&gt;Guatemala&lt;/option&gt;
+			&lt;option value=&quot;96&quot;&gt;Guernsey&lt;/option&gt;
+			&lt;option value=&quot;97&quot;&gt;Guinea&lt;/option&gt;
+			&lt;option value=&quot;98&quot;&gt;Guinea-Bissau&lt;/option&gt;
+			&lt;option value=&quot;99&quot;&gt;Guyana&lt;/option&gt;
+			&lt;option value=&quot;100&quot;&gt;Haiti&lt;/option&gt;
+			&lt;option value=&quot;101&quot;&gt;Heard Island and McDonald Islands&lt;/option&gt;
+			&lt;option value=&quot;102&quot;&gt;Holy See (Vatican City)&lt;/option&gt;
+			&lt;option value=&quot;103&quot;&gt;Honduras&lt;/option&gt;
+			&lt;option value=&quot;104&quot;&gt;Hong Kong&lt;/option&gt;
+			&lt;option value=&quot;105&quot;&gt;Hungary&lt;/option&gt;
+			&lt;option value=&quot;106&quot;&gt;Iceland&lt;/option&gt;
+			&lt;option value=&quot;107&quot;&gt;India&lt;/option&gt;
+			&lt;option value=&quot;108&quot;&gt;Indonesia&lt;/option&gt;
+			&lt;option value=&quot;109&quot;&gt;Iran&lt;/option&gt;
+			&lt;option value=&quot;110&quot;&gt;Iraq&lt;/option&gt;
+			&lt;option value=&quot;111&quot;&gt;Ireland&lt;/option&gt;
+			&lt;option value=&quot;112&quot;&gt;Isle of Man&lt;/option&gt;
+			&lt;option value=&quot;113&quot;&gt;Israel&lt;/option&gt;
+			&lt;option value=&quot;114&quot;&gt;Italy&lt;/option&gt;
+			&lt;option value=&quot;115&quot;&gt;Jamaica&lt;/option&gt;
+			&lt;option value=&quot;116&quot;&gt;Jan Mayen&lt;/option&gt;
+			&lt;option value=&quot;117&quot;&gt;Japan&lt;/option&gt;
+			&lt;option value=&quot;118&quot;&gt;Jersey&lt;/option&gt;
+			&lt;option value=&quot;119&quot;&gt;Jordan&lt;/option&gt;
+			&lt;option value=&quot;120&quot;&gt;Kazakhstan&lt;/option&gt;
+			&lt;option value=&quot;121&quot;&gt;Kenya&lt;/option&gt;
+			&lt;option value=&quot;122&quot;&gt;Kiribati&lt;/option&gt;
+			&lt;option value=&quot;123&quot;&gt;Kosovo&lt;/option&gt;
+			&lt;option value=&quot;124&quot;&gt;Kuwait&lt;/option&gt;
+			&lt;option value=&quot;125&quot;&gt;Kyrgyzstan&lt;/option&gt;
+			&lt;option value=&quot;126&quot;&gt;Laos&lt;/option&gt;
+			&lt;option value=&quot;127&quot;&gt;Latvia&lt;/option&gt;
+			&lt;option value=&quot;128&quot;&gt;Lebanon&lt;/option&gt;
+			&lt;option value=&quot;129&quot;&gt;Lesotho&lt;/option&gt;
+			&lt;option value=&quot;130&quot;&gt;Liberia&lt;/option&gt;
+			&lt;option value=&quot;131&quot;&gt;Libya&lt;/option&gt;
+			&lt;option value=&quot;132&quot;&gt;Liechtenstein&lt;/option&gt;
+			&lt;option value=&quot;133&quot;&gt;Lithuania&lt;/option&gt;
+			&lt;option value=&quot;134&quot;&gt;Luxembourg&lt;/option&gt;
+			&lt;option value=&quot;135&quot;&gt;Macau&lt;/option&gt;
+			&lt;option value=&quot;136&quot;&gt;Macedonia&lt;/option&gt;
+			&lt;option value=&quot;137&quot;&gt;Madagascar&lt;/option&gt;
+			&lt;option value=&quot;138&quot;&gt;Malawi&lt;/option&gt;
+			&lt;option value=&quot;139&quot;&gt;Malaysia&lt;/option&gt;
+			&lt;option value=&quot;140&quot;&gt;Maldives&lt;/option&gt;
+			&lt;option value=&quot;141&quot;&gt;Mali&lt;/option&gt;
+			&lt;option value=&quot;142&quot;&gt;Malta&lt;/option&gt;
+			&lt;option value=&quot;143&quot;&gt;Marshall Islands&lt;/option&gt;
+			&lt;option value=&quot;144&quot;&gt;Martinique&lt;/option&gt;
+			&lt;option value=&quot;145&quot;&gt;Mauritania&lt;/option&gt;
+			&lt;option value=&quot;146&quot;&gt;Mauritius&lt;/option&gt;
+			&lt;option value=&quot;147&quot;&gt;Mayotte&lt;/option&gt;
+			&lt;option value=&quot;9&quot;&gt;Mexico&lt;/option&gt;
+			&lt;option value=&quot;148&quot;&gt;Micronesia&lt;/option&gt;
+			&lt;option value=&quot;149&quot;&gt;Moldova&lt;/option&gt;
+			&lt;option value=&quot;150&quot;&gt;Monaco&lt;/option&gt;
+			&lt;option value=&quot;151&quot;&gt;Mongolia&lt;/option&gt;
+			&lt;option value=&quot;152&quot;&gt;Montenegro&lt;/option&gt;
+			&lt;option value=&quot;153&quot;&gt;Montserrat&lt;/option&gt;
+			&lt;option value=&quot;154&quot;&gt;Morocco&lt;/option&gt;
+			&lt;option value=&quot;155&quot;&gt;Mozambique&lt;/option&gt;
+			&lt;option value=&quot;156&quot;&gt;Myanmar (Burma)&lt;/option&gt;
+			&lt;option value=&quot;157&quot;&gt;Namibia&lt;/option&gt;
+			&lt;option value=&quot;158&quot;&gt;Nauru&lt;/option&gt;
+			&lt;option value=&quot;159&quot;&gt;Nepal&lt;/option&gt;
+			&lt;option value=&quot;160&quot;&gt;Netherlands&lt;/option&gt;
+			&lt;option value=&quot;161&quot;&gt;Netherlands Antilles&lt;/option&gt;
+			&lt;option value=&quot;162&quot;&gt;New Caledonia&lt;/option&gt;
+			&lt;option value=&quot;7&quot;&gt;New Zealand&lt;/option&gt;
+			&lt;option value=&quot;163&quot;&gt;Nicaragua&lt;/option&gt;
+			&lt;option value=&quot;164&quot;&gt;Niger&lt;/option&gt;
+			&lt;option value=&quot;165&quot;&gt;Nigeria&lt;/option&gt;
+			&lt;option value=&quot;166&quot;&gt;Niue&lt;/option&gt;
+			&lt;option value=&quot;167&quot;&gt;Norfolk Island&lt;/option&gt;
+			&lt;option value=&quot;168&quot;&gt;North Korea&lt;/option&gt;
+			&lt;option value=&quot;169&quot;&gt;Northern Mariana Islands&lt;/option&gt;
+			&lt;option value=&quot;170&quot;&gt;Norway&lt;/option&gt;
+			&lt;option value=&quot;171&quot;&gt;Oman&lt;/option&gt;
+			&lt;option value=&quot;5&quot;&gt;Other&lt;/option&gt;
+			&lt;option value=&quot;172&quot;&gt;Pakistan&lt;/option&gt;
+			&lt;option value=&quot;173&quot;&gt;Paluau&lt;/option&gt;
+			&lt;option value=&quot;174&quot;&gt;Panama&lt;/option&gt;
+			&lt;option value=&quot;175&quot;&gt;Papua New Guinea&lt;/option&gt;
+			&lt;option value=&quot;176&quot;&gt;Paraguay&lt;/option&gt;
+			&lt;option value=&quot;177&quot;&gt;Peru&lt;/option&gt;
+			&lt;option value=&quot;178&quot;&gt;Philippines&lt;/option&gt;
+			&lt;option value=&quot;179&quot;&gt;Pitcairn Islands&lt;/option&gt;
+			&lt;option value=&quot;180&quot;&gt;Poland&lt;/option&gt;
+			&lt;option value=&quot;181&quot;&gt;Portugal&lt;/option&gt;
+			&lt;option value=&quot;182&quot;&gt;Puerto Rico&lt;/option&gt;
+			&lt;option value=&quot;183&quot;&gt;Qatar&lt;/option&gt;
+			&lt;option value=&quot;184&quot;&gt;Reunion&lt;/option&gt;
+			&lt;option value=&quot;185&quot;&gt;Romania&lt;/option&gt;
+			&lt;option value=&quot;186&quot;&gt;Russia&lt;/option&gt;
+			&lt;option value=&quot;187&quot;&gt;Rwanda&lt;/option&gt;
+			&lt;option value=&quot;188&quot;&gt;Saint Barthelemy&lt;/option&gt;
+			&lt;option value=&quot;189&quot;&gt;Saint Helena&lt;/option&gt;
+			&lt;option value=&quot;190&quot;&gt;Saint Kitts and Nevis&lt;/option&gt;
+			&lt;option value=&quot;191&quot;&gt;Saint Lucia&lt;/option&gt;
+			&lt;option value=&quot;192&quot;&gt;Saint Martin&lt;/option&gt;
+			&lt;option value=&quot;193&quot;&gt;Saint Pierre and Miquelon&lt;/option&gt;
+			&lt;option value=&quot;194&quot;&gt;Saint Vincent and the Grenadines&lt;/option&gt;
+			&lt;option value=&quot;195&quot;&gt;Samoa&lt;/option&gt;
+			&lt;option value=&quot;196&quot;&gt;San Marino&lt;/option&gt;
+			&lt;option value=&quot;197&quot;&gt;Sao Tome and Principe&lt;/option&gt;
+			&lt;option value=&quot;198&quot;&gt;Saudi Arabia&lt;/option&gt;
+			&lt;option value=&quot;199&quot;&gt;Senegal&lt;/option&gt;
+			&lt;option value=&quot;200&quot;&gt;Serbia&lt;/option&gt;
+			&lt;option value=&quot;201&quot;&gt;Seychelles&lt;/option&gt;
+			&lt;option value=&quot;202&quot;&gt;Sierra Leone&lt;/option&gt;
+			&lt;option value=&quot;203&quot;&gt;Singapore&lt;/option&gt;
+			&lt;option value=&quot;204&quot;&gt;Slovakia&lt;/option&gt;
+			&lt;option value=&quot;205&quot;&gt;Slovenia&lt;/option&gt;
+			&lt;option value=&quot;206&quot;&gt;Solomon Islands&lt;/option&gt;
+			&lt;option value=&quot;207&quot;&gt;Somalia&lt;/option&gt;
+			&lt;option value=&quot;10&quot;&gt;South Africa&lt;/option&gt;
+			&lt;option value=&quot;208&quot;&gt;South Africa&lt;/option&gt;
+			&lt;option value=&quot;209&quot;&gt;South Georgia and the South Sandwich Islands&lt;/option&gt;
+			&lt;option value=&quot;210&quot;&gt;South Korea&lt;/option&gt;
+			&lt;option value=&quot;8&quot;&gt;Spain&lt;/option&gt;
+			&lt;option value=&quot;211&quot;&gt;Sri Lanka&lt;/option&gt;
+			&lt;option value=&quot;212&quot;&gt;Sudan&lt;/option&gt;
+			&lt;option value=&quot;213&quot;&gt;Suriname&lt;/option&gt;
+			&lt;option value=&quot;214&quot;&gt;Svalbard&lt;/option&gt;
+			&lt;option value=&quot;215&quot;&gt;Swaziland&lt;/option&gt;
+			&lt;option value=&quot;216&quot;&gt;Sweden&lt;/option&gt;
+			&lt;option value=&quot;217&quot;&gt;Switzerland&lt;/option&gt;
+			&lt;option value=&quot;218&quot;&gt;Syria&lt;/option&gt;
+			&lt;option value=&quot;219&quot;&gt;Taiwan&lt;/option&gt;
+			&lt;option value=&quot;220&quot;&gt;Tajikistan&lt;/option&gt;
+			&lt;option value=&quot;221&quot;&gt;Tanzania&lt;/option&gt;
+			&lt;option value=&quot;222&quot;&gt;Thailand&lt;/option&gt;
+			&lt;option value=&quot;223&quot;&gt;The Bahamas&lt;/option&gt;
+			&lt;option value=&quot;224&quot;&gt;The Gambia&lt;/option&gt;
+			&lt;option value=&quot;225&quot;&gt;Togo&lt;/option&gt;
+			&lt;option value=&quot;226&quot;&gt;Tokelau&lt;/option&gt;
+			&lt;option value=&quot;227&quot;&gt;Tonga&lt;/option&gt;
+			&lt;option value=&quot;228&quot;&gt;Trinidad and Tobago&lt;/option&gt;
+			&lt;option value=&quot;229&quot;&gt;Tunisia&lt;/option&gt;
+			&lt;option value=&quot;230&quot;&gt;Turkey&lt;/option&gt;
+			&lt;option value=&quot;231&quot;&gt;Turkmenistan&lt;/option&gt;
+			&lt;option value=&quot;232&quot;&gt;Turks and Caicos Islands&lt;/option&gt;
+			&lt;option value=&quot;233&quot;&gt;Tuvalu&lt;/option&gt;
+			&lt;option value=&quot;234&quot;&gt;Uganda&lt;/option&gt;
+			&lt;option value=&quot;235&quot;&gt;Ukraine&lt;/option&gt;
+			&lt;option value=&quot;236&quot;&gt;United Arab Emirates&lt;/option&gt;
+			&lt;option value=&quot;4&quot;&gt;United Kingdom&lt;/option&gt;
+			&lt;option selected=&quot;selected&quot; value=&quot;1&quot;&gt;United States&lt;/option&gt;
+			&lt;option value=&quot;237&quot;&gt;Uruguay&lt;/option&gt;
+			&lt;option value=&quot;238&quot;&gt;US Virgin Islands&lt;/option&gt;
+			&lt;option value=&quot;239&quot;&gt;Uzbekistan&lt;/option&gt;
+			&lt;option value=&quot;240&quot;&gt;Vanuatu&lt;/option&gt;
+			&lt;option value=&quot;241&quot;&gt;Venezuela&lt;/option&gt;
+			&lt;option value=&quot;242&quot;&gt;Vietnam&lt;/option&gt;
+			&lt;option value=&quot;243&quot;&gt;Wallis and Futuna&lt;/option&gt;
+			&lt;option value=&quot;244&quot;&gt;West Bank&lt;/option&gt;
+			&lt;option value=&quot;245&quot;&gt;Western Sahara&lt;/option&gt;
+			&lt;option value=&quot;246&quot;&gt;Yemen&lt;/option&gt;
+			&lt;option value=&quot;247&quot;&gt;Zambia&lt;/option&gt;
+			&lt;option value=&quot;248&quot;&gt;Zimbabwe&lt;/option&gt;
+      &lt;/select&gt;
+	  &lt;/div&gt;	
+	  &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+      &lt;label class=&quot;form-label&quot; for=&quot;signupState&quot;&gt;State or province&lt;/label&gt;
+      &lt;select id=&quot;signupState&quot;  class=&quot;form-control&quot;&gt;
+    	&lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;Select&lt;/option&gt;
+			&lt;option value=&quot;1&quot;&gt;Other&lt;/option&gt;
+			&lt;option value=&quot;3&quot;&gt;Alaska&lt;/option&gt;
+			&lt;option value=&quot;4&quot;&gt;Alabama&lt;/option&gt;
+			&lt;option value=&quot;5&quot;&gt;Arkansas&lt;/option&gt;
+			&lt;option value=&quot;6&quot;&gt;Arizona&lt;/option&gt;
+			&lt;option value=&quot;8&quot;&gt;Bermuda&lt;/option&gt;
+			&lt;option value=&quot;9&quot;&gt;California&lt;/option&gt;
+			&lt;option value=&quot;11&quot;&gt;Colorado&lt;/option&gt;
+			&lt;option value=&quot;12&quot;&gt;Connecticut&lt;/option&gt;
+			&lt;option value=&quot;13&quot;&gt;District of Columbia&lt;/option&gt;
+			&lt;option value=&quot;14&quot;&gt;Delaware&lt;/option&gt;
+			&lt;option value=&quot;15&quot;&gt;Florida&lt;/option&gt;
+			&lt;option value=&quot;16&quot;&gt;Georgia&lt;/option&gt;
+			&lt;option value=&quot;17&quot;&gt;Grand Cayman Islands, BWI&lt;/option&gt;
+			&lt;option value=&quot;18&quot;&gt;Guam&lt;/option&gt;
+			&lt;option value=&quot;19&quot;&gt;Hawaii&lt;/option&gt;
+			&lt;option value=&quot;20&quot;&gt;Iowa&lt;/option&gt;
+			&lt;option value=&quot;21&quot;&gt;Idaho&lt;/option&gt;
+			&lt;option value=&quot;22&quot;&gt;Illinois&lt;/option&gt;
+			&lt;option value=&quot;23&quot;&gt;Indiana&lt;/option&gt;
+			&lt;option value=&quot;24&quot;&gt;Kansas&lt;/option&gt;
+			&lt;option value=&quot;25&quot;&gt;Kentucky&lt;/option&gt;
+			&lt;option value=&quot;26&quot;&gt;Louisiana&lt;/option&gt;
+			&lt;option value=&quot;27&quot;&gt;Massachusetts&lt;/option&gt;
+			&lt;option value=&quot;29&quot;&gt;Maryland&lt;/option&gt;
+			&lt;option value=&quot;30&quot;&gt;Maine&lt;/option&gt;
+			&lt;option value=&quot;31&quot;&gt;Marshall Islands&lt;/option&gt;
+			&lt;option value=&quot;32&quot;&gt;Michigan&lt;/option&gt;
+			&lt;option value=&quot;33&quot;&gt;Minnesota&lt;/option&gt;
+			&lt;option value=&quot;34&quot;&gt;Missouri&lt;/option&gt;
+			&lt;option value=&quot;35&quot;&gt;Northern Mariana Isl&lt;/option&gt;
+			&lt;option value=&quot;36&quot;&gt;Mississippi&lt;/option&gt;
+			&lt;option value=&quot;37&quot;&gt;Montana&lt;/option&gt;
+			&lt;option value=&quot;38&quot;&gt;Military Identification&lt;/option&gt;
+			&lt;option value=&quot;40&quot;&gt;North Carolina&lt;/option&gt;
+			&lt;option value=&quot;41&quot;&gt;North Dakota&lt;/option&gt;
+			&lt;option value=&quot;42&quot;&gt;Nebraska&lt;/option&gt;
+			&lt;option value=&quot;44&quot;&gt;New Hampshire&lt;/option&gt;
+			&lt;option value=&quot;45&quot;&gt;New Jersey&lt;/option&gt;
+			&lt;option value=&quot;46&quot;&gt;New Mexico&lt;/option&gt;
+			&lt;option value=&quot;49&quot;&gt;Nevada&lt;/option&gt;
+			&lt;option value=&quot;50&quot;&gt;New York&lt;/option&gt;
+			&lt;option value=&quot;51&quot;&gt;Ohio&lt;/option&gt;
+			&lt;option value=&quot;52&quot;&gt;Oklahoma&lt;/option&gt;
+			&lt;option value=&quot;54&quot;&gt;Oregon&lt;/option&gt;
+			&lt;option value=&quot;55&quot;&gt;Pennsylvania&lt;/option&gt;
+			&lt;option value=&quot;57&quot;&gt;Puerto Rico&lt;/option&gt;
+			&lt;option value=&quot;58&quot;&gt;Palau&lt;/option&gt;
+			&lt;option value=&quot;60&quot;&gt;Rhode Island&lt;/option&gt;
+			&lt;option value=&quot;61&quot;&gt;South Carolina&lt;/option&gt;
+			&lt;option value=&quot;62&quot;&gt;South Dakota&lt;/option&gt;
+			&lt;option value=&quot;64&quot;&gt;Tennessee&lt;/option&gt;
+			&lt;option value=&quot;65&quot;&gt;Texas&lt;/option&gt;
+			&lt;option value=&quot;66&quot;&gt;Utah&lt;/option&gt;
+			&lt;option value=&quot;67&quot;&gt;Virginia&lt;/option&gt;
+			&lt;option value=&quot;68&quot;&gt;Virgin Islands&lt;/option&gt;
+			&lt;option value=&quot;69&quot;&gt;Vermont&lt;/option&gt;
+			&lt;option value=&quot;70&quot;&gt;Washington&lt;/option&gt;
+			&lt;option value=&quot;71&quot;&gt;Wisconsin&lt;/option&gt;
+			&lt;option value=&quot;72&quot;&gt;West Virginia&lt;/option&gt;
+			&lt;option value=&quot;73&quot;&gt;Wyoming&lt;/option&gt;
+			&lt;option value=&quot;75&quot;&gt;American Samoa&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;signupPhone&quot;&gt;Phone number&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupPhone&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+   &lt;div class=&quot;checkbox&quot;&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; /&gt;I agree to Psychic Source &lt;a href=&quot;#&quot; class=&quot;toggle-trigger&quot;&gt;terms and conditions&lt;/a&gt;
+      &lt;/label&gt;
+      &lt;div class=&quot;toggle-content hidden&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;Conditions of Sale and Payment Terms&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Methods of Payment, Credit Card Terms&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Order Acceptance Policy&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;  
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;p class=&quot;help-block&quot;&gt;Charges on your credit card will appear as Expert Link, Inc. You will receive a confirmation email after completing the next step.&lt;/p&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Review information&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+
+&lt;script&gt;
+
+$(&#39;#signupPassword&#39;).showPassword(&#39;focus&#39;, {
+  toggle: { className: &#39;hideShowPassword-toggle&#39; }
+});
+
+&lt;/script&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_36">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_36">Confirmation</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Step two of the sign up process, confirming supplied information.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<h1 class="text-primary">Confirm Your Order</h1>
+<p>Please review and confirm your information. To make changes, click edit to go back. If correct, click submit. Please do not use the back button or refresh the page until your order goes through. Thanks!</p>
+
+<table class="table table-collapse">
+  <tr>
+    <td><strong>Introductory offer:</strong></td>
+    <td>$15.00 for 23 minutes using promo code 123456</td>
+  </tr>
+  <tr>
+    <td><strong>Your name:</strong></td>
+    <td>Aileen Jeffries</td>
+  </tr>
+  <tr>
+    <td><strong>Email address:</strong></td>
+    <td>aileen@cloudfour.com</td>
+  </tr>
+  <tr>
+    <td><strong>Rewards:</strong></td>
+    <td>Yes! Sign me up for News and Promotions, so I can start earning Membership rewards towards my readings.</td>
+  </tr>
+  <tr>
+    <td><strong>Gender:</strong></td>
+    <td>Female</td>
+  </tr>
+  <tr>
+    <td><strong>Date of birth:</strong></td>
+    <td>05/25/1978</td>
+  </tr>
+  <tr>
+    <td><strong>Credit card number:</strong></td>
+    <td>XXXXXXXXXXXX2326</td>
+  </tr>
+  <tr>
+    <td><strong>Credit card type:</strong></td>
+    <td>Visa</td>
+  </tr>
+  <tr>
+    <td><strong>Expiration date:</strong></td>
+    <td>05/2023</td>
+  </tr>
+  <tr>
+    <td><strong>Billing address:</strong></td>
+    <td>208 SW 1st Ave<br />Suite 240<br />Portland, Oregon 97204<br />United States</td>
+  </tr>
+  <tr>
+    <td><strong>Phone number:</strong></td>
+    <td>(503) 290-1090</td>
+  </tr>
+</table>
+<div class="arrange arrange-width-auto">
+  <div class="arrange-fit">
+    <button class="btn btn-secondary">Edit</button>
+  </div>  
+  <div class="arrange-fit">
+    <button class="btn btn-primary">Create your account</button>
+  </div>  
+</div>
+
+<div class="box box-scroll">
+  <h2 class="text-cursive text-primary">Customer Satisfaction is Our Top Priority</h2>
+  <quote>"As something of a 'Psychic Junkie' I've tried lots of Psychic Services as well as local psychics, but always return to Psychic Source like a dear, trusted friend. I like that it's always there, whenever I need it, and that I can try someone new without worrying what if I get a bad reading or don't connect with the reader. I've had the most incredibly accurate readings, and I've also called to request my money back. They're not afraid to stand behind their customers with a guarantee, which is rare in this business."</quote>
+  <cite>- a loyal customer from California</cite>
+</div>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_36" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_36"><code class="language-markup">&lt;h1 class=&quot;text-primary&quot;&gt;Confirm Your Order&lt;/h1&gt;
+&lt;p&gt;Please review and confirm your information. To make changes, click edit to go back. If correct, click submit. Please do not use the back button or refresh the page until your order goes through. Thanks!&lt;/p&gt;
+
+&lt;table class=&quot;table table-collapse&quot;&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Introductory offer:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;$15.00 for 23 minutes using promo code 123456&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Your name:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;Aileen Jeffries&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Email address:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;aileen@cloudfour.com&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Rewards:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;Yes! Sign me up for News and Promotions, so I can start earning Membership rewards towards my readings.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Gender:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;Female&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Date of birth:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;05/25/1978&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Credit card number:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;XXXXXXXXXXXX2326&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Credit card type:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;Visa&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Expiration date:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;05/2023&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Billing address:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;208 SW 1st Ave&lt;br /&gt;Suite 240&lt;br /&gt;Portland, Oregon 97204&lt;br /&gt;United States&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Phone number:&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;(503) 290-1090&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;div class=&quot;arrange arrange-width-auto&quot;&gt;
+  &lt;div class=&quot;arrange-fit&quot;&gt;
+    &lt;button class=&quot;btn btn-secondary&quot;&gt;Edit&lt;/button&gt;
+  &lt;/div&gt;  
+  &lt;div class=&quot;arrange-fit&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Create your account&lt;/button&gt;
+  &lt;/div&gt;  
+&lt;/div&gt;
+
+&lt;div class=&quot;box box-scroll&quot;&gt;
+  &lt;h2 class=&quot;text-cursive text-primary&quot;&gt;Customer Satisfaction is Our Top Priority&lt;/h2&gt;
+  &lt;quote&gt;&quot;As something of a &#39;Psychic Junkie&#39; I&#39;ve tried lots of Psychic Services as well as local psychics, but always return to Psychic Source like a dear, trusted friend. I like that it&#39;s always there, whenever I need it, and that I can try someone new without worrying what if I get a bad reading or don&#39;t connect with the reader. I&#39;ve had the most incredibly accurate readings, and I&#39;ve also called to request my money back. They&#39;re not afraid to stand behind their customers with a guarantee, which is rare in this business.&quot;&lt;/quote&gt;
+  &lt;cite&gt;- a loyal customer from California&lt;/cite&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_43">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_43">Signup Footer</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Footer for the signup form.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<h3>Safety and security at Psychic Source</h3>
+<p>Psychic Source is committed to protecting your privacy and uses some of the most sophisticated security software commercially available. We respect your privacy and are committed to no spam. Your information is safe with us.</p>
+<div class="arrange arrange-equal arrange-gutter">
+  <div class="arrange-fill"><img id="trustwaveSealImage" src="https://sealserver.trustkeeper.net/seal_image.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;size=105x54&amp;style=normal" border="0" style="cursor:pointer;" onclick="javascript:window.open('https://sealserver.trustkeeper.net/cert.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;size=105x54&amp;style=normal', 'c_TW', 'location=no, toolbar=no, resizable=yes, scrollbars=yes, directories=no, status=no, width=615, height=720'); return false;" oncontextmenu="javascript:alert('Copying Prohibited by Law - Trusted Commerce is a Service Mark of TrustWave Holdings, Inc.'); return false;" alt="This site is protected by Trustwave's Trusted Commerce program" title="This site is protected by Trustwave's Trusted Commerce program"><noscript>&lt;a href="https://sealserver.trustkeeper.net/compliance/cert.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;style=normal&amp;size=105x54&amp;language=en" target="hATW"&gt;&lt;img src="https://sealserver.trustkeeper.net/compliance/seal.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;style=normal&amp;size=105x54&amp;language=en" border="0" alt="Trusted Commerce"/&gt;&lt;/a&gt;</noscript></div>
+  <div class="arrange-fill arrange-right arrange-middle"><img style="cursor:pointer;cursor:hand" src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_d_m.gif" onclick="verifySeal();"><br><a style="font-family: arial; font-size: 9px; color:#ffffff;" href="https://www.godaddy.com/ssl/ssl-certificates.aspx" target="_blank">Secure Servers</a></div>
+</div>  
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_43" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_43"><code class="language-markup">&lt;h3&gt;Safety and security at Psychic Source&lt;/h3&gt;
+&lt;p&gt;Psychic Source is committed to protecting your privacy and uses some of the most sophisticated security software commercially available. We respect your privacy and are committed to no spam. Your information is safe with us.&lt;/p&gt;
+&lt;div class=&quot;arrange arrange-equal arrange-gutter&quot;&gt;
+  &lt;div class=&quot;arrange-fill&quot;&gt;&lt;img id=&quot;trustwaveSealImage&quot; src=&quot;https://sealserver.trustkeeper.net/seal_image.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;amp;size=105x54&amp;amp;style=normal&quot; border=&quot;0&quot; style=&quot;cursor:pointer;&quot; onclick=&quot;javascript:window.open(&#39;https://sealserver.trustkeeper.net/cert.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;amp;size=105x54&amp;amp;style=normal&#39;, &#39;c_TW&#39;, &#39;location=no, toolbar=no, resizable=yes, scrollbars=yes, directories=no, status=no, width=615, height=720&#39;); return false;&quot; oncontextmenu=&quot;javascript:alert(&#39;Copying Prohibited by Law - Trusted Commerce is a Service Mark of TrustWave Holdings, Inc.&#39;); return false;&quot; alt=&quot;This site is protected by Trustwave&#39;s Trusted Commerce program&quot; title=&quot;This site is protected by Trustwave&#39;s Trusted Commerce program&quot;&gt;&lt;noscript&gt;&amp;lt;a href=&quot;https://sealserver.trustkeeper.net/compliance/cert.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;amp;style=normal&amp;amp;size=105x54&amp;amp;language=en&quot; target=&quot;hATW&quot;&amp;gt;&amp;lt;img src=&quot;https://sealserver.trustkeeper.net/compliance/seal.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;amp;style=normal&amp;amp;size=105x54&amp;amp;language=en&quot; border=&quot;0&quot; alt=&quot;Trusted Commerce&quot;/&amp;gt;&amp;lt;/a&amp;gt;&lt;/noscript&gt;&lt;/div&gt;
+  &lt;div class=&quot;arrange-fill arrange-right arrange-middle&quot;&gt;&lt;img style=&quot;cursor:pointer;cursor:hand&quot; src=&quot;https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_d_m.gif&quot; onclick=&quot;verifySeal();&quot;&gt;&lt;br&gt;&lt;a style=&quot;font-family: arial; font-size: 9px; color:#ffffff;&quot; href=&quot;https://www.godaddy.com/ssl/ssl-certificates.aspx&quot; target=&quot;_blank&quot;&gt;Secure Servers&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+  </main>
+
+  <footer class="c4-footer">
+    <p>
+      This page was generated Friday, December 12th, 2014, 10:31AM (PST).
+      <a href="#c4-top">Back to top</a>
+    </p>
+  </footer>
+
+</body>
+
+
+</html>
