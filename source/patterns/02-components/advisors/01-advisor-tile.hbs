@@ -3,41 +3,6 @@ description: Single tile, repeated in an advisor grid.
 fullWidth: true
 status: inprogress
 ---
-<div class="advisor-tile">
-  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
-    <div class="advisor-tile-main-object">
-      <div class="advisor-tile-photo">
-        <img
-          class="img-rounded img-shadow"
-          src="/images/fpo/7777-sml.jpg"
-          alt=" ">
-        <div class="advisor-tile-staff-pick">
-          Psychic Source is pleased to highlight this gifted Advisor
-        </div>
-        <div class="advisor-tile-showcase">
-          Recommendations from the Psychic Source team
-        </div>
-      </div>
-    </div>
-    <div class="advisor-tile-main-body">
-      <h4 class="text-primary">Mystery Reader x7777</h4>
-      <div class="advisor-tile-meta">
-        <p class="advisor-tile-meta-group stars stars-{{replace 4.5 "." "-"}}">
-          {{{formatFraction 4.5}}} stars
-        </p>
-        <p class="advisor-tile-meta-group">
-          <del class="text-muted">${{formatCurrency 7.45}}</del> <b>${{formatCurrency 1}}/min</b>
-        </p>
-      </div>
-      <p class="text-success"><b>Available</b> till 7:45pm</p>
-    </div>
-  </a>
-  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
-    </li>
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
-    </li>
-  </ul>
-</div>
+{{#with advisor}}
+  {{> advisors/_advisor-tile }}
+{{/with}}
