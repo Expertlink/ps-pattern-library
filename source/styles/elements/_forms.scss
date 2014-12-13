@@ -9,3 +9,35 @@
   color: $red;
   border-color: $red;
 }
+
+.button-style {
+  label {
+    display:block;
+    position:relative;
+    border: 1px solid $blue-gray;
+    border-radius: $border-radius-large;
+    margin-bottom: ($line-height-computed / 2);
+    padding: 10px;
+    background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
+    h3 {
+      margin:0;
+    }
+    input {
+      position: absolute;
+      left: 10px;
+      top:10px;
+      margin:0;
+      display:none;
+    }
+    &:hover, &.selected {
+      background: $red-bright;
+      cursor: pointer;
+      color: white;
+      h3 {
+        color: white;
+      
+      }
+      border-color: $red-dark;
+    }
+  } 
+}

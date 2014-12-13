@@ -3,36 +3,40 @@ description: The signup form for new customers.
 ---
 
 <form role="form">
-  <div class="box box-scroll">
-    <div class="media">
-      <a class="media-left" href="#">
-        <img src="/images/satisfaction-seal.png" width="120" alt="Satisfaction Guarantee" />
-      </a>
-      <div class="media-body">
-        <h2 class="media-heading text-cursive text-primary">Truly Risk Free!</h2>
-        If you're unhappy with your last live purchased psychic reading, we will refund your money from that reading or give you the time back to try us again.
-      </div>
-    </div>
-  </div> 
+  
   <div class="form-group form-group-required">
  
     <label style="display:block">Select an offer </label>
-    <div class="radio">
-      <label>
-        <input type="radio" value="30" checked="checked" /> 30 minutes  for <del>$30.00</del> $22.50
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" value="20" /> 20 minutes  for <del>$20.00</del> $15.00
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" value="10" /> 10 minutes  for <del>$10.00</del> $7.50
-      </label>
-    </div>
-    <p><strong class="text-primary">+&nbsp;&nbsp;3 minutes free!</strong></p>
+    <div class="arrange arrange-equal arrange-gutter">
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="30min" class="selected">
+            <h3 class="text-cursive text-primary">30 Minutes</h3>  for <del class="text-muted">$30.00</del> <strong>$22.50</strong>
+            <input type="radio" value="30" id="30min" class="no-margin" checked="checked" />
+          </label>
+          
+        </div>
+      </div>
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="20min">
+            <h3 class="text-cursive text-primary">20 Minutes</h3>  for <del class="text-muted">$20.00</del> <strong>$15.00</strong>
+            <input type="radio" value="20"  class="no-margin" id="20min" />
+          </label>
+          
+        </div>
+      </div> 
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="10min">
+            <h3 class="text-cursive text-primary">10 Minutes</h3>  for <del class="text-muted">$10.00</del> <strong>$7.50</strong>
+            <input type="radio" value="10" class="no-margin" id="10min" />
+          </label>
+          
+        </div>
+      </div> 
+    </div>  
+    <h3 class="text-primary text-cursive text-center u-no-margin">...plus 3 minutes free!</h3>
      <p class="hidden"><a href="#">Have a promo code?</a></p>
      <p class="help-block">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
      <div class="form-group arrange arrange-width-auto hidden">
@@ -84,17 +88,7 @@ description: The signup form for new customers.
     <label class="form-label" for="signupDOB">Date of birth</label>
     <input type="date" class="form-control" id="signupDOB" />
   </div>
-  <div class="box box-scroll">  
-  <div class="media">
-    <a class="media-left" href="https://www.youtube.com/watch?v=vzNICdAV-XE" target="_new">
-      <img src="/images/how-it-works-thumbnail.png" width="120" alt="How it Works" />
-    </a>
-    <div class="media-body">
-      <h2 class="media-heading text-cursive text-primary">No Hidden Fees</h2>
-      At Psychic Source you control how much you spend, and you're only charged for the time you talk with an advisor. No hidden fees. No surprise charges.
-    </div>
-  </div>
- </div> 
+ 
  <h3>Billing Information</h3>
  <div class="form-group form-group-required">
     <label class="form-label" for="signupCCName">Name on card</label>
