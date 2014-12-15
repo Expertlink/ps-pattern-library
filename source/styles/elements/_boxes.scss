@@ -1,13 +1,44 @@
-.box {
+%box-base {
   background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: $border-radius-large;
+  border-color: transparent;
+  border-style: solid;
   margin-bottom: ($line-height-computed / 2);
   padding: ($line-height-computed / 2) $line-height-computed;
   position: relative;
 
   > *:last-child {
     margin-bottom: 0;
+  }
+}
+
+@mixin make-default-box () {
+  border-radius: $border-radius-large;
+  border-width: 1px;
+}
+
+.box {
+  @extend %box-base;
+  @include make-default-box;
+}
+
+.box-full {
+  @extend %box-base;
+  border-width: 1px 0;
+}
+
+.box-default-sm {
+  @media (min-width: $screen-sm) {
+    @include make-default-box;
+  }
+}
+.box-default-md {
+  @media (min-width: $screen-md) {
+    @include make-default-box;
+  }
+}
+.box-default-lg {
+  @media (min-width: $screen-lg) {
+    @include make-default-box;
   }
 }
 
@@ -27,7 +58,7 @@
 
 //== Modifiers
 
-.box-trim {
+.box-sheer {
   padding: 0;
 }
 

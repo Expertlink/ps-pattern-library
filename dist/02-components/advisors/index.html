@@ -24,6 +24,7 @@
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="../../js/patterns.js"></script>
+     <script src="../../vendor/hideShowPassword/hideShowPassword.js"></script>
     <script src="../../vendor/prism/prism.js"></script>
 
   </head>
@@ -62,6 +63,7 @@
       <li><a class="c4-nav__item " href="../../01-elements/02-text">Text</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/03-headings">Headings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/04-arrange">Arrange</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/arrows">Arrows</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
@@ -76,7 +78,11 @@
     <h4 class="c4-nav__heading">Components</h4>
     <ul class="c4-nav__list">
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/advisors">Advisors</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/signup">Signup</a></li>
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
@@ -86,11 +92,11 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_13">
+  <div class="c4-pattern" id="c4-pattern_16">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_13">Advisor Tile</a>
+          <a href="#c4-pattern_16">Advisor Tile</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -103,90 +109,108 @@
     
 
     <div class="c4-pattern__body c4-pattern__body--full-width">
-      <div class="advisor-tile">
-  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
-    <div class="advisor-tile-main-object">
-      <img
-        class="img-rounded img-shadow"
-        src="/images/fpo/7777-sml.jpg"
-        alt=" ">
-    </div>
-    <div class="advisor-tile-main-body">
-      <h4 class="text-primary">Mystery Reader x7777</h4>
-      <div class="advisor-tile-meta">
-        <p class="advisor-tile-meta-group stars stars-4-5">
-          4&#189; stars
-        </p>
-        <p class="advisor-tile-meta-group">
-          <del class="text-muted">$7.45</del> <b>$1.00/min</b>
-        </p>
+        <div class="advisor-tile">
+    <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+      <div class="advisor-tile-main-object">
+        <div class="advisor-tile-photo">
+          <img
+            class="img-rounded img-shadow"
+            src="/images/fpo/7777-sml.jpg"
+            alt=" ">
+            <div class="advisor-tile-staff-pick">
+              Psychic Source is pleased to highlight this gifted Advisor
+            </div>
+            <div class="advisor-tile-showcase">
+              Recommendations from the Psychic Source team
+            </div>
+        </div>
       </div>
-      <p class="text-success"><b>Available</b> till 7:45pm</p>
-    </div>
-  </a>
-  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-    </li>
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-    </li>
-  </ul>
-</div>
+      <div class="advisor-tile-main-body">
+        <h4 class="text-primary">Mystery Reader x7777</h4>
+        <div class="advisor-tile-meta">
+          <p class="advisor-tile-meta-group stars stars-4-5">
+            4&#189; stars
+          </p>
+          <p class="advisor-tile-meta-group">
+              <del class="text-muted">$7.45</del>
+              <b>$1.00/min</b>
+          </p>
+        </div>
+            <p class="text-success"><b>Available</b> till 7:45pm</p>
+      </div>
+    </a>
+    <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <li class="arrange-fill">
+            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
+          </li>
+          <li class="arrange-fill">
+            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
+          </li>
+    </ul>
+  </div>
 
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_13" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_16" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_13"><code class="language-markup">&lt;div class=&quot;advisor-tile&quot;&gt;
-  &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-    &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-      &lt;img
-        class=&quot;img-rounded img-shadow&quot;
-        src=&quot;/images/fpo/7777-sml.jpg&quot;
-        alt=&quot; &quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-      &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-      &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-        &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-          4&amp;#189; stars
-        &lt;/p&gt;
-        &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-          &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-        &lt;/p&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_16"><code class="language-markup">&lt;div class=&quot;advisor-tile&quot;&gt;
+    &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+      &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+        &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+          &lt;img
+            class=&quot;img-rounded img-shadow&quot;
+            src=&quot;/images/fpo/7777-sml.jpg&quot;
+            alt=&quot; &quot;&gt;
+            &lt;div class=&quot;advisor-tile-staff-pick&quot;&gt;
+              Psychic Source is pleased to highlight this gifted Advisor
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-showcase&quot;&gt;
+              Recommendations from the Psychic Source team
+            &lt;/div&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-      &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/a&gt;
-  &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-    &lt;li class=&quot;arrange-fill&quot;&gt;
-      &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;arrange-fill&quot;&gt;
-      &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+      &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+        &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
+        &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+          &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
+            4&amp;#189; stars
+          &lt;/p&gt;
+          &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+              &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt;
+              &lt;b&gt;$1.00/min&lt;/b&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+            &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+    &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;li class=&quot;arrange-fill&quot;&gt;
+            &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;arrange-fill&quot;&gt;
+            &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
+          &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;</code></pre>
       
     </div>
   </div>
 
 
 
-  <div class="c4-pattern" id="c4-pattern_27">
+  <div class="c4-pattern" id="c4-pattern_33">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_27">Advisor Grid</a>
+          <a href="#c4-pattern_33">Advisor Grid</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -204,10 +228,15 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/7777-sml.jpg"
+                  alt=" ">
+                  <div class="advisor-tile-showcase">
+                    Recommendations from the Psychic Source team
+                  </div>
+              </div>
             </div>
             <div class="advisor-tile-main-body">
               <h4 class="text-primary">Mystery Reader x7777</h4>
@@ -216,19 +245,20 @@
                   4&#189; stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$7.45</del>
+                    <b>$1.00/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                  <p class="text-success"><b>Available</b> till 7:45pm</p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
+                </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
+                </li>
           </ul>
         </div>
       </div>
@@ -236,31 +266,34 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/gusto.jpg"
+                  alt=" ">
+                  <div class="advisor-tile-staff-pick">
+                    Psychic Source is pleased to highlight this gifted Advisor
+                  </div>
+              </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4 class="text-primary">The Amazing Gusto x8888</h4>
               <div class="advisor-tile-meta">
-                <p class="advisor-tile-meta-group stars stars-4-5">
-                  4&#189; stars
+                <p class="advisor-tile-meta-group stars stars-5">
+                  5 stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$20.45</del>
+                    <b>$11.50/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                <p class="text-muted"><b>Offline</b></p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
+                </li>
           </ul>
         </div>
       </div>
@@ -268,31 +301,34 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/jet.jpg"
+                  alt=" ">
+                  <div class="advisor-tile-showcase">
+                    Recommendations from the Psychic Source team
+                  </div>
+              </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4 class="text-primary">Jet Jaguar x1122</h4>
               <div class="advisor-tile-meta">
-                <p class="advisor-tile-meta-group stars stars-4-5">
-                  4&#189; stars
+                <p class="advisor-tile-meta-group stars stars-3-5">
+                  3&#189; stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$7.45</del>
+                    <b>$1.00/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                  <p class="text-danger"><b>Busy</b> logged on till 7:45pm</p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+                </li>
           </ul>
         </div>
       </div>
@@ -300,31 +336,34 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/jesse.jpg"
+                  alt=" ">
+                  <div class="advisor-tile-showcase">
+                    Recommendations from the Psychic Source team
+                  </div>
+              </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4 class="text-primary">Uncle Jesse x7777</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4-5">
                   4&#189; stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$7.45</del>
+                    <b>$1.00/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                <p class="text-muted"><b>Offline</b></p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+                </li>
           </ul>
         </div>
       </div>
@@ -332,31 +371,31 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/liz.jpg"
+                  alt=" ">
+              </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4 class="text-primary">Liz Lemon x3030</h4>
               <div class="advisor-tile-meta">
-                <p class="advisor-tile-meta-group stars stars-4-5">
-                  4&#189; stars
+                <p class="advisor-tile-meta-group stars stars-4">
+                  4 stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$5.45</del>
+                    <b>$1.00/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                  <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
+                </li>
           </ul>
         </div>
       </div>
@@ -364,279 +403,76 @@
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
-              <img
-                class="img-rounded img-shadow"
-                src="/images/fpo/7777-sml.jpg"
-                alt=" ">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="/images/fpo/saul.jpg"
+                  alt=" ">
+                  <div class="advisor-tile-showcase">
+                    Recommendations from the Psychic Source team
+                  </div>
+              </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4 class="text-primary">Saul Goodman x7777</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4-5">
                   4&#189; stars
                 </p>
                 <p class="advisor-tile-meta-group">
-                  <del class="text-muted">$7.45</del> <b>$1.00/min</b>
+                    <del class="text-muted">$7.45</del>
+                    <b>$1.00/min</b>
                 </p>
               </div>
-              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                  <p class="text-success"><b>Available</b> till 7:45pm</p>
             </div>
           </a>
           <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Chat Now</a>
-            </li>
-            <li class="arrange-fill">
-              <a class="btn btn-block btn-success btn-shaded" href="#">Call Now</a>
-            </li>
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
+                </li>
+                  <li class="arrange-fill">
+                    <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+                  </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="advisor-tile">
+          <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+            <div class="advisor-tile-main-object">
+              <div class="advisor-tile-photo">
+                <img
+                  class="img-rounded img-shadow"
+                  src="http://placeimg.com/164/216/animals"
+                  alt=" ">
+                  <div class="advisor-tile-staff-pick">
+                    Psychic Source is pleased to highlight this gifted Advisor
+                  </div>
+              </div>
+            </div>
+            <div class="advisor-tile-main-body">
+              <h4 class="text-primary">Zaphod Beeblebrox x1337</h4>
+              <div class="advisor-tile-meta">
+                <p class="advisor-tile-meta-group stars stars-2">
+                  2 stars
+                </p>
+                <p class="advisor-tile-meta-group">
+                    <b>$9.45/min</b>
+                </p>
+              </div>
+                  <p class="text-success"><b>Available</b> till 2:30pm</p>
+            </div>
+          </a>
+          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                <li class="arrange-fill">
+                  <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
+                </li>
           </ul>
         </div>
       </div>
   </div>
 </div>
-
-    </div>
-
-    <div class="c4-pattern__footer">
-      <div class="c4-pattern__footer__actions">
-        
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_27" type="button">
-            Source
-          </button>
-        
-        
-      </div>
-      
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_27"><code class="language-markup">&lt;div class=&quot;advisor-tiles&quot;&gt;
-  &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
-        &lt;div class=&quot;advisor-tile&quot;&gt;
-          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
-            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
-              &lt;img
-                class=&quot;img-rounded img-shadow&quot;
-                src=&quot;/images/fpo/7777-sml.jpg&quot;
-                alt=&quot; &quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
-              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
-                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
-                  4&amp;#189; stars
-                &lt;/p&gt;
-                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                  &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt; &lt;b&gt;$1.00/min&lt;/b&gt;
-                &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;arrange-fill&quot;&gt;
-              &lt;a class=&quot;btn btn-block btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      
-    </div>
-  </div>
-
-
-
-  <div class="c4-pattern" id="c4-pattern_33">
-    
-      <div class="c4-pattern__header">
-        <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_33">Filters</a>
-          <span class="c4-status c4-status--none">
-            
-          </span>
-        </h2>
-        
-      </div>
-    
-
-    <div class="c4-pattern__body c4-pattern__body--full-width">
-      
-
-<label class="filter-item filter-parent">
-  <input type="checkbox">
-  Filter item
-</label>
-<label class="filter-item">
-  <input type="checkbox">
-  Filter item
-</label>
-
-
-
-
 
     </div>
 
@@ -650,14 +486,257 @@
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_33"><code class="language-markup">&lt;label class=&quot;filter-item filter-parent&quot;&gt;
-  &lt;input type=&quot;checkbox&quot;&gt;
-  Filter item
-&lt;/label&gt;
-&lt;label class=&quot;filter-item&quot;&gt;
-  &lt;input type=&quot;checkbox&quot;&gt;
-  Filter item
-&lt;/label&gt;</code></pre>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_33"><code class="language-markup">&lt;div class=&quot;advisor-tiles&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/7777-sml.jpg&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-showcase&quot;&gt;
+                    Recommendations from the Psychic Source team
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
+                  4&amp;#189; stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt;
+                    &lt;b&gt;$1.00/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                  &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/gusto.jpg&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-staff-pick&quot;&gt;
+                    Psychic Source is pleased to highlight this gifted Advisor
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;The Amazing Gusto x8888&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-5&quot;&gt;
+                  5 stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$20.45&lt;/del&gt;
+                    &lt;b&gt;$11.50/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                &lt;p class=&quot;text-muted&quot;&gt;&lt;b&gt;Offline&lt;/b&gt;&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-info btn-shaded&quot; href=&quot;#&quot;&gt;View Schedule&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/jet.jpg&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-showcase&quot;&gt;
+                    Recommendations from the Psychic Source team
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Jet Jaguar x1122&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-3-5&quot;&gt;
+                  3&amp;#189; stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt;
+                    &lt;b&gt;$1.00/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                  &lt;p class=&quot;text-danger&quot;&gt;&lt;b&gt;Busy&lt;/b&gt; logged on till 7:45pm&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/jesse.jpg&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-showcase&quot;&gt;
+                    Recommendations from the Psychic Source team
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Uncle Jesse x7777&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
+                  4&amp;#189; stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt;
+                    &lt;b&gt;$1.00/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                &lt;p class=&quot;text-muted&quot;&gt;&lt;b&gt;Offline&lt;/b&gt;&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/liz.jpg&quot;
+                  alt=&quot; &quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Liz Lemon x3030&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-4&quot;&gt;
+                  4 stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$5.45&lt;/del&gt;
+                    &lt;b&gt;$1.00/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                  &lt;p class=&quot;text-danger&quot;&gt;&lt;b&gt;Busy&lt;/b&gt; logged on till 9:00pm&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-info btn-shaded&quot; href=&quot;#&quot;&gt;View Schedule&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;/images/fpo/saul.jpg&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-showcase&quot;&gt;
+                    Recommendations from the Psychic Source team
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Saul Goodman x7777&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
+                  4&amp;#189; stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;del class=&quot;text-muted&quot;&gt;$7.45&lt;/del&gt;
+                    &lt;b&gt;$1.00/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                  &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
+                &lt;/li&gt;
+                  &lt;li class=&quot;arrange-fill&quot;&gt;
+                    &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
+                  &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;advisor-tile&quot;&gt;
+          &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
+              &lt;div class=&quot;advisor-tile-photo&quot;&gt;
+                &lt;img
+                  class=&quot;img-rounded img-shadow&quot;
+                  src=&quot;http://placeimg.com/164/216/animals&quot;
+                  alt=&quot; &quot;&gt;
+                  &lt;div class=&quot;advisor-tile-staff-pick&quot;&gt;
+                    Psychic Source is pleased to highlight this gifted Advisor
+                  &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
+              &lt;h4 class=&quot;text-primary&quot;&gt;Zaphod Beeblebrox x1337&lt;/h4&gt;
+              &lt;div class=&quot;advisor-tile-meta&quot;&gt;
+                &lt;p class=&quot;advisor-tile-meta-group stars stars-2&quot;&gt;
+                  2 stars
+                &lt;/p&gt;
+                &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
+                    &lt;b&gt;$9.45/min&lt;/b&gt;
+                &lt;/p&gt;
+              &lt;/div&gt;
+                  &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 2:30pm&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+                &lt;li class=&quot;arrange-fill&quot;&gt;
+                  &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
       
     </div>
   </div>
@@ -667,7 +746,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Tuesday, December 9th, 2014, 5:09PM (PST).
+      This page was generated Friday, December 12th, 2014, 10:39AM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
