@@ -8,6 +8,17 @@ status: inprogress
   {{! TODO: Remove inline style when this page has more elements. }}
   <div class="box-full box-default-sm box-lighter box-sheer" style="margin-top: 2em; margin-bottom: 2em;">
     {{> filters/filter-menu }}
+    <ul class="nav nav-tabs" style="margin: 1em 0">
+      <li role="presentation">
+        <a href="#">Phone <span class="hidden-xs">Psychics</span></a>
+      </li>
+      <li role="presentation">
+        <a href="#">Chat <span class="hidden-xs">Psychics</span></a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="#">All <span class="hidden-xs">Psychics</span></a>
+      </li>
+    </ul>
     {{> advisors/advisor-grid }}
     {{> pagination/states }}
   </div>

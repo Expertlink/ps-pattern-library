@@ -18,7 +18,8 @@ $tan: #d8c3a7;
 $tan-light: #feeed7;
 
 $orange: #f87f25;
-$orange-light: #fdf6e4;
+$orange-light: #F4BC84;
+$orange-lighter: #fdf6e4;
 
 $blue: #3d6682;
 $blue-light: #aec1c4;
@@ -91,6 +92,14 @@ $state-danger-text: $red;
 $blockquote-font-size: 1em;
 //** Blockquote border color
 $blockquote-border-color: $tan;
+
+//== Navs
+$nav-link-hover-bg: lighten($gray-lighter, 7%);
+//== Tabs
+$nav-tabs-border-color: $orange-light;
+$nav-tabs-active-link-hover-color: $red-dark;
+$nav-tabs-active-link-hover-border-color: $orange-light;
+$nav-tabs-active-link-hover-bg: $orange-light;
 
 //== Pagination
 
