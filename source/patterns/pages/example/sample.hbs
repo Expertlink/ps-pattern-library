@@ -1,8 +1,12 @@
-<div class="container">
-  {{> pages/_header }}
+{{> pages/_header }}
 
-  <h1>Sample of a Composed Template</h1>
-  <p>Here are some buttons:</p>
-  {{> buttons/buttons }}
-  {{> pages/_footer }}
+<div class="container-page">
+  {{! TODO: Remove inline style when this page has more elements. }}
+  <div class="box-full box-default-sm box-lighter" style="margin-top: 2em; margin-bottom: 2em;">
+    <h1>Sample of a Composed Template</h1>
+    <p>Here are some buttons:</p>
+    {{> buttons/buttons }}
+  </div>
 </div>
+
+{{> pages/_footer }}
