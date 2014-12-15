@@ -1,0 +1,49 @@
+.tabs {
+  border-bottom: 2px solid $orange-light;
+  border-collapse: collapse;
+  display: table;
+  list-style: none;
+  margin: 0;
+  min-width: 100%;
+  padding: 0;
+  @include clearfix;
+
+  li {
+    display: table-cell;
+    padding: 0 ($grid-gutter-width / 4);
+  }
+
+  @media (min-width: $screen-sm) {
+    &,
+    li {
+      display: block;
+    }
+
+    li {
+      float: left;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  a {
+    background-color: $gray-lighter;
+    background-image: linear-gradient(to bottom, rgba(#fff,.75) 10%, rgba(#fff, 0));
+    border-color: $gray-light;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    border-radius: $border-radius-large $border-radius-large 0 0;
+    display: block;
+    padding: $nav-link-padding;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .active a {
+    background-color: $orange-light;
+    border-color: $orange-light;
+    font-weight: bold;
+  }
+}
