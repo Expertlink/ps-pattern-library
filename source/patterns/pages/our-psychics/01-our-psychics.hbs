@@ -4,9 +4,12 @@ status: inprogress
 
 {{> pages/_header }}
 
-<div class="container-fluid container-max" style="margin-top: 1em; margin-bottom: 1em;">
-  <div class="box box-lighter box-trim">
+<div class="container-page">
+  {{! TODO: Remove inline style when this page has more elements. }}
+  <div class="box-full box-default-sm box-lighter box-sheer" style="margin-top: 2em; margin-bottom: 2em;">
+    {{> filters/filter-menu }}
     {{> advisors/advisor-grid }}
+    {{> pagination/states }}
   </div>
 </div>
 
