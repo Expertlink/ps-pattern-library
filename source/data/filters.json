@@ -4,6 +4,7 @@
       "primary": true,
       "title": "Show",
       "summary": "All Psychics",
+      "open": true,
       "items": [
         { "title": "All Psychics",   "type": "radio", "name": "filter-type", "checked": true },
         { "title": "Phone Psychics", "type": "radio", "name": "filter-type" },

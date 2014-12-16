@@ -13,7 +13,7 @@
         {{/if}}
       </a>
     </{{#if primary}}h4{{else}}h5{{/if}}>
-    <div class="filter-collapse collapse" id="filters-{{formatSlug title}}">
+    <div class="filter-collapse collapse {{#if open}}in{{/if}}" id="filters-{{formatSlug title}}">
       {{#each items}}
         {{> filters/_filter}}
       {{/each}}
