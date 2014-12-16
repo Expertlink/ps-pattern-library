@@ -112,7 +112,7 @@ description: The signup form for new customers.
       <label class="form-label" for="signupCCExp">Expiration</label>
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
     </div>
-    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill">
+    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="cvv">
       <label class="form-label" for="signupCCCode">Security code</label>
       <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
       <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
