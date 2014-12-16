@@ -1,16 +1,20 @@
 $filter-padding-vertical: ($line-height-computed / 2) !default;
 $filter-padding-horizontal: $padding-base-horizontal !default;
 $filter-max-depth: 2 !default;
-$filter-checkbox-size: 20px !default;
+$filter-control-size: 20px !default;
 
-.filter-heading,
-.filter-list {
+.filter-heading {
   margin: 0;
   padding: 0;
 }
 
-.filter-list {
-  list-style: none;
+.filter-summary {
+  font-size: inherit;
+  margin-left: ($filter-padding-horizontal / 2);
+
+  &:empty {
+    display: none;
+  }
 }
 
 .filter-item {
@@ -25,7 +29,7 @@ $filter-checkbox-size: 20px !default;
   overflow: hidden;
   padding:
     $filter-padding-vertical
-    ($filter-padding-horizontal * 1.5 + $filter-checkbox-size)
+    ($filter-padding-horizontal * 1.5 + $filter-control-size)
     $filter-padding-vertical
     $filter-padding-horizontal;
   position: relative;
@@ -44,9 +48,9 @@ $filter-checkbox-size: 20px !default;
     z-index: 2;
   }
 
-  $nested-selector: ".filter-list";
+  $nested-selector: ".filter .filter";
   @for $i from 2 through $filter-max-depth {
-    $nested-selector: $nested-selector " .filter-list";
+    $nested-selector: $nested-selector " .filter";
     #{$nested-selector} & {
       padding-left: ($filter-padding-horizontal * $i);
     }
@@ -68,30 +72,32 @@ $filter-checkbox-size: 20px !default;
   }
 }
 
-.filter-checkbox,
-.filter-parent.collapsible:after {
-  margin-top: ($filter-checkbox-size / -2);
+%filter-absolute-control {
+  margin-top: ($filter-control-size / -2);
   right: $filter-padding-horizontal;
   position: absolute;
   top: 50%;
 }
 
-.filter-checkbox {
+.filter-checkbox,
+.filter-radio {
+  @extend %filter-absolute-control;
+
   input {
     @include visuallyhidden();
   }
 }
 
-.filter-checkbox-value {
+.filter-checkbox-value,
+.filter-radio-value {
   background-color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid $gray-light;
-  border-radius: $border-radius-small;
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
   display: inline-block;
-  height: $filter-checkbox-size;
-  width: $filter-checkbox-size;
+  height: $filter-control-size;
+  width: $filter-control-size;
 
   input:focus + & {
     border-color: $teal;
@@ -102,20 +108,37 @@ $filter-checkbox-size: 20px !default;
 
   input:checked + & {
     background-color: lighten($teal, 5%);
-    background-image: url(/images/filter-check.svg);
     border-color: darken($teal, 10%);
   }
 }
 
-.filter-parent.collapsible {
-  &:after {
-    content: '\2013';
-    height: $filter-checkbox-size;
-    font-weight: bold;
-    line-height: $filter-checkbox-size;
-    text-align: center;
-    width: $filter-checkbox-size;
+.filter-checkbox-value {
+  border-radius: $border-radius-small;
+
+  input:checked + & {
+    background-image: url(/images/filter-check.svg);
   }
+}
+
+.filter-radio-value {
+  border-radius: 50%;
+
+  input:checked + & {
+    background-image: url(/images/filter-dot.svg);
+  }
+}
+
+.filter-parent {
+  &:after {
+    @extend %filter-absolute-control;
+    content: '\2013';
+    height: $filter-control-size;
+    font-weight: bold;
+    line-height: $filter-control-size;
+    text-align: center;
+    width: $filter-control-size;
+  }
+
   &.collapsed:after {
     content: '+';
   }

@@ -1,0 +1,32 @@
+<div class="filter">
+  {{#if items}}
+    <{{#if primary}}h4{{else}}h5{{/if}} class="filter-heading">
+      <a
+        class="filter-item filter-parent collapsed {{#if primary}}filter-primary{{/if}}"
+        href="#filters-{{formatSlug title}}">
+        {{title}}
+        {{#if summary}}
+          <small class="filter-summary">{{summary}}</small>
+        {{else}}
+          <span class="badge filter-badge">{{badgeCount}}</span>
+        {{/if}}
+      </a>
+    </{{#if primary}}h4{{else}}h5{{/if}}>
+    <div class="filter-collapse collapse" id="filters-{{formatSlug title}}">
+      {{#each items}}
+        {{> filters/_filter}}
+      {{/each}}
+    </div>
+  {{else}}
+    <label class="filter-item">
+      <span class="filter-{{#if type}}{{type}}{{else}}checkbox{{/if}}">
+        <input
+          type="{{#if type}}{{type}}{{else}}checkbox{{/if}}"
+          {{#if name}}name="{{name}}"{{/if}}
+          {{#if checked}}checked{{/if}}>
+        <span class="filter-{{#if type}}{{type}}{{else}}checkbox{{/if}}-value" aria-hidden="true"></span>
+      </span>
+      {{title}}
+    </label>
+  {{/if}}
+</div>
