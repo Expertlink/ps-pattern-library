@@ -1,4 +1,5 @@
 /* global console, define, jQuery, require */
+/* jshint eqeqeq: false */
 /**
  * NOTE: This is a temporary location for this code. It will be moving.
  */
