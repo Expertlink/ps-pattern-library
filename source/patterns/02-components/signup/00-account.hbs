@@ -1,0 +1,103 @@
+---
+description: Step one of the signup form for new customers.
+---
+
+<form role="form">
+  
+  <div class="form-group form-group-required">
+ 
+    <label style="display:block">Select an offer </label>
+    <div class="arrange arrange-equal arrange-gutter">
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="30min" class="selected">
+            <h3>30 Minutes</h3>  for <del class="text-muted">$30.00</del> <strong>$22.50</strong>
+            <input type="radio" value="30" id="30min" class="no-margin" checked="checked" />
+          </label>
+          
+        </div>
+      </div>
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="20min">
+            <h3>20 Minutes</h3>  for <del class="text-muted">$20.00</del> <strong>$15.00</strong>
+            <input type="radio" value="20"  class="no-margin" id="20min" />
+          </label>
+          
+        </div>
+      </div> 
+      <div class="arrange-fit">
+        <div class="button-style">
+          <label for="10min">
+            <h3>10 Minutes</h3>  for <del class="text-muted">$10.00</del> <strong>$7.50</strong>
+            <input type="radio" value="10" class="no-margin" id="10min" />
+          </label>
+          
+        </div>
+      </div> 
+    </div>  
+    <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
+     <p class="hidden"><a href="#">Have a promo code?</a></p>
+     <p class="help-block">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
+     <div class="form-group arrange arrange-width-auto hidden">
+        <div class="arrange-fit">
+          <input type="text" class="form-control error" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error">Invalid code.</p>
+        </div>
+        <div class="arrange-fit">
+          <button class="btn btn-primary">Apply</button>
+        </div>
+    </div> 
+  </div> 
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupName">Your name</label>
+    <input type="text" class="form-control" id="signupName" />
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupEmail">Email address</label>
+    <input type="email" class="form-control" id="signupEmail" />
+  </div>  
+  <div class="form-group">
+    <div class="checkbox">
+      <label for="signupOptIn">
+        <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
+      </label>
+    </div>
+  </div>  
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupPassword">Choose a password</label>
+    <input class="form-control" id="signupPassword" type="password" placeholder="Password" />
+    <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
+  </div>
+   <div class="form-group form-group-required">
+    <label>Gender</label>
+    <div class="form-group arrange arrange-width-auto">
+      <div class="radio arrange-fit">
+        <label>
+         <input type="radio" value="female" checked="checked" /> Female
+        </label>
+      </div>
+      <div class="radio arrange-fit">
+        <label>
+          <input type="radio" value="male" /> Male
+        </label>
+      </div>
+    </div>  
+  </div>  
+   <div class="form-group form-group-required">
+    <label class="form-label" for="signupDOB">Date of birth</label>
+    <input type="date" class="form-control" id="signupDOB" />
+  </div>
+   <div class="form-group">
+    <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
+  </div>
+</form>
+
+
+<script>
+
+$('#signupPassword').showPassword('focus', {
+  toggle: { className: 'hideShowPassword-toggle' }
+});
+
+</script>

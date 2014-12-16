@@ -17,10 +17,13 @@
     border: 1px solid $blue-gray;
     border-radius: $border-radius-large;
     margin-bottom: ($line-height-computed / 2);
-    padding: 10px;
+    padding: ($line-height-computed / 2) ;
     background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
+    text-align: center;
+    font-weight: normal;
     h3 {
       margin:0;
+      color: $blue-dark;
     }
     input {
       position: absolute;
@@ -30,14 +33,14 @@
       display:none;
     }
     &:hover, &.selected {
-      background: $red-bright;
+      background: $blue;
       cursor: pointer;
       color: white;
       h3 {
         color: white;
       
       }
-      border-color: $red-dark;
+      border-color: $blue-dark;
     }
   } 
 }

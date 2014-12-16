@@ -1,0 +1,23 @@
+.modal-content {
+  padding: 2em 0;
+}
+.modal-close {
+  position: absolute; 
+  top: 0.5em;
+  right: 0.5em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  background: $red;
+  text-align:center;
+  display: block;
+  font-weight: 800;
+  border-radius: 1em;
+  color: white;
+  border:1px solid $tan;
+  &:hover {
+    background: $red-dark;
+    color: white; 
+    text-decoration: none;
+  }
+}
