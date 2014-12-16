@@ -9,3 +9,34 @@ status: inprogress
 {{#each filters.groups}}
   {{> filters/_filter}}
 {{/each}}
+
+<script>
+
+/**
+ * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
+ * for us to do is update some values wehn controls are updated...
+ */
+
+/** Update badge counts on change of checkbox for all parents */
+$(document).on('change', '.filter input:checkbox', function () {
+  $(this).parents('.filter-collapse').each(function(){
+    var $this = $(this);
+    var collapse = $this.data('bs.collapse');
+    if (!collapse) return;
+    var $badge = collapse.$trigger.find('.filter-badge');
+    $badge.text($this.find('input[type="checkbox"]:checked').length || '');
+  });
+});
+
+/** Update summaries on change of radios for immediate parent */
+$(document).on('change', '.filter input:radio', function () {
+  var $this = $(this);
+  var $label = $this.closest('label');
+  var collapse = $this.closest('.filter-collapse').data('bs.collapse');
+  if (!collapse || !$label.length) return;
+  var text = $label.text();
+  var $summary = collapse.$trigger.find('.filter-summary');
+  $summary.text(text);
+});
+
+</script>
