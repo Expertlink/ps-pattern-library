@@ -2,6 +2,7 @@
   {{#if items}}
     <{{#if primary}}h4{{else}}h5{{/if}} class="filter-heading">
       <a
+        data-toggle="collapse"
         class="filter-item filter-parent collapsed {{#if primary}}filter-primary{{/if}}"
         href="#filters-{{formatSlug title}}">
         {{title}}
