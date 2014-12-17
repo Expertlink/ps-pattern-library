@@ -166,6 +166,6 @@ $arrange-gutter-size: 10px !default;
   min-width:0;
   .arrange-fit {
     width: auto;
-    padding-right: (2 * $arrange-gutter-size);
+    padding-right: $arrange-gutter-size;
   }
 }   

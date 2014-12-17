@@ -1,3 +1,6 @@
+$gutter-size: 1em;
+
+
 .u-no-margin {
   margin:0;
 }
@@ -12,4 +15,17 @@
 }
 .u-no-margin-left {
   margin-left:0;
+}
+
+.u-margin-top {
+  margin-top: $gutter-size;
+}
+.u-margin-right {
+  margin-right: $gutter-size;
+}
+.u-margin-bottom {
+  margin-bottom: $gutter-size;
+}
+.u-margin-left {
+  margin-left: $gutter-size;
 }

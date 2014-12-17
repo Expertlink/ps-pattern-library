@@ -3,52 +3,45 @@ description: Step one of the signup form for new customers.
 ---
 
 <form role="form">
-  
-  <div class="form-group form-group-required">
- 
-    <label style="display:block">Select an offer </label>
-    <div class="arrange arrange-equal arrange-gutter">
-      <div class="arrange-fit">
-        <div class="button-style">
-          <label for="30min" class="selected">
-            <h3>30 Minutes</h3>  for <del class="text-muted">$30.00</del> <strong>$22.50</strong>
-            <input type="radio" value="30" id="30min" class="no-margin" checked="checked" />
-          </label>
-          
-        </div>
+  <label style="display:block">Select an offer </label>
+  <div class="arrange arrange-equal arrange-gutter">
+    <div class="arrange-fit">
+      <div class="button-style">
+        <label for="30min" class="selected">
+          <h3>30 Minutes</h3>  for $<span class="price-amount">30.00</span>
+          <input type="radio" value="30" id="30min" class="no-margin" checked="checked" />
+        </label>
       </div>
-      <div class="arrange-fit">
-        <div class="button-style">
-          <label for="20min">
-            <h3>20 Minutes</h3>  for <del class="text-muted">$20.00</del> <strong>$15.00</strong>
-            <input type="radio" value="20"  class="no-margin" id="20min" />
-          </label>
-          
-        </div>
-      </div> 
-      <div class="arrange-fit">
-        <div class="button-style">
-          <label for="10min">
-            <h3>10 Minutes</h3>  for <del class="text-muted">$10.00</del> <strong>$7.50</strong>
-            <input type="radio" value="10" class="no-margin" id="10min" />
-          </label>
-          
-        </div>
-      </div> 
-    </div>  
-    <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
-     <p class="hidden"><a href="#">Have a promo code?</a></p>
-     <p class="help-block">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
-     <div class="form-group arrange arrange-width-auto hidden">
-        <div class="arrange-fit">
-          <input type="text" class="form-control error" id="signupPromo" placeholder="Promo code" />
-          <p class="help-block error">Invalid code.</p>
-        </div>
-        <div class="arrange-fit">
-          <button class="btn btn-primary">Apply</button>
-        </div>
+    </div>
+    <div class="arrange-fit">
+      <div class="button-style">
+        <label for="20min">
+          <h3>20 Minutes</h3>  for $<span class="price-amount">20.00</span>
+          <input type="radio" value="20"  class="no-margin" id="20min" />
+        </label>
+      </div>
     </div> 
-  </div> 
+    <div class="arrange-fit">
+      <div class="button-style">
+        <label for="10min">
+          <h3>10 Minutes</h3>  for $<span class="price-amount">10.00</span>
+          <input type="radio" value="10" class="no-margin" id="10min" />
+        </label>
+      </div>
+    </div> 
+  </div>  
+  <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
+  <p class="help-block"><a class="promo-link" href="#">Have a promo code?</a></p>
+  <p class="help-block promo-code hidden">Promo code <strong class="code-slot">654123</strong> applied. <a class="change-promo" href="#">Change code</a>.</p>
+  <div class="form-group promo-group arrange arrange-width-auto hidden">
+    <div class="arrange-fit">
+      <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+      <p class="help-block has-error hidden">Invalid code.</p>
+    </div>
+    <div class="arrange-fit">
+      <button class="btn btn-primary apply-btn">Apply</button>
+    </div>
+  </div>
   <div class="form-group form-group-required">
     <label class="form-label" for="signupName">Your name</label>
     <input type="text" class="form-control" id="signupName" />
@@ -94,34 +87,6 @@ description: Step one of the signup form for new customers.
 </form>
 
 
-    <label style="display:block">Select an offer </label>
-    <div class="radio">
-      <label>
-        <input type="radio" value="30" checked="checked" /> 30 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">30.00</span>
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" value="20" /> 20 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">20.00</span>
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" value="10" /> 10 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">10.00</span>
-      </label>
-    </div>
-     <p class="help-block"><a class="promo-link" href="#">Have a promo code?</a></p>
-     <p class="help-block promo-code hidden">Promo code <strong class="code-slot">654123</strong> applied. <a class="change-promo" href="#">Change code</a>.</p>
-     <div class="form-group promo-group arrange arrange-auto-width hidden">
-        <div class="arrange-fill">
-          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-          <p class="help-block error hidden">Invalid code.</p>
-        </div>
-        <div class="arrange-fill">
-          <button class="btn btn-primary apply-btn">Apply</button>
-        </div>
-    </div> 
-  </div> 
 
 
 <script>
@@ -130,4 +95,52 @@ $('#signupPassword').showPassword('focus', {
   toggle: { className: 'hideShowPassword-toggle' }
 });
 
+
+$('.promo-link').each(function () {
+  var $link = $(this);
+  var $form = $link.closest('form');
+  var $group = $form.find('.promo-group');
+  var $code = $form.find('.promo-code');
+  var $error = $group.find('.has-error');
+  var $promoinput = $group.find('#signupPromo');
+  
+  $link.click(function (e) {
+    e.preventDefault();
+    $group.removeClass('hidden');
+  });
+
+  $group.find('.apply-btn').click(function (e) {
+    e.preventDefault();
+    var code = $group.find('#signupPromo').val();
+    if (code.match(/^\d{6}$/)) {
+      $group.addClass('hidden');
+      $link.addClass('hidden');
+      $error.addClass('hidden');
+
+      $code.find('.code-slot').text(code);
+
+      $code.removeClass('hidden');
+
+      // Update prices
+      $form.find('.price-amount:not(.discounted)').each(function () {
+        var $price = $(this);
+        var newPrice = $price.text() * 0.75 + "";
+        var place = newPrice.indexOf('.');
+        $price.text(newPrice + ".00".slice(newPrice.length - (place > 0 ? place : newPrice.length)));
+      }).addClass('discounted');
+    }
+    else {
+      $error.removeClass('hidden');
+      $promoinput.addClass('has-error');
+    }
+  });
+
+  $form.find('.change-promo').click(function (e) {
+    e.preventDefault();
+
+    $group.removeClass('hidden');
+  });
+});
+
+;
 </script>
