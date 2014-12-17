@@ -2,7 +2,7 @@
 'use strict';
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    settings     = require('../settings'),
+    settings     = require('../../settings'),
     sass         = require('gulp-ruby-sass');
 
 module.exports = function () {

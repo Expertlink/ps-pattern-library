@@ -2,7 +2,7 @@
 
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var settings    = require('../settings');
+var settings    = require('../../settings');
 
 module.exports = function() {
   gulp.watch(settings.src.assets,    ['assets', browserSync.reload]);

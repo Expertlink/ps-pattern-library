@@ -10,7 +10,7 @@ var marked = require('marked');
 var moment = require('moment');
 var _      = require('underscore');
 
-var settings    = require('../settings');
+var settings    = require('../../settings');
 var navigation  = require('./library-navigation');
 var util        = require('./library-util');
 

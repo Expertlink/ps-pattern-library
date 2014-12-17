@@ -23,7 +23,7 @@ var template         = require('./gulp-library-template');
 var templateUtil     = require('./library-template-util');
 var util             = require('./library-util');
 
-var settings         = require('../settings');
+var settings         = require('../../settings');
 var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {

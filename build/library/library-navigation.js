@@ -7,7 +7,7 @@
 var fs       = require('fs');
 var glob     = require('glob');
 var path     = require('path');
-var settings = require('../settings');
+var settings = require('../../settings');
 var util     = require('./library-util');
 
 /* For a given fully-resolved path, return any directories in it */

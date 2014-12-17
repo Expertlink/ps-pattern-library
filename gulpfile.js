@@ -2,7 +2,7 @@
 'use strict';
 
 var gulp     = require('gulp');
-var settings = require('./build/settings');
+var settings = require('./settings');
 var watchers = {};
 
 var taskModules = ['browserSync',

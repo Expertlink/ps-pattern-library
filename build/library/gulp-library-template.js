@@ -13,7 +13,7 @@ var gutil       = require('gulp-util'),
     fs          = require('fs'),
     path        = require('path'),
     _           = require('underscore'),
-    settings    = require('../settings');
+    settings    = require('../../settings');
 
 module.exports = function (data, opts) {
 
