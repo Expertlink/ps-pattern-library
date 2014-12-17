@@ -19,7 +19,7 @@
 }(function ($) {
   'use strict';
 
-  function getCursorPosition($inputEl) {
+  function _getCursorPosition($inputEl) {
     var input = $inputEl.get(0);
     if (!input) return; // No (input) element found
     if ('selectionStart' in input) {
@@ -35,7 +35,7 @@
     }
   }
 
-  function setCursorRange(input, selectionStart, selectionEnd) {
+  function _setCursorRange(input, selectionStart, selectionEnd) {
     if (input.setSelectionRange) {
       input.focus();
       input.setSelectionRange(selectionStart, selectionEnd);
@@ -48,8 +48,8 @@
     }
   }
 
-  function setCursorPosition($inputEl, pos) {
-    setCursorRange($inputEl.get(0), pos, pos);
+  function _setCursorPosition($inputEl, pos) {
+    _setCursorRange($inputEl.get(0), pos, pos);
   }
 
   var InputMask = function(element, options) {
@@ -68,9 +68,7 @@
 
   };
 
-  InputMask.DEFAULTS = {
-    foo: 'bar'
-  };
+  InputMask.DEFAULTS = {};
   InputMask.PLUGIN_NAME = 'c4-input-mask';
 
   InputMask.prototype.fetchValue = function() {
@@ -120,7 +118,7 @@
     var valueWasReplaced     = (valueLengthChange === this.currentValue.length);
     var maskWasReplaced      = (maskLengthChange  === this.maskValue.length);
 
-    var lastPosition         = getCursorPosition(this.$inputEl);
+    var lastPosition         = _getCursorPosition(this.$inputEl);
     var positionBeforeChange = lastPosition - valueLengthChange;
 
     var valueDiff            = this.currentValue.substring(positionBeforeChange, positionBeforeChange + maskLengthChange);
@@ -145,7 +143,7 @@
       this.$element.trigger('maskChanged', [this]);
       this.$inputEl.val(this.maskValue);
       if (newPosition && this.lastMaskValue.length && newPosition !== this.maskValue.length) {
-        setCursorPosition(this.$inputEl, newPosition);
+        _setCursorPosition(this.$inputEl, newPosition);
       }
     }
   };
@@ -182,7 +180,7 @@
       }
       this.formatMask(event);
     }, newMask));
-
+    console.log(options);
     return newMask;
   };
 
