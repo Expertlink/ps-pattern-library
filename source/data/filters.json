@@ -1,6 +1,18 @@
 {
   "groups": [
     {
+      "primary": true,
+      "title": "Show",
+      "summary": "All Psychics",
+      "open": true,
+      "items": [
+        { "title": "All Psychics",   "type": "radio", "name": "filter-type", "checked": true },
+        { "title": "Phone Psychics", "type": "radio", "name": "filter-type" },
+        { "title": "Chat Psychics",  "type": "radio", "name": "filter-type" }
+      ]
+    },
+    {
+      "primary": true,
       "title": "Specialties",
       "items": [
         { "title": "Career Psychic" },
@@ -14,6 +26,7 @@
       ]
     },
     {
+      "primary": true,
       "title": "Subject/Expertises",
       "items": [
         {
@@ -66,6 +79,7 @@
       ]
     },
     {
+      "primary": true,
       "title": "Tools",
       "items": [
         { "title": "Angel Cards" },
@@ -81,6 +95,7 @@
       ]
     },
     {
+      "primary": true,
       "title": "Language",
       "items": [
         { "title": "English" },
@@ -88,6 +103,7 @@
       ]
     },
     {
+      "primary": true,
       "title": "Reading Style",
       "items": [
         { "title": "Compassionate" },
