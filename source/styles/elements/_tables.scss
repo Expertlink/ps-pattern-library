@@ -1,5 +1,5 @@
 .table.table-collapse-xs {
-  @media (max-width: $screen-xs) {
+  @media (max-width: $screen-xs-max) {
     &, tr, td {
       display: block;
     }  
