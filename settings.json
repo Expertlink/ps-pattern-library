@@ -17,7 +17,13 @@
     "assets"   : "./static",
     "patterns" : "./static",
     "css"      : "./static/css",
-    "vendor"   : "./static/vendor"
+    "vendor"   : "./static/vendor",
+    "library"  : {
+      "css"    : "./static/css"
+    },
+    "site"     : {
+      "css"    : "./static/css"
+    }
   },
   "src": {
     "patterns"    : "./source/patterns/**/*.hbs",
@@ -26,6 +32,12 @@
     "static"      : "./static/**",
     "styles"      : "./source/styles/**/*.scss",
     "templates"   : "./source/patterns/**/*.template",
-    "vendor"      : "./vendor/**/*"
+    "vendor"      : "./vendor/**/*",
+    "library"     : {
+      "styles"    : "./pattern-lib/styles/**/*.scss"
+    },
+    "site"        : {
+      "styles"    : "./source/styles/**/*.scss"
+    }
   }
 }

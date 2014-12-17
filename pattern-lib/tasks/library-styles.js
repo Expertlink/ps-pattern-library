@@ -6,9 +6,9 @@ var gulp         = require('gulp'),
     sass         = require('gulp-ruby-sass');
 
 module.exports = function () {
-  return gulp.src(settings.src.site.styles)
+  return gulp.src(settings.src.library.styles)
     .pipe(sass())
     .on('error', function(err) { console.log(err.message); })
     .pipe(autoprefixer())
-    .pipe(gulp.dest(settings.dest.site.css));
+    .pipe(gulp.dest(settings.dest.library.css));
 };
