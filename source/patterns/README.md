@@ -150,8 +150,9 @@ The builder will look for the _closest_ `__INDEX` and `__PATTERN` templates, tra
 
 ##### Styles and Scripts
 
-You can look at the `__INDEX` template(s) to see exactly what styles and scripts are being included, but note the presence of:
+You can look at the `__INDEX` template(s) to see exactly what styles and scripts are being included.
 
-* `source/styles/patterns.scss`
-* `vendor` (where some of the 3rd-party scripts and styles are housed)
-* `source/assets/js`: Scripts
+* (S)CSS in `source/styles` is compiled by SASS, etc., and output into the static `css` directory. By default, the `styles.css` file is included in the `__INDEX` template.
+* Any JS files in `source/js` will be concatenated and output into `site.js`.
+* Styles needed by the pattern library itself are included as `pattern-library.css`. Any (S)CSS files in `pattern-lib/styles` will be automatically compiled and output into this concatenated file by the `gulp` watch task.
+* Scripts needed by the pattern library itself are included as `pattern-library.js`. Any JS files in `pattern-lib/js` will automatically be output into this concatenated output file by the `gulp` watch task.
