@@ -19,10 +19,12 @@
     "css"      : "./static/css",
     "vendor"   : "./static/vendor",
     "library"  : {
-      "css"    : "./static/css"
+      "css"    : "./static/css",
+      "scripts": "./static/js"
     },
     "site"     : {
-      "css"    : "./static/css"
+      "css"    : "./static/css",
+      "scripts": "./static/js"
     }
   },
   "src": {
@@ -34,10 +36,12 @@
     "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*",
     "library"     : {
-      "styles"    : "./pattern-lib/styles/**/*"
+      "styles"    : "./pattern-lib/styles/**/*",
+      "scripts"   : "./pattern-lib/js/**/**"
     },
     "site"        : {
-      "styles"    : "./source/styles/**/*.scss"
+      "styles"    : "./source/styles/**/*.scss",
+      "scripts"   : "./source/js/**/*"
     }
   }
 }
