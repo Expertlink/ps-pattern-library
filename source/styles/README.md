@@ -106,7 +106,7 @@ The `source/styles` directory is organized like so:
 
 We may need to create additional directories for things like "regions" or "pages," but for now this should be enough for us to get started.
 
-*Note*: Source styles for the pattern library itself can be found in `library/styles`.
+*Note*: Source styles for the pattern library itself can be found in `pattern-lib/styles`.
 
 ## Bootstrap
 
