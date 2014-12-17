@@ -100,7 +100,7 @@ description: The signup form for new customers.
     <label class="form-label" for="signupCCName">Name on card</label>
     <input type="text" class="form-control" id="signupCCName" value="Aileen Jeffries" >
   </div>
-  <div class="form-group form-group-required has-cards knows-card is-visa" data-mask data-mask-type="credit-card">
+  <div class="form-group form-group-required has-cards knows-card is-visa" data-mask data-mask-type="CreditCard">
     <label class="form-label" for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
     <ul class="creditcards">
@@ -108,11 +108,11 @@ description: The signup form for new customers.
     </ul>
   </div>
   <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="expiration-date">
+    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="ExpirationDate">
       <label class="form-label" for="signupCCExp">Expiration</label>
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
     </div>
-    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="cvv" data-mask-cvv-for="signupCCNumber">
+    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
       <label class="form-label" for="signupCCCode">Security code</label>
       <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
       <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
