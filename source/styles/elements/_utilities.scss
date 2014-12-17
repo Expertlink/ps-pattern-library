@@ -32,3 +32,11 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
 .u-nowrap {
   white-space: nowrap;
 }
+
+.u-block {
+  display: block;
+}
+
+.u-inline-block {
+  display: inline-block;
+}

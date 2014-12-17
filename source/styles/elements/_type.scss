@@ -39,7 +39,4 @@ h6, .h6 {
 
 
 //** Other text variations 
-
-.text-secondary {
-  color: $orange;
-}
+@include text-emphasis-variant('.text-secondary', $orange);
