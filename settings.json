@@ -34,7 +34,7 @@
     "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*",
     "library"     : {
-      "styles"    : "./pattern-lib/styles/**/*.scss"
+      "styles"    : "./pattern-lib/styles/**/*"
     },
     "site"        : {
       "styles"    : "./source/styles/**/*.scss"
