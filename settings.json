@@ -6,18 +6,24 @@
   "paths": {
     "data"       : "./source/data",
     "dist"       : "./dist",
-    "gulpTasks"  : "./build/gulp",
+    "gulpTasks"  : "./pattern-lib/tasks",
     "partials"   : "./source/patterns",
     "patterns"   : "./source/patterns",
     "source"     : "./source",
     "static"     : "./static",
-    "styleGuide" : "./build/styleGuide"
+    "library"    : "./pattern-lib/build"
   },
   "dest": {
     "assets"   : "./static",
     "patterns" : "./static",
     "css"      : "./static/css",
-    "vendor"   : "./static/vendor"
+    "vendor"   : "./static/vendor",
+    "library"  : {
+      "css"    : "./static/css"
+    },
+    "site"     : {
+      "css"    : "./static/css"
+    }
   },
   "src": {
     "patterns"    : "./source/patterns/**/*.hbs",
@@ -26,6 +32,12 @@
     "static"      : "./static/**",
     "styles"      : "./source/styles/**/*.scss",
     "templates"   : "./source/patterns/**/*.template",
-    "vendor"      : "./vendor/**/*"
+    "vendor"      : "./vendor/**/*",
+    "library"     : {
+      "styles"    : "./pattern-lib/styles/**/*"
+    },
+    "site"        : {
+      "styles"    : "./source/styles/**/*.scss"
+    }
   }
 }

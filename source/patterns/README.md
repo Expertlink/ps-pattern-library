@@ -133,7 +133,7 @@ In addition, there are some other metadata available in the EJS-compiled `__PATT
 
 ###### Navigation object
 
-The `nav` object is available to patterns but is probably most useful to templates for the pattern library. You can learn more about the structure of the object, should you need to, by perusing the `navigation.js` util building function in `build/styleGuide`. It is used heavily by the `__NAV.hbs` template.
+The `nav` object is available to patterns but is probably most useful to templates for the pattern library. You can learn more about the structure of the object, should you need to, by perusing the `navigation.js` util building function in `build/library`. It is used heavily by the `__NAV.hbs` template.
 
 * Each (linked/clickable) nav item has a Boolean `isCurrent` property for applying active nav classes, etc.
 * There is a top-level `nav.isHome` Boolean that is `true` on the landing page only. This allows for selective styling of the `Welcome` nav item.

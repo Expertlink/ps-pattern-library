@@ -1,3 +1,8 @@
+/**
+ * Gulp plugin, parses both global and local data
+ * for a template and puts data into a file property
+ * (`data` by default) for use when compiling.
+ */
 'use strict';
 
 var util = require('gulp-util'),

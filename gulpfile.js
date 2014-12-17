@@ -2,12 +2,13 @@
 'use strict';
 
 var gulp     = require('gulp');
-var settings = require('./build/settings');
+var settings = require('./settings');
 var watchers = {};
 
 var taskModules = ['browserSync',
                    'styles',
-                   'watch'];
+                   'watch',
+                   'library-styles'];
 /**
  * Task modules should be in build/gulp/tasks
  */
@@ -20,7 +21,7 @@ taskModules.forEach(function(task) {
 /**
  * Style guide support. Keeping this separate because it's its own thing.
  */
-gulp.task('styleGuide', [], require(settings.paths.styleGuide + '/styleGuide'));
+gulp.task('library', ['library-styles'], require(settings.paths.library + '/gulp-library-build'));
 
 /**
  * Simple tasks not worthy of module
@@ -40,4 +41,4 @@ gulp.task('dist', function() {
 /**
  * Composite tasks
  */
-gulp.task('default', ['styles', 'assets', 'vendor', 'styleGuide', 'watch', 'browserSync']);
+gulp.task('default', ['styles', 'assets', 'vendor', 'library', 'watch', 'browserSync']);

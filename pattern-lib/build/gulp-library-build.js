@@ -17,13 +17,13 @@ var rename           = require('gulp-rename');
 var wrap             = require('gulp-wrap');
 
 // local
-var templateData     = require('./templateData');
-var templateMetaData = require('./templateMetaData');
-var template         = require('./handlebarsCompile');
-var templateUtil     = require('./templateUtil');
-var util             = require('./util');
+var templateData     = require('./gulp-template-data');
+var templateMetaData = require('./gulp-library-metadata');
+var template         = require('./gulp-library-template');
+var templateUtil     = require('./library-template-util');
+var util             = require('./library-util');
 
-var settings         = require('../settings');
+var settings         = require('../../settings');
 var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
 module.exports =  function() {
