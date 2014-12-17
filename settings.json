@@ -6,12 +6,12 @@
   "paths": {
     "data"       : "./source/data",
     "dist"       : "./dist",
-    "gulpTasks"  : "./build/gulp",
+    "gulpTasks"  : "./pattern-lib/tasks",
     "partials"   : "./source/patterns",
     "patterns"   : "./source/patterns",
     "source"     : "./source",
     "static"     : "./static",
-    "library"    : "./build/library"
+    "library"    : "./pattern-lib/build"
   },
   "dest": {
     "assets"   : "./static",
