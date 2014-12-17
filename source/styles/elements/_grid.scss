@@ -19,3 +19,26 @@ $container-page-gutter-breakpoint: $screen-sm !default;
     padding-right: $container-page-gutter;
   }
 }
+
+/**
+ * Inspired by: http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/
+ */
+
+.row.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+%no-gutters-col-base {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+    .row.no-gutters > &,
+    &.no-gutters {
+      @extend %no-gutters-col-base;
+    }
+  }
+}
