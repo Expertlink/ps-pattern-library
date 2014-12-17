@@ -71,6 +71,41 @@
   InputMask.DEFAULTS = {};
   InputMask.PLUGIN_NAME = 'c4-input-mask';
 
+  InputMask.factory = function(element, maskType, options) {
+    var ctor = maskType,
+    newMask;
+
+    if (typeof InputMask[ctor] !== 'function') {
+      throw {
+        name: 'Error',
+        message: ctor + ' does not exist (is not an available mask-type)'
+      };
+    }
+    if (typeof InputMask[ctor].prototype.fetchValue !== 'function') {
+      InputMask[ctor].prototype = new InputMask(element, options);
+    }
+    newMask = new InputMask[ctor](element, options);
+    /*
+    if ($('html').hasClass('android')) {
+    maskEvents = 'change';
+  } else {
+  maskEvents = 'keypress keyup change';
+    }
+    */
+    newMask.$inputEl.on('keypress keyup change', $.proxy(function(event) {
+      this.fetchValue(event);
+      this.validate(this.currentValue, event);
+      if (event.keyCode && event.keyCode === 8) {
+        if ((this.lastValue.length - this.currentValue.length) <= 1) {
+          // backspace exemption
+          return;
+        }
+      }
+      this.formatMask(event);
+    }, newMask));
+    return newMask;
+  };
+
   InputMask.prototype.fetchValue = function() {
     var newValue = this.$inputEl.val();
     this.setCurrentValue(newValue);
@@ -146,42 +181,6 @@
         _setCursorPosition(this.$inputEl, newPosition);
       }
     }
-  };
-
-  InputMask.factory = function(element, maskType, options) {
-    var ctor = maskType,
-        newMask;
-
-    if (typeof InputMask[ctor] !== 'function') {
-      throw {
-        name: 'Error',
-        message: ctor + ' does not exist (is not an available mask-type)'
-      };
-    }
-    if (typeof InputMask[ctor].prototype.fetchValue !== 'function') {
-      InputMask[ctor].prototype = new InputMask(element, options);
-    }
-    newMask = new InputMask[ctor](element, options);
-    /*
-        if ($('html').hasClass('android')) {
-        maskEvents = 'change';
-      } else {
-      maskEvents = 'keypress keyup change';
-    }
-    */
-    newMask.$inputEl.on('keypress keyup change', $.proxy(function(event) {
-      this.fetchValue(event);
-      this.validate(this.currentValue, event);
-      if (event.keyCode && event.keyCode === 8) {
-        if ((this.lastValue.length - this.currentValue.length) <= 1) {
-          // backspace exemption
-          return;
-        }
-      }
-      this.formatMask(event);
-    }, newMask));
-    console.log(options);
-    return newMask;
   };
 
   InputMask.CreditCardMask = function(element, options) {
