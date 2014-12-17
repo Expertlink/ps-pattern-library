@@ -23,10 +23,9 @@ status: inprogress
 $(document).on('change', '.filter input:checkbox', function () {
   $(this).parents('.filter-collapse').each(function(){
     var $this = $(this);
-    var collapse = $this.data('bs.collapse');
-    if (!collapse) return;
-    var $badge = collapse.$trigger.find('.filter-badge');
-    $badge.text($this.find('input[type="checkbox"]:checked').length || '');
+    var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
+    var $badge = $trigger.find('.filter-badge');
+    $badge.text($this.find('input:checkbox:checked').length || '');
   });
 });
 
@@ -34,11 +33,10 @@ $(document).on('change', '.filter input:checkbox', function () {
 $(document).on('change', '.filter input:radio', function () {
   var $this = $(this);
   var $label = $this.closest('label');
-  var collapse = $this.closest('.filter-collapse').data('bs.collapse');
-  if (!collapse || !$label.length) return;
-  var text = $label.text();
-  var $summary = collapse.$trigger.find('.filter-summary');
-  $summary.text(text);
+  var $parent = $this.closest('.filter-collapse');
+  var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
+  var $summary = $trigger.find('.filter-summary');
+  $summary.text($label.text());
 });
 
 </script>
