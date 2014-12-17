@@ -1,5 +1,4 @@
-$gutter-size: 1em;
-
+$utility-gutter-width: ($grid-gutter-width / 2) !default;
 
 .u-no-margin {
   margin:0;
@@ -18,14 +17,14 @@ $gutter-size: 1em;
 }
 
 .u-margin-top {
-  margin-top: $gutter-size;
+  margin-top: $utility-gutter-width;
 }
 .u-margin-right {
-  margin-right: $gutter-size;
+  margin-right: $utility-gutter-width;
 }
 .u-margin-bottom {
-  margin-bottom: $gutter-size;
+  margin-bottom: $utility-gutter-width;
 }
 .u-margin-left {
-  margin-left: $gutter-size;
+  margin-left: $utility-gutter-width;
 }
