@@ -1,10 +1,14 @@
+/**
+ * Generates a navigation object for the
+ * pattern library. Can be used by templates, etc.
+ */
 'use strict';
 
 var fs       = require('fs');
 var glob     = require('glob');
 var path     = require('path');
 var settings = require('../settings');
-var util     = require('./util');
+var util     = require('./library-util');
 
 /* For a given fully-resolved path, return any directories in it */
 var getDirs = function getDirs(fullPath) {
@@ -31,7 +35,7 @@ module.exports.buildNav = function buildNav(currentDir) {
     });
     /**
      * Flesh out the information object about each of these content dirs
-     * These are the actual nav elements here. 
+     * These are the actual nav elements here.
      */
     contentDirs = contentDirs.map(function(contentDir) {
       var link = dir + '/' + contentDir;

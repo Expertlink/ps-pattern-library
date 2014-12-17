@@ -1,7 +1,7 @@
 'use strict';
 var Handlebars  = require('handlebars');
 /* These helpers are available to all Handlebars templates
- * compiled by the styleGuide task */
+ * compiled by the gulp library task */
 module.exports = {
   times: function times (n, block) {
     var accum = '', data;

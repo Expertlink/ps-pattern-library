@@ -20,7 +20,7 @@ taskModules.forEach(function(task) {
 /**
  * Style guide support. Keeping this separate because it's its own thing.
  */
-gulp.task('styleGuide', [], require(settings.paths.styleGuide + '/styleGuide'));
+gulp.task('library', [], require(settings.paths.library + '/gulp-library-build'));
 
 /**
  * Simple tasks not worthy of module
@@ -40,4 +40,4 @@ gulp.task('dist', function() {
 /**
  * Composite tasks
  */
-gulp.task('default', ['styles', 'assets', 'vendor', 'styleGuide', 'watch', 'browserSync']);
+gulp.task('default', ['styles', 'assets', 'vendor', 'library', 'watch', 'browserSync']);

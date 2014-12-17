@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * Utilities for library templates
+ */
 var path        = require('path');
 
 var escape = require('escape-html');
@@ -8,8 +11,8 @@ var moment = require('moment');
 var _      = require('underscore');
 
 var settings    = require('../settings');
-var navigation  = require('./navigation');
-var util        = require('./util');
+var navigation  = require('./library-navigation');
+var util        = require('./library-util');
 
 module.exports.pathData        = function pathData(dirPath) {
   var nav     = navigation.buildNav(dirPath);

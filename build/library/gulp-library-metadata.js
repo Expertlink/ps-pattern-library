@@ -1,3 +1,9 @@
+/**
+* This gulp PLUGIN sets reasonable defaults on a file
+* object's meta property (or whatever is passed as options.property)
+* YAML should already have been stripped from the file when it gets here
+* and available (on `file.meta` by default).
+*/
 'use strict';
 
 var util            = require('gulp-util');
@@ -6,18 +12,13 @@ var through         = require('through2');
 var path            = require('path');
 var _               = require('underscore');
 var moment          = require('moment');
-var settings        = require('../settings');
-var patternFileName = require('./util').patternFileName;
-var patternId       = require('./util').patternId;
 var escape          = require('escape-html');
-var pathRoot        = require('./util').pathRoot;
-var metaData        = require('./templateUtil').metaData;
+var settings        = require('../settings');
+var patternFileName = require('./library-util').patternFileName;
+var patternId       = require('./library-util').patternId;
+var pathRoot        = require('./library-util').pathRoot;
+var metaData        = require('./library-template-util').metaData;
 
-/**
- * This gulp PLUGIN sets reasonable defaults on a file
- * object's meta property (or whatever is passed as options.property)
- * YAML should already have been stripped from the file when it gets here
- */
 module.exports = function (options) {
   options = _.extend({
     property: 'meta'

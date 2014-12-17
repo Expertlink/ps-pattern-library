@@ -11,7 +11,7 @@
     "patterns"   : "./source/patterns",
     "source"     : "./source",
     "static"     : "./static",
-    "styleGuide" : "./build/styleGuide"
+    "library"    : "./build/library"
   },
   "dest": {
     "assets"   : "./static",

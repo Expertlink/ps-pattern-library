@@ -1,4 +1,10 @@
 /* global Buffer */
+/**
+ * Gulp plugin to register partials and helpers,
+ * and also to compile templates (with handlebars).
+ * Context comes from `file.data` on streamed files.
+ * @TODO Any way to remove YAML coupling?
+ */
 'use strict';
 var gutil       = require('gulp-util'),
     through     = require('through2'),
@@ -6,8 +12,8 @@ var gutil       = require('gulp-util'),
     frontMatter = require('front-matter'),
     fs          = require('fs'),
     path        = require('path'),
-    settings    = require('../settings'),
-    _           = require('underscore');
+    _           = require('underscore'),
+    settings    = require('../settings');
 
 module.exports = function (data, opts) {
 
