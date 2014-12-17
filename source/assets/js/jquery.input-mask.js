@@ -188,8 +188,110 @@
 
   InputMask.CreditCardMask = function(element, options) {
     console.log('credit');
-  };
+    this.minLength = 15;
+    this.maxLength = 16;
+    this.errorMessage = 'Sorry, that doesn\'t look like a valid card number';
+    this.cardType     = null;
+    this.validCardTypes = ['visa', 'amex', 'discover', 'mastercard']; // TODO
+    this.cardClasses  = ['is-default'];
+    this.cardPatterns =  {
+      'visa'              : /^4/,
+      'mastercard'        : /^5[1-5]/,
+      'amex'              : /^3(4|7)/,
+      'discover'          : /^6011(?!31)(?=\d{2})/
+    }; // TODO
 
+    for (var thing in this.validCardTypes) {
+      this.cardClasses.push('is-' + this.validCardTypes[thing]);
+    }
+    this.cardClasses = this.cardClasses.join(' ');
+
+    this.fetchValue = function() {
+      var newValue = this.$inputEl.val().replace(/\s*/g, '');
+      this.setCurrentValue(newValue);
+      this.checkCardType(this.currentValue);
+      return newValue;
+    };
+
+    this.checkCardType = function(cardNumber) {
+      var newCardType = null;
+      for (var card in this.cardPatterns) {
+        if (this.cardPatterns[card].test(cardNumber)) {
+          newCardType = card;
+        }
+      }
+      if (newCardType !== this.cardType) {
+        this.cardType = newCardType;
+        this.$element.trigger('cardTypeChange', [this.cardType, this]);
+        this.updateCardType();
+      }
+    };
+
+    this.updateCardType = function() {
+      var newTypeName = (this.cardType !== null) ? this.cardType : 'default';
+      this.$element.removeClass(this.cardClasses).addClass('is-' + newTypeName);
+    };
+
+    this.validate = function(cardNumber) {
+      var numberValid     = false,
+      numberError     = false,
+      numberComplete  = false,
+      nCheck          = 0,
+      nDigit          = 0,
+      bEven           = false;
+
+      if (/[^0-9\s]+/.test(cardNumber) || cardNumber.length > this.maxLength) {
+        numberError = true;
+      } else { // Luhn check
+        cardNumber = cardNumber.replace(/\D/g, '');
+        for (var n = cardNumber.length - 1; n >= 0; n--) {
+          var cDigit = cardNumber.charAt(n);
+          nDigit = parseInt(cDigit, 10);
+          if (bEven) {
+            if ((nDigit *= 2) > 9) nDigit -= 9;
+          }
+          nCheck += nDigit;
+          bEven  = !bEven;
+        }
+        numberValid = (nCheck % 10) === 0;
+      }
+      if (numberValid && cardNumber.length >= this.minLength) {
+        numberComplete = true;
+      } else if (cardNumber.length >= this.maxLength && !numberValid) {
+        numberError = true;
+      }
+      this.afterValidate(numberError, numberComplete);
+      return numberValid;
+    };
+
+    this.formatMask = function(event) {
+      var cardDigits = this.currentValue.split(''),
+      chunks         = [],
+      numberLength   = cardDigits.length,
+      chunkLength    = 4,
+      masked         = '',
+      separator      = ' ';
+      if (!this.isError) {
+        for(var i=0; i <= numberLength; i+= chunkLength) {
+          if (numberLength >= i + chunkLength) {
+            chunks.push(cardDigits.slice(i, i+chunkLength).join(''));
+          } else if ( numberLength > i) {
+            chunks.push(cardDigits.slice(i).join(''));
+          }
+        }
+        masked        = chunks.join(separator); // New masked value
+        if (numberLength % chunkLength === 0 &&
+          numberLength > 0 &&
+          numberLength < this.maxLength) {
+            masked += separator; // Add a trailing space
+        }
+        this.lastMaskValue = this.maskValue;
+        this.maskValue     = masked;
+        this.afterFormatMask();
+      }
+    };
+
+  };
 
   InputMask.ExpirationDateMask = function(element, options) {
     console.log('expiration');
