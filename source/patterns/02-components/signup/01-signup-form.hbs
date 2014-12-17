@@ -19,29 +19,28 @@ description: The signup form for new customers.
     <label style="display:block">Select an offer </label>
     <div class="radio">
       <label>
-        <input type="radio" value="30" checked="checked" /> 30 minutes  for $30.00
+        <input type="radio" value="30" checked="checked" /> 30 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">30.00</span>
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" value="20" /> 20 minutes  for $20.00
+        <input type="radio" value="20" /> 20 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">20.00</span>
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" value="10" /> 10 minutes  for $10.00
+        <input type="radio" value="10" /> 10 minutes <strong>plus 3 minutes free</strong> for $<span class="price-amount">10.00</span>
       </label>
     </div>
-    <p><strong class="text-primary">+&nbsp;&nbsp;3 minutes free!</strong></p>
-     <p><a href="#">Have a promo code?</a></p>
-     <p class="help-block  hidden">Promo code <strong>654123</strong> applied. <a href="#">Change code</a>.</p>
-     <div class="form-group arrange arrange-width-auto hidden">
-        <div class="arrange-fit">
-          <input type="text" class="form-control error" id="signupPromo" placeholder="Promo code" />
-          <p class="help-block error">Invalid code.</p>
+     <p class="help-block"><a class="promo-link" href="#">Have a promo code?</a></p>
+     <p class="help-block promo-code hidden">Promo code <strong class="code-slot">654123</strong> applied. <a class="change-promo" href="#">Change code</a>.</p>
+     <div class="form-group promo-group arrange arrange-auto-width hidden">
+        <div class="arrange-fill">
+          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block error hidden">Invalid code.</p>
         </div>
-        <div class="arrange-fit">
-          <button class="btn btn-primary">Apply</button>
+        <div class="arrange-fill">
+          <button class="btn btn-primary apply-btn">Apply</button>
         </div>
     </div> 
   </div> 
@@ -466,9 +465,9 @@ description: The signup form for new customers.
   <div class="form-group form-group-required">
    <div class="checkbox">
       <label>
-        <input type="checkbox" />I agree to Psychic Source <a href="#" class="toggle-trigger">terms and conditions</a>
+        <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" class="toggle-trigger">terms and conditions</a>
       </label>
-      <div class="toggle-content hidden">
+      <div id="terms-block" class="toggle-content hidden">
         <p><strong>Conditions of Sale and Payment Terms</strong></p>
         <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
         <p><strong>Methods of Payment, Credit Card Terms</strong></p>
@@ -491,4 +490,55 @@ $('#signupPassword').showPassword('focus', {
   toggle: { className: 'hideShowPassword-toggle' }
 });
 
+$('.promo-link').each(function () {
+  var $link = $(this);
+  var $form = $link.closest('form');
+  var $group = $form.find('.promo-group');
+  var $code = $form.find('.promo-code');
+  var $error = $group.find('.error');
+
+  $link.click(function (e) {
+    e.preventDefault();
+    $group.removeClass('hidden');
+  });
+
+  $group.find('.apply-btn').click(function (e) {
+    e.preventDefault();
+    var code = $group.find('#signupPromo').val();
+    if (code.match(/^\d{6}$/)) {
+      $group.addClass('hidden');
+      $link.addClass('hidden');
+      $error.addClass('hidden');
+
+      $code.find('.code-slot').text(code);
+
+      $code.removeClass('hidden');
+
+      // Update prices
+      $form.find('.price-amount:not(.discounted)').each(function () {
+        var $price = $(this);
+        var newPrice = $price.text() * 0.75 + "";
+        var place = newPrice.indexOf('.');
+        $price.text(newPrice + ".00".slice(newPrice.length - (place > 0 ? place : newPrice.length)));
+      }).addClass('discounted');
+    }
+    else {
+      $error.removeClass('hidden');
+    }
+  });
+
+  $form.find('.change-promo').click(function (e) {
+    e.preventDefault();
+
+    $group.removeClass('hidden');
+  });
+});
+
+$('.toggle-trigger').click(function (e) {
+  e.preventDefault();
+
+  var $trigger = $(e.target);
+  $trigger.toggleClass('open');
+  $($trigger.attr('href')).toggleClass('hidden');
+});
 </script>
