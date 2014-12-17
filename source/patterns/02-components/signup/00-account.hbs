@@ -3,31 +3,25 @@ description: Step one of the signup form for new customers.
 ---
 
 <form role="form">
-  <label style="display:block">Select an offer </label>
+  <label>Select an offer </label>
   <div class="arrange arrange-equal arrange-gutter">
     <div class="arrange-fit">
-      <div class="button-style">
-        <label for="30min" class="selected">
-          <h3>30 Minutes</h3>  for $<span class="price-amount">30.00</span>
-          <input type="radio" value="30" id="30min" class="no-margin" checked="checked" />
-        </label>
-      </div>
+      <label for="30min" class="selected button-style">
+        <b>30 Minutes</b> for $<span class="price-amount">30.00</span>
+        <input type="radio" name="signupOffer" value="30" id="30min" checked />
+      </label>
     </div>
     <div class="arrange-fit">
-      <div class="button-style">
-        <label for="20min">
-          <h3>20 Minutes</h3>  for $<span class="price-amount">20.00</span>
-          <input type="radio" value="20"  class="no-margin" id="20min" />
-        </label>
-      </div>
+      <label for="20min" class="button-style">
+        <b>20 Minutes</b> for $<span class="price-amount">20.00</span>
+        <input type="radio" name="signupOffer" value="20" id="20min" />
+      </label>
     </div> 
     <div class="arrange-fit">
-      <div class="button-style">
-        <label for="10min">
-          <h3>10 Minutes</h3>  for $<span class="price-amount">10.00</span>
-          <input type="radio" value="10" class="no-margin" id="10min" />
-        </label>
-      </div>
+      <label for="10min" class="button-style">
+        <b>10 Minutes</b> for $<span class="price-amount">10.00</span>
+        <input type="radio" name="signupOffer" value="10" id="10min" />
+      </label>
     </div> 
   </div>  
   <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
