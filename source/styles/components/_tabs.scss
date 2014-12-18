@@ -1,0 +1,54 @@
+/**
+ * PsychicSource tabs differed enough from the built-in Bootstrap ones that it
+ * made sense to make them their own pattern instead of including Bootstrap's.
+ * But to leave the possibility open of leveraging JavaScript expecting
+ * Bootstrap-like patterns, the inheritence and overall structure has been
+ * written to mimic Bootstrap's.
+ *
+ * TL;DR: I'm using child selectors here where I normally wouldn't. :D
+ */
+
+.tabs {
+  border-bottom: 2px solid $orange-light;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  @include clearfix;
+
+  > li {
+    float: left;
+    margin-bottom: -1px;
+
+    &,
+    > a {
+      display: block;
+      position: relative;
+    }
+
+    > a {
+      background-color: $gray-lighter;
+      background-image: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(255,255,255,0));
+      border-width: 1px;
+      border-style: solid;
+      border-color: $gray-light $gray-light $orange-light;
+      border-radius: $border-radius-large $border-radius-large 0 0;
+      margin-right: ($grid-gutter-width / 2);
+      padding: $padding-base-vertical $padding-base-horizontal;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $orange-light;
+        border-color: $orange-light;
+        font-weight: bold;
+      }
+    }
+  }
+}
