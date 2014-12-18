@@ -67,5 +67,14 @@ module.exports = {
       .replace(/\-\-+/g, '-')     // Replace multiple - with single -
       .replace(/^-+/, '')         // Trim - from start of text
       .replace(/-+$/, '');        // Trim - from end of text
+  },
+  /** https://github.com/assemble/handlebars-helpers */
+  ifNth: function ifNth (nr, v, options) {
+    v = v+1;
+    if (v % nr === 0) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
   }
 };
