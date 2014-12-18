@@ -1,0 +1,13 @@
+---
+fullWidth: true
+status: inprogress
+---
+<div class="advisor-tiles">
+  <div class="row">
+    {{#each advisor.list}}
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        {{> advisors/_advisor-tile}}
+      </div>
+    {{/each}}
+  </div>
+</div>

@@ -10,6 +10,24 @@ body {
   background-repeat: repeat-x;
 }
 
-a {
-  text-decoration: underline;
+/**
+ * TODO: Determine if this is viable or not. Temporarily (?) commented out to
+ * avoid repetitive overrides.
+ */
+// a {
+//   text-decoration: underline;
+// }
+
+/**
+ * Style links that contain complex block elements.
+ */
+.link-block {
+  display: block;
+
+  &,
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: inherit;
+  }
 }

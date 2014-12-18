@@ -18,7 +18,8 @@ $tan: #d8c3a7;
 $tan-light: #feeed7;
 
 $orange: #f87f25;
-$orange-light: #fdf6e4;
+$orange-light: #F4BC84;
+$orange-lighter: #fdf6e4;
 
 $blue: #3d6682;
 $blue-light: #aec1c4;
@@ -49,6 +50,7 @@ $font-family-sans-serif: Verdana, Arial, sans-serif;
 $font-family-cursive: 'Dancing Script', cursive;
 
 $font-size-base: 13px;
+$font-size-small: 11px;
 
 $headings-font-weight: bold;
 
@@ -91,11 +93,24 @@ $blockquote-font-size: 1em;
 //** Blockquote border color
 $blockquote-border-color: $tan;
 
-/*
-\$gap: 10px;
+//== Pagination
 
-\$bp-xs: 24em;
-\$bp-sm: 32em;
-\$bp-med: 58em;
-\$bp-lg: 69em;
-\$bp-xl: 75em; */
+$pagination-color:            $blue-dark;
+$pagination-bg:               #fff;
+$pagination-border:           $gray-lighter;
+
+$pagination-hover-color:      $blue;
+$pagination-hover-bg:         lighten($gray-lighter, 10%);
+$pagination-hover-border:     $gray-lighter;
+
+$pagination-active-color:     #fff;
+$pagination-active-bg:        $blue-gray;
+$pagination-active-border:    $blue-gray;
+
+$pagination-disabled-color:   $gray-lighter;
+$pagination-disabled-bg:      #fff;
+$pagination-disabled-border:  $gray-lighter;
+
+//== Grid system
+
+$grid-gutter-width: 20px;

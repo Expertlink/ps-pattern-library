@@ -1,0 +1,11 @@
+.form-group .form-label {
+  font-weight: normal;
+}
+.form-group-required .form-label  {
+  font-weight:bold;
+}
+
+.error {
+  color: $red;
+  border-color: $red;
+}

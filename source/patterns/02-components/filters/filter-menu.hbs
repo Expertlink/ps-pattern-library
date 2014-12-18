@@ -1,0 +1,42 @@
+---
+description: >
+  Hierarchical filter menu. All items use a base `.filter-item` class, but the
+  markup differs between parent elements and actual checkable filters.
+  Accordion functionality courtesy of Bootstrap's
+  [collapse](http://getbootstrap.com/javascript/#collapse) plugin.
+fullWidth: true
+status: inprogress
+---
+
+{{#each filters.groups}}
+  {{> filters/_filter}}
+{{/each}}
+
+<script>
+
+/**
+ * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
+ * for us to do is update some values wehn controls are updated...
+ */
+
+/** Update badge counts on change of checkbox for all parents */
+$(document).on('change', '.filter input:checkbox', function () {
+  $(this).parents('.filter-collapse').each(function(){
+    var $this = $(this);
+    var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
+    var $badge = $trigger.find('.filter-badge');
+    $badge.text($this.find('input:checkbox:checked').length || '');
+  });
+});
+
+/** Update summaries on change of radios for immediate parent */
+$(document).on('change', '.filter input:radio', function () {
+  var $this = $(this);
+  var $label = $this.closest('label');
+  var $parent = $this.closest('.filter-collapse');
+  var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
+  var $summary = $trigger.find('.filter-summary');
+  $summary.text($label.text());
+});
+
+</script>

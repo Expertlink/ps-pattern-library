@@ -1,0 +1,47 @@
+{
+  "dateFormat": "dddd, MMMM Do, YYYY, h:mmA",
+  "files": {
+    "patternsPattern": "\\d+?-"
+  },
+  "paths": {
+    "data"       : "./source/data",
+    "dist"       : "./dist",
+    "gulpTasks"  : "./pattern-lib/tasks",
+    "partials"   : "./source/patterns",
+    "patterns"   : "./source/patterns",
+    "source"     : "./source",
+    "static"     : "./static",
+    "library"    : "./pattern-lib/build"
+  },
+  "dest": {
+    "assets"   : "./static",
+    "patterns" : "./static",
+    "css"      : "./static/css",
+    "vendor"   : "./static/vendor",
+    "library"  : {
+      "css"    : "./static/css",
+      "scripts": "./static/js"
+    },
+    "site"     : {
+      "css"    : "./static/css",
+      "scripts": "./static/js"
+    }
+  },
+  "src": {
+    "patterns"    : "./source/patterns/**/*.hbs",
+    "patternDirs" : "./source/patterns/**/*",
+    "assets"      : "./source/assets/**/*",
+    "static"      : "./static/**",
+    "styles"      : "./source/styles/**/*.scss",
+    "templates"   : "./source/patterns/**/*.template",
+    "vendor"      : "./vendor/**/*",
+    "library"     : {
+      "styles"    : "./pattern-lib/styles/**/*",
+      "scripts"   : "./pattern-lib/js/**/**"
+    },
+    "site"        : {
+      "styles"    : "./source/styles/**/*.scss",
+      "scripts"   : "./source/js/**/*"
+    }
+  }
+}
