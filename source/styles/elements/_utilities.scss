@@ -1,9 +1,9 @@
 $utility-gutter-width: ($grid-gutter-width / 2) !default;
 
-@include make-whitespace-utilities(margin,  $utility-gutter-width, 'u');
-@include make-whitespace-utilities(padding, $utility-gutter-width, 'u');
-@include make-whitespace-utilities(margin,  0, 'u-no');
-@include make-whitespace-utilities(padding, 0, 'u-no');
+@include make-whitespace-utilities(margin,  $utility-gutter-width, 'u-');
+@include make-whitespace-utilities(padding, $utility-gutter-width, 'u-');
+@include make-whitespace-utilities(margin,  0, 'u-no-');
+@include make-whitespace-utilities(padding, 0, 'u-no-');
 
 .u-nowrap {
   white-space: nowrap;

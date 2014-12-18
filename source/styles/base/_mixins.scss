@@ -67,24 +67,22 @@
 @mixin make-whitespace-utilities (
   $property,
   $value,
-  $prefix: false
+  $prefix: '',
+  $suffix: ''
 ) {
-  @if $prefix {
-    $prefix: '#{$prefix}-';
-  }
-  .#{$prefix}#{$property} {
+  .#{$prefix}#{$property}#{$suffix} {
     #{$property}: $value;
   }
-  .#{$prefix}#{$property}-sides {
+  .#{$prefix}#{$property}-sides#{$suffix} {
     #{$property}-left: $value;
     #{$property}-right: $value;
   }
-  .#{$prefix}#{$property}-ends {
+  .#{$prefix}#{$property}-ends#{$suffix} {
     #{$property}-top: $value;
     #{$property}-bottom: $value;
   }
   @each $side in top, right, bottom, left {
-    .#{$prefix}#{$property}-#{$side} {
+    .#{$prefix}#{$property}-#{$side}#{$suffix} {
       #{$property}-#{$side}: $value;
     }
   }
