@@ -133,7 +133,7 @@ In addition, there are some other metadata available in the EJS-compiled `__PATT
 
 ###### Navigation object
 
-The `nav` object is available to patterns but is probably most useful to templates for the pattern library. You can learn more about the structure of the object, should you need to, by perusing the `navigation.js` util building function in `build/styleGuide`. It is used heavily by the `__NAV.hbs` template.
+The `nav` object is available to patterns but is probably most useful to templates for the pattern library. You can learn more about the structure of the object, should you need to, by perusing the `navigation.js` util building function in `build/library`. It is used heavily by the `__NAV.hbs` template.
 
 * Each (linked/clickable) nav item has a Boolean `isCurrent` property for applying active nav classes, etc.
 * There is a top-level `nav.isHome` Boolean that is `true` on the landing page only. This allows for selective styling of the `Welcome` nav item.
@@ -150,8 +150,9 @@ The builder will look for the _closest_ `__INDEX` and `__PATTERN` templates, tra
 
 ##### Styles and Scripts
 
-You can look at the `__INDEX` template(s) to see exactly what styles and scripts are being included, but note the presence of:
+You can look at the `__INDEX` template(s) to see exactly what styles and scripts are being included.
 
-* `source/styles/patterns.scss`
-* `vendor` (where some of the 3rd-party scripts and styles are housed)
-* `source/assets/js`: Scripts
+* (S)CSS in `source/styles` is compiled by SASS, etc., and output into the static `css` directory. By default, the `styles.css` file is included in the `__INDEX` template.
+* Any JS files in `source/js` will be concatenated and output into `site.js`.
+* Styles needed by the pattern library itself are included as `pattern-library.css`. Any (S)CSS files in `pattern-lib/styles` will be automatically compiled and output into this concatenated file by the `gulp` watch task.
+* Scripts needed by the pattern library itself are included as `pattern-library.js`. Any JS files in `pattern-lib/js` will automatically be output into this concatenated output file by the `gulp` watch task.

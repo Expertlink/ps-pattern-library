@@ -1,0 +1,70 @@
+---
+status: inprogress
+---
+
+{{> pages/_header }}
+
+{{! This is all just a MESS right now. PLEASE move along... ಠ__ಠ }}
+
+<div class="container-page">
+  <div class="box-full box-default-sm box-lighter box-sheer js-view-container">
+    <div class="js-view js-initial" id="advisor-main">
+      <div class="text-right" style="padding: 10px 18px; border-bottom: 1px solid #d4ddde; background-color: #f3f3f3; position: relative;">
+        <a class="btn btn-default btn" href="">New Advisors</a>
+        <a class="btn btn-default btn" href="">Staff Picks</a>
+        <img src="/images/promotion/offer-special.svg" alt="Save 25%" style="position: absolute; top: 0; left: 5px;">
+      </div>
+      <div style="margin: 10px 18px 10px">
+        <div class="arrange arrange-gutter arrange-equal">
+          <div class="arrange-fill">
+            <button class="btn btn-block btn-default btn-shaded" type="button">Sort <span class="arrow-down"></span></button>
+          </div>
+          <div class="arrange-fill">
+            <button class="btn btn-block btn-default btn-shaded js-filter-button" type="button" data-pushView="#advisor-sidebar">Filter</button>
+          </div>
+        </div>
+      </div>
+      {{> advisors/advisor-grid }}
+      <div class="text-center">
+        {{> pagination/states }}
+      </div>
+    </div>
+    <div class="js-view" id="advisor-sidebar">
+      <div style="margin: 18px 10px">
+        <div class="arrange">
+          <div class="arrange-fit">
+            <button class="btn btn-default btn-shaded" type="button" data-popView="#advisor-main"><span class="arrow-left"></span> Back</button>
+          </div>
+          <div class="arrange-fill text-right">
+            <button class="btn btn-link" type="button" data-popView="#advisor-main"><span class="text-danger">Clear All</span></button>
+            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popView="#advisor-main">Apply Filters</button>
+          </div>
+        </div>
+      </div>
+      {{> filters/filter-menu }}
+      <div style="margin: 18px 10px">
+        <div class="arrange">
+          <div class="arrange-fit">
+            <button class="btn btn-default btn-shaded" type="button" data-popView="#advisor-main"><span class="arrow-left"></span> Back</button>
+          </div>
+          <div class="arrange-fill text-right">
+            <button class="btn btn-link" type="button" data-popView="#advisor-main"><span class="text-danger">Clear All</span></button>
+            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popView="#advisor-main">Apply Filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var slideView = $('.js-view-container').simpleSlideView('.js-view');
+
+$('.js-apply-button').on('click', function(){
+  $('.js-filter-button').addClass('active');
+});
+
+</script>
+
+{{> pages/_footer }}

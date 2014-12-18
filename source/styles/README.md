@@ -102,10 +102,11 @@ The `source/styles` directory is organized like so:
 * `components/`: More complex (but still reusable) patterns, usually made up of at least one or two elements themselves.
 * `vendor/`: Any styles written by a third party, imported as-needed into our project.
   * `_bootstrap-custom.scss`: Controls which portions of Bootstrap we do or do not include.
-* `patterns.scss`: Styles specifically for the pattern library. (You shouldn't need to edit this too often.)
 * `styles.scss`: The "master" stylesheet that includes everything else and is compiled.
 
 We may need to create additional directories for things like "regions" or "pages," but for now this should be enough for us to get started.
+
+*Note*: Source styles for the pattern library itself can be found in `pattern-lib/styles`.
 
 ## Bootstrap
 

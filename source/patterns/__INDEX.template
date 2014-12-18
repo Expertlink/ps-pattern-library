@@ -9,9 +9,8 @@
     VSE Responsive Pilot Pattern Library{{#unless nav.isHome}}: {{ dirName }}{{/unless}}
   </title>
     <!-- CSS Goes here -->
-    <link href="{{ pathRoot }}/css/patterns.css" rel="stylesheet">
+    <link href="{{ pathRoot }}/css/pattern-library.css" rel="stylesheet">
     <link href="{{ pathRoot }}/css/styles.css" rel="stylesheet">
-    <link href="{{ pathRoot }}/vendor/prism/prism.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,9 +22,10 @@
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="{{ pathRoot }}/js/patterns.js"></script>
-     <script src="{{ pathRoot }}/vendor/hideShowPassword/hideShowPassword.js"></script>
-    <script src="{{ pathRoot }}/vendor/prism/prism.js"></script>
+    <script src="{{ pathRoot }}/js/pattern-library.js"></script>
+
+    <!-- Site behavior/UI JS -->
+    <script src="{{ pathRoot }}/js/site.js"></script>
 
   </head>
 <body class="c4-body">
