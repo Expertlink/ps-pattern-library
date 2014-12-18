@@ -6,8 +6,10 @@ var settings = require('./settings');
 var watchers = {};
 
 var taskModules = ['browserSync',
+                   'scripts',
                    'styles',
                    'watch',
+                   'library-scripts',
                    'library-styles'];
 /**
  * Task modules should be in build/gulp/tasks
@@ -19,10 +21,10 @@ taskModules.forEach(function(task) {
 });
 
 /**
- * Style guide support. Keeping this separate because it's its own thing.
+ * Style guide builder.
  */
-gulp.task('library', ['library-styles'], require(settings.paths.library + '/gulp-library-build'));
-
+gulp.task('library', ['library-styles', 'library-scripts'], require(settings.paths.library + '/gulp-library-build'));
+gulp.task('site', ['styles', 'scripts', 'assets']);
 /**
  * Simple tasks not worthy of module
  */
@@ -30,10 +32,10 @@ gulp.task('assets', function() {
   return gulp.src(settings.src.assets)
     .pipe(gulp.dest(settings.dest.assets));
 });
-gulp.task('vendor', function() {
-  return gulp.src(settings.src.vendor)
-    .pipe(gulp.dest(settings.dest.vendor));
-});
+// gulp.task('vendor', function() {
+//   return gulp.src(settings.src.vendor)
+//     .pipe(gulp.dest(settings.dest.vendor));
+// });
 gulp.task('dist', function() {
   return gulp.src(settings.src.static)
     .pipe(gulp.dest(settings.paths.dist));
@@ -41,4 +43,4 @@ gulp.task('dist', function() {
 /**
  * Composite tasks
  */
-gulp.task('default', ['styles', 'assets', 'vendor', 'library', 'watch', 'browserSync']);
+gulp.task('default', ['site', 'library', 'watch', 'browserSync']);

@@ -413,8 +413,10 @@
 
   $.fn.c4inputMask = Plugin;
 
-  $('[data-mask]').each(function() {
-    $(this).c4inputMask();
+  $(function() {
+    $('[data-mask]').each(function() {
+      $(this).c4inputMask();
+    });
   });
 
 }));
