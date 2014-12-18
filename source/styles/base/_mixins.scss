@@ -59,3 +59,33 @@
     border-color: transparent transparent transparent $triangle-color;
   }
 }
+
+/**
+ * Generate utility classes for a whitespace property (margin, padding).
+ */
+
+@mixin make-whitespace-utilities (
+  $property,
+  $value,
+  $prefix: false
+) {
+  @if $prefix {
+    $prefix: '#{$prefix}-';
+  }
+  .#{$prefix}#{$property} {
+    #{$property}: $value;
+  }
+  .#{$prefix}#{$property}-sides {
+    #{$property}-left: $value;
+    #{$property}-right: $value;
+  }
+  .#{$prefix}#{$property}-ends {
+    #{$property}-top: $value;
+    #{$property}-bottom: $value;
+  }
+  @each $side in top, right, bottom, left {
+    .#{$prefix}#{$property}-#{$side} {
+      #{$property}-#{$side}: $value;
+    }
+  }
+}
