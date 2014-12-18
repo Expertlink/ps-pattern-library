@@ -69,9 +69,9 @@ module.exports = {
       .replace(/-+$/, '');        // Trim - from end of text
   },
   /** https://github.com/assemble/handlebars-helpers */
-  ifNth: function ifNth (nr, v, options) {
-    v = v+1;
-    if (v % nr === 0) {
+  ifNth: function ifNth (denominator, numerator, options) {
+    numerator = numerator+1;
+    if (numerator % denominator === 0) {
       return options.fn(this);
     } else {
       return options.inverse(this);
