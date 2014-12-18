@@ -36,3 +36,7 @@ h6, .h6 {
     font-size: ($font-size-h6 * 1.25);
   }
 }
+
+
+//** Other text variations 
+@include text-emphasis-variant('.text-secondary', $orange);

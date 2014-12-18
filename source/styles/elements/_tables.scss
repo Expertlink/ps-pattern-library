@@ -1,18 +1,14 @@
-.table.table-collapse {
-  @media (max-width: $screen-sm) {
-    display: block;
+.table.table-collapse-xs {
+  @media (max-width: $screen-xs-max) {
+    &, tr, td {
+      display: block;
+    }  
     tr {
-      display:block;
       padding-bottom: $arrange-gutter-size;
     }
     td {
-      display:block;
       padding:0;
       border:0;
     }
   }
-}
-
-.table-collapse strong {
-  white-space: nowrap;
 }

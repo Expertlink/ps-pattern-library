@@ -1,0 +1,111 @@
+---
+description: Step two of the signup form for new customers.
+---
+
+<form role="form">
+  <h3>Billing Information</h3>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupCCName">Name on card</label>
+    <input type="text" class="form-control" id="signupCCName" value="" >
+  </div>
+  <div class="form-group form-group-required has-cards knows-card is-visa" data-mask data-mask-type="CreditCard">
+    <label class="form-label" for="signupCCNumber">Credit card number</label>
+    <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
+    <ul class="creditcards">
+      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+    </ul>
+  </div>
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="expiration-date">
+      <label class="form-label" for="signupCCExp">Expiration</label>
+      <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
+    </div>
+    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
+      <label class="form-label" for="signupCCCode">Security code</label>
+      <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
+      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupStreet">Street address 1</label>
+    <input type="text" class="form-control" id="signupStreet" />
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="signupStreet2">Street address 2</label>
+    <input type="text" class="form-control" id="signupStreet2" />
+  </div>
+   <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCity">City</label>
+      <input type="text" class="form-control" id="signupCity" />
+    </div>
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCCZip">Zip or postal code</label>
+      <input type="text" class="form-control" id="signupCCZip" />
+    </div>
+  </div>
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupCountry">Country</label>
+      <select id="signupCountry" class="form-control">
+
+			<option value="234">Uganda</option>
+			<option value="235">Ukraine</option>
+			<option value="236">United Arab Emirates</option>
+			<option value="4">United Kingdom</option>
+			<option selected="selected" value="1">United States</option>
+			<option value="237">Uruguay</option>
+			<option value="238">US Virgin Islands</option>
+
+      </select>
+	  </div>
+	  <div class="form-group form-group-required arrange-fit">
+      <label class="form-label" for="signupState">State or province</label>
+      <select id="signupState"  class="form-control">
+    	<option selected="selected" value="">Select</option>
+			<option value="1">Other</option>
+			<option value="3">Alaska</option>
+			<option value="4">Alabama</option>
+			<option value="5">Arkansas</option>
+			<option value="6">Arizona</option>
+			
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-group-required">
+    <label class="form-label" for="signupPhone">Phone number</label>
+    <input type="text" class="form-control" id="signupPhone" />
+  </div>
+  <div class="form-group form-group-required">
+   <div class="checkbox">
+      <label>
+        <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" class="toggle-trigger u-inline-block">terms and conditions <span class="arrow-down"></span></a>
+      </label>
+      <div id="terms-block" class="toggle-content u-margin-top hidden">
+        <p><strong>Conditions of Sale and Payment Terms</strong></p>
+        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+        <p><strong>Methods of Payment, Credit Card Terms</strong></p>
+        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+        <p><strong>Order Acceptance Policy</strong></p>
+        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <p class="help-block">Charges on your credit card will appear as Expert Link, Inc. You will receive a confirmation email after completing the next step.</p>
+    <button class="btn btn-primary">Review information <span class="arrow-right"></span></button>
+  </div>
+</form>
+
+
+
+
+<script>
+$('.toggle-trigger').click(function (e) {
+  e.preventDefault();
+
+  var $trigger = $(e.target);
+  $trigger.toggleClass('open');
+  $($trigger.attr('href')).toggleClass('hidden');
+});
+</script>

@@ -1,0 +1,42 @@
+$utility-gutter-width: ($grid-gutter-width / 2) !default;
+
+.u-no-margin {
+  margin:0;
+}
+.u-no-margin-top {
+  margin-top:0;
+}
+.u-no-margin-right {
+  margin-right:0;
+}
+.u-no-margin-bottom {
+  margin-bottom:0;
+}
+.u-no-margin-left {
+  margin-left:0;
+}
+
+.u-margin-top {
+  margin-top: $utility-gutter-width;
+}
+.u-margin-right {
+  margin-right: $utility-gutter-width;
+}
+.u-margin-bottom {
+  margin-bottom: $utility-gutter-width;
+}
+.u-margin-left {
+  margin-left: $utility-gutter-width;
+}
+
+.u-nowrap {
+  white-space: nowrap;
+}
+
+.u-block {
+  display: block;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
