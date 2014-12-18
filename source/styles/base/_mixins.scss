@@ -27,6 +27,7 @@
   $triangle-reset: true
 ) {
   @if $triangle-reset {
+    content: '';
     width: 0;
     height: 0;
     display: inline-block;
