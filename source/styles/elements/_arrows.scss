@@ -1,16 +1,23 @@
 %arrow-base {
   @include triangle();
+  &.arrow-toggle.active {
+    transform: rotate(180deg);
+  }
 }
 
 @each $arrow-direction in up, down, left, right {
-  .arrow-#{$arrow-direction} {
+  .arrow-#{$arrow-direction},
+  .arrow-#{$arrow-direction}-before:before,
+  .arrow-#{$arrow-direction}-after:after {
     @extend %arrow-base;
     @include triangle(
       $triangle-direction: $arrow-direction,
       $triangle-reset: false
     );
   }
-  .arrow-#{$arrow-direction}-equilateral {
+  .arrow-#{$arrow-direction}-equilateral,
+  .arrow-#{$arrow-direction}-equilateral-before:before,
+  .arrow-#{$arrow-direction}-equilateral-after:after {
     @extend %arrow-base;
     @include triangle(
       $triangle-direction: $arrow-direction,
