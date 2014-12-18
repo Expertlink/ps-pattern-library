@@ -6,19 +6,19 @@ description: Step one of the signup form for new customers.
   <label>Select an offer </label>
   <div class="arrange arrange-equal arrange-gutter">
     <div class="arrange-fit">
-      <label for="30min" class="selected button-style">
+      <label for="30min" class="enrollment-plan-option selected">
         <b>30 Minutes</b> for $<span class="price-amount">30.00</span>
         <input type="radio" name="signupOffer" value="30" id="30min" checked />
       </label>
     </div>
     <div class="arrange-fit">
-      <label for="20min" class="button-style">
+      <label for="20min" class="enrollment-plan-option">
         <b>20 Minutes</b> for $<span class="price-amount">20.00</span>
         <input type="radio" name="signupOffer" value="20" id="20min" />
       </label>
     </div> 
     <div class="arrange-fit">
-      <label for="10min" class="button-style">
+      <label for="10min" class="enrollment-plan-option">
         <b>10 Minutes</b> for $<span class="price-amount">10.00</span>
         <input type="radio" name="signupOffer" value="10" id="10min" />
       </label>
@@ -27,12 +27,12 @@ description: Step one of the signup form for new customers.
   <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
   <p class="help-block"><a class="promo-link" href="#">Have a promo code?</a></p>
   <p class="help-block promo-code hidden">Promo code <strong class="code-slot">654123</strong> applied. <a class="change-promo" href="#">Change code</a>.</p>
-  <div class="form-group promo-group arrange arrange-width-auto hidden">
-    <div class="arrange-fit">
+  <div class="form-group promo-group hidden arrange arrange-gutter">
+    <div class="arrange-fill">
       <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
       <p class="help-block has-error hidden">Invalid code.</p>
     </div>
-    <div class="arrange-fit">
+    <div class="arrange-fill">
       <button class="btn btn-primary apply-btn">Apply</button>
     </div>
   </div>
@@ -58,18 +58,19 @@ description: Step one of the signup form for new customers.
   </div>
    <div class="form-group form-group-required">
     <label>Gender</label>
-    <div class="form-group arrange arrange-width-auto">
+    <div class="form-group arrange arrange-gutter">
       <div class="radio arrange-fit">
         <label>
          <input type="radio" value="female" checked="checked" /> Female
         </label>
       </div>
-      <div class="radio arrange-fit">
+      <div class="radio arrange-fill">
         <label>
           <input type="radio" value="male" /> Male
         </label>
       </div>
     </div>  
+    
   </div>  
    <div class="form-group form-group-required">
     <label class="form-label" for="signupDOB">Date of birth</label>
@@ -85,9 +86,7 @@ description: Step one of the signup form for new customers.
 
 <script>
 
-$('#signupPassword').showPassword('focus', {
-  toggle: { className: 'hideShowPassword-toggle' }
-});
+$('#signupPassword').showPassword('focus');
 
 
 $('.promo-link').each(function () {

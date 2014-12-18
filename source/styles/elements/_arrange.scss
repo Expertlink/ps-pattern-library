@@ -160,12 +160,4 @@ $arrange-gutter-size: 10px !default;
   width: calc(100% + #{$arrange-gutter-size});
 }
 
-/* Not full width modifier
-   ========================================================================== */
-.arrange.arrange-width-auto {
-  min-width:0;
-  .arrange-fit {
-    width: auto;
-    padding-right: $arrange-gutter-size;
-  }
-}   
+

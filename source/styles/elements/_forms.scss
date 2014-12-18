@@ -5,32 +5,3 @@
   font-weight:bold;
 }
 
-.button-style {
-  display:block;
-  position:relative;
-  border: 1px solid $blue-gray;
-  border-radius: $border-radius-large;
-  margin-bottom: ($line-height-computed / 2);
-  padding: ($line-height-computed / 2) ;
-  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
-  text-align: center;
-  font-weight: normal;
-  line-height: 1.6em;
-  b {
-    font-size: 1.2em;
-    display:block;
-    color: $blue-dark;
-  }
-  input {
-    display:none;
-  }
-  &:hover, &.selected {
-    background: $blue;
-    cursor: pointer;
-    color: white;
-   b {
-      color: white;
-    }
-    border-color: $blue-dark;
-  } 
-}
