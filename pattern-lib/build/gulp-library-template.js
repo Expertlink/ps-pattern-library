@@ -6,6 +6,7 @@
  * @TODO Any way to remove YAML coupling?
  */
 'use strict';
+
 var gutil       = require('gulp-util'),
     through     = require('through2'),
     Handlebars  = require('handlebars'),
@@ -13,7 +14,8 @@ var gutil       = require('gulp-util'),
     fs          = require('fs'),
     path        = require('path'),
     _           = require('underscore'),
-    settings    = require('../../settings');
+    settings    = require('../../settings'),
+    templateUtil = require('./library-template-util');
 
 module.exports = function (data, opts) {
 
@@ -24,22 +26,18 @@ module.exports = function (data, opts) {
   var namePattern = new RegExp(settings.files.patternsPattern, 'g'),
 
   parsePartials = function(partialDir) {
-    var partialFilenames = fs.readdirSync(partialDir),
-        keyDir           = partialDir.split('/').pop();
+    var partialFilenames = fs.readdirSync(partialDir);
 
     partialFilenames.forEach(function(filename) {
       var partial = partialDir + '/' + filename,
           stats   = fs.statSync(partial),
-          key, name, content, template;
+          content, template;
       if (stats && stats.isDirectory()) {
         parsePartials(partial, partialDir + '/' + filename);
       } else if (path.extname(filename) === options.extension) {
-        name      = path.basename(filename, options.extension);
-        key       = (keyDir + '/' + name).replace(namePattern, '');
-
         template  = fs.readFileSync(partial, 'utf8');
         content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
-        Handlebars.registerPartial(key, content.body);
+        Handlebars.registerPartial(templateUtil.templateKey(partialDir + '/' + filename), content.body);
       }
     });
   };
