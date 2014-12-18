@@ -10,7 +10,7 @@ var util       = require('gulp-util'),
 	path         = require('path'),
 	fs           = require('fs'),
   _            = require('underscore'),
-	templateUtil = require('./templateUtil');
+	templateUtil = require('./library-template-util');
 
 module.exports = function (options) {
   var cache = {},

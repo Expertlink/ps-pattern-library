@@ -14,7 +14,8 @@ var gutil       = require('gulp-util'),
     fs          = require('fs'),
     path        = require('path'),
     _           = require('underscore'),
-    settings    = require('../../settings');
+    settings    = require('../../settings'),
+    templateUtil = require('./library-template-util');
 
 module.exports = function (data, opts) {
 
