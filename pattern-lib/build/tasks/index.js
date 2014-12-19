@@ -4,10 +4,10 @@
  */
 'use strict';
 
-var builder = require('../gulp-library-build');
-
 var gulp     = require('gulp');
 var settings = require('../../../settings');
+
+var builder = require('../gulp-library-build');
 
 gulp.task('library-styles', require('./library-styles'));
 gulp.task('library-scripts', require('./library-scripts'));
