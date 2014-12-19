@@ -8,6 +8,7 @@ var fs               = require('fs');
 // npm
 var glob             = require('glob');
 var merge            = require('merge-stream');
+var through          = require('through2');
 
 // npm gulp-*
 var concat           = require('gulp-concat');
@@ -26,8 +27,25 @@ var util             = require('./library-util');
 var settings         = require('../../settings');
 var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
-module.exports.prepare = function() {
+var Handlebars       = require('handlebars');
 
+module.exports.prepare = function() {
+  return gulp.src(settings.src.patterns)
+    .pipe(frontMatter({
+      property: 'meta',
+      remove: true
+    }))
+    .pipe(through.obj(function (file, enc, cb) {
+      var templateKey;
+      if (file.isNull()) {
+        this.push(file);
+        return cb();
+      }
+      templateKey = templateUtil.templateKey(file.path);
+      Handlebars.registerPartial(templateKey, file.contents.toString());
+      this.push(file);
+      cb();
+    }));
 };
 
 module.exports.build =  function() {
@@ -56,7 +74,8 @@ module.exports.build =  function() {
 
     var templateOptions = {
       partialsDir: settings.paths.partials,
-      helpers    : templateHelpers
+      helpers    : templateHelpers,
+      Handlebars : Handlebars
     };
 
     // Note several of the following steps are conditional upon isPatternPage
@@ -79,7 +98,7 @@ module.exports.build =  function() {
       // Wrap concatenated patterns in nearest index template (if pattern dir)
       .pipe(gulpif(isPatternPage, wrap({src: pathTemplates.templateFile}, templateContext)))
       // Compile the index template as hbs (if pattern dir)
-      .pipe(gulpif(isPatternPage, template(templateContext, templateOptions)))
+      .pipe(gulpif(isPatternPage, template(Handlebars, templateContext, templateOptions)))
       // And done.
       .pipe(gulpif(!isPatternPage, rename({extname: '.html'}))) // Only in the "pages" dirs
       .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
