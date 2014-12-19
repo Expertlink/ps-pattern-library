@@ -4,7 +4,7 @@ var gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
     concat       = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
-    settings     = require('../../settings'),
+    settings     = require('../../../settings'),
     sass         = require('gulp-ruby-sass');
 
 module.exports = function () {

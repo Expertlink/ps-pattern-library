@@ -3,7 +3,7 @@
 var gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
     concat       = require('gulp-concat'),
-    settings     = require('../../settings');
+    settings     = require('../../../settings');
 
 module.exports = function () {
   return gulp.src(settings.src.library.scripts)

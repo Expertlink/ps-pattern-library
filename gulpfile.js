@@ -8,9 +8,7 @@ var watchers = {};
 var taskModules = ['browserSync',
                    'scripts',
                    'styles',
-                   'watch',
-                   'library-scripts',
-                   'library-styles'];
+                   'watch'];
 /**
  * Task modules should be in build/gulp/tasks
  */
