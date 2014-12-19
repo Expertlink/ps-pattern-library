@@ -9,9 +9,8 @@
     VSE Responsive Pilot Pattern Library: Boxes
   </title>
     <!-- CSS Goes here -->
-    <link href="../../css/patterns.css" rel="stylesheet">
+    <link href="../../css/pattern-library.css" rel="stylesheet">
     <link href="../../css/styles.css" rel="stylesheet">
-    <link href="../../vendor/prism/prism.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,9 +22,10 @@
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="../../js/patterns.js"></script>
-     <script src="../../vendor/hideShowPassword/hideShowPassword.js"></script>
-    <script src="../../vendor/prism/prism.js"></script>
+    <script src="../../js/pattern-library.js"></script>
+
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
 
   </head>
 <body class="c4-body">
@@ -83,10 +83,12 @@
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
       <li><a class="c4-nav__item " href="../../02-components/signup">Signup</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
       <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
+      <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
     </ul>
   </nav>
 
@@ -157,11 +159,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_28">
+  <div class="c4-pattern" id="c4-pattern_31">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_28">Modifiers</a>
+          <a href="#c4-pattern_31">Modifiers</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -181,6 +183,10 @@
   More vertical padding.
 </div>
 
+<div class="box box-light box-sheer">
+  No padding.
+</div>
+
 <div class="box box-lighter box-shadow">
   Shadow.
 </div>
@@ -198,19 +204,23 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_28" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_31" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_28"><code class="language-markup">&lt;div class=&quot;box box-dark box-thick&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_31"><code class="language-markup">&lt;div class=&quot;box box-dark box-thick&quot;&gt;
   Thick border.
 &lt;/div&gt;
 
 &lt;div class=&quot;box box-light box-md&quot;&gt;
   More vertical padding.
+&lt;/div&gt;
+
+&lt;div class=&quot;box box-light box-sheer&quot;&gt;
+  No padding.
 &lt;/div&gt;
 
 &lt;div class=&quot;box box-lighter box-shadow&quot;&gt;
@@ -230,11 +240,60 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_37">
+  <div class="c4-pattern" id="c4-pattern_42">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_37">Fleurons</a>
+          <a href="#c4-pattern_42">Full-Width Boxes</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Full boxes lack side borders or radii. They can act like default boxes at certain breakpoints by also including the <code>box-default-xs</code>, <code>box-default-sm</code>, <code>box-default-md</code> or <code>box-default-lg</code> classes.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<div class="box-full box-light">
+  This box will always be "full-width."
+</div>
+
+<div class="box-full box-light box-default-sm">
+  This box is full-width at small sizes, but becomes "normal" at a certain breakpoint.
+</div>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_42" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_42"><code class="language-markup">&lt;div class=&quot;box-full box-light&quot;&gt;
+  This box will always be &quot;full-width.&quot;
+&lt;/div&gt;
+
+&lt;div class=&quot;box-full box-light box-default-sm&quot;&gt;
+  This box is full-width at small sizes, but becomes &quot;normal&quot; at a certain breakpoint.
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_50">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_50">Fleurons</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -259,14 +318,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_37" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_50" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_37"><code class="language-markup">&lt;div class=&quot;box box-md box-light&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_50"><code class="language-markup">&lt;div class=&quot;box box-md box-light&quot;&gt;
   &lt;span class=&quot;fleuron-star-wide top&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;fleuron-star bottom left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;fleuron-star-alt bottom right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
@@ -279,11 +338,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_43">
+  <div class="c4-pattern" id="c4-pattern_55">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_43">Stylized Boxes</a>
+          <a href="#c4-pattern_55">Stylized Boxes</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -310,14 +369,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_43" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_55" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_43"><code class="language-markup">&lt;div class=&quot;box box-leaf-tr&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_55"><code class="language-markup">&lt;div class=&quot;box box-leaf-tr&quot;&gt;
   &lt;p&gt;This box has a leafy flourish at the top-right corner.&lt;/p&gt;
   &lt;p&gt;Every psychic reader at Psychic Source uses a variety of gifts and tools to give you the most insightful, revealing, and helpful reading possible. Many of our gifted psychic readers were born with their psychic gifts, discovering that they possessed these special abilities at an early age. Often the psychic gifts run in the family and are passed down from generation to generation.&lt;/p&gt;
 &lt;/div&gt;
@@ -335,7 +394,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, December 12th, 2014, 10:39AM (PST).
+      This page was generated Friday, December 19th, 2014, 9:35AM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
