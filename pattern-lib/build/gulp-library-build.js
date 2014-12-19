@@ -26,7 +26,11 @@ var util             = require('./library-util');
 var settings         = require('../../settings');
 var templateHelpers  = require('../../' + settings.paths.patterns + '/templateHelpers');
 
-module.exports =  function() {
+module.exports.prepare = function() {
+
+};
+
+module.exports.build =  function() {
 
   /* Glob and traverse directories and filter to only directories (not files) */
   var dirs = glob.sync(settings.src.patternDirs).filter(function(filePath) {
