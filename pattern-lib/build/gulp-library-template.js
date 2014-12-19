@@ -9,8 +9,8 @@
 
 var gutil       = require('gulp-util'),
     through     = require('through2'),
-    Handlebars  = require('handlebars'),
     frontMatter = require('front-matter'),
+    Handlebars  = require('handlebars'),
     fs          = require('fs'),
     path        = require('path'),
     _           = require('underscore'),
@@ -20,31 +20,11 @@ var gutil       = require('gulp-util'),
 module.exports = function (data, opts) {
 
   var options = _.extend({
-    extension: '.hbs'
+    extension: '.hbs',
+    Handlebars: Handlebars // Allows use of a particular Handlebars instance, optionally
   }, opts || {});
 
-  var namePattern = new RegExp(settings.files.patternsPattern, 'g'),
-
-  parsePartials = function(partialDir) {
-    var partialFilenames = fs.readdirSync(partialDir);
-
-    partialFilenames.forEach(function(filename) {
-      var partial = partialDir + '/' + filename,
-          stats   = fs.statSync(partial),
-          content, template;
-      if (stats && stats.isDirectory()) {
-        parsePartials(partial, partialDir + '/' + filename);
-      } else if (path.extname(filename) === options.extension) {
-        template  = fs.readFileSync(partial, 'utf8');
-        content   = frontMatter(template); // Strip out any YAML front matter. @TODO Review
-        Handlebars.registerPartial(templateUtil.templateKey(partialDir + '/' + filename), content.body);
-      }
-    });
-  };
-
-  if (options.partialsDir) {
-    parsePartials(options.partialsDir);
-  }
+  var namePattern = new RegExp(settings.files.patternsPattern, 'g');
 
   if (options.helpers) {
     for (var helper in options.helpers) {
@@ -68,7 +48,7 @@ module.exports = function (data, opts) {
 
     try {
       var fileContents = file.contents.toString(),
-          template     = Handlebars.compile(fileContents),
+          template     = options.Handlebars.compile(fileContents),
           context      = _.extend(file.data || {}, data);
       file.contents = new Buffer(template(context));
     } catch (err) {

@@ -8,9 +8,7 @@ var watchers = {};
 var taskModules = ['browserSync',
                    'scripts',
                    'styles',
-                   'watch',
-                   'library-scripts',
-                   'library-styles'];
+                   'watch'];
 /**
  * Task modules should be in build/gulp/tasks
  */
@@ -23,7 +21,7 @@ taskModules.forEach(function(task) {
 /**
  * Style guide builder.
  */
-gulp.task('library', ['library-styles', 'library-scripts'], require(settings.paths.library + '/gulp-library-build'));
+require(settings.paths.library + '/tasks/');
 gulp.task('site', ['styles', 'scripts', 'assets']);
 /**
  * Simple tasks not worthy of module
