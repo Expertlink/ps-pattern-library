@@ -98,7 +98,7 @@ module.exports.build =  function() {
       // Wrap concatenated patterns in nearest index template (if pattern dir)
       .pipe(gulpif(isPatternPage, wrap({src: pathTemplates.templateFile}, templateContext)))
       // Compile the index template as hbs (if pattern dir)
-      .pipe(gulpif(isPatternPage, template(Handlebars, templateContext, templateOptions)))
+      .pipe(gulpif(isPatternPage, template(templateContext, templateOptions)))
       // And done.
       .pipe(gulpif(!isPatternPage, rename({extname: '.html'}))) // Only in the "pages" dirs
       .pipe(gulp.dest(settings.dest.patterns + '/' + destPath));
