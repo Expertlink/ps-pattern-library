@@ -4,53 +4,30 @@ status: inprogress
 
 {{> pages/_header }}
 
-{{! This is all just a MESS right now. PLEASE move along... ಠ__ಠ }}
-
 <div class="container-page">
-  <div class="box-full box-default-sm box-lighter box-sheer js-view-container">
-    <div class="js-view js-initial" id="advisor-main">
-      <div class="text-right" style="padding: 10px 18px; border-bottom: 1px solid #d4ddde; background-color: #f3f3f3; position: relative;">
-        <a class="btn btn-default btn" href="">New Advisors</a>
-        <a class="btn btn-default btn" href="">Staff Picks</a>
-        <img src="/images/promotion/offer-special.svg" alt="Save 25%" style="position: absolute; top: 0; left: 5px;">
-      </div>
-      <div style="margin: 10px 18px 10px">
-        <div class="arrange arrange-gutter arrange-equal">
-          <div class="arrange-fill">
-            <button class="btn btn-block btn-default btn-shaded" type="button">Sort <span class="arrow-down"></span></button>
-          </div>
-          <div class="arrange-fill">
-            <button class="btn btn-block btn-default btn-shaded js-filter-button" type="button" data-pushView="#advisor-sidebar">Filter</button>
-          </div>
+  <div class="box-full box-default-sm box-lighter box-sheer">
+    <div class="row no-gutters js-advisor-view-container">
+      <div class="col-xs-12 col-sm-3 js-advisor-view" id="advisor-menu">
+        <div class="u-margin visible-xs-block">
+          {{> our-psychics/_filter-controls }}
+        </div>
+        {{> filters/filter-menu }}
+        <div class="u-margin">
+          {{> our-psychics/_filter-controls }}
         </div>
       </div>
-      {{> advisors/advisor-grid }}
-      <div class="text-center">
-        {{> pagination/states }}
-      </div>
-    </div>
-    <div class="js-view" id="advisor-sidebar">
-      <div style="margin: 18px 10px">
-        <div class="arrange">
-          <div class="arrange-fit">
-            <button class="btn btn-default btn-shaded" type="button" data-popView="#advisor-main"><span class="arrow-left"></span> Back</button>
-          </div>
-          <div class="arrange-fill text-right">
-            <button class="btn btn-link" type="button" data-popView="#advisor-main"><span class="text-danger">Clear All</span></button>
-            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popView="#advisor-main">Apply Filters</button>
-          </div>
+      <div class="col-xs-12 col-sm-9 js-advisor-view" id="advisor-main">
+        {{! WIP }}
+        <div class="u-margin visible-xs-block text-right">
+          <button class="btn btn-default btn-shaded" type="button" data-pushview="#advisor-menu">Filter</button>
         </div>
-      </div>
-      {{> filters/filter-menu }}
-      <div style="margin: 18px 10px">
-        <div class="arrange">
-          <div class="arrange-fit">
-            <button class="btn btn-default btn-shaded" type="button" data-popView="#advisor-main"><span class="arrow-left"></span> Back</button>
-          </div>
-          <div class="arrange-fill text-right">
-            <button class="btn btn-link" type="button" data-popView="#advisor-main"><span class="text-danger">Clear All</span></button>
-            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popView="#advisor-main">Apply Filters</button>
-          </div>
+        {{! /WIP }}
+        <div class="u-margin-sides u-margin-top hidden-xs">
+          {{> tabs/tabs }}
+        </div>
+        {{> advisors/advisor-grid }}
+        <div class="text-center">
+          {{> pagination/states }}
         </div>
       </div>
     </div>
@@ -59,10 +36,18 @@ status: inprogress
 
 <script>
 
-var slideView = $('.js-view-container').simpleSlideView('.js-view');
+function canUseSlideView () {
+  return $('.js-advisor-view:visible').first().width() === $(window).width();
+}
 
-$('.js-apply-button').on('click', function(){
-  $('.js-filter-button').addClass('active');
+var slideView = $('.js-advisor-view-container').simpleSlideView({
+  views:      '.js-advisor-view',
+  activeView: '#advisor-main',
+  deferOn:    !canUseSlideView()
+});
+
+$(window).resize(function(){
+  slideView.toggle(canUseSlideView());
 });
 
 </script>
