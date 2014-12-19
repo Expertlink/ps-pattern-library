@@ -18,6 +18,7 @@ var rename           = require('gulp-rename');
 var wrap             = require('gulp-wrap');
 
 // local
+var stripScripts     = require('./gulp-strip-scripts');
 var templateData     = require('./gulp-template-data');
 var templateMetaData = require('./gulp-library-metadata');
 var template         = require('./gulp-library-template');
@@ -35,6 +36,7 @@ module.exports.prepare = function() {
       property: 'meta',
       remove: true
     }))
+    .pipe(stripScripts())
     .pipe(through.obj(function (file, enc, cb) {
       var templateKey;
       if (file.isNull()) {
