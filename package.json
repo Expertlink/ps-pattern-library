@@ -4,7 +4,7 @@
   "description": "vse-responsive-pilot ====================",
   "main": "index.html",
   "scripts": {
-    "start": "node ./build/heroku-server.js"
+    "start": "node ./pattern-lib/heroku-server.js"
   },
   "repository": {
     "type": "git",
