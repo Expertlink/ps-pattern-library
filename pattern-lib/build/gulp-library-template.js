@@ -21,7 +21,7 @@ module.exports = function (data, opts) {
 
   var options = _.extend({
     extension: '.hbs',
-    Handlebars: Handlebars
+    Handlebars: Handlebars // Allows use of a particular Handlebars instance, optionally
   }, opts || {});
 
   var namePattern = new RegExp(settings.files.patternsPattern, 'g');
