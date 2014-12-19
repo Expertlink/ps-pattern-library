@@ -2,6 +2,7 @@
   "groups": [
     {
       "primary": true,
+      "modifiers": "visible-xs-block",
       "title": "Show",
       "summary": "All Psychics",
       "open": true,
