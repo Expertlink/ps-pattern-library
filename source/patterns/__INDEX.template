@@ -27,6 +27,9 @@
     <!-- Site behavior/UI JS -->
     <script src="{{ pathRoot }}/js/site.js"></script>
 
+    <!-- Pattern-specific scripts -->
+    <script src="{{ pathRoot }}/js/patterns.js"></script>
+
   </head>
 <body class="c4-body">
 
