@@ -42,6 +42,7 @@
     "marked": "~0.3.2",
     "express": "~4.10.1",
     "basic-auth": "~1.0.0",
-    "cheerio": "~0.18.0"
+    "cheerio": "~0.18.0",
+    "gulp-ignore": "~1.2.1"
   }
 }

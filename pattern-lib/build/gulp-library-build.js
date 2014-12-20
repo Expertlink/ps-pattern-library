@@ -87,6 +87,7 @@ module.exports.build =  function() {
         property: 'meta',
         remove: true
       }))
+      .pipe(stripScripts())
       // Get template context data for this template
       .pipe(templateData({ dataDir: settings.paths.data, localDataDir: settings.paths.partials }))
       // compile the individual template

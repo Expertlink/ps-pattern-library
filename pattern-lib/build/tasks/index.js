@@ -11,5 +11,6 @@ var builder = require('../gulp-library-build');
 
 gulp.task('library-styles', require('./library-styles'));
 gulp.task('library-scripts', require('./library-scripts'));
+gulp.task('library-pattern-scripts', require('./library-pattern-scripts'));
 gulp.task('library-prepare', builder.prepare);
-gulp.task('library', ['library-styles', 'library-scripts', 'library-prepare'], builder.build);
+gulp.task('library', ['library-styles', 'library-scripts', 'library-prepare', 'library-pattern-scripts'], builder.build);

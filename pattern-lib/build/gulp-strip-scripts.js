@@ -27,13 +27,15 @@ module.exports = function gulpStripScripts() {
       return;
     }
     $('script').each(function(i, elem) {
-      var scriptContent = $(elem).text();
-      file.scripts.push(scriptContent);
-      content = content.replace($(elem).text(), '');
+      if (!$(elem).attr('src')) {
+        var scriptContent = $(elem).text();
+        file.scripts.push(scriptContent);
+        content = content.replace($(elem).text(), '');
+      }
     });
-    content = content.replace(/<\/?script>/g, '');
+    content = content.replace(/<script><\/script>/g, '');
     file.contents = Buffer(content);
-    
+
     // Do stuff
     this.push(file);
     cb();

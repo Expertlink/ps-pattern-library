@@ -47,7 +47,8 @@ module.exports.pathTemplates = function pathTemplates(dirPath) {
  */
 module.exports.metaData = function metaData(filePath, options) {
   var defaults = {},
-      data     = {};
+      data     = {},
+      scripts  = '';
   options = _.extend({
     format: false,        // Prepare for rendering with extra metadata
     meta:   {},            // existing metadata
@@ -61,6 +62,7 @@ module.exports.metaData = function metaData(filePath, options) {
     id         :    util.patternId(filePath),
     link       :    path.basename(filePath, path.extname(filePath)) + '.html',
     name       :    util.patternFileName(filePath),
+    scripts    :    [],
     status     :    'none'
   };
 
@@ -75,6 +77,10 @@ module.exports.metaData = function metaData(filePath, options) {
     data.description = marked(data.description);
     if (options.contents) {
       data.source = escape(options.contents).trim();
+      if (options.scripts && options.scripts.length) {
+        scripts = '\n\r<script>' + options.scripts.join('') + '</script>';
+        data.source = data.source + escape(scripts);
+      }
     }
   }
   return data;
