@@ -76,6 +76,7 @@
     newMask;
 
     if (typeof InputMask[ctor] !== 'function') {
+      console.log(ctor, 'problem');
       throw {
         name: 'Error',
         message: ctor + ' does not exist (is not an available mask-type)'
@@ -195,6 +196,7 @@
       'visa'              : /^4/,
       'mastercard'        : /^5[1-5]/,
       'amex'              : /^3(4|7)/,
+      'dinersclub'        : /3(?:0[0-5]|[68][0-9])[0-9]{11}/,
       'discover'          : /^6011(?!31)(?=\d{2})/
     }; // TODO
 

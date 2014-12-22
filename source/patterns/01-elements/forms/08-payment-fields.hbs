@@ -12,11 +12,15 @@ description: Payment fields with behavioral input masks.
     <label class="form-label" for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
     <ul class="creditcards">
-      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+      <li class="creditcard  creditcard-visa">Visa</li>
+      <li class="creditcard  creditcard-mastercard">MasterCard</li>
+      <li class="creditcard  creditcard-discover">Discover</li>
+      <li class="creditcard  creditcard-amex">American Express</li>
+      <li class="creditcard  creditcard-dinersclub">Diner's Club</li>
     </ul>
   </div>
   <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="expiration-date">
+    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="ExpirationDate">
       <label class="form-label" for="signupCCExp">Expiration</label>
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
     </div>
