@@ -3,11 +3,11 @@ bootstrap: http://getbootstrap.com/css/#forms
 ---
 
 <form role="form">
-  <div class="form-group">
+  <div class="form-group form-group-required">
     <label class="control-label" for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
   </div>
-  <div class="form-group">
+  <div class="form-group form-group-required">
     <label class="control-label" for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     <p class="help-block is-error-msg">Must have at least six characters.</p>
@@ -15,13 +15,13 @@ bootstrap: http://getbootstrap.com/css/#forms
   <div class="form-group">
     <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
   </div>
-  <div class="form-group has-error">
+  <div class="form-group form-group-required has-error">
     <label class="control-label" for="inputError1">Input with error</label>
     <input type="text" class="form-control" id="inputError1">
     <p class="help-block is-error-msg">Not a valid code.</p>
   </div>
   <div class="form-group">
-    <label class="control-label"  for="exampleInputFile">File input</label>
+    <label class="control-label"  for="exampleInputFile">File input, not required</label>
     <input type="file" id="exampleInputFile">
     <p class="help-block">Example block-level help text here.</p>
   </div>
