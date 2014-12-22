@@ -190,13 +190,13 @@
     this.maxLength = 16;
     this.errorMessage = 'Sorry, that doesn\'t look like a valid card number';
     this.cardType     = null;
-    this.validCardTypes = ['visa', 'amex', 'discover', 'mastercard']; // TODO
+    this.validCardTypes = ['visa', 'amex', 'discover', 'mastercard', 'dinersclub']; // TODO
     this.cardClasses  = ['is-default'];
     this.cardPatterns =  {
       'visa'              : /^4/,
       'mastercard'        : /^5[1-5]/,
       'amex'              : /^3(4|7)/,
-      'dinersclub'        : /3(?:0[0-5]|[68][0-9])[0-9]{11}/,
+      'dinersclub'        : /3(?:0[0-5]|[68][0-9])/,
       'discover'          : /^6011(?!31)(?=\d{2})/
     }; // TODO
 
