@@ -5,27 +5,28 @@ description: Step two of the signup form for new customers.
 <form role="form">
   <h3>Billing Information</h3>
   {{> forms/payment-fields }}
+
   <div class="form-group form-group-required">
-    <label class="form-label" for="signupStreet">Street address 1</label>
+    <label class="control-label" for="signupStreet">Street address 1</label>
     <input type="text" class="form-control" id="signupStreet" />
   </div>
   <div class="form-group">
-    <label class="form-label" for="signupStreet2">Street address 2</label>
+    <label class="control-label" for="signupStreet2">Street address 2</label>
     <input type="text" class="form-control" id="signupStreet2" />
   </div>
    <div class="form-group arrange arrange-equal arrange-gutter">
     <div class="form-group form-group-required arrange-fit">
-      <label class="form-label" for="signupCity">City</label>
+      <label class="control-label" for="signupCity">City</label>
       <input type="text" class="form-control" id="signupCity" />
     </div>
     <div class="form-group form-group-required arrange-fit">
-      <label class="form-label" for="signupCCZip">Zip or postal code</label>
+      <label class="control-label" for="signupCCZip">Zip or postal code</label>
       <input type="text" class="form-control" id="signupCCZip" />
     </div>
   </div>
   <div class="form-group arrange arrange-equal arrange-gutter">
     <div class="form-group form-group-required arrange-fit">
-      <label class="form-label" for="signupCountry">Country</label>
+      <label class="control-label" for="signupCountry">Country</label>
       <select id="signupCountry" class="form-control">
 
 			<option value="234">Uganda</option>
@@ -39,7 +40,7 @@ description: Step two of the signup form for new customers.
       </select>
 	  </div>
 	  <div class="form-group form-group-required arrange-fit">
-      <label class="form-label" for="signupState">State or province</label>
+      <label class="control-label" for="signupState">State or province</label>
       <select id="signupState"  class="form-control">
     	<option selected="selected" value="">Select</option>
 			<option value="1">Other</option>
@@ -52,7 +53,7 @@ description: Step two of the signup form for new customers.
     </div>
   </div>
   <div class="form-group form-group-required">
-    <label class="form-label" for="signupPhone">Phone number</label>
+    <label class="control-label" for="signupPhone">Phone number</label>
     <input type="text" class="form-control" id="signupPhone" />
   </div>
   <div class="form-group form-group-required">

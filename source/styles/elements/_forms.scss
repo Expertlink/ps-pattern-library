@@ -1,7 +1,13 @@
-.form-group .form-label {
+.form-group .control-label {
   font-weight: normal;
 }
-.form-group-required .form-label  {
+.form-group-required .control-label  {
   font-weight:bold;
 }
 
+.is-error-msg {
+  display: none;
+}
+.has-error .is-error-msg {
+  display: block;
+}
