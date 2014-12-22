@@ -68,7 +68,19 @@
 
   };
 
-  InputMask.DEFAULTS = {};
+  InputMask.DEFAULTS = {
+    validCards     : ['visa', 'amex', 'discover', 'mastercard', 'dinersclub'],
+    cardPatterns   : {
+      visa       : /^4/,
+      mastercard : /^5[1-5]/,
+      amex       : /^3(4|7)/,
+      dinersclub : /3(?:0[0-5]|[68][0-9])/,
+      discover   : /^6011(?!31)(?=\d{2})/
+    },
+    errors: {
+      creditCard: 'Sorry, that doesn\'t look like a valid credit card number'
+    }
+  };
   InputMask.PLUGIN_NAME = 'c4-input-mask';
 
   InputMask.factory = function(element, maskType, options) {
@@ -186,19 +198,13 @@
 
   InputMask.CreditCardMask = function(element, options) {
     console.log('credit');
-    this.minLength = 15;
-    this.maxLength = 16;
-    this.errorMessage = 'Sorry, that doesn\'t look like a valid card number';
-    this.cardType     = null;
-    this.validCardTypes = ['visa', 'amex', 'discover', 'mastercard', 'dinersclub']; // TODO
-    this.cardClasses  = ['is-default'];
-    this.cardPatterns =  {
-      'visa'              : /^4/,
-      'mastercard'        : /^5[1-5]/,
-      'amex'              : /^3(4|7)/,
-      'dinersclub'        : /3(?:0[0-5]|[68][0-9])/,
-      'discover'          : /^6011(?!31)(?=\d{2})/
-    }; // TODO
+    this.minLength      = 15;
+    this.maxLength      = 16;
+    this.validCardTypes = options.validCards;
+    this.cardPatterns   = options.cardPatterns;
+    this.errorMessage   = options.errors.creditCard;
+    this.cardType       = null;
+    this.cardClasses    = ['is-default'];
 
     for (var thing in this.validCardTypes) {
       this.cardClasses.push('is-' + this.validCardTypes[thing]);
