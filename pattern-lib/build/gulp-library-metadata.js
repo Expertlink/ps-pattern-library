@@ -40,6 +40,7 @@ module.exports = function (options) {
     file[options.property] = metaData(file.path, {
       format: true,
       meta: file[options.property],
+      scripts: file.scripts,
       contents: file.contents.toString()
     });
     this.push(file);

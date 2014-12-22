@@ -1,10 +1,10 @@
 /* ========================================================================
-* Bootstrap: collapse.js v3.3.1
-* http://getbootstrap.com/javascript/#collapse
-* ========================================================================
-* Copyright 2011-2014 Twitter, Inc.
-* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* ======================================================================== */
+ * Bootstrap: collapse.js v3.3.1
+ * http://getbootstrap.com/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
 
 
 +function ($) {
@@ -26,186 +26,186 @@
     }
 
     if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.3.1'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true,
+    trigger: '[data-toggle="collapse"]'
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
     }
 
-    Collapse.VERSION  = '3.3.1'
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
 
-    Collapse.TRANSITION_DURATION = 350
-
-    Collapse.DEFAULTS = {
-      toggle: true,
-      trigger: '[data-toggle="collapse"]'
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
     }
 
-    Collapse.prototype.dimension = function () {
-      var hasWidth = this.$element.hasClass('width')
-      return hasWidth ? 'width' : 'height'
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
     }
 
-    Collapse.prototype.show = function () {
-      if (this.transitioning || this.$element.hasClass('in')) return
+    if (!$.support.transition) return complete.call(this)
 
-        var activesData
-        var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
 
-        if (actives && actives.length) {
-          activesData = actives.data('bs.collapse')
-          if (activesData && activesData.transitioning) return
-          }
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
 
-          var startEvent = $.Event('show.bs.collapse')
-          this.$element.trigger(startEvent)
-          if (startEvent.isDefaultPrevented()) return
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
 
-            if (actives && actives.length) {
-              Plugin.call(actives, 'hide')
-              activesData || actives.data('bs.collapse', null)
-            }
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
 
-            var dimension = this.dimension()
+    var dimension = this.dimension()
 
-            this.$element
-            .removeClass('collapse')
-            .addClass('collapsing')[dimension](0)
-            .attr('aria-expanded', true)
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
 
-            this.$trigger
-            .removeClass('collapsed')
-            .attr('aria-expanded', true)
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
 
-            this.transitioning = 1
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
 
-            var complete = function () {
-              this.$element
-              .removeClass('collapsing')
-              .addClass('collapse in')[dimension]('')
-              this.transitioning = 0
-              this.$element
-              .trigger('shown.bs.collapse')
-            }
+    this.transitioning = 1
 
-            if (!$.support.transition) return complete.call(this)
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
 
-              var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+    if (!$.support.transition) return complete.call(this)
 
-              this.$element
-              .one('bsTransitionEnd', $.proxy(complete, this))
-              .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
-            }
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
 
-            Collapse.prototype.hide = function () {
-              if (this.transitioning || !this.$element.hasClass('in')) return
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
 
-                var startEvent = $.Event('hide.bs.collapse')
-                this.$element.trigger(startEvent)
-                if (startEvent.isDefaultPrevented()) return
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
 
-                  var dimension = this.dimension()
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
 
-                  this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
 
-                  this.$element
-                  .addClass('collapsing')
-                  .removeClass('collapse in')
-                  .attr('aria-expanded', false)
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
 
-                  this.$trigger
-                  .addClass('collapsed')
-                  .attr('aria-expanded', false)
-
-                  this.transitioning = 1
-
-                  var complete = function () {
-                    this.transitioning = 0
-                    this.$element
-                    .removeClass('collapsing')
-                    .addClass('collapse')
-                    .trigger('hidden.bs.collapse')
-                  }
-
-                  if (!$.support.transition) return complete.call(this)
-
-                    this.$element
-                    [dimension](0)
-                    .one('bsTransitionEnd', $.proxy(complete, this))
-                    .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
-                  }
-
-                  Collapse.prototype.toggle = function () {
-                    this[this.$element.hasClass('in') ? 'hide' : 'show']()
-                  }
-
-                  Collapse.prototype.getParent = function () {
-                    return $(this.options.parent)
-                    .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
-                    .each($.proxy(function (i, element) {
-                      var $element = $(element)
-                      this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
-                    }, this))
-                    .end()
-                  }
-
-                  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
-                    var isOpen = $element.hasClass('in')
-
-                    $element.attr('aria-expanded', isOpen)
-                    $trigger
-                    .toggleClass('collapsed', !isOpen)
-                    .attr('aria-expanded', isOpen)
-                  }
-
-                  function getTargetFromTrigger($trigger) {
-                    var href
-                    var target = $trigger.attr('data-target')
-                    || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
-
-                    return $(target)
-                  }
+    return $(target)
+  }
 
 
-                  // COLLAPSE PLUGIN DEFINITION
-                  // ==========================
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
 
-                  function Plugin(option) {
-                    return this.each(function () {
-                      var $this   = $(this)
-                      var data    = $this.data('bs.collapse')
-                      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
 
-                      if (!data && options.toggle && option == 'show') options.toggle = false
-                        if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
-                          if (typeof option == 'string') data[option]()
-                          })
-                        }
+      if (!data && options.toggle && option == 'show') options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
 
-                        var old = $.fn.collapse
+  var old = $.fn.collapse
 
-                        $.fn.collapse             = Plugin
-                        $.fn.collapse.Constructor = Collapse
-
-
-                        // COLLAPSE NO CONFLICT
-                        // ====================
-
-                        $.fn.collapse.noConflict = function () {
-                          $.fn.collapse = old
-                          return this
-                        }
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
 
 
-                        // COLLAPSE DATA-API
-                        // =================
+  // COLLAPSE NO CONFLICT
+  // ====================
 
-                        $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
-                          var $this   = $(this)
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
 
-                          if (!$this.attr('data-target')) e.preventDefault()
 
-                            var $target = getTargetFromTrigger($this)
-                            var data    = $target.data('bs.collapse')
-                            var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this })
+  // COLLAPSE DATA-API
+  // =================
 
-                            Plugin.call($target, option)
-                          })
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
 
-                        }(jQuery);
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this })
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);

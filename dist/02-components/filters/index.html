@@ -9,9 +9,8 @@
     VSE Responsive Pilot Pattern Library: Filters
   </title>
     <!-- CSS Goes here -->
-    <link href="../../css/patterns.css" rel="stylesheet">
+    <link href="../../css/pattern-library.css" rel="stylesheet">
     <link href="../../css/styles.css" rel="stylesheet">
-    <link href="../../vendor/prism/prism.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,9 +22,10 @@
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="../../js/patterns.js"></script>
-     <script src="../../vendor/hideShowPassword/hideShowPassword.js"></script>
-    <script src="../../vendor/prism/prism.js"></script>
+    <script src="../../js/pattern-library.js"></script>
+
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
 
   </head>
 <body class="c4-body">
@@ -83,639 +83,852 @@
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
       <li><a class="c4-nav__item " href="../../02-components/signup">Signup</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
       <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
+      <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
     </ul>
   </nav>
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_17">
+  <div class="c4-pattern" id="c4-pattern_19">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_17">Filter Menu</a>
+          <a href="#c4-pattern_19">Filter Menu</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
             
           </span>
         </h2>
-        <p>Hierarchical filter menu. All items use a base <code>.filter-item</code> class, but the markup differs between parent elements and actual checkable filters.</p>
+        <p>Hierarchical filter menu. All items use a base <code>.filter-item</code> class, but the markup differs between parent elements and actual checkable filters. Accordion functionality courtesy of Bootstrap&#39;s <a href="http://getbootstrap.com/javascript/#collapse">collapse</a> plugin.</p>
 
       </div>
     
 
     <div class="c4-pattern__body c4-pattern__body--full-width">
-      <div class="filters js-filter-container">
-    <h4 class="filter-heading">
-      <a class="filter-item filter-parent filter-primary js-filter-parent" href="#filters-specialties">
-        Specialties
-        <span class="badge js-filter-badge"></span>
-      </a>
-    </h4>
-    <ul class="filter-list js-filter-list" id="filters-specialties">
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Career Psychic
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Clairaudient
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Clairsentient
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Clairvoyant
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Intuitive/Empath
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Love Psychic
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Pet Psychic
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Psychic Medium
-            </label>
-        </li>
-    </ul>
-    <h4 class="filter-heading">
-      <a class="filter-item filter-parent filter-primary js-filter-parent" href="#filters-subject-expertises">
-        Subject/Expertises
-        <span class="badge js-filter-badge"></span>
-      </a>
-    </h4>
-    <ul class="filter-list js-filter-list" id="filters-subject-expertises">
-        <li>
-            <h5 class="filter-heading">
-              <a class="filter-item filter-parent js-filter-parent" href="#filters-love-relationships-family">
-                Love, Relationships &amp; Family
-                <span class="badge js-filter-badge"></span>
-              </a>
-            </h5>
-            <ul class="filter-list js-filter-list" id="filters-love-relationships-family">
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Breakups/Divorce
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Cheating/Wandering Hearts
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Finding love/Soulmates
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      LGBT Relationships
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Sex/Intimacy
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Sibling/Parental Issues
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Social Media Influence
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Toxic Relationships
-                    </label>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <h5 class="filter-heading">
-              <a class="filter-item filter-parent js-filter-parent" href="#filters-career-finance">
-                Career &amp; Finance
-                <span class="badge js-filter-badge"></span>
-              </a>
-            </h5>
-            <ul class="filter-list js-filter-list" id="filters-career-finance">
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Career Changes
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Co-Worker Disputes
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Financial Stress
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Harassment
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Manifesting Wealth
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      New Job
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Office Romance
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Work/Life Balance
-                    </label>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <h5 class="filter-heading">
-              <a class="filter-item filter-parent js-filter-parent" href="#filters-life-destiny-meaning">
-                Life, Destiny &amp; Meaning
-                <span class="badge js-filter-badge"></span>
-              </a>
-            </h5>
-            <ul class="filter-list js-filter-list" id="filters-life-destiny-meaning">
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Embracing Change/Getting Unstuck
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Law of Attraction
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Life coaching
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Reiki/Healing
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Spirituality
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Unlocking psychic abilities
-                    </label>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <h5 class="filter-heading">
-              <a class="filter-item filter-parent js-filter-parent" href="#filters-loss-grieving">
-                Loss &amp; Grieving
-                <span class="badge js-filter-badge"></span>
-              </a>
-            </h5>
-            <ul class="filter-list js-filter-list" id="filters-loss-grieving">
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Coping with Death
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Incomplete goodbyes
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Loss of a pet
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Moving past grief
-                    </label>
-                </li>
-                <li>
-                    <label class="filter-item">
-                      <span class="filter-checkbox">
-                        <input type="checkbox" class="js-filter-control">
-                        <span class="filter-checkbox-value" aria-hidden="true"></span>
-                      </span>
-                      Signs of Connections
-                    </label>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h4 class="filter-heading">
-      <a class="filter-item filter-parent filter-primary js-filter-parent" href="#filters-tools">
-        Tools
-        <span class="badge js-filter-badge"></span>
-      </a>
-    </h4>
-    <ul class="filter-list js-filter-list" id="filters-tools">
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Angel Cards
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Astrology
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Cartomancy
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Dream Interpretation
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Lost Object
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Numerology
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Past Life Interpretation
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Spirit Guides
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Tarot
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Uses No Tools
-            </label>
-        </li>
-    </ul>
-    <h4 class="filter-heading">
-      <a class="filter-item filter-parent filter-primary js-filter-parent" href="#filters-language">
-        Language
-        <span class="badge js-filter-badge"></span>
-      </a>
-    </h4>
-    <ul class="filter-list js-filter-list" id="filters-language">
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              English
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Spanish
-            </label>
-        </li>
-    </ul>
-    <h4 class="filter-heading">
-      <a class="filter-item filter-parent filter-primary js-filter-parent" href="#filters-reading-style">
-        Reading Style
-        <span class="badge js-filter-badge"></span>
-      </a>
-    </h4>
-    <ul class="filter-list js-filter-list" id="filters-reading-style">
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Compassionate
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Direct
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Expressive
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Thoughtful
-            </label>
-        </li>
-        <li>
-            <label class="filter-item">
-              <span class="filter-checkbox">
-                <input type="checkbox" class="js-filter-control">
-                <span class="filter-checkbox-value" aria-hidden="true"></span>
-              </span>
-              Wise
-            </label>
-        </li>
-    </ul>
-</div>
+      
+  <div class="filter visible-xs-block">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent  filter-primary"
+          href="#filters-show">
+          Show
+            <small class="filter-summary">All Psychics</small>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse in" id="filters-show">
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-radio">
+                  <input
+                    type="radio"
+                    name="filter-type"
+                    checked>
+                  <span class="filter-radio-value" aria-hidden="true"></span>
+                </span>
+                All Psychics
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-radio">
+                  <input
+                    type="radio"
+                    name="filter-type"
+                    >
+                  <span class="filter-radio-value" aria-hidden="true"></span>
+                </span>
+                Phone Psychics
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-radio">
+                  <input
+                    type="radio"
+                    name="filter-type"
+                    >
+                  <span class="filter-radio-value" aria-hidden="true"></span>
+                </span>
+                Chat Psychics
+              </label>
+          </div>
+      </div>
+  </div>
+  <div class="filter ">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent collapsed filter-primary"
+          href="#filters-specialties">
+          Specialties
+            <span class="badge filter-badge"></span>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse " id="filters-specialties">
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Career Psychic
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Clairaudient
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Clairsentient
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Clairvoyant
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Intuitive/Empath
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Love Psychic
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Pet Psychic
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Psychic Medium
+              </label>
+          </div>
+      </div>
+  </div>
+  <div class="filter ">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent collapsed filter-primary"
+          href="#filters-subject-expertises">
+          Subject/Expertises
+            <span class="badge filter-badge"></span>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse " id="filters-subject-expertises">
+          <div class="filter ">
+              <h5 class="filter-heading">
+                <a
+                  data-toggle="collapse"
+                  class="filter-item filter-parent collapsed "
+                  href="#filters-love-relationships-family">
+                  Love, Relationships &amp; Family
+                    <span class="badge filter-badge"></span>
+                </a>
+              </h5>
+              <div class="filter-collapse collapse " id="filters-love-relationships-family">
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Breakups/Divorce
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Cheating/Wandering Hearts
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Finding love/Soulmates
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        LGBT Relationships
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Sex/Intimacy
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Sibling/Parental Issues
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Social Media Influence
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Toxic Relationships
+                      </label>
+                  </div>
+              </div>
+          </div>
+          <div class="filter ">
+              <h5 class="filter-heading">
+                <a
+                  data-toggle="collapse"
+                  class="filter-item filter-parent collapsed "
+                  href="#filters-career-finance">
+                  Career &amp; Finance
+                    <span class="badge filter-badge"></span>
+                </a>
+              </h5>
+              <div class="filter-collapse collapse " id="filters-career-finance">
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Career Changes
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Co-Worker Disputes
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Financial Stress
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Harassment
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Manifesting Wealth
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        New Job
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Office Romance
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Work/Life Balance
+                      </label>
+                  </div>
+              </div>
+          </div>
+          <div class="filter ">
+              <h5 class="filter-heading">
+                <a
+                  data-toggle="collapse"
+                  class="filter-item filter-parent collapsed "
+                  href="#filters-life-destiny-meaning">
+                  Life, Destiny &amp; Meaning
+                    <span class="badge filter-badge"></span>
+                </a>
+              </h5>
+              <div class="filter-collapse collapse " id="filters-life-destiny-meaning">
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Embracing Change/Getting Unstuck
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Law of Attraction
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Life coaching
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Reiki/Healing
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Spirituality
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Unlocking psychic abilities
+                      </label>
+                  </div>
+              </div>
+          </div>
+          <div class="filter ">
+              <h5 class="filter-heading">
+                <a
+                  data-toggle="collapse"
+                  class="filter-item filter-parent collapsed "
+                  href="#filters-loss-grieving">
+                  Loss &amp; Grieving
+                    <span class="badge filter-badge"></span>
+                </a>
+              </h5>
+              <div class="filter-collapse collapse " id="filters-loss-grieving">
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Coping with Death
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Incomplete goodbyes
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Loss of a pet
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Moving past grief
+                      </label>
+                  </div>
+                  <div class="filter ">
+                      <label class="filter-item">
+                        <span class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            
+                            >
+                          <span class="filter-checkbox-value" aria-hidden="true"></span>
+                        </span>
+                        Signs of Connections
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="filter ">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent collapsed filter-primary"
+          href="#filters-tools">
+          Tools
+            <span class="badge filter-badge"></span>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse " id="filters-tools">
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Angel Cards
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Astrology
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Cartomancy
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Dream Interpretation
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Lost Object
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Numerology
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Past Life Interpretation
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Spirit Guides
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Tarot
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Uses No Tools
+              </label>
+          </div>
+      </div>
+  </div>
+  <div class="filter ">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent collapsed filter-primary"
+          href="#filters-language">
+          Language
+            <span class="badge filter-badge"></span>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse " id="filters-language">
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                English
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Spanish
+              </label>
+          </div>
+      </div>
+  </div>
+  <div class="filter ">
+      <h4 class="filter-heading">
+        <a
+          data-toggle="collapse"
+          class="filter-item filter-parent collapsed filter-primary"
+          href="#filters-reading-style">
+          Reading Style
+            <span class="badge filter-badge"></span>
+        </a>
+      </h4>
+      <div class="filter-collapse collapse " id="filters-reading-style">
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Compassionate
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Direct
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Expressive
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Thoughtful
+              </label>
+          </div>
+          <div class="filter ">
+              <label class="filter-item">
+                <span class="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    
+                    >
+                  <span class="filter-checkbox-value" aria-hidden="true"></span>
+                </span>
+                Wise
+              </label>
+          </div>
+      </div>
+  </div>
 
 <script>
 
 /**
- * TODO: This JavaScript logic should not be included in the pattern source.
- * We should determine a means of organizing this type of non-plugin, prototype
- * JavaScript.
+ * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
+ * for us to do is update some values wehn controls are updated...
  */
 
-(function($, window){
-
-  var $container = $('.js-filter-container');
-  var $parents = $container.find('.js-filter-parent');
-  var $lists = $container.find('.js-filter-list');
-  var $controls = $container.find('.js-filter-control');
-
-  function toggleFilterList (parent) {
-    var $parent = $(parent);
-    var $list = $($parent.attr('href'));
-    return $list.slideToggle(250, function(){
-      $parent.toggleClass('collapsed', !$list.is(':visible'));
-    });
-  }
-
-  function updateBadges (control) {
-    var $lists = $(control).parents('.js-filter-list');
-    $lists.each(function(){
-      var $list = $(this);
-      var $parent = $('.js-filter-parent[href="#' + $list.attr('id') + '"]');
-      var count = $list.find('.js-filter-control:checked').length;
-      var $badge = $parent.find('.js-filter-badge');
-      $badge.text(count || '');
-    });
-  }
-
-  $parents.on({
-    click: function (event) {
-      if (toggleFilterList(this).length) {
-        event.preventDefault();
-      }
-    },
-    keypress: function (event) {
-      // spacebar press for consistency with checkboxes
-      if (event.keyCode === 0 || event.keyCode === 32) {
-        toggleFilterList(this);
-      }
-    }
+/** Update badge counts on change of checkbox for all parents */
+$(document).on('change', '.filter input:checkbox', function () {
+  $(this).parents('.filter-collapse').each(function(){
+    var $this = $(this);
+    var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
+    var $badge = $trigger.find('.filter-badge');
+    $badge.text($this.find('input:checkbox:checked').length || '');
   });
+});
 
-  $controls.on('click change', function(){
-    updateBadges(this);
-  });
-
-  $parents.addClass('collapsible collapsed');
-  $lists.hide();
-
-}(jQuery, window));
+/** Update summaries on change of radios for immediate parent */
+$(document).on('change', '.filter input:radio', function () {
+  var $this = $(this);
+  var $label = $this.closest('label');
+  var $parent = $this.closest('.filter-collapse');
+  var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
+  var $summary = $trigger.find('.filter-summary');
+  $summary.text($label.text());
+});
 
 </script>
 
@@ -724,620 +937,830 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_17" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_19" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_17"><code class="language-markup">&lt;div class=&quot;filters js-filter-container&quot;&gt;
-    &lt;h4 class=&quot;filter-heading&quot;&gt;
-      &lt;a class=&quot;filter-item filter-parent filter-primary js-filter-parent&quot; href=&quot;#filters-specialties&quot;&gt;
-        Specialties
-        &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-      &lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-specialties&quot;&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Career Psychic
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Clairaudient
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Clairsentient
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Clairvoyant
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Intuitive/Empath
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Love Psychic
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Pet Psychic
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Psychic Medium
-            &lt;/label&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;h4 class=&quot;filter-heading&quot;&gt;
-      &lt;a class=&quot;filter-item filter-parent filter-primary js-filter-parent&quot; href=&quot;#filters-subject-expertises&quot;&gt;
-        Subject/Expertises
-        &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-      &lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-subject-expertises&quot;&gt;
-        &lt;li&gt;
-            &lt;h5 class=&quot;filter-heading&quot;&gt;
-              &lt;a class=&quot;filter-item filter-parent js-filter-parent&quot; href=&quot;#filters-love-relationships-family&quot;&gt;
-                Love, Relationships &amp;amp; Family
-                &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-              &lt;/a&gt;
-            &lt;/h5&gt;
-            &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-love-relationships-family&quot;&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Breakups/Divorce
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Cheating/Wandering Hearts
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Finding love/Soulmates
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      LGBT Relationships
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Sex/Intimacy
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Sibling/Parental Issues
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Social Media Influence
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Toxic Relationships
-                    &lt;/label&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;h5 class=&quot;filter-heading&quot;&gt;
-              &lt;a class=&quot;filter-item filter-parent js-filter-parent&quot; href=&quot;#filters-career-finance&quot;&gt;
-                Career &amp;amp; Finance
-                &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-              &lt;/a&gt;
-            &lt;/h5&gt;
-            &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-career-finance&quot;&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Career Changes
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Co-Worker Disputes
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Financial Stress
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Harassment
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Manifesting Wealth
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      New Job
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Office Romance
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Work/Life Balance
-                    &lt;/label&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;h5 class=&quot;filter-heading&quot;&gt;
-              &lt;a class=&quot;filter-item filter-parent js-filter-parent&quot; href=&quot;#filters-life-destiny-meaning&quot;&gt;
-                Life, Destiny &amp;amp; Meaning
-                &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-              &lt;/a&gt;
-            &lt;/h5&gt;
-            &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-life-destiny-meaning&quot;&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Embracing Change/Getting Unstuck
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Law of Attraction
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Life coaching
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Reiki/Healing
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Spirituality
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Unlocking psychic abilities
-                    &lt;/label&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;h5 class=&quot;filter-heading&quot;&gt;
-              &lt;a class=&quot;filter-item filter-parent js-filter-parent&quot; href=&quot;#filters-loss-grieving&quot;&gt;
-                Loss &amp;amp; Grieving
-                &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-              &lt;/a&gt;
-            &lt;/h5&gt;
-            &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-loss-grieving&quot;&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Coping with Death
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Incomplete goodbyes
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Loss of a pet
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Moving past grief
-                    &lt;/label&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;label class=&quot;filter-item&quot;&gt;
-                      &lt;span class=&quot;filter-checkbox&quot;&gt;
-                        &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                        &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                      &lt;/span&gt;
-                      Signs of Connections
-                    &lt;/label&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;h4 class=&quot;filter-heading&quot;&gt;
-      &lt;a class=&quot;filter-item filter-parent filter-primary js-filter-parent&quot; href=&quot;#filters-tools&quot;&gt;
-        Tools
-        &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-      &lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-tools&quot;&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Angel Cards
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Astrology
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Cartomancy
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Dream Interpretation
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Lost Object
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Numerology
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Past Life Interpretation
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Spirit Guides
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Tarot
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Uses No Tools
-            &lt;/label&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;h4 class=&quot;filter-heading&quot;&gt;
-      &lt;a class=&quot;filter-item filter-parent filter-primary js-filter-parent&quot; href=&quot;#filters-language&quot;&gt;
-        Language
-        &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-      &lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-language&quot;&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              English
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Spanish
-            &lt;/label&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;h4 class=&quot;filter-heading&quot;&gt;
-      &lt;a class=&quot;filter-item filter-parent filter-primary js-filter-parent&quot; href=&quot;#filters-reading-style&quot;&gt;
-        Reading Style
-        &lt;span class=&quot;badge js-filter-badge&quot;&gt;&lt;/span&gt;
-      &lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;ul class=&quot;filter-list js-filter-list&quot; id=&quot;filters-reading-style&quot;&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Compassionate
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Direct
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Expressive
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Thoughtful
-            &lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label class=&quot;filter-item&quot;&gt;
-              &lt;span class=&quot;filter-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; class=&quot;js-filter-control&quot;&gt;
-                &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-              &lt;/span&gt;
-              Wise
-            &lt;/label&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_19"><code class="language-markup">&lt;div class=&quot;filter visible-xs-block&quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent  filter-primary&quot;
+          href=&quot;#filters-show&quot;&gt;
+          Show
+            &lt;small class=&quot;filter-summary&quot;&gt;All Psychics&lt;/small&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse in&quot; id=&quot;filters-show&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-radio&quot;&gt;
+                  &lt;input
+                    type=&quot;radio&quot;
+                    name=&quot;filter-type&quot;
+                    checked&gt;
+                  &lt;span class=&quot;filter-radio-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                All Psychics
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-radio&quot;&gt;
+                  &lt;input
+                    type=&quot;radio&quot;
+                    name=&quot;filter-type&quot;
+                    &gt;
+                  &lt;span class=&quot;filter-radio-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Phone Psychics
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-radio&quot;&gt;
+                  &lt;input
+                    type=&quot;radio&quot;
+                    name=&quot;filter-type&quot;
+                    &gt;
+                  &lt;span class=&quot;filter-radio-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Chat Psychics
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;filter &quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent collapsed filter-primary&quot;
+          href=&quot;#filters-specialties&quot;&gt;
+          Specialties
+            &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-specialties&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Career Psychic
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Clairaudient
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Clairsentient
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Clairvoyant
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Intuitive/Empath
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Love Psychic
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Pet Psychic
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Psychic Medium
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;filter &quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent collapsed filter-primary&quot;
+          href=&quot;#filters-subject-expertises&quot;&gt;
+          Subject/Expertises
+            &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-subject-expertises&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;h5 class=&quot;filter-heading&quot;&gt;
+                &lt;a
+                  data-toggle=&quot;collapse&quot;
+                  class=&quot;filter-item filter-parent collapsed &quot;
+                  href=&quot;#filters-love-relationships-family&quot;&gt;
+                  Love, Relationships &amp;amp; Family
+                    &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/h5&gt;
+              &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-love-relationships-family&quot;&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Breakups/Divorce
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Cheating/Wandering Hearts
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Finding love/Soulmates
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        LGBT Relationships
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Sex/Intimacy
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Sibling/Parental Issues
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Social Media Influence
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Toxic Relationships
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;h5 class=&quot;filter-heading&quot;&gt;
+                &lt;a
+                  data-toggle=&quot;collapse&quot;
+                  class=&quot;filter-item filter-parent collapsed &quot;
+                  href=&quot;#filters-career-finance&quot;&gt;
+                  Career &amp;amp; Finance
+                    &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/h5&gt;
+              &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-career-finance&quot;&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Career Changes
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Co-Worker Disputes
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Financial Stress
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Harassment
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Manifesting Wealth
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        New Job
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Office Romance
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Work/Life Balance
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;h5 class=&quot;filter-heading&quot;&gt;
+                &lt;a
+                  data-toggle=&quot;collapse&quot;
+                  class=&quot;filter-item filter-parent collapsed &quot;
+                  href=&quot;#filters-life-destiny-meaning&quot;&gt;
+                  Life, Destiny &amp;amp; Meaning
+                    &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/h5&gt;
+              &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-life-destiny-meaning&quot;&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Embracing Change/Getting Unstuck
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Law of Attraction
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Life coaching
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Reiki/Healing
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Spirituality
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Unlocking psychic abilities
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;h5 class=&quot;filter-heading&quot;&gt;
+                &lt;a
+                  data-toggle=&quot;collapse&quot;
+                  class=&quot;filter-item filter-parent collapsed &quot;
+                  href=&quot;#filters-loss-grieving&quot;&gt;
+                  Loss &amp;amp; Grieving
+                    &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/h5&gt;
+              &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-loss-grieving&quot;&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Coping with Death
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Incomplete goodbyes
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Loss of a pet
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Moving past grief
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;filter &quot;&gt;
+                      &lt;label class=&quot;filter-item&quot;&gt;
+                        &lt;span class=&quot;filter-checkbox&quot;&gt;
+                          &lt;input
+                            type=&quot;checkbox&quot;
+                            
+                            &gt;
+                          &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/span&gt;
+                        Signs of Connections
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;filter &quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent collapsed filter-primary&quot;
+          href=&quot;#filters-tools&quot;&gt;
+          Tools
+            &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-tools&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Angel Cards
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Astrology
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Cartomancy
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Dream Interpretation
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Lost Object
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Numerology
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Past Life Interpretation
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Spirit Guides
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Tarot
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Uses No Tools
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;filter &quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent collapsed filter-primary&quot;
+          href=&quot;#filters-language&quot;&gt;
+          Language
+            &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-language&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                English
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Spanish
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;filter &quot;&gt;
+      &lt;h4 class=&quot;filter-heading&quot;&gt;
+        &lt;a
+          data-toggle=&quot;collapse&quot;
+          class=&quot;filter-item filter-parent collapsed filter-primary&quot;
+          href=&quot;#filters-reading-style&quot;&gt;
+          Reading Style
+            &lt;span class=&quot;badge filter-badge&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;div class=&quot;filter-collapse collapse &quot; id=&quot;filters-reading-style&quot;&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Compassionate
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Direct
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Expressive
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Thoughtful
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;filter &quot;&gt;
+              &lt;label class=&quot;filter-item&quot;&gt;
+                &lt;span class=&quot;filter-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    
+                    &gt;
+                  &lt;span class=&quot;filter-checkbox-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                Wise
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
 
 &lt;script&gt;
 
 /**
- * TODO: This JavaScript logic should not be included in the pattern source.
- * We should determine a means of organizing this type of non-plugin, prototype
- * JavaScript.
+ * Collapsing is now handled by the Bootstrap Collapse plugin. All that&#39;s left
+ * for us to do is update some values wehn controls are updated...
  */
 
-(function($, window){
-
-  var $container = $(&#39;.js-filter-container&#39;);
-  var $parents = $container.find(&#39;.js-filter-parent&#39;);
-  var $lists = $container.find(&#39;.js-filter-list&#39;);
-  var $controls = $container.find(&#39;.js-filter-control&#39;);
-
-  function toggleFilterList (parent) {
-    var $parent = $(parent);
-    var $list = $($parent.attr(&#39;href&#39;));
-    return $list.slideToggle(250, function(){
-      $parent.toggleClass(&#39;collapsed&#39;, !$list.is(&#39;:visible&#39;));
-    });
-  }
-
-  function updateBadges (control) {
-    var $lists = $(control).parents(&#39;.js-filter-list&#39;);
-    $lists.each(function(){
-      var $list = $(this);
-      var $parent = $(&#39;.js-filter-parent[href=&quot;#&#39; + $list.attr(&#39;id&#39;) + &#39;&quot;]&#39;);
-      var count = $list.find(&#39;.js-filter-control:checked&#39;).length;
-      var $badge = $parent.find(&#39;.js-filter-badge&#39;);
-      $badge.text(count || &#39;&#39;);
-    });
-  }
-
-  $parents.on({
-    click: function (event) {
-      if (toggleFilterList(this).length) {
-        event.preventDefault();
-      }
-    },
-    keypress: function (event) {
-      // spacebar press for consistency with checkboxes
-      if (event.keyCode === 0 || event.keyCode === 32) {
-        toggleFilterList(this);
-      }
-    }
+/** Update badge counts on change of checkbox for all parents */
+$(document).on(&#39;change&#39;, &#39;.filter input:checkbox&#39;, function () {
+  $(this).parents(&#39;.filter-collapse&#39;).each(function(){
+    var $this = $(this);
+    var $trigger = $(&#39;.filter-parent[href^=&quot;#&#39; + $this.attr(&#39;id&#39;) + &#39;&quot;]&#39;);
+    var $badge = $trigger.find(&#39;.filter-badge&#39;);
+    $badge.text($this.find(&#39;input:checkbox:checked&#39;).length || &#39;&#39;);
   });
+});
 
-  $controls.on(&#39;click change&#39;, function(){
-    updateBadges(this);
-  });
-
-  $parents.addClass(&#39;collapsible collapsed&#39;);
-  $lists.hide();
-
-}(jQuery, window));
+/** Update summaries on change of radios for immediate parent */
+$(document).on(&#39;change&#39;, &#39;.filter input:radio&#39;, function () {
+  var $this = $(this);
+  var $label = $this.closest(&#39;label&#39;);
+  var $parent = $this.closest(&#39;.filter-collapse&#39;);
+  var $trigger = $(&#39;.filter-parent[href^=&quot;#&#39; + $parent.attr(&#39;id&#39;) + &#39;&quot;]&#39;);
+  var $summary = $trigger.find(&#39;.filter-summary&#39;);
+  $summary.text($label.text());
+});
 
 &lt;/script&gt;</code></pre>
       
@@ -1349,7 +1772,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, December 12th, 2014, 10:39AM (PST).
+      This page was generated Friday, December 19th, 2014, 9:35AM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

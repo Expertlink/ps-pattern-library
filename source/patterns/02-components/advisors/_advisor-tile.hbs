@@ -32,6 +32,14 @@
             <b>${{formatCurrency basePrice}}/min</b>
           {{/if}}
         </p>
+        {{#if channel}}  
+          <p class="advisor-tile-meta-group">
+            {{channel}} <b>{{channelPromo}}</b> (${{formatCurrency channelPrice}}/min)
+          </p>
+        {{/if}}
+      </div>
+      <div class="advisor-tile-meta">
+        
       </div>
       {{#if online}}
         {{#if available}}
