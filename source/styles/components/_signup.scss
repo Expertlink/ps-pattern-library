@@ -5,10 +5,11 @@
   border-radius: $border-radius-large;
   margin-bottom: ($line-height-computed / 2);
   padding: ($line-height-computed / 2) ;
-  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light); 
+  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
   text-align: center;
   font-weight: normal;
   line-height: 1.6em;
+  color: $blue-dark;
   b {
     font-size: 1.2em;
     display:block;
@@ -17,7 +18,7 @@
   input {
     display:none;
   }
-  &:hover, &.selected {
+  &:hover, &.active {
     background: $blue;
     cursor: pointer;
     color: white;
@@ -25,5 +26,5 @@
       color: white;
     }
     border-color: $blue-dark;
-  } 
+  }
 }
