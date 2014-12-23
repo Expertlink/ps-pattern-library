@@ -25,12 +25,12 @@ description: Step one of the signup form for new customers.
     </div>
   </div>
   <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
-  <p class="help-block"><a class="promo-link" href="#">Have a promo code?</a></p>
+  <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
   <p class="help-block promo-code hidden">Promo code <strong class="code-slot">654123</strong> applied. <a class="change-promo" href="#">Change code</a>.</p>
-  <div class="form-group promo-group hidden arrange arrange-gutter">
+  <div class="form-group collapse promo-group arrange arrange-gutter" id="form-group-promo">
     <div class="arrange-fill">
       <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-      <p class="help-block has-error hidden">Invalid code.</p>
+      <p class="help-block is-error-msg">Invalid code.</p>
     </div>
     <div class="arrange-fill">
       <button class="btn btn-primary apply-btn">Apply</button>
@@ -98,10 +98,10 @@ $(function() {
     var $error = $group.find('.has-error');
     var $promoinput = $group.find('#signupPromo');
 
-    $link.click(function (e) {
-      e.preventDefault();
-      $group.removeClass('hidden');
-    });
+    // $link.click(function (e) {
+    //   e.preventDefault();
+    //   $group.removeClass('hidden');
+    // });
 
     $group.find('.apply-btn').click(function (e) {
       e.preventDefault();
@@ -124,8 +124,8 @@ $(function() {
         }).addClass('discounted');
       }
       else {
-        $error.removeClass('hidden');
-        $promoinput.addClass('has-error');
+        //$error.removeClass('hidden');
+        $group.addClass('has-error');
       }
     });
 
