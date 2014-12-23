@@ -73,32 +73,32 @@
     cards          : {
       amex :   {
         pattern: /^3(4|7)/,
-        minlength: 15,
-        maxlength: 15,
+        minLength: 15,
+        maxLength: 15,
         chunks: [4,6,5]
       },
       dinersclub: {
         pattern: /3(?:0[0-5]|[68][0-9])/,
-        minlength: 14,
-        maxlength: 14,
+        minLength: 14,
+        maxLength: 14,
         chunks: [5,4,5]
       },
       discover: {
         pattern: /^6011(?!31)(?=\d{2})/,
-        minlength: 16,
-        maxlength: 16,
+        minLength: 16,
+        maxLength: 16,
         chunks: [4,4,4,4]
       },
       mastercard: {
         pattern: /^5[1-5]/,
-        minlength: 16,
-        maxlength: 16,
+        minLength: 16,
+        maxLength: 16,
         chunks: [4,4,4,4]
       },
       visa: {
         pattern: /^4/,
-        minlength: 13,
-        maxlength: 16,
+        minLength: 13,
+        maxLength: 16,
         chunks: [4,4,4,4]
       }
     }
@@ -219,9 +219,6 @@
   };
 
   InputMask.CreditCardMask = function(element, options) {
-    console.log('credit');
-    this.minLength      = 15; // TODO
-    this.maxLength      = 16; // TODO
     this.validCardTypes = options.validCards;
     //this.cards          = options.cards;
     this.cards          = {};
@@ -282,9 +279,17 @@
       numberComplete  = false,
       nCheck          = 0,
       nDigit          = 0,
-      bEven           = false;
+      bEven           = false,
+      minLength       = 16,
+      maxLength       = 16,
+      cardInfo        = this.getCardInfo();
 
-      if (/[^0-9\s]+/.test(cardNumber) || cardNumber.length > this.maxLength) {
+      if (cardInfo) {
+        minLength = cardInfo.minLength;
+        maxLength = cardInfo.maxLength;
+      }
+
+      if (/[^0-9\s]+/.test(cardNumber) || cardNumber.length > maxLength) {
         numberError = true;
       } else { // Luhn check
         cardNumber = cardNumber.replace(/\D/g, '');
@@ -299,9 +304,9 @@
         }
         numberValid = (nCheck % 10) === 0;
       }
-      if (numberValid && cardNumber.length >= this.minLength) {
+      if (numberValid && cardNumber.length >= minLength) {
         numberComplete = true;
-      } else if (cardNumber.length >= this.maxLength && !numberValid) {
+      } else if (cardNumber.length >= maxLength && !numberValid) {
         numberError = true;
       }
       this.afterValidate(numberError, numberComplete);
@@ -353,7 +358,6 @@
   };
 
   InputMask.ExpirationDateMask = function(element, options) {
-    console.log('expiration');
     this.errorMessage = 'Please enter your card\'s future expiration date in the format MM/YY'; // TODO
     this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
 
@@ -432,7 +436,6 @@
   };
 
   InputMask.CVVMask = function(element, options) {
-    console.log('cvv');
     this.cardNumberInputName = this.$element.data('mask-cvv-for');
     this.cardType            = 'default';
     this.completeLength      = 3;
