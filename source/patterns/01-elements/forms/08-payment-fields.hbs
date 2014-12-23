@@ -11,6 +11,7 @@ description: Payment fields with behavioral input masks.
   <div class="form-group form-group-required has-cards knows-card" data-mask data-mask-type="CreditCard">
     <label class="control-label" for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
+    <p class="help-block is-error-msg">Sorry, that doesn't look like a valid credit card number.</p>
     <ul class="creditcards">
       <li class="creditcard  creditcard-visa">Visa</li>
       <li class="creditcard  creditcard-mastercard">MasterCard</li>

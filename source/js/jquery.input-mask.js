@@ -70,15 +70,37 @@
 
   InputMask.DEFAULTS = {
     validCards     : ['visa', 'amex', 'discover', 'mastercard', 'dinersclub'],
-    cardPatterns   : {
-      visa       : /^4/,
-      mastercard : /^5[1-5]/,
-      amex       : /^3(4|7)/,
-      dinersclub : /3(?:0[0-5]|[68][0-9])/,
-      discover   : /^6011(?!31)(?=\d{2})/
-    },
-    errors: {
-      creditCard: 'Sorry, that doesn\'t look like a valid credit card number'
+    cards          : {
+      amex :   {
+        pattern: /^3(4|7)/,
+        minlength: 15,
+        maxlength: 15,
+        chunks: [4,6,5]
+      },
+      dinersclub: {
+        pattern: /3(?:0[0-5]|[68][0-9])/,
+        minlength: 14,
+        maxlength: 14,
+        chunks: [5,4,5]
+      },
+      discover: {
+        pattern: /^6011(?!31)(?=\d{2})/,
+        minlength: 16,
+        maxlength: 16,
+        chunks: [4,4,4,4]
+      },
+      mastercard: {
+        pattern: /^5[1-5]/,
+        minlength: 16,
+        maxlength: 16,
+        chunks: [4,4,4,4]
+      },
+      visa: {
+        pattern: /^4/,
+        minlength: 13,
+        maxlength: 16,
+        chunks: [4,4,4,4]
+      }
     }
   };
   InputMask.PLUGIN_NAME = 'c4-input-mask';
@@ -198,16 +220,22 @@
 
   InputMask.CreditCardMask = function(element, options) {
     console.log('credit');
-    this.minLength      = 15;
-    this.maxLength      = 16;
+    this.minLength      = 15; // TODO
+    this.maxLength      = 16; // TODO
     this.validCardTypes = options.validCards;
-    this.cardPatterns   = options.cardPatterns;
-    this.errorMessage   = options.errors.creditCard;
-    this.cardType       = null;
+    //this.cards          = options.cards;
+    this.cards          = {};
+    this.cardType       = '';
     this.cardClasses    = ['is-default'];
+    var cardName;
 
-    for (var thing in this.validCardTypes) {
-      this.cardClasses.push('is-' + this.validCardTypes[thing]);
+    for (var cardIndex in this.validCardTypes) {
+      cardName = this.validCardTypes[cardIndex];
+      if (typeof options.cards[cardName] !== 'undefined') {
+        this.cards[cardName]          = options.cards[cardName];
+        this.cards[cardName].cssClass = 'is-' + cardName;
+        this.cardClasses.push(this.cards[cardName].cssClass);
+      }
     }
     this.cardClasses = this.cardClasses.join(' ');
 
@@ -220,25 +248,26 @@
 
     this.checkCardType = function(cardNumber) {
       var newCardType = null;
-      for (var card in this.cardPatterns) {
-        if (this.cardPatterns[card].test(cardNumber)) {
-          newCardType = card;
+      var cardName;
+      for (cardName in this.cards) {
+        if (this.cards[cardName].pattern.test(cardNumber)) {
+          newCardType = cardName;
         }
       }
       if (newCardType !== this.cardType) {
         this.cardType = newCardType;
-        this.$element.trigger('cardTypeChange', [this.cardType, this]);
+        this.$element.trigger('cardTypeChange', [this.cardType, this.cards[this.cardType], this]);
         this.updateCardType();
       }
     };
 
     this.updateCardType = function() {
-      var newTypeName = (this.cardType !== null) ? this.cardType : 'default';
+      var newTypeName = this.cardType || 'default';
       this.$element.removeClass(this.cardClasses).addClass('is-' + newTypeName);
     };
 
     this.validate = function(cardNumber) {
-      var numberValid     = false,
+      var numberValid = false,
       numberError     = false,
       numberComplete  = false,
       nCheck          = 0,
