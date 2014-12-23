@@ -328,6 +328,7 @@
       function chunkIsFull(cardInfo, chunkIndex) {
         if (typeof cardInfo.chunks !== 'undefined' ||
             typeof cardInfo.chunks[chunkIndex] !== 'undefined') {
+          // If this chunk is full _and_ there is a subsequent chunk to fill
           if (chunks[chunkIndex].length >= cardInfo.chunks[chunkIndex] &&
               cardInfo.chunks[chunkIndex + 1] !== undefined) {
             return true;
@@ -351,7 +352,6 @@
           chunks[chunk] = chunks[chunk].join('');
         }
         masked        = chunks.join(separator); // New masked value
-
         this.lastMaskValue = this.maskValue;
         this.maskValue     = masked;
         this.afterFormatMask();
@@ -441,7 +441,7 @@
     this.cardType            = 'default';
     this.cardInfo            = {};
 
-    if (this.cardNumberInputName) {
+    if (this.cardNumberInputName) { // "Link" to card number input
       this.$cardEl = $('input[name="' + this.cardNumberInputName + '"]').parents('[data-mask]').first();
       this.$cardEl.on('cardTypeChange', $.proxy(function(event, newCardType, newCardInfo) {
         if (newCardInfo !== undefined) {
@@ -473,7 +473,6 @@
       if (!data && maskType) {
         $this.data(InputMask.PLUGIN_NAME + '_plugin', InputMask.factory(this, maskType + 'Mask', options));
       }
-
     });
   }
 
