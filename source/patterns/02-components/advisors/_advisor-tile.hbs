@@ -52,7 +52,7 @@
       {{/if}}
     </div>
   </a>
-  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+  <ul class="arrange {{#unless returnCall}}arrange-equal{{/unless}} arrange-gutter advisor-tile-group">
     {{#if available}}
       {{#if chat}}
         <li class="arrange-fill">
@@ -66,7 +66,7 @@
       {{else}}
         {{#if returnCall}}
           <li class="arrange-fill">
-            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get Return Call</a>
           </li>
         {{/if}}
       {{/if}}
