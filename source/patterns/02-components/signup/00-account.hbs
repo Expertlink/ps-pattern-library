@@ -31,16 +31,18 @@ description: Step one of the signup form for new customers.
   </div>
 
   <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
-
-  <div class="form-group collapse promo-group arrange arrange-gutter" id="form-group-promo">
-    <div class="arrange-fill">
-      <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-      <p class="help-block is-error-msg">Invalid code.</p>
-    </div>
-    <div class="arrange-fill">
-      <button class="btn btn-primary apply-btn">Apply</button>
+  <div class="collapse promo-group" id="form-group-promo">
+    <div class="form-group arrange arrange-gutter">
+      <div class="arrange-fill">
+        <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+        <p class="help-block is-error-msg">Invalid code.</p>
+      </div>
+      <div class="arrange-fill">
+        <button class="btn btn-primary apply-btn">Apply</button>
+      </div>
     </div>
   </div>
+  
   <div class="form-group form-group-required">
     <label class="control-label" for="signupName">Your name</label>
     <input type="text" class="form-control" id="signupName" />
