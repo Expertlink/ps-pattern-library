@@ -261,6 +261,16 @@
       }
     };
 
+    this.hasCardType = function() {
+      return (this.cardType &&
+              this.cardType !== 'default' &&
+              this.cards[this.cardType]);
+    };
+
+    this.getCardInfo = function() {
+      return (this.hasCardType()) ? this.cards[this.cardType] : false;
+    };
+
     this.updateCardType = function() {
       var newTypeName = this.cardType || 'default';
       this.$element.removeClass(this.cardClasses).addClass('is-' + newTypeName);
@@ -302,23 +312,38 @@
       var cardDigits = this.currentValue.split(''),
       chunks         = [],
       numberLength   = cardDigits.length,
-      chunkLength    = 4,
       masked         = '',
-      separator      = ' ';
-      if (!this.isError) {
-        for(var i=0; i <= numberLength; i+= chunkLength) {
-          if (numberLength >= i + chunkLength) {
-            chunks.push(cardDigits.slice(i, i+chunkLength).join(''));
-          } else if ( numberLength > i) {
-            chunks.push(cardDigits.slice(i).join(''));
+      separator      = ' ',
+      chunkIndex     = 0,
+      cardInfo, i;
+
+      function chunkIsFull(cardInfo, chunkIndex) {
+        if (typeof cardInfo.chunks !== 'undefined' ||
+            typeof cardInfo.chunks[chunkIndex] !== 'undefined') {
+          if (chunks[chunkIndex].length >= cardInfo.chunks[chunkIndex] &&
+              cardInfo.chunks[chunkIndex + 1] !== undefined) {
+            return true;
           }
         }
-        masked        = chunks.join(separator); // New masked value
-        if (numberLength % chunkLength === 0 &&
-          numberLength > 0 &&
-          numberLength < this.maxLength) {
-            masked += separator; // Add a trailing space
+        return false;
+      }
+
+      if (!this.isError &&
+           this.hasCardType()) {
+        chunks.push([]);
+        cardInfo = this.getCardInfo();
+        for (i = 0; i <= numberLength; i++) {
+          if (chunkIsFull(cardInfo, chunkIndex)) {
+            chunks.push([]); // Create a new chunk
+          }
+          chunkIndex = chunks.length - 1;
+          chunks[chunkIndex].push(cardDigits[i]); // Push to current chunk
         }
+        for (var chunk in chunks) {
+          chunks[chunk] = chunks[chunk].join('');
+        }
+        masked        = chunks.join(separator); // New masked value
+
         this.lastMaskValue = this.maskValue;
         this.maskValue     = masked;
         this.afterFormatMask();
