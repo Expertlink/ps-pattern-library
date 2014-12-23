@@ -68,7 +68,46 @@
 
   };
 
-  InputMask.DEFAULTS = {};
+  InputMask.DEFAULTS = {
+    validCards     : ['visa', 'amex', 'discover', 'mastercard', 'dinersclub'],
+    cards          : {
+      amex :   {
+        pattern: /^3(4|7)/,
+        minLength: 15,
+        maxLength: 15,
+        chunks: [4,6,5],
+        cvvLength: 4
+      },
+      dinersclub: {
+        pattern: /3(?:0[0-5]|[68][0-9])/,
+        minLength: 14,
+        maxLength: 14,
+        chunks: [5,4,5],
+        cvvLength: 3
+      },
+      discover: {
+        pattern: /^6011(?!31)(?=\d{2})/,
+        minLength: 16,
+        maxLength: 16,
+        chunks: [4,4,4,4],
+        cvvLength: 3
+      },
+      mastercard: {
+        pattern: /^5[1-5]/,
+        minLength: 16,
+        maxLength: 16,
+        chunks: [4,4,4,4],
+        cvvLength: 3
+      },
+      visa: {
+        pattern: /^4/,
+        minLength: 13,
+        maxLength: 16,
+        chunks: [4,4,4,4],
+        cvvLength: 3
+      }
+    }
+  };
   InputMask.PLUGIN_NAME = 'c4-input-mask';
 
   InputMask.factory = function(element, maskType, options) {
@@ -76,6 +115,7 @@
     newMask;
 
     if (typeof InputMask[ctor] !== 'function') {
+      console.log(ctor, 'problem');
       throw {
         name: 'Error',
         message: ctor + ' does not exist (is not an available mask-type)'
@@ -114,8 +154,6 @@
   InputMask.prototype.fetchMaskValue = function() {
     return this.$inputEl.val();
   };
-  InputMask.prototype.setErrorMessage = function(newErrorMessage) { }; // REFACTORME
-  InputMask.prototype.getErrorMessage = function() { }; // REFACTORME
 
   InputMask.prototype.setCurrentValue = function(newValue) {
     this.lastValue = this.currentValue;
@@ -184,22 +222,20 @@
   };
 
   InputMask.CreditCardMask = function(element, options) {
-    console.log('credit');
-    this.minLength = 15;
-    this.maxLength = 16;
-    this.errorMessage = 'Sorry, that doesn\'t look like a valid card number';
-    this.cardType     = null;
-    this.validCardTypes = ['visa', 'amex', 'discover', 'mastercard']; // TODO
-    this.cardClasses  = ['is-default'];
-    this.cardPatterns =  {
-      'visa'              : /^4/,
-      'mastercard'        : /^5[1-5]/,
-      'amex'              : /^3(4|7)/,
-      'discover'          : /^6011(?!31)(?=\d{2})/
-    }; // TODO
+    this.validCardTypes = options.validCards;
+    //this.cards          = options.cards;
+    this.cards          = {};
+    this.cardType       = '';
+    this.cardClasses    = ['is-default'];
+    var cardName;
 
-    for (var thing in this.validCardTypes) {
-      this.cardClasses.push('is-' + this.validCardTypes[thing]);
+    for (var cardIndex in this.validCardTypes) {
+      cardName = this.validCardTypes[cardIndex];
+      if (typeof options.cards[cardName] !== 'undefined') {
+        this.cards[cardName]          = options.cards[cardName];
+        this.cards[cardName].cssClass = 'is-' + cardName;
+        this.cardClasses.push(this.cards[cardName].cssClass);
+      }
     }
     this.cardClasses = this.cardClasses.join(' ');
 
@@ -212,32 +248,51 @@
 
     this.checkCardType = function(cardNumber) {
       var newCardType = null;
-      for (var card in this.cardPatterns) {
-        if (this.cardPatterns[card].test(cardNumber)) {
-          newCardType = card;
+      var cardName;
+      for (cardName in this.cards) {
+        if (this.cards[cardName].pattern.test(cardNumber)) {
+          newCardType = cardName;
         }
       }
       if (newCardType !== this.cardType) {
         this.cardType = newCardType;
-        this.$element.trigger('cardTypeChange', [this.cardType, this]);
+        this.$element.trigger('cardTypeChange', [this.cardType, this.cards[this.cardType], this]);
         this.updateCardType();
       }
     };
 
+    this.hasCardType = function() {
+      return (this.cardType &&
+              this.cardType !== 'default' &&
+              this.cards[this.cardType]);
+    };
+
+    this.getCardInfo = function() {
+      return (this.hasCardType()) ? this.cards[this.cardType] : false;
+    };
+
     this.updateCardType = function() {
-      var newTypeName = (this.cardType !== null) ? this.cardType : 'default';
+      var newTypeName = this.cardType || 'default';
       this.$element.removeClass(this.cardClasses).addClass('is-' + newTypeName);
     };
 
     this.validate = function(cardNumber) {
-      var numberValid     = false,
+      var numberValid = false,
       numberError     = false,
       numberComplete  = false,
       nCheck          = 0,
       nDigit          = 0,
-      bEven           = false;
+      bEven           = false,
+      minLength       = 16,
+      maxLength       = 16,
+      cardInfo        = this.getCardInfo();
 
-      if (/[^0-9\s]+/.test(cardNumber) || cardNumber.length > this.maxLength) {
+      if (cardInfo) {
+        minLength = cardInfo.minLength;
+        maxLength = cardInfo.maxLength;
+      }
+
+      if (/[^0-9\s]+/.test(cardNumber) || cardNumber.length > maxLength) {
         numberError = true;
       } else { // Luhn check
         cardNumber = cardNumber.replace(/\D/g, '');
@@ -252,9 +307,9 @@
         }
         numberValid = (nCheck % 10) === 0;
       }
-      if (numberValid && cardNumber.length >= this.minLength) {
+      if (numberValid && cardNumber.length >= minLength) {
         numberComplete = true;
-      } else if (cardNumber.length >= this.maxLength && !numberValid) {
+      } else if (cardNumber.length >= maxLength && !numberValid) {
         numberError = true;
       }
       this.afterValidate(numberError, numberComplete);
@@ -265,23 +320,38 @@
       var cardDigits = this.currentValue.split(''),
       chunks         = [],
       numberLength   = cardDigits.length,
-      chunkLength    = 4,
       masked         = '',
-      separator      = ' ';
-      if (!this.isError) {
-        for(var i=0; i <= numberLength; i+= chunkLength) {
-          if (numberLength >= i + chunkLength) {
-            chunks.push(cardDigits.slice(i, i+chunkLength).join(''));
-          } else if ( numberLength > i) {
-            chunks.push(cardDigits.slice(i).join(''));
+      separator      = ' ',
+      chunkIndex     = 0,
+      cardInfo, i;
+
+      function chunkIsFull(cardInfo, chunkIndex) {
+        if (typeof cardInfo.chunks !== 'undefined' ||
+            typeof cardInfo.chunks[chunkIndex] !== 'undefined') {
+          // If this chunk is full _and_ there is a subsequent chunk to fill
+          if (chunks[chunkIndex].length >= cardInfo.chunks[chunkIndex] &&
+              cardInfo.chunks[chunkIndex + 1] !== undefined) {
+            return true;
           }
         }
-        masked        = chunks.join(separator); // New masked value
-        if (numberLength % chunkLength === 0 &&
-          numberLength > 0 &&
-          numberLength < this.maxLength) {
-            masked += separator; // Add a trailing space
+        return false;
+      }
+
+      if (!this.isError &&
+           this.hasCardType()) {
+        chunks.push([]);
+        cardInfo = this.getCardInfo();
+        for (i = 0; i <= numberLength; i++) {
+          if (chunkIsFull(cardInfo, chunkIndex)) {
+            chunks.push([]); // Create a new chunk
+          }
+          chunkIndex = chunks.length - 1;
+          chunks[chunkIndex].push(cardDigits[i]); // Push to current chunk
         }
+        for (var chunk in chunks) {
+          chunks[chunk] = chunks[chunk].join('');
+        }
+        masked        = chunks.join(separator); // New masked value
         this.lastMaskValue = this.maskValue;
         this.maskValue     = masked;
         this.afterFormatMask();
@@ -291,8 +361,6 @@
   };
 
   InputMask.ExpirationDateMask = function(element, options) {
-    console.log('expiration');
-    this.errorMessage = 'Please enter your card\'s future expiration date in the format MM/YY'; // TODO
     this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
 
     this.fetchValue = function() {
@@ -366,32 +434,30 @@
       }
       this.afterValidate(valueError, valueComplete);
     };
-
   };
 
   InputMask.CVVMask = function(element, options) {
-    console.log('cvv');
     this.cardNumberInputName = this.$element.data('mask-cvv-for');
     this.cardType            = 'default';
-    this.completeLength      = 3;
+    this.cardInfo            = {};
 
-    if (this.cardNumberInputName) {
+    if (this.cardNumberInputName) { // "Link" to card number input
       this.$cardEl = $('input[name="' + this.cardNumberInputName + '"]').parents('[data-mask]').first();
-      this.$cardEl.on('cardTypeChange', $.proxy(function(event, newCardType) {
-        this.cardType = newCardType;
-        this.validate(this.fetchValue());
+      this.$cardEl.on('cardTypeChange', $.proxy(function(event, newCardType, newCardInfo) {
+        if (newCardInfo !== undefined) {
+          this.cardType = newCardType;
+          this.cardInfo = newCardInfo;
+          this.validate(this.fetchValue());
+        }
       }, this));
     }
-    this.getErrorMessage = function() {
-      return 'Please enter your card\'s ' + this.completeLength + '-digit security code'; // TODO
-    };
     this.validate = function(fieldValue) {
-      var valueComplete = false,
-      valueError    = false;
-      this.completeLength = (this.cardType && this.cardType === 'amex') ? 4 : 3;
-      if (/[^0-9]+/.test(fieldValue) || fieldValue.length > this.completeLength) {
+      var valueComplete  = false,
+          valueError     = false,
+          completeLength = (this.cardInfo.cvvLength) ? this.cardInfo.cvvLength : 3;
+      if (/[^0-9]+/.test(fieldValue) || fieldValue.length > completeLength) {
         valueError = true;
-      } else if(fieldValue.length === this.completeLength) {
+      } else if(fieldValue.length === completeLength) {
         valueComplete = true;
       }
       this.afterValidate(valueError, valueComplete);
@@ -407,7 +473,6 @@
       if (!data && maskType) {
         $this.data(InputMask.PLUGIN_NAME + '_plugin', InputMask.factory(this, maskType + 'Mask', options));
       }
-
     });
   }
 

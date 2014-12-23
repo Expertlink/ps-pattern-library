@@ -4,28 +4,8 @@ description: Step two of the signup form for new customers.
 
 <form role="form">
   <h3>Billing Information</h3>
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupCCName">Name on card</label>
-    <input type="text" class="form-control" id="signupCCName" value="" >
-  </div>
-  <div class="form-group form-group-required has-cards knows-card is-visa" data-mask data-mask-type="CreditCard">
-    <label class="control-label" for="signupCCNumber">Credit card number</label>
-    <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-    <ul class="creditcards">
-      <li class="creditcard  creditcard-visa">Visa</li><li class="creditcard  creditcard-mastercard">MasterCard</li><li class="creditcard  creditcard-discover">Discover</li><li class="creditcard  creditcard-amex">American Express</li><li class="creditcard  creditcard-dinersclub">Diner's Club</li>
-    </ul>
-  </div>
-  <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="expiration-date">
-      <label class="control-label" for="signupCCExp">Expiration</label>
-      <input type="text" class="form-control" id="signupCCExp" placeholder="MM / YY" pattern="[0-9]*" maxlength="5" />
-    </div>
-    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
-      <label class="control-label" for="signupCCCode">Security code</label>
-      <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
-      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
-    </div>
-  </div>
+  {{> forms/payment-fields }}
+
   <div class="form-group form-group-required">
     <label class="control-label" for="signupStreet">Street address 1</label>
     <input type="text" class="form-control" id="signupStreet" />
@@ -68,7 +48,7 @@ description: Step two of the signup form for new customers.
 			<option value="4">Alabama</option>
 			<option value="5">Arkansas</option>
 			<option value="6">Arizona</option>
-			
+
       </select>
     </div>
   </div>
