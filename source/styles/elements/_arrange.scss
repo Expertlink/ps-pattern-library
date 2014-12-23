@@ -134,6 +134,16 @@ $arrange-gutter-size: 10px !default;
   width: 1%;
 }
 
+@media (max-width: $screen-sm-max) {
+  .arrange-equal-sm {
+    table-layout: fixed;
+    width: 100%; /* 1 */
+    > .arrange-fill, > .arrange-fit {
+      width: 1%;
+    }
+  }
+}  
+
 /* Gutter modifier
    ========================================================================== */
 
