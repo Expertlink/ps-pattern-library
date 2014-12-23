@@ -75,31 +75,36 @@
         pattern: /^3(4|7)/,
         minLength: 15,
         maxLength: 15,
-        chunks: [4,6,5]
+        chunks: [4,6,5],
+        cvvLength: 4
       },
       dinersclub: {
         pattern: /3(?:0[0-5]|[68][0-9])/,
         minLength: 14,
         maxLength: 14,
-        chunks: [5,4,5]
+        chunks: [5,4,5],
+        cvvLength: 3
       },
       discover: {
         pattern: /^6011(?!31)(?=\d{2})/,
         minLength: 16,
         maxLength: 16,
-        chunks: [4,4,4,4]
+        chunks: [4,4,4,4],
+        cvvLength: 3
       },
       mastercard: {
         pattern: /^5[1-5]/,
         minLength: 16,
         maxLength: 16,
-        chunks: [4,4,4,4]
+        chunks: [4,4,4,4],
+        cvvLength: 3
       },
       visa: {
         pattern: /^4/,
         minLength: 13,
         maxLength: 16,
-        chunks: [4,4,4,4]
+        chunks: [4,4,4,4],
+        cvvLength: 3
       }
     }
   };
@@ -149,8 +154,6 @@
   InputMask.prototype.fetchMaskValue = function() {
     return this.$inputEl.val();
   };
-  InputMask.prototype.setErrorMessage = function(newErrorMessage) { }; // REFACTORME
-  InputMask.prototype.getErrorMessage = function() { }; // REFACTORME
 
   InputMask.prototype.setCurrentValue = function(newValue) {
     this.lastValue = this.currentValue;
@@ -358,7 +361,6 @@
   };
 
   InputMask.ExpirationDateMask = function(element, options) {
-    this.errorMessage = 'Please enter your card\'s future expiration date in the format MM/YY'; // TODO
     this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
 
     this.fetchValue = function() {
@@ -432,31 +434,30 @@
       }
       this.afterValidate(valueError, valueComplete);
     };
-
   };
 
   InputMask.CVVMask = function(element, options) {
     this.cardNumberInputName = this.$element.data('mask-cvv-for');
     this.cardType            = 'default';
-    this.completeLength      = 3;
+    this.cardInfo            = {};
 
     if (this.cardNumberInputName) {
       this.$cardEl = $('input[name="' + this.cardNumberInputName + '"]').parents('[data-mask]').first();
-      this.$cardEl.on('cardTypeChange', $.proxy(function(event, newCardType) {
-        this.cardType = newCardType;
-        this.validate(this.fetchValue());
+      this.$cardEl.on('cardTypeChange', $.proxy(function(event, newCardType, newCardInfo) {
+        if (newCardInfo !== undefined) {
+          this.cardType = newCardType;
+          this.cardInfo = newCardInfo;
+          this.validate(this.fetchValue());
+        }
       }, this));
     }
-    this.getErrorMessage = function() {
-      return 'Please enter your card\'s ' + this.completeLength + '-digit security code'; // TODO
-    };
     this.validate = function(fieldValue) {
-      var valueComplete = false,
-      valueError    = false;
-      this.completeLength = (this.cardType && this.cardType === 'amex') ? 4 : 3;
-      if (/[^0-9]+/.test(fieldValue) || fieldValue.length > this.completeLength) {
+      var valueComplete  = false,
+          valueError     = false,
+          completeLength = (this.cardInfo.cvvLength) ? this.cardInfo.cvvLength : 3;
+      if (/[^0-9]+/.test(fieldValue) || fieldValue.length > completeLength) {
         valueError = true;
-      } else if(fieldValue.length === this.completeLength) {
+      } else if(fieldValue.length === completeLength) {
         valueComplete = true;
       }
       this.afterValidate(valueError, valueComplete);
