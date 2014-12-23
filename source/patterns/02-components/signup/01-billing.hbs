@@ -81,11 +81,13 @@ description: Step two of the signup form for new customers.
 
 
 <script>
-$('.toggle-trigger').click(function (e) {
-  e.preventDefault();
+$(function() {
+  $('.toggle-trigger').click(function (e) {
+    e.preventDefault();
 
-  var $trigger = $(e.target);
-  $trigger.toggleClass('active');
-  $($trigger.attr('href')).toggleClass('hidden');
-});
+    var $trigger = $(e.target);
+    $trigger.toggleClass('active');
+    $($trigger.attr('href')).toggleClass('hidden');
+  });
+});  
 </script>
