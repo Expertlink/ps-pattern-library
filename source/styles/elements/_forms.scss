@@ -11,3 +11,10 @@
 .has-error .is-error-msg {
   display: block;
 }
+
+.is-success-msg {
+  display: none;
+  .has-success & {
+    display: block;
+  }
+}
