@@ -5,10 +5,10 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
-  <div class="box-full box-default-sm box-lighter box-sheer">
+  <div class="box-full box-default-md box-lighter box-sheer">
     <div class="row no-gutters js-advisor-view-container">
-      <div class="col-xs-12 col-sm-3 js-advisor-view" id="advisor-menu">
-        <div class="u-margin visible-xs-block">
+      <div class="col-xs-12 col-md-3 js-advisor-view" id="advisor-menu">
+        <div class="u-margin hidden-md hidden-lg">
           {{> our-psychics/_filter-controls }}
         </div>
         {{> filters/filter-menu }}
@@ -16,13 +16,13 @@ status: inprogress
           {{> our-psychics/_filter-controls }}
         </div>
       </div>
-      <div class="col-xs-12 col-sm-9 js-advisor-view" id="advisor-main">
+      <div class="col-xs-12 col-md-9 js-advisor-view" id="advisor-main">
         {{! WIP }}
-        <div class="u-margin visible-xs-block text-right">
+        <div class="u-margin hidden-md hidden-lg text-right">
           <button class="btn btn-default btn-shaded" type="button" data-pushview="#advisor-menu">Filter</button>
         </div>
         {{! /WIP }}
-        <div class="u-margin-sides u-margin-top hidden-xs">
+        <div class="u-margin-sides u-margin-top hidden-xs hidden-sm">
           {{> tabs/tabs }}
         </div>
         {{> advisors/advisor-grid }}
