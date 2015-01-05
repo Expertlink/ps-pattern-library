@@ -5,14 +5,14 @@ status: inprogress
 <div class="advisor-tiles">
   <div class="row">
     {{#each advisor.list}}
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-md-6 col-lg-4">
         {{> advisors/_advisor-tile}}
       </div>
       {{#ifNth 2 @index}}
-        <div class="clearfix visible-sm-block"></div>
+        <div class="clearfix visible-md-block"></div>
       {{/ifNth}}
       {{#ifNth 3 @index}}
-        <div class="clearfix hidden-xs hidden-sm"></div>
+        <div class="clearfix visible-lg-block"></div>
       {{/ifNth}}
     {{/each}}
   </div>
