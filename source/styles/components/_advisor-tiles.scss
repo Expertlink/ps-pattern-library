@@ -1,7 +1,7 @@
 $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
 
 .advisor-tiles {
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     margin-left: $grid-gutter-width;
     margin-right: $grid-gutter-width;
   }
@@ -22,7 +22,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     z-index: 2;
   }
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     border-radius: $border-radius-large;
     border-width: 1px;
     margin-bottom: ($grid-gutter-width / 2);
@@ -55,7 +55,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   display: table;
   width: 100%;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     display: block;
   }
 }
@@ -65,7 +65,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   display: table-cell;
   vertical-align: middle;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     display: block;
   }
 }
@@ -75,7 +75,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   text-align: center;
   width: 1%;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     margin-bottom: ($line-height-computed / 2);
     padding-right: 0;
     width: 100%;
@@ -100,7 +100,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   position: relative;
   width: em(72px - ($line-height-computed / 2));
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     max-width: 100%;
     width: auto;
   }
@@ -127,7 +127,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   top: -10px;
   width: 35px;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     left: -20px;
     height: 54px;
     width: 54px;
@@ -141,7 +141,7 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   left: -7px;
   width: 64px;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md-min) {
     bottom: -4px;
     height: 52px;
     left: -20px;
