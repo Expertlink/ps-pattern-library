@@ -6,7 +6,7 @@
   min-width: 120px;
 }
 
-@media (min-width: $screen-sm) {
+@media (min-width: $screen-md-min) {
   .logo {
     background: url(/images/logo/ps-logo-tagline-stacked.png) 0 50% no-repeat;
 	  background-size: 100% auto;
@@ -21,7 +21,7 @@
   }
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-lg-min) {
   .logo {
     width: 40%;
     background-image: url(/images/logo/ps-logo-tagline.png);
