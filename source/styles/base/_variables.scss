@@ -72,6 +72,12 @@ $table-border-color: $tan;
 
 $btn-font-weight: bold;
 
+//== Media queries breakpoints
+
+$screen-sm-min: 480px;
+$screen-md-min: 704px;
+$screen-lg-min: 994px;
+
 //== Forms
 
 $input-border: $blue-gray;

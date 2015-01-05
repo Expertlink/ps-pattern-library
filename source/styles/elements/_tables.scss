@@ -1,8 +1,8 @@
 .table.table-collapse-xs {
-  @media (max-width: $screen-xs-max) {
+  @media (max-width: $screen-sm-max) {
     &, tr, td {
       display: block;
-    }  
+    }
     tr {
       padding-bottom: $arrange-gutter-size;
     }
