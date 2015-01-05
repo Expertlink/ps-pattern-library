@@ -4,9 +4,9 @@
  * are not redundant.
  */
 
-$container-page-max-width: $screen-md !default;
+$container-page-max-width: $screen-lg-min !default;
 $container-page-gutter: $grid-gutter-width !default;
-$container-page-gutter-breakpoint: $screen-sm !default;
+$container-page-gutter-breakpoint: $screen-md-min !default;
 
 .container-page {
   margin-left: auto;

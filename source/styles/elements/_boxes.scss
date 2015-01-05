@@ -9,7 +9,7 @@
   > *:last-child {
     margin-bottom: 0;
   }
-  
+
   > *:first-child {
     margin-top: 0;
   }
@@ -31,17 +31,17 @@
 }
 
 .box-default-sm {
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-sm-min) {
     @include make-default-box;
   }
 }
 .box-default-md {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-md-min) {
     @include make-default-box;
   }
 }
 .box-default-lg {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-lg-min) {
     @include make-default-box;
   }
 }
