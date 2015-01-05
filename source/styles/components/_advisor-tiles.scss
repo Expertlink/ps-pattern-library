@@ -159,3 +159,17 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     margin-right: 0;
   }
 }
+
+.arrange-equal-tile {
+  table-layout: fixed;
+  > .arrange-fill {
+    width: auto;
+  }
+  @media (max-width: $screen-sm) {
+     width: calc(100% + #{$arrange-gutter-size});
+    > .arrange-fill {
+      width: 1%;
+    }
+  }
+}  
+
