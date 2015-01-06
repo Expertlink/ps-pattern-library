@@ -159,10 +159,12 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     margin-right: 0;
   }
   &.stars {
-    height: 18px; // equals height of other paragraphs
+    height: 19px; // equals height of other paragraphs
   }
 }
 
+// If both buttons can take up 1/2 the space, they will be of equal width,
+// but if need a button can consume more of the available space.
 .advisor-tile-actions {
   width: calc(100% + #{$arrange-gutter-size});
   > .arrange-fill {
