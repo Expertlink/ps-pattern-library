@@ -160,16 +160,10 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.arrange-equal-tile {
-  table-layout: fixed;
+.advisor-tile-actions {
+  width: calc(100% + #{$arrange-gutter-size});
   > .arrange-fill {
-    width: auto;
-  }
-  @media (max-width: $screen-sm) {
-     width: calc(100% + #{$arrange-gutter-size});
-    > .arrange-fill {
-      width: 1%;
-    }
+    width: 50%;
   }
 }  
 
