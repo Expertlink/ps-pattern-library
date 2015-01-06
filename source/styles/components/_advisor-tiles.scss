@@ -158,6 +158,9 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   &:last-child {
     margin-right: 0;
   }
+  &.stars {
+    height: 18px; // equals height of other paragraphs
+  }
 }
 
 .advisor-tile-actions {
