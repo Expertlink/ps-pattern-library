@@ -1,0 +1,55 @@
+---
+fullWidth: true
+status: inprogress
+---
+
+<ul class="toolbar" role="tablist">
+  <li role="presentation">
+    <a role="tab" href="#" aria-selected="false">
+      <div>&clubs;</div>
+      Search
+    </a>
+  </li>
+  <li role="presentation">
+    <a role="tab" href="#" aria-selected="false">
+      <div>&diams;</div>
+      Sort
+    </a>
+  </li>
+  <li role="presentation">
+    <a role="tab" href="#" aria-selected="false">
+      <div>&hearts;</div>
+      Our Picks
+    </a>
+  </li>
+  <li role="presentation">
+    <a role="tab" href="#" aria-selected="false">
+      <div>&spades;</div>
+      Filter
+    </a>
+  </li>
+</ul>
+
+<script>
+$(function(){
+
+  $('.toolbar a').click(function (event) {
+    var $this = $(this);
+    var $item = $this.closest('li');
+    var $bar  = $this.closest('.tab-bar');
+
+    event.preventDefault();
+
+    $item.toggleClass('active');
+
+    if ($item.hasClass('active')) {
+      $item.removeClass('inactive');
+      $item.siblings().removeClass('active').addClass('inactive');
+    }
+    else {
+      $item.add($item.siblings()).removeClass('inactive');
+    }
+  });
+
+});
+</script>
