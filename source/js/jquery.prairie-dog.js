@@ -15,6 +15,7 @@
     this.options        = options;
     this.$element       = $(element);
     this.$parent        = this.options.parent ? $(this.options.parent) : this.$element.parent();
+    this.$trigger       = $(this.options.trigger).filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]');
     this.$backdrop      = null;
     this.isShown        = null;
     this.retainBackdrop = null;
@@ -24,7 +25,8 @@
 
   PrairieDog.DEFAULTS = {
     backdrop: true,
-    show: true
+    show: true,
+    trigger: '[data-toggle="prairie-dog"]'
   };
 
   PrairieDog.prototype.toggle = function () {
@@ -53,6 +55,7 @@
     this.$element[0].offsetWidth; // force reflow
     this.$element.addClass('in');
     this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
+    this.$trigger.addClass('active');
   };
 
   PrairieDog.prototype.hide = function (e) {
@@ -68,6 +71,7 @@
       .off('click.dismiss.vse.prairie-dog');
 
     this.backdrop();
+    this.$trigger.removeClass('active');
 
     if ($.support.transition) {
       this.$element
