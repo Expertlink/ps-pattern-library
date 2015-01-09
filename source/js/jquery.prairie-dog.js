@@ -93,10 +93,15 @@
     return this.each(function () {
       var $this   = $(this);
       var data    = $this.data('vse.prairie-dog');
-      var options = $.extend({}, PrairieDog.DEFAULTS, $this.data(), typeof option == 'object' && option);
+      var options = $.extend(
+        {},
+        PrairieDog.DEFAULTS,
+        $this.data(),
+        typeof option === 'object' && option
+      );
 
       if (!data) $this.data('vse.prairie-dog', (data = new PrairieDog(this, options)));
-      if (typeof option == 'string') {
+      if (typeof option === 'string') {
         data[option](_relatedTarget);
       }
       else if (options.show) {
@@ -115,7 +120,11 @@
     var $this   = $(this);
     var href    = $this.attr('href');
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))); // strip for ie7
-    var option  = $target.data('vse.prairie-dog') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data());
+    var option  = $target.data('vse.prairie-dog') ? 'toggle' : $.extend(
+      { remote: !/#/.test(href) && href },
+      $target.data(),
+      $this.data()
+    );
 
     if ($this.is('a')) e.preventDefault();
 
