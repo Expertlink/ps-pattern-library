@@ -5,25 +5,27 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
-
-  <div class="box-full box-default-md box-lighter box-sheer">
+  <div class="box-full box-default-lg box-lighter box-sheer">
 
     <div class="hidden-md hidden-lg">
       {{> toolbar/toolbar }}
     </div>
 
     <div class="row no-gutters prairie-dog-xs prairie-dog-sm" id="our-psychics-container">
+
       <div class="col-md-3" id="our-psychics-sidebar">
-        <div class="prairie-dog-dialog" id="our-psychics-filters" data-parent="#our-psychics-container">
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-bottom" id="our-psychics-filters" data-parent="#our-psychics-container">
+          <h4 class="u-no-margin u-padding hidden-xs hidden-sm">Filter by</h4>
           {{> filters/filter-menu }}
-          <div class="text-center u-margin">
+          <div class="text-center u-padding text-nowrap">
             <button class="btn btn-link" type="button" data-dismiss="prairie-dog"><span class="text-danger">Clear All</span></button>
             <button class="btn btn-success btn-shaded js-apply-button" type="button" data-dismiss="prairie-dog">Filter</button>
           </div>
         </div>
       </div>
+
       <div class="col-md-9">
-        <div class="u-margin-sides u-margin-top hidden-xs hidden-sm">
+        <div class="hidden-xs hidden-sm">
           {{> tabs/tabs }}
         </div>
         {{> advisors/advisor-grid }}
@@ -31,10 +33,10 @@ status: inprogress
           {{> pagination/states }}
         </div>
       </div>
+
     </div>
 
   </div>
-
 </div>
 
 {{> pages/_footer }}
