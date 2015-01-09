@@ -10,14 +10,18 @@ status: inprogress
       {{> toolbar/toolbar }}
     </div>
     <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
-      <div class="col-md-3" id="our-psychics-sidebar">
+      <div class="col-md-3">
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
+          {{> our-psychics/_sidebar-search }}
+        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-sort" data-parent="#our-psychics-container">
+          {{> our-psychics/_sidebar-sort }}
+        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-picks" data-parent="#our-psychics-container">
+          {{> our-psychics/_sidebar-picks }}
+        </div>
         <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-filters" data-parent="#our-psychics-container">
-          <h4 class="u-no-margin u-padding hidden-xs hidden-sm">Filter by</h4>
-          {{> filters/filter-menu }}
-          <div class="text-center u-padding text-nowrap">
-            <button class="btn btn-link" type="button" data-dismiss="prairie-dog"><span class="text-danger">Clear All</span></button>
-            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-dismiss="prairie-dog">Filter</button>
-          </div>
+          {{> our-psychics/_sidebar-filters }}
         </div>
       </div>
       <div class="col-md-9">
