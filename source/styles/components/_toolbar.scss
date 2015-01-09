@@ -26,7 +26,8 @@
     transition: color 300ms ease;
   }
 
-  .inactive a {
+  .inactive a,
+  a.inactive {
     color: $gray-lighter;
   }
 
@@ -37,7 +38,8 @@
     }
   }
 
-  .active a {
+  .active a,
+  a.active {
     color: $red;
     text-decoration: none;
   }
