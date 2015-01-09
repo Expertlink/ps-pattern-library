@@ -12,11 +12,12 @@
   // ============================
 
   var PrairieDog = function (element, options) {
-    this.options   = options;
-    this.$element  = $(element);
-    this.$parent   = this.options.parent ? $(this.options.parent) : this.$element.parent();
-    this.$backdrop = null;
-    this.isShown   = null;
+    this.options        = options;
+    this.$element       = $(element);
+    this.$parent        = this.options.parent ? $(this.options.parent) : this.$element.parent();
+    this.$backdrop      = null;
+    this.isShown        = null;
+    this.retainBackdrop = null;
   };
 
   PrairieDog.TRANSITION_DURATION = 300;
@@ -39,6 +40,7 @@
     var $openSiblings = this.$parent.find('.prairie-dog-dialog.open').not(this.$element);
     if ($openSiblings.length) {
       $openSiblings.one('hidden.vse.prairie-dog', $.proxy(this.showPrairieDog, this));
+      $openSiblings.prairieDog('startRetainingBackdrop');
       $openSiblings.prairieDog('hide');
     } else {
       this.showPrairieDog();
@@ -87,20 +89,20 @@
       this.$backdrop = this.$parent.find('.prairie-dog-backdrop');
 
       if (!this.$backdrop.length) {
-        this.$backdrop = $('<div class="prairie-dog-backdrop" />')
-          .prependTo(this.$parent)
-          .on('click.dismiss.vse.prairie-dog', $.proxy(function (e) {
-            if (e.target !== e.currentTarget) return;
-            this.hide();
-          }, this));
+        this.$backdrop = $('<div class="prairie-dog-backdrop" />').prependTo(this.$parent);
       }
+
+      this.$backdrop.on('click.dismiss.vse.prairie-dog', $.proxy(function (e) {
+        if (e.target !== e.currentTarget) return;
+        this.hide();
+      }, this));
 
       if (!this.$backdrop.hasClass('in')) {
         if ($.support.transition) this.$backdrop[0].offsetWidth; // force reflow
         this.$backdrop.addClass('in');
       }
 
-    } else if (!this.isShown && this.$backdrop) {
+    } else if (!this.isShown && !this.retainBackdrop && this.$backdrop) {
 
       this.$backdrop.removeClass('in');
 
@@ -112,6 +114,8 @@
         this.removeBackdrop();
       }
 
+    } else if (this.retainBackdrop) {
+      this.stopRetainingBackdrop();
     }
   };
 
@@ -120,80 +124,13 @@
     this.$backdrop = null;
   };
 
-  // var PrairieDog = function (element, options) {
-  //   this.options = options;
-  //   this.$element = $(element);
-  //   this.isShown = null;
-  // };
-  //
-  // PrairieDog.TRANSITION_DURATION = 300;
-  //
-  // PrairieDog.DEFAULTS = {
-  //   show: true
-  // };
-  //
-  // PrairieDog.prototype.toggle = function () {
-  //   return this.isShown ? this.hide() : this.show();
-  // };
-  //
-  // PrairieDog.prototype.show = function () {
-  //   var e    = $.Event('show.vse.prairie-dog');
-  //
-  //   this.$element.trigger(e);
-  //
-  //   if (this.isShown || e.isDefaultPrevented()) return;
-  //
-  //   this.isShown = true;
-  //
-  //   this.$element.addClass('open');
-  //   this.$element[0].offsetWidth; // force reflow
-  //   this.$element.addClass('in');
-  //
-  //   this.adjustHeight();
-  //
-  //   this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
-  // };
-  //
-  // PrairieDog.prototype.hide = function (e) {
-  //   if (e) e.preventDefault();
-  //
-  //   e = $.Event('hide.vse.prairie-dog');
-  //
-  //   this.$element.trigger(e);
-  //
-  //   if (!this.isShown || e.isDefaultPrevented()) return;
-  //
-  //   this.isShown = false;
-  //
-  //   this.$element
-  //     .removeClass('in')
-  //     .off('click.dismiss.vse.prairie-dog');
-  //
-  //   this.resetHeight();
-  //
-  //   if ($.support.transition) {
-  //     this.$element
-  //       .one('bsTransitionEnd', $.proxy(this.hidePrairieDog, this))
-  //       .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
-  //   }
-  //   else {
-  //     this.hidePrairieDog();
-  //   }
-  // };
-  //
-  // PrairieDog.prototype.hidePrairieDog = function () {
-  //   this.$element.removeClass('open');
-  //   this.$element.trigger('hidden.vse.prairie-dog');
-  // };
-  //
-  // PrairieDog.prototype.adjustHeight = function () {
-  //   var $dialog = this.$element.find('.prairie-dog-dialog');
-  //   this.$element.css('min-height', $dialog.height());
-  // };
-  //
-  // PrairieDog.prototype.resetHeight = function () {
-  //   this.$element.css('min-height', '');
-  // };
+  PrairieDog.prototype.startRetainingBackdrop = function () {
+    this.retainBackdrop = true;
+  };
+
+  PrairieDog.prototype.stopRetainingBackdrop = function () {
+    this.retainBackdrop = null;
+  };
 
   // PRAIRIE-DOG PLUGIN DEFINITION
   // =============================
