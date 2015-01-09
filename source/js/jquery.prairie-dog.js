@@ -56,6 +56,7 @@
     this.$element.addClass('in');
     this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
     this.$trigger.addClass('active');
+    this.adjustHeight();
   };
 
   PrairieDog.prototype.hide = function (e) {
@@ -65,6 +66,8 @@
     if (!this.isShown || e.isDefaultPrevented()) return;
 
     this.isShown = false;
+
+    this.adjustHeight();
 
     this.$element
       .removeClass('in')
@@ -134,6 +137,12 @@
 
   PrairieDog.prototype.stopRetainingBackdrop = function () {
     this.retainBackdrop = null;
+  };
+
+  PrairieDog.prototype.adjustHeight = function () {
+    this.$parent.css({
+      minHeight: this.isShown ? this.$element.height() : 0
+    });
   };
 
   // PRAIRIE-DOG PLUGIN DEFINITION
