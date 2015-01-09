@@ -12,46 +12,51 @@
   // ============================
 
   var PrairieDog = function (element, options) {
-    this.options = options;
-    this.$element = $(element);
-    this.isShown = null;
+    this.options   = options;
+    this.$element  = $(element);
+    this.$parent   = this.options.parent ? $(this.options.parent) : this.$element.parent();
+    this.$backdrop = null;
+    this.isShown   = null;
   };
 
   PrairieDog.TRANSITION_DURATION = 300;
 
   PrairieDog.DEFAULTS = {
+    backdrop: true,
     show: true
   };
 
-  PrairieDog.prototype.toggle = function (_relatedTarget) {
-    return this.isShown ? this.hide() : this.show(_relatedTarget);
+  PrairieDog.prototype.toggle = function () {
+    return this.isShown ? this.hide() : this.show();
   };
 
-  PrairieDog.prototype.show = function (_relatedTarget) {
-    var e    = $.Event('show.vse.prairie-dog', { relatedTarget: _relatedTarget });
-
+  PrairieDog.prototype.show = function () {
+    var e = $.Event('show.vse.prairie-dog');
     this.$element.trigger(e);
-
     if (this.isShown || e.isDefaultPrevented()) return;
-
     this.isShown = true;
 
+    var $openSiblings = this.$parent.find('.prairie-dog-dialog.open').not(this.$element);
+    if ($openSiblings.length) {
+      $openSiblings.one('hidden.vse.prairie-dog', $.proxy(this.showPrairieDog, this));
+      $openSiblings.prairieDog('hide');
+    } else {
+      this.showPrairieDog();
+    }
+  };
+
+  PrairieDog.prototype.showPrairieDog = function () {
+    this.backdrop();
     this.$element.addClass('open');
     this.$element[0].offsetWidth; // force reflow
     this.$element.addClass('in');
-
-    this.adjustHeight();
-
     this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
   };
 
   PrairieDog.prototype.hide = function (e) {
     if (e) e.preventDefault();
-
     e = $.Event('hide.vse.prairie-dog');
-
     this.$element.trigger(e);
-
     if (!this.isShown || e.isDefaultPrevented()) return;
 
     this.isShown = false;
@@ -60,14 +65,13 @@
       .removeClass('in')
       .off('click.dismiss.vse.prairie-dog');
 
-    this.resetHeight();
+    this.backdrop();
 
     if ($.support.transition) {
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hidePrairieDog, this))
         .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
-    }
-    else {
+    } else {
       this.hidePrairieDog();
     }
   };
@@ -77,19 +81,124 @@
     this.$element.trigger('hidden.vse.prairie-dog');
   };
 
-  PrairieDog.prototype.adjustHeight = function () {
-    var $dialog = this.$element.find('.prairie-dog-dialog');
-    this.$element.css('min-height', $dialog.height());
+  PrairieDog.prototype.backdrop = function () {
+    if (this.isShown && this.options.backdrop) {
+
+      this.$backdrop = this.$parent.find('.prairie-dog-backdrop');
+
+      if (!this.$backdrop.length) {
+        this.$backdrop = $('<div class="prairie-dog-backdrop" />')
+          .prependTo(this.$parent)
+          .on('click.dismiss.vse.prairie-dog', $.proxy(function (e) {
+            if (e.target !== e.currentTarget) return;
+            this.hide();
+          }, this));
+      }
+
+      if (!this.$backdrop.hasClass('in')) {
+        if ($.support.transition) this.$backdrop[0].offsetWidth; // force reflow
+        this.$backdrop.addClass('in');
+      }
+
+    } else if (!this.isShown && this.$backdrop) {
+
+      this.$backdrop.removeClass('in');
+
+      if ($.support.transition) {
+        this.$element
+          .one('bsTransitionEnd', $.proxy(this.removeBackdrop, this))
+          .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
+      } else {
+        this.removeBackdrop();
+      }
+
+    }
   };
 
-  PrairieDog.prototype.resetHeight = function () {
-    this.$element.css('min-height', '');
+  PrairieDog.prototype.removeBackdrop = function () {
+    this.$backdrop && this.$backdrop.remove();
+    this.$backdrop = null;
   };
+
+  // var PrairieDog = function (element, options) {
+  //   this.options = options;
+  //   this.$element = $(element);
+  //   this.isShown = null;
+  // };
+  //
+  // PrairieDog.TRANSITION_DURATION = 300;
+  //
+  // PrairieDog.DEFAULTS = {
+  //   show: true
+  // };
+  //
+  // PrairieDog.prototype.toggle = function () {
+  //   return this.isShown ? this.hide() : this.show();
+  // };
+  //
+  // PrairieDog.prototype.show = function () {
+  //   var e    = $.Event('show.vse.prairie-dog');
+  //
+  //   this.$element.trigger(e);
+  //
+  //   if (this.isShown || e.isDefaultPrevented()) return;
+  //
+  //   this.isShown = true;
+  //
+  //   this.$element.addClass('open');
+  //   this.$element[0].offsetWidth; // force reflow
+  //   this.$element.addClass('in');
+  //
+  //   this.adjustHeight();
+  //
+  //   this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
+  // };
+  //
+  // PrairieDog.prototype.hide = function (e) {
+  //   if (e) e.preventDefault();
+  //
+  //   e = $.Event('hide.vse.prairie-dog');
+  //
+  //   this.$element.trigger(e);
+  //
+  //   if (!this.isShown || e.isDefaultPrevented()) return;
+  //
+  //   this.isShown = false;
+  //
+  //   this.$element
+  //     .removeClass('in')
+  //     .off('click.dismiss.vse.prairie-dog');
+  //
+  //   this.resetHeight();
+  //
+  //   if ($.support.transition) {
+  //     this.$element
+  //       .one('bsTransitionEnd', $.proxy(this.hidePrairieDog, this))
+  //       .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
+  //   }
+  //   else {
+  //     this.hidePrairieDog();
+  //   }
+  // };
+  //
+  // PrairieDog.prototype.hidePrairieDog = function () {
+  //   this.$element.removeClass('open');
+  //   this.$element.trigger('hidden.vse.prairie-dog');
+  // };
+  //
+  // PrairieDog.prototype.adjustHeight = function () {
+  //   var $dialog = this.$element.find('.prairie-dog-dialog');
+  //   this.$element.css('min-height', $dialog.height());
+  // };
+  //
+  // PrairieDog.prototype.resetHeight = function () {
+  //   this.$element.css('min-height', '');
+  // };
 
   // PRAIRIE-DOG PLUGIN DEFINITION
   // =============================
 
-  function Plugin(option, _relatedTarget) {
+  function Plugin(option) {
     return this.each(function () {
       var $this   = $(this);
       var data    = $this.data('vse.prairie-dog');
@@ -100,12 +209,14 @@
         typeof option === 'object' && option
       );
 
-      if (!data) $this.data('vse.prairie-dog', (data = new PrairieDog(this, options)));
-      if (typeof option === 'string') {
-        data[option](_relatedTarget);
+      if (!data) {
+        $this.data('vse.prairie-dog', (data = new PrairieDog(this, options)));
       }
-      else if (options.show) {
-        data.show(_relatedTarget);
+
+      if (typeof option === 'string') {
+        data[option]();
+      } else if (options.show) {
+        data.show();
       }
     });
   }
@@ -120,11 +231,7 @@
     var $this   = $(this);
     var href    = $this.attr('href');
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))); // strip for ie7
-    var option  = $target.data('vse.prairie-dog') ? 'toggle' : $.extend(
-      { remote: !/#/.test(href) && href },
-      $target.data(),
-      $this.data()
-    );
+    var option  = $target.data('vse.prairie-dog') ? 'toggle' : $.extend($target.data(), $this.data());
 
     if ($this.is('a')) e.preventDefault();
 

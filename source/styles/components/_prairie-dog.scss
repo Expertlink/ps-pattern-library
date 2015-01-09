@@ -3,46 +3,84 @@
   position: relative;
   transition: min-height 300ms ease-out;
 
-  .prairie-dog-dialog,
-  .prairie-dog-overlay {
-    display: none;
+  .prairie-dog-backdrop,
+  .prairie-dog-dialog {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
   }
 
-  &.open {
-    .prairie-dog-dialog,
-    .prairie-dog-overlay {
-      display: block;
+  .prairie-dog-backdrop {
+    background: #fff;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+    z-index: 2;
+
+    &.in {
+      opacity: 0.8;
     }
   }
 
   .prairie-dog-dialog {
     background: #fff;
     box-shadow: 0px 1px 6px rgba(0,0,0,0.25);
+    display: none;
     transform: translateY(-100%);
     transition: transform 300ms ease-out;
     z-index: 3;
     @include clearfix;
+
+    &.open {
+      display: block;
+    }
+
+    &.in {
+      transform: translateY(0);
+    }
   }
 
-  &.in .prairie-dog-dialog {
-    transform: translateY(0);
-  }
-
-  .prairie-dog-overlay {
-    background: #fff;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 300ms ease-out;
-    z-index: 2;
-  }
-
-  &.in .prairie-dog-overlay {
-    opacity: 0.8;
-  }
+  // .prairie-dog-dialog,
+  // .prairie-dog-overlay {
+  //   display: none;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   left: 0;
+  // }
+  //
+  // &.open {
+  //   .prairie-dog-dialog,
+  //   .prairie-dog-overlay {
+  //     display: block;
+  //   }
+  // }
+  //
+  // .prairie-dog-dialog {
+  //   background: #fff;
+  //   box-shadow: 0px 1px 6px rgba(0,0,0,0.25);
+  //   transform: translateY(-100%);
+  //   transition: transform 300ms ease-out;
+  //   z-index: 3;
+  //   @include clearfix;
+  // }
+  //
+  // &.in .prairie-dog-dialog {
+  //   transform: translateY(0);
+  // }
+  //
+  // .prairie-dog-overlay {
+  //   background: #fff;
+  //   bottom: 0;
+  //   opacity: 0;
+  //   transition: opacity 300ms ease-out;
+  //   z-index: 2;
+  // }
+  //
+  // &.in .prairie-dog-overlay {
+  //   opacity: 0.8;
+  // }
 }
 
 .prairie-dog {
