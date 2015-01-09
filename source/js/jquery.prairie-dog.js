@@ -62,11 +62,14 @@
 
     this.resetHeight();
 
-    $.support.transition ?
+    if ($.support.transition) {
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hidePrairieDog, this))
-        .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION) :
+        .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
+    }
+    else {
       this.hidePrairieDog();
+    }
   };
 
   PrairieDog.prototype.hidePrairieDog = function () {
@@ -94,13 +97,13 @@
 
       if (!data) $this.data('vse.prairie-dog', (data = new PrairieDog(this, options)));
       if (typeof option == 'string') {
-        data[option](_relatedTarget)
+        data[option](_relatedTarget);
       }
       else if (options.show) {
-        data.show(_relatedTarget)
+        data.show(_relatedTarget);
       }
-    })
-  };
+    });
+  }
 
   $.fn.prairieDog             = Plugin;
   $.fn.prairieDog.Constructor = PrairieDog;
