@@ -5,7 +5,7 @@
  */
 
 $container-page-max-width: $screen-lg-min !default;
-$container-page-gutter: $grid-gutter-width !default;
+$container-page-gutter: ($grid-gutter-width / 2) !default;
 $container-page-gutter-breakpoint: $screen-lg-min !default;
 
 .container-page {
@@ -24,21 +24,57 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
  * Inspired by: http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/
  */
 
-.row.no-gutters {
-  margin-left: 0;
-  margin-right: 0;
-}
+@mixin make-no-gutters-helpers ($suffix: '') {
+  .row.no-gutters#{$suffix} {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-%no-gutters-col-base {
-  padding-left: 0;
-  padding-right: 0;
-}
+  /**
+   * Note, this avoids @extends and placeholders so it can work from within
+   * media queries, a current shortcoming of Sass. I've chosen to keep this
+   * readable here rather than resorting to string concatenation to decrease
+   * duplication (especially since the rules themselves are much smaller than
+   * the selectors themselves).
+   */
 
-@for $i from 1 through $grid-columns {
-  .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
-    .row.no-gutters > &,
-    &.no-gutters {
-      @extend %no-gutters-col-base;
+  .container,
+  .container-fluid,
+  .container-page {
+    &.no-gutters#{$suffix} {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
+
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+      .container.no-gutters#{$suffix} > &,
+      .container-fluid.no-gutters#{$suffix} > &,
+      .container-page.no-gutters#{$suffix} > &,
+      .row.no-gutters#{$suffix} > &,
+      &.no-gutters#{$suffix} {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@include make-no-gutters-helpers();
+
+@media (max-width: $screen-xs-max) {
+  @include make-no-gutters-helpers('-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include make-no-gutters-helpers('-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include make-no-gutters-helpers('-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include make-no-gutters-helpers('-lg');
 }
