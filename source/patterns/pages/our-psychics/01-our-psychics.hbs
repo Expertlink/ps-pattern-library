@@ -5,23 +5,24 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
+
   <div class="box-full box-default-md box-lighter box-sheer">
-    <div class="row no-gutters js-advisor-view-container">
-      <div class="col-xs-12 col-md-3 js-advisor-view" id="advisor-menu">
-        <div class="u-margin hidden-md hidden-lg">
-          {{> our-psychics/_filter-controls }}
-        </div>
-        {{> filters/filter-menu }}
-        <div class="u-margin">
-          {{> our-psychics/_filter-controls }}
+
+    <div class="hidden-md hidden-lg">
+      {{> toolbar/toolbar }}
+    </div>
+
+    <div class="row no-gutters prairie-dog-xs prairie-dog-sm" id="our-psychics-container">
+      <div class="col-md-3" id="our-psychics-sidebar">
+        <div class="prairie-dog-dialog" id="our-psychics-filters" data-parent="#our-psychics-container">
+          {{> filters/filter-menu }}
+          <div class="text-center u-margin">
+            <button class="btn btn-link" type="button" data-dismiss="prairie-dog"><span class="text-danger">Clear All</span></button>
+            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-dismiss="prairie-dog">Filter</button>
+          </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-9 js-advisor-view" id="advisor-main">
-        {{! WIP }}
-        <div class="u-margin hidden-md hidden-lg text-right">
-          <button class="btn btn-default btn-shaded" type="button" data-pushview="#advisor-menu">Filter</button>
-        </div>
-        {{! /WIP }}
+      <div class="col-md-9">
         <div class="u-margin-sides u-margin-top hidden-xs hidden-sm">
           {{> tabs/tabs }}
         </div>
@@ -31,25 +32,9 @@ status: inprogress
         </div>
       </div>
     </div>
+
   </div>
+
 </div>
-
-<script>
-
-function canUseSlideView () {
-  return $('.js-advisor-view:visible').first().width() === $(window).width();
-}
-
-var slideView = $('.js-advisor-view-container').simpleSlideView({
-  views:      '.js-advisor-view',
-  activeView: '#advisor-main',
-  deferOn:    !canUseSlideView()
-});
-
-$(window).resize(function(){
-  slideView.toggle(canUseSlideView());
-});
-
-</script>
 
 {{> pages/_footer }}
