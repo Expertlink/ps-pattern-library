@@ -12,19 +12,19 @@
   // ============================
 
   var PrairieDog = function (element, options) {
-    this.options        = options;
-    this.$element       = $(element);
-    this.$parent        = this.options.parent ? $(this.options.parent) : this.$element.parent();
-    this.$trigger       = $(this.options.trigger).filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]');
-    this.$backdrop      = null;
-    this.isShown        = null;
-    this.retainBackdrop = null;
+    this.options  = options;
+    this.$element = $(element);
+    this.$parent  = this.options.parent ? $(this.options.parent) : this.$element.parent();
+    this.$trigger = $(this.options.trigger).filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]');
+    this.$overlay = this.$parent.find('.prairie-dog-overlay');
+    this.$bg      = this.$parent.find('.prairie-dog-bg');
+    this.isShown  = null;
+    this.handoff  = null;
   };
 
   PrairieDog.TRANSITION_DURATION = 300;
 
   PrairieDog.DEFAULTS = {
-    backdrop: true,
     show: true,
     trigger: '[data-toggle="prairie-dog"]'
   };
@@ -42,7 +42,7 @@
     var $openSiblings = this.$parent.find('.prairie-dog-dialog.open').not(this.$element);
     if ($openSiblings.length) {
       $openSiblings.one('hidden.vse.prairie-dog', $.proxy(this.showPrairieDog, this));
-      $openSiblings.prairieDog('startRetainingBackdrop');
+      $openSiblings.prairieDog('startHandoff');
       $openSiblings.prairieDog('hide');
     } else {
       this.showPrairieDog();
@@ -50,13 +50,20 @@
   };
 
   PrairieDog.prototype.showPrairieDog = function () {
-    this.backdrop();
+    // parent
+    if (!this.$parent.hasClass('open')) {
+      this.adjustHeight();
+      this.$parent.addClass('open');
+      this.$parent[0].offsetWidth; // force reflow
+      this.$parent.addClass('in');
+    }
+    // this dialog
     this.$element.addClass('open');
     this.$element[0].offsetWidth; // force reflow
     this.$element.addClass('in');
     this.$element.on('click.dismiss.vse.prairie-dog', '[data-dismiss="prairie-dog"]', $.proxy(this.hide, this));
+    this.$overlay.on('click.dismiss.vse.prairie-dog', $.proxy(this.hide, this));
     this.$trigger.addClass('active');
-    this.adjustHeight();
   };
 
   PrairieDog.prototype.hide = function (e) {
@@ -64,16 +71,16 @@
     e = $.Event('hide.vse.prairie-dog');
     this.$element.trigger(e);
     if (!this.isShown || e.isDefaultPrevented()) return;
-
     this.isShown = false;
-
-    this.adjustHeight();
 
     this.$element
       .removeClass('in')
       .off('click.dismiss.vse.prairie-dog');
 
-    this.backdrop();
+    if (!this.handoff) {
+      this.$parent.removeClass('in');
+    }
+
     this.$trigger.removeClass('active');
 
     if ($.support.transition) {
@@ -87,62 +94,33 @@
 
   PrairieDog.prototype.hidePrairieDog = function () {
     this.$element.removeClass('open');
+    if (this.handoff) {
+      this.stopHandoff();
+    } else {
+      this.$parent.removeClass('open');
+      this.resetHeight();
+    }
+    this.$overlay.off('click.dismiss.vse.prairie-dog');
     this.$element.trigger('hidden.vse.prairie-dog');
   };
 
-  PrairieDog.prototype.backdrop = function () {
-    if (this.isShown && this.options.backdrop) {
-
-      this.$backdrop = this.$parent.find('.prairie-dog-backdrop');
-
-      if (!this.$backdrop.length) {
-        this.$backdrop = $('<div class="prairie-dog-backdrop" />').prependTo(this.$parent);
-      }
-
-      this.$backdrop.on('click.dismiss.vse.prairie-dog', $.proxy(function (e) {
-        if (e.target !== e.currentTarget) return;
-        this.hide();
-      }, this));
-
-      if (!this.$backdrop.hasClass('in')) {
-        if ($.support.transition) this.$backdrop[0].offsetWidth; // force reflow
-        this.$backdrop.addClass('in');
-      }
-
-    } else if (!this.isShown && !this.retainBackdrop && this.$backdrop) {
-
-      this.$backdrop.removeClass('in');
-
-      if ($.support.transition) {
-        this.$element
-          .one('bsTransitionEnd', $.proxy(this.removeBackdrop, this))
-          .emulateTransitionEnd(PrairieDog.TRANSITION_DURATION);
-      } else {
-        this.removeBackdrop();
-      }
-
-    } else if (this.retainBackdrop) {
-      this.stopRetainingBackdrop();
-    }
-  };
-
-  PrairieDog.prototype.removeBackdrop = function () {
-    this.$backdrop && this.$backdrop.remove();
-    this.$backdrop = null;
-  };
-
-  PrairieDog.prototype.startRetainingBackdrop = function () {
-    this.retainBackdrop = true;
-  };
-
-  PrairieDog.prototype.stopRetainingBackdrop = function () {
-    this.retainBackdrop = null;
-  };
-
   PrairieDog.prototype.adjustHeight = function () {
-    this.$parent.css({
-      minHeight: this.isShown ? this.$element.height() : 0
-    });
+    var bgHeight = this.$bg.outerHeight();
+    var borderTop = parseInt(this.$parent.css('border-top-width'), 10);
+    var borderBottom = parseInt(this.$parent.css('border-bottom-width'), 10);
+    this.$parent.css('min-height', bgHeight + borderTop + borderBottom);
+  };
+
+  PrairieDog.prototype.resetHeight = function () {
+    this.$parent.css('min-height', '');
+  };
+
+  PrairieDog.prototype.startHandoff = function () {
+    this.handoff = true;
+  };
+
+  PrairieDog.prototype.stopHandoff = function () {
+    this.handoff = null;
   };
 
   // PRAIRIE-DOG PLUGIN DEFINITION
