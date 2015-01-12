@@ -3,8 +3,12 @@
   border-color: transparent;
   border-style: solid;
   margin-bottom: ($line-height-computed / 2);
-  padding: ($line-height-computed / 2) $line-height-computed;
   position: relative;
+
+  &,
+  .box-inner {
+    padding: ($line-height-computed / 2) $line-height-computed;
+  }
 
   > *:last-child {
     margin-bottom: 0;
