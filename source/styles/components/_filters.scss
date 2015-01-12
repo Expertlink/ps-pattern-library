@@ -153,3 +153,11 @@ $filter-control-size: 20px !default;
     content: '+';
   }
 }
+// to do find the right variable for the border radius
+.filter-rounded {
+	border-radius: 5px 5px 0 0;
+	&.collapsed {
+		border-radius: 5px;
+		border-bottom: 0;
+	}
+}
