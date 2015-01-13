@@ -72,3 +72,11 @@
 	</div>
 </div>
 
+<script>
+// close prairie dog dialog on radio change
+$(function(){
+	$('#sort-show .filter-item input').on('change', function () {
+		$(this).closest('.prairie-dog-dialog').prairieDog('hide');
+	});
+});
+</script>
