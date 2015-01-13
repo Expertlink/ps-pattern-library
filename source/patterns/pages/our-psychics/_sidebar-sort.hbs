@@ -5,7 +5,7 @@
 		<span class="badge filter-badge"></span>
 		</a>
 	</h4>
-	<div class="filter-collapse collapse in" id="sort-show" aria-expanded="false">
+	<div class="filter-collapse collapse" id="sort-show" aria-expanded="false">
 		<div class="filter ">
 		<label class="filter-item">
 		  <span class="filter-radio">
@@ -72,3 +72,32 @@
 	</div>
 </div>
 
+<script>
+
+/**
+ * TODO: This needs some TLC from a good JS developer, probably after (or in
+ * conjunction with) improvement of the existing filter-menu plugin
+ * (see issue #94)
+ */
+
+$(function(){
+
+	// close prairie dog dialog on radio change
+	$('#sort-show .filter-item input').on('change', function () {
+		$(this).closest('.prairie-dog-dialog').prairieDog('hide');
+	});
+
+	// control expand/collapse for different browser sizes
+	function manageSortCollapseState () {
+		// if the filter menu is not immediately visible...
+		if (!$('#sort-show').closest('.filter').is(':visible')) {
+			// ...assume it is hidden for mobile and expand it ahead of time
+			$('#sort-show').collapse('show');
+		}
+	};
+	$(window).on('resize', manageSortCollapseState);
+	manageSortCollapseState();
+	
+});
+
+</script>
