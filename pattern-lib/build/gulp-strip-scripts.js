@@ -37,14 +37,11 @@ module.exports = function gulpStripScripts(opts) {
     }
     file[opts.property] = (typeof file[opts.property] !== 'undefined' &&
                            Array.isArray(file[opts.property])) ? file[opts.property] : [];
-    $('script').each(function(i, elem) {
-      if (!$(elem).attr('src')) { // Don't strip external scripts
-        var scriptContent = $(elem).text();
-        file.scripts.push(scriptContent);
-        content = content.replace($(elem).toString(), '');
-      }
+    $('script').not('[src]').each(function(i, elem) {
+      file[opts.property].push($(elem).text());
+      content = content.replace($(elem).toString(), '');
     });
-    
+
     file.contents = Buffer(content);
     this.push(file);
     cb();
