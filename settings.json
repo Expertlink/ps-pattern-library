@@ -32,7 +32,7 @@
     "patternDirs" : "./source/patterns/**/*",
     "assets"      : "./source/assets/**/*",
     "static"      : "./static/**",
-    "styles"      : ["./source/styles/**/*.scss", "./source/styles/**/*.css"],
+    "styles"      : "./source/styles/**/*.scss",
     "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*",
     "library"     : {
@@ -40,7 +40,7 @@
       "scripts"   : "./pattern-lib/js/**/**"
     },
     "site"        : {
-      "styles"    : ["./source/styles/**/*.scss", "./source/styles/**/*.css"],
+      "styles"    : "./source/styles/**/*.scss",
       "scripts"   : "./source/js/**/*"
     }
   }
