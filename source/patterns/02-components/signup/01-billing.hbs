@@ -24,21 +24,7 @@ description: Step two of the signup form for new customers.
       <input type="text" class="form-control" id="signupCCZip" />
     </div>
   </div>
-  <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupCountry">Country</label>
-      <select id="signupCountry" class="form-control">
 
-			<option value="234">Uganda</option>
-			<option value="235">Ukraine</option>
-			<option value="236">United Arab Emirates</option>
-			<option value="4">United Kingdom</option>
-			<option selected="selected" value="1">United States</option>
-			<option value="237">Uruguay</option>
-			<option value="238">US Virgin Islands</option>
-
-      </select>
-	  </div>
 	  <div class="form-group form-group-required arrange-fit">
       <label class="control-label" for="signupState">State or province</label>
       <select id="signupState"  class="form-control">
@@ -52,10 +38,7 @@ description: Step two of the signup form for new customers.
       </select>
     </div>
   </div>
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupPhone">Phone number</label>
-    <input type="text" class="form-control" id="signupPhone" />
-  </div>
+  {{> forms/tel-field }}
   <div class="form-group form-group-required">
    <div class="checkbox">
       <label>
@@ -89,5 +72,5 @@ $(function() {
     $trigger.toggleClass('active');
     $($trigger.attr('href')).toggleClass('hidden');
   });
-});  
+});
 </script>
