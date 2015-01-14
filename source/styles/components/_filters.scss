@@ -25,7 +25,7 @@ $filter-control-size: 20px !default;
   display: block;
   font-weight: normal;
   line-height: $line-height-base;
-  margin: -1px 0 0;
+  margin: -1px 0;
   overflow: hidden;
   padding:
     $filter-padding-vertical
@@ -152,12 +152,4 @@ $filter-control-size: 20px !default;
   &.collapsed:after {
     content: '+';
   }
-}
-// to do find the right variable for the border radius
-.filter-rounded {
-	border-radius: 5px 5px 0 0;
-	&.collapsed {
-		border-radius: 5px;
-		border-bottom: 0;
-	}
 }

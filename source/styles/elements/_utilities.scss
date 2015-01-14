@@ -12,3 +12,7 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
 .u-inline-block {
   display: inline-block;
 }
+
+.u-overflow-hidden {
+	overflow: hidden;
+}
