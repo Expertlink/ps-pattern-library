@@ -18,6 +18,6 @@
       });
     });
    }
-   $.fn.filterSummary             = Plugin;
+   $.fn.filterMenu             = Plugin;
   Plugin.call();
 })(jQuery);
