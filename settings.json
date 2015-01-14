@@ -32,7 +32,7 @@
     "patternDirs" : "./source/patterns/**/*",
     "assets"      : "./source/assets/**/*",
     "static"      : "./static/**",
-    "styles"      : "./source/styles/**/*.scss",
+    "styles"      : ["./source/styles/**/*.scss", "./source/styles/**/*.css"],
     "templates"   : "./source/patterns/**/*.template",
     "vendor"      : "./vendor/**/*",
     "library"     : {
