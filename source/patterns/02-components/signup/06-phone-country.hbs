@@ -1,0 +1,60 @@
+---
+name: Phone-Country Widget
+description: >
+  Hooking up the `intl-tel-input` functionality to the country drop-down select.
+
+    * Country drop-down is populated using `intl-tel-input` country object values.
+    * Changes to country drop-down will change applied dialing code in the `tel` field.
+
+---
+<form role="form">
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="control-label" for="signupCountry">Country</label>
+      <select id="signupCountry" class="form-control">
+
+      </select>
+    </div>
+
+    <div class="form-group form-group-required arrange-fit">
+      <label class="control-label" for="signupState">State or province</label>
+      <select id="signupState"  class="form-control">
+        <option selected="selected" value="">Select</option>
+        <option value="1">Other</option>
+        <option value="3">Alaska</option>
+        <option value="4">Alabama</option>
+        <option value="5">Arkansas</option>
+        <option value="6">Arizona</option>
+
+      </select>
+    </div>
+  </div>
+
+  {{> forms/tel-field }}
+</form>
+
+<script>
+$(function() {
+  var countryData     = $.fn.intlTelInput.getCountryData(),
+  countryCount    = countryData.length,
+  countryOptions  = [];
+
+  for (i = 0; i < countryCount; i++) { // Build <option>s for country select(s)
+    countryOptions.push($('<option></option>')
+    .attr('value', countryData[i].iso2)
+    .text(countryData[i].name)
+  );
+  }
+
+  $('[data-mask-type="tel"]').each(function() { // Set up phone masking
+    var $el         = $(this),
+    countrySelector = $el.data('country-select'),
+    $country        = $(countrySelector);
+
+    $country.append(countryOptions).val('us');  // Add <option>s and set to 'us' by default
+    $country.change(function() {
+      $el.intlTelInput('selectCountry', $(this).val());
+    });
+  });
+});
+</script>

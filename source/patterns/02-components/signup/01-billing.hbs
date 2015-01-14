@@ -25,20 +25,7 @@ description: Step two of the signup form for new customers.
     </div>
   </div>
 
-	  <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupState">State or province</label>
-      <select id="signupState"  class="form-control">
-    	<option selected="selected" value="">Select</option>
-			<option value="1">Other</option>
-			<option value="3">Alaska</option>
-			<option value="4">Alabama</option>
-			<option value="5">Arkansas</option>
-			<option value="6">Arizona</option>
-
-      </select>
-    </div>
-  </div>
-  {{> forms/tel-field }}
+  {{> signup/phone-country }}
   <div class="form-group form-group-required">
    <div class="checkbox">
       <label>
