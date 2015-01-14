@@ -10,29 +10,29 @@ status: inprogress
       {{> toolbar/toolbar }}
     </div>
     <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
-      <div class="col-md-3">
-        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
-          {{> our-psychics/_sidebar-search }}
-        </div>
-        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-sort" data-parent="#our-psychics-container">
-          {{> our-psychics/_sidebar-sort }}
-        </div>
+			<div class="col-md-3">
+				<div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
+					{{> our-psychics/_sidebar-search }}
+				</div>
+				<div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-sort" data-parent="#our-psychics-container">
+					{{> our-psychics/_sidebar-sort }}
+				</div>
 				<div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-picks" data-parent="#our-psychics-container">
-          {{> our-psychics/_sidebar-picks }}
-        </div>
-        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-filters" data-parent="#our-psychics-container">
-          {{> our-psychics/_sidebar-filters }}
+					{{> our-psychics/_sidebar-picks }}
+				</div>
+				<div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-filters" data-parent="#our-psychics-container">
+					{{> our-psychics/_sidebar-filters }}
         </div>
 			</div>
-      <div class="prairie-dog-overlay"></div>
-      <div class="col-md-9 prairie-dog-bg">
-        <div class="hidden-xs hidden-sm u-margin-top">
-          {{> tabs/tabs }}
-        </div>
-        {{> advisors/advisor-grid }}
-        <div class="text-center">
-          {{> pagination/states }}
-        </div>
+    	<div class="prairie-dog-overlay"></div>
+    	<div class="col-md-9 prairie-dog-bg">
+				<div class="hidden-xs hidden-sm u-margin-top">
+					{{> tabs/tabs }}
+				</div>
+				{{> advisors/advisor-grid }}
+				<div class="text-center">
+					{{> pagination/states }}
+				</div>
       </div>
     </div>
   </div>
