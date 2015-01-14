@@ -1,34 +1,23 @@
 /**
- * TODO: This should be rewritten to be more plugin-like. Moving here ahead of
- * time because it was no longer working from within the template.
+ * When options are selected in filter menus—either as checkbox
+ * or radio button options—reflect those selected options in
+ * a badge (checkbox count) or summary (selected radio label) in
+ * a parent element.
  */
-
-(function ($) {
+ (function ($) {
   'use strict';
-
-  /**
-   * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
-   * for us to do is update some values wehn controls are updated...
-   */
-
-  /** Update badge counts on change of checkbox for all parents */
-  $(document).on('change', '.filter input:checkbox', function () {
-    $(this).parents('.filter-collapse').each(function(){
-      var $this = $(this);
-      var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
-      var $badge = $trigger.find('.filter-badge');
-      $badge.text($this.find('input:checkbox:checked').length || '');
+  function Plugin() {
+    $(document).on('change', '.filter input', function(event) {
+      $('.filter-parent').each(function() {
+        var $filters      = $($(this).attr('href')),
+          selectedCount   = $filters.find('input:checkbox:checked').length || '',
+          selectedText    = $filters.find('input:radio:checked')
+                              .first().closest('label').text();
+        $(this).find('.filter-badge').text(selectedCount);
+        $(this).find('.filter-summary').text(selectedText);
+      });
     });
-  });
-
-  /** Update summaries on change of radios for immediate parent */
-  $(document).on('change', '.filter input:radio', function () {
-    var $this = $(this);
-    var $label = $this.closest('label');
-    var $parent = $this.closest('.filter-collapse');
-    var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
-    var $summary = $trigger.find('.filter-summary');
-    $summary.text($label.text());
-  });
-
+   }
+   $.fn.filterSummary             = Plugin;
+  Plugin.call();
 })(jQuery);
