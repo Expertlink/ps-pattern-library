@@ -40,7 +40,7 @@
       "scripts"   : "./pattern-lib/js/**/**"
     },
     "site"        : {
-      "styles"    : "./source/styles/**/*.scss",
+      "styles"    : ["./source/styles/**/*.scss", "./source/styles/**/*.css"],
       "scripts"   : "./source/js/**/*"
     }
   }
