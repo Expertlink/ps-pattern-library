@@ -6,7 +6,7 @@
  */
  (function ($) {
   'use strict';
-  function Plugin() {
+  function filterMenu() {
     $(document).on('change', '.filter input', function(event) {
       $('.filter-parent').each(function() {
         var $filters      = $($(this).attr('href')),
@@ -18,6 +18,5 @@
       });
     });
    }
-   $.fn.filterMenu             = Plugin;
-  Plugin.call();
+  filterMenu.call();
 })(jQuery);
