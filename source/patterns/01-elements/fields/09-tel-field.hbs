@@ -1,0 +1,15 @@
+---
+name: Phone (tel) Field
+description: Basic usage of the `intl-tel-input` jQuery (vendor) plugin.
+---
+
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupPhone">Phone number</label>
+    <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
+  </div>
+
+<script>
+$(function() {
+  $('[data-mask-type="tel"]').intlTelInput();
+});
+</script>
