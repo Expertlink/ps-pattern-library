@@ -4,56 +4,23 @@ description: Step one of the signup form for new customers.
 
 {{> pages/_header }}
 
-{{> signup/_signup-header }}
-<form role="form">
-   <h3>Account Information</h3>
-  {{> forms/offer-select }}
-
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupName">Your name</label>
-    <input type="text" class="form-control" id="signupName" />
-  </div>
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupEmail">Email address</label>
-    <input type="email" class="form-control" id="signupEmail" />
-  </div>
-  <div class="form-group">
-    <div class="checkbox">
-      <label for="signupOptIn">
-        <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
-      </label>
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter box-sheer">
+    <div class="hidden-md hidden-lg ">
+      {{> toolbar/toolbar-signup }}
     </div>
-  </div>
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupPassword">Choose a password</label>
-    <input class="form-control" data-password id="signupPassword" type="password" placeholder="Password" />
-    <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
-  </div>
-  <div class="form-group form-group-required">
-    <label>Gender</label>
-    <div class="form-group arrange arrange-gutter">
-      <div class="radio arrange-fit">
-        <label>
-          <input type="radio" name="signupGender" value="female" checked="checked" /> Female
-        </label>
+    <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
+      <div class="col-md-5 ">
+        {{> signup/_signup-sidebar }}
       </div>
-      <div class="radio arrange-fill">
-        <label>
-          <input type="radio" name="signupGender"  value="male" /> Male
-        </label>
+    	<div class="prairie-dog-overlay"></div>
+    	<div class="col-md-7 prairie-dog-bg">
+        <h3>Account Information</h3>
+        {{> forms/signup-account }}
+        {{> signup/_signup-footer }}
       </div>
     </div>
-
   </div>
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupDOB">Date of birth</label>
-    <input type="date" class="form-control" id="signupDOB" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
-  </div>
-</form>
-
-{{> signup/_signup-footer }}
+</div>
 
 {{> pages/_footer }}
