@@ -1,11 +1,14 @@
-(function (factory, global) {
+(function (factory) {
 
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    factory(require('jquery'));
   } else {
-    // Browser globals.
-    factory(global.jQuery);
+    // Browser globals
+    factory(jQuery);
   }
 
 }(function ($) {
@@ -109,7 +112,7 @@
     var options = $.extend({}, Leveller.DEFAULTS, typeof option == 'object' && option);
 
     if (!data) {
-      if (options.level && option == 'reset') options.level = false;
+      if (options.level && option === 'reset') options.level = false;
       this.data(Leveller.DATA_KEY, (data = new Leveller(this, options)));
     }
 
@@ -125,4 +128,4 @@
   $.fn.leveller = Plugin;
   $.fn.leveller.Constructor = Leveller;
 
-}, this));
+}));
