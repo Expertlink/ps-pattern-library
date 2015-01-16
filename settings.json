@@ -24,7 +24,8 @@
     },
     "site"     : {
       "css"    : "./static/css",
-      "scripts": "./static/js"
+      "scripts": "./static/js",
+      "sprites": "./static/images"
     }
   },
   "src": {
@@ -41,7 +42,11 @@
     },
     "site"        : {
       "styles"    : "./source/styles/**/*.scss",
-      "scripts"   : "./source/js/**/*"
+      "scripts"   : "./source/js/**/*",
+      "sprites"   : {
+        "inline":  "./source/sprites/svg/inline/*.svg",
+        "css"   :  "./source/sprites/svg/css/*.svg"
+      }
     }
   }
 }

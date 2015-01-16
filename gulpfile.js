@@ -5,13 +5,16 @@ var gulp     = require('gulp');
 var settings = require('./settings');
 var watchers = {};
 
+var svgSprite = require('gulp-svg-sprite');
+
+/**
+ * These modules contain tasks to build the site content onto the pattern library.
+ */
 var taskModules = ['browserSync',
                    'scripts',
                    'styles',
                    'watch'];
-/**
- * Task modules should be in build/gulp/tasks
- */
+
 taskModules.forEach(function(task) {
   task = (typeof task === 'string') ? { name: task } : task;
   task.deps = task.deps || [];
@@ -19,26 +22,35 @@ taskModules.forEach(function(task) {
 });
 
 /**
- * Style guide builder.
+ * Include tasks for building the pattern library.
  */
 require(settings.paths.library + '/tasks/');
-gulp.task('site', ['styles', 'scripts', 'assets']);
+
 /**
- * Simple tasks not worthy of module
+ * More site-building tasks, not modules.
  */
 gulp.task('assets', function() {
-  return gulp.src(settings.src.assets)
-    .pipe(gulp.dest(settings.dest.assets));
+ return gulp.src(settings.src.assets)
+ .pipe(gulp.dest(settings.dest.assets));
 });
-// gulp.task('vendor', function() {
-//   return gulp.src(settings.src.vendor)
-//     .pipe(gulp.dest(settings.dest.vendor));
-// });
 gulp.task('dist', function() {
-  return gulp.src(settings.src.static)
-    .pipe(gulp.dest(settings.paths.dist));
+ return gulp.src(settings.src.static)
+ .pipe(gulp.dest(settings.paths.dist));
 });
+
+var svgInlineConfig = {
+  mode: {
+    symbol: {}
+  }
+};
 /**
- * Composite tasks
+ * Site-building specific to this project
  */
+ gulp.task('sprites-inline', function(){
+   gulp.src(settings.src.site.sprites.inline)
+   .pipe(svgSprite(svgInlineConfig))
+   .pipe(gulp.dest(settings.dest.site.sprites));
+ });
+
+gulp.task('site', ['styles', 'scripts', 'assets']);
 gulp.task('default', ['site', 'library', 'watch', 'browserSync']);
