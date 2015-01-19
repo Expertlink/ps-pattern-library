@@ -9,7 +9,7 @@ var watchers = {};
 /**
  * These modules contain tasks to build the site content onto the pattern library.
  */
-var taskModules = ['browserSync',
+var taskModules = [{name: 'browserSync', deps: ['build']},
                    'scripts',
                    'watch'];
 
@@ -30,9 +30,9 @@ require(settings.paths.library + '/tasks/');
 require(settings.paths.gulpSiteTasks);
 
 gulp.task('site', function(callback) {
-  runSequence(['styles', 'scripts', 'assets']);
+  runSequence(['styles', 'scripts', 'assets'], callback);
 });
 gulp.task('build', function(callback) {
-  runSequence('library', 'site');
+  runSequence('library', 'site', callback);
 });
 gulp.task('default', ['build', 'browserSync', 'watch']);
