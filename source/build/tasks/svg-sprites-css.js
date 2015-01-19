@@ -12,7 +12,7 @@ var config = {
           template: settings.paths.source + '/build/sprite-template.scss'
         }
       },
-      sprite: 'assets/images/sprite.css.svg'
+      sprite: 'images/svg-sprite.css.svg'
     }
   }
 };

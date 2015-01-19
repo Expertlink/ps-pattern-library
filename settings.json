@@ -42,7 +42,7 @@
       "scripts"   : "./pattern-lib/js/**/**"
     },
     "site"        : {
-      "assets"    : ["./source/assets/**/*", "./source/build/out/assets/**/*"],
+      "assets"    : ["./source/assets/**/*", "./source/build/out/**/*", "!./source/build/out/**/*.scss"],
       "styles"    : "./source/styles/**/*.scss",
       "scripts"   : "./source/js/**/*",
       "sprites"   : {
