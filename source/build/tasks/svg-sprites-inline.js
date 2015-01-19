@@ -10,7 +10,7 @@ var svgInlineConfig = {
 };
 
 module.exports = function svgInlineSprites() {
-  gulp.src(settings.src.site.sprites.inline)
+  return gulp.src(settings.src.site.sprites.inline)
   .pipe(svgSprite(svgInlineConfig))
   .pipe(gulp.dest(settings.dest.site.sprites));
 };

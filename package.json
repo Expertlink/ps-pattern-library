@@ -43,6 +43,7 @@
     "marked": "~0.3.2",
     "merge-stream": "~0.1.6",
     "moment": "~2.8.3",
+    "run-sequence": "^1.0.2",
     "through2": "~0.6.3",
     "underscore": "~1.7.0",
     "vinyl": "^0.4.6"

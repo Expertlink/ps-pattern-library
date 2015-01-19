@@ -6,6 +6,7 @@
 
 var gulp     = require('gulp');
 var settings = require('../../../settings');
+var runSequence = require('run-sequence');
 
 gulp.task('svg-sprites-inline', require('./svg-sprites-inline'));
 gulp.task('svg-sprites-css',    require('./svg-sprites-css'));

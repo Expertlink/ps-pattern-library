@@ -18,7 +18,7 @@ var config = {
 };
 
 module.exports = function svgCSSSprites() {
-  gulp.src(settings.src.site.sprites.css)
+  return gulp.src(settings.src.site.sprites.css)
   .pipe(svgSprite(config))
   .pipe(gulp.dest(settings.dest.site.build));
 };

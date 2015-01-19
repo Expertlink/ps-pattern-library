@@ -3,6 +3,7 @@
 
 var gulp     = require('gulp');
 var settings = require('./settings');
+var runSequence = require('run-sequence');
 var watchers = {};
 
 /**
@@ -28,6 +29,10 @@ require(settings.paths.library + '/tasks/');
  */
 require(settings.paths.gulpSiteTasks);
 
-
-gulp.task('site', ['styles', 'scripts', 'assets']);
-gulp.task('default', ['site', 'library', 'watch', 'browserSync']);
+gulp.task('site', function(callback) {
+  runSequence(['styles', 'scripts', 'assets']);
+});
+gulp.task('build', function(callback) {
+  runSequence('library', 'site');
+});
+gulp.task('default', ['build', 'browserSync', 'watch']);
