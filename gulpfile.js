@@ -12,7 +12,6 @@ var svgSprite = require('gulp-svg-sprite');
  */
 var taskModules = ['browserSync',
                    'scripts',
-                   'styles',
                    'watch'];
 
 taskModules.forEach(function(task) {
