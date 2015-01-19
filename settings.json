@@ -24,6 +24,7 @@
       "scripts": "./static/js"
     },
     "site"     : {
+      "build"  : "./source/build/out",
       "css"    : "./static/css",
       "scripts": "./static/js",
       "sprites": "./static/images"

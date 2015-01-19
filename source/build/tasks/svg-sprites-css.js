@@ -6,11 +6,13 @@ var settings  = require('../../../settings');
 var config = {
   mode: {
     css: {
+      dest: '',       // Remove default containing 'css' directory
       render: {
         scss: {
           template: settings.paths.source + '/build/sprite-template.scss'
         }
-      }
+      },
+      sprite: 'images/sprite.css.svg'
     }
   }
 };
@@ -18,5 +20,5 @@ var config = {
 module.exports = function svgCSSSprites() {
   gulp.src(settings.src.site.sprites.css)
   .pipe(svgSprite(config))
-  .pipe(gulp.dest(settings.paths.static));
+  .pipe(gulp.dest(settings.dest.site.build));
 };
