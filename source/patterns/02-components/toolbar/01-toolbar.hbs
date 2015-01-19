@@ -1,30 +1,40 @@
 ---
+description: >
+  Horizontal full-width buttons somewhat visually reminiscent of an
+  [iOS Tab Bar](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Bars.html#//apple_ref/doc/uid/TP40006556-CH12-SW52).
 fullWidth: true
-status: inprogress
 ---
 
 <ul class="toolbar" role="tablist">
   <li role="presentation">
     <a role="tab" href="#our-psychics-search" aria-selected="false" data-toggle="prairie-dog">
-      <div>&clubs;</div>
+      <svg class="icon toolbar-icon">
+        <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+      </svg>
       Search
     </a>
   </li>
   <li role="presentation">
     <a role="tab" href="#our-psychics-sort" aria-selected="false" data-toggle="prairie-dog">
-      <div>&diams;</div>
+      <svg class="icon toolbar-icon">
+        <use xlink:href="/images/symbol/svg/sprite.symbol.svg#sort" />
+      </svg>
       Sort
     </a>
   </li>
   <li role="presentation">
     <a role="tab" href="#our-psychics-picks" aria-selected="false" data-toggle="prairie-dog">
-      <div>&hearts;</div>
-      Our Picks
+      <svg class="icon toolbar-icon">
+        <use xlink:href="/images/symbol/svg/sprite.symbol.svg#picks" />
+      </svg>
+      Picks
     </a>
   </li>
   <li role="presentation">
     <a role="tab" href="#our-psychics-filters" aria-selected="false" data-toggle="prairie-dog">
-      <div>&spades;</div>
+      <svg class="icon toolbar-icon">
+        <use xlink:href="/images/symbol/svg/sprite.symbol.svg#filter" />
+      </svg>
       Filter
     </a>
   </li>
