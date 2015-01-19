@@ -704,3 +704,37 @@ a.c4-header__title-segment {
     white-space: nowrap;
   }
 }
+
+.demo-icons {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+
+  li {
+    background-color: $gray-lighter;
+    border: 1px solid #fff;
+    display: block;
+    float: left;
+    padding: 0.75em 0;
+    text-align: center;
+    width: 25%;
+
+    &:hover {
+      background-color: $blue;
+      color: #fff;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 12.5%;
+    }
+  }
+
+  .icon {
+    font-size: 24px;
+    margin: 0.125em 0 0.25em;
+  }
+
+  span {
+    display: block;
+  }
+}
