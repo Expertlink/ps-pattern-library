@@ -3,8 +3,8 @@
   a {
     display: block;
     border-radius: $border-radius-large;
-//    border: 1px solid $red;
-//    background: lighten($red, 45%);
+    background:  $orange-lighter;
+    border: 1px solid $orange;
     padding: ($grid-gutter-width/5) 3.8em ($grid-gutter-width/5) ($grid-gutter-width/3);
     font-weight: bold;
     &:hover {
