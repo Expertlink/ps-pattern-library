@@ -1,21 +1,34 @@
 // TODO: Determine sustainable icon solution
 
-[class^=icon-] {
+.icon {
+  color: inherit;
   display: inline-block;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   vertical-align: middle;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+
+  use {
+    fill: currentColor;
+  }
 }
 
-.icon-fave {
-  background-image: url(/images/icons/icon-fave-add.svg);
-  height: 32px;
-  width: 32px;
-}
-
-.active > .icon-fave,
-.icon-fave.active,
-.icon-fave-remove {
-  background-image: url(/images/icons/icon-fave-remove.svg);
-}
+// [class^=icon-] {
+//   display: inline-block;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   vertical-align: middle;
+// }
+//
+// .icon-fave {
+//   background-image: url(/images/icons/icon-fave-add.svg);
+//   height: 32px;
+//   width: 32px;
+// }
+//
+// .active > .icon-fave,
+// .icon-fave.active,
+// .icon-fave-remove {
+//   background-image: url(/images/icons/icon-fave-remove.svg);
+// }
