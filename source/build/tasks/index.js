@@ -13,7 +13,7 @@ gulp.task('sprites', ['svg-sprites-inline', 'svg-sprites-css']);
 gulp.task('styles', ['sprites'], require('./styles'));
 
 gulp.task('assets', ['sprites'], function() {
-  return gulp.src(settings.src.assets)
+  return gulp.src(settings.src.site.assets)
   .pipe(gulp.dest(settings.dest.assets));
 });
 gulp.task('dist', function() {
