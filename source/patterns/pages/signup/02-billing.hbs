@@ -33,9 +33,10 @@ description: foo
   <div class="form-group form-group-required">
     <div class="checkbox">
       <label>
-        <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
+        <input type="checkbox" />I agree to Psychic Source
+          <a href="#terms-block" data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
       </label>
-      <div id="terms-block" class="toggle-content u-margin-top hidden">
+      <div id="terms-block" class="collapse u-margin-top">
         <p><strong>Conditions of Sale and Payment Terms</strong></p>
         <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
         <p><strong>Methods of Payment, Credit Card Terms</strong></p>
@@ -51,18 +52,6 @@ description: foo
   </div>
 </form>
 
-
-<script>
-  $(function() {
-    $('.toggle-trigger').click(function (e) {
-      e.preventDefault();
-
-      var $trigger = $(e.target);
-      $trigger.toggleClass('active');
-      $($trigger.attr('href')).toggleClass('hidden');
-    });
-  });
-</script>
 
 {{> signup/_signup-footer }}
 
