@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Sample Composed Template
+  </title>
+    <!-- CSS Goes here -->
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+
+    <!-- Favicons can go here if desired -->
+    <!-- Any desired scripts in HEAD -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
+  </head>
+<body>
+
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter box-sheer">
+    <div class="container-fluid">
+      <div class="col-md-12">
+<form role="form">
+   <h3>Account Information</h3>
+  
+    <label>Select an offer </label>
+    <div class="arrange arrange-equal arrange-gutter btn-group" data-toggle="buttons">
+      <div class="arrange-fit">
+        <label for="30min" class="btn btn-primary enrollment-plan-option active" data-discount-for="form-group-promo">
+          <b>30 Minutes</b> for <span class="js-price-amount" data-amount="30.00">$30.00</span> <span class="js-price-discounted" data-amount="22.50"></span>
+          <input type="radio" name="signupOffer" value="30" id="30min" checked />
+        </label>
+      </div>
+      <div class="arrange-fit">
+        <label for="20min" class="btn btn-primary enrollment-plan-option" data-discount-for="form-group-promo">
+          <b>20 Minutes</b> for <span class="js-price-amount" data-amount="20.00">$20.00</span> <span class="js-price-discounted" data-amount="15.00"></span>
+          <input type="radio" name="signupOffer" value="20" id="20min" />
+        </label>
+      </div>
+      <div class="arrange-fit">
+        <label for="10min" class="btn btn-primary enrollment-plan-option" data-discount-for="form-group-promo">
+          <b>10 Minutes</b> for <span class="js-price-amount" data-amount="10.00">$10.00</span> <span class="js-price-discounted" data-amount="7.50"></span>
+          <input type="radio" name="signupOffer" value="10" id="10min" />
+        </label>
+      </div>
+    </div>
+    <h3 class="text-primary text-center u-no-margin">...plus 3 minutes free!</h3>
+  
+    <div class="help-block" data-promo-success-for="form-group-promo">
+      <p class="is-success-msg">Promo code <strong class="js-code-slot">654123</strong> applied.</p>
+    </div>
+  
+    <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
+    <div class="collapse promo-group" id="form-group-promo">
+      <div class="form-group arrange arrange-gutter">
+        <div class="arrange-fill">
+          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+          <p class="help-block is-error-msg">Invalid code.</p>
+        </div>
+        <div class="arrange-fill">
+          <button class="btn btn-primary apply-btn">Apply</button>
+        </div>
+      </div>
+    </div>
+  
+  
+
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupName">Your name</label>
+    <input type="text" class="form-control" id="signupName" />
+  </div>
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupEmail">Email address</label>
+    <input type="email" class="form-control" id="signupEmail" />
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label for="signupOptIn">
+        <input type="checkbox" checked="checked" id="signupOptIn" /> Yes! Sign me up for News and Promotions, so I can start earning <a href="#">Membership Rewards</a> towards my readings
+      </label>
+    </div>
+  </div>
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupPassword">Choose a password</label>
+    <input class="form-control" data-password id="signupPassword" type="password" placeholder="Password" />
+    <p class="help-block">Password must be at least one letter and one digit, minimum 6 characters.</p>
+  </div>
+  <div class="form-group form-group-required">
+    <label>Gender</label>
+    <div class="form-group arrange arrange-gutter">
+      <div class="radio arrange-fit">
+        <label>
+          <input type="radio" name="signupGender" value="female" checked="checked" /> Female
+        </label>
+      </div>
+      <div class="radio arrange-fill">
+        <label>
+          <input type="radio" name="signupGender"  value="male" /> Male
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupDOB">Date of birth</label>
+    <input type="date" class="form-control" id="signupDOB" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
+  </div>
+</form>
+
+      <h3>Questions?</h3>
+      <p>Call <a href="tel:+18009653049">1.800.965.3049</a> to reach our Customer Care Representatives. Our Customer Care Center is not outsourced or overseas, and is there to help you 24 hours a day, 7 days a week. You can also
+        <a href="#">chat online</a> with one of our friendly Customer Care representatives.</p>
+        <h3>Safety and security at Psychic Source</h3>
+        <p>Psychic Source is committed to protecting your privacy and uses some of the most sophisticated security software commercially available. We respect your privacy and are committed to no spam. Your information is safe with us.</p>
+        <div class="arrange arrange-equal arrange-gutter u-margin-bottom">
+          <div class="arrange-fill"><img id="trustwaveSealImage" src="https://sealserver.trustkeeper.net/seal_image.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;size=105x54&amp;style=normal" border="0" style="cursor:pointer;" onclick="javascript:window.open('https://sealserver.trustkeeper.net/cert.php?customerId=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;size=105x54&amp;style=normal', 'c_TW', 'location=no, toolbar=no, resizable=yes, scrollbars=yes, directories=no, status=no, width=615, height=720'); return false;" oncontextmenu="javascript:alert('Copying Prohibited by Law - Trusted Commerce is a Service Mark of TrustWave Holdings, Inc.'); return false;" alt="This site is protected by Trustwave's Trusted Commerce program" title="This site is protected by Trustwave's Trusted Commerce program"><noscript>&lt;a href="https://sealserver.trustkeeper.net/compliance/cert.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;style=normal&amp;size=105x54&amp;language=en" target="hATW"&gt;&lt;img src="https://sealserver.trustkeeper.net/compliance/seal.php?code=w6oj3BZ9ZNOha6R5amMpi3XmyrcVM8&amp;style=normal&amp;size=105x54&amp;language=en" border="0" alt="Trusted Commerce"/&gt;&lt;/a&gt;</noscript></div>
+          <div class="arrange-fill arrange-right arrange-middle"><img style="cursor:pointer;cursor:hand" src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_d_m.gif" onclick="verifySeal();"><br><a style="font-family: arial; font-size: 9px; color:#ffffff;" href="https://www.godaddy.com/ssl/ssl-certificates.aspx" target="_blank">Secure Servers</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
