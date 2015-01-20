@@ -1,0 +1,44 @@
+.advisor-promo {
+  padding: ($advisor-tile-padding / 1.5); // matches small screen advisor list layout
+  a {
+    display: block;
+    border-radius: $border-radius-large;
+    background:  $orange-lighter;
+    border: 1px solid $orange;
+    padding: ($grid-gutter-width/5) 3.8em ($grid-gutter-width/5) ($grid-gutter-width/3);
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+    }
+    &:after {
+      position: absolute;
+      display: block;
+      content:"";
+      top: 0;
+      right: 0;
+      width: 6em;
+      height: 5em;
+      background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
+      background-size: 100% auto;
+    }  
+  }
+  @media (min-width: $screen-md-min) {
+    padding-right: $grid-gutter-width; // matches larger screen advisor tile layout
+    padding-left: $grid-gutter-width;
+  }
+  @media (min-width: $screen-lg-min) {
+    padding-top: ($grid-gutter-width / 2); // matches top margin on tabs
+    position: absolute;
+    z-index: 300;
+    top:0;
+    right:0;
+    a {
+      font-size: 0.9em;
+      &:after {
+        width: 5em;
+        top: ($advisor-tile-padding / 3);
+        right: ($advisor-tile-padding / 4);
+      }
+    }
+  }
+}

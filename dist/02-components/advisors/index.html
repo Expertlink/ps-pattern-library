@@ -27,6 +27,9 @@
     <!-- Site behavior/UI JS -->
     <script src="../../js/site.js"></script>
 
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
   </head>
 <body class="c4-body">
 
@@ -67,7 +70,8 @@
       <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/fields">Fields</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
@@ -80,15 +84,17 @@
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/advisors">Advisors</a></li>
       <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/signup">Signup</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
       <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/toolbar">Toolbar</a></li>
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
-      <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
       <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
+      <li><a class="c4-nav__item " href="../../pages/signup">Signup</a></li>
     </ul>
   </nav>
 
@@ -128,7 +134,7 @@
         </div>
       </div>
       <div class="advisor-tile-main-body">
-        <h4 class="text-primary">Mystery Reader x7777</h4>
+        <h4>Mystery Reader x7777</h4>
         <div class="advisor-tile-meta">
           <p class="advisor-tile-meta-group stars stars-4-5">
             4&#189; stars
@@ -144,7 +150,7 @@
             <p class="text-success"><b>Available</b> till 7:45pm</p>
       </div>
     </a>
-    <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+    <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
           <li class="arrange-fill">
             <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
           </li>
@@ -183,7 +189,7 @@
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-        &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
+        &lt;h4&gt;Mystery Reader x7777&lt;/h4&gt;
         &lt;div class=&quot;advisor-tile-meta&quot;&gt;
           &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
             4&amp;#189; stars
@@ -199,7 +205,7 @@
             &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
       &lt;/div&gt;
     &lt;/a&gt;
-    &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+    &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
           &lt;li class=&quot;arrange-fill&quot;&gt;
             &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
           &lt;/li&gt;
@@ -214,11 +220,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_36">
+  <div class="c4-pattern" id="c4-pattern_39">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_36">Advisor Grid</a>
+          <a href="#c4-pattern_39">Advisor Grid</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -232,7 +238,7 @@
     <div class="c4-pattern__body c4-pattern__body--full-width">
       <div class="advisor-tiles">
   <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -247,7 +253,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Mystery Reader x7777</h4>
+              <h4>Mystery Reader x7777</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4-5">
                   4&#189; stars
@@ -256,7 +262,7 @@
                     <b>$10.00/min</b>
                 </p>
                   <p class="advisor-tile-meta-group">
-                    Chat <b>10% off</b> ($9.00/min)
+                    Chat <del class="text-muted">$10.00</del> $9.00/min
                   </p>
               </div>
               <div class="advisor-tile-meta">
@@ -265,7 +271,7 @@
                   <p class="text-success"><b>Available</b> till 7:45pm</p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
                 </li>
@@ -275,7 +281,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -290,7 +296,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Saul Goodman x7777</h4>
+              <h4>Saul Goodman x7777</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4-5">
                   4&#189; stars
@@ -306,18 +312,18 @@
                   <p class="text-success"><b>Available</b> till 10:55pm</p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
                 </li>
                   <li class="arrange-fill">
-                    <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+                    <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get Return Call</a>
                   </li>
           </ul>
         </div>
       </div>
-        <div class="clearfix visible-sm-block"></div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="clearfix visible-md-block"></div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -332,7 +338,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Zaphod Beeblebrox x1337</h4>
+              <h4>Zaphod Beeblebrox x1337</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-2">
                   2 stars
@@ -347,15 +353,15 @@
                   <p class="text-success"><b>Available</b> till 2:30pm</p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
                 </li>
           </ul>
         </div>
       </div>
-        <div class="clearfix hidden-xs hidden-sm"></div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="clearfix visible-lg-block"></div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -367,7 +373,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Liz Lemon x3030</h4>
+              <h4>Liz Lemon x3030</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4">
                   4 stars
@@ -376,7 +382,7 @@
                     <b>$5.00/min</b>
                 </p>
                   <p class="advisor-tile-meta-group">
-                    Chat <b>$1/min off</b> ($4.00/min)
+                    Chat <del class="text-muted">$5.00</del> $4.00/min
                   </p>
               </div>
               <div class="advisor-tile-meta">
@@ -385,15 +391,15 @@
                   <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
                 </li>
           </ul>
         </div>
       </div>
-        <div class="clearfix visible-sm-block"></div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="clearfix visible-md-block"></div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -405,7 +411,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Jet Jaguar x1122</h4>
+              <h4>Jet Jaguar x1122</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-3-5">
                   3&#189; stars
@@ -421,14 +427,14 @@
                   <p class="text-danger"><b>Busy</b> logged on till 7:45pm</p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
                 </li>
           </ul>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -440,7 +446,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">Uncle Jesse x7777</h4>
+              <h4>Uncle Jesse x7777</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-4-5">
                   4&#189; stars
@@ -456,16 +462,16 @@
                 <p class="text-muted"><b>Offline</b></p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
                 </li>
           </ul>
         </div>
       </div>
-        <div class="clearfix visible-sm-block"></div>
-        <div class="clearfix hidden-xs hidden-sm"></div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="clearfix visible-md-block"></div>
+        <div class="clearfix visible-lg-block"></div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="advisor-tile">
           <a class="link-block advisor-tile-main advisor-tile-group" href="#">
             <div class="advisor-tile-main-object">
@@ -480,7 +486,7 @@
               </div>
             </div>
             <div class="advisor-tile-main-body">
-              <h4 class="text-primary">The Amazing Gusto x8888</h4>
+              <h4>The Amazing Gusto x8888</h4>
               <div class="advisor-tile-meta">
                 <p class="advisor-tile-meta-group stars stars-5">
                   5 stars
@@ -496,7 +502,7 @@
                 <p class="text-muted"><b>Offline</b></p>
             </div>
           </a>
-          <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+          <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                 <li class="arrange-fill">
                   <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
                 </li>
@@ -506,21 +512,23 @@
   </div>
 </div>
 
+
+
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_36" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_39" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_36"><code class="language-markup">&lt;div class=&quot;advisor-tiles&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_39"><code class="language-markup">&lt;div class=&quot;advisor-tiles&quot;&gt;
   &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -535,7 +543,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Mystery Reader x7777&lt;/h4&gt;
+              &lt;h4&gt;Mystery Reader x7777&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
                   4&amp;#189; stars
@@ -544,7 +552,7 @@
                     &lt;b&gt;$10.00/min&lt;/b&gt;
                 &lt;/p&gt;
                   &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                    Chat &lt;b&gt;10% off&lt;/b&gt; ($9.00/min)
+                    Chat &lt;del class=&quot;text-muted&quot;&gt;$10.00&lt;/del&gt; $9.00/min
                   &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
@@ -553,7 +561,7 @@
                   &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 7:45pm&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
                 &lt;/li&gt;
@@ -563,7 +571,7 @@
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -578,7 +586,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Saul Goodman x7777&lt;/h4&gt;
+              &lt;h4&gt;Saul Goodman x7777&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
                   4&amp;#189; stars
@@ -594,18 +602,18 @@
                   &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 10:55pm&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Chat Now&lt;/a&gt;
                 &lt;/li&gt;
                   &lt;li class=&quot;arrange-fill&quot;&gt;
-                    &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
+                    &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get Return Call&lt;/a&gt;
                   &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-        &lt;div class=&quot;clearfix visible-sm-block&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;clearfix visible-md-block&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -620,7 +628,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Zaphod Beeblebrox x1337&lt;/h4&gt;
+              &lt;h4&gt;Zaphod Beeblebrox x1337&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-2&quot;&gt;
                   2 stars
@@ -635,15 +643,15 @@
                   &lt;p class=&quot;text-success&quot;&gt;&lt;b&gt;Available&lt;/b&gt; till 2:30pm&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Call Now&lt;/a&gt;
                 &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-        &lt;div class=&quot;clearfix hidden-xs hidden-sm&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;clearfix visible-lg-block&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -655,7 +663,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Liz Lemon x3030&lt;/h4&gt;
+              &lt;h4&gt;Liz Lemon x3030&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-4&quot;&gt;
                   4 stars
@@ -664,7 +672,7 @@
                     &lt;b&gt;$5.00/min&lt;/b&gt;
                 &lt;/p&gt;
                   &lt;p class=&quot;advisor-tile-meta-group&quot;&gt;
-                    Chat &lt;b&gt;$1/min off&lt;/b&gt; ($4.00/min)
+                    Chat &lt;del class=&quot;text-muted&quot;&gt;$5.00&lt;/del&gt; $4.00/min
                   &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
@@ -673,15 +681,15 @@
                   &lt;p class=&quot;text-danger&quot;&gt;&lt;b&gt;Busy&lt;/b&gt; logged on till 9:00pm&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-info btn-shaded&quot; href=&quot;#&quot;&gt;View Schedule&lt;/a&gt;
                 &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-        &lt;div class=&quot;clearfix visible-sm-block&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;clearfix visible-md-block&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -693,7 +701,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Jet Jaguar x1122&lt;/h4&gt;
+              &lt;h4&gt;Jet Jaguar x1122&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-3-5&quot;&gt;
                   3&amp;#189; stars
@@ -709,14 +717,14 @@
                   &lt;p class=&quot;text-danger&quot;&gt;&lt;b&gt;Busy&lt;/b&gt; logged on till 7:45pm&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
                 &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -728,7 +736,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;Uncle Jesse x7777&lt;/h4&gt;
+              &lt;h4&gt;Uncle Jesse x7777&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-4-5&quot;&gt;
                   4&amp;#189; stars
@@ -744,16 +752,16 @@
                 &lt;p class=&quot;text-muted&quot;&gt;&lt;b&gt;Offline&lt;/b&gt;&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-success btn-shaded&quot; href=&quot;#&quot;&gt;Get a Return Call&lt;/a&gt;
                 &lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-        &lt;div class=&quot;clearfix visible-sm-block&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;clearfix hidden-xs hidden-sm&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4&quot;&gt;
+        &lt;div class=&quot;clearfix visible-md-block&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;clearfix visible-lg-block&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;col-xs-12 col-md-6 col-lg-4&quot;&gt;
         &lt;div class=&quot;advisor-tile&quot;&gt;
           &lt;a class=&quot;link-block advisor-tile-main advisor-tile-group&quot; href=&quot;#&quot;&gt;
             &lt;div class=&quot;advisor-tile-main-object&quot;&gt;
@@ -768,7 +776,7 @@
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;advisor-tile-main-body&quot;&gt;
-              &lt;h4 class=&quot;text-primary&quot;&gt;The Amazing Gusto x8888&lt;/h4&gt;
+              &lt;h4&gt;The Amazing Gusto x8888&lt;/h4&gt;
               &lt;div class=&quot;advisor-tile-meta&quot;&gt;
                 &lt;p class=&quot;advisor-tile-meta-group stars stars-5&quot;&gt;
                   5 stars
@@ -784,7 +792,7 @@
                 &lt;p class=&quot;text-muted&quot;&gt;&lt;b&gt;Offline&lt;/b&gt;&lt;/p&gt;
             &lt;/div&gt;
           &lt;/a&gt;
-          &lt;ul class=&quot;arrange arrange-equal arrange-gutter advisor-tile-group&quot;&gt;
+          &lt;ul class=&quot;arrange advisor-tile-actions arrange-gutter advisor-tile-group&quot;&gt;
                 &lt;li class=&quot;arrange-fill&quot;&gt;
                   &lt;a class=&quot;btn btn-block btn-sm btn-info btn-shaded&quot; href=&quot;#&quot;&gt;View Schedule&lt;/a&gt;
                 &lt;/li&gt;
@@ -792,7 +800,19 @@
         &lt;/div&gt;
       &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;script&gt;
+$(window).load(function(){
+  var $tiles = $(&#39;.advisor-tiles .advisor-tile&#39;);
+  $tiles.leveller({
+    cssSelector: &#39;.advisor-tile-actions&#39;,
+    cssProperty: &#39;margin-top&#39;
+  });
+  $(window).resize(function(){
+    $tiles.leveller();
+  });
+});
+&lt;/script&gt;</code></pre>
       
     </div>
   </div>
@@ -802,7 +822,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, December 19th, 2014, 9:35AM (PST).
+      This page was generated Monday, January 19th, 2015, 4:55PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

@@ -15,876 +15,964 @@
 
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
-    <script src="../../js/modernizr.custom.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <!-- Site behavior/UI JS -->
     <script src="../../js/site.js"></script>
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
 
   </head>
 <body>
 
 <div class="container-page">
-  <div class="box-full box-default-sm box-lighter box-sheer">
-    <div class="row no-gutters js-advisor-view-container">
-      <div class="col-xs-12 col-sm-3 js-advisor-view" id="advisor-menu">
-        <div class="u-margin visible-xs-block">
-          <div class="arrange">
-            <div class="arrange-fill hidden-sm hidden-md hidden-lg">
-              <button class="btn btn-default btn-shaded" type="button" data-popview="#advisor-main"><span class="arrow-left"></span> Back</button>
+  <div class="box-full box-default-lg box-lighter box-sheer">
+    <div class="advisor-promo">
+      <a href="#">Save 25% on New Advisors!</a>
+    </div>    <div class="hidden-md hidden-lg">
+      
+      <ul class="toolbar" role="tablist">
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-search" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+            </svg>
+            Search
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-sort" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#sort" />
+            </svg>
+            Sort
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-picks" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#picks" />
+            </svg>
+            Picks
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-filters" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#filter" />
+            </svg>
+            Filter
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
+      <div class="col-md-3">
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
+          <div class="form-group form-group-required u-padding">
+            <label class="control-label" for="advisor-search">Search advisors by name or extension</label>
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" id="advisor-search">
+              <span class="input-group-btn">
+                <button class="btn btn-sm btn-primary btn-shaded" type="button">Go</button>
+              </span>
             </div>
-            <div class="arrange-fit text-center text-nowrap">
-              <button class="btn btn-link" type="button" data-popview="#advisor-main"><span class="text-danger">Clear All</span></button>
-              <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popview="#advisor-main">Filter</button>
+          </div>        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends u-overflow-hidden" id="our-psychics-sort" data-parent="#our-psychics-container">
+          <div class="filter">
+            <h4 class="filter-heading hidden-xs hidden-sm">
+              <a data-toggle="collapse" class="filter-item filter-parent filter-primary filter-rounded collapsed" href="#sort-show">
+                Sort  <small class="filter-summary">Available</small>
+                <span class="badge filter-badge"></span>
+              </a>
+            </h4>
+            <div class="filter-collapse collapse" id="sort-show" aria-expanded="false">
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="available" checked>
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Available
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="busy">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Busy
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="rating">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Star Rating
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="alpha">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Alphabetical
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="new">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  New (Save 25%!)
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="highest-price">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Highest Price
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="lowest-price">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Lowest Price
+                </label>
+              </div>
             </div>
+          </div>
+          
+          
+        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-filters" data-parent="#our-psychics-container">
+          <h4 class="u-no-margin u-padding hidden-xs hidden-sm">Filter by</h4>
+          
+            <div class="filter hidden-md hidden-lg">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent  filter-primary"
+                    href="#filters-show">
+                    Show
+                      <small class="filter-summary">All Psychics</small>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse in" id="filters-show">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              checked>
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          All Psychics
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              >
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          Phone Psychics
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              >
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          Chat Psychics
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary"
+                    href="#filters-specialties">
+                    Specialties
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-specialties">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Career Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairaudient
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairsentient
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairvoyant
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Intuitive/Empath
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Love Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Pet Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Psychic Medium
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary"
+                    href="#filters-subject-expertises">
+                    Subject/Expertises
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-subject-expertises">
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            href="#filters-love-relationships-family">
+                            Love, Relationships &amp; Family
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-love-relationships-family">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Breakups/Divorce
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Cheating/Wandering Hearts
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Finding love/Soulmates
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  LGBT Relationships
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Sex/Intimacy
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Sibling/Parental Issues
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Social Media Influence
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Toxic Relationships
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            href="#filters-career-finance">
+                            Career &amp; Finance
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-career-finance">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Career Changes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Co-Worker Disputes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Financial Stress
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Harassment
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Manifesting Wealth
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  New Job
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Office Romance
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Work/Life Balance
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            href="#filters-life-destiny-meaning">
+                            Life, Destiny &amp; Meaning
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-life-destiny-meaning">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Embracing Change/Getting Unstuck
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Law of Attraction
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Life coaching
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Reiki/Healing
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Spirituality
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Unlocking psychic abilities
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            href="#filters-loss-grieving">
+                            Loss &amp; Grieving
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-loss-grieving">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Coping with Death
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Incomplete goodbyes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Loss of a pet
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Moving past grief
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Signs of Connections
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary"
+                    href="#filters-tools">
+                    Tools
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-tools">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Angel Cards
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Astrology
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Cartomancy
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Dream Interpretation
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Lost Object
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Numerology
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Past Life Interpretation
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Spirit Guides
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Tarot
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Uses No Tools
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary"
+                    href="#filters-language">
+                    Language
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-language">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          English
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Spanish
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary"
+                    href="#filters-reading-style">
+                    Reading Style
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-reading-style">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Compassionate
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Direct
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Expressive
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Thoughtful
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Wise
+                        </label>
+                    </div>
+                </div>
+            </div>
+          <div class="text-center u-padding text-nowrap">
+            <button class="btn btn-link" type="button" data-dismiss="prairie-dog"><span class="text-danger">Clear All</span></button>
+            <button class="btn btn-success btn-shaded js-apply-button" type="button" data-dismiss="prairie-dog">Filter</button>
           </div>
         </div>
-        
-          <div class="filter visible-xs-block">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent  filter-primary"
-                  href="#filters-show">
-                  Show
-                    <small class="filter-summary">All Psychics</small>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse in" id="filters-show">
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-radio">
-                          <input
-                            type="radio"
-                            name="filter-type"
-                            checked>
-                          <span class="filter-radio-value" aria-hidden="true"></span>
-                        </span>
-                        All Psychics
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-radio">
-                          <input
-                            type="radio"
-                            name="filter-type"
-                            >
-                          <span class="filter-radio-value" aria-hidden="true"></span>
-                        </span>
-                        Phone Psychics
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-radio">
-                          <input
-                            type="radio"
-                            name="filter-type"
-                            >
-                          <span class="filter-radio-value" aria-hidden="true"></span>
-                        </span>
-                        Chat Psychics
-                      </label>
-                  </div>
-              </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-picks" data-parent="#our-psychics-container">
+          <div class="box box-tan">
+            <h3 class="text-primary">Not sure which of our advisors to connect with?</h3> 
+            <p>See our <a href="#"><strong>staff picks</strong></a> or <a href="#"><strong>psychics you might like</strong></a> based on your history.</p>
           </div>
-          <div class="filter ">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent collapsed filter-primary"
-                  href="#filters-specialties">
-                  Specialties
-                    <span class="badge filter-badge"></span>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse " id="filters-specialties">
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Career Psychic
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Clairaudient
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Clairsentient
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Clairvoyant
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Intuitive/Empath
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Love Psychic
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Pet Psychic
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Psychic Medium
-                      </label>
-                  </div>
-              </div>
-          </div>
-          <div class="filter ">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent collapsed filter-primary"
-                  href="#filters-subject-expertises">
-                  Subject/Expertises
-                    <span class="badge filter-badge"></span>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse " id="filters-subject-expertises">
-                  <div class="filter ">
-                      <h5 class="filter-heading">
-                        <a
-                          data-toggle="collapse"
-                          class="filter-item filter-parent collapsed "
-                          href="#filters-love-relationships-family">
-                          Love, Relationships &amp; Family
-                            <span class="badge filter-badge"></span>
-                        </a>
-                      </h5>
-                      <div class="filter-collapse collapse " id="filters-love-relationships-family">
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Breakups/Divorce
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Cheating/Wandering Hearts
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Finding love/Soulmates
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                LGBT Relationships
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Sex/Intimacy
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Sibling/Parental Issues
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Social Media Influence
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Toxic Relationships
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="filter ">
-                      <h5 class="filter-heading">
-                        <a
-                          data-toggle="collapse"
-                          class="filter-item filter-parent collapsed "
-                          href="#filters-career-finance">
-                          Career &amp; Finance
-                            <span class="badge filter-badge"></span>
-                        </a>
-                      </h5>
-                      <div class="filter-collapse collapse " id="filters-career-finance">
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Career Changes
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Co-Worker Disputes
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Financial Stress
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Harassment
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Manifesting Wealth
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                New Job
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Office Romance
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Work/Life Balance
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="filter ">
-                      <h5 class="filter-heading">
-                        <a
-                          data-toggle="collapse"
-                          class="filter-item filter-parent collapsed "
-                          href="#filters-life-destiny-meaning">
-                          Life, Destiny &amp; Meaning
-                            <span class="badge filter-badge"></span>
-                        </a>
-                      </h5>
-                      <div class="filter-collapse collapse " id="filters-life-destiny-meaning">
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Embracing Change/Getting Unstuck
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Law of Attraction
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Life coaching
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Reiki/Healing
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Spirituality
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Unlocking psychic abilities
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="filter ">
-                      <h5 class="filter-heading">
-                        <a
-                          data-toggle="collapse"
-                          class="filter-item filter-parent collapsed "
-                          href="#filters-loss-grieving">
-                          Loss &amp; Grieving
-                            <span class="badge filter-badge"></span>
-                        </a>
-                      </h5>
-                      <div class="filter-collapse collapse " id="filters-loss-grieving">
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Coping with Death
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Incomplete goodbyes
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Loss of a pet
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Moving past grief
-                              </label>
-                          </div>
-                          <div class="filter ">
-                              <label class="filter-item">
-                                <span class="filter-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    
-                                    >
-                                  <span class="filter-checkbox-value" aria-hidden="true"></span>
-                                </span>
-                                Signs of Connections
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="filter ">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent collapsed filter-primary"
-                  href="#filters-tools">
-                  Tools
-                    <span class="badge filter-badge"></span>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse " id="filters-tools">
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Angel Cards
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Astrology
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Cartomancy
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Dream Interpretation
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Lost Object
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Numerology
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Past Life Interpretation
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Spirit Guides
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Tarot
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Uses No Tools
-                      </label>
-                  </div>
-              </div>
-          </div>
-          <div class="filter ">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent collapsed filter-primary"
-                  href="#filters-language">
-                  Language
-                    <span class="badge filter-badge"></span>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse " id="filters-language">
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        English
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Spanish
-                      </label>
-                  </div>
-              </div>
-          </div>
-          <div class="filter ">
-              <h4 class="filter-heading">
-                <a
-                  data-toggle="collapse"
-                  class="filter-item filter-parent collapsed filter-primary"
-                  href="#filters-reading-style">
-                  Reading Style
-                    <span class="badge filter-badge"></span>
-                </a>
-              </h4>
-              <div class="filter-collapse collapse " id="filters-reading-style">
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Compassionate
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Direct
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Expressive
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Thoughtful
-                      </label>
-                  </div>
-                  <div class="filter ">
-                      <label class="filter-item">
-                        <span class="filter-checkbox">
-                          <input
-                            type="checkbox"
-                            
-                            >
-                          <span class="filter-checkbox-value" aria-hidden="true"></span>
-                        </span>
-                        Wise
-                      </label>
-                  </div>
-              </div>
-          </div>
-        
-        <script>
-        
-        /**
-         * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
-         * for us to do is update some values wehn controls are updated...
-         */
-        
-        /** Update badge counts on change of checkbox for all parents */
-        $(document).on('change', '.filter input:checkbox', function () {
-          $(this).parents('.filter-collapse').each(function(){
-            var $this = $(this);
-            var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
-            var $badge = $trigger.find('.filter-badge');
-            $badge.text($this.find('input:checkbox:checked').length || '');
-          });
-        });
-        
-        /** Update summaries on change of radios for immediate parent */
-        $(document).on('change', '.filter input:radio', function () {
-          var $this = $(this);
-          var $label = $this.closest('label');
-          var $parent = $this.closest('.filter-collapse');
-          var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
-          var $summary = $trigger.find('.filter-summary');
-          $summary.text($label.text());
-        });
-        
-        </script>
-        <div class="u-margin">
-          <div class="arrange">
-            <div class="arrange-fill hidden-sm hidden-md hidden-lg">
-              <button class="btn btn-default btn-shaded" type="button" data-popview="#advisor-main"><span class="arrow-left"></span> Back</button>
-            </div>
-            <div class="arrange-fit text-center text-nowrap">
-              <button class="btn btn-link" type="button" data-popview="#advisor-main"><span class="text-danger">Clear All</span></button>
-              <button class="btn btn-success btn-shaded js-apply-button" type="button" data-popview="#advisor-main">Filter</button>
-            </div>
-          </div>
+          
         </div>
       </div>
-      <div class="col-xs-12 col-sm-9 js-advisor-view" id="advisor-main">
-        <div class="u-margin visible-xs-block text-right">
-          <button class="btn btn-default btn-shaded" type="button" data-pushview="#advisor-menu">Filter</button>
-        </div>
-        <div class="u-margin-sides u-margin-top hidden-xs">
+    	<div class="prairie-dog-overlay"></div>
+      <div class="col-md-9 prairie-dog-bg">
+        <div class="hidden-xs hidden-sm u-margin-top">
           
-          <ul class="tabs">
-            <li role="presentation"><a href="#">Phone Psychics</a></li>
-            <li role="presentation"><a href="#">Chat Psychics</a></li>
-            <li role="presentation" class="active"><a href="#">All Psychics</a></li>
+          <ul class="tabs" role="tablist">
+            <li role="presentation"><a role="tab" href="#" aria-selected="false" data-toggle="tab">Phone Psychics</a></li>
+            <li role="presentation"><a role="tab" href="#" aria-selected="false" data-toggle="tab">Chat Psychics</a></li>
+            <li role="presentation" class="active"><a role="tab" href="#" aria-selected="true" data-toggle="tab">All Psychics</a></li>
           </ul>
         </div>
         <div class="advisor-tiles">
           <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -899,7 +987,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Mystery Reader x7777</h4>
+                      <h4>Mystery Reader x7777</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-4-5">
                           4&#189; stars
@@ -908,7 +996,7 @@
                             <b>$10.00/min</b>
                         </p>
                           <p class="advisor-tile-meta-group">
-                            Chat <b>10% off</b> ($9.00/min)
+                            Chat <del class="text-muted">$10.00</del> $9.00/min
                           </p>
                       </div>
                       <div class="advisor-tile-meta">
@@ -917,7 +1005,7 @@
                           <p class="text-success"><b>Available</b> till 7:45pm</p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
                         </li>
@@ -927,7 +1015,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -942,7 +1030,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Saul Goodman x7777</h4>
+                      <h4>Saul Goodman x7777</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-4-5">
                           4&#189; stars
@@ -958,18 +1046,18 @@
                           <p class="text-success"><b>Available</b> till 10:55pm</p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
                         </li>
                           <li class="arrange-fill">
-                            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
+                            <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get Return Call</a>
                           </li>
                   </ul>
                 </div>
               </div>
-                <div class="clearfix visible-sm-block"></div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="clearfix visible-md-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -984,7 +1072,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Zaphod Beeblebrox x1337</h4>
+                      <h4>Zaphod Beeblebrox x1337</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-2">
                           2 stars
@@ -999,15 +1087,15 @@
                           <p class="text-success"><b>Available</b> till 2:30pm</p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
                         </li>
                   </ul>
                 </div>
               </div>
-                <div class="clearfix hidden-xs hidden-sm"></div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="clearfix visible-lg-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -1019,7 +1107,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Liz Lemon x3030</h4>
+                      <h4>Liz Lemon x3030</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-4">
                           4 stars
@@ -1028,7 +1116,7 @@
                             <b>$5.00/min</b>
                         </p>
                           <p class="advisor-tile-meta-group">
-                            Chat <b>$1/min off</b> ($4.00/min)
+                            Chat <del class="text-muted">$5.00</del> $4.00/min
                           </p>
                       </div>
                       <div class="advisor-tile-meta">
@@ -1037,15 +1125,15 @@
                           <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
                         </li>
                   </ul>
                 </div>
               </div>
-                <div class="clearfix visible-sm-block"></div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="clearfix visible-md-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -1057,7 +1145,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Jet Jaguar x1122</h4>
+                      <h4>Jet Jaguar x1122</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-3-5">
                           3&#189; stars
@@ -1073,14 +1161,14 @@
                           <p class="text-danger"><b>Busy</b> logged on till 7:45pm</p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
                         </li>
                   </ul>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -1092,7 +1180,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">Uncle Jesse x7777</h4>
+                      <h4>Uncle Jesse x7777</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-4-5">
                           4&#189; stars
@@ -1108,16 +1196,16 @@
                         <p class="text-muted"><b>Offline</b></p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Get a Return Call</a>
                         </li>
                   </ul>
                 </div>
               </div>
-                <div class="clearfix visible-sm-block"></div>
-                <div class="clearfix hidden-xs hidden-sm"></div>
-              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="clearfix visible-md-block"></div>
+                <div class="clearfix visible-lg-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="advisor-tile">
                   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
                     <div class="advisor-tile-main-object">
@@ -1132,7 +1220,7 @@
                       </div>
                     </div>
                     <div class="advisor-tile-main-body">
-                      <h4 class="text-primary">The Amazing Gusto x8888</h4>
+                      <h4>The Amazing Gusto x8888</h4>
                       <div class="advisor-tile-meta">
                         <p class="advisor-tile-meta-group stars stars-5">
                           5 stars
@@ -1148,7 +1236,7 @@
                         <p class="text-muted"><b>Offline</b></p>
                     </div>
                   </a>
-                  <ul class="arrange arrange-equal arrange-gutter advisor-tile-group">
+                  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
                         <li class="arrange-fill">
                           <a class="btn btn-block btn-sm btn-info btn-shaded" href="#">View Schedule</a>
                         </li>
@@ -1157,6 +1245,8 @@
               </div>
           </div>
         </div>
+        
+        
         <div class="text-center">
           
           <nav>
@@ -1175,24 +1265,5 @@
     </div>
   </div>
 </div>
-
-<script>
-
-function canUseSlideView () {
-  return $('.js-advisor-view:visible').first().width() === $(window).width();
-}
-
-var slideView = $('.js-advisor-view-container').simpleSlideView({
-  views:      '.js-advisor-view',
-  activeView: '#advisor-main',
-  deferOn:    !canUseSlideView()
-});
-
-$(window).resize(function(){
-  slideView.toggle(canUseSlideView());
-});
-
-</script>
-
 </body>
 </html>

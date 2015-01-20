@@ -27,6 +27,9 @@
     <!-- Site behavior/UI JS -->
     <script src="../../js/site.js"></script>
 
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
   </head>
 <body class="c4-body">
 
@@ -67,7 +70,8 @@
       <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/fields">Fields</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
@@ -80,25 +84,27 @@
       <li><a class="c4-nav__item " href="../../02-components/advisors">Advisors</a></li>
       <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/filters">Filters</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/signup">Signup</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
       <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/toolbar">Toolbar</a></li>
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
-      <li><a class="c4-nav__item " href="../../pages/example">Example</a></li>
       <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
+      <li><a class="c4-nav__item " href="../../pages/signup">Signup</a></li>
     </ul>
   </nav>
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_19">
+  <div class="c4-pattern" id="c4-pattern_18">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_19">Filter Menu</a>
+          <a href="#c4-pattern_18">Filter Menu</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -112,7 +118,7 @@
 
     <div class="c4-pattern__body c4-pattern__body--full-width">
       
-  <div class="filter visible-xs-block">
+  <div class="filter hidden-md hidden-lg">
       <h4 class="filter-heading">
         <a
           data-toggle="collapse"
@@ -903,48 +909,19 @@
       </div>
   </div>
 
-<script>
-
-/**
- * Collapsing is now handled by the Bootstrap Collapse plugin. All that's left
- * for us to do is update some values wehn controls are updated...
- */
-
-/** Update badge counts on change of checkbox for all parents */
-$(document).on('change', '.filter input:checkbox', function () {
-  $(this).parents('.filter-collapse').each(function(){
-    var $this = $(this);
-    var $trigger = $('.filter-parent[href^="#' + $this.attr('id') + '"]');
-    var $badge = $trigger.find('.filter-badge');
-    $badge.text($this.find('input:checkbox:checked').length || '');
-  });
-});
-
-/** Update summaries on change of radios for immediate parent */
-$(document).on('change', '.filter input:radio', function () {
-  var $this = $(this);
-  var $label = $this.closest('label');
-  var $parent = $this.closest('.filter-collapse');
-  var $trigger = $('.filter-parent[href^="#' + $parent.attr('id') + '"]');
-  var $summary = $trigger.find('.filter-summary');
-  $summary.text($label.text());
-});
-
-</script>
-
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_19" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_18" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_19"><code class="language-markup">&lt;div class=&quot;filter visible-xs-block&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_18"><code class="language-markup">&lt;div class=&quot;filter hidden-md hidden-lg&quot;&gt;
       &lt;h4 class=&quot;filter-heading&quot;&gt;
         &lt;a
           data-toggle=&quot;collapse&quot;
@@ -1733,36 +1710,7 @@ $(document).on('change', '.filter input:radio', function () {
               &lt;/label&gt;
           &lt;/div&gt;
       &lt;/div&gt;
-  &lt;/div&gt;
-
-&lt;script&gt;
-
-/**
- * Collapsing is now handled by the Bootstrap Collapse plugin. All that&#39;s left
- * for us to do is update some values wehn controls are updated...
- */
-
-/** Update badge counts on change of checkbox for all parents */
-$(document).on(&#39;change&#39;, &#39;.filter input:checkbox&#39;, function () {
-  $(this).parents(&#39;.filter-collapse&#39;).each(function(){
-    var $this = $(this);
-    var $trigger = $(&#39;.filter-parent[href^=&quot;#&#39; + $this.attr(&#39;id&#39;) + &#39;&quot;]&#39;);
-    var $badge = $trigger.find(&#39;.filter-badge&#39;);
-    $badge.text($this.find(&#39;input:checkbox:checked&#39;).length || &#39;&#39;);
-  });
-});
-
-/** Update summaries on change of radios for immediate parent */
-$(document).on(&#39;change&#39;, &#39;.filter input:radio&#39;, function () {
-  var $this = $(this);
-  var $label = $this.closest(&#39;label&#39;);
-  var $parent = $this.closest(&#39;.filter-collapse&#39;);
-  var $trigger = $(&#39;.filter-parent[href^=&quot;#&#39; + $parent.attr(&#39;id&#39;) + &#39;&quot;]&#39;);
-  var $summary = $trigger.find(&#39;.filter-summary&#39;);
-  $summary.text($label.text());
-});
-
-&lt;/script&gt;</code></pre>
+  &lt;/div&gt;</code></pre>
       
     </div>
   </div>
@@ -1772,7 +1720,7 @@ $(document).on(&#39;change&#39;, &#39;.filter input:radio&#39;, function () {
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, December 19th, 2014, 9:35AM (PST).
+      This page was generated Monday, January 19th, 2015, 4:55PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

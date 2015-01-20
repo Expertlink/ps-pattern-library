@@ -1,0 +1,35 @@
+---
+name: Inline SVG Icons
+description: >
+  Uses SVG `symbol` ([info](http://css-tricks.com/svg-symbol-good-choice-icons/)) to
+  reduce multiple requests for vector imagery while avoiding pitfalls like
+  missing-character artifacts. Icons inherit their color and size from the
+  parent unless overtly resized.
+---
+
+<ul class="demo-icons">
+  <li>
+    <svg class="icon">
+      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#filter" />
+    </svg>
+    <span>filter</span>
+  </li>
+  <li>
+    <svg class="icon">
+      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#picks" />
+    </svg>
+    <span>picks</span>
+  </li>
+  <li>
+    <svg class="icon">
+      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+    </svg>
+    <span>search</span>
+  </li>
+  <li>
+    <svg class="icon">
+      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#sort" />
+    </svg>
+    <span>filter</span>
+  </li>
+</ul>

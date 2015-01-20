@@ -7,6 +7,7 @@
     "data"       : "./source/data",
     "dist"       : "./dist",
     "gulpTasks"  : "./pattern-lib/tasks",
+    "gulpSiteTasks": "./source/build/tasks",
     "partials"   : "./source/patterns",
     "patterns"   : "./source/patterns",
     "source"     : "./source",
@@ -23,14 +24,15 @@
       "scripts": "./static/js"
     },
     "site"     : {
+      "build"  : "./source/build/out",
       "css"    : "./static/css",
-      "scripts": "./static/js"
+      "scripts": "./static/js",
+      "sprites": "./static/images"
     }
   },
   "src": {
     "patterns"    : "./source/patterns/**/*.hbs",
     "patternDirs" : "./source/patterns/**/*",
-    "assets"      : "./source/assets/**/*",
     "static"      : "./static/**",
     "styles"      : "./source/styles/**/*.scss",
     "templates"   : "./source/patterns/**/*.template",
@@ -40,8 +42,13 @@
       "scripts"   : "./pattern-lib/js/**/**"
     },
     "site"        : {
+      "assets"    : ["./source/assets/**/*", "./source/build/out/**/*", "!./source/build/out/**/*.scss"],
       "styles"    : "./source/styles/**/*.scss",
-      "scripts"   : "./source/js/**/*"
+      "scripts"   : "./source/js/**/*",
+      "sprites"   : {
+        "inline":  "./source/sprites/svg/inline/*.svg",
+        "css"   :  "./source/sprites/svg/css/*.svg"
+      }
     }
   }
 }

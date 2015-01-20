@@ -3,15 +3,16 @@
 
 var gulp     = require('gulp');
 var settings = require('./settings');
+var runSequence = require('run-sequence');
 var watchers = {};
 
-var taskModules = ['browserSync',
-                   'scripts',
-                   'styles',
-                   'watch'];
 /**
- * Task modules should be in build/gulp/tasks
+ * These modules contain tasks to build the site content onto the pattern library.
  */
+var taskModules = [{name: 'browserSync', deps: ['build']},
+                   'scripts',
+                   'watch'];
+
 taskModules.forEach(function(task) {
   task = (typeof task === 'string') ? { name: task } : task;
   task.deps = task.deps || [];
@@ -19,26 +20,19 @@ taskModules.forEach(function(task) {
 });
 
 /**
- * Style guide builder.
+ * Include tasks for building the pattern library.
  */
 require(settings.paths.library + '/tasks/');
-gulp.task('site', ['styles', 'scripts', 'assets']);
+
 /**
- * Simple tasks not worthy of module
+ * Include site and project-specific tasks.
  */
-gulp.task('assets', function() {
-  return gulp.src(settings.src.assets)
-    .pipe(gulp.dest(settings.dest.assets));
+require(settings.paths.gulpSiteTasks);
+
+gulp.task('site', function(callback) {
+  runSequence(['styles', 'scripts', 'assets'], callback);
 });
-// gulp.task('vendor', function() {
-//   return gulp.src(settings.src.vendor)
-//     .pipe(gulp.dest(settings.dest.vendor));
-// });
-gulp.task('dist', function() {
-  return gulp.src(settings.src.static)
-    .pipe(gulp.dest(settings.paths.dist));
+gulp.task('build', function(callback) {
+  runSequence('library', 'site', callback);
 });
-/**
- * Composite tasks
- */
-gulp.task('default', ['site', 'library', 'watch', 'browserSync']);
+gulp.task('default', ['build', 'browserSync', 'watch']);
