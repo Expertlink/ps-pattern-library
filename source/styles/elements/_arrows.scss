@@ -1,6 +1,7 @@
 %arrow-base {
   @include triangle();
-  &.arrow-toggle[aria-expanded="true"], &.arrow-toggle.active {
+  &.arrow-toggle[aria-expanded="true"],
+  &.arrow-toggle.active {
     transform: rotate(180deg);
   }
 }
