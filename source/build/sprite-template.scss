@@ -1,0 +1,11 @@
+$svg-sprite-url: "{{{sprite}}}";
+
+$svg-sprite-map: (
+  {{#shapes}}
+  {{name}}: (
+  background-position: {{position.relative.xy}},
+  width: {{width.outer}}px,
+  height: {{height.outer}}px
+  ){{^last}},{{/last}}
+  {{/shapes}}
+);

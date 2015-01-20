@@ -17,3 +17,16 @@ status: inprogress
     {{/each}}
   </div>
 </div>
+
+<script>
+$(window).load(function(){
+  var $tiles = $('.advisor-tiles .advisor-tile');
+  $tiles.leveller({
+    cssSelector: '.advisor-tile-actions',
+    cssProperty: 'margin-top'
+  });
+  $(window).resize(function(){
+    $tiles.leveller();
+  });
+});
+</script>
