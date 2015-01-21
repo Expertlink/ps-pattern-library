@@ -6,20 +6,21 @@ description: Step one of the signup form for new customers.
 
 <div class="container-page">
   <div class="box-full box-default-lg box-lighter box-sheer ">
-    <div class="hidden-md hidden-lg ">
-      {{> toolbar/toolbar-signup }}
-    </div>
     <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="signup-account-container">
-      <div class="col-md-5">
-        {{> signup/_signup-sidebar }}
-      </div>
-    	<div class="prairie-dog-overlay"></div>
-    	<div class="col-md-7 prairie-dog-bg">
+      <div class="col-md-8 prairie-dog-bg">
         <div class="col-xs-12">
+          <div class="box box-scroll">
+            {{> signup/_signup-sidebar-guarantee }}
+          </div>
           <h3>Account Information</h3>
           {{> forms/signup-account }}
+          
           {{> signup/_signup-footer }}
         </div>
+      </div>
+      <div class="col-md-4">
+         {{> signup/_signup-sidebar-ourpsychics }}
+        {{> signup/_signup-sidebar-howitworks }} 
       </div>
     </div>
   </div>
