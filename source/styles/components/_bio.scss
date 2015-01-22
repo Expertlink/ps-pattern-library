@@ -52,9 +52,15 @@
       height: 35px; 
       text-indent: -20em;
       overflow:hidden;
-      background: url(/images/icons/bio-fave-off.svg) center no-repeat;
+      background-position: center;
+      background-repeat: no-repeat;
       cursor: pointer;
-      &:hover {
+    }
+  }
+  .bio-fave {
+    a {
+      background-image: url(/images/icons/bio-fave-off.svg);
+      &:hover, &.fave-on {
         background-image: url(/images/icons/bio-fave-on.svg);
       }
     }
