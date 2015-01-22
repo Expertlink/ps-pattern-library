@@ -1,7 +1,7 @@
 <header role="banner" class="container-page">
 
   <a href="">
-    <img alt="Psychic Source - Life's possibilites. Revealed." src="/images/logo/ps-logo.png">
+    <img class="img-responsive" alt="Psychic Source - Life's possibilites. Revealed." src="/images/logo/ps-logo.png">
   </a>
 
   <nav>
@@ -11,7 +11,7 @@
           Login
         </a>
       </li>
-      <li>
+      <li class="hidden-xs hidden-sm hidden-md">
         <a href="" class="btn">
           Customer Care
           <span class="arrow-down"></span>
@@ -45,29 +45,61 @@
   </nav>
 
   <div>
-    <p><a href="">Our Satisfaction Guarantee</a></p>
+    <p class="hidden-xs hidden-sm hidden-md"><a href="">Our Satisfaction Guarantee</a></p>
     <p><a href="tel:18009653049">1.800.965.3049</a></p>
-    <p>Since 1989, the Most Respected Psychic Service</p>
+    <p class="hidden-xs hidden-sm hidden-md">Since 1989, the Most Respected Psychic Service</p>
   </div>
 
-  <nav>
-    <ul>
+  <nav class="overflow-nav">
+    <ul class="overflow-nav-primary">
       <li>
         <a href="">New Customers</a>
       </li>
       <li>
         <a href="">Our Psychics</a>
       </li>
-      <li>
+      <li class="hidden-xs">
         <a href="">Horoscopes</a>
       </li>
-      <li>
+      <li class="hidden-xs hidden-sm">
+        <a href="">About Psychic Readings</a>
+      </li>
+      <li class="hidden-xs hidden-sm hidden-md">
+        <a href="">Articles &amp; Resources</a>
+      </li>
+      <li class="hidden-lg">
+        <button type="button">
+          More <span class="arrow-down"></span>
+        </button>
+      </li>
+    </ul>
+    <ul class="overflow-nav-secondary hidden-lg">
+      <li class="hidden-sm hidden-md">
+        <a href="">Horoscopes</a>
+      </li>
+      <li class="hidden-md">
         <a href="">About Psychic Readings</a>
       </li>
       <li>
         <a href="">Articles &amp; Resources</a>
       </li>
+      <li>
+        <a href="">Customer Care</a>
+      </li>
     </ul>
   </nav>
 
 </header>
+
+<script>
+
+// $(function(){
+//
+//   $('.overflow-nav').each(function(){
+//     var $element = $(this);
+//     var $primary = $element.find('.overflow-nav-primary');
+//   });
+//
+// });
+
+</script>
