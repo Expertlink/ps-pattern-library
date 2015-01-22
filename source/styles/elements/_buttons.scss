@@ -1,7 +1,11 @@
 // These styles extend Bootstrap's core button classes.
 
+.btn-sunrise {
+  @include button-variant($gray-dark, $orange-lighter, $tan-dark);
+}
+
 .btn-shaded {
-  background-image: linear-gradient(to bottom, rgba(#fff, 0.15), rgba(#fff, 0) 50%, rgba(#000, 0) 50%, rgba(#000, 0.12));
+  background-image: $btn-shading;
 }
 
 .btn-rounded {

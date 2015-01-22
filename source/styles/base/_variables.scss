@@ -16,6 +16,7 @@ $red-darker: #531917;
 
 $tan: #d8c3a7;
 $tan-light: #feeed7;
+$tan-dark: darken($tan, 7%);
 
 $orange: #f87f25;
 $orange-light: #F4BC84;
@@ -31,12 +32,19 @@ $teal-light: #e9f2ef;
 
 $green: #390;
 
+$brown: #84796D;
+
 $brand-primary: $red;
 
 //== Shadows
 
 $box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
 $img-shadow: $box-shadow;
+$nav-shadow: 0 5px 5px rgba(0,0,0,0.1);
+
+//== Decorations
+
+$btn-shading: linear-gradient(to bottom, rgba(#fff, 0.15), rgba(#fff, 0) 50%, rgba(#000, 0) 50%, rgba(#000, 0.12));
 
 //== Scaffolding
 
