@@ -115,12 +115,20 @@
 .box-scroll:after,
 .box-scroll-top:before,
 .box-scroll-bottom:after {
-  background: url(/images/fleurons/scroll.svg) center repeat-x;
+  background: url(/images/fleurons/scroll.svg) 0 0 repeat-x;
   content: '';
   display: block;
   height: 14px;
   margin: ($line-height-computed / 2) ($line-height-computed * -1);
   width: auto;
+
+}
+.box-scroll, .box-scroll-top, .box-scroll-bottom {
+  &.u-no-padding-sides {
+    &:after, &:before {
+      margin: ($line-height-computed / 2) 0;
+    } 
+  }
 }
 
 //== Inner fleurons

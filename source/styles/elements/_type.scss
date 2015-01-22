@@ -3,7 +3,9 @@
 .text-cursive {
   font-family: $font-family-cursive;
 }
-
+.text-gray {
+  color: $gray;
+}
 //** Extends Bootstrap headings to accountfor differing x-height
 
 h1, .h1 {
