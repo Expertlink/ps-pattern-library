@@ -31,3 +31,13 @@ body {
     text-decoration: inherit;
   }
 }
+
+/**
+ * Variation of img-responsive for <picture>
+ */
+.picture-responsive {
+  source,
+  img {
+    @include img-responsive;
+  }
+}
