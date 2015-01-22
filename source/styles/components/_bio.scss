@@ -1,0 +1,113 @@
+.bio-name {
+  margin:0;
+}
+.bio-headline {
+  margin:0 0 $line-height-computed;
+}
+.bio-photo {
+  display: block;
+  position: relative;
+  margin: 0 0 $line-height-computed;
+  overflow:hidden;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: $border-radius-large;
+  }
+  &.available {
+    &:before {
+      content: "Available";
+      position: absolute;
+      top: 2em;
+      left: -2em;
+      background: $green;
+      color: white;
+      display:block;
+      padding: 3px 0;
+      text-align: center;
+      width: 10em;
+      transform: rotate(-45deg); 
+      font-weight: 800;
+    }
+    img {
+      border: 1px solid $green;
+    }
+  }
+  .stars {
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+    margin-left: -55px;
+  }
+  .bio-fave, .bio-video, .bio-audio {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin:0;
+    display: block;
+    a {
+      display:block;
+      width: 35px;
+      height: 35px; 
+      text-indent: -20em;
+      overflow:hidden;
+      background: url(/images/icons/bio-fave-off.svg) center no-repeat;
+      cursor: pointer;
+      &:hover {
+        background-image: url(/images/icons/bio-fave-on.svg);
+      }
+    }
+  }
+  .bio-video {
+    top: 50px;
+    a {
+      background-image: url(/images/icons/bio-play-video-off.svg);
+      &:hover {
+        background-image: url(/images/icons/bio-play-video-on.svg);
+      }
+    }
+  }
+  .bio-audio {
+    top: 90px;
+    a {
+      background-image: url(/images/icons/bio-play-audio-off.svg);
+      &:hover {
+        background-image: url(/images/icons/bio-play-audio-on.svg);
+      }
+    }
+  }
+}
+.bio-actions {
+  width: calc(100% + #{$arrange-gutter-size});
+  margin-bottom:0;
+  > .arrange-fill {
+    width: 50%;
+  }
+  .bio-price {
+    font-size: 0.9em;
+    display: block;
+    text-align:center;
+    font-weight: 800;  
+    margin-top: 0.2em;
+    del {
+      color: $gray-light;
+      font-weight: normal;
+    }
+  }
+}
+.bio-price-details {
+  font-size: 0.9em;
+  color: $gray;
+  text-align:center;
+}
+.bio-summary {
+  strong {
+    color: $red;
+  }
+}
+.bio-tabs {
+  margin-left: -18px;
+  margin-right: -18px;
+  padding-left: 18px;
+}
