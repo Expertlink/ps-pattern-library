@@ -4,7 +4,7 @@
 }
 
 .overflow-nav-primary {
-  border-color: $tan-dark;
+  border-color: $tan-dark $tan-dark darken(#c2c2aa, 10%);
   border-style: solid;
   border-width: 1px 0;
   box-shadow: $nav-shadow;
@@ -29,11 +29,19 @@
     width: 1%;
 
     > a {
-      background-color: $orange-lighter;
-      background-image: $btn-shading;
+      background-color: #f4f4de;
+      background-image: linear-gradient(
+        to bottom,
+        darken(#f4f4de, 3%),
+        #fff 15%,
+        #f4f4de,
+        #c2c2aa
+      );
+      // background-color: $orange-lighter;
+      // background-image: $btn-shading;
       color: $gray-dark;
       display: block;
-      padding: $padding-base-vertical $padding-base-horizontal;
+      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
       text-align: center;
       text-decoration: none;
       white-space: nowrap;
@@ -43,7 +51,15 @@
       &.focus,
       &:active,
       &.active {
-        background-color: darken($orange-lighter, 5%);
+        // background-color: darken($orange-lighter, 5%);
+        background-color: darken(#f4f4de, 7%);
+        background-image: linear-gradient(
+          to bottom,
+          darken(#f4f4de, 8%),
+          darken(#fff, 5%) 15%,
+          darken(#f4f4de, 5%),
+          darken(#c2c2aa, 5%)
+        );
       }
 
       &:active,
@@ -79,7 +95,7 @@
       color: #fff;
       display: block;
       margin-top: -1px;
-      padding: $padding-base-vertical $padding-base-horizontal;
+      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
       position: relative;
       text-decoration: none;
 
