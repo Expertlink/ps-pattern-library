@@ -1,15 +1,17 @@
-<header role="banner" class="container-page">
+<header role="banner" class="masthead container-page">
 
-  <a class="masthead-logo" href="">
-    <picture class="picture-responsive">
-      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 1000px)">
-      <source srcset="/images/logo/ps-logo-tagline-stacked.png" media="(min-width: 800px)">
-      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
-    </picture>
-  </a>
+  <div class="masthead-logo">
+    <a href="">
+      <picture class="picture-responsive">
+        <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 600px)">
+        <source srcset="/images/logo/ps-logo-tagline-stacked.png" media="(min-width: 400px)">
+        <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+      </picture>
+    </a>
+  </div>
 
-  <nav>
-    <ul>
+  <nav class="masthead-controls">
+    <ul class="list-inline masthead-controls-list">
       <li>
         <a href="" class="btn btn-sunrise btn-shaded">
           Login
@@ -21,7 +23,7 @@
           <span class="arrow-down"></span>
         </a>
       </li>
-      <li>
+      <li class="hidden-lg">
         <a href="#header-search" class="btn btn-sunrise btn-shaded">
           <svg class="icon">
             <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
@@ -29,7 +31,7 @@
         </a>
       </li>
     </ul>
-    <form id="header-search">
+    <form class="masthead-controls-search" id="header-search">
       <div class="input-group">
         <div class="input-group-btn">
           <button type="button" class="btn btn-sunrise btn-shaded">
@@ -37,7 +39,7 @@
               <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
             </svg>
             Psychics
-            <span class="arrow-down"></span>
+            <span class="arrow-down text-muted"></span>
           </button>
         </div>
         <input type="text" class="form-control">
@@ -48,7 +50,7 @@
     </form>
   </nav>
 
-  <div>
+  <div class="masthead-messaging">
     <p class="hidden-xs hidden-sm hidden-md"><a href="">Our Satisfaction Guarantee</a></p>
     <p><a href="tel:18009653049">1.800.965.3049</a></p>
     <p class="hidden-xs hidden-sm hidden-md">Since 1989, the Most Respected Psychic Service</p>
