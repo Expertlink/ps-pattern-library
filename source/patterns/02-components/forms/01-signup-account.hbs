@@ -5,9 +5,16 @@ description: step one of the signup form (account).
 
 <form role="form">
   {{> forms/offer-select }}
-  <div class="form-group form-group-required">
-    <label class="control-label" for="signupName">Your name</label>
-    <input type="text" class="form-control" id="signupName" />
+  
+  <div class="form-group arrange arrange-equal arrange-gutter">
+    <div class="form-group form-group-required arrange-fit">
+      <label class="control-label" for="signupFirstName">First name</label>
+      <input type="text" class="form-control" id="signupFirstName" />
+    </div>
+    <div class="form-group form-group-required arrange-fit">
+      <label class="control-label" for="signupLastName">Last name</label>
+      <input type="text" class="form-control" id="signupLastName" />    
+    </div>
   </div>
   <div class="form-group form-group-required">
     <label class="control-label" for="signupEmail">Email address</label>
