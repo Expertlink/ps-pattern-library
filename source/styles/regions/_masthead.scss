@@ -1,134 +1,150 @@
 .masthead {
-  @media (min-width: $screen-lg-min) {
-    margin-bottom: $line-height-computed;
-  }
-}
-
-.masthead-banner {
-  background-color: #7D888C;
-  border-bottom: 1px solid #fff;
-  box-shadow: inset 0 -1px 6px rgba(#000,0.3);
-  font-size: (14px / 13px * 1em);
-  font-weight: bold;
-  line-height: 1;
-  text-align: center;
-
-  &,
-  a {
-    color: #fff;
-  }
-
-  a {
-    display: block;
-    padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
-    text-decoration: none;
-  }
+  position: relative;
 }
 
 .masthead-logo {
   display: block;
-  // float: left;
-  margin-top: -0.2em;
-  max-width: 260px;
-  padding: $padding-base-horizontal;
+  margin-bottom: -12px;
+  top: -14px;
+  // margin-bottom: -16px;
+  // margin-top: -14px;
+  padding: ($padding-base-vertical * 1.5) $padding-base-horizontal ($padding-base-vertical * 2);
   position: relative;
-  width: 50%;
-
-  @media (min-width: $screen-md-min) {
-    max-width: 350px;
-  }
+  width: (320px / 2);
 }
+
+// .masthead {
+//   @media (min-width: $screen-lg-min) {
+//     margin-bottom: $line-height-computed;
+//   }
+// }
+//
+// .masthead-banner {
+//   background-color: #7D888C;
+//   border-bottom: 1px solid #fff;
+//   box-shadow: inset 0 -1px 6px rgba(#000,0.3);
+//   font-size: (14px / 13px * 1em);
+//   font-weight: bold;
+//   line-height: 1;
+//   text-align: center;
+//
+//   &,
+//   a {
+//     color: #fff;
+//   }
+//
+//   a {
+//     display: block;
+//     padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+//     text-decoration: none;
+//   }
+// }
+//
+
 
 // .masthead-main {
 //   display: table;
 //   width: 100%;
 // }
 //
-// .masthead-main-logo,
-// .masthead-main-body {
+// .masthead-logo,
+// .masthead-controls {
 //   display: table-cell;
-//   padding: ($padding-base-vertical * 2) $padding-base-horizontal;
 //   vertical-align: middle;
 // }
 //
-// .masthead-main-logo {
-//   width: 350px;
-// }
-//
-// .masthead-main-body {
-//   text-align: right;
-//   width: 50%;
-// }
-
-.masthead-controls-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  > li {
-    display: inline-block;
-    margin-left: ($padding-base-horizontal / 2);
-
-    > .btn {
-      font-weight: normal;
-    }
-  }
-}
-
-.masthead-controls-search {
-  display: none;
-}
-
-// .masthead {
-//   position: relative;
-//
-//   @media (min-width: $screen-lg-min) {
-//     margin-bottom: $line-height-computed;
-//   }
-// }
-//
 // .masthead-logo {
-//   max-width: 350px;
-//   padding: ($grid-gutter-width / 2);
-//   width: 50%;
+//   margin-top: -0.2em;
+//   padding: $padding-base-horizontal;
+//   position: relative;
+//   width: 160px;
 // }
 //
 // .masthead-controls {
-//   position: absolute;
-//   right: ($grid-gutter-width / 2);
-//   top: 14px;
+//   padding: ($padding-base-horizontal / 2);
+//   text-align: right;
 // }
+//
+// // .masthead-main {
+// //   // position: relative;
+// // }
+// //
+// // // .masthead-logo {
+// // //   display: block;
+// // //   // float: left;
+// // //   margin-top: -0.2em;
+// // //   max-width: 260px;
+// // //   padding: $padding-base-horizontal;
+// // //   position: relative;
+// // //   width: 50%;
+// // //
+// // //   @media (min-width: $screen-md-min) {
+// // //     max-width: 350px;
+// // //   }
+// // // }
+// //
+// // .masthead-controls {
+// //   // float: right;
+// //   // margin-top: (($line-height-computed + $padding-base-vertical * 2) / -2);
+// //   // position: absolute;
+// //   // right: ($padding-base-horizontal / 2);
+// //   // top: 50%;
+// // }
 //
 // .masthead-controls-list {
-//   display: inline-block;
-// }
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   white-space: nowrap;
 //
-// .masthead-controls-search {
-//   display: none;
-//
-//   @media (min-width: $screen-lg-min) {
+//   > li {
 //     display: inline-block;
-//     max-width: 340px;
-//     vertical-align: middle;
+//     margin-left: ($padding-base-horizontal / 2);
 //   }
 // }
 //
-// .masthead-messaging {
-//   text-align: center;
-//
-//   @media (min-width: $screen-lg-min) {
-//     text-align: right;
-//   }
-// }
-//
-// // $masthead-banner-height: 40px !default;
+// // .masthead-main {
+// //   display: table;
+// //   width: 100%;
+// // }
 // //
+// // .masthead-main-logo,
+// // .masthead-main-body {
+// //   display: table-cell;
+// //   padding: ($padding-base-vertical * 2) $padding-base-horizontal;
+// //   vertical-align: middle;
+// // }
+// //
+// // .masthead-main-logo {
+// //   width: 350px;
+// // }
+// //
+// // .masthead-main-body {
+// //   text-align: right;
+// //   width: 50%;
+// // }
+//
+// // .masthead-controls-list {
+// //   list-style: none;
+// //   margin: 0;
+// //   padding: 0;
+// //
+// //   > li {
+// //     display: inline-block;
+// //     margin-left: ($padding-base-horizontal / 2);
+// //
+// //     > .btn {
+// //       font-weight: normal;
+// //     }
+// //   }
+// // }
+// //
+// // .masthead-controls-search {
+// //   display: none;
+// // }
+//
 // // .masthead {
 // //   position: relative;
-// //
-// //   @media (max-width: $screen-md-max) {
-// //     padding-top: $masthead-banner-height;
-// //   }
 // //
 // //   @media (min-width: $screen-lg-min) {
 // //     margin-bottom: $line-height-computed;
@@ -136,28 +152,76 @@
 // // }
 // //
 // // .masthead-logo {
+// //   max-width: 350px;
 // //   padding: ($grid-gutter-width / 2);
 // //   width: 50%;
 // // }
 // //
-// // .masthead-messaging {
-// //   @media (max-width: $screen-md-max) {
-// //     position: absolute;
-// //     top: 0;
-// //     width: 100%;
+// // .masthead-controls {
+// //   position: absolute;
+// //   right: ($grid-gutter-width / 2);
+// //   top: 14px;
+// // }
 // //
-// //     a {
-// //       background-color: $blue-dark;
-// //       border-bottom: 1px solid #fff;
-// //       color: #fff;
-// //       display: block;
-// //       font-size: 14px;
-// //       font-weight: bold;
-// //       height: $masthead-banner-height;
-// //       line-height: 1;
-// //       padding: (($masthead-banner-height - 14px) / 2);
-// //       text-align: center;
-// //       text-decoration: none;
-// //     }
+// // .masthead-controls-list {
+// //   display: inline-block;
+// // }
+// //
+// // .masthead-controls-search {
+// //   display: none;
+// //
+// //   @media (min-width: $screen-lg-min) {
+// //     display: inline-block;
+// //     max-width: 340px;
+// //     vertical-align: middle;
 // //   }
 // // }
+// //
+// // .masthead-messaging {
+// //   text-align: center;
+// //
+// //   @media (min-width: $screen-lg-min) {
+// //     text-align: right;
+// //   }
+// // }
+// //
+// // // $masthead-banner-height: 40px !default;
+// // //
+// // // .masthead {
+// // //   position: relative;
+// // //
+// // //   @media (max-width: $screen-md-max) {
+// // //     padding-top: $masthead-banner-height;
+// // //   }
+// // //
+// // //   @media (min-width: $screen-lg-min) {
+// // //     margin-bottom: $line-height-computed;
+// // //   }
+// // // }
+// // //
+// // // .masthead-logo {
+// // //   padding: ($grid-gutter-width / 2);
+// // //   width: 50%;
+// // // }
+// // //
+// // // .masthead-messaging {
+// // //   @media (max-width: $screen-md-max) {
+// // //     position: absolute;
+// // //     top: 0;
+// // //     width: 100%;
+// // //
+// // //     a {
+// // //       background-color: $blue-dark;
+// // //       border-bottom: 1px solid #fff;
+// // //       color: #fff;
+// // //       display: block;
+// // //       font-size: 14px;
+// // //       font-weight: bold;
+// // //       height: $masthead-banner-height;
+// // //       line-height: 1;
+// // //       padding: (($masthead-banner-height - 14px) / 2);
+// // //       text-align: center;
+// // //       text-decoration: none;
+// // //     }
+// // //   }
+// // // }
