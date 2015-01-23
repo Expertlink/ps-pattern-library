@@ -115,7 +115,11 @@
 .box-scroll:after,
 .box-scroll-top:before,
 .box-scroll-bottom:after {
+<<<<<<< HEAD
   background: url(/images/fleurons/scroll.svg) 0 0 repeat-x;
+=======
+  background: url(/images/fleurons/scroll.svg) 0 center repeat-x;
+>>>>>>> master
   content: '';
   display: block;
   height: 14px;
@@ -128,6 +132,15 @@
     &:after, &:before {
       margin: ($line-height-computed / 2) 0;
     } 
+  }
+}
+
+.box-scroll, .box-scroll-top, .box-scroll-bottom {
+  &.u-no-padding-sides {
+    &:after, &:before {
+      margin-left:0;
+      margin-right:0;
+    }
   }
 }
 
