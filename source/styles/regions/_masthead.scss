@@ -1,17 +1,102 @@
+$padding-masthead-vertical: $padding-base-horizontal !default;
+$padding-masthead-horizontal: $padding-base-horizontal !default;
+$masthead-search-full-min: $screen-md-min !default;
+
 .masthead {
+  padding: $padding-masthead-vertical $padding-masthead-horizontal;
   position: relative;
+  @include clearfix;
+
+  @media (min-width: $screen-lg-min) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-.masthead-logo {
-  display: block;
-  margin-bottom: -12px;
-  top: -14px;
-  // margin-bottom: -16px;
-  // margin-top: -14px;
-  padding: ($padding-base-vertical * 1.5) $padding-base-horizontal ($padding-base-vertical * 2);
-  position: relative;
-  width: (320px / 2);
+.masthead-body {
+  float: right;
 }
+
+.masthead-controls {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+
+  > li {
+    float: left;
+    margin-left: $padding-masthead-horizontal;
+  }
+}
+
+.masthead-search-toggle {
+  @media (min-width: $masthead-search-full-min) {
+    display: none !important;
+  }
+}
+
+.masthead-search {
+  display: none;
+  float: left;
+  position: absolute;
+  top: $padding-masthead-vertical;
+  right: $padding-masthead-horizontal;
+  left: $padding-masthead-horizontal;
+
+  .masthead-search-open & {
+    display: block;
+  }
+
+  @media (min-width: $masthead-search-full-min) {
+    display: block;
+    margin-left: $padding-masthead-horizontal;
+    position: static;
+    width: 350px;
+  }
+}
+
+// .masthead-search-toggle {
+//   @media (min-width: $screen-lg-min) {
+//     display: none !important;
+//   }
+// }
+//
+// .masthead-search {
+//   display: none;
+//   position: absolute;
+//   left: $padding-base-horizontal;
+//   right: $padding-base-horizontal;
+//   top: 0;
+//
+//   .masthead-search-open & {
+//     display: block;
+//   }
+//
+//   @media (min-width: $screen-lg-min) {
+//     display: block;
+//     margin-left: 10px;
+//     position: static;
+//     vertical-align: middle;
+//     width: 350px;
+//   }
+// }
+
+// .masthead-brand {
+//   width: 160px;
+// }
+
+// .masthead-logo {
+  // width: (320px / 2);
+  // display: block;
+  // margin-bottom: -12px;
+  // top: -14px;
+  // // margin-bottom: -16px;
+  // // margin-top: -14px;
+  // padding: ($padding-base-vertical * 1.5) $padding-base-horizontal ($padding-base-vertical * 2);
+  // position: relative;
+  // width: (320px / 2);
+// }
 
 // .masthead {
 //   @media (min-width: $screen-lg-min) {
