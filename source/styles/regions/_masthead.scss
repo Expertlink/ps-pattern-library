@@ -49,6 +49,17 @@ $masthead-search-full-min: $screen-md-min !default;
   }
 }
 
+.masthead-logo,
+.masthead-menu {
+  .is-search-open & {
+    visibility: hidden;
+
+    @media (min-width: $masthead-search-full-min) {
+      visibility: visible;
+    }
+  }
+}
+
 .masthead-logo {
   left: $padding-masthead-horizontal;
   margin-top: -20px;
@@ -89,11 +100,20 @@ $masthead-search-full-min: $screen-md-min !default;
 
 .masthead-search {
   display: none;
+  position: absolute;
+  top: $padding-masthead-vertical;
+  right: $padding-masthead-horizontal;
+  left: $padding-masthead-horizontal;
+
+  .is-search-open & {
+    display: block;
+  }
 
   @media (min-width: $masthead-search-full-min) {
     display: block;
     float: left;
     margin-left: $padding-masthead-horizontal;
+    position: static;
     width: 350px;
   }
 }

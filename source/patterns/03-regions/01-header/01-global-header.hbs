@@ -52,7 +52,7 @@
                 <span class="arrow-down text-muted"></span>
               </button>
             </div>
-            <input type="text" class="form-control">
+            <input id="q" type="text" class="form-control">
             <div class="input-group-btn">
               <button type="button" class="btn btn-primary btn-shaded">Go</button>
             </div>
@@ -115,3 +115,21 @@
   </nav>
 
 </header>
+
+<script>
+
+$(function(){
+
+  var $masthead = $('.masthead');
+  var $toggle   = $('.masthead-search-toggle');
+  var $field    = $('#q');
+
+  $toggle.click(function (event) {
+    event.preventDefault();
+    $masthead.addClass('is-search-open');
+    $field.click().focus();
+  });
+
+});
+
+</script>
