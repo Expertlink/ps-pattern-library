@@ -18,6 +18,19 @@ $masthead-search-full-min: $screen-md-min !default;
   }
 }
 
+.masthead-logo {
+  left: $padding-masthead-horizontal;
+  margin-top: -20px;
+  position: absolute;
+  top: 50%;
+  width: 148px;
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: (68px / -2);
+    width: 350px;
+  }
+}
+
 .masthead-body {
   float: right;
 }
