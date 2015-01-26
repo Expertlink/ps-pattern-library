@@ -2,10 +2,15 @@ $padding-masthead-vertical: $padding-base-horizontal !default;
 $padding-masthead-horizontal: $padding-base-horizontal !default;
 $masthead-search-full-min: $screen-md-min !default;
 
+.masthead,
+.masthead-body,
+.masthead-menu {
+  @include clearfix;
+}
+
 .masthead {
   padding: $padding-masthead-vertical $padding-masthead-horizontal;
   position: relative;
-  @include clearfix;
 
   @media (min-width: $screen-lg-min) {
     padding-left: 0;
@@ -17,44 +22,95 @@ $masthead-search-full-min: $screen-md-min !default;
   float: right;
 }
 
-.masthead-controls {
-  float: left;
+.masthead-menu {
   list-style: none;
   margin: 0;
   padding: 0;
-  @include clearfix;
 
+  &,
   > li {
     float: left;
+  }
+
+  > li {
     margin-left: $padding-masthead-horizontal;
   }
 }
 
 .masthead-search-toggle {
   @media (min-width: $masthead-search-full-min) {
-    display: none !important;
+    display: none;
   }
 }
 
 .masthead-search {
   display: none;
-  float: left;
-  position: absolute;
-  top: $padding-masthead-vertical;
-  right: $padding-masthead-horizontal;
-  left: $padding-masthead-horizontal;
-
-  .masthead-search-open & {
-    display: block;
-  }
 
   @media (min-width: $masthead-search-full-min) {
     display: block;
+    float: left;
     margin-left: $padding-masthead-horizontal;
-    position: static;
     width: 350px;
   }
 }
+
+.masthead-messaging {
+  clear: both;
+}
+
+// .masthead {
+//   padding: $padding-masthead-vertical $padding-masthead-horizontal;
+//   position: relative;
+//   @include clearfix;
+//
+//   @media (min-width: $screen-lg-min) {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
+//
+// .masthead-body {
+//   float: right;
+// }
+//
+// .masthead-controls {
+//   float: left;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   @include clearfix;
+//
+//   > li {
+//     float: left;
+//     margin-left: $padding-masthead-horizontal;
+//   }
+// }
+//
+// .masthead-search-toggle {
+//   @media (min-width: $masthead-search-full-min) {
+//     display: none !important;
+//   }
+// }
+//
+// .masthead-search {
+//   display: none;
+//   float: left;
+//   position: absolute;
+//   top: $padding-masthead-vertical;
+//   right: $padding-masthead-horizontal;
+//   left: $padding-masthead-horizontal;
+//
+//   .masthead-search-open & {
+//     display: block;
+//   }
+//
+//   @media (min-width: $masthead-search-full-min) {
+//     display: block;
+//     margin-left: $padding-masthead-horizontal;
+//     position: static;
+//     width: 350px;
+//   }
+// }
 
 // .masthead-search-toggle {
 //   @media (min-width: $screen-lg-min) {
