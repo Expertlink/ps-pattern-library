@@ -377,6 +377,7 @@
     };
 
     this.formatMask = function() {
+      if (this.isError) { return; }
       var mask = this.currentValue,
           currentValue, month, year;
       if (this.currentValue.length === 2) {
