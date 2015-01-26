@@ -1,46 +1,32 @@
+$bio-padding: ($line-height-computed * (2/3)) !default;
+
 .bio-name {
   margin:0;
 }
 .bio-headline {
-  margin:0 0 $line-height-computed;
+  margin:0 0 0.3em;
+}
+
+
+.review-count {
+  display: inline-block;
+  margin-top: -0.3em;
 }
 .bio-photo {
   display: block;
   position: relative;
-  margin: 0 0 $line-height-computed;
+  max-width: 200px;
+  margin: 0 auto $line-height-computed;
   overflow:hidden;
   img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
-    border-radius: $border-radius-large;
+    border-radius: $border-radius-large $border-radius-large 0 0;
   }
-  &.available {
-    &:before {
-      content: "Available";
-      position: absolute;
-      top: 2em;
-      left: -2em;
-      background: $green;
-      color: white;
-      display:block;
-      padding: 3px 0;
-      text-align: center;
-      width: 10em;
-      transform: rotate(-45deg); 
-      font-weight: 800;
-    }
-    img {
-      border: 1px solid $green;
-    }
-  }
-  .stars {
-    position: absolute;
-    bottom: 0.5em;
-    left: 50%;
-    margin-left: -55px;
-  }
-  .bio-fave, .bio-video, .bio-audio {
+
+
+  .bio-fave {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -65,23 +51,9 @@
       }
     }
   }
-  .bio-video {
-    top: 50px;
-    a {
-      background-image: url(/images/icons/bio-play-video-off.svg);
-      &:hover {
-        background-image: url(/images/icons/bio-play-video-on.svg);
-      }
-    }
-  }
-  .bio-audio {
-    top: 90px;
-    a {
-      background-image: url(/images/icons/bio-play-audio-off.svg);
-      &:hover {
-        background-image: url(/images/icons/bio-play-audio-on.svg);
-      }
-    }
+  .bio-audio-video {
+    background: $gray-light;
+    border-radius: 0 0 $border-radius-large $border-radius-large;
   }
 }
 .bio-actions {
@@ -116,4 +88,45 @@
   margin-left: -18px;
   margin-right: -18px;
   padding-left: 18px;
+}
+
+.text-available {
+  color: $green;
+}
+
+.bio-reviews {
+  @media (max-width: $screen-md) {
+    margin-left: -($line-height-computed);
+    margin-right: -($line-height-computed);
+  }
+}
+
+.bio-review-summary {
+  padding: $bio-padding ($bio-padding - 1px);
+  background-color: lighten($gray-lighter, 10%);
+  @media (max-width: $screen-md) {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+.bio-review {
+  display: block;
+  padding: $bio-padding;
+  border-bottom: 1px solid $gray-lighter;
+  position: relative;
+  .reviewer, .review-date {
+    font-weight: 800;
+  }
+  .review-date, .bio-review-helpful {
+    color: $gray;
+  }
+  .review-type {
+    display:block;
+  }
+  .stars {
+    position: absolute; 
+    top: $bio-padding;
+    right: $bio-padding;
+  }
 }

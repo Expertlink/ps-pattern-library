@@ -125,5 +125,71 @@
       "chat": true,
       "call": true
     }
+  ],
+  "similarList": [
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "staffPick": false,
+      "showcase": true,
+      "rating": 4.5,
+      "basePrice": 10,
+      "channel": "Chat",
+      "channelPromo": "10% off",
+      "channelPrice": 9,
+      "online": true,
+      "available": true,
+      "loggedInTill": "7:45pm",
+      "chat": true,
+      "call": true
+    },
+    {
+      "firstName": "Saul Goodman",
+      "ext": "7777",
+      "photo": "/images/fpo/saul.jpg",
+      "staffPick": false,
+      "showcase": true,
+      "rating": 4.5,
+      "basePrice": 7.45,
+      "promoPrice": 1,
+      "online": true,
+      "available": true,
+      "loggedInTill": "10:55pm",
+      "chat": true,
+      "call": false,
+      "returnCall": true
+    },
+    {
+      "firstName": "Zaphod Beeblebrox",
+      "ext": "1337",
+      "photo": "http://placeimg.com/164/216/animals",
+      "staffPick": true,
+      "showcase": false,
+      "rating": 2,
+      "basePrice": 9.45,
+      "online": true,
+      "available": true,
+      "loggedInTill": "2:30pm",
+      "chat": false,
+      "call": true
+    },
+    {
+      "firstName": "Liz Lemon",
+      "ext": "3030",
+      "photo": "/images/fpo/liz.jpg",
+      "staffPick": false,
+      "showcase": false,
+      "rating": 4.0,
+      "basePrice": 5.00,
+      "channel": "Chat",
+      "channelPromo": "$1/min off",
+      "channelPrice": 4.00,
+      "online": true,
+      "available": false,
+      "loggedInTill": "9:00pm",
+      "chat": true,
+      "call": false
+    }
   ]
 }

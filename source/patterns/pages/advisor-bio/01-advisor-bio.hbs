@@ -8,13 +8,16 @@ status: inprogress
   <div class="box-full box-default-lg box-lighter">
     <h1 class="bio-name text-primary">Psychic Mazie x 7124</h1>
     <h4 class="bio-headline">Insightful and Compassionate</h4>
+    <p><span class="stars stars-4-5">4½ stars</span> <span class="review-count">(230 <a href="#">Reviews</a>)</span></p>
     <div class="bio-photo available">
       <p class="bio-fave"><a href="#" class="fave-on">Favorite</a></p>
-      <p class="bio-video"><a href="#">Watch</a></p>
-      <p class="bio-audio"><a href="#">Listen</a></p>  
       <img src="/images/fpo/7124.jpg" />
-      <p class="stars stars-lg stars-4-5">4½ stars</p>
+      <div class="bio-audio-video">
+        <p class="bio-video"><a href="#">Watch</a></p>
+        <p class="bio-audio"><a href="#">Listen</a></p>  
+      </div>
     </div>
+  <h4 class="u-no-margin-top">Mazie's status: <span class="text-available">Available</span> until 8:27pm</h4>  
   <ul class="arrange bio-actions arrange-gutter">
     <li class="arrange-fill">
       <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
@@ -26,13 +29,10 @@ status: inprogress
     </li>
   </ul>
   <p class="bio-price-details">Pricing valid for first purchase only.</p>
-  <p class="bio-summary">
-   <strong>Mazie's Specialties:</strong> Clairvoyant, Intuitive/Empath, Psychic Medium<br />
-   <strong>Tools:</strong> Spirit Guides, Tarot, Astrology<br />
-   <strong>Reading Style:</strong> Compassionate
-  </p>
-    {{> advisor-bio/_bio-tabs }}
-    {{> advisor-bio/_bio-schedule }}
+  {{> advisor-bio/_bio-about }}
+     {{> advisor-bio/_bio-schedule }}
+   {{> advisor-bio/_bio-reviews }}
+    {{> advisor-bio/_bio-similar }}
   </div>
 </div>
 {{> pages/_footer }}
