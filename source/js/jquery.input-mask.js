@@ -364,13 +364,17 @@
     this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
 
     this.fetchValue = function() {
+      // Strip out `/`s from value
       var newValue = this.$inputEl.val().replace(/\//g, '');
-      if (newValue.length === 1 && parseInt(newValue[0], 10) > 1) {
+      if (newValue.length === 1 &&
+          (parseInt(newValue[0], 10) > 1)) {
+        // The only valid values in the first position are 0 or 1
+        // We can help them along if the first value is
+        // not one of these.
         newValue = '0' + newValue;
-      } else if (newValue.length === 3 && parseInt(newValue[0], 10) > 0) {
-        // This state can only occur on input masks that aren't validating
-        // on every key press (e.g. Android workaround hack).
-        newValue = '0' + newValue; // TODO
+      } else if (newValue.length === 3 &&
+                 parseInt(newValue[0], 10) > 1) {
+        newValue = '0' + newValue;
       }
       this.setCurrentValue(newValue);
       return newValue;
@@ -400,6 +404,7 @@
           month, day, year, dateNow, yearNow, monthNow, i;
 
       if (/[^0-9-\/]+/.test(fieldValue)) {
+        // Failed regexp against 0-9, - and /
         valueError = true;
       } else if (fieldValue.length <= 4) {
         for (i = 0; i < valueChars.length; i++) {
