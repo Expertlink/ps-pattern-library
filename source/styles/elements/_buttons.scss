@@ -1,4 +1,4 @@
-// These styles extend Bootstrap's core button classes.
+// These styles extend Bootstraps core button classes.
 
 .btn-sunrise {
   @include button-variant($gray-dark, $orange-lighter, $tan-dark);
@@ -13,3 +13,22 @@
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
+
+.btn-video {
+  text-align: left;
+  padding-left: 0.3em;
+  &:before {
+    display: inline-block;
+    content: "\25B6";
+    background: url(/images/icons/video-btn-bg.svg) center no-repeat;
+    color: white;
+    margin: -0.2em 0.5em -0.2em 0; 
+    padding: 0.2em 0.6em;
+    font-size: 0.9em;
+    line-height: 1.4em;
+  }
+  &:hover:before {
+    background-image: url(/images/icons/video-btn-bg-hover.svg)
+  }
+}
+

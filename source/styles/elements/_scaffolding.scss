@@ -12,6 +12,10 @@ body {
   background-repeat: no-repeat, repeat-x;
 }
 
+img {
+  max-width: 100%;
+}
+
 /**
  * TODO: Determine if this is viable or not. Temporarily (?) commented out to
  * avoid repetitive overrides.

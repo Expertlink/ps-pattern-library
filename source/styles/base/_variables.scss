@@ -22,19 +22,22 @@ $orange: #f87f25;
 $orange-light: #F4BC84;
 $orange-lighter: #fdf6e4;
 
-$blue: #3d6682;
-$blue-light: #aec1c4;
-$blue-dark: #205072;
+$blue: #315F7A;
+$blue-light: #6C9DBA;
+$blue-dark: #223540;
 $blue-gray: #89a5a8;
+$blue-bright: #1668AC;
 
 $teal: #44a6d4;
 $teal-light: #e9f2ef;
 
-$green: #390;
+$green: #75a938;
+$green-light: #B8EF70;
+$green-bright: #8CEB10;
 
 $brown: #84796D;
 
-$brand-primary: $red;
+$brand-primary: $red-dark;
 
 //== Shadows
 
@@ -48,7 +51,7 @@ $btn-shading: linear-gradient(to bottom, rgba(#fff, 0.15), rgba(#fff, 0) 50%, rg
 
 //== Scaffolding
 
-$link-color: $red-dark;
+$link-color: $red;
 $link-hover-color: $red-bright;
 // $link-hover-decoration: none;
 
@@ -80,6 +83,16 @@ $table-border-color: $tan;
 
 $btn-font-weight: bold;
 
+$btn-primary-bg: $red;
+
+$btn-success-bg: $green;
+
+$btn-info-bg: $gray-dark;
+
+$btn-warning-bg: $orange;
+
+$btn-danger-bg: $red-bright;
+
 //== Media queries breakpoints
 
 $screen-sm-min: 480px;
@@ -99,7 +112,7 @@ $state-info-text: $teal;
 
 $state-warning-text: $orange;
 
-$state-danger-text: $red-bright;
+$state-danger-text: $red-dark;
 
 //== Type
 //** Blockquote font size
