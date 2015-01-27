@@ -68,7 +68,53 @@ module.exports = {
       .replace(/^-+/, '')         // Trim - from start of text
       .replace(/-+$/, '');        // Trim - from end of text
   },
+
+  /** inspired by https://github.com/assemble/handlebars-helpers */
+
+  withFirst: function withFirst (array, count, options) {
+    count = count ? parseFloat(count) : 1;
+    array = array.slice(0, count);
+    var result = '';
+    for (var item in array) {
+      result += options.fn(array[item]);
+    }
+    return result;
+  },
+
   /** https://github.com/assemble/handlebars-helpers */
+
+  gt: function gt (value, test, options) {
+    if (value > test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  gte: function gte (value, test, options) {
+    if (value >= test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  lt: function lt (value, test, options) {
+    if (value < test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  lte: function lte (value, test, options) {
+    if (value <= test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
   ifNth: function ifNth (denominator, numerator, options) {
     numerator = numerator+1;
     if (numerator % denominator === 0) {
@@ -77,4 +123,5 @@ module.exports = {
       return options.inverse(this);
     }
   }
+  
 };
