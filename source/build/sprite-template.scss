@@ -32,9 +32,8 @@ $svg-sprite-map: (
     @include svg-sprite-reset();
   }
   @if $key and map-has-key($map, $key) {
-    $sprite: map-get($map, $key);
-    background-position: map-get($sprite, background-position);
-    width: map-get($sprite, width);
-    height: map-get($sprite, height);
+    @each $property, $value in map-get($map, $key) {
+      #{$property}: $value;
+    }
   }
 }
