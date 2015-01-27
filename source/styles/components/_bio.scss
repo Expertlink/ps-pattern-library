@@ -2,6 +2,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .box-bio {
   padding: $bio-padding;
   background: white;
+  @media (min-width: $screen-md-min) {
+    padding: ($bio-padding * 2);
+    border-radius: $border-radius-large;
+    border: 1px solid $gray-lighter;
+  }
+}
+.bio-advisor-summary {
+  text-align: center;
 }
 .bio-name {
   margin:0;
@@ -10,25 +18,16 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin:0 0 0.3em;
 }
 
-
-.review-count {
-  display: inline-block;
-  margin-top: -0.3em;
-}
 .bio-photo {
   display: block;
   position: relative;
-  max-width: 200px;
+  max-width: 175px;
   margin: 0 auto $line-height-computed;
   overflow:hidden;
   img {
     display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    border-radius: $border-radius-large $border-radius-large 0 0;
+    border-radius: $border-radius-large;
   }
-
-
   .bio-fave {
     position: absolute;
     top: 10px;
@@ -41,26 +40,20 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
       height: 35px; 
       text-indent: -20em;
       overflow:hidden;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url(/images/icons/bio-fave-off.svg) center no-repeat;
       cursor: pointer;
-    }
-  }
-  .bio-fave {
-    a {
-      background-image: url(/images/icons/bio-fave-off.svg);
       &:hover, &.fave-on {
         background-image: url(/images/icons/bio-fave-on.svg);
       }
     }
   }
-  .bio-audio-video {
-    background: $gray-light;
-    border-radius: 0 0 $border-radius-large $border-radius-large;
-    padding: ($bio-padding / 2);
-    p {
-      margin:0;
-    }
+}  
+.bio-audio-video {
+  border-top: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-lighter;
+  padding: ($bio-padding / 2) 0;
+  > .arrange-fill {
+    width: 50%;
   }
 }
 .bio-actions {
@@ -86,43 +79,70 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $gray;
   text-align:center;
 }
-.bio-summary {
-  strong {
-    color: $red;
-  }
-}
-.bio-tabs {
-  margin-left: -18px;
-  margin-right: -18px;
-  padding-left: 18px;
-}
 
 .text-available {
   color: $green;
 }
 
-.bio-reviews, .similar-advisors {
+.bio-review, .similar-advisors {
   @media (max-width: $screen-md) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
 }
 
-.bio-review-summary {
-  padding: $bio-padding ($bio-padding - 1px);
+
+
+
+.bio-header {
   background-color: lighten($gray-lighter, 10%);
+  padding: $bio-padding;
+  border-top: 1px solid $gray-lighter;
+  position: relative;
+  h3, p {
+    margin:0;
+  }
+  p:first-of-type {
+    padding-top: 0.3em;
+    margin-top: 0.3em; 
+    border-top: 1px solid $gray-lighter;
+  }
+  .toggle-trigger {
+    display: block;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+  .arrow-down-after:after {
+    float:right;
+    margin-top: 0.2em;
+  }
   @media (max-width: $screen-md) {
     border-radius: 0;
     border-left: 0;
     border-right: 0;
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+  }
+}
+.bio-more-toggle {
+  background: $gray;
+  padding: ($bio-padding/2) $bio-padding;
+  text-align: right;
+  a {
+    color: white;
+    font-weight: bold;
+  }
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
   }
 }
 .bio-review {
-  display: block;
+  position: relative;
   padding: $bio-padding;
   border-bottom: 1px solid $gray-lighter;
-  position: relative;
-  .reviewer, .review-date {
+ .reviewer, .review-date {
     font-weight: 800;
   }
   .review-date, .bio-review-helpful {
@@ -135,22 +155,5 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     position: absolute; 
     top: $bio-padding;
     right: $bio-padding;
-  }
-}
-
-.bio-header {
-  background-color: lighten($gray-lighter, 10%);
-  box-shadow: $box-shadow;
-  padding: $bio-padding;
-  border: 1px solid $gray-lighter;
-  h3, p {
-    margin:0;
-  }
-  @media (max-width: $screen-md) {
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
   }
 }

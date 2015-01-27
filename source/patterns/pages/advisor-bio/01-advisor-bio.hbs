@@ -6,33 +6,36 @@ status: inprogress
 
 <div class="container-page">
   <div class="box-bio">
-    <h1 class="bio-name text-primary">Psychic Mazie x 7124</h1>
-    <h4 class="bio-headline">Insightful and Compassionate</h4>
-    <p><span class="stars stars-4-5">4½ stars</span> <span class="review-count">(230 <a href="#">Reviews</a>)</span></p>
-    <div class="bio-photo available">
-      <p class="bio-fave"><a href="#" class="fave-on">Favorite</a></p>
-      <img src="/images/fpo/7124.jpg" />
-      <div class="bio-audio-video">
-        <p class="bio-video"><a href="#" class="btn btn-default  btn-block btn-video" style="border-radius:0.3em 0.3em 0 0; border:0;">Watch Mazie's video</a></p>
-        <p class="bio-audio"><a href="#" class="btn btn-default  btn-block btn-video" style="border-radius: 0 0 0.3em 0.3em; border:0; margin-top:1px">Listen to Mazie</a></p>  
+    <div class="bio-advisor-summary">  
+      <div class="bio-photo">
+        <p class="bio-fave"><a href="#" class="fave-on">Favorite</a></p>
+        <img src="/images/fpo/7124.jpg" />
       </div>
+      <h1 class="bio-name text-primary">Psychic Mazie x 7124</h1>
+      <h4 class="bio-headline">Insightful and Compassionate</h4>
+      <p><span class="stars stars-4-5">4½ stars</span> <span class="review-count">(<a href="#reviews">1204 Ratings</a>)</span></p>
+      <div class="arrange bio-audio-video">
+        <p class="arrange-fill text-right"><a href="#" class="btn"><svg class="icon icon-lg"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" /></svg> Watch video</a></p>
+        <p class="arrange-fill text-left"><a href="#" class="btn"><svg class="icon icon-lg"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" /></svg> Hear message</a></p>  
+      </div>
+      <h4 class="text-available">Available until 8:27pm</h4>  
+      <ul class="arrange bio-actions arrange-gutter">
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
+          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+        </li>
+        <li class="arrange-fill">
+          <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
+          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+        </li>
+      </ul>
+      <p class="bio-price-details">Pricing valid for first purchase only.</p>
     </div>
-  <h4 class="u-no-margin-top">Mazie's status: <span class="text-available">Available</span> until 8:27pm</h4>  
-  <ul class="arrange bio-actions arrange-gutter">
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Chat Now</a>
-      <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-    </li>
-    <li class="arrange-fill">
-      <a class="btn btn-block btn-sm btn-success btn-shaded" href="#">Call Now</a>
-      <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-    </li>
-  </ul>
-  <p class="bio-price-details">Pricing valid for first purchase only.</p>
-  {{> advisor-bio/_bio-about }}
-     {{> advisor-bio/_bio-schedule }}
-   {{> advisor-bio/_bio-reviews }}
+    {{> advisor-bio/_bio-schedule }}
+    {{> advisor-bio/_bio-about }}
+    {{> advisor-bio/_bio-reviews }}
     {{> advisor-bio/_bio-similar }}
   </div>
 </div>
+
 {{> pages/_footer }}

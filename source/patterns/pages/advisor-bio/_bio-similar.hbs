@@ -3,15 +3,18 @@ description: Single tile, repeated in an advisor grid.
 fullWidth: true
 status: inprogress
 ---
+
 <div class="bio-header">
-  <h3>If you liked Mazie you may also like...</h3>
+  <h3><a href="#more-advisors"  data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle"><span class="hidden-xs">If you liked Mazie </span>You may also like... </a></h3>
 </div>
-<div class="similar-advisors">
-  <div class="row">
-    {{#each advisor.similarList }} 
-      <div class="col-md-3">
-        {{> advisors/_advisor-tile-simple }}
-      </div>
-    {{/each}}
+<div id="more-advisors" class="collapse">
+  <div class="similar-advisors">
+    <div class="row">
+      {{#each advisor.similarList }} 
+        <div class="col-md-3">
+          {{> advisors/_advisor-tile-simple }}
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>
