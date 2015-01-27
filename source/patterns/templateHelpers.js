@@ -69,6 +69,38 @@ module.exports = {
       .replace(/-+$/, '');        // Trim - from end of text
   },
   /** https://github.com/assemble/handlebars-helpers */
+  gt: function gt (value, test, options) {
+    if (value > test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  gte: function gte (value, test, options) {
+    if (value >= test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  lt: function lt (value, test, options) {
+    if (value < test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
+  lte: function lte (value, test, options) {
+    if (value <= test) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  },
+
   ifNth: function ifNth (denominator, numerator, options) {
     numerator = numerator+1;
     if (numerator % denominator === 0) {
@@ -76,5 +108,6 @@ module.exports = {
     } else {
       return options.inverse(this);
     }
-  }
+  },
+
 };
