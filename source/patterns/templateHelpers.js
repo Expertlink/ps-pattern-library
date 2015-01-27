@@ -68,7 +68,19 @@ module.exports = {
       .replace(/^-+/, '')         // Trim - from start of text
       .replace(/-+$/, '');        // Trim - from end of text
   },
+
+  eachTill: function eachTill (array, count, options) {
+    count = parseFloat(count);
+    array = array.slice(0, count);
+    var result = '';
+    for (var item in array) {
+      result += options.fn(array[item]);
+    }
+    return result;
+  },
+
   /** https://github.com/assemble/handlebars-helpers */
+
   gt: function gt (value, test, options) {
     if (value > test) {
       return options.fn(this);
