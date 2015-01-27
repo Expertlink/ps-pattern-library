@@ -4,89 +4,35 @@ status: inprogress
 ---
 
 <aside class="quicklist">
-
-  <div class="quicklist-header text-center">
-    <h5>Who&rsquo;s logged on?</h5>
+  <div class="quicklist-inner">
+    <div class="quicklist-header text-center">
+      <h5 class="u-no-margin">Who&rsquo;s logged on?</h5>
+    </div>
+    <div class="quicklist-body">
+      <ul class="list-unstyled u-no-margin">
+        {{#times 20}}
+          <li>
+            <a class="quicklist-item {{#lt @index 10}}text-success{{/lt}}" href="">
+              <h6 class="u-no-margin">Firstname x5555</h6>
+              <small class="quicklist-item-status">
+                {{#lt @index 10}}
+                  Available now
+                {{else}}
+                  Currently busy
+                {{/lt}}
+              </small>
+              <svg class="icon quicklist-item-phone">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+              </svg>
+              {{#randomIf}}
+                <svg class="icon quicklist-item-chat">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                </svg>
+              {{/randomIf}}
+            </a>
+          </li>
+        {{/times}}
+      </ul>
+    </div>
   </div>
-
-  <div class="quicklist-body">
-
-    <ul class="list-unstyled u-no-margin">
-      {{#times 20}}
-        <li>
-          <a class="quicklist-item {{#lt @index 10}}text-success{{else}}text-danger{{/lt}}" href="">
-            <h6 class="u-no-margin">Firstname x5555</h6>
-            <small class="text-muted">
-              {{#lt @index 10}}
-                Available now
-              {{else}}
-                Currently busy
-              {{/lt}}
-            </small>
-            <svg class="icon quicklist-item-phone">
-              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-            </svg>
-            {{#randomIf}}
-              <svg class="icon quicklist-item-chat">
-                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-              </svg>
-            {{/randomIf}}
-          </a>
-        </li>
-      {{/times}}
-    </ul>
-
-    {{!-- <ul class="arrange arrange-middle">
-      <li style="display: table-row">
-        <div class="arrange-fill">
-          <h6 class="u-no-margin">Allison x7918</h6>
-          <small class="text-muted">Available now</small>
-        </div>
-        <div class="arrange-fit">
-          <svg class="icon icon-md">
-            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-          </svg>
-        </div>
-        <div class="arrange-fit">
-          <svg class="icon icon-md">
-            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-          </svg>
-        </div>
-      </li>
-      <li style="display: table-row">
-        <div class="arrange-fill">
-          <h6 class="u-no-margin">Allison x7918</h6>
-          <small class="text-muted">Available now</small>
-        </div>
-        <div class="arrange-fit"></div>
-        <div class="arrange-fit">
-          <svg class="icon icon-md">
-            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-          </svg>
-        </div>
-      </li>
-    </ul> --}}
-
-    {{!-- <ul class="list-unstyled">
-      <li>
-        <a class="text-success" href="">
-          <div class="arrange arrange-middle">
-            <div class="arrange-fill">
-              <h6 class="u-no-margin">Allison x7918</h6>
-              <small class="text-muted">Available now</small>
-            </div>
-            <div class="arrange-fit text-nowrap">
-              <svg class="icon icon-md">
-                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-              </svg>
-              <svg class="icon icon-md">
-                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-              </svg>
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul> --}}
-  </div>
-
 </aside>

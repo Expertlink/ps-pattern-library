@@ -1,7 +1,50 @@
+$quicklist-item-height: 36px !default;
 $quicklist-item-padding: ($line-height-computed / 2) !default;
 $quicklist-icon-size: 18px !default;
 
+.quicklist {
+  background-color: lighten($gray-lighter, 5%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:  0;
+}
+
+.quicklist-inner {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.quicklist-header {
+  box-shadow: 0 1px 2px rgba(#000, 0.2);
+  position: relative;
+  z-index: 3;
+}
+
+.quicklist-body {
+  padding-bottom: 4em;
+  position: absolute;
+  top: ($quicklist-item-height - 1px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow-y: scroll;
+  -webkit-overflow-scroll: touch;
+}
+
+.quicklist-header {
+  background-color: $blue;
+  color: #fff;
+  height: $quicklist-item-height;
+  padding-top: $quicklist-item-padding;
+}
+
 .quicklist-item {
+  background-color: #fff;
   border-color: $gray-lighter;
   border-style: solid;
   border-width: 1px 0;
@@ -23,6 +66,27 @@ $quicklist-icon-size: 18px !default;
       color: darken($tan, 10%);
     }
   }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: $quicklist-item-padding;
+    top: 50%;
+    margin-top: -9px;
+    opacity: 0.15;
+
+    @include svg-sprite("item-arrow-right");
+  }
+}
+
+.quicklist-item-status {
+  color: $gray-light;
+
+  .quicklist-item:hover &,
+  .quicklist-item:focus & {
+    color: darken($tan, 10%);
+  }
 }
 
 .quicklist-item-phone,
@@ -35,9 +99,9 @@ $quicklist-icon-size: 18px !default;
 }
 
 .quicklist-item-phone {
-  right: ($quicklist-item-padding * 2 + $quicklist-icon-size);
+  right: ($quicklist-item-padding * 3 + $quicklist-icon-size + 14px);
 }
 
 .quicklist-item-chat {
-  right: $quicklist-item-padding;
+  right: ($quicklist-item-padding * 2 + 14px);
 }
