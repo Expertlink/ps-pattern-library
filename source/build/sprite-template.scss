@@ -9,3 +9,32 @@ $svg-sprite-map: (
   ){{^last}},{{/last}}
   {{/shapes}}
 );
+
+@mixin svg-sprite-reset() {
+  background-image: url($svg-sprite-url);
+  background-repeat: no-repeat;
+}
+
+%svg-sprite-base {
+  @include svg-sprite-reset();
+}
+
+@mixin svg-sprite (
+  $key: false,
+  $extend: true,
+  $reset: true,
+  $url: $svg-sprite-url,
+  $map: $svg-sprite-map
+) {
+  @if $extend {
+    @extend %svg-sprite-base;
+  } @else if $reset {
+    @include svg-sprite-reset();
+  }
+  @if $key and map-has-key($map, $key) {
+    $sprite: map-get($map, $key);
+    background-position: map-get($sprite, background-position);
+    width: map-get($sprite, width);
+    height: map-get($sprite, height);
+  }
+}
