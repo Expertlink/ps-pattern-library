@@ -4,10 +4,12 @@
 body {
   // included first as fallback
   background-image: url(/images/main-back.png);
-  // multiple background images where supported
-  background-image: url(/images/header.jpg), url(/images/main-back.png);
   background-position: top center;
   background-repeat: repeat-x;
+  // multiple background images where supported
+  background-image: url(/images/header.jpg), url(/images/main-back.png);
+  background-position: top center, top center;
+  background-repeat: no-repeat, repeat-x;
 }
 
 img {
@@ -33,5 +35,15 @@ img {
   &:focus {
     color: inherit;
     text-decoration: inherit;
+  }
+}
+
+/**
+ * Variation of img-responsive for <picture>
+ */
+.picture-responsive {
+  source,
+  img {
+    @include img-responsive;
   }
 }

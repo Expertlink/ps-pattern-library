@@ -4,6 +4,10 @@
   font-family: $font-family-cursive;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 //** Extends Bootstrap headings to accountfor differing x-height
 
 h1, .h1 {
@@ -40,6 +44,7 @@ h6, .h6 {
 
 //== Other text variations
 
+@include text-emphasis-variant('.text-default', $text-color);
 @include text-emphasis-variant('.text-secondary', $orange);
 
 //== Responsive text alignment classes
