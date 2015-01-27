@@ -88,3 +88,30 @@
     }
   }
 }
+
+/**
+ * Sets background and dimension properties for an element based on a key of the
+ * CSS SVG sprite.
+ */
+
+// defaults in case the stylesheet isn't imported correctly
+$svg-sprite-url: false !default;
+$svg-sprite-map: () !default;
+
+@mixin svg-sprite (
+  $key: false,
+  $reset: true,
+  $url: $svg-sprite-url,
+  $map: $svg-sprite-map
+) {
+  @if $reset and $url {
+    background-image: url($url);
+    background-repeat: no-repeat;
+  }
+  @if $key and map-has-key($map, $key) {
+    $sprite: map-get($map, $key);
+    background-position: map-get($sprite, background-position);
+    width: map-get($sprite, width);
+    height: map-get($sprite, height);
+  }
+}
