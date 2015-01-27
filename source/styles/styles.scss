@@ -6,6 +6,17 @@
 // Generated SCSS in source/build/out
 @import "sprite";
 
+/**
+ * STUPID SHAMEFUL SVG-SPRITE TEST
+ * TODO: Remove after resolving CSS sprite path issue! (srsly)
+ */
+
+body:after {
+  content: '';
+  display: block;
+  @include svg-sprite(top-flourish);
+}
+
 // Dependencies
 @import "vendor/bootstrap-custom"; // see file for inclusions
 @import "vendor/intl-tel-input/intlTelInput"; // Flags for telephone masking (forms)
