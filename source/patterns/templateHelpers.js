@@ -69,8 +69,10 @@ module.exports = {
       .replace(/-+$/, '');        // Trim - from end of text
   },
 
-  eachTill: function eachTill (array, count, options) {
-    count = parseFloat(count);
+  /** inspired by https://github.com/assemble/handlebars-helpers */
+
+  withFirst: function withFirst (array, count, options) {
+    count = count ? parseFloat(count) : 1;
     array = array.slice(0, count);
     var result = '';
     for (var item in array) {
