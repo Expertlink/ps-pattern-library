@@ -15,24 +15,21 @@ $svg-sprite-map: (
   background-repeat: no-repeat;
 }
 
-%svg-sprite-base {
+%svg-sprite-extend {
   @include svg-sprite-reset();
 }
 
 @mixin svg-sprite (
   $key: false,
-  $extend: true,
-  $reset: true,
-  $url: $svg-sprite-url,
-  $map: $svg-sprite-map
+  $base: "extend"
 ) {
-  @if $extend {
-    @extend %svg-sprite-base;
-  } @else if $reset {
+  @if $base == "extend" {
+    @extend %svg-sprite-extend;
+  } @else if $base == "reset" {
     @include svg-sprite-reset();
   }
-  @if $key and map-has-key($map, $key) {
-    @each $property, $value in map-get($map, $key) {
+  @if $key and map-has-key($svg-sprite-map, $key) {
+    @each $property, $value in map-get($svg-sprite-map, $key) {
       #{$property}: $value;
     }
   }
