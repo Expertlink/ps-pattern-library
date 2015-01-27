@@ -1,4 +1,4 @@
-$svg-sprite-url: "{{{sprite}}}";
+$svg-sprite-url: "/{{{sprite}}}";
 
 $svg-sprite-map: (
   {{#shapes}}
@@ -9,3 +9,34 @@ $svg-sprite-map: (
   ){{^last}},{{/last}}
   {{/shapes}}
 );
+
+@mixin svg-sprite-reset() {
+  background-image: url($svg-sprite-url);
+  background-repeat: no-repeat;
+}
+
+%svg-sprite-extend {
+  @include svg-sprite-reset();
+}
+
+@mixin svg-sprite (
+  $key: false,
+  $base: "extend"
+) {
+  @if $base == "extend" {
+    // extend the background-image and -repeat properties to avoid duplication
+    @extend %svg-sprite-extend;
+  } @else if $base == "reset" {
+    // include fresh background-image and -repeat styles
+    // (in media queries, for example)
+    @include svg-sprite-reset();
+  }
+  // if a key is provided and exists in the map
+  @if $key and map-has-key($svg-sprite-map, $key) {
+    // loop through each key/value pair in the map and print
+    // it as a style
+    @each $property, $value in map-get($svg-sprite-map, $key) {
+      #{$property}: $value;
+    }
+  }
+}
