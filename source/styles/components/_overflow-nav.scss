@@ -1,0 +1,119 @@
+.overflow-nav {
+  position: relative;
+  z-index: $zindex-navbar;
+
+  @media (min-width: $screen-lg-min) {
+    margin-bottom: $line-height-computed;
+  }
+}
+
+.overflow-nav-primary {
+  border-color: $tan-dark $tan-dark darken(#c2c2aa, 10%);
+  border-style: solid;
+  border-width: 1px 0;
+  box-shadow: $nav-shadow;
+  display: table;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  @media (min-width: $screen-lg-min) {
+    border-radius: $border-radius-large;
+    border-width: 1px;
+    font-size: (14px / 13px * 1em);
+  }
+
+  > li {
+    display: table-cell;
+    width: 1%;
+
+    > a {
+      background-color: #f4f4de;
+      background-image: linear-gradient(
+        to bottom,
+        darken(#f4f4de, 3%),
+        #fff 15%,
+        #f4f4de,
+        #c2c2aa
+      );
+      // background-color: $orange-lighter;
+      // background-image: $btn-shading;
+      color: $gray-dark;
+      display: block;
+      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        // background-color: darken($orange-lighter, 5%);
+        background-color: darken(#f4f4de, 7%);
+        background-image: linear-gradient(
+          to bottom,
+          darken(#f4f4de, 8%),
+          darken(#fff, 5%) 15%,
+          darken(#f4f4de, 5%),
+          darken(#c2c2aa, 5%)
+        );
+      }
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-image: none;
+        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+      }
+    }
+  }
+}
+
+.overflow-nav-secondary {
+  background-color: $gray;
+  background-image: linear-gradient(to bottom, rgba(#fff, 0) 0.125em, rgba(#fff, 0.1), rgba(#fff, 0) 50%);
+  border-color: darken($gray, 8%);
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  border-bottom-left-radius: $border-radius-base;
+  box-shadow: 0 0 2em rgba(#000, 0.2);
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+
+  > li {
+    > a {
+      border-color: darken($gray, 8%);
+      border-style: solid;
+      border-width: 1px 0;
+      color: #fff;
+      display: block;
+      margin-top: -1px;
+      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+      position: relative;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        background-color: darken($gray, 8%);
+      }
+    }
+
+    &:last-child > a {
+      border-bottom-width: 0;
+    }
+  }
+}
