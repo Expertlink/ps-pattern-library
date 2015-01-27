@@ -103,9 +103,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     margin:0;
   }
   p:first-of-type {
-    padding-top: 0.3em;
     margin-top: 0.3em; 
-    border-top: 1px solid $gray-lighter;
   }
   .toggle-trigger {
     display: block;
@@ -115,7 +113,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
   .arrow-down-after:after {
     float:right;
-    margin-top: 0.2em;
+    margin-top: 0.3em;
   }
   @media (max-width: $screen-md) {
     border-radius: 0;
