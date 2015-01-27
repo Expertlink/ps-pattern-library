@@ -1,0 +1,43 @@
+$quicklist-item-padding: ($line-height-computed / 2) !default;
+$quicklist-icon-size: 18px !default;
+
+.quicklist-item {
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  display: block;
+  font-size: 12px;
+  line-height: 1.3;
+  margin-top: -1px;
+  padding: $quicklist-item-padding;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: $orange-lighter;
+    border-color: $tan;
+    text-decoration: none;
+    z-index: 2;
+
+    .text-muted { // ew
+      color: darken($tan, 10%);
+    }
+  }
+}
+
+.quicklist-item-phone,
+.quicklist-item-chat {
+  height: $quicklist-icon-size;
+  margin-top: ($quicklist-icon-size / -2);
+  position: absolute;
+  top: 50%;
+  width: $quicklist-icon-size;
+}
+
+.quicklist-item-phone {
+  right: ($quicklist-item-padding * 2 + $quicklist-icon-size);
+}
+
+.quicklist-item-chat {
+  right: $quicklist-item-padding;
+}
