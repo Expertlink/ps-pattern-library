@@ -24,8 +24,11 @@ $svg-sprite-map: (
   $base: "extend"
 ) {
   @if $base == "extend" {
+    // extend the background-image and -repeat properties to avoid duplication
     @extend %svg-sprite-extend;
   } @else if $base == "reset" {
+    // include fresh background-image and -repeat styles
+    // (in media queries, for example)
     @include svg-sprite-reset();
   }
   // if a key is provided and exists in the map
