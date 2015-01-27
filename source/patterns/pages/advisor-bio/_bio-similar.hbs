@@ -3,7 +3,15 @@ description: Single tile, repeated in an advisor grid.
 fullWidth: true
 status: inprogress
 ---
-
-{{#each advisor.similarList }} 
-    {{> advisors/_advisor-tile-simple }}
-{{/each}}
+<div class="bio-header">
+  <h3>If you liked Mazie you may also like...</h3>
+</div>
+<div class="similar-advisors">
+  <div class="row">
+    {{#each advisor.similarList }} 
+      <div class="col-md-3">
+        {{> advisors/_advisor-tile-simple }}
+      </div>
+    {{/each}}
+  </div>
+</div>

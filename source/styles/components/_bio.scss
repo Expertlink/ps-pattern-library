@@ -1,5 +1,8 @@
 $bio-padding: ($line-height-computed * (2/3)) !default;
-
+.box-bio {
+  padding: $bio-padding;
+  background: white;
+}
 .bio-name {
   margin:0;
 }
@@ -54,6 +57,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   .bio-audio-video {
     background: $gray-light;
     border-radius: 0 0 $border-radius-large $border-radius-large;
+    padding: ($bio-padding / 2);
+    p {
+      margin:0;
+    }
   }
 }
 .bio-actions {
@@ -94,10 +101,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $green;
 }
 
-.bio-reviews {
+.bio-reviews, .similar-advisors {
   @media (max-width: $screen-md) {
-    margin-left: -($line-height-computed);
-    margin-right: -($line-height-computed);
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
   }
 }
 
@@ -128,5 +135,22 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     position: absolute; 
     top: $bio-padding;
     right: $bio-padding;
+  }
+}
+
+.bio-header {
+  background-color: lighten($gray-lighter, 10%);
+  box-shadow: $box-shadow;
+  padding: $bio-padding;
+  border: 1px solid $gray-lighter;
+  h3, p {
+    margin:0;
+  }
+  @media (max-width: $screen-md) {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
   }
 }
