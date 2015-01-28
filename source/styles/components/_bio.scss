@@ -1,15 +1,16 @@
 $bio-padding: ($line-height-computed * (2/3)) !default;
-.box-bio {
+.box-bio { // default padding on box is TOO MAÇH
   padding: $bio-padding;
-  background: white;
   @media (min-width: $screen-md-min) {
     padding: ($bio-padding * 2);
-    border-radius: $border-radius-large;
-    border: 1px solid $gray-lighter;
   }
 }
 .bio-advisor-summary {
   text-align: center;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 0 8px $gray-lighter;
+  padding: $bio-padding;
+  border-radius: $border-radius-large;
 }
 .bio-name {
   margin:0;
@@ -22,38 +23,48 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   display: block;
   position: relative;
   max-width: 175px;
-  margin: 0 auto $line-height-computed;
+  margin: 0 auto $bio-padding;
   overflow:hidden;
   img {
     display: block;
-    border-radius: $border-radius-large;
+    border-radius: $border-radius-small;
   }
   .bio-fave {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: ($bio-padding/2);
+    right: ($bio-padding/2);
     margin:0;
     display: block;
     a {
       display:block;
-      width: 35px;
-      height: 35px; 
-      text-indent: -20em;
-      overflow:hidden;
-      background: url(/images/icons/bio-fave-off.svg) center no-repeat;
-      cursor: pointer;
-      &:hover, &.fave-on {
-        background-image: url(/images/icons/bio-fave-on.svg);
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      border: 1px solid $gray-lighter;
+      border-radius: $border-radius-small;
+      background: white;
+      color: lighten($red, 30%);
+      &:hover, &.is-faved { 
+        background: lighten($red, 30%);
+        color: $red;
       }
     }
   }
 }  
 .bio-audio-video {
-  border-top: 1px solid $gray-lighter;
-  border-bottom: 1px solid $gray-lighter;
-  padding: ($bio-padding / 2) 0;
+  background: $gray-lighter;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-small;  
   > .arrange-fill {
     width: 50%;
+  }
+  .btn {
+    font-weight: normal;
+    color: $blue;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 .bio-actions {
@@ -84,6 +95,23 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $green;
 }
 
+
+
+.bio-header {
+  margin:0;
+  position: relative;
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+  }
+  .filter-item {
+    padding-left: $bio-padding;
+  }
+}
+p.bio-header {
+  padding: ($line-height-computed/2) $bio-padding;
+}
+
 .bio-review, .similar-advisors {
   @media (max-width: $screen-md) {
     margin-left: -($bio-padding);
@@ -91,56 +119,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-
-
-
-.bio-header {
-  background-color: lighten($gray-lighter, 10%);
-  padding: $bio-padding;
-  border-top: 1px solid $gray-lighter;
-  position: relative;
-  h3, p {
-    margin:0;
-  }
-  p:first-of-type {
-    margin-top: 0.3em; 
-  }
-  .toggle-trigger {
-    display: block;
-    color: black;
-    &:hover, &:focus {
-      text-decoration: none;
-    }
-  }
-  .arrow-down-after:after {
-    float:right;
-    margin-top: 0.3em;
-  }
-  @media (max-width: $screen-md) {
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
-  }
-  @media (min-width: $screen-md-min) {
-    padding-left:0;
-    padding-right: 0;
-    background: transparent;
-    border-top:0;
-    padding-top: 0;
-    .arrow-down-after:after {
-      display: none;
-    } 
-    .toggle-trigger {
-      cursor: default;
-    }
-  }
-}
-
 .bio-review {
   position: relative;
-  padding: $bio-padding;
+  padding: ($line-height-computed/2) $bio-padding;
   border-bottom: 1px solid $gray-lighter;
  .reviewer, .review-date {
     font-weight: 800;
@@ -153,24 +134,13 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
   .stars {
     position: absolute; 
-    top: $bio-padding;
+    top: ($line-height-computed/2);
     right: $bio-padding;
   }
 }
 
 @media (min-width: $screen-md-min) {
-  .bio-advisor-summary {
-    float: left;
-    width: 33%;
-    border: 1px solid $gray-lighter;
-    box-shadow: 0 0 8px $gray-lighter;
-    padding: $bio-padding;
-    border-radius: $border-radius-large;
-    margin: 0 2em 1em 0;
-  }
-  .table-schedule {
-    width: 60%;
-  }
+// much of this is getting rid of the show hide toggle on large screens
   .collapse.show-md {
     display: block;
     visibility: visible;
@@ -185,14 +155,39 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     clear: right;
     font-size: 0.8em;
   }
-  .bio-review {
-    padding-left: 0;
-    padding-right: 0;
-    .stars {
-      right:0;
+  .bio-header, p.bio-header {
+    margin:0;
+    padding:0;
+    .filter-item {
+      background: transparent;
+      padding:0;
+      border:0;
+      &:after {
+        content:'';
+        display: none;
+      }
     }
   }
+  h3.bio-header {
+    margin: ($bio-padding * 1.5) 0 ($bio-padding /2 );
+  }
+  .bio-review, .similar-advisors {
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+    .stars {
+      right: 0;
+    }
+  }
+// on wider screens, floating the time zone select so it wont take up the whole page width
   #more-schedule {
-    margin-top: -3.8em;
+    .form {
+      float: right;
+      margin-top: -3em;
+    }
+    .table {
+      clear:right;
+    }
   }
 }
