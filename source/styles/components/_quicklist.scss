@@ -1,4 +1,4 @@
-$quicklist-item-height: 36px !default;
+$quicklist-header-height: 36px !default;
 $quicklist-item-padding: ($line-height-computed / 2) !default;
 $quicklist-icon-size: 18px !default;
 
@@ -19,10 +19,6 @@ $quicklist-icon-size: 18px !default;
     transform: translateY(100%);
   }
 
-  &.in {
-    transform: translateY(0);
-  }
-
   @media (min-width: $screen-sm-min) {
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
@@ -31,6 +27,17 @@ $quicklist-icon-size: 18px !default;
     margin-left: -160px;
     max-height: 75%;
     width: 320px;
+
+    display: block;
+
+    &,
+    &.open {
+      transform: translateY(calc(100% - #{$quicklist-header-height}));
+    }
+  }
+
+  &.in {
+    transform: translateY(0);
   }
 }
 
@@ -55,7 +62,7 @@ $quicklist-icon-size: 18px !default;
   border-width: 1px 0;
   box-shadow: 0 1px 2px rgba(#000, 0.2);
   color: #fff;
-  height: $quicklist-item-height;
+  height: $quicklist-header-height;
   padding-top: $quicklist-item-padding;
   position: relative;
   z-index: 3;
@@ -69,7 +76,7 @@ $quicklist-icon-size: 18px !default;
   background-color: lighten($gray-lighter, 5%);
   padding-bottom: 4em;
   position: absolute;
-  top: ($quicklist-item-height - 1px);
+  top: ($quicklist-header-height - 1px);
   right: 0;
   bottom: 0;
   left: 0;
