@@ -1,6 +1,7 @@
 $quicklist-header-height: 36px !default;
 $quicklist-item-padding: ($line-height-computed / 2) !default;
 $quicklist-icon-size: 18px !default;
+$quicklist-narrow-min: $screen-sm-min !default;
 $zindex-quicklist: $zindex-navbar-fixed !default;
 $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
@@ -11,7 +12,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   border: 3px solid #fff;
   border-radius: 50%;
   bottom: $quicklist-item-padding;
-  box-shadow: 0 0 3em rgba(#000,0.35);
+  box-shadow: 0 3px 3em rgba(#000,0.35);
   height: 54px;
   margin: 0;
   overflow: hidden;
@@ -20,17 +21,26 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   right: $quicklist-item-padding;
   z-index: $zindex-quicklist-toggle;
   text-indent: -99em;
+  transition: background-position 300ms ease;
   width: 54px;
 
-  transition: background-position 300ms ease;
-
+  &:hover,
   &:focus,
   &:active {
+    background-color: darken($green, 5%);
     outline: 0;
   }
 
-  &.active {
+  &:active {
+    background-image: none, url(/images/quicklist-toggle.svg);
+  }
+
+  &.open {
     background-position: center top, center 0;
+  }
+
+  @media (min-width: $quicklist-narrow-min) {
+    display: none;
   }
 }
 
@@ -51,7 +61,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     transform: translateY(100%);
   }
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $quicklist-narrow-min) {
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
     box-shadow: 0 0 1em rgba(#000, 0.2);
@@ -115,7 +125,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
       background-image: none;
     }
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $quicklist-narrow-min) {
       border-width: 1px;
     }
   }
@@ -137,7 +147,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   overflow-y: scroll;
   -webkit-overflow-scroll: touch;
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $quicklist-narrow-min) {
     padding-bottom: 0;
   }
 }
@@ -153,7 +163,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   padding: $quicklist-item-padding;
   position: relative;
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $quicklist-narrow-min) {
     border-width: 1px;
   }
 

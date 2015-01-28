@@ -59,7 +59,7 @@ $(function(){
 
     if ($quicklist.hasClass('open')) {
       $quicklist.removeClass('in');
-      $toggle.removeClass('active');
+      $toggle.removeClass('open');
       if ($.support.transition) {
         $quicklist
           .one('bsTransitionEnd', hideQuicklist)
@@ -72,7 +72,7 @@ $(function(){
       $quicklist.addClass('open');
       $quicklist[0].offsetWidth;
       $quicklist.addClass('in');
-      $toggle.addClass('active');
+      $toggle.addClass('open');
     }
   });
 
