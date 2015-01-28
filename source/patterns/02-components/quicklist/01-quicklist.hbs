@@ -2,7 +2,9 @@
 status: inprogress
 ---
 
-<button class="quicklist-toggle" id="quicklist-toggle" type="button">Toggle</button>
+<button class="quicklist-toggle" id="quicklist-toggle" type="button">
+  Show who&rsquo;s logged on
+</button>
 
 <aside class="quicklist" id="quicklist">
   <div class="quicklist-inner">
@@ -47,6 +49,7 @@ status: inprogress
 <script>
 $(function(){
 
+  var $body = $('body');
   var $quicklist = $('#quicklist');
   var $toggle = $('#quicklist-toggle, .quicklist-header a');
 
@@ -58,8 +61,8 @@ $(function(){
     event.preventDefault();
 
     if ($quicklist.hasClass('open')) {
+      $body.removeClass('quicklist-open');
       $quicklist.removeClass('in');
-      $toggle.removeClass('open');
       if ($.support.transition) {
         $quicklist
           .one('bsTransitionEnd', hideQuicklist)
@@ -69,10 +72,10 @@ $(function(){
       }
     }
     else {
+      $body.addClass('quicklist-open');
       $quicklist.addClass('open');
       $quicklist[0].offsetWidth;
       $quicklist.addClass('in');
-      $toggle.addClass('open');
     }
   });
 

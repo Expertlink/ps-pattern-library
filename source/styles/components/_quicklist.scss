@@ -1,9 +1,16 @@
 $quicklist-header-height: 36px !default;
 $quicklist-item-padding: ($line-height-computed / 2) !default;
 $quicklist-icon-size: 18px !default;
+$quicklist-full-max: $screen-xs-max !default;
 $quicklist-narrow-min: $screen-sm-min !default;
 $zindex-quicklist: $zindex-navbar-fixed !default;
 $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
+
+.quicklist-open {
+  @media (max-width: $quicklist-full-max) {
+    overflow: hidden;
+  }
+}
 
 .quicklist-toggle {
   background-color: $green;
@@ -35,7 +42,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     background-image: none, url(/images/quicklist-toggle.svg);
   }
 
-  &.open {
+  .quicklist-open & {
     background-position: center top, center 0;
   }
 
