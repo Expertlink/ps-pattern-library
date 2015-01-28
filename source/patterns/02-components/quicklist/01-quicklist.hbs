@@ -1,11 +1,10 @@
 ---
-fullWidth: true
 status: inprogress
 ---
 
-<button id="quicklist-toggle" type="button">Toggle</button>
+<button class="quicklist-toggle" id="quicklist-toggle" type="button">Toggle</button>
 
-<aside class="quicklist open in" id="quicklist">
+<aside class="quicklist" id="quicklist">
   <div class="quicklist-inner">
     <h5 class="quicklist-header">
       <a href="#quicklist-body">
@@ -60,6 +59,7 @@ $(function(){
 
     if ($quicklist.hasClass('open')) {
       $quicklist.removeClass('in');
+      $toggle.removeClass('active');
       if ($.support.transition) {
         $quicklist
           .one('bsTransitionEnd', hideQuicklist)
@@ -72,6 +72,7 @@ $(function(){
       $quicklist.addClass('open');
       $quicklist[0].offsetWidth;
       $quicklist.addClass('in');
+      $toggle.addClass('active');
     }
   });
 
