@@ -24,7 +24,6 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   position: relative;
   max-width: 175px;
   margin: 0 auto $bio-padding;
-  overflow:hidden;
   img {
     display: block;
     border-radius: $border-radius-small;
