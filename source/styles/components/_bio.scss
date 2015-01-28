@@ -103,8 +103,41 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
-  .filter-item {
-    padding-left: $bio-padding;
+}
+h3.bio-header a.section-parent {
+  display: block;
+  position: relative;
+  padding: ($bio-padding/2) ($bio-padding*3) ($bio-padding/2) $bio-padding;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  background-color: lighten($gray-lighter, 10%);
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(to bottom, #fff, $tan-light);
+    border-color: $tan;
+  }
+  &:after {
+    position: absolute;
+    right: $bio-padding;
+    top: ($bio-padding/2);
+    content: '\2013';
+    height: $filter-control-size;
+    font-weight: bold;
+    line-height: $filter-control-size;
+    text-align: center;
+    width: $filter-control-size;
+  }
+  &.collapsed:after {
+    content: '+';
   }
 }
 p.bio-header {
