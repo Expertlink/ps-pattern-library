@@ -23,12 +23,11 @@ $quicklist-icon-size: 18px !default;
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
     box-shadow: 0 0 1em rgba(#000, 0.2);
+    display: block;
     left: 50%;
     margin-left: -160px;
     max-height: 75%;
     width: 320px;
-
-    display: block;
 
     &,
     &.open {
