@@ -107,6 +107,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
   .toggle-trigger {
     display: block;
+    color: black;
     &:hover, &:focus {
       text-decoration: none;
     }
@@ -122,20 +123,21 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
-}
-.bio-more-toggle {
-  background: $gray;
-  padding: ($bio-padding/2) $bio-padding;
-  text-align: right;
-  a {
-    color: white;
-    font-weight: bold;
+  @media (min-width: $screen-md-min) {
+    padding-left:0;
+    padding-right: 0;
+    background: transparent;
+    border-top:0;
+    padding-top: 0;
+    .arrow-down-after:after {
+      display: none;
+    } 
+    .toggle-trigger {
+      cursor: default;
+    }
   }
-  @media (max-width: $screen-md) {
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
-  }
 }
+
 .bio-review {
   position: relative;
   padding: $bio-padding;
@@ -153,5 +155,44 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     position: absolute; 
     top: $bio-padding;
     right: $bio-padding;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .bio-advisor-summary {
+    float: left;
+    width: 33%;
+    border: 1px solid $gray-lighter;
+    box-shadow: 0 0 8px $gray-lighter;
+    padding: $bio-padding;
+    border-radius: $border-radius-large;
+    margin: 0 2em 1em 0;
+  }
+  .table-schedule {
+    width: 60%;
+  }
+  .collapse.show-md {
+    display: block;
+    visibility: visible;
+  }
+  .bio-header .stars {
+    float: right;
+    display: block;
+  }
+  .bio-header .ratings-total {
+    float: right;
+    display: block;
+    clear: right;
+    font-size: 0.8em;
+  }
+  .bio-review {
+    padding-left: 0;
+    padding-right: 0;
+    .stars {
+      right:0;
+    }
+  }
+  #more-schedule {
+    margin-top: -3.8em;
   }
 }
