@@ -16,6 +16,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin:0;
 }
 .bio-headline {
+  font-weight: bold;
   margin:0 0 0.3em;
 }
 
@@ -28,28 +29,36 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     display: block;
     border-radius: $border-radius-small;
   }
-  .bio-fave {
-    position: absolute;
-    top: ($bio-padding/2);
-    right: ($bio-padding/2);
-    margin:0;
-    display: block;
-    a {
-      display:block;
-      width: 2em;
-      height: 2em;
-      text-align: center;
-      line-height: 2em;
-      border: 1px solid $gray-lighter;
-      border-radius: $border-radius-small;
-      background: white;
-      color: lighten($red, 30%);
-      &:hover, &.is-faved { 
-        background: lighten($red, 30%);
-        color: $red;
-      }
+}
+.bio-photo-fave {
+  position: absolute;
+  top: ($bio-padding/2);
+  right: ($bio-padding/2);
+  margin:0;
+  display: block;
+  a {
+    display:block;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius-small;
+    background: white;
+    color: lighten($red, 30%);
+    &:hover,
+    &:focus { 
+      background: lighten($red, 30%);
+      color: $red;
     }
   }
+}
+.bio-photo-fave.is-faved a,
+.bio-photo-fave.is-faved a:hover,
+.bio-photo-fave.is-faved a:focus { 
+  background: lighten($red, 30%);
+  color: $red;
+  border-color: $red;
 }  
 .bio-audio-video {
   background: $gray-lighter;
@@ -84,11 +93,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     }
   }
 }
-.bio-price-details {
-  font-size: 0.9em;
-  color: $gray;
-  text-align:center;
-}
+
 
 .text-available {
   color: $green;
@@ -104,7 +109,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     margin-right: -($bio-padding);
   }
 }
-h3.bio-header a.section-parent {
+a.section-parent {
   display: block;
   position: relative;
   padding: ($bio-padding/2) ($bio-padding*3) ($bio-padding/2) $bio-padding;
@@ -138,6 +143,19 @@ h3.bio-header a.section-parent {
   }
   &.collapsed:after {
     content: '+';
+  }
+  @media (min-width: $screen-md-min) {
+    background: transparent;
+    border:0;
+    padding:0;
+    cursor: default;
+    &.collapsed:after, &:after {
+      content:'';
+    }
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
   }
 }
 p.bio-header {
