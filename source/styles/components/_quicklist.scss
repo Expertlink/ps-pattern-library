@@ -152,7 +152,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   left: 0;
 
   overflow-y: scroll;
-  -webkit-overflow-scroll: touch;
+  -webkit-overflow-scrolling: touch;
 
   @media (min-width: $quicklist-narrow-min) {
     padding-bottom: 0;
