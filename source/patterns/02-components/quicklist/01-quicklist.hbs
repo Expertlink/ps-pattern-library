@@ -3,6 +3,8 @@ fullWidth: true
 status: inprogress
 ---
 
+<button id="quicklist-toggle" type="button">Toggle</button>
+
 <aside class="quicklist">
   <div class="quicklist-inner">
     <div class="quicklist-header text-center">
@@ -36,3 +38,34 @@ status: inprogress
     </div>
   </div>
 </aside>
+
+<script>
+$(function(){
+
+  var $quicklist = $('.quicklist');
+  var $toggle = $('#quicklist-toggle, .quicklist-header');
+
+  function hideQuicklist () {
+    $quicklist.removeClass('open');
+  }
+
+  $toggle.click(function(){
+    if ($quicklist.hasClass('open')) {
+      $quicklist.removeClass('in');
+      if ($.support.transition) {
+        $quicklist
+          .one('bsTransitionEnd', hideQuicklist)
+          .emulateTransitionEnd(300);
+      } else {
+        hideQuicklist();
+      }
+    }
+    else {
+      $quicklist.addClass('open');
+      $quicklist[0].offsetWidth;
+      $quicklist.addClass('in');
+    }
+  });
+
+});
+</script>

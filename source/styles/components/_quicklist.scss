@@ -9,7 +9,19 @@ $quicklist-icon-size: 18px !default;
   width: 100%;
   overflow: hidden;
   position: fixed;
+  transition: transform 300ms ease-out;
   z-index: $zindex-navbar-fixed;
+
+  display: none;
+
+  &.open {
+    display: block;
+    transform: translateY(100%);
+  }
+
+  &.in {
+    transform: translateY(0);
+  }
 
   @media (min-width: $screen-sm-min) {
     border-top-left-radius: $border-radius-large;
