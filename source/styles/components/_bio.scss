@@ -231,7 +231,7 @@ p.bio-header {
     }
   }
 // on wider screens, floating the time zone select so it wont take up the whole page width
-  #more-schedule {
+  .bio-schedule {
     .form {
       float: right;
       margin-top: -3em;
