@@ -1,0 +1,223 @@
+$bio-padding: ($line-height-computed * (2/3)) !default;
+.box-bio { // default padding on box is TOO MAÇH
+  padding: $bio-padding;
+  @media (min-width: $screen-md-min) {
+    padding: ($bio-padding * 2);
+  }
+}
+.bio-advisor-summary {
+  text-align: center;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 0 8px $gray-lighter;
+  padding: $bio-padding;
+  border-radius: $border-radius-large;
+}
+.bio-name {
+  margin:0;
+}
+.bio-headline {
+  font-weight: bold;
+  margin:0 0 0.3em;
+}
+.bio-photo {
+  display: block;
+  position: relative;
+  max-width: 175px;
+  margin: 0 auto $bio-padding;
+  img {
+    display: block;
+    border-radius: $border-radius-small;
+  }
+}
+.bio-photo-fave {
+  position: absolute;
+  top: ($bio-padding/2);
+  right: ($bio-padding/2);
+  margin:0;
+  display: block;
+  a {
+    display:block;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius-small;
+    background: white;
+    color: lighten($red, 30%);
+    &:hover,
+    &:focus { 
+      background: lighten($red, 30%);
+      color: $red;
+    }
+  }
+}
+.bio-photo-fave.is-faved a,
+.bio-photo-fave.is-faved a:hover,
+.bio-photo-fave.is-faved a:focus { 
+  background: lighten($red, 30%);
+  color: $red;
+  border-color: $red;
+}  
+.bio-audio-video {
+  background: $gray-lighter;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-small;  
+  > .arrange-fill {
+    width: 50%;
+  }
+}
+.bio-av-btn {
+  font-weight: normal;
+  display: inline-block;
+  color: $blue;
+  padding: 0.3em;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $blue;
+  }
+}
+.bio-actions {
+  width: calc(100% + #{$arrange-gutter-size});
+  margin-bottom:0;
+  > .arrange-fill {
+    width: 50%;
+  }
+}
+.bio-price {
+  font-size: 0.9em;
+  display: block;
+  text-align:center;
+  font-weight: 800;  
+  margin-top: 0.2em;
+  del {
+    color: $gray-light;
+    font-weight: normal;
+  }
+}
+.text-available {
+  color: $green;
+}
+.bio-section-header {
+  margin:0;
+  position: relative;
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+  }
+}
+a.section-parent {
+  display: block;
+  position: relative;
+  padding: ($bio-padding/2) ($bio-padding*3) ($bio-padding/2) $bio-padding;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  background-color: lighten($gray-lighter, 10%);
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(to bottom, #fff, $tan-light);
+    border-color: $tan;
+  }
+  &:after {
+    position: absolute;
+    right: $bio-padding;
+    top: ($bio-padding/2);
+    content: '\2013';
+    height: $filter-control-size;
+    font-weight: bold;
+    line-height: $filter-control-size;
+    text-align: center;
+    width: $filter-control-size;
+  }
+  &.collapsed:after {
+    content: '+';
+  }
+  @media (min-width: $screen-md-min) {
+    background: transparent;
+    border:0;
+    padding:0;
+    cursor: default;
+    &.collapsed:after, &:after {
+      content:'';
+    }
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+}
+.bio-section-teaser {
+  padding: ($line-height-computed/2) $bio-padding;
+  margin: 0 (-$bio-padding);
+  @media (min-width: $screen-md-min) {
+    padding:0;
+    margin: 0 0 1em;
+  }
+}
+
+.bio-review {
+  position: relative;
+  padding: ($line-height-computed/2) 0;
+  border-bottom: 1px solid $gray-lighter;
+  @media (max-width: $screen-md) {
+    margin-left: (-$bio-padding);
+    margin-right: (-$bio-padding);
+    padding-left: $bio-padding;
+    padding-right: $bio-padding;
+  }
+}
+.bio-reviewer, 
+.bio-review-date {
+  font-weight: 800;
+}
+.bio-review-date, 
+.bio-review-helpful {
+  color: $gray;
+}
+.bio-review-type {
+  display:block;
+}
+.bio-review-stars {
+  position: absolute; 
+  top: ($line-height-computed/2);
+  right: $bio-padding;
+}
+.similar-advisors {
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+  }
+}
+@media (min-width: $screen-md-min) {
+  .collapse.show-md {
+    display: block;
+    visibility: visible;
+  }
+  .bio-review-stars-average {
+    float: right;
+    display: block;
+  }
+  .ratings-total {
+    float: right;
+    display: block;
+    clear: right;
+    font-size: 0.8em;
+  }
+  .time-zone-picker {
+    float: right;
+    margin-top: -2.5em;
+  }
+  .table-schedule {
+    clear:right;
+  }
+}
