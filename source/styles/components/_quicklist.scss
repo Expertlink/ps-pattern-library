@@ -14,8 +14,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
 .quicklist-toggle {
   background-color: $green;
-  background-image: linear-gradient(to bottom, rgba(#fff,0.3), rgba(#fff,0)), url(/images/quicklist-toggle.svg);
-  background-position: center top, center -48px;
+  background-image: linear-gradient(to bottom, rgba(#fff,0.3), rgba(#fff,0));
   border: 3px solid #fff;
   border-radius: 50%;
   bottom: $quicklist-item-padding;
@@ -26,10 +25,8 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   padding: 0;
   position: fixed;
   right: $quicklist-item-padding;
-  z-index: $zindex-quicklist-toggle;
-  text-indent: -99em;
-  transition: background-position 300ms ease;
   width: 54px;
+  z-index: $zindex-quicklist-toggle;
 
   &:hover,
   &:focus,
@@ -39,15 +36,26 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   }
 
   &:active {
-    background-image: none, url(/images/quicklist-toggle.svg);
-  }
-
-  .quicklist-open & {
-    background-position: center top, center 0;
+    background-image: none;
   }
 
   @media (min-width: $quicklist-narrow-min) {
     display: none;
+  }
+}
+
+.quicklist-toggle-inner {
+  background-image: url(/images/quicklist-toggle.svg);
+  background-position: center -48px;
+  display: block;
+  height: 48px;
+  overflow: hidden;
+  text-indent: -99em;
+  transition: background-position 300ms ease;
+  width: 48px;
+
+  .quicklist-open & {
+    background-position: center 0;
   }
 }
 
