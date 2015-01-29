@@ -19,7 +19,6 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   font-weight: bold;
   margin:0 0 0.3em;
 }
-
 .bio-photo {
   display: block;
   position: relative;
@@ -83,24 +82,22 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   > .arrange-fill {
     width: 50%;
   }
-  .bio-price {
-    font-size: 0.9em;
-    display: block;
-    text-align:center;
-    font-weight: 800;  
-    margin-top: 0.2em;
-    del {
-      color: $gray-light;
-      font-weight: normal;
-    }
+}
+.bio-price {
+  font-size: 0.9em;
+  display: block;
+  text-align:center;
+  font-weight: 800;  
+  margin-top: 0.2em;
+  del {
+    color: $gray-light;
+    font-weight: normal;
   }
 }
-
 .text-available {
   color: $green;
 }
-
-.bio-header {
+.bio-section-header {
   margin:0;
   position: relative;
   @media (max-width: $screen-md) {
@@ -157,86 +154,68 @@ a.section-parent {
     }
   }
 }
-p.bio-header {
+.bio-section-teaser {
   padding: ($line-height-computed/2) $bio-padding;
-}
-
-.bio-review, .similar-advisors {
-  @media (max-width: $screen-md) {
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
+  margin: 0 (-$bio-padding);
+  @media (min-width: $screen-md-min) {
+    padding:0;
+    margin: 0 0 1em;
   }
 }
 
 .bio-review {
   position: relative;
-  padding: ($line-height-computed/2) $bio-padding;
+  padding: ($line-height-computed/2) 0;
   border-bottom: 1px solid $gray-lighter;
- .reviewer, .review-date {
-    font-weight: 800;
-  }
-  .review-date, .bio-review-helpful {
-    color: $gray;
-  }
-  .review-type {
-    display:block;
-  }
-  .stars {
-    position: absolute; 
-    top: ($line-height-computed/2);
-    right: $bio-padding;
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+    padding-left: $bio-padding;
+    padding-right: $bio-padding;
   }
 }
-
+.bio-reviewer, 
+.bio-review-date {
+  font-weight: 800;
+}
+.bio-review-date, 
+.bio-review-helpful {
+  color: $gray;
+}
+.bio-review-type {
+  display:block;
+}
+.bio-review-stars {
+  position: absolute; 
+  top: ($line-height-computed/2);
+  ight: $bio-padding;
+}
+.similar-advisors {
+  @media (max-width: $screen-md) {
+    margin-left: -($bio-padding);
+    margin-right: -($bio-padding);
+  }
+}
 @media (min-width: $screen-md-min) {
-// much of this is getting rid of the show hide toggle on large screens
   .collapse.show-md {
     display: block;
     visibility: visible;
   }
-  .bio-header .stars {
+  .bio-review-stars-average {
     float: right;
     display: block;
   }
-  .bio-header .ratings-total {
+  .ratings-total {
     float: right;
     display: block;
     clear: right;
     font-size: 0.8em;
   }
-  .bio-header, p.bio-header {
-    margin:0;
-    padding:0;
-    .filter-item {
-      background: transparent;
-      padding:0;
-      border:0;
-      &:after {
-        content:'';
-        display: none;
-      }
-    }
+  .time-zone-picker {
+    float: right;
+    margin-top: -3em;
   }
-  h3.bio-header {
-    margin: ($bio-padding * 1.5) 0 ($bio-padding /2 );
-  }
-  .bio-review, .similar-advisors {
-    margin-left:0;
-    margin-right:0;
-    padding-left:0;
-    padding-right:0;
-    .stars {
-      right: 0;
-    }
-  }
-// on wider screens, floating the time zone select so it wont take up the whole page width
-  .bio-schedule {
-    .form {
-      float: right;
-      margin-top: -3em;
-    }
-    .table {
-      clear:right;
-    }
+  .table-schedule {
+    clear:right;
   }
 }
