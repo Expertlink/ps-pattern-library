@@ -68,24 +68,29 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     transform: translateY(100%);
   }
 
+  &.in {
+    transform: translateY(0);
+  }
+
   @media (min-width: $quicklist-narrow-min) {
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
     box-shadow: 0 0 1em rgba(#000, 0.2);
     display: block;
     left: 50%;
+    height: ($quicklist-header-height - 1px);
     margin-left: -160px;
-    max-height: 75%;
+    transition: height 300ms ease-out;
     width: 320px;
 
-    &,
-    &.open {
-      transform: translateY(calc(100% - #{$quicklist-header-height} + 1px));
+    &.open,
+    &.in {
+      transform: translateY(0);
     }
-  }
 
-  &.in {
-    transform: translateY(0);
+    &.in {
+      height: 75%;
+    }
   }
 }
 
