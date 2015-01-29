@@ -67,12 +67,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   > .arrange-fill {
     width: 50%;
   }
-  .btn {
-    font-weight: normal;
-    color: $blue;
-    &:hover {
-      text-decoration: underline;
-    }
+}
+.bio-av-btn {
+  font-weight: normal;
+  display: inline-block;
+  color: $blue;
+  padding: 0.3em;
+  &:hover {
+    text-decoration: underline;
   }
 }
 .bio-actions {
@@ -94,12 +96,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-
 .text-available {
   color: $green;
 }
-
-
 
 .bio-header {
   margin:0;
