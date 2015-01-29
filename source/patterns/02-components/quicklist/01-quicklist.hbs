@@ -1,0 +1,88 @@
+---
+description: >
+  List overlay of currently logged-on advisors. On small screens this occupies
+  the full width or is completely invisible, toggled via `quicklist-toggle`.
+  On large screens it is always partially visible, and the header is the sole
+  toggle element.
+status: inprogress
+---
+
+<button class="quicklist-toggle" id="quicklist-toggle" type="button">
+  Show who&rsquo;s logged on
+</button>
+
+<aside class="quicklist" id="quicklist">
+  <div class="quicklist-inner">
+    <h5 class="quicklist-header">
+      <a href="#quicklist-body">
+        <svg class="icon icon-lg">
+          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#people-list" />
+        </svg>
+        Who&rsquo;s logged on?
+        <span class="arrow-up quicklist-arrow"></span>
+      </a>
+    </h5>
+    <div class="quicklist-body" id="quicklist-body">
+      <ul class="list-unstyled u-no-margin">
+        {{#times 20}}
+          <li>
+            <a class="quicklist-item {{#lt @index 10}}text-success{{/lt}}" href="">
+              <h6 class="quicklist-item-heading">Firstname x5555</h6>
+              <small class="quicklist-item-status">
+                {{#lt @index 10}}
+                  Available now
+                {{else}}
+                  Currently busy
+                {{/lt}}
+              </small>
+              <svg class="icon quicklist-item-phone">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+              </svg>
+              {{#randomIf}}
+                <svg class="icon quicklist-item-chat">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                </svg>
+              {{/randomIf}}
+            </a>
+          </li>
+        {{/times}}
+      </ul>
+    </div>
+  </div>
+</aside>
+
+<script>
+$(function(){
+
+  var $body = $('body');
+  var $quicklist = $('#quicklist');
+  var $toggle = $('#quicklist-toggle, .quicklist-header a');
+
+  function hideQuicklist () {
+    $quicklist.removeClass('open');
+  }
+
+  $toggle.click(function (event) {
+    event.preventDefault();
+
+    if ($quicklist.hasClass('open')) {
+      $body.removeClass('quicklist-open');
+      $quicklist.removeClass('in');
+      if ($.support.transition) {
+        $quicklist
+          .one('bsTransitionEnd', hideQuicklist)
+          .emulateTransitionEnd(300);
+      } else {
+        hideQuicklist();
+      }
+    }
+    else {
+      $body.addClass('quicklist-open');
+      $quicklist.addClass('open');
+      $quicklist[0].offsetWidth;
+      $quicklist.addClass('in');
+    }
+  });
+
+});
+</script>

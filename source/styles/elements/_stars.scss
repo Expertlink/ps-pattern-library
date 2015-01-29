@@ -1,5 +1,7 @@
 $star-width: 16px !default;
+$star-width-lg: 22px !default;
 $star-height: $star-width !default;
+$star-height-lg: $star-width-lg !default;
 $star-rating-min: 0 !default;
 $star-rating-max: 5 !default;
 $star-rating-step: .5 !default;
@@ -15,7 +17,7 @@ $star-rating-step: .5 !default;
 
   &:before,
   &:after {
-    // TODO: For performance, we should consider using data-uri's for small
+    // TODO: For performance, we should consider using data-uris for small
     // SVG assets like this.
     background: url(/images/star.svg) repeat-x;
     content: '';
@@ -49,5 +51,13 @@ $star-rating-step: .5 !default;
     &:after {
       width: (100% - $step-percentage);
     }
+  }
+}
+
+.stars.stars-lg {
+  width: ($star-width-lg * $star-rating-max);
+  height: $star-height-lg;
+  &:after, &:before {
+    background-size: auto 100%;
   }
 }

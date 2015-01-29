@@ -1,0 +1,233 @@
+$quicklist-header-height: 36px !default;
+$quicklist-item-padding: ($line-height-computed / 2) !default;
+$quicklist-icon-size: 18px !default;
+$quicklist-full-max: $screen-xs-max !default;
+$quicklist-narrow-min: $screen-sm-min !default;
+$zindex-quicklist: $zindex-navbar-fixed !default;
+$zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
+
+.quicklist-open {
+  @media (max-width: $quicklist-full-max) {
+    overflow: hidden;
+  }
+}
+
+.quicklist-toggle {
+  background-color: $green;
+  background-image: linear-gradient(to bottom, rgba(#fff,0.3), rgba(#fff,0)), url(/images/quicklist-toggle.svg);
+  background-position: center top, center -48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  bottom: $quicklist-item-padding;
+  box-shadow: 0 3px 3em rgba(#000,0.35);
+  height: 54px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  right: $quicklist-item-padding;
+  z-index: $zindex-quicklist-toggle;
+  text-indent: -99em;
+  transition: background-position 300ms ease;
+  width: 54px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($green, 5%);
+    outline: 0;
+  }
+
+  &:active {
+    background-image: none, url(/images/quicklist-toggle.svg);
+  }
+
+  .quicklist-open & {
+    background-position: center top, center 0;
+  }
+
+  @media (min-width: $quicklist-narrow-min) {
+    display: none;
+  }
+}
+
+.quicklist {
+  bottom: 0;
+  height: 100%;
+  left:  0;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  transition: transform 300ms ease-out;
+  z-index: $zindex-quicklist;
+
+  display: none;
+
+  &.open {
+    display: block;
+    transform: translateY(100%);
+  }
+
+  @media (min-width: $quicklist-narrow-min) {
+    border-top-left-radius: $border-radius-large;
+    border-top-right-radius: $border-radius-large;
+    box-shadow: 0 0 1em rgba(#000, 0.2);
+    display: block;
+    left: 50%;
+    margin-left: -160px;
+    max-height: 75%;
+    width: 320px;
+
+    &,
+    &.open {
+      transform: translateY(calc(100% - #{$quicklist-header-height} + 1px));
+    }
+  }
+
+  &.in {
+    transform: translateY(0);
+  }
+}
+
+.quicklist-inner,
+.quicklist-header,
+.quicklist-header a {
+  border-radius: inherit;
+}
+
+.quicklist-inner {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.quicklist-header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+
+  a {
+    background-color: $blue;
+    background-image: linear-gradient(to bottom, rgba(#fff, 0.1), rgba(#fff, 0));
+    border-color: $blue-dark;
+    border-style: solid;
+    border-width: 1px 0;
+    box-shadow: 0 1px 2px rgba(#000, 0.2);
+    color: #fff;
+    display: block;
+    height: $quicklist-header-height;
+    padding-top: $quicklist-item-padding;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($blue, 8%);
+    }
+
+    &:active {
+      background-image: none;
+    }
+
+    @media (min-width: $quicklist-narrow-min) {
+      border-width: 1px;
+    }
+  }
+}
+
+.quicklist.open .quicklist-arrow {
+  transform: rotate(180deg);
+}
+
+.quicklist-body {
+  background-color: lighten($gray-lighter, 5%);
+  padding-bottom: 4em;
+  position: absolute;
+  top: ($quicklist-header-height - 1px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: $quicklist-narrow-min) {
+    padding-bottom: 0;
+  }
+}
+
+.quicklist-item {
+  background-color: #fff;
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  display: block;
+  font-size: 12px;
+  margin-top: -1px;
+  padding: $quicklist-item-padding;
+  position: relative;
+
+  @media (min-width: $quicklist-narrow-min) {
+    border-width: 1px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $orange-lighter;
+    border-color: $tan;
+    text-decoration: none;
+    z-index: 2;
+
+    .text-muted { // ew
+      color: darken($tan, 10%);
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: $quicklist-item-padding;
+    top: 50%;
+    margin-top: -9px;
+    opacity: 0.15;
+
+    @include svg-sprite("item-arrow-right");
+  }
+}
+
+.quicklist-item-heading {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+.quicklist-item-status {
+  color: $gray-light;
+  display: block;
+
+  .quicklist-item:hover &,
+  .quicklist-item:focus & {
+    color: darken($tan, 10%);
+  }
+}
+
+.quicklist-item-phone,
+.quicklist-item-chat {
+  height: $quicklist-icon-size;
+  margin-top: ($quicklist-icon-size / -2);
+  position: absolute;
+  top: 50%;
+  width: $quicklist-icon-size;
+}
+
+.quicklist-item-phone {
+  right: ($quicklist-item-padding * 3 + $quicklist-icon-size + 14px);
+}
+
+.quicklist-item-chat {
+  right: ($quicklist-item-padding * 2 + 14px);
+}

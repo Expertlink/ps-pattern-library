@@ -121,15 +121,7 @@
   height: 14px;
   margin: ($line-height-computed / 2) ($line-height-computed * -1);
   width: auto;
-}
 
-.box-scroll, .box-scroll-top, .box-scroll-bottom {
-  &.u-no-padding-sides {
-    &:after, &:before {
-      margin-left:0;
-      margin-right:0;
-    }
-  }
 }
 
 //== Inner fleurons

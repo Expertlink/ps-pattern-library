@@ -1,0 +1,20 @@
+---
+status: inprogress
+---
+
+{{> pages/_header }}
+
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter box-bio">
+    {{> advisor-bio/_bio-summary }}
+    {{> reviews/_review-summary }}
+    {{#withFirst review.list 10}}
+     {{> reviews/_review }}
+    {{/withFirst}}
+    <div class="text-center">
+      {{> pagination/states }}
+    </div>
+  </div>
+</div>
+
+{{> pages/_footer }}
