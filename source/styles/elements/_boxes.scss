@@ -123,22 +123,6 @@
   width: auto;
 
 }
-.box-scroll, .box-scroll-top, .box-scroll-bottom {
-  &.u-no-padding-sides {
-    &:after, &:before {
-      margin: ($line-height-computed / 2) 0;
-    } 
-  }
-}
-
-.box-scroll, .box-scroll-top, .box-scroll-bottom {
-  &.u-no-padding-sides {
-    &:after, &:before {
-      margin-left:0;
-      margin-right:0;
-    }
-  }
-}
 
 //== Inner fleurons
 
