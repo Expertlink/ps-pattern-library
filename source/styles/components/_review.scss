@@ -1,0 +1,56 @@
+$review-padding: ($line-height-computed * (2/3)) !default;
+.reviews {
+  padding: 0 $review-padding;
+}
+.review {
+  position: relative;
+  padding: ($line-height-computed/2) $review-padding;
+  border-bottom: 1px solid $gray-lighter;
+  @media (max-width: $screen-md) {
+    margin-left: (-$review-padding);
+    margin-right: (-$review-padding);
+  }
+}
+.reviewer, 
+.review-date {
+  font-weight: 800;
+}
+.review-date, 
+.review-helpful {
+  color: $gray;
+}
+.review-type {
+  display:block;
+}
+.review-stars {
+  position: absolute; 
+  top: ($line-height-computed/2);
+  right: $review-padding;
+}
+.reviews-summary {
+  background: lighten($gray-lighter,10%);
+  padding: $review-padding;
+  border-color:  $gray-lighter;
+  border-style: solid;
+  border-width: 0 0 1px;
+  @media (max-width: $screen-md) {
+    margin-left: (-$review-padding);
+    margin-right: (-$review-padding);
+  }
+  @media (min-width: $screen-md-min) {
+    border-radius: $border-radius-large;
+    border-width: 1px;
+  }
+}
+@media (min-width: $screen-md-min) {
+  .review-stars-average {
+    float: right;
+    display: block;
+  }
+  .ratings-total {
+    float: right;
+    display: block;
+    clear: right;
+    font-size: 0.8em;
+  }
+}

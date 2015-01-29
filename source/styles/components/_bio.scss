@@ -165,33 +165,7 @@ a.section-parent {
   }
 }
 
-.bio-review {
-  position: relative;
-  padding: ($line-height-computed/2) 0;
-  border-bottom: 1px solid $gray-lighter;
-  @media (max-width: $screen-md) {
-    margin-left: (-$bio-padding);
-    margin-right: (-$bio-padding);
-    padding-left: $bio-padding;
-    padding-right: $bio-padding;
-  }
-}
-.bio-reviewer, 
-.bio-review-date {
-  font-weight: 800;
-}
-.bio-review-date, 
-.bio-review-helpful {
-  color: $gray;
-}
-.bio-review-type {
-  display:block;
-}
-.bio-review-stars {
-  position: absolute; 
-  top: ($line-height-computed/2);
-  right: $bio-padding;
-}
+
 .similar-advisors {
   @media (max-width: $screen-md) {
     margin-left: -($bio-padding);
@@ -202,16 +176,6 @@ a.section-parent {
   .collapse.show-md {
     display: block;
     visibility: visible;
-  }
-  .bio-review-stars-average {
-    float: right;
-    display: block;
-  }
-  .ratings-total {
-    float: right;
-    display: block;
-    clear: right;
-    font-size: 0.8em;
   }
   .time-zone-picker {
     float: right;

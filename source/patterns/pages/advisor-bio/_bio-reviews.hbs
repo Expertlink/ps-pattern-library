@@ -1,75 +1,8 @@
 <h3 class="u-no-margin bio-section-header" id="reviews"><a href="#more-reviews"  data-toggle="collapse" class="section-parent collapsed">Mazie's Ratings &amp; Reviews </a></h3>
-<p class="bio-section-teaser"><span class="bio-review-stars-average stars stars-4-5">4½ stars</span><span class="ratings-total"> (1204 Ratings)</span><br />
-  <strong>537</strong> <span class="hidden-xs">Psychic Source member</span> reviews since <strong>Mar 2012</strong></p>
-
+{{> reviews/_review-summary }}
 <div id="more-reviews" class="collapse show-md">
-
-<div class="bio-review">
-  <p class="bio-review-meta">
-    <span class="bio-review-date">05/14/2013</span>
-    <span class="hidden-xs"> with </span>
-    <span class="bio-reviewer">oathegg</span>
-    <span class="bio-review-stars stars stars-5">5 stars</span>
-    <span class="bio-review-type">Phone Reading</span>
-  </p>
-  <p class="bio-review-content">
-    I really appreciate your highly detailed insight and advice - thank you!!!
-  </p>
-  <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
-</div>
-<div class="bio-review">
-  <p class="bio-review-meta">
-    <span class="bio-review-date">01/23/2015</span>
-    <span class="hidden-xs"> with </span>
-    <span class="bio-reviewer">dhender</span>
-    <span class="bio-review-stars stars stars-3">3 stars</span>
-    <span class="bio-review-type">Phone Reading</span>
-  </p>
-  <p class="bio-review-content">
-    She picked up on my situaiton well, but was not able to claerly answer my question. Though, she gave me peace of mind and what she did pick up on was definitely in tune with what other advisors said. Thx
-  </p>
-  <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
-</div>
-<div class="bio-review">
-  <p class="bio-review-meta">
-    <span class="bio-review-date">01/18/2015</span>
-    <span class="hidden-xs"> with </span>
-    <span class="bio-reviewer">believe225</span>
-    <span class="bio-review-stars stars stars-5">5 stars</span>
-    <span class="bio-review-type">Chat Reading</span>
-  </p>
-  <p class="bio-review-content">
-    Mazie was very helpful in explaining when I had questions what she was seeing. I also think that she connected very well with the situation and fully understood what was happening.
-  </p>
-  <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
-</div>
-<div class="bio-review">
-  <p class="bio-review-meta">
-    <span class="bio-review-date">01/17/2015</span>
-    <span class="hidden-xs"> with </span>
-    <span class="bio-reviewer">MariJorge</span>
-    <span class="bio-review-stars stars stars-5">5 stars</span>
-    <span class="bio-review-type"></span>
-  </p>
-  <p class="bio-review-content">
-   WONDERFUL !!! TRUE TALENT! VERY KIND AND SPIRITUAL !! LOVE YOU! MAYZY OU ARE FROM OTHER PLANET, CONGRATS FOR YOUR GREAT SKILLS
-  </p>
-  <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
-</div>
-<div class="bio-review">
-  <p class="bio-review-meta">
-    <span class="bio-review-date">01/7/2015</span>
-    <span class="hidden-xs"> with </span>
-    <span class="bio-reviewer">Mona84</span>
-    <span class="bio-review-stars stars stars-1">1 star</span>
-    <span class="bio-review-type">Chat Reading</span>
-  </p>
-  <p class="bio-review-content">
-    No connection. Took too long to respond.
-  </p>
-  <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
-</div>
-
-
-<p class="u-margin-top"><a href="#" class="btn btn-default btn-shaded btn-block">See more of Mazie's reviews</a></p>
+  {{#withFirst review.list 5}}
+    {{> reviews/_review }}
+  {{/withFirst}}
+  <p class="u-margin-top"><a href="02-advisor-reviews.html" class="btn btn-default btn-shaded btn-block">See more of Mazie's reviews</a></p>
 </div>
