@@ -70,6 +70,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .bio-av-btn {
   font-weight: normal;
   display: inline-block;
+  white-space: nowrap;
   color: $blue;
   padding: 0.3em;
   &:hover,
@@ -98,6 +99,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 }
 .text-available {
   color: $green;
+}
+.text-unavailable {
+  color: $red;
 }
 .bio-section-header {
   margin:0;
