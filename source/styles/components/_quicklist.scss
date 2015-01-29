@@ -88,12 +88,12 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     left: 50%;
     height: ($quicklist-header-height - 1px);
     margin-left: -160px;
-    transition: height 300ms ease-out;
+    transition-property: height;
     width: 320px;
 
     &.open,
     &.in {
-      transform: translateY(0);
+      transform: none;
     }
 
     &.in {
