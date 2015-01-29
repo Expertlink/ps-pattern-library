@@ -72,8 +72,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   display: inline-block;
   color: $blue;
   padding: 0.3em;
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
+    color: $blue;
   }
 }
 .bio-actions {
@@ -168,8 +170,8 @@ a.section-parent {
   padding: ($line-height-computed/2) 0;
   border-bottom: 1px solid $gray-lighter;
   @media (max-width: $screen-md) {
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
+    margin-left: (-$bio-padding);
+    margin-right: (-$bio-padding);
     padding-left: $bio-padding;
     padding-right: $bio-padding;
   }
@@ -213,7 +215,7 @@ a.section-parent {
   }
   .time-zone-picker {
     float: right;
-    margin-top: -3em;
+    margin-top: -2.5em;
   }
   .table-schedule {
     clear:right;
