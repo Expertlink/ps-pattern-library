@@ -78,11 +78,21 @@ $(function(){
   var $toggle   = $('.masthead-search-toggle');
   var $field    = $('#q');
 
+  // open state
   $toggle.click(function (event) {
     event.preventDefault();
     $masthead.addClass('is-search-open');
     $field.click().focus();
   });
+
+  // disable page zoom on focus
+  $field
+    .on('focus', function () {
+      $.mobile.zoom.disable(true);
+    })
+    .on('blur', function () {
+      $.mobile.zoom.enable(true);
+    });
 
 });
 
