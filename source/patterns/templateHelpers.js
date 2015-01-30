@@ -3,6 +3,23 @@ var Handlebars  = require('handlebars');
 /* These helpers are available to all Handlebars templates
  * compiled by the gulp library task */
 module.exports = {
+  average: function average(list, key) {
+    var sum;
+    if (key) {
+      // Sum the items in the list with this key
+      list = list.map(function(item) {
+        return item[key];
+      });
+    }
+    sum = list.reduce(function(prev, now) {
+      return prev + now;
+    });
+    return sum / list.length;
+
+  },
+  count: function count (list) {
+    return list.length;
+  },
   times: function times (n, block) {
     var accum = '', data;
     for (var i = 0; i < n; ++i) {
@@ -123,5 +140,5 @@ module.exports = {
       return options.inverse(this);
     }
   }
-  
+
 };
