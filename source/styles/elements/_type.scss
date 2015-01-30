@@ -4,10 +4,6 @@
   font-family: $font-family-cursive;
 }
 
-.text-underline {
-  text-decoration: underline;
-}
-
 //** Extends Bootstrap headings to accountfor differing x-height
 
 h1, .h1 {
@@ -41,11 +37,20 @@ h6, .h6 {
   }
 }
 
-
 //== Other text variations
 
 @include text-emphasis-variant('.text-default', $text-color);
 @include text-emphasis-variant('.text-secondary', $orange);
+
+//== Misc. modifiers
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-tall {
+  line-height: 2;
+}
 
 //== Responsive text alignment classes
 
@@ -114,3 +119,42 @@ h6, .h6 {
     text-align: center;
   }
 }
+
+//== Responsive small helper
+
+// Based on Bootstrap's .small/<small> styles.
+
+@mixin make-small() {
+  font-size: floor((100% * $font-size-small / $font-size-base));
+}
+
+.small-xs {
+  @media (max-width: $screen-xs-max) {
+    @include make-small();
+  }
+}
+
+/**
+ * The following is commented out because it isn't necessary now and I'm
+ * doubtful it will become necessary (since it's rare we would need to make text
+ * smaller at larger breakpoints), but for the sake of future generations I
+ * think it makes sense to leave it available here in the source.
+ */
+
+// .small-sm {
+//   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+//     @include make-small();
+//   }
+// }
+//
+// .small-md {
+//   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+//     @include make-small();
+//   }
+// }
+//
+// .small-lg {
+//   @media (min-width: $screen-lg-min) {
+//     @include make-small();
+//   }
+// }
