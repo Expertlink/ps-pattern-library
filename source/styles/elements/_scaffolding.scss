@@ -10,6 +10,8 @@ body {
   background-image: url(/images/header.jpg), url(/images/main-back.png);
   background-position: top center, top center;
   background-repeat: no-repeat, repeat-x;
+  // space on the bottom in case there are quicklists or some-such
+  padding-bottom: 5em;
 }
 
 img {
