@@ -100,6 +100,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .text-available {
   color: $green;
 }
+.text-unavailable {
+  color: $red;
+}
 .bio-section-header {
   margin:0;
   position: relative;
