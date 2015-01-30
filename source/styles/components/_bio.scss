@@ -119,7 +119,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .bio-section-header {
   margin:0;
   position: relative;
-  @media (max-width: $screen-md) {
+  @media (max-width: $screen-md-min) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
@@ -171,7 +171,7 @@ a.section-parent {
       background: transparent;
     }
   }
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-md-min) {
     padding-left:0;
   }
 }
