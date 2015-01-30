@@ -171,3 +171,20 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     width: 50%;
   }
 }
+
+.advisor-tile-simple {
+  @media (min-width: $screen-md-min) {
+    border:0;
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+    .advisor-tile-main {
+      padding:0;
+    }
+    .advisor-tile-main-body {
+      font-size: 0.9em;
+    }
+  }
+}  
+

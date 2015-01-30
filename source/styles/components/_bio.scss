@@ -1,5 +1,5 @@
 $bio-padding: ($line-height-computed * (2/3)) !default;
-.box-bio { // default padding on box is TOO MAÇH
+.box-bio { 
   padding: $bio-padding;
   position: relative;
   @media (min-width: $screen-md-min) {
@@ -13,7 +13,6 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   padding: $bio-padding;
   border-radius: $border-radius-large;
   margin: 0 0 $line-height-computed;
- 
 }
 .bio-name {
   margin:0;
@@ -32,7 +31,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     border-radius: $border-radius-small;
   }
   @media (min-width: $screen-md-min) {
-    max-width: none;
+    max-width: 330px;
     img {
       border-radius: $border-radius-large;
     }
@@ -80,18 +79,6 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 50%;
     display: table-cell;
   }
-  @media (min-width: $screen-md-min) {
-    display: block;
-    background:0;
-    border-top: 1px solid $gray-lighter;
-    padding-top: ($line-height-computed * 2/3);
-    > p {
-      display:block;
-      text-align: left;
-      width: auto;
-      margin:0;
-    }
-  }
 }
 .bio-av-btn {
   font-weight: normal;
@@ -104,11 +91,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     text-decoration: underline;
     color: $blue;
   }
-  @media (min-width: $screen-md-min) {
-    padding: 0;
-  }
 }
-
 .bio-actions {
   width: calc(100% + #{$arrange-gutter-size});
   margin-bottom:0;
@@ -179,7 +162,6 @@ a.section-parent {
   @media (min-width: $screen-md-min) {
     background: transparent;
     border:0;
-    padding:0;
     cursor: default;
     &.collapsed:after, &:after {
       content:'';
@@ -188,6 +170,15 @@ a.section-parent {
     &:focus {
       background: transparent;
     }
+  }
+  @media (min-width: $screen-md) {
+    padding-left:0;
+  }
+}
+.collapse.show-md {
+  @media (min-width: $screen-md-min) {
+    display: block;
+    visibility: visible;
   }
 }
 .bio-section-teaser {
@@ -198,30 +189,11 @@ a.section-parent {
     margin: 0 0 1em;
   }
 }
-
-
 .similar-advisors {
-  @media (max-width: $screen-md) {
+  @media (max-width: $screen-md-min) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
 }
-@media (min-width: $screen-md-min) {
-  .collapse.show-md {
-    display: block;
-    visibility: visible;
-    clear: both;
-  }
-  .time-zone-picker {
-    float: right;
-    margin-top: -2.5em;
-  }
-  .table-schedule {
-    clear:right;
-  }
-  .advisor-schedule {
-    position: absolute; 
-    top: ($bio-padding * 2);
-    right: ($bio-padding * 2);
-  }
-}
+
+
