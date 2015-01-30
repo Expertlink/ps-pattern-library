@@ -1,0 +1,12 @@
+---
+fullWidth: true
+status: inprogress
+---
+
+
+<div class="reviews">
+  {{> reviews/_review-summary}}
+  {{#each review.list}}
+    {{> reviews/_review}}
+  {{/each}}
+</div>
