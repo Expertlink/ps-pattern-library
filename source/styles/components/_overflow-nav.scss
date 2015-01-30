@@ -38,10 +38,8 @@
         to bottom,
         darken($tan-light, 1%),
         #fff 15%,
-        #ffe6c2
+        $tan-light
       );
-      // background-color: $orange-lighter;
-      // background-image: $btn-shading;
       color: $gray-dark;
       display: block;
       padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
@@ -54,14 +52,13 @@
       &.focus,
       &:active,
       &.active {
-        // background-color: darken($orange-lighter, 5%);
-        background-color: darken(#feeed7, 7%);
+        background-color: darken($tan-light, 7%);
         background-image: linear-gradient(
           to bottom,
           darken($tan-light, 8%),
           darken(#fff, 5%) 15%,
           darken($tan-light, 5%),
-          darken(#ffe6c2, 5%)
+          darken($tan-light, 5%)
         );
       }
 
