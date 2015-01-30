@@ -1,3 +1,66 @@
+/**
+ * A rif on bootstrap's collapse. On the first
+ * click on a collapse-trigger (elements w/
+ * data-responsive-collapse), determine whether
+ * the associated content element should be treated
+ * as a collapsible toggle or not based on its
+ * current visibility.
+ *
+ */
+
+(function responsiveCollapse($) {
+  'use strict';
+
+  var init = function initResponsiveCollapse() {
+    $(['[data-responsive-toggle="collapse"]']).each(function() {
+      $(this).off('click.toggle-trigger');
+      $(this).one('click', function(event) {
+        event.preventDefault();
+        var targetHref = $(this).attr('href'),
+            $hiddenTargets =  $(targetHref + ':hidden');
+
+        if (targetHref && $hiddenTargets.length) {
+          $hiddenTargets.collapse('show');
+          $(this).toggleClass('collapsed'); // https://github.com/twbs/bootstrap/issues/13636
+          $(this).on('click.toggle-trigger', function(event) {
+            event.preventDefault();
+            $hiddenTargets.collapse('toggle');
+            $(this).toggleClass('collapsed');
+          });
+        } else {
+          $(this).on('click.toggle-trigger', function(event) {
+            event.preventDefault();
+          });
+        }
+      });
+    });
+  };
+
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+
+  $(function() {
+    init.call();
+    $(window).on('resize', debounce(init, 250));
+  });
+})(jQuery);
+
 $(function() {
   FastClick.attach(document.body);
 });
@@ -391,19 +454,24 @@ $(function() {
     this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
 
     this.fetchValue = function() {
+      // Strip out `/`s from value
       var newValue = this.$inputEl.val().replace(/\//g, '');
-      if (newValue.length === 1 && parseInt(newValue[0], 10) > 1) {
+      if (newValue.length === 1 &&
+          (parseInt(newValue[0], 10) > 1)) {
+        // The only valid values in the first position are 0 or 1
+        // We can help them along if the first value is
+        // not one of these.
         newValue = '0' + newValue;
-      } else if (newValue.length === 3 && parseInt(newValue[0], 10) > 0) {
-        // This state can only occur on input masks that aren't validating
-        // on every key press (e.g. Android workaround hack).
-        newValue = '0' + newValue; // TODO
+      } else if (newValue.length === 3 &&
+                 parseInt(newValue[0], 10) > 1) {
+        newValue = '0' + newValue;
       }
       this.setCurrentValue(newValue);
       return newValue;
     };
 
     this.formatMask = function() {
+      if (this.isError) { return; }
       var mask = this.currentValue,
           currentValue, month, year;
       if (this.currentValue.length === 2) {
@@ -426,6 +494,7 @@ $(function() {
           month, day, year, dateNow, yearNow, monthNow, i;
 
       if (/[^0-9-\/]+/.test(fieldValue)) {
+        // Failed regexp against 0-9, - and /
         valueError = true;
       } else if (fieldValue.length <= 4) {
         for (i = 0; i < valueChars.length; i++) {
@@ -1230,452 +1299,6 @@ $(function() {
   })
 
 }(jQuery);
-
-(function (factory, global) {
-
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['jquery'], factory);
-  } else {
-    // Browser globals.
-    factory(global.jQuery);
-  }
-
-}(function ($, undef) {
-
-  var dataKey = 'plugin_hideShowPassword'
-    , shorthandArgs = ['show', 'innerToggle']
-    , SPACE = 32
-    , ENTER = 13;
-
-  var canSetInputAttribute = (function(){
-    var body = document.body
-      , input = document.createElement('input')
-      , result = true;
-    if (! body) {
-      body = document.createElement('body');
-    }
-    input = body.appendChild(input);
-    try {
-      input.setAttribute('type', 'text');
-    } catch (e) {
-      result = false;
-    }
-    body.removeChild(input);
-    return result;
-  }());
-
-  var defaults = {
-    // Visibility of the password text. Can be true, false, 'toggle'
-    // or 'infer'. If 'toggle', it will be the opposite of whatever
-    // it currently is. If 'infer', it will be based on the input
-    // type (false if 'password', otherwise true).
-    show: 'infer',
-
-    // Set to true to create an inner toggle for this input. Can
-    // also be sent to an event name to delay visibility of toggle
-    // until that event is triggered on the input element.
-    innerToggle: false,
-
-    // If false, the plugin will be disabled entirely. Set to
-    // the outcome of a test to insure input attributes can be
-    // set after input has been inserted into the DOM.
-    enable: canSetInputAttribute,
-
-    // Class to add to input element when the plugin is enabled.
-    className: 'hideShowPassword-field',
-
-    // Event to trigger when the plugin is initialized and enabled.
-    initEvent: 'hideShowPasswordInit',
-
-    // Event to trigger whenever the visibility changes.
-    changeEvent: 'passwordVisibilityChange',
-
-    // Properties to add to the input element.
-    props: {
-      autocapitalize: 'off',
-      autocomplete: 'off',
-      autocorrect: 'off',
-      spellcheck: 'false'
-    },
-
-    // Options specific to the inner toggle.
-    toggle: {
-      // The element to create.
-      element: '<button type="button">',
-      // Class name of element.
-      className: 'hideShowPassword-toggle',
-      // Whether or not to support touch-specific enhancements.
-      // Defaults to the value of Modernizr.touch if available,
-      // otherwise false.
-      touchSupport: (typeof Modernizr === 'undefined') ? false : Modernizr.touch,
-      // Non-touch event to bind to.
-      attachToEvent: 'click',
-      // Event to bind to when touchSupport is true.
-      attachToTouchEvent: 'touchstart mousedown',
-      // Key event to bind to if attachToKeyCodes is an array
-      // of at least one keycode.
-      attachToKeyEvent: 'keyup',
-      // Key codes to bind the toggle event to for accessibility.
-      // If false, this feature is disabled entirely.
-      // If true, the array of key codes will be determined based
-      // on the value of the element option.
-      attachToKeyCodes: true,
-      // Styles to add to the toggle element. Does not include
-      // positioning styles.
-      styles: { position: 'absolute' },
-      // Styles to add only when touchSupport is true.
-      touchStyles: { pointerEvents: 'none' },
-      // Where to position the inner toggle relative to the
-      // input element. Can be 'right', 'left' or 'infer'. If
-      // 'infer', it will be based on the text-direction of the
-      // input element.
-      position: 'infer',
-      // Where to position the inner toggle on the y-axis
-      // relative to the input element. Can be 'top', 'bottom'
-      // or 'middle'.
-      verticalAlign: 'middle',
-      // Amount by which to "offset" the toggle from the edge
-      // of the input element.
-      offset: 0,
-      // Attributes to add to the toggle element.
-      attr: {
-        role: 'button',
-        'aria-label': 'Show Password',
-        tabIndex: 0
-      }
-    },
-
-    // Options specific to the wrapper element, created
-    // when the innerToggle is initialized to help with
-    // positioning of that element.
-    wrapper: {
-      // The element to create.
-      element: '<div>',
-      // Class name of element.
-      className: 'hideShowPassword-wrapper',
-      // If true, the width of the wrapper will be set
-      // unless it is already the same width as the inner
-      // element. If false, the width will never be set. Any
-      // other value will be used as the width.
-      enforceWidth: true,
-      // Styles to add to the wrapper element. Does not
-      // include inherited styles or width if enforceWidth
-      // is not false.
-      styles: { position: 'relative' },
-      // Styles to "inherit" from the input element, allowing
-      // the wrapper to avoid disrupting page styles.
-      inheritStyles: [
-        'display',
-        'verticalAlign',
-        'marginTop',
-        'marginRight',
-        'marginBottom',
-        'marginLeft'
-      ],
-      // Styles for the input element when wrapped.
-      innerElementStyles: {
-        marginTop: 0,
-        marginRight: 0,
-        marginBottom: 0,
-        marginLeft: 0
-      }
-    },
-
-    // Options specific to the 'shown' or 'hidden'
-    // states of the input element.
-    states: {
-      shown: {
-        className: 'hideShowPassword-shown',
-        changeEvent: 'passwordShown',
-        props: { type: 'text' },
-        toggle: {
-          className: 'hideShowPassword-toggle-hide',
-          content: 'Hide',
-          attr: { 'aria-pressed': 'true' }
-        }
-      },
-      hidden: {
-        className: 'hideShowPassword-hidden',
-        changeEvent: 'passwordHidden',
-        props: { type: 'password' },
-        toggle: {
-          className: 'hideShowPassword-toggle-show',
-          content: 'Show',
-          attr: { 'aria-pressed': 'false' }
-        }
-      }
-    }
-
-  };
-
-  function HideShowPassword (element, options) {
-    this.element = $(element);
-    this.wrapperElement = $();
-    this.toggleElement = $();
-    this.init(options);
-  }
-
-  HideShowPassword.prototype = {
-
-    init: function (options) {
-      if (this.update(options, defaults)) {
-        this.element.addClass(this.options.className);
-        if (this.options.innerToggle) {
-          this.wrapElement(this.options.wrapper);
-          this.initToggle(this.options.toggle);
-          if (typeof this.options.innerToggle === 'string') {
-            this.toggleElement.hide();
-            this.element.one(this.options.innerToggle, $.proxy(function(){
-              this.toggleElement.show();
-            }, this));
-          }
-        }
-        this.element.trigger(this.options.initEvent, [ this ]);
-      }
-    },
-
-    update: function (options, base) {
-      this.options = this.prepareOptions(options, base);
-      if (this.updateElement()) {
-        this.element
-          .trigger(this.options.changeEvent, [ this ])
-          .trigger(this.state().changeEvent, [ this ]);
-      }
-      return this.options.enable;
-    },
-
-    toggle: function (showVal) {
-      showVal = showVal || 'toggle';
-      return this.update({ show: showVal });
-    },
-
-    prepareOptions: function (options, base) {
-      var keyCodes = []
-        , testElement;
-      base = base || this.options;
-      options = $.extend(true, {}, base, options);
-      if (options.enable) {
-        if (options.show === 'toggle') {
-          options.show = this.isType('hidden', options.states);
-        } else if (options.show === 'infer') {
-          options.show = this.isType('shown', options.states);
-        }
-        if (options.toggle.position === 'infer') {
-          options.toggle.position = (this.element.css('text-direction') === 'rtl') ? 'left' : 'right';
-        }
-        if (! $.isArray(options.toggle.attachToKeyCodes)) {
-          if (options.toggle.attachToKeyCodes === true) {
-            testElement = $(options.toggle.element);
-            switch(testElement.prop('tagName').toLowerCase()) {
-              case 'button':
-              case 'input':
-                break;
-              case 'a':
-                if (testElement.filter('[href]').length) {
-                  keyCodes.push(SPACE);
-                  break;
-                }
-              default:
-                keyCodes.push(SPACE, ENTER);
-                break;
-            }
-          }
-          options.toggle.attachToKeyCodes = keyCodes;
-        }
-      }
-      return options;
-    },
-
-    updateElement: function () {
-      if (! this.options.enable || this.isType()) return false;
-      this.element
-        .prop($.extend({}, this.options.props, this.state().props))
-        .addClass(this.state().className)
-        .removeClass(this.otherState().className);
-      this.updateToggle();
-      return true;
-    },
-
-    isType: function (comparison, states) {
-      states = states || this.options.states;
-      comparison = comparison || this.state(undef, undef, states).props.type;
-      if (states[comparison]) {
-        comparison = states[comparison].props.type;
-      }
-      return this.element.prop('type') === comparison;
-    },
-
-    state: function (key, invert, states) {
-      states = states || this.options.states;
-      if (key === undef) {
-        key = this.options.show;
-      }
-      if (typeof key === 'boolean') {
-        key = key ? 'shown' : 'hidden';
-      }
-      if (invert) {
-        key = (key === 'shown') ? 'hidden' : 'shown';
-      }
-      return states[key];
-    },
-
-    otherState: function (key) {
-      return this.state(key, true);
-    },
-
-    wrapElement: function (options) {
-      var enforceWidth = options.enforceWidth
-        , targetWidth;
-      if (! this.wrapperElement.length) {
-        targetWidth = this.element.outerWidth();
-        $.each(options.inheritStyles, $.proxy(function (index, prop) {
-          options.styles[prop] = this.element.css(prop);
-        }, this));
-        this.element.css(options.innerElementStyles).wrap(
-          $(options.element).addClass(options.className).css(options.styles)
-        );
-        this.wrapperElement = this.element.parent();
-        if (enforceWidth === true) {
-          enforceWidth = (this.wrapperElement.outerWidth() === targetWidth) ? false : targetWidth;
-        }
-        if (enforceWidth !== false) {
-          this.wrapperElement.css('width', enforceWidth);
-        }
-      }
-      return this.wrapperElement;
-    },
-
-    initToggle: function (options) {
-      if (! this.toggleElement.length) {
-        // Create element
-        this.toggleElement = $(options.element)
-          .attr(options.attr)
-          .addClass(options.className)
-          .css(options.styles)
-          .appendTo(this.wrapperElement);
-        // Update content/attributes
-        this.updateToggle();
-        // Position
-        this.positionToggle(options.position, options.verticalAlign, options.offset);
-        // Events
-        if (options.touchSupport) {
-          this.toggleElement.css(options.touchStyles);
-          this.element.on(options.attachToTouchEvent, $.proxy(this.toggleTouchEvent, this));
-        } else {
-          this.toggleElement.on(options.attachToEvent, $.proxy(this.toggleEvent, this));
-        }
-        if (options.attachToKeyCodes.length) {
-          this.toggleElement.on(options.attachToKeyEvent, $.proxy(this.toggleKeyEvent, this));
-        }
-      }
-      return this.toggleElement;
-    },
-
-    positionToggle: function (position, verticalAlign, offset) {
-      var styles = {};
-      styles[position] = offset;
-      switch (verticalAlign) {
-        case 'top':
-        case 'bottom':
-          styles[verticalAlign] = offset;
-          break;
-        case 'middle':
-          styles['top'] = '50%';
-          styles['marginTop'] = this.toggleElement.outerHeight() / -2;
-          break;
-      }
-      return this.toggleElement.css(styles);
-    },
-
-    updateToggle: function (state, otherState) {
-      var paddingProp
-        , targetPadding;
-      if (this.toggleElement.length) {
-        paddingProp = 'padding-' + this.options.toggle.position;
-        state = state || this.state().toggle;
-        otherState = otherState || this.otherState().toggle;
-        this.toggleElement
-          .attr(state.attr)
-          .addClass(state.className)
-          .removeClass(otherState.className)
-          .html(state.content);
-        targetPadding = this.toggleElement.outerWidth() + (this.options.toggle.offset * 2);
-        if (this.element.css(paddingProp) !== targetPadding) {
-          this.element.css(paddingProp, targetPadding);
-        }
-      }
-      return this.toggleElement;
-    },
-
-    toggleEvent: function (event) {
-      event.preventDefault();
-      this.toggle();
-    },
-
-    toggleKeyEvent: function (event) {
-      $.each(this.options.toggle.attachToKeyCodes, $.proxy(function(index, keyCode) {
-        if (event.which === keyCode) {
-          this.toggleEvent(event);
-          return false;
-        }
-      }, this));
-    },
-
-    toggleTouchEvent: function (event) {
-      var toggleX = this.toggleElement.offset().left
-        , eventX
-        , lesser
-        , greater;
-      if (toggleX) {
-        eventX = event.pageX || event.originalEvent.pageX;
-        if (this.options.toggle.position === 'left') {
-          toggleX+= this.toggleElement.outerWidth();
-          lesser = eventX;
-          greater = toggleX;
-        } else {
-          lesser = toggleX;
-          greater = eventX;
-        }
-        if (greater >= lesser) {
-          this.toggleEvent(event);
-        }
-      }
-    }
-
-  };
-
-  $.fn.hideShowPassword = function () {
-    var options = {};
-    $.each(arguments, function (index, value) {
-      var newOptions = {};
-      if (typeof value === 'object') {
-        newOptions = value;
-      } else if (shorthandArgs[index]) {
-        newOptions[shorthandArgs[index]] = value;
-      } else {
-        return false;
-      }
-      $.extend(true, options, newOptions);
-    });
-    return this.each(function(){
-      var $this = $(this)
-        , data = $this.data(dataKey);
-      if (data) {
-        data.update(options);
-      } else {
-        $this.data(dataKey, new HideShowPassword(this, options));
-      }
-    });
-  };
-
-  $.each({ 'show':true, 'hide':false, 'toggle':'toggle' }, function (verb, showVal) {
-    $.fn[verb + 'Password'] = function (innerToggle, options) {
-      return this.hideShowPassword(showVal, innerToggle, options);
-    };
-  });
-
-}, this));
 
 ;(function () {
   'use strict';
@@ -2505,6 +2128,452 @@ $(function() {
                                     window.FastClick = FastClick;
                                   }
                                 }());
+
+(function (factory, global) {
+
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else {
+    // Browser globals.
+    factory(global.jQuery);
+  }
+
+}(function ($, undef) {
+
+  var dataKey = 'plugin_hideShowPassword'
+    , shorthandArgs = ['show', 'innerToggle']
+    , SPACE = 32
+    , ENTER = 13;
+
+  var canSetInputAttribute = (function(){
+    var body = document.body
+      , input = document.createElement('input')
+      , result = true;
+    if (! body) {
+      body = document.createElement('body');
+    }
+    input = body.appendChild(input);
+    try {
+      input.setAttribute('type', 'text');
+    } catch (e) {
+      result = false;
+    }
+    body.removeChild(input);
+    return result;
+  }());
+
+  var defaults = {
+    // Visibility of the password text. Can be true, false, 'toggle'
+    // or 'infer'. If 'toggle', it will be the opposite of whatever
+    // it currently is. If 'infer', it will be based on the input
+    // type (false if 'password', otherwise true).
+    show: 'infer',
+
+    // Set to true to create an inner toggle for this input. Can
+    // also be sent to an event name to delay visibility of toggle
+    // until that event is triggered on the input element.
+    innerToggle: false,
+
+    // If false, the plugin will be disabled entirely. Set to
+    // the outcome of a test to insure input attributes can be
+    // set after input has been inserted into the DOM.
+    enable: canSetInputAttribute,
+
+    // Class to add to input element when the plugin is enabled.
+    className: 'hideShowPassword-field',
+
+    // Event to trigger when the plugin is initialized and enabled.
+    initEvent: 'hideShowPasswordInit',
+
+    // Event to trigger whenever the visibility changes.
+    changeEvent: 'passwordVisibilityChange',
+
+    // Properties to add to the input element.
+    props: {
+      autocapitalize: 'off',
+      autocomplete: 'off',
+      autocorrect: 'off',
+      spellcheck: 'false'
+    },
+
+    // Options specific to the inner toggle.
+    toggle: {
+      // The element to create.
+      element: '<button type="button">',
+      // Class name of element.
+      className: 'hideShowPassword-toggle',
+      // Whether or not to support touch-specific enhancements.
+      // Defaults to the value of Modernizr.touch if available,
+      // otherwise false.
+      touchSupport: (typeof Modernizr === 'undefined') ? false : Modernizr.touch,
+      // Non-touch event to bind to.
+      attachToEvent: 'click',
+      // Event to bind to when touchSupport is true.
+      attachToTouchEvent: 'touchstart mousedown',
+      // Key event to bind to if attachToKeyCodes is an array
+      // of at least one keycode.
+      attachToKeyEvent: 'keyup',
+      // Key codes to bind the toggle event to for accessibility.
+      // If false, this feature is disabled entirely.
+      // If true, the array of key codes will be determined based
+      // on the value of the element option.
+      attachToKeyCodes: true,
+      // Styles to add to the toggle element. Does not include
+      // positioning styles.
+      styles: { position: 'absolute' },
+      // Styles to add only when touchSupport is true.
+      touchStyles: { pointerEvents: 'none' },
+      // Where to position the inner toggle relative to the
+      // input element. Can be 'right', 'left' or 'infer'. If
+      // 'infer', it will be based on the text-direction of the
+      // input element.
+      position: 'infer',
+      // Where to position the inner toggle on the y-axis
+      // relative to the input element. Can be 'top', 'bottom'
+      // or 'middle'.
+      verticalAlign: 'middle',
+      // Amount by which to "offset" the toggle from the edge
+      // of the input element.
+      offset: 0,
+      // Attributes to add to the toggle element.
+      attr: {
+        role: 'button',
+        'aria-label': 'Show Password',
+        tabIndex: 0
+      }
+    },
+
+    // Options specific to the wrapper element, created
+    // when the innerToggle is initialized to help with
+    // positioning of that element.
+    wrapper: {
+      // The element to create.
+      element: '<div>',
+      // Class name of element.
+      className: 'hideShowPassword-wrapper',
+      // If true, the width of the wrapper will be set
+      // unless it is already the same width as the inner
+      // element. If false, the width will never be set. Any
+      // other value will be used as the width.
+      enforceWidth: true,
+      // Styles to add to the wrapper element. Does not
+      // include inherited styles or width if enforceWidth
+      // is not false.
+      styles: { position: 'relative' },
+      // Styles to "inherit" from the input element, allowing
+      // the wrapper to avoid disrupting page styles.
+      inheritStyles: [
+        'display',
+        'verticalAlign',
+        'marginTop',
+        'marginRight',
+        'marginBottom',
+        'marginLeft'
+      ],
+      // Styles for the input element when wrapped.
+      innerElementStyles: {
+        marginTop: 0,
+        marginRight: 0,
+        marginBottom: 0,
+        marginLeft: 0
+      }
+    },
+
+    // Options specific to the 'shown' or 'hidden'
+    // states of the input element.
+    states: {
+      shown: {
+        className: 'hideShowPassword-shown',
+        changeEvent: 'passwordShown',
+        props: { type: 'text' },
+        toggle: {
+          className: 'hideShowPassword-toggle-hide',
+          content: 'Hide',
+          attr: { 'aria-pressed': 'true' }
+        }
+      },
+      hidden: {
+        className: 'hideShowPassword-hidden',
+        changeEvent: 'passwordHidden',
+        props: { type: 'password' },
+        toggle: {
+          className: 'hideShowPassword-toggle-show',
+          content: 'Show',
+          attr: { 'aria-pressed': 'false' }
+        }
+      }
+    }
+
+  };
+
+  function HideShowPassword (element, options) {
+    this.element = $(element);
+    this.wrapperElement = $();
+    this.toggleElement = $();
+    this.init(options);
+  }
+
+  HideShowPassword.prototype = {
+
+    init: function (options) {
+      if (this.update(options, defaults)) {
+        this.element.addClass(this.options.className);
+        if (this.options.innerToggle) {
+          this.wrapElement(this.options.wrapper);
+          this.initToggle(this.options.toggle);
+          if (typeof this.options.innerToggle === 'string') {
+            this.toggleElement.hide();
+            this.element.one(this.options.innerToggle, $.proxy(function(){
+              this.toggleElement.show();
+            }, this));
+          }
+        }
+        this.element.trigger(this.options.initEvent, [ this ]);
+      }
+    },
+
+    update: function (options, base) {
+      this.options = this.prepareOptions(options, base);
+      if (this.updateElement()) {
+        this.element
+          .trigger(this.options.changeEvent, [ this ])
+          .trigger(this.state().changeEvent, [ this ]);
+      }
+      return this.options.enable;
+    },
+
+    toggle: function (showVal) {
+      showVal = showVal || 'toggle';
+      return this.update({ show: showVal });
+    },
+
+    prepareOptions: function (options, base) {
+      var keyCodes = []
+        , testElement;
+      base = base || this.options;
+      options = $.extend(true, {}, base, options);
+      if (options.enable) {
+        if (options.show === 'toggle') {
+          options.show = this.isType('hidden', options.states);
+        } else if (options.show === 'infer') {
+          options.show = this.isType('shown', options.states);
+        }
+        if (options.toggle.position === 'infer') {
+          options.toggle.position = (this.element.css('text-direction') === 'rtl') ? 'left' : 'right';
+        }
+        if (! $.isArray(options.toggle.attachToKeyCodes)) {
+          if (options.toggle.attachToKeyCodes === true) {
+            testElement = $(options.toggle.element);
+            switch(testElement.prop('tagName').toLowerCase()) {
+              case 'button':
+              case 'input':
+                break;
+              case 'a':
+                if (testElement.filter('[href]').length) {
+                  keyCodes.push(SPACE);
+                  break;
+                }
+              default:
+                keyCodes.push(SPACE, ENTER);
+                break;
+            }
+          }
+          options.toggle.attachToKeyCodes = keyCodes;
+        }
+      }
+      return options;
+    },
+
+    updateElement: function () {
+      if (! this.options.enable || this.isType()) return false;
+      this.element
+        .prop($.extend({}, this.options.props, this.state().props))
+        .addClass(this.state().className)
+        .removeClass(this.otherState().className);
+      this.updateToggle();
+      return true;
+    },
+
+    isType: function (comparison, states) {
+      states = states || this.options.states;
+      comparison = comparison || this.state(undef, undef, states).props.type;
+      if (states[comparison]) {
+        comparison = states[comparison].props.type;
+      }
+      return this.element.prop('type') === comparison;
+    },
+
+    state: function (key, invert, states) {
+      states = states || this.options.states;
+      if (key === undef) {
+        key = this.options.show;
+      }
+      if (typeof key === 'boolean') {
+        key = key ? 'shown' : 'hidden';
+      }
+      if (invert) {
+        key = (key === 'shown') ? 'hidden' : 'shown';
+      }
+      return states[key];
+    },
+
+    otherState: function (key) {
+      return this.state(key, true);
+    },
+
+    wrapElement: function (options) {
+      var enforceWidth = options.enforceWidth
+        , targetWidth;
+      if (! this.wrapperElement.length) {
+        targetWidth = this.element.outerWidth();
+        $.each(options.inheritStyles, $.proxy(function (index, prop) {
+          options.styles[prop] = this.element.css(prop);
+        }, this));
+        this.element.css(options.innerElementStyles).wrap(
+          $(options.element).addClass(options.className).css(options.styles)
+        );
+        this.wrapperElement = this.element.parent();
+        if (enforceWidth === true) {
+          enforceWidth = (this.wrapperElement.outerWidth() === targetWidth) ? false : targetWidth;
+        }
+        if (enforceWidth !== false) {
+          this.wrapperElement.css('width', enforceWidth);
+        }
+      }
+      return this.wrapperElement;
+    },
+
+    initToggle: function (options) {
+      if (! this.toggleElement.length) {
+        // Create element
+        this.toggleElement = $(options.element)
+          .attr(options.attr)
+          .addClass(options.className)
+          .css(options.styles)
+          .appendTo(this.wrapperElement);
+        // Update content/attributes
+        this.updateToggle();
+        // Position
+        this.positionToggle(options.position, options.verticalAlign, options.offset);
+        // Events
+        if (options.touchSupport) {
+          this.toggleElement.css(options.touchStyles);
+          this.element.on(options.attachToTouchEvent, $.proxy(this.toggleTouchEvent, this));
+        } else {
+          this.toggleElement.on(options.attachToEvent, $.proxy(this.toggleEvent, this));
+        }
+        if (options.attachToKeyCodes.length) {
+          this.toggleElement.on(options.attachToKeyEvent, $.proxy(this.toggleKeyEvent, this));
+        }
+      }
+      return this.toggleElement;
+    },
+
+    positionToggle: function (position, verticalAlign, offset) {
+      var styles = {};
+      styles[position] = offset;
+      switch (verticalAlign) {
+        case 'top':
+        case 'bottom':
+          styles[verticalAlign] = offset;
+          break;
+        case 'middle':
+          styles['top'] = '50%';
+          styles['marginTop'] = this.toggleElement.outerHeight() / -2;
+          break;
+      }
+      return this.toggleElement.css(styles);
+    },
+
+    updateToggle: function (state, otherState) {
+      var paddingProp
+        , targetPadding;
+      if (this.toggleElement.length) {
+        paddingProp = 'padding-' + this.options.toggle.position;
+        state = state || this.state().toggle;
+        otherState = otherState || this.otherState().toggle;
+        this.toggleElement
+          .attr(state.attr)
+          .addClass(state.className)
+          .removeClass(otherState.className)
+          .html(state.content);
+        targetPadding = this.toggleElement.outerWidth() + (this.options.toggle.offset * 2);
+        if (this.element.css(paddingProp) !== targetPadding) {
+          this.element.css(paddingProp, targetPadding);
+        }
+      }
+      return this.toggleElement;
+    },
+
+    toggleEvent: function (event) {
+      event.preventDefault();
+      this.toggle();
+    },
+
+    toggleKeyEvent: function (event) {
+      $.each(this.options.toggle.attachToKeyCodes, $.proxy(function(index, keyCode) {
+        if (event.which === keyCode) {
+          this.toggleEvent(event);
+          return false;
+        }
+      }, this));
+    },
+
+    toggleTouchEvent: function (event) {
+      var toggleX = this.toggleElement.offset().left
+        , eventX
+        , lesser
+        , greater;
+      if (toggleX) {
+        eventX = event.pageX || event.originalEvent.pageX;
+        if (this.options.toggle.position === 'left') {
+          toggleX+= this.toggleElement.outerWidth();
+          lesser = eventX;
+          greater = toggleX;
+        } else {
+          lesser = toggleX;
+          greater = eventX;
+        }
+        if (greater >= lesser) {
+          this.toggleEvent(event);
+        }
+      }
+    }
+
+  };
+
+  $.fn.hideShowPassword = function () {
+    var options = {};
+    $.each(arguments, function (index, value) {
+      var newOptions = {};
+      if (typeof value === 'object') {
+        newOptions = value;
+      } else if (shorthandArgs[index]) {
+        newOptions[shorthandArgs[index]] = value;
+      } else {
+        return false;
+      }
+      $.extend(true, options, newOptions);
+    });
+    return this.each(function(){
+      var $this = $(this)
+        , data = $this.data(dataKey);
+      if (data) {
+        data.update(options);
+      } else {
+        $this.data(dataKey, new HideShowPassword(this, options));
+      }
+    });
+  };
+
+  $.each({ 'show':true, 'hide':false, 'toggle':'toggle' }, function (verb, showVal) {
+    $.fn[verb + 'Password'] = function (innerToggle, options) {
+      return this.hideShowPassword(showVal, innerToggle, options);
+    };
+  });
+
+}, this));
 
 /*
 International Telephone Input v3.8.6
@@ -3654,6 +3723,666 @@ JSON.stringify(result);
   $.fn.leveller.Constructor = Leveller;
 
 }));
+
+/*! Picturefill - v2.2.0 - 2014-10-30
+* http://scottjehl.github.io/picturefill
+* Copyright (c) 2014 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
+/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
+
+window.matchMedia || (window.matchMedia = function() {
+	"use strict";
+
+	// For browsers that support matchMedium api such as IE 9 and webkit
+	var styleMedia = (window.styleMedia || window.media);
+
+	// For those that don't support matchMedium
+	if (!styleMedia) {
+		var style       = document.createElement('style'),
+			script      = document.getElementsByTagName('script')[0],
+			info        = null;
+
+		style.type  = 'text/css';
+		style.id    = 'matchmediajs-test';
+
+		script.parentNode.insertBefore(style, script);
+
+		// 'style.currentStyle' is used by IE <= 8 and 'window.getComputedStyle' for all other browsers
+		info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
+
+		styleMedia = {
+			matchMedium: function(media) {
+				var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
+
+				// 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
+				if (style.styleSheet) {
+					style.styleSheet.cssText = text;
+				} else {
+					style.textContent = text;
+				}
+
+				// Test if media query is true or false
+				return info.width === '1px';
+			}
+		};
+	}
+
+	return function(media) {
+		return {
+			matches: styleMedia.matchMedium(media || 'all'),
+			media: media || 'all'
+		};
+	};
+}());
+/*! Picturefill - Responsive Images that work today.
+*  Author: Scott Jehl, Filament Group, 2012 ( new proposal implemented by Shawn Jansepar )
+*  License: MIT/GPLv2
+*  Spec: http://picture.responsiveimages.org/
+*/
+(function( w, doc, image ) {
+	// Enable strict mode
+	"use strict";
+
+	// If picture is supported, well, that's awesome. Let's get outta here...
+	if ( w.HTMLPictureElement ) {
+		w.picturefill = function() { };
+		return;
+	}
+
+	// HTML shim|v it for old IE (IE9 will still need the HTML video tag workaround)
+	doc.createElement( "picture" );
+
+	// local object for method references and testing exposure
+	var pf = {};
+
+	// namespace
+	pf.ns = "picturefill";
+
+	// srcset support test
+	(function() {
+		pf.srcsetSupported = "srcset" in image;
+		pf.sizesSupported = "sizes" in image;
+	})();
+
+	// just a string trim workaround
+	pf.trim = function( str ) {
+		return str.trim ? str.trim() : str.replace( /^\s+|\s+$/g, "" );
+	};
+
+	// just a string endsWith workaround
+	pf.endsWith = function( str, suffix ) {
+		return str.endsWith ? str.endsWith( suffix ) : str.indexOf( suffix, str.length - suffix.length ) !== -1;
+	};
+
+	/**
+	 * Shortcut method for https://w3c.github.io/webappsec/specs/mixedcontent/#restricts-mixed-content ( for easy overriding in tests )
+	 */
+	pf.restrictsMixedContent = function() {
+		return w.location.protocol === "https:";
+	};
+	/**
+	 * Shortcut method for matchMedia ( for easy overriding in tests )
+	 */
+
+	pf.matchesMedia = function( media ) {
+		return w.matchMedia && w.matchMedia( media ).matches;
+	};
+
+	// Shortcut method for `devicePixelRatio` ( for easy overriding in tests )
+	pf.getDpr = function() {
+		return ( w.devicePixelRatio || 1 );
+	};
+
+	/**
+	 * Get width in css pixel value from a "length" value
+	 * http://dev.w3.org/csswg/css-values-3/#length-value
+	 */
+	pf.getWidthFromLength = function( length ) {
+		// If a length is specified and doesn’t contain a percentage, and it is greater than 0 or using `calc`, use it. Else, use the `100vw` default.
+		length = length && length.indexOf( "%" ) > -1 === false && ( parseFloat( length ) > 0 || length.indexOf( "calc(" ) > -1 ) ? length : "100vw";
+
+		/**
+		 * If length is specified in  `vw` units, use `%` instead since the div we’re measuring
+		 * is injected at the top of the document.
+		 *
+		 * TODO: maybe we should put this behind a feature test for `vw`?
+		 */
+		length = length.replace( "vw", "%" );
+
+		// Create a cached element for getting length value widths
+		if ( !pf.lengthEl ) {
+			pf.lengthEl = doc.createElement( "div" );
+
+			// Positioning styles help prevent padding/margin/width on `html` or `body` from throwing calculations off.
+			pf.lengthEl.style.cssText = "border:0;display:block;font-size:1em;left:0;margin:0;padding:0;position:absolute;visibility:hidden";
+		}
+
+		pf.lengthEl.style.width = length;
+
+		doc.body.appendChild(pf.lengthEl);
+
+		// Add a class, so that everyone knows where this element comes from
+		pf.lengthEl.className = "helper-from-picturefill-js";
+
+		if ( pf.lengthEl.offsetWidth <= 0 ) {
+			// Something has gone wrong. `calc()` is in use and unsupported, most likely. Default to `100vw` (`100%`, for broader support.):
+			pf.lengthEl.style.width = doc.documentElement.offsetWidth + "px";
+		}
+
+		var offsetWidth = pf.lengthEl.offsetWidth;
+
+		doc.body.removeChild( pf.lengthEl );
+
+		return offsetWidth;
+	};
+
+	// container of supported mime types that one might need to qualify before using
+	pf.types =  {};
+
+	// Add support for standard mime types
+	pf.types[ "image/jpeg" ] = true;
+	pf.types[ "image/gif" ] = true;
+	pf.types[ "image/png" ] = true;
+
+	// test svg support
+	pf.types[ "image/svg+xml" ] = doc.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
+
+	// test webp support, only when the markup calls for it
+	pf.types[ "image/webp" ] = function() {
+		// based on Modernizr's lossless img-webp test
+		// note: asynchronous
+		var type = "image/webp";
+
+		image.onerror = function() {
+			pf.types[ type ] = false;
+			picturefill();
+		};
+		image.onload = function() {
+			pf.types[ type ] = image.width === 1;
+			picturefill();
+		};
+		image.src = "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+	};
+
+	/**
+	 * Takes a source element and checks if its type attribute is present and if so, supported
+	 * Note: for type tests that require a async logic,
+	 * you can define them as a function that'll run only if that type needs to be tested. Just make the test function call picturefill again when it is complete.
+	 * see the async webp test above for example
+	 */
+	pf.verifyTypeSupport = function( source ) {
+		var type = source.getAttribute( "type" );
+		// if type attribute exists, return test result, otherwise return true
+		if ( type === null || type === "" ) {
+			return true;
+		} else {
+			// if the type test is a function, run it and return "pending" status. The function will rerun picturefill on pending elements once finished.
+			if ( typeof( pf.types[ type ] ) === "function" ) {
+				pf.types[ type ]();
+				return "pending";
+			} else {
+				return pf.types[ type ];
+			}
+		}
+	};
+
+	// Parses an individual `size` and returns the length, and optional media query
+	pf.parseSize = function( sourceSizeStr ) {
+		var match = /(\([^)]+\))?\s*(.+)/g.exec( sourceSizeStr );
+		return {
+			media: match && match[1],
+			length: match && match[2]
+		};
+	};
+
+	// Takes a string of sizes and returns the width in pixels as a number
+	pf.findWidthFromSourceSize = function( sourceSizeListStr ) {
+		// Split up source size list, ie ( max-width: 30em ) 100%, ( max-width: 50em ) 50%, 33%
+		//                            or (min-width:30em) calc(30% - 15px)
+		var sourceSizeList = pf.trim( sourceSizeListStr ).split( /\s*,\s*/ ),
+			winningLength;
+
+		for ( var i = 0, len = sourceSizeList.length; i < len; i++ ) {
+			// Match <media-condition>? length, ie ( min-width: 50em ) 100%
+			var sourceSize = sourceSizeList[ i ],
+				// Split "( min-width: 50em ) 100%" into separate strings
+				parsedSize = pf.parseSize( sourceSize ),
+				length = parsedSize.length,
+				media = parsedSize.media;
+
+			if ( !length ) {
+				continue;
+			}
+			if ( !media || pf.matchesMedia( media ) ) {
+				// if there is no media query or it matches, choose this as our winning length
+				// and end algorithm
+				winningLength = length;
+				break;
+			}
+		}
+
+		// pass the length to a method that can properly determine length
+		// in pixels based on these formats: http://dev.w3.org/csswg/css-values-3/#length-value
+		return pf.getWidthFromLength( winningLength );
+	};
+
+	pf.parseSrcset = function( srcset ) {
+		/**
+		 * A lot of this was pulled from Boris Smus’ parser for the now-defunct WHATWG `srcset`
+		 * https://github.com/borismus/srcset-polyfill/blob/master/js/srcset-info.js
+		 *
+		 * 1. Let input (`srcset`) be the value passed to this algorithm.
+		 * 2. Let position be a pointer into input, initially pointing at the start of the string.
+		 * 3. Let raw candidates be an initially empty ordered list of URLs with associated
+		 *    unparsed descriptors. The order of entries in the list is the order in which entries
+		 *    are added to the list.
+		 */
+		var candidates = [];
+
+		while ( srcset !== "" ) {
+			srcset = srcset.replace( /^\s+/g, "" );
+
+			// 5. Collect a sequence of characters that are not space characters, and let that be url.
+			var pos = srcset.search(/\s/g),
+				url, descriptor = null;
+
+			if ( pos !== -1 ) {
+				url = srcset.slice( 0, pos );
+
+				var last = url.slice(-1);
+
+				// 6. If url ends with a U+002C COMMA character (,), remove that character from url
+				// and let descriptors be the empty string. Otherwise, follow these substeps
+				// 6.1. If url is empty, then jump to the step labeled descriptor parser.
+
+				if ( last === "," || url === "" ) {
+					url = url.replace( /,+$/, "" );
+					descriptor = "";
+				}
+				srcset = srcset.slice( pos + 1 );
+
+				// 6.2. Collect a sequence of characters that are not U+002C COMMA characters (,), and
+				// let that be descriptors.
+				if ( descriptor === null ) {
+					var descpos = srcset.indexOf( "," );
+					if ( descpos !== -1 ) {
+						descriptor = srcset.slice( 0, descpos );
+						srcset = srcset.slice( descpos + 1 );
+					} else {
+						descriptor = srcset;
+						srcset = "";
+					}
+				}
+			} else {
+				url = srcset;
+				srcset = "";
+			}
+
+			// 7. Add url to raw candidates, associated with descriptors.
+			if ( url || descriptor ) {
+				candidates.push({
+					url: url,
+					descriptor: descriptor
+				});
+			}
+		}
+		return candidates;
+	};
+
+	pf.parseDescriptor = function( descriptor, sizesattr ) {
+		// 11. Descriptor parser: Let candidates be an initially empty source set. The order of entries in the list
+		// is the order in which entries are added to the list.
+		var sizes = sizesattr || "100vw",
+			sizeDescriptor = descriptor && descriptor.replace( /(^\s+|\s+$)/g, "" ),
+			widthInCssPixels = pf.findWidthFromSourceSize( sizes ),
+			resCandidate;
+
+			if ( sizeDescriptor ) {
+				var splitDescriptor = sizeDescriptor.split(" ");
+
+				for (var i = splitDescriptor.length - 1; i >= 0; i--) {
+					var curr = splitDescriptor[ i ],
+						lastchar = curr && curr.slice( curr.length - 1 );
+
+					if ( ( lastchar === "h" || lastchar === "w" ) && !pf.sizesSupported ) {
+						resCandidate = parseFloat( ( parseInt( curr, 10 ) / widthInCssPixels ) );
+					} else if ( lastchar === "x" ) {
+						var res = curr && parseFloat( curr, 10 );
+						resCandidate = res && !isNaN( res ) ? res : 1;
+					}
+				}
+			}
+		return resCandidate || 1;
+	};
+
+	/**
+	 * Takes a srcset in the form of url/
+	 * ex. "images/pic-medium.png 1x, images/pic-medium-2x.png 2x" or
+	 *     "images/pic-medium.png 400w, images/pic-medium-2x.png 800w" or
+	 *     "images/pic-small.png"
+	 * Get an array of image candidates in the form of
+	 *      {url: "/foo/bar.png", resolution: 1}
+	 * where resolution is http://dev.w3.org/csswg/css-values-3/#resolution-value
+	 * If sizes is specified, resolution is calculated
+	 */
+	pf.getCandidatesFromSourceSet = function( srcset, sizes ) {
+		var candidates = pf.parseSrcset( srcset ),
+			formattedCandidates = [];
+
+		for ( var i = 0, len = candidates.length; i < len; i++ ) {
+			var candidate = candidates[ i ];
+
+			formattedCandidates.push({
+				url: candidate.url,
+				resolution: pf.parseDescriptor( candidate.descriptor, sizes )
+			});
+		}
+		return formattedCandidates;
+	};
+
+	/**
+	 * if it's an img element and it has a srcset property,
+	 * we need to remove the attribute so we can manipulate src
+	 * (the property's existence infers native srcset support, and a srcset-supporting browser will prioritize srcset's value over our winning picture candidate)
+	 * this moves srcset's value to memory for later use and removes the attr
+	 */
+	pf.dodgeSrcset = function( img ) {
+		if ( img.srcset ) {
+			img[ pf.ns ].srcset = img.srcset;
+			img.removeAttribute( "srcset" );
+		}
+	};
+
+	// Accept a source or img element and process its srcset and sizes attrs
+	pf.processSourceSet = function( el ) {
+		var srcset = el.getAttribute( "srcset" ),
+			sizes = el.getAttribute( "sizes" ),
+			candidates = [];
+
+		// if it's an img element, use the cached srcset property (defined or not)
+		if ( el.nodeName.toUpperCase() === "IMG" && el[ pf.ns ] && el[ pf.ns ].srcset ) {
+			srcset = el[ pf.ns ].srcset;
+		}
+
+		if ( srcset ) {
+			candidates = pf.getCandidatesFromSourceSet( srcset, sizes );
+		}
+		return candidates;
+	};
+
+	pf.applyBestCandidate = function( candidates, picImg ) {
+		var candidate,
+			length,
+			bestCandidate;
+
+		candidates.sort( pf.ascendingSort );
+
+		length = candidates.length;
+		bestCandidate = candidates[ length - 1 ];
+
+		for ( var i = 0; i < length; i++ ) {
+			candidate = candidates[ i ];
+			if ( candidate.resolution >= pf.getDpr() ) {
+				bestCandidate = candidate;
+				break;
+			}
+		}
+
+		if ( bestCandidate && !pf.endsWith( picImg.src, bestCandidate.url ) ) {
+			if ( pf.restrictsMixedContent() && bestCandidate.url.substr(0, "http:".length).toLowerCase() === "http:" ) {
+				if ( typeof console !== undefined ) {
+					console.warn( "Blocked mixed content image " + bestCandidate.url );
+				}
+			} else {
+				picImg.src = bestCandidate.url;
+				// currentSrc attribute and property to match
+				// http://picture.responsiveimages.org/#the-img-element
+				picImg.currentSrc = picImg.src;
+
+				var style = picImg.style || {},
+					WebkitBackfaceVisibility = "webkitBackfaceVisibility" in style,
+					currentZoom = style.zoom;
+
+				if (WebkitBackfaceVisibility) { // See: https://github.com/scottjehl/picturefill/issues/332
+					style.zoom = ".999";
+
+					WebkitBackfaceVisibility = picImg.offsetWidth;
+
+					style.zoom = currentZoom;
+				}
+			}
+		}
+	};
+
+	pf.ascendingSort = function( a, b ) {
+		return a.resolution - b.resolution;
+	};
+
+	/**
+	 * In IE9, <source> elements get removed if they aren't children of
+	 * video elements. Thus, we conditionally wrap source elements
+	 * using <!--[if IE 9]><video style="display: none;"><![endif]-->
+	 * and must account for that here by moving those source elements
+	 * back into the picture element.
+	 */
+	pf.removeVideoShim = function( picture ) {
+		var videos = picture.getElementsByTagName( "video" );
+		if ( videos.length ) {
+			var video = videos[ 0 ],
+				vsources = video.getElementsByTagName( "source" );
+			while ( vsources.length ) {
+				picture.insertBefore( vsources[ 0 ], video );
+			}
+			// Remove the video element once we're finished removing its children
+			video.parentNode.removeChild( video );
+		}
+	};
+
+	/**
+	 * Find all `img` elements, and add them to the candidate list if they have
+	 * a `picture` parent, a `sizes` attribute in basic `srcset` supporting browsers,
+	 * a `srcset` attribute at all, and they haven’t been evaluated already.
+	 */
+	pf.getAllElements = function() {
+		var elems = [],
+			imgs = doc.getElementsByTagName( "img" );
+
+		for ( var h = 0, len = imgs.length; h < len; h++ ) {
+			var currImg = imgs[ h ];
+
+			if ( currImg.parentNode.nodeName.toUpperCase() === "PICTURE" ||
+			( currImg.getAttribute( "srcset" ) !== null ) || currImg[ pf.ns ] && currImg[ pf.ns ].srcset !== null ) {
+				elems.push( currImg );
+			}
+		}
+		return elems;
+	};
+
+	pf.getMatch = function( img, picture ) {
+		var sources = picture.childNodes,
+			match;
+
+		// Go through each child, and if they have media queries, evaluate them
+		for ( var j = 0, slen = sources.length; j < slen; j++ ) {
+			var source = sources[ j ];
+
+			// ignore non-element nodes
+			if ( source.nodeType !== 1 ) {
+				continue;
+			}
+
+			// Hitting the `img` element that started everything stops the search for `sources`.
+			// If no previous `source` matches, the `img` itself is evaluated later.
+			if ( source === img ) {
+				return match;
+			}
+
+			// ignore non-`source` nodes
+			if ( source.nodeName.toUpperCase() !== "SOURCE" ) {
+				continue;
+			}
+			// if it's a source element that has the `src` property set, throw a warning in the console
+			if ( source.getAttribute( "src" ) !== null && typeof console !== undefined ) {
+				console.warn("The `src` attribute is invalid on `picture` `source` element; instead, use `srcset`.");
+			}
+
+			var media = source.getAttribute( "media" );
+
+			// if source does not have a srcset attribute, skip
+			if ( !source.getAttribute( "srcset" ) ) {
+				continue;
+			}
+
+			// if there's no media specified, OR w.matchMedia is supported
+			if ( ( !media || pf.matchesMedia( media ) ) ) {
+				var typeSupported = pf.verifyTypeSupport( source );
+
+				if ( typeSupported === true ) {
+					match = source;
+					break;
+				} else if ( typeSupported === "pending" ) {
+					return false;
+				}
+			}
+		}
+
+		return match;
+	};
+
+	function picturefill( opt ) {
+		var elements,
+			element,
+			parent,
+			firstMatch,
+			candidates,
+			options = opt || {};
+
+		elements = options.elements || pf.getAllElements();
+
+		// Loop through all elements
+		for ( var i = 0, plen = elements.length; i < plen; i++ ) {
+			element = elements[ i ];
+			parent = element.parentNode;
+			firstMatch = undefined;
+			candidates = undefined;
+
+			// immediately skip non-`img` nodes
+			if ( element.nodeName.toUpperCase() !== "IMG" ) {
+				continue;
+			}
+
+			// expando for caching data on the img
+			if ( !element[ pf.ns ] ) {
+				element[ pf.ns ] = {};
+			}
+
+			// if the element has already been evaluated, skip it unless
+			// `options.reevaluate` is set to true ( this, for example,
+			// is set to true when running `picturefill` on `resize` ).
+			if ( !options.reevaluate && element[ pf.ns ].evaluated ) {
+				continue;
+			}
+
+			// if `img` is in a `picture` element
+			if ( parent.nodeName.toUpperCase() === "PICTURE" ) {
+
+				// IE9 video workaround
+				pf.removeVideoShim( parent );
+
+				// return the first match which might undefined
+				// returns false if there is a pending source
+				// TODO the return type here is brutal, cleanup
+				firstMatch = pf.getMatch( element, parent );
+
+				// if any sources are pending in this picture due to async type test(s)
+				// remove the evaluated attr and skip for now ( the pending test will
+				// rerun picturefill on this element when complete)
+				if ( firstMatch === false ) {
+					continue;
+				}
+			} else {
+				firstMatch = undefined;
+			}
+
+			// Cache and remove `srcset` if present and we’re going to be doing `picture`/`srcset`/`sizes` polyfilling to it.
+			if ( parent.nodeName.toUpperCase() === "PICTURE" ||
+			( element.srcset && !pf.srcsetSupported ) ||
+			( !pf.sizesSupported && ( element.srcset && element.srcset.indexOf("w") > -1 ) ) ) {
+				pf.dodgeSrcset( element );
+			}
+
+			if ( firstMatch ) {
+				candidates = pf.processSourceSet( firstMatch );
+				pf.applyBestCandidate( candidates, element );
+			} else {
+				// No sources matched, so we’re down to processing the inner `img` as a source.
+				candidates = pf.processSourceSet( element );
+
+				if ( element.srcset === undefined || element[ pf.ns ].srcset ) {
+					// Either `srcset` is completely unsupported, or we need to polyfill `sizes` functionality.
+					pf.applyBestCandidate( candidates, element );
+				} // Else, resolution-only `srcset` is supported natively.
+			}
+
+			// set evaluated to true to avoid unnecessary reparsing
+			element[ pf.ns ].evaluated = true;
+		}
+	}
+
+	/**
+	 * Sets up picture polyfill by polling the document and running
+	 * the polyfill every 250ms until the document is ready.
+	 * Also attaches picturefill on resize
+	 */
+	function runPicturefill() {
+		picturefill();
+		var intervalId = setInterval( function() {
+			// When the document has finished loading, stop checking for new images
+			// https://github.com/ded/domready/blob/master/ready.js#L15
+			picturefill();
+			if ( /^loaded|^i|^c/.test( doc.readyState ) ) {
+				clearInterval( intervalId );
+				return;
+			}
+		}, 250 );
+
+		function checkResize() {
+			var resizeThrottle;
+
+			if ( !w._picturefillWorking ) {
+				w._picturefillWorking = true;
+				w.clearTimeout( resizeThrottle );
+				resizeThrottle = w.setTimeout( function() {
+					picturefill({ reevaluate: true });
+					w._picturefillWorking = false;
+				}, 60 );
+			}
+		}
+
+		if ( w.addEventListener ) {
+			w.addEventListener( "resize", checkResize, false );
+		} else if ( w.attachEvent ) {
+			w.attachEvent( "onresize", checkResize );
+		}
+	}
+
+	runPicturefill();
+
+	/* expose methods for testing */
+	picturefill._ = pf;
+
+	/* expose picturefill */
+	if ( typeof module === "object" && typeof module.exports === "object" ) {
+		// CommonJS, just export
+		module.exports = picturefill;
+	} else if ( typeof define === "function" && define.amd ) {
+		// AMD support
+		define( function() { return picturefill; } );
+	} else if ( typeof w === "object" ) {
+		// If no AMD and we are in the browser, attach to window
+		w.picturefill = picturefill;
+	}
+
+} )( this, this.document, new this.Image() );
 
 /*! svg4everybody v1.0.0 | github.com/jonathantneal/svg4everybody */
 (function (document, uses, requestAnimationFrame, CACHE, IE9TO11) {
