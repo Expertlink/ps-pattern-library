@@ -166,7 +166,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin:0;
   position: relative;
   clear: both;
-  @media (max-width: $screen-md) {
+  @media (max-width: $screen-md-min) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
@@ -218,7 +218,7 @@ a.section-parent {
       background: transparent;
     }
   }
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-md-min) {
     padding-left:0;
   }
 }
@@ -236,7 +236,6 @@ a.section-parent {
     margin: 0 0 1em;
   }
 }
-
 .time-zone-picker {
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     float: right;
