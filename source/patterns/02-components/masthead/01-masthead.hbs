@@ -74,9 +74,16 @@ status: inprogress
 
 $(function(){
 
+  /**
+   * TODO: The delay on small screens will need to be elaborated on once the
+   * "Psychics/Articles" dropdown is integrated.
+   */
+
   var $masthead = $('.masthead');
   var $toggle   = $('.masthead-search-toggle');
   var $field    = $('#q');
+  var hideDelay = 2000;
+  var hideTimeout;
 
   // open state
   $toggle.click(function (event) {
@@ -89,9 +96,13 @@ $(function(){
   $field
     .on('focus', function () {
       $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
     })
     .on('blur', function () {
       $.mobile.zoom.enable(true);
+      setTimeout(function () {
+        $masthead.removeClass('is-search-open');
+      }, hideDelay);
     });
 
 });
