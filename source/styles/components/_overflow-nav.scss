@@ -8,7 +8,7 @@
 }
 
 .overflow-nav-primary {
-  border-color: $tan-dark $tan-dark darken(#c2c2aa, 10%);
+  border-color: $tan $tan-dark darken($tan, 17%);
   border-style: solid;
   border-width: 1px 0;
   box-shadow: $nav-shadow;
@@ -33,16 +33,13 @@
     width: 1%;
 
     > a {
-      background-color: #f4f4de;
+      background-color: $tan-light;
       background-image: linear-gradient(
         to bottom,
-        darken(#f4f4de, 3%),
+        darken($tan-light, 1%),
         #fff 15%,
-        #f4f4de,
-        #c2c2aa
+        $tan-light
       );
-      // background-color: $orange-lighter;
-      // background-image: $btn-shading;
       color: $gray-dark;
       display: block;
       padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
@@ -55,14 +52,13 @@
       &.focus,
       &:active,
       &.active {
-        // background-color: darken($orange-lighter, 5%);
-        background-color: darken(#f4f4de, 7%);
+        background-color: darken($tan-light, 7%);
         background-image: linear-gradient(
           to bottom,
-          darken(#f4f4de, 8%),
+          darken($tan-light, 8%),
           darken(#fff, 5%) 15%,
-          darken(#f4f4de, 5%),
-          darken(#c2c2aa, 5%)
+          darken($tan-light, 5%),
+          darken($tan-light, 5%)
         );
       }
 
