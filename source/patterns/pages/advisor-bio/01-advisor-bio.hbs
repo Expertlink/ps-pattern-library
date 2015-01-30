@@ -6,11 +6,18 @@ status: inprogress
 
 <div class="container-page">
   <div class="box-full box-default-lg box-lighter box-bio">
-    {{> advisor-bio/_bio-summary }}
-    {{> advisor-bio/_bio-about }}
-    {{> advisor-bio/_bio-schedule }}
-    {{> advisor-bio/_bio-reviews }}
-    {{> advisor-bio/_bio-similar }}
+    <div class="row">
+      <div class="col-md-8">
+        {{> advisor-bio/_bio-about }}
+        {{> advisor-bio/_bio-reviews }}
+        
+      </div>
+      <div class="col-md-4">
+        {{> advisor-bio/_bio-summary }}  
+        {{> advisor-bio/_bio-schedule }}
+        {{> advisor-bio/_bio-similar }}
+      </div>
+    </div>
   </div>
 </div>
 
