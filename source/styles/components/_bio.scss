@@ -6,6 +6,15 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     padding: ($bio-padding * 2);
   }
 }
+.bio-head {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    border: 1px solid $gray-lighter;
+    box-shadow: 0 0 8px $gray-lighter;
+    padding: $bio-padding;
+    border-radius: $border-radius-large;
+    margin: 0 0 $line-height-computed;
+  }
+}
 .bio-advisor-summary {
   text-align: center;
   border: 1px solid $gray-lighter;
@@ -13,6 +22,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   padding: $bio-padding;
   border-radius: $border-radius-large;
   margin: 0 0 $line-height-computed;
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    text-align: left;
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+    display: inline;
+    margin:0;
+  }
 }
 .bio-name {
   margin:0;
@@ -30,7 +47,11 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     display: block;
     border-radius: $border-radius-small;
   }
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    float:left;
+    margin-right: $grid-gutter-width;
+  }
+  @media (min-width: $screen-lg-min) {
     max-width: 330px;
     img {
       border-radius: $border-radius-large;
@@ -79,6 +100,19 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 50%;
     display: table-cell;
   }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    width: calc(100% - (#{$grid-gutter-width} + 175px));
+    background: transparent;
+    margin-bottom: ($bio-padding / 2);
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    > p {
+      display: inline-block;
+      width: auto;
+      text-align: left;  
+      margin:0;
+    }
+  }
 }
 .bio-av-btn {
   font-weight: normal;
@@ -90,6 +124,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   &:focus {
     text-decoration: underline;
     color: $blue;
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    padding-left: 0;
+    margin-right: 1em;
   }
 }
 .bio-actions {
@@ -110,6 +148,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     font-weight: normal;
   }
 }
+.bio-availability {
+  text-align: center;
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    width: calc(100% - (#{$grid-gutter-width} + 175px));
+    margin-left: calc(#{$grid-gutter-width} + 175px);
+    text-align: left;
+  }
+}
 .text-available {
   color: $green;
 }
@@ -119,6 +165,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .bio-section-header {
   margin:0;
   position: relative;
+  clear: both;
   @media (max-width: $screen-md) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
@@ -187,6 +234,13 @@ a.section-parent {
   @media (min-width: $screen-md-min) {
     padding:0;
     margin: 0 0 1em;
+  }
+}
+
+.time-zone-picker {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    float: right;
+    margin-top: -2.7em;
   }
 }
 .similar-advisors {
