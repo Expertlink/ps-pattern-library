@@ -1,4 +1,4 @@
-// These styles extend Bootstraps core button classes.
+//= Custom Bootstrap button modifiers
 
 .btn-sunrise {
   @include button-variant($gray-dark, $orange-lighter, $tan-dark);
@@ -20,3 +20,51 @@
   }
 }
 
+//= Social buttons
+
+$social-btn-sprite:    '/images/social.png' !default;
+$social-btn-sprite-2x: '/images/social-2x.png' !default;
+$social-btn-size:      32px !default;
+
+// Must be in the same order as they appear in sprite!
+$social-btn-services: (
+  ( name: 'facebook',    pattern: 'facebook.com' ),
+  ( name: 'twitter',     pattern: 'twitter.com' ),
+  ( name: 'youtube',     pattern: 'youtube.com' ),
+  ( name: 'pinterest',   pattern: 'pinterest.com' ),
+  ( name: 'google-plus', pattern: 'plus.google.com' ),
+  ( name: 'feed' ),
+  ( name: 'instagram',   pattern: 'instagram.com' )
+);
+
+%social-base {
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: $social-btn-size;
+  overflow: hidden;
+  text-indent: -99em;
+  vertical-align: middle;
+  width: $social-btn-size;
+  // Bootstrap mixin for including a separate image for high-res displays
+  @include img-retina(
+    $social-btn-sprite,
+    $social-btn-sprite-2x,
+    $social-btn-size,
+    ($social-btn-size * length($social-btn-services))
+  );
+}
+
+@each $service in $social-btn-services {
+  $i: index($social-btn-services, $service) - 1;
+  $name: map-get($service, name);
+  .social-btn-#{$name} {
+    @extend %social-base;
+    background-position: 0 ($i * $social-btn-size * -1);
+  }
+  @if map-has-key($service, pattern) {
+    $pattern: map-get($service, pattern);
+    .social-btn[href*='#{$pattern}'] {
+      @extend .social-btn-#{$name};
+    }
+  }
+}
