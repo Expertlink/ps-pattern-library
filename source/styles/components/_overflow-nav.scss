@@ -1,6 +1,8 @@
+$zindex-overflow-nav: 500 !default;
+
 .overflow-nav {
   position: relative;
-  z-index: $zindex-navbar;
+  z-index: $zindex-overflow-nav;
 
   @media (min-width: $screen-lg-min) {
     margin-bottom: $line-height-computed;
