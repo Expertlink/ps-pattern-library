@@ -136,6 +136,20 @@ $pagination-disabled-color:   $gray-lighter;
 $pagination-disabled-bg:      #fff;
 $pagination-disabled-border:  $gray-lighter;
 
+//== Dropdowns
+
+$dropdown-bg: $blue-gray;
+$dropdown-border: darken($blue-gray, 15%);
+$dropdown-fallback-border: $dropdown-border;
+$dropdown-divider-bg: darken($blue-gray, 8%);
+$dropdown-link-color: #fff;
+$dropdown-link-hover-color: $red;
+$dropdown-link-hover-bg: $teal-light;
+// $dropdown-link-active-color
+$dropdown-link-active-bg: $dropdown-border;
+$dropdown-link-disabled-color: darken($blue-gray, 20%);
+$dropdown-header-color: darken($blue-gray, 35%);
+
 //== Grid system
 
 $grid-gutter-width: 20px;
