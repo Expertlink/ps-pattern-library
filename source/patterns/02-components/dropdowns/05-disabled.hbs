@@ -1,0 +1,16 @@
+---
+description: Add `.disabled` to a `<li>` in the dropdown to disable the link.
+bootstrap: http://getbootstrap.com/components/#dropdowns-disabled
+---
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-expanded="false">
+    Dropdown
+    <span class="arrow-down text-muted"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu5">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+  </ul>
+</div>

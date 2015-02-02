@@ -109,6 +109,60 @@ $(function() {
   });
 });
 
+// Scripts for pattern at ../source/patterns/02-components/masthead/01-masthead.hbs
+
+
+$(function(){
+
+  var $masthead = $('.masthead');
+  var $toggle   = $('.masthead-search-toggle');
+  var $field    = $('#q');
+
+  $toggle.click(function (event) {
+    event.preventDefault();
+    $masthead.addClass('is-search-open');
+    $field.click().focus();
+  });
+
+});
+
+
+// Scripts for pattern at ../source/patterns/02-components/quicklist/01-quicklist.hbs
+
+$(function(){
+
+  var $body = $('body');
+  var $quicklist = $('#quicklist');
+  var $toggle = $('#quicklist-toggle, .quicklist-header a');
+
+  function hideQuicklist () {
+    $quicklist.removeClass('open');
+  }
+
+  $toggle.click(function (event) {
+    event.preventDefault();
+
+    if ($quicklist.hasClass('open')) {
+      $body.removeClass('quicklist-open');
+      $quicklist.removeClass('in');
+      if ($.support.transition) {
+        $quicklist
+          .one('bsTransitionEnd', hideQuicklist)
+          .emulateTransitionEnd(300);
+      } else {
+        hideQuicklist();
+      }
+    }
+    else {
+      $body.addClass('quicklist-open');
+      $quicklist.addClass('open');
+      $quicklist[0].offsetWidth;
+      $quicklist.addClass('in');
+    }
+  });
+
+});
+
 // Scripts for pattern at ../source/patterns/pages/our-psychics/_sidebar-sort.hbs
 
 
@@ -138,15 +192,3 @@ $(function(){
   
 });
 
-
-// Scripts for pattern at ../source/patterns/pages/signup/02-billing.hbs
-
-  $(function() {
-    $('.toggle-trigger').click(function (e) {
-      e.preventDefault();
-
-      var $trigger = $(e.target);
-      $trigger.toggleClass('active');
-      $($trigger.attr('href')).toggleClass('hidden');
-    });
-  });
