@@ -45,11 +45,12 @@
 
   var init = function initResponsiveCollapse(options) {
     options = $.extend({
+      selector: '[data-responsive-toggle="collapse"]',
       testIsToggle: testIsToggle,
       enableToggle: enableToggle,
       disableToggle: disableToggle
     }, options || {});
-    $(['[data-responsive-toggle="collapse"]']).each(function() {
+    $(options.selector).each(function() {
       $(this).off('click.toggle-trigger');
       $(this).one('click', function(event) {
         var $elem = $(this);
@@ -86,4 +87,5 @@
     init.call();
     $(window).on('resize', debounce(init, 250));
   });
+  $.fn.responsiveToggle = init;
 })(jQuery);
