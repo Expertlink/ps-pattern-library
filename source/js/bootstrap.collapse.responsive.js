@@ -1,5 +1,4 @@
 /* global jQuery, window, document */
-'use strict';
 /**
  * A rif on bootstrap's collapse. On the first
  * click on a collapse-trigger (elements w/
@@ -11,7 +10,7 @@
  */
 
  (function( $, window, document, undefined ){
-
+  'use strict';
   // our plugin constructor
   var Plugin = function( elem, options ) {
     this.elem    = elem;
@@ -57,17 +56,17 @@
     init: function() {
       // Introduce defaults that can be extended either
       // globally or using an object literal.
-      this.config = $.extend({}, this.defaults, this.options);
+      var config = $.extend({}, this.defaults, this.options),
+          $elem = this.$elem;
       this.$elem.off('click.toggle-trigger');
       this.$elem.one('click', function(event) {
         event.preventDefault();
-        if (this.config.isToggle(this.$elem)) {
-          this.config.enableToggle(this.$elem);
+        if (config.isToggle($elem)) {
+          config.enableToggle($elem);
         } else {
-          this.config.disableToggle(this.$elem);
+          config.disableToggle($elem);
         }
       });
-
       return this;
     }
   };
