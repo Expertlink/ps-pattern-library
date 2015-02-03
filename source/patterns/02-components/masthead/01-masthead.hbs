@@ -43,14 +43,18 @@ status: inprogress
       </ul>
       <form action="" class="masthead-search">
         <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default">
+          <div class="input-group-btn select">
+            <div class="btn btn-default" aria-hidden="true">
               <svg class="icon icon-md">
                 <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
               </svg>
-              Psychics
+              <span class="select-value" aria-hidden="true"></span>
               <span class="arrow-down text-muted"></span>
-            </button>
+            </div>
+            <select>
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
           </div>
           <input id="q" type="search" class="form-control">
           <div class="input-group-btn">

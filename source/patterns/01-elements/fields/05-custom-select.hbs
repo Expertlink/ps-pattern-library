@@ -1,0 +1,48 @@
+---
+status: inprogress
+---
+
+<div class="select">
+  <select>
+    <option selected>John Lennon</option>
+    <option>Paul McCartney</option>
+    <option>George Harrison</option>
+    <option>Ringo Starr</option>
+  </select>
+  <span class="btn btn-block btn-default" aria-hidden="true">
+    <span class="select-value"></span>
+    <span class="arrow-down"></span>
+  </span>
+</div>
+
+<script>
+
+$(function(){
+
+  $('.select').each(function(){
+    // Save some elements as variables
+    var $element = $(this);
+    var $select = $element.find('select');
+    var $value = $element.find('.select-value');
+    // Bind event handlers to <select>
+    $select.on({
+      // On change or keyup, update the value text
+      'change keyup': function () {
+        $value.text($select.val());
+      },
+      // On focus, add the focus class
+      'focus': function () {
+        $element.addClass('focus');
+      },
+      // On blur, remove the focus class
+      'blur': function () {
+        $element.removeClass('focus');
+      }
+    });
+    // Trigger the change event so the value is current
+    $select.trigger('change');
+  });
+
+});
+
+</script>
