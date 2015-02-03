@@ -272,6 +272,9 @@ a.section-parent {
   }
 }
 
+// these rules optimize the display of reviews for a narrow column. 
+// Since it seems like this is specific to the Advisor Bio page layout,
+// I am putting them here innstead of the _reviews.scss
 .reviews-col-lg {
   @media (min-width: $screen-lg-min) {
     .reviews-summary {
@@ -283,6 +286,9 @@ a.section-parent {
     .review {
       padding-left: 0;
       padding-right: 0;
+    }
+    .hidden-xs {
+      display: none;
     }
   }
 }
