@@ -11,7 +11,7 @@
 
  (function( $, window, document, undefined ){
   'use strict';
-  // our plugin constructor
+
   var Plugin = function( elem, options ) {
     this.elem    = elem;
     this.$elem   = $(elem);
@@ -21,6 +21,7 @@
   var _getTargetElem = function($elem) {
     return $elem.data('target') || $elem.attr('href');
   };
+  // Default test for whether something should be a toggle
   var isToggle = function($elem) {
     var targetElem     = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
@@ -29,6 +30,7 @@
     }
     return false;
   };
+  // Default enable callback
   var enableToggle = function($elem) {
     var targetElem = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
@@ -40,33 +42,39 @@
       $(this).toggleClass('collapsed');
     });
   };
+  // Default disable callback
   var disableToggle = function($elem) {
     // Default behavior to "do nothing"
     $elem.on('click.toggle-trigger', function(event) {
       event.preventDefault();
     });
   };
+  // Behavior on "first" click of trigger
+  // Default to "do nothing" and squelch click event
+  var onInit = function($elem, event) {
+    event.preventDefault();
+  };
 
   Plugin.prototype = {
     defaults: {
       isToggle      : isToggle,
       enableToggle  : enableToggle,
-      disableToggle : disableToggle
+      disableToggle : disableToggle,
+      onInit        : onInit
     },
     init: function() {
-      // Introduce defaults that can be extended either
-      // globally or using an object literal.
       var config = $.extend({}, this.defaults, this.options),
           $elem = this.$elem;
       this.$elem.off('click.toggle-trigger');
-      this.$elem.one('click', function(event) {
-        event.preventDefault();
-        if (config.isToggle($elem)) {
-          config.enableToggle($elem);
-        } else {
-          config.disableToggle($elem);
-        }
-      });
+
+      if (config.isToggle($elem)) {
+        config.enableToggle($elem);
+      } else {
+        config.disableToggle($elem);
+      }
+      if (typeof config.onInit === 'function') {
+        config.onInit($elem, event);
+      }
       return this;
     }
   };
@@ -75,7 +83,9 @@
 
   $.fn.responsiveCollapse = function(options) {
     return this.each(function() {
-      new Plugin(this, options).init();
+      $(this).one('click', function() {
+        new Plugin(this, options).init();
+      });
     });
   };
   $(function() {
