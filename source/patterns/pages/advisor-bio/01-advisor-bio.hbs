@@ -7,17 +7,21 @@ status: inprogress
 <div class="container-page">
   <div class="box-full box-default-lg box-lighter box-bio">
     <div class="row"> 
-      <div class="col-lg-4 col-lg-push-8">
+      <div class="col-lg-8">
         {{> advisor-bio/_bio-summary }}  
+      </div>
+      <div class="col-lg-4">
         {{> advisor-bio/_bio-schedule }}
       </div>
-      <div class="col-lg-8 col-lg-pull-4">
+    </div>
+    <div class="row"> 
+      <div class="col-lg-8">
         {{> advisor-bio/_bio-about }}
-        {{> advisor-bio/_bio-reviews }}
         {{> advisor-bio/_bio-similar }}
-
       </div>
-      
+      <div class="col-lg-4">
+        {{> advisor-bio/_bio-reviews }}
+      </div>
     </div>
   </div>
 </div>

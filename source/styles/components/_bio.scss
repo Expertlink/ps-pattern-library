@@ -7,7 +7,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 .bio-head {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min) {
     border: 1px solid $gray-lighter;
     box-shadow: 0 0 8px $gray-lighter;
     padding: $bio-padding;
@@ -22,7 +22,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   padding: $bio-padding;
   border-radius: $border-radius-large;
   margin: 0 0 $line-height-computed;
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     text-align: left;
     padding: 0;
     box-shadow: none;
@@ -47,12 +47,12 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     display: block;
     border-radius: $border-radius-small;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     float:left;
     margin-right: $grid-gutter-width;
   }
   @media (min-width: $screen-lg-min) {
-    max-width: 330px;
+    max-width: 50%;
     img {
       border-radius: $border-radius-large;
     }
@@ -100,7 +100,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 50%;
     display: table-cell;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     width: calc(100% - (#{$grid-gutter-width} + 175px));
     background: transparent;
     margin-bottom: ($bio-padding / 2);
@@ -112,6 +112,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
       text-align: left;  
       margin:0;
     }
+  }
+  @media (min-width: $screen-lg-min) {
+      width: calc(100% - (#{$grid-gutter-width} + 50%));
   }
 }
 .bio-av-btn {
@@ -125,16 +128,32 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     text-decoration: underline;
     color: $blue;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     padding-left: 0;
     margin-right: 1em;
   }
 }
 .bio-actions {
   width: calc(100% + #{$arrange-gutter-size});
-  margin-bottom:0;
-  > .arrange-fill {
+  margin: 0 (-$arrange-gutter-size);
+  padding: 0;
+  display: table;
+  .bio-action {
     width: 50%;
+    display: table-cell;
+    padding: 0 ($arrange-gutter-size/2);
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    .bio-action {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0 0 ($arrange-gutter-size/2);
+    }
   }
 }
 .bio-price {
@@ -150,10 +169,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 }
 .bio-availability {
   text-align: center;
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     width: calc(100% - (#{$grid-gutter-width} + 175px));
     margin-left: calc(#{$grid-gutter-width} + 175px);
     text-align: left;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: calc(100% - (#{$grid-gutter-width} + 50%));
+    margin-left: calc(#{$grid-gutter-width} + 50%);
   }
 }
 .text-available {
@@ -247,6 +270,7 @@ a.section-parent {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
+  
 }
 
 
