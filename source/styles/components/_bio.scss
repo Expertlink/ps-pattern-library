@@ -138,22 +138,22 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin: 0 (-$arrange-gutter-size);
   padding: 0;
   display: table;
-  .bio-action {
-    width: 50%;
-    display: table-cell;
-    padding: 0 ($arrange-gutter-size/2);
-  }
   @media (min-width: $screen-lg-min) {
     width: 100%;
     margin: 0;
     padding: 0;
     display: block;
-    .bio-action {
-      display: block;
-      width: 100%;
-      padding: 0;
-      margin: 0 0 ($arrange-gutter-size/2);
-    }
+  }
+}
+.bio-action {
+  width: 50%;
+  display: table-cell;
+  padding: 0 ($arrange-gutter-size/2);
+  @media (min-width: $screen-lg-min) {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 ($arrange-gutter-size/2)
   }
 }
 .bio-price {
@@ -183,7 +183,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $green;
 }
 .text-unavailable {
-  color: $red;
+  color: $gray;
 }
 .bio-section-header {
   margin:0;
@@ -245,7 +245,7 @@ a.section-parent {
     padding-left:0;
   }
 }
-.collapse.show-md {
+.show-md {
   @media (min-width: $screen-md-min) {
     display: block;
     visibility: visible;
@@ -270,7 +270,19 @@ a.section-parent {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
   }
-  
 }
 
-
+.reviews-col-lg {
+  @media (min-width: $screen-lg-min) {
+    .reviews-summary {
+      border-radius: 0;
+      border-width: 0 0 1px 0;
+      padding: 0;
+      background: transparent;
+    }
+    .review {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
