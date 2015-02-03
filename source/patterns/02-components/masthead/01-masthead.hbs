@@ -41,7 +41,7 @@ status: inprogress
           </a>
         </li>
       </ul>
-      <form class="masthead-search">
+      <form action="" class="masthead-search">
         <div class="input-group">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default">
@@ -52,7 +52,7 @@ status: inprogress
               <span class="arrow-down text-muted"></span>
             </button>
           </div>
-          <input id="q" type="text" class="form-control">
+          <input id="q" type="search" class="form-control">
           <div class="input-group-btn">
             <button type="button" class="btn btn-info btn-shaded">Go</button>
           </div>
@@ -81,15 +81,36 @@ status: inprogress
 
 $(function(){
 
+  /**
+   * TODO: The delay on small screens will need to be elaborated on once the
+   * "Psychics/Articles" dropdown is integrated.
+   */
+
   var $masthead = $('.masthead');
   var $toggle   = $('.masthead-search-toggle');
   var $field    = $('#q');
+  var hideDelay = 2000;
+  var hideTimeout;
 
+  // open state
   $toggle.click(function (event) {
     event.preventDefault();
     $masthead.addClass('is-search-open');
     $field.click().focus();
   });
+
+  // disable page zoom on focus
+  $field
+    .on('focus', function () {
+      $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
+    })
+    .on('blur', function () {
+      $.mobile.zoom.enable(true);
+      hideTimeout = setTimeout(function () {
+        $masthead.removeClass('is-search-open');
+      }, hideDelay);
+    });
 
 });
 
