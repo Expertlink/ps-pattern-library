@@ -16,7 +16,7 @@
       $(this).off('click.toggle-trigger');
       $(this).one('click', function(event) {
         event.preventDefault();
-        var targetHref = $(this).attr('href'),
+        var targetHref = $(this).data('target') || $(this).attr('href'),
             $hiddenTargets =  $(targetHref + ':hidden');
 
         if (targetHref && $hiddenTargets.length) {
