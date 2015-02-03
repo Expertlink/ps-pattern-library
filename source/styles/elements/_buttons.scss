@@ -69,3 +69,9 @@ $social-btn-services: (
     }
   }
 }
+
+// Shameful helper class to force alignment with social-btn in cases where
+// elements must float next to each other.
+.with-social-btn {
+  line-height: ($social-btn-size / $font-size-base);
+}
