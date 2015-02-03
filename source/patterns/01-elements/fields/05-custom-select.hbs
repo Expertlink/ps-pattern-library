@@ -1,4 +1,9 @@
 ---
+description: >
+  Allow a custom element to behave as if a native `<select>` would. Initial
+  value and value updates will apply to the `.select-value` element therein.
+  You can "delegate" `focus` states to an inner element with the
+  `.select-delegate` class.
 status: inprogress
 ---
 
@@ -9,7 +14,7 @@ status: inprogress
     <option>George Harrison</option>
     <option>Ringo Starr</option>
   </select>
-  <span class="btn btn-block btn-default" aria-hidden="true">
+  <span class="btn btn-block btn-default select-delegate" aria-hidden="true">
     <span class="select-value"></span>
     <span class="arrow-down"></span>
   </span>
@@ -24,19 +29,24 @@ $(function(){
     var $element = $(this);
     var $select = $element.find('select');
     var $value = $element.find('.select-value');
+
+    // Allow for a delegate for state classes (useful for avoiding duplication
+    // in button styles, etc.)
+    var $delegate = $element.find('.select-delegate');
+    if (!$delegate.length) $delegate = $element;
+
     // Bind event handlers to <select>
     $select.on({
       // On change or keyup, update the value text
       'change keyup': function () {
         $value.text($select.val());
       },
-      // On focus, add the focus class
+      // Focus/blur
       'focus': function () {
-        $element.addClass('focus');
+        $delegate.addClass('focus');
       },
-      // On blur, remove the focus class
       'blur': function () {
-        $element.removeClass('focus');
+        $delegate.removeClass('focus');
       }
     });
     // Trigger the change event so the value is current
