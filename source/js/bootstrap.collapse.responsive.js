@@ -11,26 +11,53 @@
 (function responsiveCollapse($) {
   'use strict';
 
-  var init = function initResponsiveCollapse() {
+  var getTargetElem = function($elem) {
+    return $elem.data('target') || $elem.attr('href');
+  };
+
+  var testIsToggle = function($elem) {
+    var targetElem = getTargetElem($elem);
+    var $hiddenTargets = $(targetElem + ':hidden');
+    if (targetElem && $hiddenTargets.length) {
+      return true;
+    }
+    return false;
+  };
+
+  var enableToggle = function($elem) {
+    var targetElem = getTargetElem($elem);
+    var $hiddenTargets = $(targetElem + ':hidden');
+    $elem.toggleClass('collapsed');
+    $hiddenTargets.collapse('show');
+    $elem.on('click.toggle-trigger', function(event) {
+      event.preventDefault();
+      $hiddenTargets.collapse('toggle');
+      $(this).toggleClass('collapsed');
+    });
+  };
+
+  var disableToggle = function($elem) {
+    // Default behavior to "do nothing"
+    $elem.on('click.toggle-trigger', function(event) {
+      event.preventDefault();
+    });
+  };
+
+  var init = function initResponsiveCollapse(options) {
+    options = $.extend({
+      testIsToggle: testIsToggle,
+      enableToggle: enableToggle,
+      disableToggle: disableToggle
+    }, options || {});
     $(['[data-responsive-toggle="collapse"]']).each(function() {
       $(this).off('click.toggle-trigger');
       $(this).one('click', function(event) {
+        var $elem = $(this);
         event.preventDefault();
-        var targetHref = $(this).data('target') || $(this).attr('href'),
-            $hiddenTargets =  $(targetHref + ':hidden');
-
-        if (targetHref && $hiddenTargets.length) {
-          $hiddenTargets.collapse('show');
-          $(this).toggleClass('collapsed'); // https://github.com/twbs/bootstrap/issues/13636
-          $(this).on('click.toggle-trigger', function(event) {
-            event.preventDefault();
-            $hiddenTargets.collapse('toggle');
-            $(this).toggleClass('collapsed');
-          });
+        if (options.testIsToggle($elem)) {
+          options.enableToggle($elem);
         } else {
-          $(this).on('click.toggle-trigger', function(event) {
-            event.preventDefault();
-          });
+          options.disableToggle($elem);
         }
       });
     });
