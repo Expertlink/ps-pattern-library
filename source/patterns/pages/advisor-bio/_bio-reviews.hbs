@@ -1,8 +1,8 @@
 <h3 class="u-no-margin bio-section-header" id="reviews"><a href="#more-reviews"  data-responsive-toggle="collapse" class="section-parent collapsed">Mazie's Ratings &amp; Reviews </a></h3>
 {{> reviews/_review-summary }}
-<div id="more-reviews" class="collapse show-md">
+<div id="more-reviews" class="collapse bio-show-md">
   {{#withFirst review.list 5}}
-    {{> reviews/_review }}
+    {{> reviews/_review-truncated }}
   {{/withFirst}}
   <p class="u-margin-top"><a href="02-advisor-reviews.html" class="btn btn-default btn-shaded btn-block">See more of Mazie's reviews</a></p>
 </div>

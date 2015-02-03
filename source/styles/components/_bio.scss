@@ -6,29 +6,16 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     padding: ($bio-padding * 2);
   }
 }
-.bio-head {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+.bio-advisor-summary {
+  text-align: center;
+  margin: 0 0 $line-height-computed;
+  @media (min-width: $screen-md-min)  {
+    text-align: left;
     border: 1px solid $gray-lighter;
     box-shadow: 0 0 8px $gray-lighter;
     padding: $bio-padding;
     border-radius: $border-radius-large;
-    margin: 0 0 $line-height-computed;
-  }
-}
-.bio-advisor-summary {
-  text-align: center;
-  border: 1px solid $gray-lighter;
-  box-shadow: 0 0 8px $gray-lighter;
-  padding: $bio-padding;
-  border-radius: $border-radius-large;
-  margin: 0 0 $line-height-computed;
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    text-align: left;
-    padding: 0;
-    box-shadow: none;
-    border: 0;
-    display: inline;
-    margin:0;
   }
 }
 .bio-name {
@@ -47,12 +34,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     display: block;
     border-radius: $border-radius-small;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    float:left;
-    margin-right: $grid-gutter-width;
+  @media (min-width: $screen-md-min)  {
+    max-width: 100%;
   }
   @media (min-width: $screen-lg-min) {
-    max-width: 330px;
     img {
       border-radius: $border-radius-large;
     }
@@ -100,8 +85,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 50%;
     display: table-cell;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    width: calc(100% - (#{$grid-gutter-width} + 175px));
+  @media (min-width: $screen-md-min)  {
     background: transparent;
     margin-bottom: ($bio-padding / 2);
     border-top: 1px solid $gray-lighter;
@@ -125,16 +109,32 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     text-decoration: underline;
     color: $blue;
   }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media (min-width: $screen-md-min)  {
     padding-left: 0;
     margin-right: 1em;
   }
 }
 .bio-actions {
   width: calc(100% + #{$arrange-gutter-size});
-  margin-bottom:0;
-  > .arrange-fill {
-    width: 50%;
+  margin: 0 ($arrange-gutter-size * -0.5);
+  padding: 0;
+  display: table;
+  @media (min-width: $screen-lg-min) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+}
+.bio-action {
+  width: 50%;
+  display: table-cell;
+  padding: 0 ($arrange-gutter-size/2);
+  @media (min-width: $screen-lg-min) {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 ($arrange-gutter-size/2);
   }
 }
 .bio-price {
@@ -150,18 +150,11 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 }
 .bio-availability {
   text-align: center;
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    width: calc(100% - (#{$grid-gutter-width} + 175px));
-    margin-left: calc(#{$grid-gutter-width} + 175px);
+  @media (min-width: $screen-md-min)  {
     text-align: left;
   }
 }
-.text-available {
-  color: $green;
-}
-.text-unavailable {
-  color: $red;
-}
+
 .bio-section-header {
   margin:0;
   position: relative;
@@ -169,6 +162,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   @media (max-width: $screen-md-min) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
+  }
+  @media (min-width: $screen-md-min) {
+    position: static;
   }
 }
 a.section-parent {
@@ -210,6 +206,7 @@ a.section-parent {
     background: transparent;
     border:0;
     cursor: default;
+    display: inline-block;
     &.collapsed:after, &:after {
       content:'';
     }
@@ -222,7 +219,8 @@ a.section-parent {
     padding-left:0;
   }
 }
-.collapse.show-md {
+// This overrides the default behavior of collapse once the page is large enough to show all content at once.
+.bio-show-md {
   @media (min-width: $screen-md-min) {
     display: block;
     visibility: visible;
@@ -249,4 +247,23 @@ a.section-parent {
   }
 }
 
-
+// These rules optimize the display of reviews within a narrow column. 
+// Since this is specific to the Advisor Bio page layout,
+// I am putting them here instead of _reviews.scss
+.bio-reviews-col-lg {
+  @media (min-width: $screen-lg-min) {
+    .reviews-summary {
+      border-radius: 0;
+      border-width: 0 0 1px 0;
+      padding: 0;
+      background: transparent;
+    }
+    .review {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .bio-hidden-lg {
+      display: none;
+    }
+  }
+}
