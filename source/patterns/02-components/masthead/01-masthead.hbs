@@ -100,7 +100,7 @@ $(function(){
     })
     .on('blur', function () {
       $.mobile.zoom.enable(true);
-      setTimeout(function () {
+      hideTimeout = setTimeout(function () {
         $masthead.removeClass('is-search-open');
       }, hideDelay);
     });
