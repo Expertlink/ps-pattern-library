@@ -1,3 +1,5 @@
+/* global jQuery, window, document */
+'use strict';
 /**
  * A rif on bootstrap's collapse. On the first
  * click on a collapse-trigger (elements w/
@@ -8,24 +10,28 @@
  *
  */
 
-(function responsiveCollapse($) {
-  'use strict';
+ (function( $, window, document, undefined ){
 
-  var getTargetElem = function($elem) {
-    return $elem.data('target') || $elem.attr('href');
+  // our plugin constructor
+  var Plugin = function( elem, options ) {
+    this.elem    = elem;
+    this.$elem   = $(elem);
+    this.options = options;
   };
 
-  var testIsToggle = function($elem) {
-    var targetElem = getTargetElem($elem);
+  var _getTargetElem = function($elem) {
+    return $elem.data('target') || $elem.attr('href');
+  };
+  var isToggle = function($elem) {
+    var targetElem     = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
     if (targetElem && $hiddenTargets.length) {
       return true;
     }
     return false;
   };
-
   var enableToggle = function($elem) {
-    var targetElem = getTargetElem($elem);
+    var targetElem = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
     $elem.toggleClass('collapsed');
     $hiddenTargets.collapse('show');
@@ -35,7 +41,6 @@
       $(this).toggleClass('collapsed');
     });
   };
-
   var disableToggle = function($elem) {
     // Default behavior to "do nothing"
     $elem.on('click.toggle-trigger', function(event) {
@@ -43,49 +48,39 @@
     });
   };
 
-  var init = function initResponsiveCollapse(options) {
-    options = $.extend({
-      selector: '[data-responsive-toggle="collapse"]',
-      testIsToggle: testIsToggle,
-      enableToggle: enableToggle,
-      disableToggle: disableToggle
-    }, options || {});
-    $(options.selector).each(function() {
-      $(this).off('click.toggle-trigger');
-      $(this).one('click', function(event) {
-        var $elem = $(this);
+  Plugin.prototype = {
+    defaults: {
+      isToggle      : isToggle,
+      enableToggle  : enableToggle,
+      disableToggle : disableToggle
+    },
+    init: function() {
+      // Introduce defaults that can be extended either
+      // globally or using an object literal.
+      this.config = $.extend({}, this.defaults, this.options);
+      this.$elem.off('click.toggle-trigger');
+      this.$elem.one('click', function(event) {
         event.preventDefault();
-        if (options.testIsToggle($elem)) {
-          options.enableToggle($elem);
+        if (this.config.isToggle(this.$elem)) {
+          this.config.enableToggle(this.$elem);
         } else {
-          options.disableToggle($elem);
+          this.config.disableToggle(this.$elem);
         }
       });
-    });
+
+      return this;
+    }
   };
 
-  // Returns a function, that, as long as it continues to be invoked, will not
-  // be triggered. The function will be called after it stops being called for
-  // N milliseconds. If `immediate` is passed, trigger the function on the
-  // leading edge, instead of the trailing.
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  }
+  Plugin.defaults = Plugin.prototype.defaults;
 
+  $.fn.responsiveCollapse = function(options) {
+    return this.each(function() {
+      new Plugin(this, options).init();
+    });
+  };
   $(function() {
-    init.call();
-    $(window).on('resize', debounce(init, 250));
+    $('[data-responsive-toggle="collapse"]').responsiveCollapse();
   });
-  $.fn.responsiveToggle = init;
-})(jQuery);
+
+})( jQuery, window , document );
