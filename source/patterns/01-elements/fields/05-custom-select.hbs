@@ -42,11 +42,8 @@ $(function(){
         $value.text($select.val());
       },
       // Focus/blur
-      'focus': function () {
-        $delegate.addClass('focus');
-      },
-      'blur': function () {
-        $delegate.removeClass('focus');
+      'focus blur': function (event) {
+        $delegate.toggleClass('focus', event.type === 'focus');
       }
     });
     // Trigger the change event so the value is current
