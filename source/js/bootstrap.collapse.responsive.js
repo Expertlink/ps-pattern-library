@@ -31,15 +31,18 @@
     return false;
   };
   // Default enable callback
-  var enableToggle = function($elem) {
-    var targetElem = _getTargetElem($elem);
+  var enableToggle = function(config) {
+    var $elem          = this.$elem;
+    var targetElem     = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
+    var data           = $hiddenTargets.data('bs.collapse');
+    var option         = data ? 'toggle' : $.extend({}, $elem.data(), { trigger: this.elem, toggle: true });
+    $.fn.collapse.call($hiddenTargets, option);
     $elem.toggleClass('collapsed');
     $hiddenTargets.collapse('show');
     $elem.on('click.toggle-trigger', function(event) {
-      event.preventDefault();
       $hiddenTargets.collapse('toggle');
-      $(this).toggleClass('collapsed');
+      event.preventDefault();
     });
   };
   // Default disable callback
@@ -66,11 +69,10 @@
       var config = $.extend({}, this.defaults, this.options),
           $elem = this.$elem;
       this.$elem.off('click.toggle-trigger');
-
       if (config.isToggle($elem)) {
-        config.enableToggle($elem);
+        config.enableToggle.call(this, config);
       } else {
-        config.disableToggle($elem);
+        config.disableToggle($elem, config);
       }
       if (typeof config.onInit === 'function') {
         config.onInit($elem, event);
@@ -89,7 +91,20 @@
     });
   };
   $(function() {
-    $('[data-responsive-toggle="collapse"]').responsiveCollapse();
+    $(document).off('.collapse.data-api');
+    $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]:not([data-responsive])', function (e) {
+      var $this   = $(this);
+
+      if (!$this.attr('data-target')) e.preventDefault();
+
+      //var $target = getTargetFromTrigger($this)
+      var $target = $(_getTargetElem($this));
+      var data    = $target.data('bs.collapse');
+      var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this });
+
+      $.fn.collapse.call($target, option);
+    });
+
   });
 
 })( jQuery, window , document );

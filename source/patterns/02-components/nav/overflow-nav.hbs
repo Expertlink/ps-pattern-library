@@ -2,12 +2,15 @@
 status: inprogress
 ---
 
-<nav class="overflow-nav">
-  <ul class="overflow-nav-primary">
-    <li>
-        <a href="" class="visible-lg collapsed" data-target="new-customer-offers"><span class="nav-customer-offer">New Customer Offers</span> <span class="arrow-down visible-lg-inline-block text-muted"></span></a></span>
+<nav class="overflow-nav" aria-multiselectable="true">
+  <ul class="overflow-nav-primary panel-group" id="overflow-nav">
+    <li class="panel panel-default">
+        <a href="#" class="visible-lg collapsed" data-target="#new-customer-offers" data-toggle="collapse" data-responsive="nav">
+          <span class="nav-customer-offer">New Customer Offers</span>
+          <span class="arrow-down visible-lg-inline-block text-muted"></span>
+        </a>
         <a href="" class="hidden-lg">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></a>
-    <aside class="collapse overflow-nav-dropdown" id="new-customer-offers">
+    <aside class="collapse panel-collapse overflow-nav-dropdown" data-parent="#overflow-nav" role="tabpanel" id="new-customer-offers">
       <div class="special-offer">
         <h1 class="text-cursive">Special Offer</h1>
         <p>As low as
@@ -29,20 +32,30 @@ status: inprogress
       </div>
     </aside>
     </li>
-    <li>
-      <a href="">Our Psychics <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+    <li class="panel">
+      <a href="#" data-target="#nav-psychics" class="collapsed" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Our Psychics
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="collapse panel-collapse overflow-nav-dropdown" data-parent="#overflow-nav" id="nav-psychics" role="tabpanel">Our psychics</aside>
     </li>
-    <li class="hidden-xs">
-      <a href="">Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+    <li class="hidden-xs panel">
+      <a href="#" data-target="#nav-horoscopes" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Horoscopes
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-horoscopes" role="tabpanel">Horoscopes</aside>
     </li>
-    <li class="hidden-xs hidden-sm">
-      <a href="">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+    <li class="hidden-xs hidden-sm panel">
+      <a href="#" data-target="#nav-readings" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-readings" role="tabpanel">Readings</aside>
     </li>
     <li class="hidden-xs hidden-sm hidden-md">
-      <a href="">Articles &amp; Resources <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="#" target="#nav-articles" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Articles &amp; Resources
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-articles" role="tabpanel">Articles</aside>
     </li>
     <li class="hidden-lg dropdown">
-      <a data-toggle="collapse" href="#nav-overflow">More <span class="arrow-down text-muted"></span></a>
+      <a data-toggle="collapse" href="#nav-overflow" id="nav-more">More <span class="arrow-down text-muted"></span></a>
     </li>
   </ul>
 
@@ -61,3 +74,20 @@ status: inprogress
     </li>
   </ul>
 </nav>
+
+<script>
+  $(function() {
+    $('[data-toggle="collapse"][data-responsive="nav"]').each(function() {
+      $(this).responsiveCollapse({
+        isToggle: function($elem) {
+          // These should be toggles if the MORE element is NOT visible
+          return !$('#nav-more:visible').length;
+        },
+        disableToggle: function($elem) {
+          // Allow a.hrefs to be followed (as opposed to default)
+          return true;
+        }
+      });
+    });
+  });
+</script>
