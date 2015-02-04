@@ -173,14 +173,6 @@ $zindex-overflow-nav: 500 !default;
   }
 }
 
-.special-offer-symbol {
-  font-size: 4em;
-  font-weight: bold;
-  margin-top: 60px;
-  text-align: center;
-  width: 60px;
-}
-
 .special-offer-add {
   display: inline-block;
   padding: ($padding-base-horizontal * 1.2) $padding-base-vertical;
@@ -207,13 +199,7 @@ $zindex-overflow-nav: 500 !default;
     }
 }
 
-.special-offer-plus {
-  font-size: 4em;
-  font-weight: bold;
-}
-
 .our-psychics-readings {
-
     > a {
       border-color: $tan-dark;
       border-style: solid;
@@ -236,4 +222,65 @@ $zindex-overflow-nav: 500 !default;
           }
         }
       }
+}
+
+.link-only-dropdown {
+  display: inline-block;
+  float:left;
+  height: 260px;
+  text-align: left;
+
+  > h4 {
+    color: $tan-light;
+  }
+
+  > p {
+    font-size: .9em;
+  }
+
+  > ul {
+    font-size: .9em;
+    list-style: none;
+    margin: 20px 0 40px 0;
+    padding: 0;
+
+    > li {
+    > a {
+        color: #fff;
+        display: block;
+        font-weight: bold;
+        padding: 5px 15px;
+
+        &:hover{
+          color: $red;
+          text-decoration: none;
+          background-color: $tan;
+          }
+      
+      > h4 {
+        color: $tan-light;
+        margin: 0;
+        font-size: 1.1em;
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }  
+  }
+}
+
+.link-only-dropdown-intro {
+  width: 350px;
+  padding: 15px;
+}
+
+.link-only-border {
+  border-left: 1px solid $tan-dark;
+}
+
+.link-only-divider {
+  border-bottom: 1px dashed #fff;
+  height: 15px;
+  margin: 0 0 15px 15px;
 }
