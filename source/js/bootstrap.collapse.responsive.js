@@ -18,8 +18,11 @@
     this.options = options;
   };
 
-  var _getTargetElem = function($elem) {
-    return $elem.data('target') || $elem.attr('href');
+  var _getTargetElem = function($trigger) {
+    var href;
+    var target = $trigger.attr('data-target') ||
+                 (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, ''); // strip for ie7
+    return target;
   };
   // Default test for whether something should be a toggle
   var isToggle = function($elem) {
@@ -31,30 +34,32 @@
     return false;
   };
   // Default enable callback
+  // Some of this is pulled from collapse.js's initialization
   var enableToggle = function(config) {
     var $elem          = this.$elem;
     var targetElem     = _getTargetElem($elem);
     var $hiddenTargets = $(targetElem + ':hidden');
     var data           = $hiddenTargets.data('bs.collapse');
-    var option         = data ? 'toggle' : $.extend({}, $elem.data(), { trigger: this.elem, toggle: true });
+    var option         = data ? 'toggle' : $.extend({}, $elem.data(), { trigger: this.elem, show: true });
+
     $.fn.collapse.call($hiddenTargets, option);
-    $elem.toggleClass('collapsed');
-    $hiddenTargets.collapse('show');
+
     $elem.on('click.toggle-trigger', function(event) {
       $hiddenTargets.collapse('toggle');
       event.preventDefault();
     });
   };
   // Default disable callback
-  var disableToggle = function($elem) {
+  var disableToggle = function(config) {
     // Default behavior to "do nothing"
-    $elem.on('click.toggle-trigger', function(event) {
+    // This allows there to be `href` attributes
+    this.$elem.on('click.toggle-trigger', function(event) {
       event.preventDefault();
     });
   };
   // Behavior on "first" click of trigger
   // Default to "do nothing" and squelch click event
-  var onInit = function($elem, event) {
+  var onInit = function(event) {
     event.preventDefault();
   };
 
@@ -66,16 +71,15 @@
       onInit        : onInit
     },
     init: function() {
-      var config = $.extend({}, this.defaults, this.options),
-          $elem = this.$elem;
+      var config = $.extend({}, this.defaults, this.options);
       this.$elem.off('click.toggle-trigger');
-      if (config.isToggle($elem)) {
+      if (config.isToggle(this.$elem)) {
         config.enableToggle.call(this, config);
       } else {
-        config.disableToggle($elem, config);
+        config.disableToggle.call(this, config);
       }
       if (typeof config.onInit === 'function') {
-        config.onInit($elem, event);
+        config.onInit.call(this, event);
       }
       return this;
     }
@@ -85,7 +89,7 @@
 
   $.fn.responsiveCollapse = function(options) {
     return this.each(function() {
-      $(this).one('click', function() {
+      $(this).one('click', function() { // Lazy init
         new Plugin(this, options).init();
       });
     });
@@ -93,20 +97,18 @@
   $(function() {
     $(document).off('.collapse.data-api');
     // Reattach default bootstrap handling, but only
-    // for a subset
+    // for a subset. This requires fully re-defining what
+    // it was doing as there is no API-supported way to inspect
+    // event handlers in modern versions of jQuery.
     $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]:not([data-responsive])', function (e) {
       var $this   = $(this);
 
       if (!$this.attr('data-target')) e.preventDefault();
-
-      //var $target = getTargetFromTrigger($this)
       var $target = $(_getTargetElem($this));
       var data    = $target.data('bs.collapse');
       var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this });
-
       $.fn.collapse.call($target, option);
     });
-
   });
 
 })( jQuery, window , document );
