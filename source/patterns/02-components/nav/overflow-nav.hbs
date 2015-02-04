@@ -2,15 +2,15 @@
 status: inprogress
 ---
 
-<nav class="overflow-nav" aria-multiselectable="true">
-  <ul class="overflow-nav-primary panel-group" id="overflow-nav">
+<nav class="overflow-nav">
+  <ul class="overflow-nav-primary panel-group" id="overflow-nav" role="tablist" aria-multiselectable="true">
     <li class="panel panel-default">
-        <a href="#" class="visible-lg collapsed" data-target="#new-customer-offers" data-toggle="collapse" data-responsive="nav">
+        <a href="#" data-target="#new-customer-offers" class="visible-lg collapsed" role="tab" data-toggle="collapse" data-responsive="nav">
           <span class="nav-customer-offer">New Customer Offers</span>
           <span class="arrow-down visible-lg-inline-block text-muted"></span>
         </a>
         <a href="" class="hidden-lg">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></a>
-    <aside class="collapse panel-collapse overflow-nav-dropdown" data-parent="#overflow-nav" role="tabpanel" id="new-customer-offers">
+    <aside class="collapse panel-collapse overflow-nav-dropdown" id="new-customer-offers" role="tabpanel" data-parent="#overflow-nav">
       <div class="special-offer">
         <h1 class="text-cursive">Special Offer</h1>
         <p>As low as
@@ -33,23 +33,23 @@ status: inprogress
     </aside>
     </li>
     <li class="panel">
-      <a href="#" data-target="#nav-psychics" class="collapsed" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Our Psychics
+      <a href="#" data-target="#nav-psychics" class="collapsed" role="tab" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Our Psychics
         <span class="arrow-down visible-lg-inline-block text-muted"></span>
       </a>
-      <aside class="collapse panel-collapse overflow-nav-dropdown" data-parent="#overflow-nav" id="nav-psychics" role="tabpanel">Our psychics</aside>
+      <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-psychics" role="tabpanel" data-parent="#overflow-nav">Our psychics</aside>
     </li>
     <li class="hidden-xs panel">
-      <a href="#" data-target="#nav-horoscopes" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Horoscopes
+      <a href="#" data-target="#nav-horoscopes" class="collapsed" role="tab" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Horoscopes
         <span class="arrow-down visible-lg-inline-block text-muted"></span>
       </a>
       <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-horoscopes" role="tabpanel">Horoscopes</aside>
     </li>
     <li class="hidden-xs hidden-sm panel">
-      <a href="#" data-target="#nav-readings" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="#" data-target="#nav-readings" class="collapsed" role="tab" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
       <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-readings" role="tabpanel">Readings</aside>
     </li>
     <li class="hidden-xs hidden-sm hidden-md panel">
-      <a href="#" data-target="#nav-articles" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Articles &amp; Resources
+      <a href="#" data-target="#nav-articles" class="collapsed" role="tab" data-toggle="collapse" data-parent="#overflow-nav" data-responsive="nav">Articles &amp; Resources
         <span class="arrow-down visible-lg-inline-block text-muted"></span>
       </a>
       <aside class="collapse panel-collapse overflow-nav-dropdown" id="nav-articles" role="tabpanel">Articles</aside>
