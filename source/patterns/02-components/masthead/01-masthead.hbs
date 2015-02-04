@@ -96,14 +96,14 @@ $(function(){
 
   // When the toggle is clicked, make sure the masthead is in the "open search"
   // state (so the search is visible but other elements are not)
-  $toggle.click(function (event) {
+  $toggle.on('click', function (event) {
     event.preventDefault();
     $masthead.addClass('is-search-open');
     $query.click().focus();
   });
 
   // When the search type is changed, automatically focus the query field
-  $types.change(function () {
+  $types.on('change', function () {
     $query.click().focus();
   });
 
