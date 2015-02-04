@@ -1,0 +1,55 @@
+---
+description: >
+  Allow a custom element to behave as if a native `<select>` would. Initial
+  value and value updates will apply to the `.js-select-value` element therein.
+  You can "delegate" `focus` states to an inner element with the
+  `.js-select-delegate` class.
+status: inprogress
+---
+
+<div class="select">
+  <select>
+    <option selected>John Lennon</option>
+    <option>Paul McCartney</option>
+    <option>George Harrison</option>
+    <option>Ringo Starr</option>
+  </select>
+  <span class="btn btn-block btn-default js-select-delegate" aria-hidden="true">
+    <span class="js-select-value"></span>
+    <span class="arrow-down"></span>
+  </span>
+</div>
+
+<script>
+
+$(function(){
+
+  $('.select').each(function(){
+    // Save some elements as variables
+    var $element = $(this);
+    var $select = $element.find('select');
+    var $value = $element.find('.js-select-value');
+
+    // Allow for a delegate for state classes (useful for avoiding duplication
+    // in button styles, etc.)
+    var $delegate = $element.find('.js-select-delegate');
+    if (!$delegate.length) $delegate = $element;
+
+    // Bind event handlers to <select>
+    $select.on({
+      // On change or keyup, update the value text
+      'change keyup': function () {
+        $value.text($select.val());
+      },
+      // Focus/blur
+      'focus blur': function (event) {
+        $delegate.toggleClass('focus', event.type === 'focus');
+      }
+    });
+    // Trigger the change event so the value is current
+    $select.trigger('change');
+  });
+
+});
+
+</script>

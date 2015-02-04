@@ -41,18 +41,22 @@ status: inprogress
           </a>
         </li>
       </ul>
-      <form class="masthead-search">
+      <form action="" class="masthead-search">
         <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default">
+          <div class="input-group-btn select">
+            <div class="btn btn-default js-select-delegate" aria-hidden="true">
               <svg class="icon icon-md">
                 <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
               </svg>
-              Psychics
+              <span class="js-select-value" aria-hidden="true"></span>
               <span class="arrow-down text-muted"></span>
-            </button>
+            </div>
+            <select id="search-types">
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
           </div>
-          <input id="q" type="text" class="form-control">
+          <input id="q" type="search" class="form-control">
           <div class="input-group-btn">
             <button type="button" class="btn btn-info btn-shaded">Go</button>
           </div>
@@ -83,12 +87,40 @@ $(function(){
 
   var $masthead = $('.masthead');
   var $toggle   = $('.masthead-search-toggle');
-  var $field    = $('#q');
+  var $fields   = $masthead.find('input, select, button');
+  var $types    = $('#search-types');
+  var $query    = $('#q');
 
-  $toggle.click(function (event) {
+  var hideDelay = 2000;
+  var hideTimeout;
+
+  // When the toggle is clicked, make sure the masthead is in the "open search"
+  // state (so the search is visible but other elements are not)
+  $toggle.on('click', function (event) {
     event.preventDefault();
     $masthead.addClass('is-search-open');
-    $field.click().focus();
+    $query.click().focus();
+  });
+
+  // When the search type is changed, automatically focus the query field
+  $types.on('change', function () {
+    $query.click().focus();
+  });
+
+  // With any of the form fields...
+  $fields.on({
+    // On focus, disable browser zoom and stop any hiding that may occur
+    'focus': function () {
+      $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
+    },
+    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    'blur': function () {
+      hideTimeout = setTimeout(function () {
+        $.mobile.zoom.enable(true);
+        $masthead.removeClass('is-search-open');
+      },  hideDelay);
+    }
   });
 
 });
