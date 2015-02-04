@@ -92,6 +92,8 @@
   };
   $(function() {
     $(document).off('.collapse.data-api');
+    // Reattach default bootstrap handling, but only
+    // for a subset
     $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]:not([data-responsive])', function (e) {
       var $this   = $(this);
 
