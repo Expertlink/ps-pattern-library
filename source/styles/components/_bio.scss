@@ -76,6 +76,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $red;
   border-color: $red;
 }  
+
 .bio-audio-video {
   background: $gray-lighter;
   border-radius: $border-radius-small; 
@@ -90,6 +91,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     margin-bottom: ($bio-padding / 2);
     border-top: 1px solid $gray-lighter;
     border-bottom: 1px solid $gray-lighter;
+    border-radius: 0;
     > p {
       display: inline-block;
       width: auto;
@@ -121,9 +123,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   display: table;
   @media (min-width: $screen-lg-min) {
     width: 100%;
+    max-width: 30em;
     margin: 0;
-    padding: 0;
     display: block;
+    &.reviews-header {
+      width: calc(100% + #{$arrange-gutter-size});
+      margin: 0 ($arrange-gutter-size * -0.5);
+      display: table;
+    }
   }
 }
 .bio-action {
@@ -135,6 +142,11 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 100%;
     padding: 0;
     margin: 0 0 ($arrange-gutter-size/2);
+    &.reviews-header {
+      width: 50%;
+      display: table-cell;
+      padding: 0 ($arrange-gutter-size/2);
+    }
   }
 }
 .bio-price {
@@ -258,12 +270,20 @@ a.section-parent {
       padding: 0;
       background: transparent;
     }
+    .reviews-count {
+      font-size: 1em;
+      padding-top: 0.25em;
+      padding-bottom: 0.75em;
+    }  
     .review {
       padding-left: 0;
       padding-right: 0;
     }
     .bio-hidden-lg {
       display: none;
+    }
+    .review-stars {
+      right: 0;
     }
   }
 }

@@ -39,7 +39,7 @@ $(function(){
     $select.on({
       // On change or keyup, update the value text
       'change keyup': function () {
-        $value.text($select.val());
+        $value.text($select.find('option:selected').text());
       },
       // Focus/blur
       'focus blur': function (event) {
