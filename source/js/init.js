@@ -7,8 +7,11 @@ $(function() {
   // Initialize to truncate them.
   $('[data-truncate]').each(function() {
     var length = $(this).data('truncate') || 240;
-    $(this).succinct({
-      size: length
-    });
+    if ($(this).html().length > length) {
+      $(this).succinct({
+        size: length
+      });
+      $(this).siblings('[data-truncate-more]').removeClass('hidden');
+    }
   });
 });

@@ -4,7 +4,11 @@ description: >
   In this variant of a review list, you can see the truncation
   performed at 120 characters via the (vendor) jQuery succinct
   plugin. Truncation size can be altered by changing the value
-  of the `data-truncate` attribute.
+  of the `data-truncate` attribute. To provide a link to a full
+  representation of the truncated content (or any element you'd
+  like to make visible in the event that content is truncated),
+  add a `[data-truncate-more]` data attribute to that element.
+  See `_review-truncated` partial source for example.
 status: inprogress
 ---
 
