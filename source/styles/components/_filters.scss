@@ -3,10 +3,6 @@ $filter-padding-horizontal: $padding-base-horizontal !default;
 $filter-max-depth: 2 !default;
 $filter-control-size: 20px !default;
 
-.box > .filter:only-child {
-  margin-bottom: -1px;
-}
-
 .filter-heading {
   margin: 0;
   padding: 0;
