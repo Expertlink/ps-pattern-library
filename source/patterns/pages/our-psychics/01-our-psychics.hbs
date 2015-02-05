@@ -30,12 +30,51 @@ status: inprogress
       </div>
     	<div class="prairie-dog-overlay"></div>
       <div class="col-md-9 prairie-dog-bg prairie-dog-bg-unshift">
+        <div class="row u-margin-ends hidden-xs hidden-sm">
+          <div class="col-xs-5">
+            <div class="arrange arrange-middle arrange-gutter">
+              <div class="arrange-fit select">
+                <button class="btn btn-default js-select-delegate" type="button" aria-hidden="true">
+                  <span class="js-select-value"></span>
+                  <span class="arrow-down"></span>
+                </button>
+                <select>
+                  <option value="9">9 per page</option>
+                  <option value="15">15 per page</option>
+                  <option value="30">30 per page</option>
+                </select>
+              </div>
+              <div class="arrange-fill text-nowrap">
+                <b>1</b>-<b>9</b> of <b>289</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-7 text-right">
+            <ul class="pagination u-no-margin">
+              <li class="disabled"><a href="#"><span class="arrow-left-equilateral" aria-hidden="true"></span><span class="sr-only">Previous</span></a></li>
+              <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li class="disabled"><span>&hellip;</span></li>
+              <li><a href="#">35</a></li>
+              <li><a href="#"><span class="arrow-right-equilateral" aria-hidden="true"></span><span class="sr-only">Next</span></a></li>
+            </ul>
+          </div>
+        </div>
         <div class="hidden-xs hidden-sm u-margin-top">
           {{> tabs/tabs }}
         </div>
         {{> advisors/advisor-grid }}
-        <div class="text-center">
-          {{> pagination/states }}
+        <div class="text-center text-right-md text-right-lg">
+          <ul class="pagination">
+            <li class="disabled"><a href="#"><span class="arrow-left-equilateral" aria-hidden="true"></span><span class="sr-only">Previous</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="disabled"><span>&hellip;</span></li>
+            <li><a href="#">35</a></li>
+            <li><a href="#"><span class="arrow-right-equilateral" aria-hidden="true"></span><span class="sr-only">Next</span></a></li>
+          </ul>
         </div>
       </div>
     </div>
