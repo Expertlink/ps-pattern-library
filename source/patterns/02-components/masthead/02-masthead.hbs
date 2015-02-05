@@ -2,4 +2,142 @@
 status: inprogress
 ---
 
-{{> masthead/_masthead }}
+<div class="masthead">
+
+  <a class="masthead-logo" href="">
+    <picture class="picture-responsive">
+      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
+      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+    </picture>
+  </a>
+
+  <div class="masthead-body">
+
+    <div class="masthead-controls">
+      <ul class="masthead-menu">
+        {{#if account}}
+          <li class="dropdown">
+            <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+              Hi, {{account.firstName}}
+              <span class="arrow-down text-muted"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Sally&rsquo;s Account</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li>
+            <a href="" class="btn btn-link text-default">
+              Login
+            </a>
+          </li>
+        {{/if}}
+        <li class="hidden-xs hidden-sm hidden-md dropdown">
+          <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+            Customer Care
+            <span class="arrow-down text-muted"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+          </ul>
+        </li>
+        <li class="masthead-search-toggle">
+          <a href="" class="btn btn-sunrise btn-shaded">
+            <svg class="icon icon-md">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <form action="" class="masthead-search">
+        <div class="input-group">
+          <div class="input-group-btn select">
+            <div class="btn btn-default js-select-delegate" aria-hidden="true">
+              <svg class="icon icon-md">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+              </svg>
+              <span class="js-select-value" aria-hidden="true"></span>
+              <span class="arrow-down text-muted"></span>
+            </div>
+            <select id="search-types">
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
+          </div>
+          <input id="q" type="search" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-info btn-shaded">Go</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="masthead-messaging text-right u-padding-top visible-lg-block">
+      <p><a class="text-default text-underline" href="">Our Satisfaction Guarantee</a></p>
+      <p class="h2 u-no-margin-top">
+        <a class="text-danger" href="tel:18009653049">
+          <svg class="icon icon-md">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+          </svg>
+          1.800.965.3049
+        </a>
+      </p>
+      <p class="u-no-margin-bottom">Since 1989, the Most Respected Psychic Service</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+$(function(){
+
+  var $masthead = $('.masthead');
+  var $toggle   = $('.masthead-search-toggle');
+  var $fields   = $masthead.find('input, select, button');
+  var $types    = $('#search-types');
+  var $query    = $('#q');
+
+  var hideDelay = 2000;
+  var hideTimeout;
+
+  // When the toggle is clicked, make sure the masthead is in the "open search"
+  // state (so the search is visible but other elements are not)
+  $toggle.on('click', function (event) {
+    event.preventDefault();
+    $masthead.addClass('is-search-open');
+    $query.click().focus();
+  });
+
+  // When the search type is changed, automatically focus the query field
+  $types.on('change', function () {
+    $query.click().focus();
+  });
+
+  // With any of the form fields...
+  $fields.on({
+    // On focus, disable browser zoom and stop any hiding that may occur
+    'focus': function () {
+      $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
+    },
+    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    'blur': function () {
+      hideTimeout = setTimeout(function () {
+        $.mobile.zoom.enable(true);
+        $masthead.removeClass('is-search-open');
+      },  hideDelay);
+    }
+  });
+
+});
+
+</script>
