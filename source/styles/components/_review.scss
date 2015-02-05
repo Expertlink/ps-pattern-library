@@ -42,11 +42,13 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 .reviews-count {
-  font-size: 1.2em;
   margin: 0 5em 0 0;
+  @media (min-width: $screen-xs-min) {
+    font-size: 1.2em;
+  }
 }
 .review-stars-average {
-  margin:0;  
+  margin: -0.3em 0 0;  
   float: right;
   .stars {
     display: block;
@@ -65,7 +67,7 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   a {
     color: $blue;
     text-decoration: underline;
-    font-weight: bold;
+    text-wrap: nowrap;
     &:hover,
     &:focus {
       color: $blue-bright;
