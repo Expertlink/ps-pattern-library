@@ -12,7 +12,7 @@
       <h4>{{firstName}} x{{ext}}</h4>
       <div class="advisor-tile-meta">
         <p class="advisor-tile-meta-group stars stars-{{replace rating "." "-"}}">
-          {{{formatFraction rating}}} stars
+          <span class="sr-only">{{{formatFraction rating}}} stars</span>
         </p>
         <p class="advisor-tile-meta-group">
           {{#if promoPrice}}
@@ -22,14 +22,14 @@
             <b>${{formatCurrency basePrice}}/min</b>
           {{/if}}
         </p>
-        {{#if channel}}  
+        {{#if channel}}
           <p class="advisor-tile-meta-group">
             {{channel}} <del class="text-muted">${{formatCurrency basePrice}}</del> ${{formatCurrency channelPrice}}/min
           </p>
         {{/if}}
       </div>
       <div class="advisor-tile-meta">
-        
+
       </div>
       {{#if online}}
         {{#if available}}
