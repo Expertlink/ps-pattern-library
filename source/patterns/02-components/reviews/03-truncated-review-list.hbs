@@ -1,0 +1,17 @@
+---
+fullWidth: true
+description: >
+  In this variant of a review list, you can see the truncation
+  performed at 120 characters via the (vendor) jQuery succinct
+  plugin. Truncation size can be altered by changing the value
+  of the `data-truncate` attribute.
+status: inprogress
+---
+
+
+<div class="reviews">
+  {{> reviews/_review-summary}}
+  {{#each review.list}}
+    {{> reviews/_review-truncated}}
+  {{/each}}
+</div>
