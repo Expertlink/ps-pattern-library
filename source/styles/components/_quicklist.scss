@@ -6,7 +6,7 @@ $quicklist-narrow-min: $screen-sm-min !default;
 $zindex-quicklist: $zindex-navbar-fixed !default;
 $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
-.quicklist-open {
+.fixed-supported .quicklist-open {
   @media (max-width: $quicklist-full-max) {
     overflow: hidden;
   }
@@ -19,6 +19,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   border-radius: 50%;
   bottom: $quicklist-item-padding;
   box-shadow: 0 3px 3em rgba(#000,0.35);
+  display: none;
   height: 54px;
   margin: 0;
   overflow: hidden;
@@ -39,8 +40,12 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     background-image: none;
   }
 
-  @media (min-width: $quicklist-narrow-min) {
-    display: none;
+  .fixed-supported & {
+    display: block;
+
+    @media (min-width: $quicklist-narrow-min) {
+      display: none;
+    }
   }
 }
 
@@ -61,6 +66,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
 .quicklist {
   bottom: 0;
+  display: none;
   height: 100%;
   left:  0;
   width: 100%;
@@ -69,35 +75,38 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   transition: transform 300ms ease-out;
   z-index: $zindex-quicklist;
 
-  display: none;
+  .fixed-supported & {
+    &.open {
+      display: block;
+      transform: translateY(100%);
+    }
 
-  &.open {
-    display: block;
-    transform: translateY(100%);
-  }
-
-  &.in {
-    transform: translateY(0);
+    &.in {
+      transform: translateY(0);
+    }
   }
 
   @media (min-width: $quicklist-narrow-min) {
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
     box-shadow: 0 0 1em rgba(#000, 0.2);
-    display: block;
     left: 50%;
     height: ($quicklist-header-height - 1px);
     margin-left: -160px;
     transition-property: height;
     width: 320px;
 
-    &.open,
-    &.in {
-      transform: none;
-    }
+    .fixed-supported & {
+      display: block;
+      
+      &.open,
+      &.in {
+        transform: none;
+      }
 
-    &.in {
-      height: 75%;
+      &.in {
+        height: 75%;
+      }
     }
   }
 }
