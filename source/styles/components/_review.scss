@@ -67,7 +67,7 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   a {
     color: $blue;
     text-decoration: underline;
-    text-wrap: nowrap;
+    white-space: nowrap;
     &:hover,
     &:focus {
       color: $blue-bright;
