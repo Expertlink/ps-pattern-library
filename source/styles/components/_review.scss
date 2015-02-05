@@ -24,9 +24,6 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   position: absolute; 
   top: ($line-height-computed/2);
   right: $review-padding;
-  @media (min-width: $screen-lg-min) {
-    right:0;
-  }
 }
 .reviews-summary {
   background: lighten($gray-lighter,10%);
