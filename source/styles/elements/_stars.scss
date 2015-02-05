@@ -1,25 +1,39 @@
-$star-width: 16px !default;
-$star-width-lg: 22px !default;
-$star-height: $star-width !default;
-$star-height-lg: $star-width-lg !default;
+//= Options
+
+$star-size-base: 16px !default;
 $star-rating-min: 0 !default;
 $star-rating-max: 5 !default;
 $star-rating-step: .5 !default;
 
+//= Sizing mixin
+
+// .stars on its own will respect the parent font-size, but you can also set
+// sizes overtly if that's your jam
+
+@mixin star-size (
+  $star-size: $star-size-base,
+  $relative-to: $font-size-base,
+  $star-max: $star-rating-max
+) {
+  @if $relative-to {
+    $star-size: ($star-size / $font-size-base * 1em);
+  }
+  height: $star-size;
+  width: $star-size * $star-max;
+}
+
+//= Core component
+
 .stars {
   display: inline-block;
   overflow: hidden;
-  height: $star-height;
-  position: relative;
-  width: ($star-width * $star-rating-max);
-
-  @include text-hide(); // Bootstrap mixin for hiding text
+  vertical-align: middle;
+  @include star-size();
 
   &:before,
   &:after {
-    // TODO: For performance, we should consider using data-uris for small
-    // SVG assets like this.
-    background: url(/images/star.svg) repeat-x;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
     content: '';
     display: block;
     float: left;
@@ -27,16 +41,19 @@ $star-rating-step: .5 !default;
   }
 
   &:before {
+    background-image: url(/images/star.svg);
     background-position: left;
     width: 0;
   }
 
   &:after {
+    background-image: url(/images/star-empty.svg);
     background-position: right;
     width: 100%;
-    background-image: url(/images/star-empty.svg);
   }
 }
+
+//= Sizing
 
 @for $i from $star-rating-min through ($star-rating-max / $star-rating-step) {
   $step: ($i * $star-rating-step);
@@ -54,10 +71,8 @@ $star-rating-step: .5 !default;
   }
 }
 
-.stars.stars-lg {
-  width: ($star-width-lg * $star-rating-max);
-  height: $star-height-lg;
-  &:after, &:before {
-    background-size: auto 100%;
-  }
+//= Size modifiers
+
+.stars-lg {
+  @include star-size(22px);
 }
