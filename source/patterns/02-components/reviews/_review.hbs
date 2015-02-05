@@ -3,7 +3,7 @@
     <span class="review-date">{{date}}</span>
     <span class="hidden-xs"> with </span>
     <span class="reviewer">{{reviewer}}</span>
-    <span class="review-stars stars stars-{{replace rating "." "-"}}">{{{formatFraction rating}}} stars</span>
+    <span class="review-stars stars stars-{{replace rating "." "-"}}"><span class="sr-only">{{{formatFraction rating}}} stars</span></span>
     <span class="review-type">
       {{#if call}}
         Phone Reading
