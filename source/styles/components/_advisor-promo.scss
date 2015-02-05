@@ -42,3 +42,22 @@
     }
   }
 }
+
+.advisor-promo-side {
+  a {
+    display: block;
+    font-weight: bold;
+    font-weight: bold;
+    &:after {
+      position: absolute;
+      display: block;
+      content:"";
+      top: 0;
+      right: -1.4em;
+      width: 6em;
+      height: 5em;
+      background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
+      background-size: 100% auto;
+    }
+  }
+}

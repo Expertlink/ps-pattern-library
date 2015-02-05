@@ -5,13 +5,16 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
-  <div class="box-full box-default-lg box-lighter box-sheer">
+  <div class="box-full box-default-lg box-lighter box-sheer u-shift-up">
     {{> our-psychics/_top-promo }}
     <div class="hidden-md hidden-lg">
       {{> toolbar/toolbar }}
     </div>
     <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
       <div class="col-md-3">
+        <div class="box box-lighter box-shadow u-margin-ends hidden-xs hidden-sm">
+          {{> our-psychics/_sidebar-promo }}
+        </div>
         <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
           {{> our-psychics/_sidebar-search }}
         </div>
@@ -26,7 +29,7 @@ status: inprogress
         </div>
       </div>
     	<div class="prairie-dog-overlay"></div>
-      <div class="col-md-9 prairie-dog-bg">
+      <div class="col-md-9 prairie-dog-bg prairie-dog-bg-unshift">
         <div class="row u-margin-ends hidden-xs hidden-sm">
           <div class="col-xs-5">
             <div class="arrange arrange-middle arrange-gutter">
