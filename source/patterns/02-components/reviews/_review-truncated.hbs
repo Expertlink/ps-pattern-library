@@ -1,5 +1,8 @@
 <div class="review">
   <p class="review-meta">
+    {{#if featured}}
+      <strong class="u-block">Featured Review</strong>
+    {{/if}}
     <span class="review-date">{{date}}</span>
     <span class="hidden-xs bio-hidden-lg"> with </span>
     <span class="reviewer">{{reviewer}}</span>
