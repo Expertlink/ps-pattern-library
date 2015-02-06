@@ -183,7 +183,7 @@ description: Uses custom JavaScript logic for handling navigation behavior (incl
 
   var CustomNav = function (element) {
     this.$element = $(element);
-    this.$element.on('click', '[data-toggle="collapse"]', $.proxy(this.show, this));
+    this.$element.on('click', '[data-toggle="collapse"]:not(.js-custom-nav-more)', $.proxy(this.show, this));
   };
 
   CustomNav.prototype.show = function (event) {
