@@ -41,6 +41,9 @@ $review-padding: ($line-height-computed * (2/3)) !default;
     border-width: 1px;
   }
 }
+.is-featured {
+  display: block;
+}
 .reviews-count {
   margin: 0 5em 0 0;
   @media (min-width: $screen-xs-min) {

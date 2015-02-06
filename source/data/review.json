@@ -6,6 +6,7 @@
   "rating": 4.5,
   "review": "I really appreciate your highly detailed insight and advice - thank you!!!",
   "reviewID": "1",
+  "featured": false,
 
   "list": [
     {
@@ -15,7 +16,8 @@
       "chat": false,
       "rating": 4.5,
       "review" : "First time speaking with Mazie and definitely felt I was speaking with an old friend. She is highly accurate and was spot on. Some things does not make sense at the moment but I am sure it will all fall in place as she said. Now waiting for prediction to pass and will definitely speak to Mazie again. Thank you Mazie! Blessings!",
-      "reviewID": "2"
+      "reviewID": "2",
+      "featured": true
     },
     {
       "date": "01/20/2015",
