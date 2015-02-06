@@ -5,33 +5,40 @@ status: inprogress
 <nav class="overflow-nav custom-nav">
   <ul class="overflow-nav-primary">
     <li>
-        <a href="" class="visible-lg"><span class="nav-customer-offer">New Customer Offers</span> <span class="arrow-down visible-lg-inline-block text-muted"></span></a></span>
-        <a href="" class="hidden-lg">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></a>
-    <aside class="visible-lg overflow-nav-dropdown collapse">
-      <div class="special-offer">
-        <h1 class="text-cursive">Special Offer</h1>
-        <p>As low as
-        <span>$1.00</span>per minute</p>
-        <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
-      </div>
-      <div class="special-offer-add">
-        <a href="#">
-        <img src="/images/minutes-icon.png" />
-        <h4>3 free minutes with your first paid reading!</h4>
-        </a>
-      </div>
-      <div class="special-offer-add">
-        <a href="#">
-        <img src="/images/satisfaction-seal.png" />
-        <h4>100% Satisfaction Gurantee</h4>
-        <p>If you're not happy with your last paid reading, it's free!</p>
-        </a>
-      </div>
-    </aside>
+      <a href="#" class="visible-lg collapsed" data-target="#nav-customer-offers" data-toggle="collapse">
+        <span class="nav-customer-offer">New Customer Offers</span>
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <a href="" class="hidden-lg">New Customers
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-customer-offers">
+        <div class="special-offer">
+          <h1 class="text-cursive">Special Offer</h1>
+          <p>As low as
+          <span>$1.00</span>per minute</p>
+          <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+        </div>
+        <div class="special-offer-add">
+          <a href="#">
+          <img src="/images/minutes-icon.png" />
+          <h4>3 free minutes with your first paid reading!</h4>
+          </a>
+        </div>
+        <div class="special-offer-add">
+          <a href="#">
+          <img src="/images/satisfaction-seal.png" />
+          <h4>100% Satisfaction Gurantee</h4>
+          <p>If you're not happy with your last paid reading, it's free!</p>
+          </a>
+        </div>
+      </aside>
     </li>
     <li>
-      <a href="">Our Psychics <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
-      <aside class="visible-lg overflow-nav-dropdown our-psychics-readings arrange arrange-equal collapse">
+      <a href="#" class="collapsed" data-target="#nav-psychics" data-toggle="collapse">Our Psychics
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown our-psychics-readings arrange arrange-equal collapse" id="nav-psychics">
         <a class="arrange-fill" href="#">
           <h4>Phone Readings</h4>
             <p>Get live psychic readings by phone</p>
@@ -53,8 +60,10 @@ status: inprogress
       </aside>
     </li>
     <li class="hidden-xs">
-      <a href="">Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
-      <aside class="visible-lg overflow-nav-dropdown collapse">
+      <a href="#" data-target="#nav-horoscopes" class="collapsed" data-toggle="collapse">
+        Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-horoscopes">
         <div class="link-only-dropdown link-only-dropdown-intro">
           <h4>Weekly Love Horoscope</h4>
           <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
@@ -83,8 +92,10 @@ status: inprogress
       </aside>
     </li>
     <li class="hidden-xs hidden-sm">
-      <a href="">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
-      <aside class="visible-lg overflow-nav-dropdown collapse">
+      <a href="" data-target="#nav-readings" class="collapsed" data-toggle="collapse">About Psychic Readings
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-readings">
         <div class="link-only-dropdown link-only-dropdown-intro">
           <h4>About Psychic Readings</h4>
           <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
@@ -123,8 +134,10 @@ status: inprogress
       </aside>
     </li>
     <li class="hidden-xs hidden-sm hidden-md">
-      <a href="">Articles &amp; Resources <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
-      <aside class="visible-lg overflow-nav-dropdown collapse">
+      <a href="" data-target="#nav-articles" class="collapsed" data-toggle="collapse">Articles &amp; Resources
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-articles">
         <div class="link-only-dropdown link-only-dropdown-intro">
           <h4>Articles and Resources</h4>
           <p>Like a Blog, Only Better!</p>
