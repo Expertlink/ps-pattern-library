@@ -2,13 +2,13 @@
 status: inprogress
 ---
 
-<nav class="overflow-nav">
+<nav class="overflow-nav custom-nav">
   <ul class="overflow-nav-primary">
     <li>
         <a href="" class="visible-lg"><span class="nav-customer-offer">New Customer Offers</span> <span class="arrow-down visible-lg-inline-block text-muted"></span></a></span>
         <a href="" class="hidden-lg">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></a>
     <aside class="visible-lg overflow-nav-dropdown collapse">
-      <div class="special-offer"> 
+      <div class="special-offer">
         <h1 class="text-cursive">Special Offer</h1>
         <p>As low as
         <span>$1.00</span>per minute</p>
@@ -22,12 +22,12 @@ status: inprogress
       </div>
       <div class="special-offer-add">
         <a href="#">
-        <img src="/images/satisfaction-seal.png" /> 
+        <img src="/images/satisfaction-seal.png" />
         <h4>100% Satisfaction Gurantee</h4>
         <p>If you're not happy with your last paid reading, it's free!</p>
         </a>
       </div>
-    </aside>    
+    </aside>
     </li>
     <li>
       <a href="">Our Psychics <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
@@ -146,7 +146,7 @@ status: inprogress
       <a data-toggle="collapse" href="#nav-overflow">More <span class="arrow-down text-muted"></span></a>
     </li>
   </ul>
-  
+
   <ul class="overflow-nav-secondary collapse hidden-lg" id="nav-overflow">
     <li class="hidden-sm hidden-md">
       <a href="">Horoscopes</a>
@@ -162,3 +162,58 @@ status: inprogress
     </li>
   </ul>
 </nav>
+
+<script>
++function ($) {
+  'use strict';
+
+  var CustomNav = function (element) {
+    this.$element = $(element);
+    this.$element.on('click', '[data-toggle="collapse"]', $.proxy(this.show, this));
+  };
+
+  CustomNav.prototype.show = function (event) {
+    var $trigger = $(event.currentTarget);
+    var $target = $($trigger.data('target'));
+    var $current = this.$element.find('.collapse.in, .collapsing').not($target);
+    var shouldBypass = this.$element.find('.js-custom-nav-more:visible').length;
+
+    if (shouldBypass) {
+      event.stopPropagation();
+      return true;
+    }
+    // If you're being a click-happy maniac, be patient
+    if ($current.hasClass('collapsing')) {
+      return false;
+    }
+    // If there is one showing, collapse it first...
+    if ($current.length) {
+      $current.one('hidden.bs.collapse', function () {
+        $target.collapse('show');
+      });
+      $current.collapse('hide');
+    } else {
+      // Otherwise just show the selection
+      $target.collapse('show');
+    }
+    // Don't let the document do our collapsing
+    return false;
+  };
+
+  function Plugin () {
+    return this.each(function () {
+      var $this = $(this);
+      var instance = $this.data('customNav');
+      if (!instance) {
+        $this.data('customNav', new CustomNav(this));
+      }
+    });
+  }
+
+  $.fn.customNav = Plugin;
+}(jQuery);
+
+$(function() {
+  $('.custom-nav').customNav();
+});
+</script>
