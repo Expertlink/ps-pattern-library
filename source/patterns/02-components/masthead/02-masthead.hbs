@@ -15,17 +15,32 @@ status: inprogress
 
     <div class="masthead-controls">
       <ul class="masthead-menu">
-        <li>
-          <a href="" class="btn btn-link text-default">
-            Login
-          </a>
-        </li>
+        {{#if account}}
+          <li class="dropdown">
+            <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+              Hi, {{account.firstName}}
+              <span class="arrow-down text-muted"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">{{account.firstName}}&rsquo;s Account</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li>
+            <a href="" class="btn btn-link text-default">
+              Login
+            </a>
+          </li>
+        {{/if}}
         <li class="hidden-xs hidden-sm hidden-md dropdown">
           <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
             Customer Care
             <span class="arrow-down text-muted"></span>
           </a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="customer-care-label">
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
