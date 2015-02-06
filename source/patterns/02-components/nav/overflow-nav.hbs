@@ -156,7 +156,7 @@ status: inprogress
       </aside>
     </li>
     <li class="hidden-lg dropdown">
-      <a data-toggle="collapse" href="#nav-overflow">More <span class="arrow-down text-muted"></span></a>
+      <a data-toggle="collapse" href="#nav-overflow" class="js-custom-nav-more">More <span class="arrow-down text-muted"></span></a>
     </li>
   </ul>
 
@@ -207,7 +207,7 @@ status: inprogress
       $current.collapse('hide');
     } else {
       // Otherwise just show the selection
-      $target.collapse('show');
+      $target.collapse('toggle');
     }
     // Don't let the document do our collapsing
     return false;
