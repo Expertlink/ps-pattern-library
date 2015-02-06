@@ -1,7 +1,7 @@
 {
-  "phoneIsAvailable": true,
-  "chatIsAvailable" : true,
-  "isInReading"     : false,
+  "phoneIsAvailable": false,
+  "chatIsAvailable" : false,
+  "isInReading"     : true,
   "phoneQueuePosition": 0,
   "list": [
     {
