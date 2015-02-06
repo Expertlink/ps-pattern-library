@@ -66,10 +66,10 @@ $masthead-search-full-min: $screen-md-min !default;
 
 .masthead-logo {
   left: $padding-masthead-horizontal;
-  margin-top: -20px;
+  margin-top: -18px;
   position: absolute;
   top: 50%;
-  width: 148px;
+  width: 130px;
 
   @media (min-width: $screen-lg-min) {
     margin-top: (68px / -2);
@@ -89,10 +89,6 @@ $masthead-search-full-min: $screen-md-min !default;
   &,
   > li {
     float: left;
-  }
-
-  > li {
-    margin-left: $padding-masthead-horizontal;
   }
 }
 
@@ -118,7 +114,7 @@ $masthead-search-full-min: $screen-md-min !default;
     float: left;
     margin-left: $padding-masthead-horizontal;
     position: static;
-    width: 350px;
+    width: ($screen-lg-min / 3);
   }
 }
 
