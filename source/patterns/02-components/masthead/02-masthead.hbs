@@ -18,11 +18,17 @@ status: inprogress
         {{#if account}}
           <li class="dropdown">
             <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
-              Hi, {{account.firstName}}
+              <span class="hidden-xs">{{account.firstName}}&rsquo;s </span>Account
               <span class="arrow-down text-muted"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="">{{account.firstName}}&rsquo;s Account</a></li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="">
+                  <span class="visible-xs-inline">{{account.firstName}}&rsquo;s </span> 
+                  Account
+                  <span class="hidden-xs">Home</span>
+                </a>
+              </li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
