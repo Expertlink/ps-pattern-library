@@ -1,0 +1,43 @@
+
+  <h1 class="bio-name text-primary">Psychic Mazie x1337</h1>
+  <p class="bio-headline">Insightful and Compassionate</p>
+  <p><span class="stars stars-lg stars-4-5"><span class="sr-only">{{{formatFraction 4.5}}} stars</span></span> <span class="review-count">(<a href="#reviews">1204 Ratings</a>)</span></p>
+  <div class="bio-audio-video">
+    <p><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" /></svg> Watch my video</a></p>
+    <p><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#audio" /></svg> Listen to <span class="hidden-xs hidden-lg">my </span>message</a></p>
+  </div>
+  <div class="bio-availability">
+    {{#ifOr phoneIsAvailable chatIsAvailable}}
+      <h4 class="text-success">Available until 8:27pm</h4>
+    {{/ifOr}}
+    <ul class="bio-actions">
+      {{#if chatIsAvailable}}
+      <li class="bio-action">
+        <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
+        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+      </li>
+      {{/if}}
+      {{#if phoneIsAvailable}}
+      <li class="bio-action">
+        <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
+        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+      </li>
+      {{else}}
+        {{#if isInReading}}
+          {{#if phoneQueuePosition}}
+            <h4 class="text-muted">I'm in a reading</h4>
+            <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>  
+          {{else}}
+            <h4 class="text-muted">I'm in a reading (4 in line)</h4>
+            <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+          {{/if}}
+        {{else}}
+        <h4 class="text-muted">I'm away</h4>
+        <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+        {{/if}}
+      {{/if}}
+    </ul>
+    <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p>  
+  </div>

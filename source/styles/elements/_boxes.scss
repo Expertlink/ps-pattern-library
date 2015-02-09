@@ -95,7 +95,10 @@
 .box-tan {
   background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
 }
-
+.box-success {
+  background: lighten($green, 45%);
+  border-color: $green;
+}
 
 //== Style variants
 

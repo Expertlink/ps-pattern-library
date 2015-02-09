@@ -61,6 +61,12 @@
     width: 100%;
     z-index: 1;
   }
+
+  // useful if you are experiencing a 1px content "shift" due to negative
+  // margins within the container
+  &.open .prairie-dog-bg-unshift {
+    top: 1px;
+  }
 }
 
 .prairie-dog {

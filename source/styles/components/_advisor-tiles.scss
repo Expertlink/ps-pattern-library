@@ -158,9 +158,6 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   &:last-child {
     margin-right: 0;
   }
-  &.stars {
-    height: 19px; // equals height of other paragraphs
-  }
 }
 
 // If both buttons can take up 1/2 the space, they will be of equal width,

@@ -1,9 +1,12 @@
-<div class="review">
+<div class="review" id="review{{reviewID}}">
   <p class="review-meta">
+    {{#if featured}}
+      <strong class="u-block">Featured Review</strong>
+    {{/if}}
     <span class="review-date">{{date}}</span>
     <span class="hidden-xs"> with </span>
     <span class="reviewer">{{reviewer}}</span>
-    <span class="review-stars stars stars-{{replace rating "." "-"}}">{{{formatFraction rating}}} stars</span>
+    <span class="review-stars stars stars-{{replace rating "." "-"}}"><span class="sr-only">{{{formatFraction rating}}} stars</span></span>
     <span class="review-type">
       {{#if call}}
         Phone Reading

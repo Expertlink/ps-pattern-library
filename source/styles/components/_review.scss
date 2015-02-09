@@ -24,9 +24,6 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   position: absolute; 
   top: ($line-height-computed/2);
   right: $review-padding;
-  @media (min-width: $screen-lg-min) {
-    right:0;
-  }
 }
 .reviews-summary {
   background: lighten($gray-lighter,10%);
@@ -45,19 +42,23 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
+.reviews-count {
+  margin: 0 5em 0 0;
+  @media (min-width: $screen-xs-min) {
+    font-size: 1.2em;
+  }
+}
 .review-stars-average {
-  margin:0;  
-  @media (min-width: $screen-md-min) {
-    float: right;
-    .stars {
-      display: block;
-    }
+  margin: -0.3em 0 0;  
+  float: right;
+  .stars {
+    display: block;
+  }
   .ratings-total {
-      float: right;
-      display: block;
-      clear: right;
-      font-size: 0.8em;
-    }
+    float: right;
+    display: block;
+    clear: right;
+    font-size: 0.8em;
   }
 }
 .bio-review-helpful {
@@ -66,5 +67,11 @@ $review-padding: ($line-height-computed * (2/3)) !default;
 .bio-review-helpful, .review-content {
   a {
     color: $blue;
+    text-decoration: underline;
+    white-space: nowrap;
+    &:hover,
+    &:focus {
+      color: $blue-bright;
+    }
   }
 }

@@ -76,6 +76,66 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   color: $red;
   border-color: $red;
 }  
+.bio-photo-heart {
+  position: absolute;
+  bottom: ($bio-padding * 0.5);
+  right: ($bio-padding * 0.5);
+  display: block;
+  background-image: linear-gradient(to bottom, #fff, $tan-light);
+  border: 1px solid $tan-dark;
+  border-radius: $border-radius-large; 
+  width: 36px;
+  height: 36px;
+  padding-top: 8px;
+  color: $gray;
+  text-align: center;  
+  transition: box-shadow 0.5s;
+ 
+  .icon {
+    font-size: 24px;
+  }
+  &:hover {
+    border-color: $red-dark;
+    box-shadow: 0 0 10px $red;
+    color: $red-dark;
+  }
+  &:focus {
+    border-color: $red-dark;
+    color: $red;
+    .icon {
+      transform: scale(1.08); 
+    }
+  } 
+  &.is-faved {
+    border-color: $red-dark;
+    color: $red;
+    padding-top: 6px;
+    .icon {
+        font-size: 26px;
+    }
+    &:hover {
+      color: $gray;
+      border-color: $tan-dark;
+      box-shadow: none;
+    }
+    &:focus {
+      color: $gray;
+      border-color: $tan-dark;
+      .icon {
+        transform: scale(0.92); 
+      }  
+    }
+  }
+}
+.bio-add-fave {
+  .icon {
+    color: $gray-light;
+    margin-right: 0.5em;
+  }
+  &:hover .icon {
+    color: $red;
+  }
+}
 .bio-audio-video {
   background: $gray-lighter;
   border-radius: $border-radius-small; 
@@ -84,18 +144,22 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   > p {
     width: 50%;
     display: table-cell;
+    @media (min-width: $screen-md-min)  {
+      display: inline-block;
+      width: auto;
+      text-align: left;  
+      margin:0;
+    }
+    @media (min-width: $screen-lg-min)  {
+      width: 50%;  
+    }
   }
   @media (min-width: $screen-md-min)  {
     background: transparent;
     margin-bottom: ($bio-padding / 2);
     border-top: 1px solid $gray-lighter;
     border-bottom: 1px solid $gray-lighter;
-    > p {
-      display: inline-block;
-      width: auto;
-      text-align: left;  
-      margin:0;
-    }
+    border-radius: 0;
   }
 }
 .bio-av-btn {
@@ -121,9 +185,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   display: table;
   @media (min-width: $screen-lg-min) {
     width: 100%;
+    max-width: 30em;
     margin: 0;
-    padding: 0;
     display: block;
+    &.reviews-header {
+      width: calc(100% + #{$arrange-gutter-size});
+      margin: 0 ($arrange-gutter-size * -0.5);
+      display: table;
+    }
   }
 }
 .bio-action {
@@ -135,6 +204,11 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     width: 100%;
     padding: 0;
     margin: 0 0 ($arrange-gutter-size/2);
+    &.reviews-header {
+      width: 50%;
+      display: table-cell;
+      padding: 0 ($arrange-gutter-size/2);
+    }
   }
 }
 .bio-price {
@@ -258,12 +332,20 @@ a.section-parent {
       padding: 0;
       background: transparent;
     }
+    .reviews-count {
+      font-size: 1em;
+      padding-top: 0.25em;
+      padding-bottom: 0.75em;
+    }  
     .review {
       padding-left: 0;
       padding-right: 0;
     }
     .bio-hidden-lg {
       display: none;
+    }
+    .review-stars {
+      right: 0;
     }
   }
 }
