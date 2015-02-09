@@ -1,28 +1,166 @@
 ---
 status: inprogress
+description: Uses custom JavaScript logic for handling navigation behavior (included in pattern).
 ---
 
-<nav class="overflow-nav">
+<nav class="overflow-nav js-custom-nav">
   <ul class="overflow-nav-primary">
     <li>
-      <a href="">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="#" class="visible-lg collapsed" data-target="#nav-customer-offers" data-toggle="collapse">
+        <span class="nav-customer-offer">New Customer Offers</span>
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <a href="" class="hidden-lg">New Customers
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-customer-offers">
+        <div class="special-offer">
+          <h1 class="text-cursive">Special Offer</h1>
+          <p>As low as
+          <span>$1.00</span>per minute</p>
+          <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+        </div>
+        <div class="special-offer-add">
+          <a href="#">
+          <img src="/images/minutes-icon.png" />
+          <h4>3 free minutes with your first paid reading!</h4>
+          </a>
+        </div>
+        <div class="special-offer-add">
+          <a href="#">
+          <img src="/images/satisfaction-seal.png" />
+          <h4>100% Satisfaction Gurantee</h4>
+          <p>If you're not happy with your last paid reading, it's free!</p>
+          </a>
+        </div>
+      </aside>
     </li>
     <li>
-      <a href="">Our Psychics <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="#" class="collapsed" data-target="#nav-psychics" data-toggle="collapse">Our Psychics
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown our-psychics-readings arrange arrange-equal collapse" id="nav-psychics">
+        <a class="arrange-fill" href="#">
+          <h4>Phone Readings</h4>
+            <p>Get live psychic readings by phone</p>
+            <img src="/images/questions-phone.png" />
+            <p><span class="text-cursive">View Phone Psychics</span></p>
+        </a>
+        <a class="arrange-fill" href="#">
+          <h4>Chat Readings</h4>
+          <p>Get live psychic readings by chat</p>
+          <img src="/images/questions-chat.png" />
+          <p><span class="text-cursive">View Chat Psychics</span></p>
+        </a>
+        <a class="arrange-fill" href="#">
+          <h4>All Reading Types</h4>
+          <p>View all our psychic readers</p>
+          <img src="/images/questions-chat.png" />
+          <p><span class="text-cursive">View All Psychics</span></p>
+        </a>
+      </aside>
     </li>
     <li class="hidden-xs">
-      <a href="">Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="#" data-target="#nav-horoscopes" class="collapsed" data-toggle="collapse">
+        Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-horoscopes">
+        <div class="link-only-dropdown link-only-dropdown-intro">
+          <h4>Weekly Love Horoscope</h4>
+          <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
+          <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#">Aries</a></li>
+            <li><a href="#">Taurus</a></li>
+            <li><a href="#">Gemini</a></li>
+            <li><a href="#">Cancer</a></li>
+            <li><a href="#">Leo</a></li>
+            <li><a href="#">Virgo</a></li>
+          </ul>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#">Libra</a></li>
+            <li><a href="#">Scorpio</a></li>
+            <li><a href="#">Sagittarius</a></li>
+            <li><a href="#">Capricorn</a></li>
+            <li><a href="#">Aquarius</a></li>
+            <li><a href="#">Pisces</a></li>
+          </ul>
+        </div>
+      </aside>
     </li>
     <li class="hidden-xs hidden-sm">
-      <a href="">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="" data-target="#nav-readings" class="collapsed" data-toggle="collapse">About Psychic Readings
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-readings">
+        <div class="link-only-dropdown link-only-dropdown-intro">
+          <h4>About Psychic Readings</h4>
+          <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#"><h4>Types of Psychics</h4></a></li>
+            <li><a href="#">Love Psychics</a></li>
+            <li><a href="#">Psychic Mediums</a></li>
+            <li><a href="#">Clairvoyants</a></li>
+            <li><a href="#">Clairaudients</a></li>
+            <li><a href="#">More...</a></li>
+          </ul>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#"><h4>Types of Psychic Readings</h4></a></li>
+            <li><a href="#">Cartomancy</a></li>
+            <li><a href="#">Tarot Readings</a></li>
+            <li><a href="#">Angel Card Readings</a></li>
+            <li><a href="#">Numerology Readings</a></li>
+            <li><a href="#">More...</a></li>
+          </ul>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#"><h4>Ways to Get A...</h4></a></li>
+            <li><a href="#">Psychic Phone Readings</a></li>
+            <li><a href="#">Psychic Chat</a></li>
+            <li class="link-only-divider"></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Glossary of Terms</a></li>
+            <li><a href="#">Psychic? Apply Now</a></li>
+          </ul>
+        </div>
+      </aside>
     </li>
     <li class="hidden-xs hidden-sm hidden-md">
-      <a href="">Articles &amp; Resources <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+      <a href="" data-target="#nav-articles" class="collapsed" data-toggle="collapse">Articles &amp; Resources
+        <span class="arrow-down visible-lg-inline-block text-muted"></span>
+      </a>
+      <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-articles">
+        <div class="link-only-dropdown link-only-dropdown-intro">
+          <h4>Articles and Resources</h4>
+          <p>Like a Blog, Only Better!</p>
+          <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
+        </div>
+        <div class="link-only-dropdown link-only-border">
+          <ul>
+            <li><a href="#">Career & Finance</a></li>
+            <li><a href="#">Health & Wellness</a></li>
+            <li><a href="#">Life, Destiny & Meaning</a></li>
+            <li><a href="#">Love, Relationships & Family</a></li>
+            <li><a href="#">Other Psychic Topics</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </div>
+      </aside>
     </li>
-    <li class="hidden-lg">
-      <a data-toggle="collapse" href="#nav-overflow">More <span class="arrow-down text-muted"></span></a>
+    <li class="hidden-lg dropdown">
+      <a data-toggle="collapse" href="#nav-overflow" class="js-custom-nav-more">More <span class="arrow-down text-muted"></span></a>
     </li>
   </ul>
+
   <ul class="overflow-nav-secondary collapse hidden-lg" id="nav-overflow">
     <li class="hidden-sm hidden-md">
       <a href="">Horoscopes</a>
@@ -38,3 +176,58 @@ status: inprogress
     </li>
   </ul>
 </nav>
+
+<script>
++function ($) {
+  'use strict';
+
+  var CustomNav = function (element) {
+    this.$element = $(element);
+    this.$element.on('click', '[data-toggle="collapse"]:not(.js-custom-nav-more)', $.proxy(this.show, this));
+  };
+
+  CustomNav.prototype.show = function (event) {
+    var $trigger = $(event.currentTarget);
+    var $target = $($trigger.data('target'));
+    var $current = this.$element.find('.collapse.in, .collapsing').not($target);
+    var shouldBypass = this.$element.find('.js-custom-nav-more:visible').length;
+
+    if (shouldBypass) {
+      event.stopPropagation();
+      return true;
+    }
+    // If you're being a click-happy maniac, be patient
+    if ($current.hasClass('collapsing')) {
+      return false;
+    }
+    // If there is one showing, collapse it first...
+    if ($current.length) {
+      $current.one('hidden.bs.collapse', function () {
+        $target.collapse('show');
+      });
+      $current.collapse('hide');
+    } else {
+      // Otherwise just show the selection
+      $target.collapse('toggle');
+    }
+    // Don't let the document do our collapsing
+    return false;
+  };
+
+  function Plugin () {
+    return this.each(function () {
+      var $this = $(this);
+      var instance = $this.data('customNav');
+      if (!instance) {
+        $this.data('customNav', new CustomNav(this));
+      }
+    });
+  }
+
+  $.fn.customNav = Plugin;
+}(jQuery);
+
+$(function() {
+  $('.js-custom-nav').customNav();
+});
+</script>

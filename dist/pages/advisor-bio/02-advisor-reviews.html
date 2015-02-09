@@ -48,16 +48,23 @@
     
         <div class="masthead-controls">
           <ul class="masthead-menu">
-            <li>
-              <a href="" class="btn btn-link text-default">
-                Login
-              </a>
-            </li>
-            <li class="hidden-xs hidden-sm hidden-md">
-              <a href="" class="btn btn-link text-default">
+              <li>
+                <a href="" class="btn btn-link text-default">
+                  Login
+                </a>
+              </li>
+            <li class="hidden-xs hidden-sm hidden-md dropdown">
+              <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
                 Customer Care
                 <span class="arrow-down text-muted"></span>
               </a>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+              </ul>
             </li>
             <li class="masthead-search-toggle">
               <a href="" class="btn btn-sunrise btn-shaded">
@@ -67,18 +74,22 @@
               </a>
             </li>
           </ul>
-          <form class="masthead-search">
+          <form action="" class="masthead-search">
             <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-default">
+              <div class="input-group-btn select">
+                <div class="btn btn-default js-select-delegate" aria-hidden="true">
                   <svg class="icon icon-md">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
                   </svg>
-                  Psychics
+                  <span class="js-select-value" aria-hidden="true"></span>
                   <span class="arrow-down text-muted"></span>
-                </button>
+                </div>
+                <select id="search-types">
+                  <option>Psychics</option>
+                  <option>Articles</option>
+                </select>
               </div>
-              <input id="q" type="text" class="form-control">
+              <input id="q" type="search" class="form-control">
               <div class="input-group-btn">
                 <button type="button" class="btn btn-info btn-shaded">Go</button>
               </div>
@@ -105,27 +116,164 @@
     
     
     
-    <nav class="overflow-nav">
+    <nav class="overflow-nav js-custom-nav">
       <ul class="overflow-nav-primary">
         <li>
-          <a href="">New Customers <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+          <a href="#" class="visible-lg collapsed" data-target="#nav-customer-offers" data-toggle="collapse">
+            <span class="nav-customer-offer">New Customer Offers</span>
+            <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <a href="" class="hidden-lg">New Customers
+            <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-customer-offers">
+            <div class="special-offer">
+              <h1 class="text-cursive">Special Offer</h1>
+              <p>As low as
+              <span>$1.00</span>per minute</p>
+              <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+            </div>
+            <div class="special-offer-add">
+              <a href="#">
+              <img src="/images/minutes-icon.png" />
+              <h4>3 free minutes with your first paid reading!</h4>
+              </a>
+            </div>
+            <div class="special-offer-add">
+              <a href="#">
+              <img src="/images/satisfaction-seal.png" />
+              <h4>100% Satisfaction Gurantee</h4>
+              <p>If you're not happy with your last paid reading, it's free!</p>
+              </a>
+            </div>
+          </aside>
         </li>
         <li>
-          <a href="">Our Psychics <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+          <a href="#" class="collapsed" data-target="#nav-psychics" data-toggle="collapse">Our Psychics
+            <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <aside class="visible-lg overflow-nav-dropdown our-psychics-readings arrange arrange-equal collapse" id="nav-psychics">
+            <a class="arrange-fill" href="#">
+              <h4>Phone Readings</h4>
+                <p>Get live psychic readings by phone</p>
+                <img src="/images/questions-phone.png" />
+                <p><span class="text-cursive">View Phone Psychics</span></p>
+            </a>
+            <a class="arrange-fill" href="#">
+              <h4>Chat Readings</h4>
+              <p>Get live psychic readings by chat</p>
+              <img src="/images/questions-chat.png" />
+              <p><span class="text-cursive">View Chat Psychics</span></p>
+            </a>
+            <a class="arrange-fill" href="#">
+              <h4>All Reading Types</h4>
+              <p>View all our psychic readers</p>
+              <img src="/images/questions-chat.png" />
+              <p><span class="text-cursive">View All Psychics</span></p>
+            </a>
+          </aside>
         </li>
         <li class="hidden-xs">
-          <a href="">Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+          <a href="#" data-target="#nav-horoscopes" class="collapsed" data-toggle="collapse">
+            Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-horoscopes">
+            <div class="link-only-dropdown link-only-dropdown-intro">
+              <h4>Weekly Love Horoscope</h4>
+              <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
+              <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#">Aries</a></li>
+                <li><a href="#">Taurus</a></li>
+                <li><a href="#">Gemini</a></li>
+                <li><a href="#">Cancer</a></li>
+                <li><a href="#">Leo</a></li>
+                <li><a href="#">Virgo</a></li>
+              </ul>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#">Libra</a></li>
+                <li><a href="#">Scorpio</a></li>
+                <li><a href="#">Sagittarius</a></li>
+                <li><a href="#">Capricorn</a></li>
+                <li><a href="#">Aquarius</a></li>
+                <li><a href="#">Pisces</a></li>
+              </ul>
+            </div>
+          </aside>
         </li>
         <li class="hidden-xs hidden-sm">
-          <a href="">About Psychic Readings <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+          <a href="" data-target="#nav-readings" class="collapsed" data-toggle="collapse">About Psychic Readings
+            <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-readings">
+            <div class="link-only-dropdown link-only-dropdown-intro">
+              <h4>About Psychic Readings</h4>
+              <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#"><h4>Types of Psychics</h4></a></li>
+                <li><a href="#">Love Psychics</a></li>
+                <li><a href="#">Psychic Mediums</a></li>
+                <li><a href="#">Clairvoyants</a></li>
+                <li><a href="#">Clairaudients</a></li>
+                <li><a href="#">More...</a></li>
+              </ul>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#"><h4>Types of Psychic Readings</h4></a></li>
+                <li><a href="#">Cartomancy</a></li>
+                <li><a href="#">Tarot Readings</a></li>
+                <li><a href="#">Angel Card Readings</a></li>
+                <li><a href="#">Numerology Readings</a></li>
+                <li><a href="#">More...</a></li>
+              </ul>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#"><h4>Ways to Get A...</h4></a></li>
+                <li><a href="#">Psychic Phone Readings</a></li>
+                <li><a href="#">Psychic Chat</a></li>
+                <li class="link-only-divider"></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Glossary of Terms</a></li>
+                <li><a href="#">Psychic? Apply Now</a></li>
+              </ul>
+            </div>
+          </aside>
         </li>
         <li class="hidden-xs hidden-sm hidden-md">
-          <a href="">Articles &amp; Resources <span class="arrow-down visible-lg-inline-block text-muted"></span></a>
+          <a href="" data-target="#nav-articles" class="collapsed" data-toggle="collapse">Articles &amp; Resources
+            <span class="arrow-down visible-lg-inline-block text-muted"></span>
+          </a>
+          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-articles">
+            <div class="link-only-dropdown link-only-dropdown-intro">
+              <h4>Articles and Resources</h4>
+              <p>Like a Blog, Only Better!</p>
+              <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
+            </div>
+            <div class="link-only-dropdown link-only-border">
+              <ul>
+                <li><a href="#">Career & Finance</a></li>
+                <li><a href="#">Health & Wellness</a></li>
+                <li><a href="#">Life, Destiny & Meaning</a></li>
+                <li><a href="#">Love, Relationships & Family</a></li>
+                <li><a href="#">Other Psychic Topics</a></li>
+                <li><a href="#">Newsletter</a></li>
+              </ul>
+            </div>
+          </aside>
         </li>
-        <li class="hidden-lg">
-          <a data-toggle="collapse" href="#nav-overflow">More <span class="arrow-down text-muted"></span></a>
+        <li class="hidden-lg dropdown">
+          <a data-toggle="collapse" href="#nav-overflow" class="js-custom-nav-more">More <span class="arrow-down text-muted"></span></a>
         </li>
       </ul>
+    
       <ul class="overflow-nav-secondary collapse hidden-lg" id="nav-overflow">
         <li class="hidden-sm hidden-md">
           <a href="">Horoscopes</a>
@@ -141,106 +289,89 @@
         </li>
       </ul>
     </nav>
+    
+    
   </header>
 
 <div class="container-page">
   <div class="box-full box-default-lg box-lighter box-bio">
-    <div class="bio-head">
-    <div class="bio-advisor-summary">  
-      <div class="bio-photo">
-        <p class="bio-photo-fave">
-          <a href="#" title="Add to favorites">
-            <svg class="icon icon-lg">
-              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#fave" />
-            </svg>
-          </a>
-        </p>
-        <img src="/images/fpo/137.jpg" alt="Psychic Mazie x 7124">
-        <div class="advisor-tile-staff-pick">
-          Psychic Source is pleased to highlight this gifted Advisor
+    <div class="bio-advisor-summary">
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <div class="bio-photo">
+            <img src="/images/fpo/137.jpg" alt="Psychic Mazie x 7124">
+            <div class="advisor-tile-staff-pick">
+              Psychic Source is pleased to highlight this gifted Advisor
+            </div>
+          </div>
         </div>
+        <div class="col-md-8 col-lg-9">
+          <h1 class="bio-name text-primary">Psychic Zaphod Beeblebrox x1337</h1>
+          <p class="bio-headline">Insightful and Compassionate</p>
+          <p><span class="stars stars-lg stars-4-5"><span class="sr-only">4&#189; stars</span></span> <span class="review-count">(<a href="#reviews">1204 Ratings</a>)</span></p>
+          <div class="bio-audio-video">
+            <p class="text-center"><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" /></svg> Watch my video</a></p>
+            <p class="text-center"><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#audio" /></svg> Listen to <span class="hidden-xs hidden-lg">my </span>message</a></p>  
+          </div>
+          <div class="bio-availability">
+            <h4 class="text-success">Available until 8:27pm</h4>
+            <ul class="bio-actions reviews-header">
+              <li class="bio-action reviews-header">
+                <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
+                <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+              </li>
+              <li class="bio-action reviews-header">
+                <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
+                <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+              </li>
+            </ul>
+            <p class="text-muted hidden-md u-no-margin">Pricing valid for first purchase only.</p>
+          </div>
+        </div>  
       </div>
-      <h1 class="bio-name text-primary">Psychic Mazie x 7124</h1>
-      <p class="bio-headline">Insightful and Compassionate</p>
-      <p><span class="stars stars-4-5">4&#189; stars</span> <span class="review-count">(<a href="#reviews">1204 Ratings</a>)</span></p>
-      <div class="bio-audio-video">
-        <p class="text-right"><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" /></svg> Watch video</a></p>
-        <p class="text-left"><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#audio" /></svg> Listen to <span class="hidden-xs hidden-lg">my </span>message</a></p>  
-      </div>
     </div>
-    <div class="bio-availability">
-      <h4 class="text-available">Available until 8:27pm</h4>
-      <ul class="arrange bio-actions arrange-gutter">
-        <li class="arrange-fill">
-          <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
-          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-        </li>
-        <li class="arrange-fill">
-          <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
-          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-        </li>
-      </ul>
-      <p class="text-muted hidden-md">Pricing valid for first purchase only.</p>
-    </div>
-    </div>
-    <!--
-    
-    <h4 class="text-unavailable text-center">I'm in a reading (4 in line)</h4>  
-    <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-    <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-     
-    <p class="text-muted text-center">Pricing valid for first purchase only.</p>
-    
-    <h4 class="text-unavailable text-center">I'm in a reading<br /><span style="color:black">(Your position in line: <strong class="text-available">4</strong>)</span></h4>
-    
-    <h4 class="text-unavailable text-center">I'm away</h4>  
-    <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-    <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-    
-    <p class="text-muted text-center">Pricing valid for first purchase only.</p>
-     
-    -->
+    <h3>Mazie's Ratings &amp; Reviews</h3>
     <div class="reviews-summary">
-      <span class="review-stars-average stars stars-4-5">4.55 stars</span>
-      <span class="ratings-total"> (10 Ratings)</span><br />
-      <strong>10</strong> <span class="hidden-xs">Psychic Source member</span> reviews since <strong>Mar 2012</strong>
+      <p class="review-stars-average"><span class="stars stars-4-5"><span class="sr-only">4.55 stars</span></span><span class="ratings-total"> (10 Ratings)</span></p>
+      <p class="reviews-count"><strong>10</strong> <span class="hidden-xs hidden-sm bio-hidden-lg">Psychic Source member</span> reviews since <strong class="text-nowrap">Mar 2012</strong></p>
     </div>
-     <div class="review">
+     <div class="review" id="review2">
        <p class="review-meta">
+           <strong class="u-block">Featured Review</strong>
          <span class="review-date">05/14/2013</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">Simone</span>
-         <span class="review-stars stars stars-4-5">4&#189; stars</span>
+         <span class="review-stars stars stars-4-5"><span class="sr-only">4&#189; stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
        </p>
        <p class="review-content">
-         First time speaking with Ricky and definitely felt I was speaking with an old friend. He is highly accurate and was spot on. Some things does not make sense at the moment but I am sure it will all fall in place as he said. Now waiting for prediction to pass and will definitely speak to Ricky again. Thank you Ricky! Blessings!
+         First time speaking with Mazie and definitely felt I was speaking with an old friend. She is highly accurate and was spot on. Some things does not make sense at the moment but I am sure it will all fall in place as she said. Now waiting for prediction to pass and will definitely speak to Mazie again. Thank you Mazie! Blessings!
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review3">
        <p class="review-meta">
          <span class="review-date">01/20/2015</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">Desjjmo</span>
-         <span class="review-stars stars stars-5">5 stars</span>
+         <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
        </p>
        <p class="review-content">
-         What can I even say about Ricky... He is quite amazing. I have to say, and I&#x27;m sure he picks up that every time I call I&#x27;m skeptical. As much as I beliieve, I also don&#x27;t believe. But this man has told me some crazy things that have come to fruition!! My situation is quite interesting, and I can&#x27;t imagine very easy for anyone to read. But, Ricky somehow does it. I have to say the very last prediction he made to me I actually shook my head and thought no way that&#x27;s never gonna happen. Well, I spoke to him on a Monday and it happened that Friday. I was so shocked that i actually felt ill for about 2 days!! Anyway, Ricky you&#x27;re awesome and I LOVE speaking to you and hearing what you have to say... Have an awesome day!!! P.s.... I don&#x27;t usually leave reviews.. :)
+         What can I even say about Mazie... She is quite amazing. I have to say, and I&#x27;m sure she picks up that every time I call I&#x27;m skeptical. As much as I beliieve, I also don&#x27;t believe. But this man has told me some crazy things that have come to fruition!! My situation is quite interesting, and I can&#x27;t imagine very easy for anyone to read. But, Mazie somehow does it. I have to say the very last prediction she made to me I actually shook my head and thought no way that&#x27;s never gonna happen. Well, I spoke to him on a Monday and it happened that Friday. I was so shocked that i actually felt ill for about 2 days!! Anyway, Mazie you&#x27;re awesome and I LOVE speaking to you and hearing what you have to say... Have an awesome day!!! P.s.... I don&#x27;t usually leave reviews.. :)
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review4">
        <p class="review-meta">
          <span class="review-date">01/15/2015</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">Chocolatedrop</span>
-         <span class="review-stars stars stars-4-5">4&#189; stars</span>
+         <span class="review-stars stars stars-4-5"><span class="sr-only">4&#189; stars</span></span>
          <span class="review-type">
              Chat Reading
          </span>
@@ -250,57 +381,57 @@
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review5">
        <p class="review-meta">
          <span class="review-date">01/13/2015</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">flower1048</span>
-         <span class="review-stars stars stars-3-5">3&#189; stars</span>
+         <span class="review-stars stars stars-3-5"><span class="sr-only">3&#189; stars</span></span>
          <span class="review-type">
              Chat Reading
          </span>
        </p>
        <p class="review-content">
-         This is my third reading with Ricky and it will not be my last. He always remembers me and our prior readings. I was feeling empty and a little out of sorts, Really did not know which way to turn. Within 10 minutes of our last read he had put my heart and mind at ease. Ricky is understanding and very compassionate. He truly does see things and tells you exactly as he sees everything good or bad. One of his predictions came to pass and he really hit the nail on the head even with the two delays. Once again he told me things that I would only know. He has such a gentle and soothing voice and really takes an interest in your situation. Ricky is truly happy when your predictions come to fruition. I am praying that the next few major predictions happen exactly as he does see it. I ended our call with a lighter heart and a better frame of mind. I will update and will most definitely be calling Ricky again. The only person that I was ever able to talk to about everything was my mom who has passed away. I have found the next best to my mom. Ricky, you are a treasured angel and I thank you from the bottom of my heart. I will never speak to anyone but him, feels like I have known him all my life. God Bless You!!!!!
+         This is my third reading with Mazie and it will not be my last. She always remembers me and our prior readings. I was feeling empty and a little out of sorts, Really did not know which way to turn. Within 10 minutes of our last read she had put my heart and mind at ease. Mazie is understanding and very compassionate. She truly does see things and tells you exactly as she sees everything good or bad. One of his predictions came to pass and she really hit the nail on the head even with the two delays. Once again she told me things that I would only know. She has such a gentle and soothing voice and really takes an interest in your situation. Mazie is truly happy when your predictions come to fruition. I am praying that the next few major predictions happen exactly as she does see it. I ended our call with a lighter heart and a better frame of mind. I will update and will most definitely be calling Mazie again. The only person that I was ever able to talk to about everything was my mom who has passed away. I have found the next best to my mom. Mazie, you are a treasured angel and I thank you from the bottom of my heart. I will never speak to anyone but him, feels like I have known him all my life. God Bless You!!!!!
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review6">
        <p class="review-meta">
          <span class="review-date">01/08/2015</span>
          <span class="hidden-xs"> with </span>
-         <span class="reviewer">RickyIsTheBest</span>
-         <span class="review-stars stars stars-5">5 stars</span>
+         <span class="reviewer">MazieIsTheBest</span>
+         <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
          <span class="review-type">
              Chat Reading
          </span>
        </p>
        <p class="review-content">
-         Ricky, my brother you are one of the very special soul that touched my heart through your kindness. My life and forthcoming would not be the same without your guidance and love. You’re genuine and you care about your clients, there is no better human being that empathize with others and help them in their tough times and intern no better blessing. You have been accurate with your readings and I would never read with anyone other than you. I just wish you to come online a bit more for those who truly seek your help. Best Wishes
+         Mazie, my brother you are one of the very special soul that touched my heart through your kindness. My life and forthcoming would not be the same without your guidance and love. You’re genuine and you care about your clients, there is no better human being that empathize with others and help them in their tough times and intern no better blessing. You have been accurate with your readings and I would never read with anyone other than you. I just wish you to come online a bit more for those who truly seek your help. Best Wishes
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review6">
        <p class="review-meta">
          <span class="review-date">01/07/2015</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">creatorjp</span>
-         <span class="review-stars stars stars-5">5 stars</span>
+         <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
          <span class="review-type">
              Chat Reading
          </span>
        </p>
        <p class="review-content">
-         This was my first reading and Ricky was very compassionate and super accurate. The real deal and well worth the wait! He even knew about an upcoming dental appointment which is my only health appointment left for this month. He also knew the exact state for 2 upcoming trips as well as one I took in November. I look forward to updating Ricky and all of you when his predictions come to pass. Thank you for such a lovely connection and I look forward to our next chat. Johanna
+         This was my first reading and Mazie was very compassionate and super accurate. The real deal and well worth the wait! She even knew about an upcoming dental appointment which is my only health appointment left for this month. She also knew the exact state for 2 upcoming trips as well as one I took in November. I look forward to updating Mazie and all of you when his predictions come to pass. Thank you for such a lovely connection and I look forward to our next chat. Johanna
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review7">
        <p class="review-meta">
          <span class="review-date">12/23/2014</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">CatFancy</span>
-         <span class="review-stars stars stars-3-5">3&#189; stars</span>
+         <span class="review-stars stars stars-3-5"><span class="sr-only">3&#189; stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
@@ -310,12 +441,12 @@
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review8">
        <p class="review-meta">
          <span class="review-date">12/10/2014</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">Lolly5</span>
-         <span class="review-stars stars stars-4-5">4&#189; stars</span>
+         <span class="review-stars stars stars-4-5"><span class="sr-only">4&#189; stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
@@ -325,12 +456,12 @@
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review9">
        <p class="review-meta">
          <span class="review-date">12/05/2014</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">zorro11</span>
-         <span class="review-stars stars stars-5">5 stars</span>
+         <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
@@ -340,12 +471,12 @@
        </p>
        <p class="bio-review-helpful"><small>Was this review helpful?  <a href="#">YES</a></small></p>
      </div>
-     <div class="review">
+     <div class="review" id="review10">
        <p class="review-meta">
          <span class="review-date">12/01/2014</span>
          <span class="hidden-xs"> with </span>
          <span class="reviewer">Ali717</span>
-         <span class="review-stars stars stars-5">5 stars</span>
+         <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
          <span class="review-type">
              Phone Reading
          </span>
@@ -502,9 +633,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -583,6 +711,9 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -630,9 +761,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -655,24 +783,27 @@
 
   
   <footer role="contentinfo" class="container-page text-center">
-  
-    <nav class="u-margin">
-      <p class="visible-xs-block">
-        <a class="btn btn-block btn-default" href="">Customer Care</a>
-      </p>
-      <ul class="list-inline text-tall small-xs">
-        <li class="hidden-xs"><a href="">Customer Care</a></li>
-        <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
-        <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
-        <li><a href="">Site Map</a></li>
-        <li><a href="">Affiliate Program</a></li>
-        <li><a href="">News</a></li>
-        <li><a href="">Psychic? Apply Now</a></li>
-      </ul>
-    </nav>
-  
-    <p class="u-margin small text-muted">*New member offer valid for first time customers who have never made a Psychic Source purchase. Limit $30, some exclusions apply.  &copy; 2014 Psychic Source, LLC. All rights reserved. For guidance only. 18+</p>
-  
+    <p class="col-xs-12 visible-xs-block u-margin-top">
+      <a class="btn btn-block btn-default" href="">Customer Care</a>
+    </p>
+    <ul class="col-xs-12 col-lg-8 list-inline with-social-btn small-xs text-left-lg u-margin-ends">
+      <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
+      <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
+      <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
+      <li><a href="">Site Map</a></li>
+      <li><a href="">Affiliate Program</a></li>
+      <li><a href="">News</a></li>
+      <li><a href="">Psychic? Apply Now</a></li>
+    </ul>
+    <ul class="col-xs-12 col-lg-4 list-inline text-right-lg u-margin-ends">
+      <li><a class="social-btn" href="http://www.facebook.com/PsychicSource1989">Facebook</a></li>
+      <li><a class="social-btn" href="http://twitter.com/PsychicSource">Twitter</a></li>
+      <li><a class="social-btn" href="http://www.youtube.com/user/psychicsource?feature=watch">YouTube</a></li>
+      <li><a class="social-btn" href="http://pinterest.com/psychicsource/">Pinterest</a></li>
+      <li><a class="social-btn" href="https://plus.google.com/u/0/b/101385836272062376146/">Google+</a></li>
+      <li><a class="social-btn" href="http://instagram.com/psychicsource">Instagram</a></li>
+    </ul>
+    <p class="col-xs-12 small text-muted u-margin-top">*New member offer valid for first time customers who have never made a Psychic Source purchase. Limit $30, some exclusions apply.  &copy; 2014 Psychic Source, LLC. All rights reserved. For guidance only. 18+</p>
   </footer>
 
 </body>
