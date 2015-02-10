@@ -60,6 +60,9 @@
       $hiddenTargets.collapse('toggle');
       event.preventDefault();
     });
+    $hiddenTargets.on('hidden.bs.collapse', function(event) {
+      $(this).attr('style', '');
+    });
   };
   // Default disable callback
   var disableToggle = function(config) {
