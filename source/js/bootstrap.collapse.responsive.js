@@ -53,23 +53,15 @@
     var $hiddenTargets = $(targetElem + ':hidden');
     var data           = $hiddenTargets.data('bs.collapse');
     var option         = data ? 'toggle' : $.extend({}, $elem.data(), { trigger: this.elem, show: true });
-    var styleTimeout;
 
     $.fn.collapse.call($hiddenTargets, option);
 
     $elem.on('click.toggle-trigger', function(event) {
-      window.clearTimeout(styleTimeout);
       $hiddenTargets.collapse('toggle');
       event.preventDefault();
     });
     $hiddenTargets.on('hidden.bs.collapse', function(event) {
-      var $hiddenElem = $(this);
-      styleTimeout = setTimeout(function() {
-        // Brute-remove Bootstrap's inline style (height: 0px)
-        // as it can cause responsive issues
-        $hiddenElem.attr('style', '');
-      }, 750);
-
+      $(this).attr('style', '');
     });
   };
   // Default disable callback
