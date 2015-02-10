@@ -44,6 +44,7 @@
 }
 
 .advisor-promo-side {
+  margin-left: -.5em;
   a {
     display: block;
     font-weight: bold;
@@ -52,12 +53,17 @@
       position: absolute;
       display: block;
       content:"";
-      top: 0;
+      top: -.4em;
       right: -1.4em;
-      width: 6em;
-      height: 5em;
+      width: 5em;
+      height: 6em;
       background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
       background-size: 100% auto;
+
+      @media (min-width: 855px) {
+      top: 0;
+      width: 6em;
+      }
     }
   }
 }
