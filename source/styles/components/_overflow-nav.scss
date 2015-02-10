@@ -178,9 +178,8 @@ $zindex-overflow-nav: 500 !default;
   text-align: center;
   width: 300px;
   vertical-align: top;
-    img {
-      padding-top: 1em;
-    }
+  padding: 1em;
+  overflow: hidden;
 
     &:before {
     content: "+";
