@@ -67,6 +67,11 @@ h6, .h6 {
     text-align: center;
   }
 }
+.text-nowrap-xs {
+  @media (max-width: $screen-xs-max) {
+    white-space: nowrap;
+  }
+}
 
 .text-left-sm {
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
@@ -81,6 +86,11 @@ h6, .h6 {
 .text-center-sm {
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     text-align: center;
+  }
+}
+.text-nowrap-sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    white-space: nowrap;
   }
 }
 
@@ -99,6 +109,11 @@ h6, .h6 {
     text-align: center;
   }
 }
+.text-nowrap-md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    white-space: nowrap;
+  }
+}
 
 .text-left-lg {
   @media (min-width: $screen-lg-min) {
@@ -113,6 +128,11 @@ h6, .h6 {
 .text-center-lg {
   @media (min-width: $screen-lg-min) {
     text-align: center;
+  }
+}
+.text-nowrap-lg {
+  @media (min-width: $screen-lg-min) {
+    white-space: nowrap;
   }
 }
 
