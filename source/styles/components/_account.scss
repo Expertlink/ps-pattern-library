@@ -1,0 +1,57 @@
+$account-padding: ($line-height-computed * (2/3)) !default;
+.account-home-section { 
+  padding: $account-padding;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 0 8px $gray-lighter;
+  border-radius: $border-radius-large;
+  margin: 0 0 $account-padding;
+  position: relative;
+}
+.account-current-balance {
+  text-align: center;
+  font-size: 0.9em;
+}
+.account-balance {
+  display: block;
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 1em;
+  text-shadow: 0 2px white;
+  sup {
+    vertical-align: middle;
+    font-size: 0.6em;
+  }
+}
+
+.balance-footnote {
+  font-size: 0.9em;
+  display: block; 
+}
+
+.balance-summary {
+  li {
+    padding: 0.5em;
+  }
+  @media (min-width: $screen-sm-min)  {
+    strong {
+      display: block;
+      float: right;
+    }
+    .has-balance-footnote {
+      margin-right: -0.6em;
+    }
+  }
+}
+
+.account-favorites {
+  margin-bottom: $account-padding;
+  @media (max-width: $screen-sm-min)  {
+    .advisor-tile-main-object {
+      display: none;
+    }
+  }
+  @media (max-width: $screen-md-min)  {
+    margin-right: ($account-padding * -1);
+    margin-left: ($account-padding * -1);
+  }
+} 
