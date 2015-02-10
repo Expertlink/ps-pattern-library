@@ -9,6 +9,9 @@ status: inprogress
   </p>
   <div class="col-xs-12 col-lg-8">
     <ul class="list-inline with-social-btn small-xs text-left-lg text-nowrap-lg u-margin-ends">
+      {{#if account}}{{#unless account.loggedIn}}
+        <li class="hidden-md hidden-lg"><a href="">Not {{account.firstName}}?</a></li>
+      {{/unless}}{{/if}}
       <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
       <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
       <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
