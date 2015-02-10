@@ -1,8 +1,12 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 .box-account {
   padding-left: $account-padding;
-  padding-right: $account-padding;
+  padding-right: $account-padding;  
+  @media (max-width: $screen-sm-min)  {
+    padding-top: 0;
+  }
 }
+
 .account-home-section { 
   padding: $account-padding;
   border: 1px solid $gray-lighter;
@@ -19,6 +23,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     box-shadow: none;
   }
 }
+
 .account-home-section-heading {
   margin-top: 0;
   @media (max-width: $screen-sm-min)  {
@@ -29,15 +34,11 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.account-home-section-welcome {
-  @media (max-width: $screen-sm-min)  {
-    margin-top: (($line-height-computed / 2) * -1) !important;
-  }
-}
 .account-current-balance {
   text-align: center;
   font-size: 0.9em;
 }
+
 .account-balance {
   display: block;
   font-size: 3em;
