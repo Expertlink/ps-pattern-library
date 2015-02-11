@@ -6,8 +6,12 @@ status: inprogress
 
 <div class="container-page">
   <div class="box-full account-box box-default-lg box-lighter">
-    {{> account/_reviews-howto }}
-    {{> account/_reviews-eligible }}
+    <div class="row">
+      <div class="col-md-8">
+        {{> account/_reviews-tips }}
+        {{> account/_reviews-eligible }}</div> 
+      <div class="col-md-4">{{> account/_reviews-howto }}</div> 
+    </div>    
   </div>
 </div>
 

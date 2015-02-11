@@ -1,0 +1,37 @@
+.eligible-reading {
+  display: table;
+  width: 100%;
+  padding: ($account-padding * 0.5 ) 0;
+  border-bottom: 1px solid $gray-lighter;
+}
+.eligible-reading-advisor-photo,
+.eligible-reading-main,
+.eligible-reading-actions {
+  display: table-cell;
+  vertical-align: top;
+}
+.eligible-reading-advisor-photo {
+  width:72px;
+  padding-left: ($account-padding * 0.5 )
+}
+.eligible-reading-actions {
+  width: 8em;
+}
+.eligible-reading-main {
+  padding: 0 $account-padding;
+}
+.eligible-reading-advisor-name,
+.eligible-reading-type,
+.eligible-reading-date {
+  margin:0;
+}
+
+.eligible-reading-rate {
+  margin: 0;
+  padding: 0 0 ($account-padding * 0.5 );
+}
+
+.eligible-reading-input {
+  padding: $account-padding;
+  border-bottom: 1px solid $gray-lighter;
+}

@@ -3,20 +3,38 @@
     <img class="img-rounded img-shadow" src="{{photo}}" alt="{{firstName}}">
   </div>
   <div class="eligible-reading-main">  
-    <h4 class="eligible-reading-advisor-name">{{firstName}} x{{ext}}</h4>
-    <p class="eligible-reading-type">
+    <p class="eligible-reading-advisor-name h4">{{firstName}} x{{ext}}</p>
+    <p class="eligible-reading-date">Reading Date:	{{date}}</p>
+    <p class="eligible-reading-type">Reading Type: 
       {{#if chat}}
-        Chat Reading
+        Chat
       {{/if}}
       {{#if call}}
-        Call Reading   
+        Call
       {{/if}}
     </p>
-    <p class="eligible-reading-date">{{date}}</p>
+   
+    
   </div>
-  <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-primary pull-right">Add Review</a>
-  <div id="add-review-block-{{readingID}}" class="collapse u-margin-top">
-    <textarea></textarea>
-    <button class="btn btn-primary btn-sm">Submit Review</button>
+  <div class="eligible-reading-actions">
+    <p class="eligible-reading-rate"><span class="stars stars-lg stars-0"><span class="sr-only">0 stars</span></span></p>
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-primary btn-block">Add Review</a>
+    <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-default btn-shaded btn-block">Add Note</a>
   </div>
 </div>
+  <div id="add-review-block-{{readingID}}" class="collapse eligible-reading-input">
+    <p>Once a review is posted on the website, you cannot edit it.</p>
+    <div class="form-group">
+      <textarea class="form-control" rows="5"></textarea>
+    </div>
+    <button class="btn btn-primary btn-block">Submit Review</button>
+  </div>
+  <div id="add-note-block-{{readingID}}" class="collapse eligible-reading-input">
+    <h3 class="u-no-margin">Reading Notes</h3>
+    <p>You can leave reading notes for yourself at any time. Your reading notes will be saved in your Review History for up to 90 days. You can edit them at anytime.</p>
+    <div class="form-group">
+      <textarea class="form-control" rows="5"></textarea>
+    </div>
+    <button class="btn btn-primary btn-block">Add Note</button>
+  </div>
+
