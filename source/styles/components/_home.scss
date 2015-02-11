@@ -1,26 +1,63 @@
 .home-alert {
-  padding: 0 2em;
+  padding: 1em;
 }
 
-.balance-block {
-	
-	font-weight:bold;
+.home-advisors {
+  min-height: 300px;
 }
 
-.home-balance {
-	font-size: 2em;
-	font-weight: bold;
-	vertical-align: -.2em;
-  padding-right: 1em;
-}
-
-.balance-low {
-  color: $red;
+.advisor-horizontal {
+  width: 100%;
+  overflow-x:scroll;
+  white-space: nowrap;
+  float:left;
+  position: relative;
 }
 
 .advisor-tile-simple {
 	display: inline-block;
-	padding: 0 2em 1em 0;
+  font-size: .8em;
+	width: 30%;
+  h4 {
+    font-weight: normal;
+    margin-bottom: 0px;
+  }
+  p {
+    display: block;
+  }
+}
+
+.home-advisor-stars {
+  margin: 0 0 0 10px;
+}
+
+.home-dash {
+  border-radius: $border-radius-large;
+  border: solid 1px $blue-light;
+  margin: 0 0 1em 0; 
+    p {
+      margin: 0;
+      padding: .2em;
+    }
+}
+
+.balance-block {
+  text-align: center;
+    span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    a {
+      vertical-align: 0;
+    }
+}
+
+.advisor-line {
+  border-top: solid 1px $blue-light;
+  text-align: center;
+  a {
+      vertical-align: 0;
+    }
 }
 
 .rotating-promo {
@@ -34,17 +71,23 @@
 }
 
 .top-stories {
-	padding: 0em 0 0 2.5em;
+  display: block;
+  font-weight: bold;
+	padding: 0em 0 0 1.5em;
 	img {
     display: block;
-		width: 8em;
-		padding: 1em 1.5em 0 0;
+    float: left;
+    margin-right: 1em;
+		width: 6em;
 	}
 	h4 {
-
+    font-size: 1.2em;
 	}
 	p {
-		font-weight: normal;
-		padding: 1em 1.5em;
+    padding: 1em 1.5em;
 	}
+}
+
+.home-video {
+  text-align: center;
 }
