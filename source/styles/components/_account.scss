@@ -1,5 +1,5 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
-.box-account {
+.account-box {
   padding-left: $account-padding;
   padding-right: $account-padding;  
   @media (max-width: $screen-sm-min)  {
