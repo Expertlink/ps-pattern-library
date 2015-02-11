@@ -1,0 +1,22 @@
+<div class="eligible-reading">
+  <div class="eligible-reading-advisor-photo">
+    <img class="img-rounded img-shadow" src="{{photo}}" alt="{{firstName}}">
+  </div>
+  <div class="eligible-reading-main">  
+    <h4 class="eligible-reading-advisor-name">{{firstName}} x{{ext}}</h4>
+    <p class="eligible-reading-type">
+      {{#if chat}}
+        Chat Reading
+      {{/if}}
+      {{#if call}}
+        Call Reading   
+      {{/if}}
+    </p>
+    <p class="eligible-reading-date">{{date}}</p>
+  </div>
+  <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-primary pull-right">Add Review</a>
+  <div id="add-review-block-{{readingID}}" class="collapse u-margin-top">
+    <textarea></textarea>
+    <button class="btn btn-primary btn-sm">Submit Review</button>
+  </div>
+</div>

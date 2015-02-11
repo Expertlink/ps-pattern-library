@@ -144,3 +144,18 @@ a.account-section-parent {
     padding:0;
   }
 }
+
+.reviews-guide {
+  margin-bottom: 1em;
+  @media (min-width: $screen-md-min)  {
+    float: left;
+    width: 20%;
+    padding-right: $account-padding;
+    .stars {
+      display: block
+    }
+    dd {
+      font-size: 0.9em;
+    }
+  }
+}

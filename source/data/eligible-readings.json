@@ -1,0 +1,38 @@
+{
+  "firstName": "Mystery Reader",
+  "ext": "7777",
+  "photo": "/images/fpo/7777-sml.jpg",
+  "date": "01/01/2015",
+  "call": true,
+  "chat": false,
+  "readingID" : "1",
+  "list": [
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "date": "02/11/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "1"
+    },
+    {
+      "firstName": "Saul Goodman",
+      "ext": "7777",
+      "photo": "/images/fpo/saul.jpg",
+      "date": "02/01/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "2"
+    },
+    {
+      "firstName": "Zaphod Beeblebrox",
+      "ext": "1456",
+      "photo": "http://placeimg.com/164/216/animals",
+      "date": "01/21/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "3"
+    }
+  ]
+}
