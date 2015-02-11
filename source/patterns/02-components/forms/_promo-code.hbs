@@ -1,0 +1,81 @@
+---
+name: Offer Selection
+description: Promo code entry and behavior for signup form (account).
+---
+
+  <div class="help-block" data-promo-success-for="form-group-promo">
+    <p class="is-success-msg">Promo code <strong class="js-code-slot">654123</strong> applied.</p>
+  </div>
+
+  <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
+  <div class="collapse promo-group" id="form-group-promo">
+    <div class="form-group arrange arrange-gutter">
+      <div class="arrange-fill">
+        <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+        <p class="help-block is-error-msg">Invalid code.</p>
+      </div>
+      <div class="arrange-fill">
+        <button class="btn btn-primary apply-btn">Apply</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  $(function() {
+
+    $('.promo-group').each(function() {
+      var $promoGroup = $(this);
+      var $applyBtn   = $promoGroup.find('.apply-btn');
+      var $input      = $promoGroup.find('input');
+
+      $applyBtn.click(function(e) {
+        var code          = $input.val();
+        var codeIsValid   = !!code.match(/^\d{6}/);
+        var $els          = {
+          discounts     : $('[data-discount-for="' + $promoGroup.attr('id') + '"]'),
+          promoGroup    : $promoGroup,
+          success       : $('[data-promo-success-for="' + $promoGroup.attr('id') + '"]'),
+          toggleControl : $('[href="#' + $promoGroup.attr('id') + '"]'),
+          input         : $input
+        };
+        var eventName  = (codeIsValid) ? 'c4.codeIsValid' : 'c4.codeIsInvalid';
+        $promoGroup.trigger('c4.codeValidation', [code, codeIsValid, $els]);
+        $promoGroup.trigger(eventName, [code, $els]);
+        e.preventDefault();
+      });
+
+      $('.promo-group').on('c4.codeValidation', function(e, code, codeIsValid, $els) {
+        $els.promoGroup.toggleClass('has-error', !codeIsValid);
+        $els.promoGroup.toggleClass('has-success', codeIsValid);
+        $els.success.toggleClass('has-success', codeIsValid);
+      });
+
+      $('.promo-group').on('c4.codeIsValid', function(e, code, $els) {
+        $els.success.find('.js-code-slot').text(code);
+        $promoGroup.collapse('hide');
+        $els.toggleControl.show().html('Change code');
+        $els.discounts.find('.js-price-amount').each(function() {
+          $(this).html('<del>$' + $(this).data('amount') + '</del>');
+        });
+        $els.discounts.find('.js-price-discounted').each(function() {
+          $(this).html('$' + $(this).data('amount'));
+        });
+      });
+
+      $('.promo-group').on('c4.codeIsInvalid', function(e, code, $els) {
+        $els.toggleControl.html('Cancel');
+        $promoGroup.one('hidden.bs.collapse', function() {
+          $els.toggleControl.html('Have a promo code?');
+        });
+        $els.discounts.find('.js-price-amount').each(function() {
+          $(this).html('$' + $(this).data('amount'));
+        });
+        $els.discounts.find('.js-price-discounted').each(function() {
+          $(this).html('');
+        });
+      });
+    });
+  });
+
+</script>
