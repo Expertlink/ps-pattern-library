@@ -2,8 +2,16 @@
   padding: 1em;
 }
 
+.advisors-available {
+  text-align: left;
+  a {
+    margin: 0;
+  }
+}
+
 .home-advisors {
-  min-height: 300px;
+  min-height: 250px;
+  margin: 0 0 2em 0;
 }
 
 .advisor-horizontal {
@@ -70,24 +78,98 @@
 	font-weight: bold
 }
 
+.box-top-stories {
+  h3 {
+    color: $red;
+  }
+}
+
 .top-stories {
-  display: block;
   font-weight: bold;
-	padding: 0em 0 0 1.5em;
+	padding: 1em 0 0 0;
 	img {
-    display: block;
     float: left;
     margin-right: 1em;
 		width: 6em;
 	}
-	h4 {
-    font-size: 1.2em;
-	}
 	p {
-    padding: 1em 1.5em;
+    font-size: .9em;
+    padding: 0 1em 0 0;
+    color: #000;
+    span {
+      color: $red;
+      font-weight: normal;
+      text-decoration: underline;
+    }
 	}
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.story {
+  border-bottom: 1px dotted $tan;
+  display: inline-block;
+  padding: .5em 0;
+  &:hover {
+    background-color: $tan-light;
+  }
 }
 
 .home-video {
   text-align: center;
+}
+.home-scroll {
+  text-align: center;
+  h3, h4 {
+    color: $red;
+  }
+}
+
+.promo-pod {
+  padding: 2em;
+  a {
+    border-top: 1px dotted $tan;
+    color: #000;
+    display: inline-block;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+      &:hover {
+        background-color: $tan-light;
+        text-decoration: none;
+      }
+  }
+  img {
+    float: left;
+    width: 8em;
+  }
+  h4 {
+    color: $red;
+  }
+  span {
+    color: $blue-light;
+    span {
+      color: $red;
+    }
+  }
+
+
+}
+
+.promo-questions {
+  img {
+    float: none;
+    width: 12em;
+  }
+  h4 {
+    font-weight: normal;
+    color: $blue-light;
+    font-size: 1.2em;
+  }
+  span {
+    color: $orange;
+  }
 }
