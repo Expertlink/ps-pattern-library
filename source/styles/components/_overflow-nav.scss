@@ -192,10 +192,11 @@ $zindex-overflow-nav: 500 !default;
 
 .special-offer-add {
   display: inline-block;
-  padding: ($padding-base-horizontal * 1.2) $padding-base-vertical;
   text-align: center;
   width: 300px;
   vertical-align: top;
+  padding: 1em;
+  overflow: hidden;
 
     &:before {
     content: "+";
