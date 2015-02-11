@@ -40,23 +40,8 @@
     z-index: 2;
   }
 }
-label {
-  display: block;
-}
+
+// overriding the top margin visually connects inputs with their labels more closely
 .radio, .checkbox {
   margin-top: 0;
-  label {
-    display: inline-block;
-  }
-}
-
-.pre-input {
-  display: block;
-  float: left;
-  clear: left;
-  line-height: 2.2em;
-  margin-right: 0.4em;
-  & + .form-control {
-    width: auto;
-  }
 }
