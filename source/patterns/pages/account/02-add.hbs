@@ -47,26 +47,39 @@ status: inprogress
       <p class="help-block">Minimum 5.00, maximum 500.00, use format 00.00.</p>
     </div>
   </div>
-  <div class="form-group form-group-required">
+  <div class="form-group form-group-required js-payment-options">
     <label>Please select a payment method:</label>
-      <div class="radio">
-        <label>
-          <input type="radio" name="addDollarsPayment" value="3870"  /> Visa ending in 3870
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="addDollarsPayment" value="89791"  /> Diner's Club Card ending in 89791
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="addDollarsPayment" value="new"  /><a href="#new-payment" data-toggle="collapse" class="toggle-trigger"> Add a new payment method</a>
-        </label>
-      </div>
-      <div id="new-payment" class="collapse">
-        {{> forms/_add-new-payment }}
-      </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         type="radio"
+         name="addDollarsPayment"
+         value="3870"  />
+         Visa ending in 3870
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         type="radio"
+         name="addDollarsPayment"
+         value="89791"  />
+         Diner's Club Card ending in 89791
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         data-target="#new-payment"
+         type="radio"
+         name="addDollarsPayment"
+         value="new"  />
+        Add a new payment method
+      </label>
+    </div>
+    <div id="new-payment" class="collapse">
+      {{> forms/_add-new-payment }}
+    </div>
   </div>
   <div class="form-group form-group-required">
     <div class="checkbox">
@@ -90,5 +103,27 @@ status: inprogress
 
   </div>
 </div>
+
+<script>
+$(function () {
+  var $paymentOptions = $('.js-payment-options');
+
+  $paymentOptions.on('change', '.js-payment-option', function (event) {
+    var $trigger = $(event.currentTarget);
+    var triggerData = $trigger.data();
+    var hasCollapseTarget = triggerData.target !== undefined;
+
+    if (hasCollapseTarget) {
+      $(triggerData.target)
+        .collapse('show')
+        .addClass('js-expanded')
+    } else {
+      $paymentOptions.find('.js-expanded')
+        .collapse('hide')
+        .removeClass('js-expanded');
+    }
+  });
+});
+</script>
 
 {{> pages/_footer }}
