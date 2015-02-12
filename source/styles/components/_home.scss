@@ -90,16 +90,22 @@
   background-color: transparent;
   h3 {
     color: $red;
+    margin: 0;
   }
 }
 
 .top-stories {
   font-weight: bold;
   overflow: auto;
-	img {
+  margin: -1em 0 2em 0;
+	
+  img {
     float: left;
     margin-right: 1em;
 		width: 6em;
+    @media (min-width: $screen-md-min) {
+      width: 4em;
+    }
 	}
 	p {
     font-size: .9em;
@@ -109,6 +115,9 @@
       color: $red;
       font-weight: normal;
       text-decoration: underline;
+    }
+    @media (min-width: $screen-md-min) {
+      font-size: .7em;
     }
 	}
   a {
@@ -126,6 +135,7 @@
     background-color: $tan-light;
   }
   @media (min-width: $screen-md-min) {
+    border: none; 
     display: block;
     float: left;
     width: 50%;
@@ -143,7 +153,7 @@
 }
 
 .promo-pod {
-  padding: 2em;
+  padding: 0;
   @media (min-width: $screen-md-min) {
     border-top: 1px dotted $tan;
   }
@@ -151,7 +161,7 @@
     border-top: 1px dotted $tan;
     color: #000;
     display: inline-block;
-    padding: 1em 0;
+    padding: 1em;
     text-align: center;
     width: 100%;
       &:hover {
@@ -159,10 +169,10 @@
         text-decoration: none;
       }
     @media (min-width: $screen-md-min) {
-      float: left;
-      border-top: none;
-      padding: 0 20px;
-      width: 30%;
+     border-top: none;
+     border-right: 1px dotted $tan;
+     height: 130px;
+
   }
 
   }
@@ -182,6 +192,11 @@
 }
 
 .promo-questions {
+  @media (min-width: $screen-md-min) {
+    a {
+      border: none;
+    }
+  }
   img {
     float: none;
     width: 12em;
