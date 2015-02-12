@@ -44,6 +44,12 @@ $(function() {
   $('[data-mask-type="tel"]').intlTelInput();
 });
 
+// Scripts for pattern at ../source/patterns/01-elements/ratings/03-editable-stars.hbs
+
+$(function(){
+  $('.stars-control').starRating();
+});
+
 // Scripts for pattern at ../source/patterns/02-components/advisors/02-advisor-grid.hbs
 
 $(window).load(function(){
@@ -57,7 +63,33 @@ $(window).load(function(){
   });
 });
 
-// Scripts for pattern at ../source/patterns/02-components/forms/00-offer-select.hbs
+// Scripts for pattern at ../source/patterns/02-components/forms/06-phone-country.hbs
+
+$(function() {
+  var countryData     = $.fn.intlTelInput.getCountryData(),
+  countryCount    = countryData.length,
+  countryOptions  = [];
+
+  for (i = 0; i < countryCount; i++) { // Build <option>s for country select(s)
+    countryOptions.push($('<option></option>')
+    .attr('value', countryData[i].iso2)
+    .text(countryData[i].name)
+  );
+  }
+
+  $('[data-mask-type="tel"]').each(function() { // Set up phone masking
+    var $el         = $(this),
+    countrySelector = $el.data('country-select'),
+    $country        = $(countrySelector);
+
+    $country.append(countryOptions).val('us');  // Add <option>s and set to 'us' by default
+    $country.change(function() {
+      $el.intlTelInput('selectCountry', $(this).val());
+    });
+  });
+});
+
+// Scripts for pattern at ../source/patterns/02-components/forms/_promo-code.hbs
 
 
   $(function() {
@@ -116,32 +148,6 @@ $(window).load(function(){
     });
   });
 
-
-// Scripts for pattern at ../source/patterns/02-components/forms/06-phone-country.hbs
-
-$(function() {
-  var countryData     = $.fn.intlTelInput.getCountryData(),
-  countryCount    = countryData.length,
-  countryOptions  = [];
-
-  for (i = 0; i < countryCount; i++) { // Build <option>s for country select(s)
-    countryOptions.push($('<option></option>')
-    .attr('value', countryData[i].iso2)
-    .text(countryData[i].name)
-  );
-  }
-
-  $('[data-mask-type="tel"]').each(function() { // Set up phone masking
-    var $el         = $(this),
-    countrySelector = $el.data('country-select'),
-    $country        = $(countrySelector);
-
-    $country.append(countryOptions).val('us');  // Add <option>s and set to 'us' by default
-    $country.change(function() {
-      $el.intlTelInput('selectCountry', $(this).val());
-    });
-  });
-});
 
 // Scripts for pattern at ../source/patterns/02-components/masthead/02-masthead.hbs
 
@@ -278,6 +284,28 @@ $(function(){
     }
   });
 
+});
+
+// Scripts for pattern at ../source/patterns/pages/account/02-add.hbs
+
+$(function () {
+  var $paymentOptions = $('.js-payment-options');
+
+  $paymentOptions.on('change', '.js-payment-option', function (event) {
+    var $trigger = $(event.currentTarget);
+    var triggerData = $trigger.data();
+    var hasCollapseTarget = triggerData.target !== undefined;
+
+    if (hasCollapseTarget) {
+      $(triggerData.target)
+        .collapse('show')
+        .addClass('js-expanded')
+    } else {
+      $paymentOptions.find('.js-expanded')
+        .collapse('hide')
+        .removeClass('js-expanded');
+    }
+  });
 });
 
 // Scripts for pattern at ../source/patterns/pages/advisor-bio/01-advisor-bio.hbs

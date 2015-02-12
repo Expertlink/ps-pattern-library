@@ -3624,6 +3624,10 @@ a.text-secondary:hover {
   .text-center-xs {
     text-align: center; } }
 
+@media (max-width: 479px) {
+  .text-nowrap-xs {
+    white-space: nowrap; } }
+
 @media (min-width: 480px) and (max-width: 703px) {
   .text-left-sm {
     text-align: left; } }
@@ -3635,6 +3639,10 @@ a.text-secondary:hover {
 @media (min-width: 480px) and (max-width: 703px) {
   .text-center-sm {
     text-align: center; } }
+
+@media (min-width: 480px) and (max-width: 703px) {
+  .text-nowrap-sm {
+    white-space: nowrap; } }
 
 @media (min-width: 704px) and (max-width: 993px) {
   .text-left-md {
@@ -3648,6 +3656,10 @@ a.text-secondary:hover {
   .text-center-md {
     text-align: center; } }
 
+@media (min-width: 704px) and (max-width: 993px) {
+  .text-nowrap-md {
+    white-space: nowrap; } }
+
 @media (min-width: 994px) {
   .text-left-lg {
     text-align: left; } }
@@ -3659,6 +3671,10 @@ a.text-secondary:hover {
 @media (min-width: 994px) {
   .text-center-lg {
     text-align: center; } }
+
+@media (min-width: 994px) {
+  .text-nowrap-lg {
+    white-space: nowrap; } }
 
 @media (max-width: 479px) {
   .small-xs {
@@ -4599,7 +4615,11 @@ a.text-secondary:hover {
   overflow: hidden;
   vertical-align: middle;
   height: 1.23077em;
-  width: 6.15385em; }
+  width: 6.15385em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .stars:before, .stars:after {
     background-repeat: repeat-x;
     background-size: auto 100%;
@@ -4674,6 +4694,11 @@ a.text-secondary:hover {
 .stars-lg {
   height: 1.69231em;
   width: 8.46154em; }
+
+.stars-control {
+  cursor: pointer; }
+  .stars-control.editing:before {
+    background-image: url(/images/star-editing.svg); }
 
 .creditcards {
   margin: 0;
@@ -5042,13 +5067,24 @@ a.text-secondary:hover {
       text-align: center;
       text-decoration: none;
       white-space: nowrap; }
-      .overflow-nav-primary > li > a:hover, .overflow-nav-primary > li > a:focus, .overflow-nav-primary > li > a.focus, .overflow-nav-primary > li > a:active, .overflow-nav-primary > li > a.active {
+    .overflow-nav-primary > li > a:hover,
+    .overflow-nav-primary > li > a:focus,
+    .overflow-nav-primary > li > a:active,
+    .overflow-nav-primary > li > a.active, .overflow-nav-primary > li.dropdown > a[aria-expanded="true"] {
+      background-color: #fddfb4; }
+    .overflow-nav-primary > li > a:hover,
+    .overflow-nav-primary > li > a:focus {
+      background-image: -webkit-linear-gradient(top, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca8);
+      background-image: linear-gradient(to bottom, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca8); }
+    .overflow-nav-primary > li > a:active,
+    .overflow-nav-primary > li > a.active, .overflow-nav-primary > li.dropdown > a[aria-expanded="true"] {
+      background-image: none;
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+    @media (min-width: 994px) {
+      .overflow-nav-primary > li > a[aria-expanded="true"] {
         background-color: #fddfb4;
-        background-image: -webkit-linear-gradient(top, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca8);
-        background-image: linear-gradient(to bottom, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca8); }
-      .overflow-nav-primary > li > a:active, .overflow-nav-primary > li > a.active, .overflow-nav-primary > li > a[aria-expanded="true"] {
         background-image: none;
-        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); } }
 
 .overflow-nav-secondary {
   background-color: #84796d;
@@ -5126,10 +5162,11 @@ a.text-secondary:hover {
 
 .special-offer-add {
   display: inline-block;
-  padding: 14.4px 6px;
   text-align: center;
   width: 300px;
-  vertical-align: top; }
+  vertical-align: top;
+  padding: 1em;
+  overflow: hidden; }
   .special-offer-add:before {
     content: "+";
     display: block;
@@ -5144,12 +5181,11 @@ a.text-secondary:hover {
     padding-right: 2em; }
 
 .our-psychics-readings > a {
-  border-color: #cdb28e;
-  border-style: solid;
-  border-width: 1px;
   color: #fff;
+  display: inline-block;
   padding: 10px 0;
-  text-decoration: none; }
+  text-decoration: none;
+  width: 320px; }
   .our-psychics-readings > a > h4 {
     color: #feeed7; }
   .our-psychics-readings > a p span {
@@ -5196,7 +5232,7 @@ a.text-secondary:hover {
   border-left: 1px solid #cdb28e; }
 
 .link-only-divider {
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dotted #fff;
   height: 15px;
   margin: 0 0 15px 15px; }
 
@@ -5381,20 +5417,26 @@ a.text-secondary:hover {
           top: 4px;
           right: 3px; } }
 
-.advisor-promo-side a {
-  display: block;
-  font-weight: bold;
-  font-weight: bold; }
-  .advisor-promo-side a:after {
-    position: absolute;
+.advisor-promo-side {
+  margin-left: -.5em; }
+  .advisor-promo-side a {
     display: block;
-    content: "";
-    top: 0;
-    right: -1.4em;
-    width: 6em;
-    height: 5em;
-    background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
-    background-size: 100% auto; }
+    font-weight: bold;
+    font-weight: bold; }
+    .advisor-promo-side a:after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: -.4em;
+      right: -1.4em;
+      width: 5em;
+      height: 6em;
+      background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
+      background-size: 100% auto; }
+      @media (min-width: 855px) {
+        .advisor-promo-side a:after {
+          top: 0;
+          width: 6em; } }
 
 .filter-heading {
   margin: 0;
@@ -6497,3 +6539,123 @@ a.section-parent {
     display: none; }
   .bio-reviews-col-lg .review-stars {
     right: 0; } }
+
+.account-box {
+  padding-left: 12px;
+  padding-right: 12px; }
+
+.account-home-section {
+  padding: 12px;
+  border: 1px solid #d4ddde;
+  box-shadow: 0 0 8px #d4ddde;
+  border-radius: 6px;
+  margin: 0 0 12px;
+  position: relative; }
+  @media (max-width: 480px) {
+    .account-home-section {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      box-shadow: none; } }
+
+.account-home-section-heading {
+  margin-top: 0; }
+  @media (max-width: 480px) {
+    .account-home-section-heading {
+      margin: 0 -12px; } }
+
+a.account-section-parent {
+  display: block;
+  position: relative;
+  padding: 6px 36px 6px 12px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  border-color: #d4ddde;
+  border-style: solid;
+  border-width: 1px 0 0;
+  background-color: #f1f4f4;
+  background-image: -webkit-linear-gradient(top, white, #f1f4f4);
+  background-image: linear-gradient(to bottom, white, #f1f4f4); }
+  a.account-section-parent:hover, a.account-section-parent:focus {
+    background-image: -webkit-linear-gradient(top, white, #feeed7);
+    background-image: linear-gradient(to bottom, white, #feeed7);
+    border-color: #d8c3a7; }
+  a.account-section-parent:after {
+    position: absolute;
+    right: 12px;
+    top: 6px;
+    content: '\2013';
+    height: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    width: 20px; }
+  a.account-section-parent.collapsed:after {
+    content: '+'; }
+  @media (min-width: 480px) {
+    a.account-section-parent {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      cursor: default;
+      display: inline-block; }
+      a.account-section-parent.collapsed:after, a.account-section-parent:after {
+        content: ''; }
+      a.account-section-parent:hover, a.account-section-parent:focus {
+        background: transparent; } }
+
+.account-current-balance {
+  text-align: center;
+  font-size: 0.9em; }
+
+.account-balance {
+  display: block;
+  font-size: 3em;
+  font-weight: 800;
+  line-height: 1em; }
+  .account-balance sup {
+    vertical-align: middle;
+    font-size: 0.6em; }
+
+.balance-summary li {
+  padding: 0.5em; }
+
+.has-balance-footnote {
+  margin-right: -0.6em; }
+
+.balance-footnote {
+  font-size: 0.9em;
+  display: block; }
+
+.account-favorites {
+  margin-bottom: 12px; }
+  @media (max-width: 480px) {
+    .account-favorites {
+      margin-top: -12px; }
+      .account-favorites .advisor-tile-main-object {
+        display: none; } }
+  @media (max-width: 704px) {
+    .account-favorites {
+      margin-right: -12px;
+      margin-left: -12px; } }
+
+.tabs-horoscope {
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-left: 12px;
+  margin-bottom: 12px; }
+  @media (max-width: 480px) {
+    .tabs-horoscope > li > a {
+      padding-left: 9px;
+      padding-right: 9px; } }
+
+.account-show-sm {
+  padding-top: 12px;
+  padding-bottom: 12px; }
+  @media (min-width: 480px) {
+    .account-show-sm {
+      display: block;
+      visibility: visible;
+      padding: 0; } }
