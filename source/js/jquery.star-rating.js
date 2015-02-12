@@ -18,122 +18,162 @@
 }(function ($) {
   'use strict';
 
-  var StarRating = function (element, options) {
-    this.options  = options;
-    this.$element = $(element);
-    this.$target  = this.options.target ? $(this.options.target) : this.$element.find('input');
+  // CONSTRUCTOR
+  // ===========
 
-    if (this.$target.length) {
-      var val = this.$target.val();
-      if (val !== 'undefined') this.val(val);
+  var StarRating = function (element, options) {
+    this.options   = options;
+    this.$element  = $(element);
+    this.$target   = (this.options.target) ? $(this.options.target) : this.$element;
+    this.isEditing = null;
+
+    // Update some options based on target element attributes
+    var attr, attrValue, i;
+    for (i = 0; i < StarRating.OPTION_ATTR.length; i++) {
+      attr = StarRating.OPTION_ATTR[i];
+      attrValue = this.$target.attr(attr);
+      if ($.isNumeric(attrValue)) {
+        this.options[attr] = parseFloat(attrValue);
+      }
     }
 
+    // Update value and appearance
+    this.setValue(this.$target.is('[value]') ? this.$target.val() : this.options.value, true);
+
+    // Bind events
     this.$element.on({
-      'mouseenter.vse.star-rating': $.proxy(function (event) {
-        this.$element.addClass('editing');
-        this.setClassFromEvent(event);
-        this.$element.on({
-          'mousemove.vse.star-rating': $.proxy(this.setClassFromEvent, this)
-        });
-      }, this),
-
-      'mouseleave.vse.star-rating': $.proxy(function (event) {
-        this.$element.off('mousemove.vse.star-rating');
-        this.$element.removeClass('editing');
-        this.setClassFromVal();
-      }, this),
-
-      'click.vse.star-rating': $.proxy(function (event) {
-        this.$element.off('mousemove.vse.star-rating');
-        this.$element.removeClass('editing');
-        this.setValFromEvent(event);
-      }, this),
-
-      'touchstart.vse.star-rating': $.proxy(function (event) {
-        event.preventDefault();
-        this.setClassFromEvent(event);
-        this.$element.on({
-          'touchmove.vse.star-rating': $.proxy(function (event) {
-            event.preventDefault();
-            this.setClassFromEvent(event);
-          }, this)
-        });
-      }, this),
-
-      'touchend.vse.star-rating': $.proxy(function (event) {
-        event.preventDefault();
-        this.$element.off('touchmove.vse.star-rating');
-        this.setValFromEvent(event);
-      }, this)
+      'mouseenter.vse.star-rating': $.proxy(this.mouseEnterHandler, this),
+      'mouseleave.vse.star-rating': $.proxy(this.mouseLeaveHandler, this),
+      'click.vse.star-rating':      $.proxy(this.clickHandler, this),
+      'touchstart.vse.star-rating': $.proxy(this.touchStartHandler, this),
+      'touchend.vse.star-rating':   $.proxy(this.touchEndHandler, this)
     });
   };
 
   StarRating.DEFAULTS = {
     value: null,
-    min: 0,
-    max: 5,
+
+    max:  5,
     step: 1,
-    minOffset: 0.4,
-    minClearsValue: true,
-    valClassTemplate: 'stars-${rating}',
-    valClassDecimal: '-'
+
+    snapToZero: 0.5,
+    zeroValue:  null,
+
+    classTemplate: 'stars-${rating}',
+    classDecimal:  '-',
+    editingClass:  'editing'
   };
 
-  StarRating.prototype.val = function (newVal) {
-    if (typeof newVal !== 'undefined') {
-      newVal = this.prepVal(parseFloat(newVal));
-      if (this.options.minClearsValue && newVal === this.options.min) {
-        newVal = null;
-      }
-      if (newVal !== this.options.value) {
-        this.options.value = newVal;
-        this.$target.val(newVal);
-        this.$target.trigger('change.vse.star-rating');
-        this.setClassFromVal();
-      }
+  StarRating.OPTION_ATTR = ['max', 'step'];
+
+  StarRating.prototype.setValue = function (value, forceUpdate) {
+    if (!$.isNumeric(value)) return;
+    value = this.cleanValue(value, this.options.zeroValue);
+
+    if (value !== this.options.value || forceUpdate) {
+      this.options.value = value;
+      this.$target.val( (value === null) ? '' : value);
+      this.updateAppearance();
+      this.$target.trigger('change.vse.star-rating');
     }
-    return this.options.value;
   };
 
-  StarRating.prototype.setValFromEvent = function (event) {
-    return this.val(this.getValFromEvent(event));
-  };
-
-  StarRating.prototype.prepVal = function (val) {
-    // If less than min or minOffset, return min
-    if (val <= Math.max(this.options.min, this.options.minOffset)) {
-      return this.options.min;
+  StarRating.prototype.cleanValue = function (value, zeroValue) {
+    // If not a number, make it a number
+    if (typeof value !== 'number') {
+      value = parseFloat(value);
     }
-    // If greater than or equal to max, return max
-    if (val >= this.options.max) {
-      return this.options.max;
+    // If zero or close enough to snap to zero, set to zero
+    if (value <= Math.max(0, this.options.snapToZero)) {
+      value = 0;
     }
-    // Otherwise, round to nearest step
-    return Math.ceil(val * (1 / this.options.step)) / (1 / this.options.step);
+    // If greater than or equal to max, cap off at max
+    else if (value >= this.options.max) {
+      value = this.options.max;
+    }
+    // Otherwise, round up to nearest step
+    else {
+      value = Math.ceil(value * (1 / this.options.step)) / (1 / this.options.step);
+    }
+    // If zeroValue is provided, replace zero with that
+    if (value === 0 && typeof zeroValue !== 'undefined') {
+      value = zeroValue;
+    }
+    return value;
   };
 
-  StarRating.prototype.getValFromEvent = function (event) {
+  StarRating.prototype.updateAppearance = function (value) {
+    // if value is not defined...
+    if (typeof value === 'undefined') {
+      // ...use the stored value or assume zero
+      value = this.options.value || 0;
+    }
+
+    // editing class to preview rating state
+    this.$element.toggleClass('editing', !!this.isEditing);
+
+    // toggle step-specific class names
+    var valueString, className, i;
+    for (i = 0; i <= this.options.max; i += this.options.step) {
+      valueString = ('' + i).replace(/\./g, this.options.classDecimal);
+      className = this.options.classTemplate.replace('${rating}', valueString);
+      this.$element.toggleClass(className, i === value);
+    }
+  };
+
+  StarRating.prototype.eventToValue = function (event) {
     var eventX = event.pageX || event.originalEvent.pageX;
     var offset = this.$element.offset();
     var width  = this.$element.outerWidth();
     var ratio  = (eventX - offset.left) / width;
 
-    return this.prepVal(ratio * this.options.max);
+    return this.cleanValue(ratio * this.options.max);
   };
 
-  StarRating.prototype.setClassFromVal = function (val) {
-    if (typeof val === 'undefined') val = this.val();
-    var valString, className, i;
-    for (i = this.options.min; i <= this.options.max; i += this.options.step) {
-      valString = ('' + i).replace(/\./g, this.options.valClassDecimal);
-      className = this.options.valClassTemplate.replace('${rating}', valString);
-      this.$element.toggleClass(className, i === val);
-    }
+  // EVENT HANDLERS
+  // ==============
+
+  StarRating.prototype.mouseEnterHandler = function (event) {
+    this.isEditing = true;
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('mousemove.vse.star-rating', $.proxy(this.mouseMoveHandler, this));
   };
 
-  StarRating.prototype.setClassFromEvent = function (event) {
-    this.setClassFromVal(this.getValFromEvent(event));
+  StarRating.prototype.mouseMoveHandler = function (event) {
+    this.updateAppearance(this.eventToValue(event));
   };
+
+  StarRating.prototype.mouseLeaveHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.updateAppearance();
+  };
+
+  StarRating.prototype.clickHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.setValue(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchStartHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('touchmove.vse.star-rating', $.proxy(this.touchMoveHandler, this));
+  };
+
+  StarRating.prototype.touchMoveHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchEndHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.$element.off('touchmove.vse.star-rating');
+    this.setValue(this.eventToValue(event));
+  };
+
+  // PLUGIN
+  // ======
 
   function Plugin (option) {
     return this.each(function () {

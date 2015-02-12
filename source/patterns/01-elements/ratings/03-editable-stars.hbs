@@ -5,7 +5,9 @@ description: >
 status: inprogress
 ---
 
-<div class="stars stars-lg stars-editable"><input type="hidden" value="3"></div>
+<div class="stars stars-lg stars-editable" data-target="#demo-rating">
+  <input id="demo-rating" class="sr-only" type="number" value="3" min="0" max="5" step="1" />
+</div>
 
 <script>
 $(function(){
