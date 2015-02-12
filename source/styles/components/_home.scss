@@ -10,8 +10,8 @@
 }
 
 .home-advisors {
-  min-height: 250px;
   margin: 0 0 2em 0;
+  overflow: auto;
 }
 
 .advisor-horizontal {
@@ -20,6 +20,10 @@
   white-space: nowrap;
   float:left;
   position: relative;
+  @media (min-width: $screen-md-min) {
+    overflow-x: normal;
+    white-space: normal;
+  }
 }
 
 .advisor-tile-simple {
@@ -32,6 +36,10 @@
   }
   p {
     display: block;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 20%;
+    margin: 0 1em;
   }
 }
 
@@ -79,6 +87,7 @@
 }
 
 .box-top-stories {
+  background-color: transparent;
   h3 {
     color: $red;
   }
@@ -86,7 +95,7 @@
 
 .top-stories {
   font-weight: bold;
-	padding: 1em 0 0 0;
+  overflow: auto;
 	img {
     float: left;
     margin-right: 1em;
@@ -116,6 +125,11 @@
   &:hover {
     background-color: $tan-light;
   }
+  @media (min-width: $screen-md-min) {
+    display: block;
+    float: left;
+    width: 50%;
+  }
 }
 
 .home-video {
@@ -130,6 +144,9 @@
 
 .promo-pod {
   padding: 2em;
+  @media (min-width: $screen-md-min) {
+    border-top: 1px dotted $tan;
+  }
   a {
     border-top: 1px dotted $tan;
     color: #000;
@@ -141,6 +158,13 @@
         background-color: $tan-light;
         text-decoration: none;
       }
+    @media (min-width: $screen-md-min) {
+      float: left;
+      border-top: none;
+      padding: 0 20px;
+      width: 30%;
+  }
+
   }
   img {
     float: left;
@@ -155,8 +179,6 @@
       color: $red;
     }
   }
-
-
 }
 
 .promo-questions {
