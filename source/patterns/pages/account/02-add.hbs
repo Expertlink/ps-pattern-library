@@ -5,9 +5,11 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
-  <div class="box-full box-account box-default-lg box-lighter">
-  <h1 class="text-primary">Existing Member Pricing</h1>
-<form role="form">
+  <div class="box-full account-box box-default-lg box-lighter">
+    <div class="row">
+      <div class="col-md-8">
+  <h1 class="text-primary">Add Dollars</h1>
+  <form role="form">
   {{> forms/_promo-code }}
   <div class="form-group form-group-required">
     <label>Please select an amount:</label>
@@ -104,6 +106,11 @@ status: inprogress
   </div>
 </form>
 
+ </div>
+      <div class="col-md-4">
+        {{> account/_account-nav-sub }}
+      </div>
+    </div>
   </div>
 </div>
 
