@@ -27,16 +27,6 @@
     this.$target   = (this.options.target) ? $(this.options.target) : this.$element;
     this.isEditing = null;
 
-    // Update some options based on target element attributes
-    var attr, attrValue, i;
-    for (i = 0; i < StarRating.OPTION_ATTR.length; i++) {
-      attr = StarRating.OPTION_ATTR[i];
-      attrValue = this.$target.attr(attr);
-      if ($.isNumeric(attrValue)) {
-        this.options[attr] = parseFloat(attrValue);
-      }
-    }
-
     // Update value and appearance
     this.setValue(this.$target.is('[value]') ? this.$target.val() : this.options.value, true);
 
@@ -63,8 +53,6 @@
     classDecimal:  '-',
     editingClass:  'editing'
   };
-
-  StarRating.OPTION_ATTR = ['max', 'step'];
 
   StarRating.prototype.setValue = function (value, forceUpdate) {
     if (!$.isNumeric(value)) return;
