@@ -1,16 +1,16 @@
 ---
 description: >
-  Adding the `.stars-editable` class will allow the rating to be modified via
+  Adding the `.stars-control` class will allow the rating to be modified via
   mouse or touch. This works with any size rating.
 status: inprogress
 ---
 
-<div class="stars stars-lg stars-editable" data-target="#demo-rating">
+<div class="stars stars-lg stars-control" data-target="#demo-rating">
   <input id="demo-rating" class="sr-only" type="number" value="3" min="0" max="5" step="1" />
 </div>
 
 <script>
 $(function(){
-  $('.stars-editable').starRating();
+  $('.stars-control').starRating();
 });
 </script>

@@ -80,7 +80,7 @@ $star-rating-step: .5 !default;
 
 // = Editable variation
 
-.stars-editable {
+.stars-control {
   cursor: pointer;
 
   &.editing:before {
