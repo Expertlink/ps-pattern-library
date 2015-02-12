@@ -1,7 +1,6 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 .account-box {
-  padding-left: $account-padding;
-  padding-right: $account-padding;  
+  padding: $account-padding;
 }
 
 .account-current-balance {
@@ -35,10 +34,10 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 
 .account-menu {
   display: block;
-  margin: $account-padding ($account-padding * -1) ($account-padding * -0.5);
+  margin: ($account-padding * 2) ($account-padding * -1) ($account-padding * -1);
   padding: 0;
   list-style: none;
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid $gray-light;
   @media (min-width: $screen-md-min)  {
     margin:0;
     border:0;
