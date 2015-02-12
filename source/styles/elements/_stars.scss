@@ -29,6 +29,7 @@ $star-rating-step: .5 !default;
   overflow: hidden;
   vertical-align: middle;
   @include star-size();
+  @include user-select(none);
 
   &:before,
   &:after {
@@ -75,4 +76,14 @@ $star-rating-step: .5 !default;
 
 .stars-lg {
   @include star-size(22px);
+}
+
+// = Editable variation
+
+.stars-control {
+  cursor: pointer;
+
+  &.editing:before {
+    background-image: url(/images/star-editing.svg);
+  }
 }
