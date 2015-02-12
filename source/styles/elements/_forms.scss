@@ -40,8 +40,3 @@
     z-index: 2;
   }
 }
-
-// overriding the top margin visually connects inputs with their labels more closely
-.radio, .checkbox {
-  margin-top: 0;
-}
