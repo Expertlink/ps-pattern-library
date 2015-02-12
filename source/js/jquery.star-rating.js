@@ -43,10 +43,11 @@
   StarRating.DEFAULTS = {
     value: null,
 
+    min:  0,
     max:  5,
     step: 1,
 
-    snapToZero: 0.5,
+    snapToMin: 0.5,
     zeroValue:  null,
 
     classTemplate: 'stars-${rating}',
@@ -72,8 +73,8 @@
       value = parseFloat(value);
     }
     // If zero or close enough to snap to zero, set to zero
-    if (value <= Math.max(0, this.options.snapToZero)) {
-      value = 0;
+    if (value <= Math.max(this.options.min, this.options.snapToMin)) {
+      value = this.options.min;
     }
     // If greater than or equal to max, cap off at max
     else if (value >= this.options.max) {
@@ -102,7 +103,7 @@
 
     // toggle step-specific class names
     var valueString, className, i;
-    for (i = 0; i <= this.options.max; i += this.options.step) {
+    for (i = this.options.min; i <= this.options.max; i += this.options.step) {
       valueString = ('' + i).replace(/\./g, this.options.classDecimal);
       className = this.options.classTemplate.replace('${rating}', valueString);
       this.$element.toggleClass(className, i === value);
@@ -114,8 +115,9 @@
     var offset = this.$element.offset();
     var width  = this.$element.outerWidth();
     var ratio  = (eventX - offset.left) / width;
+    var value  = (this.options.max - this.options.min) * ratio + this.options.min;
 
-    return this.cleanValue(ratio * this.options.max);
+    return this.cleanValue(value);
   };
 
   // EVENT HANDLERS
