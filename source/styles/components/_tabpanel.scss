@@ -12,14 +12,18 @@
   table-layout: fixed;
 
   > li {
+    position: relative;
+    z-index: 1;
     display: table-cell;
 
     > a {
-      margin-left: ($line-height-computed / 2);
       display: block;
+      margin-left: ($line-height-computed / 2);
       padding: ($line-height-computed / 2) $line-height-computed;
       text-align: center;
+      overflow: hidden;
       white-space: nowrap;
+      text-overflow: ellipsis;
 
       &:hover,
       &:focus {
@@ -114,8 +118,11 @@
 
 //== Active State Modifiers
 
-.tabpanel-tabs > li.active > a {
-  font-weight: bold;
-  background: #fff;
-  border-bottom-color: #fff;
+.tabpanel-tabs > li.active {
+
+  & > a {
+    font-weight: bold;
+    background: #fff;
+    border-bottom-color: #fff;
+  }
 }
