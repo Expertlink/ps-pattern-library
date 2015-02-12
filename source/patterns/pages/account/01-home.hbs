@@ -6,12 +6,15 @@ status: inprogress
 
 <div class="container-page">
   <div class="box-full account-box box-default-lg box-lighter">
-    {{> account/_welcome }}
-    {{> account/_special-offers }}
-    {{> account/_favorites }}
-    {{> account/_your-reviews }}
-    {{> account/_horoscope }}
-    {{> account/_articles }}
+    <div class="row">
+      <div class="col-md-8">
+        {{> account/_welcome }}
+        {{> account/_special-offers }}
+      </div>
+      <div class="col-md-4">
+        {{> account/_account-nav }}
+      </div>
+    </div>
   </div>
 </div>
 

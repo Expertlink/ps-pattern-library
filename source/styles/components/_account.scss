@@ -2,80 +2,6 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 .account-box {
   padding-left: $account-padding;
   padding-right: $account-padding;  
-
-}
-
-.account-home-section { 
-  padding: $account-padding;
-  border: 1px solid $gray-lighter;
-  box-shadow: 0 0 8px $gray-lighter;
-  border-radius: $border-radius-large;
-  margin: 0 0 $account-padding;
-  position: relative;
-  @media (max-width: $screen-sm-min)  {
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-  }
-}
-
-.account-home-section-heading {
-  margin-top: 0;
-  @media (max-width: $screen-sm-min)  {
-    margin: 0 ($account-padding * -1);
-  }
-}
-a.account-section-parent {
-  display: block;
-  position: relative;
-  padding: ($account-padding/2) ($account-padding*3) ($account-padding/2) $account-padding;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  border-color: $gray-lighter;
-  border-style: solid;
-  border-width: 1px 0 0;
-  background-color: lighten($gray-lighter, 10%);
-  background-image: linear-gradient(
-    to bottom,
-    lighten($gray-lighter, 15%),
-    lighten($gray-lighter, 10%)
-  );
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(to bottom, #fff, $tan-light);
-    border-color: $tan;
-  }
-  &:after {
-    position: absolute;
-    right: $account-padding;
-    top: ($account-padding/2);
-    content: '\2013';
-    height: $filter-control-size;
-    font-weight: bold;
-    line-height: $filter-control-size;
-    text-align: center;
-    width: $filter-control-size;
-  }
-  &.collapsed:after {
-    content: '+';
-  }
-  @media (min-width: $screen-sm-min) {
-    background: transparent;
-    border: 0;
-    padding: 0;
-    cursor: default;
-    display: inline-block;
-    &.collapsed:after, &:after {
-      content:'';
-    }
-    &:hover,
-    &:focus {
-      background: transparent;
-    }
-  }
 }
 
 .account-current-balance {
@@ -107,6 +33,44 @@ a.account-section-parent {
   display: block; 
 }
 
+.account-menu {
+  display: block;
+  margin: $account-padding ($account-padding * -1) ($account-padding * -0.5);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid $gray-lighter;
+  @media (min-width: $screen-md-min)  {
+    margin:0;
+    border:0;
+    border-radius: $border-radius-large;
+    overflow: hidden;
+  }
+  li {
+    margin:0;
+    padding: 0;
+  }
+  a {
+    display: block;
+    padding: ($account-padding * 0.75) $account-padding;
+    text-decoration: none;
+    background: $gray-lighter;  
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px dotted white;
+    &:hover,
+    &:focus {
+      background: $red;
+      color: white;
+    }  
+    &.open {
+      background: $red-darker;
+    }
+  }
+  li:last-of-type a {
+    border:0;
+  }
+}
+
 .account-favorites {
   margin-bottom: $account-padding;
   @media (max-width: $screen-sm-min)  {
@@ -131,16 +95,5 @@ a.account-section-parent {
       padding-left: ($padding-base-horizontal * 0.75);
       padding-right: ($padding-base-horizontal * 0.75);
     }
-  }
-}
-
-// This overrides the default behavior of collapse once the page is large enough to show all content at once.
-.account-show-sm {
-  padding-top: $account-padding;
-  padding-bottom: $account-padding;
-  @media (min-width: $screen-sm-min) {
-    display: block;
-    visibility: visible;
-    padding:0;
   }
 }
