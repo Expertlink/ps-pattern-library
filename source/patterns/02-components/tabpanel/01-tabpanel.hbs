@@ -1,0 +1,43 @@
+---
+description: >
+  This is a component that is based off of the Bootstrap `.nav-tabs`,
+  `.tab-content` and `.tab-pane` classes. Like the
+  [Box element](../../01-elements/boxes), this comes with some color
+  modifiers to control the border and background color of both the
+  tabs and associated content panels. For tabbing functionality, the
+  [Bootstrap Tabs](http://getbootstrap.com/javascript/#tabs)
+  JavaScript component is used.
+---
+
+<div class="tabpanel tabpanel-light" role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="tabpanel-tabs" role="tablist">
+    <li class="active" role="presentation">
+      <a role="tab" data-toggle="tab" href="#tabpanel-content-1">
+        Purchase Rewards
+      </a>
+    </li>
+    <li role="presentation">
+      <a role="tab" data-toggle="tab" href="#tabpanel-content-2">
+        Reading Rewards
+      </a>
+    </li>
+    <li role="presentation">
+      <a role="tab" data-toggle="tab" href="#tabpanel-content-3">
+        Talk Time Rewards
+      </a>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tabpanel-content">
+    <div class="tabpanel-pane active" role="tabpanel" id="tabpanel-content-1">
+      Purchase Rewards
+    </div>
+    <div class="tabpanel-pane" role="tabpanel" id="tabpanel-content-2">
+      Reading Rewards
+    </div>
+    <div class="tabpanel-pane" role="tabpanel" id="tabpanel-content-3">
+      Talk Time Rewards
+    </div>
+  </div>
+</div>
