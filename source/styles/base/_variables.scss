@@ -91,6 +91,16 @@ $btn-warning-bg: $orange;
 
 $btn-danger-bg: $red-bright;
 
+//== Close Button
+$close-width: 1em;
+$close-height: $close-width;
+$close-padding: 0.2em;
+$close-background: transparent;
+$close-border: 1px solid;
+$close-border-radius: 0.5em;
+$close-opacity-default: 0.2;
+$close-opacity-hover: 0.5;
+
 //== Media queries breakpoints
 
 $screen-sm-min: 480px;
@@ -172,9 +182,15 @@ $modal-dialog-width: 90%;
 //** Background color of modal content area
 $modal-content-bg: #fff;
 //** Modal content border color
-$modal-content-border-color: rgba(0,0,0,.1);
+$modal-content-border-color: transparent;
 //** Modal content border color **for IE8**
-$modal-content-fallback-border-color: transparent;
+$modal-content-fallback-border-color: $modal-content-border-color;
+//** Modal content border width
+$modal-content-border-width: 2px;
+//** Dropshadow used for small modals
+$modal-content-box-shadow-sm: 0 8px 8px rgba(0,0,0,.2);
+//** Dropshadow used for large modals
+$modal-content-box-shadow-lg: 0 16px 16px rgba(0,0,0,.1);
 
 //** Modal backdrop background color
 $modal-backdrop-bg: transparent;

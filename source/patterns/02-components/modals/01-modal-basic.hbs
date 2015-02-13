@@ -4,7 +4,7 @@ description: TBD
 bootstrap: http://getbootstrap.com/javascript/#modals
 ---
 
-<button class="btn btn-lg btn-primary"
+<button class="btn btn-lg btn-default"
  data-toggle="modal"
  data-target="#modal-example-basic">
   Launch Modal
@@ -14,10 +14,13 @@ bootstrap: http://getbootstrap.com/javascript/#modals
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body clearfix">
-        <button class="close" data-dismiss="modal" type="button">
-          <span aria-hidden="true">&times;</span>
+        <button class="close"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          &times;
         </button>
-        <p>One fine body&hellip;</p>
+        <p>This is clearly some text.</p>
       </div>
     </div>
   </div>
