@@ -22,24 +22,33 @@
     max-width: $modal-md;
   }
 
+  .modal-sm {
+    width: auto;
+    max-width: $modal-sm;
+  }
+
   // [BS Override] Switch to larger box-shadow
   .modal-content {
     box-shadow: $modal-content-box-shadow-lg;
   }
 }
 
-//== Color Modifiers
-
-.modal-teal {
-  .modal-content {
-    border-color: darken($teal-light, 20%);
-    background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
+// [BS Override] Scale up the modal more
+@media (min-width: $screen-md-min) {
+  .modal-lg {
+    width: auto;
+    max-width: $modal-lg;
   }
 }
 
+//== Color Modifiers
+
+.modal-teal {
+  border-color: darken($teal-light, 20%);
+  background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
+}
+
 .modal-tan {
-  .modal-content {
-    border-color: darken($tan-light, 20%);
-    background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
-  }
+  border-color: darken($tan-light, 20%);
+  background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
 }

@@ -7,19 +7,66 @@ bootstrap: http://getbootstrap.com/javascript/#modals
 <button class="btn btn-lg btn-default"
  data-toggle="modal"
  data-target="#modal-example-basic">
-  Launch Modal
+  Default
 </button>
 
 <div class="modal" id="modal-example-basic">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body clearfix">
-        <button class="close"
+        <button class="close pull-right"
          data-dismiss="modal"
          aria-hidden="true"
          type="button">
-          &times;
+          X
         </button>
+        <h2>Header</h2>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-small">
+  Small
+</button>
+
+<div class="modal" id="modal-example-small">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button class="close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          X
+        </button>
+        <h2>Header</h2>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-large">
+  Large
+</button>
+
+<div class="modal" id="modal-example-large">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button class="close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          X
+        </button>
+        <h2>Header</h2>
         <p>This is clearly some text.</p>
       </div>
     </div>
