@@ -86,7 +86,7 @@
 	font-weight: bold
 }
 
-.box-top-stories {
+.home-subcontent {
   background-color: transparent;
   h3 {
     color: $red;
@@ -97,7 +97,7 @@
 .top-stories {
   font-weight: bold;
   overflow: auto;
-  margin: -1em 0 2em 0;
+  margin: 0em 0 2em 0;
 	
   img {
     float: left;
@@ -161,6 +161,7 @@
     border-top: 1px dotted $tan;
     color: #000;
     display: inline-block;
+    height: 142px;
     padding: 1em;
     text-align: center;
     width: 100%;
