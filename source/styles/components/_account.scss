@@ -1,17 +1,23 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 .account-box {
-  padding: $account-padding;
-  overflow: hidden;
+  margin: 0 0 $account-padding;
+  .text-muted {
+    color: $gray;
+  }
 }
 
-.account-home-heading {
-  margin-bottom: $account-padding;
+.account-home-heading, .account-menu li { 
+  margin:0;
+  font-size: 1em;
+  background: lighten($gray-light,20%);
+  border: 1px solid $gray-light;
+  padding: 0 $account-padding;
   a {
+    font-weight: bold;
     display: block;
-    padding-bottom: ($account-padding * 0.5) ;
-    color: $red-darker;
-    border-bottom: 1px solid $gray-light;
-    background: url(/images/icons/points-right.svg) right 0 no-repeat;
+    padding: ($account-padding * 0.75) 0;
+    color: $red-dark;
+    background: url(/images/icons/points-right.svg) right 50% no-repeat;
     background-size: auto 1.3em;
     &:hover,
     &:focus {
@@ -21,97 +27,95 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.account-current-balance {
-  text-align: center;
+.account-home-heading {
+  border-radius: $border-radius-large $border-radius-large 0 0;
+}
+.account-menu li {
+  border-bottom-width: 0;
+  &:first-of-type {
+    border-radius: $border-radius-large $border-radius-large 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 $border-radius-large $border-radius-large;
+    border-bottom-width: 1px;
+  }
+}
+
+.account-box-inner {
+  background: white;
+  border-style: solid;
+  border-color: $gray-light;
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 $border-radius-large $border-radius-large;
+  padding: ($account-padding * 0.75) $account-padding;
+  ul {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+    li {
+      padding: ($account-padding * 0.25) 0;
+      border-bottom: 1px dotted $gray-light;
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+  }
+  a {
+    color: black;
+  }
+}
+.account-footnote {
   font-size: 0.9em;
+  color: $gray;
 }
 
-.account-balance {
-  display: block;
-  font-size: 3em;
-  font-weight: 800;
-  line-height: 1em;
-  sup {
-    vertical-align: middle;
-    font-size: 0.6em;
+.line-position {
+  float: right; 
+  background: lighten($gray-light,20%);
+  border: 1px solid $gray-light;
+  padding: 2px;
+  border-radius: $border-radius-small;
+  min-width: 3.5em;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2em;
+  span {  
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
   }
 }
 
-.balance-summary {
-  li {
-    padding: 0.5em;
-  }
-}
+
+
+
 .has-balance-footnote {
   margin-right: -0.6em;
 }
-.balance-footnote {
-  font-size: 0.9em;
-  display: block; 
-}
 
 .account-menu {
-  display: block;
-  margin: ($account-padding * 2) ($account-padding * -1) ($account-padding * -1);
-  padding: 0;
+  margin: 0;
+  padding:0;
   list-style: none;
-  border-top: 1px solid $gray-light;
-  @media (min-width: $screen-md-min)  {
-    margin:0;
-    border:0;
-    border-radius: $border-radius-large;
-    overflow: hidden;
-  }
-  li {
-    margin:0;
-    padding: 0;
-  }
-  a {
-    display: block;
-    padding: ($account-padding * 0.75) $account-padding;
-    text-decoration: none;
-    background: $gray-lighter;  
-    font-weight: bold;
-    color: black;
-    border-bottom: 1px dotted white;
-    &:hover,
-    &:focus {
-      background: $red;
-      color: white;
-    }  
-    &.open {
-      background: $red-darker;
-      color: white;
-    }
-  }
-  li:last-of-type a {
-    border:0;
-  }
+  
 }
 
-.account-favorites {
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    .advisor-tile-main-object {
-      display: none;
-    }
-    margin-top: ($account-padding * -1);
-  }
-  @media (max-width: $screen-md-min)  {
-    margin-right: ($account-padding * -1);
-    margin-left: ($account-padding * -1);
-  }
-} 
-
-.tabs-horoscope {
-  margin-left: ($account-padding * -1);
-  margin-right: ($account-padding * -1);
-  padding-left: $account-padding;
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    > li > a {
-      padding-left: ($padding-base-horizontal * 0.75);
-      padding-right: ($padding-base-horizontal * 0.75);
-    }
-  }
+.account-home {
+  display: block;
+  padding: $account-padding $account-padding $account-padding ($line-height-computed * 2);  
+  background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
+  background-size: $line-height-computed auto;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: $red-dark; 
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: ($line-height-computed / 2);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $red;
+  }  
+}
+.box-full > .account-home {
+  margin: ($line-height-computed / -2) ($line-height-computed * -1) ($line-height-computed / 2);
 }
