@@ -1,0 +1,30 @@
+
+
+// [BS Override] Shell div to position the modal with bottom padding
+.modal-dialog {
+  margin: $modal-dialog-margin;
+  width: $modal-dialog-width;
+}
+
+// [BS Override] Actual modal
+.modal-content {
+  // @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+}
+
+// [BS Override] Close icon
+.modal-header .close {
+  // margin-top: -2px;
+}
+
+// [BS Override] Scale up the modal
+@media (min-width: $screen-sm-min) {
+  // [BS Override] Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: $modal-md;
+  }
+
+  // [BS Override]
+  .modal-content {
+    // @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+  }
+}

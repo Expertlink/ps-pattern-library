@@ -153,3 +153,38 @@ $dropdown-header-color: darken($blue-gray, 35%);
 //== Grid system
 
 $grid-gutter-width: 20px;
+
+//== Modals
+
+//** Padding applied to the modal body
+$modal-inner-padding: $grid-gutter-width;
+
+//** Padding applied to the modal title
+$modal-title-padding: $grid-gutter-width;
+//** Modal title line-height
+$modal-title-line-height: inherit;
+
+//** Default margin around modal dialog
+$modal-dialog-margin: $grid-gutter-width auto;
+//** Default width for small screens
+$modal-dialog-width: 90%;
+
+//** Background color of modal content area
+$modal-content-bg: #fff;
+//** Modal content border color
+$modal-content-border-color: rgba(0,0,0,.1);
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color: transparent;
+
+//** Modal backdrop background color
+$modal-backdrop-bg: transparent;
+//** Modal backdrop opacity
+$modal-backdrop-opacity: 1;
+//** Modal header border color
+$modal-header-border-color: transparent;
+//** Modal footer border color
+$modal-footer-border-color: $modal-header-border-color;
+
+$modal-lg: 900px;
+$modal-md: 600px;
+$modal-sm: 300px;
