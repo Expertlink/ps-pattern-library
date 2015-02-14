@@ -142,72 +142,20 @@
   }
 }
 
-.home-video {
-  text-align: center;
-}
-.home-scroll {
-  text-align: center;
-  h3, h4 {
-    color: $red;
-  }
-}
-
-.promo-pod {
-  padding: 0;
-  @media (min-width: $screen-md-min) {
-    border-top: 1px dotted $tan;
-  }
-  a {
-    border-top: 1px dotted $tan;
-    color: #000;
-    display: inline-block;
-    height: 142px;
-    padding: 1em;
-    text-align: center;
-    width: 100%;
-      &:hover {
-        background-color: $tan-light;
-        text-decoration: none;
+.home-promopod {
+    background-color: $gray-lighter;
+    padding: 1em 1em 2em;
+    border-bottom: solid 1px #fff;
+      @media (min-width: $screen-md-min) {
+        border-right: solid 1px #fff;
+        height: 170px;
       }
-    @media (min-width: $screen-md-min) {
-     border-top: none;
-     border-right: 1px dotted $tan;
-     height: 130px;
-
-  }
-
-  }
-  img {
-    float: left;
-    width: 8em;
-  }
-  h4 {
-    color: $red;
-  }
-  span {
-    color: $blue-light;
-    span {
-      color: $red;
+    img {
+      float: right;
+      width: 7em;
     }
-  }
-}
-
-.promo-questions {
-  @media (min-width: $screen-md-min) {
     a {
-      border: none;
+      color: #000;
+      text-decoration: none;
     }
-  }
-  img {
-    float: none;
-    width: 12em;
-  }
-  h4 {
-    font-weight: normal;
-    color: $blue-light;
-    font-size: 1.2em;
-  }
-  span {
-    color: $orange;
-  }
 }

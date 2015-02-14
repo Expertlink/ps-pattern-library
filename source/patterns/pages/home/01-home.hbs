@@ -7,34 +7,27 @@ status: inprogress
 <div class="container-page">
 {{> home/_home-alert }}
 
-<div class="row">
-  <div class="col-md-6 col-lg-4 col-md-push-6 col-lg-push-8">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-md-push-6 col-lg-push-8">
       {{> home/_home-rotating-promo }}
-  </div>
-  <div class="col-md-6 col-lg-8 col-md-pull-6 col-lg-pull-4">
-    <div class="box-full box-lighter box-default-sm home-advisors">
+    </div>
+    <div class="col-md-6 col-lg-8 col-md-pull-6 col-lg-pull-4">
+      <div class="box-full box-lighter box-default-sm home-advisors">
       {{> home/_home-simple-advisors }}
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-6-push-6 col-lg-4 col-lg-push-8">
-  {{> home/_home-video }}    
-  </div>
-  <div class="col-md-6 col-md-6-pull-6 col-lg-8 col-lg-pull-4">
-    <div class="box">
+  <div class="row">
+    <div class="col-md-6 col-md-6-push-6 col-lg-4 col-lg-push-8">
+      {{> home/_home-video }}    
+    </div>
+    <div class="col-md-6 col-md-6-pull-6 col-lg-8 col-lg-pull-4">
       {{> home/_home-top-stories }}
+      {{> home/_home-subcontent }}
     </div>
   </div>
-</div>
-<div class="box">
-      {{> home/_home-subcontent }}
-</div>
-<div class="row">
-  <div class="col-lg-12">
+<div
   {{> home/_home-promo-pod }}
-  </div>
 </div>
 </div>
-  {{> home/_home-advisors }}
 {{> pages/_footer }}
