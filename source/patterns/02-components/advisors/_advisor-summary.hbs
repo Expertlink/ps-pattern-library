@@ -8,7 +8,7 @@
   </div>
   <div class="bio-availability">
     {{#ifOr phoneIsAvailable chatIsAvailable}}
-      <h4 class="text-success">Available until 8:27pm</h4>
+      <strong class="text-success u-margin-bottom u-block">Available until 8:27pm</strong>
     {{/ifOr}}
     <ul class="bio-actions">
       {{#if chatIsAvailable}}
@@ -25,17 +25,23 @@
       {{else}}
         {{#if isInReading}}
           {{#if phoneQueuePosition}}
-            <h4 class="text-muted">I'm in a reading</h4>
-            <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>  
+            <li class="bio-action">
+              <strong class="text-primary u-margin-bottom u-block">I'm in a reading</strong>
+              <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>
+            </li>  
           {{else}}
-            <h4 class="text-muted">I'm in a reading (4 in line)</h4>
-            <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+            <li class="bio-action">
+              <strong class="text-primary u-margin-bottom u-block">I'm in a reading (4 in line)</strong>
+              <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+              <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+            </li>
           {{/if}}
         {{else}}
-        <h4 class="text-muted">I'm away</h4>
-        <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+          <li class="bio-action">
+            <strong class="text-muted u-margin-bottom u-block">I'm away</strong>
+            <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+          </li>
         {{/if}}
       {{/if}}
     </ul>
