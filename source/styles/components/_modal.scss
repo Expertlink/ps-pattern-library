@@ -1,3 +1,4 @@
+
 // [BS Override] Shell div to position the modal with bottom padding
 .modal-dialog {
   margin: $modal-dialog-margin;
@@ -14,6 +15,18 @@
 .modal-header .close {
   margin-top: 0;
 }
+
+// Give extra padding for touch hit area
+.modal-content .close {
+  line-height: 1;
+  padding: ($modal-title-padding / 2);
+
+  &.pull-right {
+    margin-top: ($modal-title-padding / -4);
+    margin-right: ($modal-title-padding / -2);
+  }
+}
+
 
 // [BS Override] Scale up the modal
 @media (min-width: $screen-sm-min) {
