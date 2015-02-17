@@ -143,19 +143,36 @@
 }
 
 .home-promopod {
-    background-color: $gray-lighter;
-    padding: 1em 1em 2em;
-    border-bottom: solid 1px #fff;
+    padding: 1em;
+    border-bottom: dotted 1px $tan-dark;
       @media (min-width: $screen-md-min) {
-        border-right: solid 1px #fff;
-        height: 170px;
+        border-bottom: none;
+        border-top: dotted 1px $tan-dark;
+        height: 180px;
+        padding: 1.5em;
       }
     img {
       float: right;
-      width: 7em;
+      max-height: 7em;
+      max-width: 7em;
     }
     a {
       color: #000;
       text-decoration: none;
+    }
+}
+
+.home-promopod-btn {
+  bottom: 0;
+  margin: 1em 0;
+  position: relative;
+   @media (min-width: $screen-md-min) {
+    position: absolute;
+        }
+}
+
+.home-promopod-border {
+    @media (min-width: $screen-md-min) {
+      border-right: dotted 1px $tan-dark;
     }
 }
