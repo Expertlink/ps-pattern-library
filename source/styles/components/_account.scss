@@ -1,23 +1,18 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 .account-box {
   margin: 0 0 $account-padding;
-  .text-muted {
-    color: $gray;
-  }
 }
-
-.account-home-heading, .account-menu li { 
+.account-home-heading, .account-menu li, .account-home { 
   margin:0;
   font-size: 1em;
   background: lighten($gray-light,20%);
   border: 1px solid $gray-light;
   padding: 0 $account-padding;
   a {
-    font-weight: bold;
+    font-weight: normal;
     display: block;
     padding: ($account-padding * 0.75) 0;
     color: $red-dark;
-    background: url(/images/icons/points-right.svg) right 50% no-repeat;
     background-size: auto 1.3em;
     &:hover,
     &:focus {
@@ -26,7 +21,6 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     }
   }
 }
-
 .account-home-heading {
   border-radius: $border-radius-large $border-radius-large 0 0;
 }
@@ -40,7 +34,18 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     border-bottom-width: 1px;
   }
 }
-
+.account-home-heading a, .account-menu li a {
+  background: url(/images/icons/points-right.svg) right 50% no-repeat; 
+  background-size: 1.3em;
+}
+.account-home {
+  border: 0;
+  a {
+    background: url(/images/icons/points-left.svg) ($line-height-computed / 3) 50% no-repeat; 
+    background-size: 1em;
+    padding-left: $line-height-computed;
+  }
+}
 .account-box-inner {
   background: white;
   border-style: solid;
@@ -48,6 +53,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   border-width: 0 1px 1px 1px;
   border-radius: 0 0 $border-radius-large $border-radius-large;
   padding: ($account-padding * 0.75) $account-padding;
+  color: $gray;
   ul {
     list-style: none;
     margin-left: 0;
@@ -55,20 +61,32 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     li {
       padding: ($account-padding * 0.25) 0;
       border-bottom: 1px dotted $gray-light;
-      &:first-of-type {
-        padding-top: 0;
-      }
+      
     }
   }
   a {
+    color: $gray;
+  }
+  strong {
     color: black;
   }
+}
+.account-box-inner ul li.current-balance {
+  padding-top: ($account-padding );
+  strong {
+    font-size: 2em;
+    margin-top: -0.6em;
+    font-weight: normal;
+  }
+}
+.has-footnote {
+  margin-right: -0.6em;
+  color: $gray;
 }
 .account-footnote {
   font-size: 0.9em;
   color: $gray;
 }
-
 .line-position {
   float: right; 
   background: lighten($gray-light,20%);
@@ -87,35 +105,14 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 }
 
 
-
-
-.has-balance-footnote {
-  margin-right: -0.6em;
-}
-
-.account-menu {
+.account-menu, .account-home {
   margin: 0;
   padding:0;
   list-style: none;
-  
-}
-
-.account-home {
-  display: block;
-  padding: $account-padding $account-padding $account-padding ($line-height-computed * 2);  
-  background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
-  background-size: $line-height-computed auto;
-  font-size: 1.25em;
-  font-weight: bold;
-  color: $red-dark; 
-  border-bottom: 1px solid $gray-light;
-  margin-bottom: ($line-height-computed / 2);
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: $red;
-  }  
 }
 .box-full > .account-home {
   margin: ($line-height-computed / -2) ($line-height-computed * -1) ($line-height-computed / 2);
+  @media (min-width: $screen-lg-min)  {
+    border-radius: $border-radius-large $border-radius-large 0 0;
+  }
 }
