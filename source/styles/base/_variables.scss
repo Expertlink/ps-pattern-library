@@ -92,14 +92,10 @@ $btn-warning-bg: $orange;
 $btn-danger-bg: $red-bright;
 
 //== Close Button
-$close-width: 1.5em;
-$close-height: $close-width;
 $close-font-size: 1.2em;
-$close-background: transparent;
-$close-border: 1px solid;
-$close-border-radius: 50%;
-$close-opacity-default: 0.2;
-$close-opacity-hover: 0.5;
+$close-color: $gray;
+$close-opacity-default: 0.4;
+$close-opacity-hover: 0.7;
 
 //== Media queries breakpoints
 

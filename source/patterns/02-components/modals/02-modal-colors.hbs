@@ -6,6 +6,8 @@ description: >
 bootstrap: http://getbootstrap.com/javascript/#modals
 ---
 
+{{! Teal Example }}
+
 <button class="btn btn-lg btn-default"
  data-toggle="modal"
  data-target="#modal-example-teal">
@@ -16,18 +18,14 @@ bootstrap: http://getbootstrap.com/javascript/#modals
   <div class="modal-dialog">
     <div class="modal-content modal-teal">
       <div class="modal-body clearfix">
-        <button class="close pull-right"
-         data-dismiss="modal"
-         aria-hidden="true"
-         type="button">
-          X
-        </button>
-        <h2>Header</h2>
+        {{> modals/_close-btn }}
         <p>This is clearly some text.</p>
       </div>
     </div>
   </div>
 </div>
+
+{{! Tan Example }}
 
 <button class="btn btn-lg btn-default"
  data-toggle="modal"
@@ -39,13 +37,7 @@ bootstrap: http://getbootstrap.com/javascript/#modals
   <div class="modal-dialog">
     <div class="modal-content modal-tan">
       <div class="modal-body clearfix">
-        <button class="close pull-right"
-         data-dismiss="modal"
-         aria-hidden="true"
-         type="button">
-          X
-        </button>
-        <h2>Header</h2>
+        {{> modals/_close-btn }}
         <p>This is clearly some text.</p>
       </div>
     </div>

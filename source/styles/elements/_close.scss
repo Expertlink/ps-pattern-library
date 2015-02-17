@@ -1,19 +1,6 @@
 .close {
-  display: inline-block;
-  box-sizing: border-box;
-  width: $close-width;
-  height: $close-height;
   font-size: $close-font-size;
-  font-weight: $close-font-weight;
-  line-height: 0;
-  padding: 0;
-  cursor: pointer;
   color: $close-color;
-  border: $close-border;
-  border-radius: $close-border-radius;
-  background: $close-background;
-  text-align: center;
-  text-shadow: $close-text-shadow;
   -webkit-appearance: none;
   @include opacity($close-opacity-default);
 
@@ -21,7 +8,6 @@
   &:focus {
     color: $close-color;
     text-decoration: none;
-    cursor: pointer;
     @include opacity($close-opacity-hover);
   }
 }
