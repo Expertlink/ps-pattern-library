@@ -34,13 +34,10 @@
 }
 
 .home-advisor-tile-simple {
-<<<<<<< HEAD
   display: inline-block;
-=======
   border-radius: $border-radius-small;
   display: inline-block;
   padding-top: 10px;
->>>>>>> master
   width: 35%;
     @media (min-width: $screen-md-min) {
   width: 16%;
@@ -50,12 +47,9 @@
     font-weight: normal;
     text-decoration: none;
   }
-<<<<<<< HEAD
-=======
   &:hover {
     background: $tan-light;
   }
->>>>>>> master
 }
 
 .home-advisor-main-body {
