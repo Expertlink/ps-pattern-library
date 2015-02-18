@@ -8,42 +8,36 @@
   </div>
   <div class="bio-availability">
     {{#ifOr phoneIsAvailable chatIsAvailable}}
-      <strong class="text-success u-margin-bottom u-block">Available until 8:27pm</strong>
-    {{/ifOr}}
-    <ul class="bio-actions">
-      {{#if chatIsAvailable}}
-      <li class="bio-action">
-        <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
-        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-      </li>
-      {{/if}}
-      {{#if phoneIsAvailable}}
-      <li class="bio-action">
-        <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
-        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-      </li>
-      {{else}}
-        {{#if isInReading}}
-          {{#if phoneQueuePosition}}
-            <li class="bio-action">
-              <strong class="text-primary u-margin-bottom u-block">I'm in a reading</strong>
-              <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>
-            </li>  
-          {{else}}
-            <li class="bio-action">
-              <strong class="text-primary u-margin-bottom u-block">I'm in a reading (4 in line)</strong>
-              <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-              <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-            </li>
-          {{/if}}
-        {{else}}
+      <h4 class="text-success">Available until 8:27pm</h4>
+      <ul class="bio-actions">
+        {{#if chatIsAvailable}}
           <li class="bio-action">
-            <strong class="text-muted u-margin-bottom u-block">I'm away</strong>
-            <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+            <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
             <span class="bio-price"><del>$8.75</del> $1.00/min</span>
           </li>
         {{/if}}
+        {{#if phoneIsAvailable}}
+          <li class="bio-action">
+            <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
+            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+          </li>
+        {{/if}}
+      </ul>
+    {{else}}
+      {{#if isInReading}}
+        {{#if phoneQueuePosition}}
+          <h4 class="text-primary">I'm in a reading</h4>
+          <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>
+        {{else}}
+          <h4 class="text-primary">I'm in a reading (4 in line)</h4>
+          <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+        {{/if}}
+      {{else}}
+        <h4 class="text-muted">I'm away</h4>
+        <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
       {{/if}}
-    </ul>
+    {{/ifOr}}
     <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p>  
   </div>
