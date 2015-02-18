@@ -2,10 +2,10 @@
   "isAvailable"       : false,  
   "phoneIsAvailable"  : false,
   "chatIsAvailable"   : false,
-  "returnIsAvailable" : false,
+  "returnIsAvailable" : true,
   "isInReading"       : true,
   "isAway"            : false,  
-  "phoneQueue"        : 0,
+  "phoneQueue"        : 12,
   "phoneQueuePosition": 0,
   "list": [
     {
