@@ -2,88 +2,59 @@
   padding: 1em;
 }
 
-.advisors-available {
+.home-rotator {
+  width: 100%;
+  overflow-x:scroll;
+  white-space: nowrap;
+  margin-bottom: 1em;
+  position: relative;
+  img {
+    margin: 0 .5em;
+    width: 75%;
+  }
+}
+
+.home-available-advisors {
   text-align: left;
   a {
     margin: 0;
   }
 }
 
-.home-advisors {
-  margin: 0 0 2em 0;
-  overflow: auto;
-}
-
-.advisor-horizontal {
+.home-advisor-horizontal {
   width: 100%;
   overflow-x:scroll;
   white-space: nowrap;
   float:left;
   position: relative;
-  @media (min-width: $screen-md-min) {
+  @media (min-width: 850px) {
     overflow-x: normal;
     white-space: normal;
   }
 }
 
-.advisor-tile-simple {
-	display: inline-block;
-  font-size: .8em;
-	width: 30%;
-  h4 {
-    font-weight: normal;
-    margin-bottom: 0px;
+.home-advisor-tile-simple {
+  display: inline-block;
+  width: 35%;
+    @media (min-width: $screen-md-min) {
+  width: 16%;
   }
-  p {
+  a {
+    color: #000;
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+.home-advisor-main-body {
+  font-size: .7em;
+  font-weight: normal;
+  p, span {
     display: block;
   }
-  @media (min-width: $screen-md-min) {
-    width: 20%;
-    margin: 0 1em;
+  p {
+    margin-top: -6px;
   }
-}
-
-.home-advisor-stars {
-  margin: 0 0 0 10px;
-}
-
-.home-dash {
-  border-radius: $border-radius-large;
-  border: solid 1px $blue-light;
-  margin: 0 0 1em 0; 
-    p {
-      margin: 0;
-      padding: .2em;
-    }
-}
-
-.balance-block {
-  text-align: center;
-    span {
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    a {
-      vertical-align: 0;
-    }
-}
-
-.advisor-line {
-  border-top: solid 1px $blue-light;
-  text-align: center;
-  a {
-      vertical-align: 0;
-    }
-}
-
-.rotating-promo {
-	background-color: $gray;
-	color: #fff;
-	text-align: center;
-	vertical-align: center;
-	padding:100px;
-	text-transform: uppercase;
-	font-weight: bold
 }
 
 .home-subcontent {
@@ -94,7 +65,7 @@
   }
 }
 
-.top-stories {
+.home-top-stories {
   font-weight: bold;
   overflow: auto;
   margin: 0em 0 2em 0;
@@ -127,7 +98,7 @@
   }
 }
 
-.story {
+.home-story {
   border-bottom: 1px dotted $tan;
   display: inline-block;
   padding: .5em 0;
