@@ -1,38 +1,122 @@
 {
-  "phoneIsAvailable": false,
-  "chatIsAvailable" : false,
-  "isInReading"     : true,
+  "isAvailable"       : false,  
+  "phoneIsAvailable"  : false,
+  "chatIsAvailable"   : false,
+  "returnIsAvailable" : false,
+  "isInReading"       : true,
+  "isAway"            : false,  
+  "phoneQueue"        : 0,
   "phoneQueuePosition": 0,
   "list": [
     {
+      "isAvailable"     : true,  
       "phoneIsAvailable": true,
       "chatIsAvailable" : true,
+      "returnIsAvailable" : false,
       "isInReading"     : false,
+      "isAway"          : false,
+      "phoneQueue"      : 0,  
       "phoneQueuePosition": 0
     },
     {
+      "isAvailable"     : true, 
       "phoneIsAvailable": true,
       "chatIsAvailable" : false,
+      "returnIsAvailable" : false,
       "isInReading"     : false,
+      "isAway"          : false,
+      "phoneQueue"      : 0,  
       "phoneQueuePosition": 0
     },
     {
+      "isAvailable"     : true, 
       "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
+      "chatIsAvailable" : true,
+      "returnIsAvailable" : true,
       "isInReading"     : false,
+      "isAway"          : false,
+      "phoneQueue"      : 26,  
       "phoneQueuePosition": 0
     },
     {
+      "isAvailable"     : true, 
       "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
-      "isInReading"     : true,
-      "phoneQueuePosition": 0
-    },
-    {
-      "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
-      "isInReading"     : true,
+      "chatIsAvailable" : true,
+      "returnIsAvailable" : false,
+      "isInReading"     : false,
+      "isAway"          : false,
+      "phoneQueue"      : 26,  
       "phoneQueuePosition": 4
+    },
+    {
+      "isAvailable"     : true, 
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : true,
+      "returnIsAvailable" : false,
+      "isInReading"     : false,
+      "isAway"          : false,
+      "phoneQueue"      : 0,  
+      "phoneQueuePosition": 0
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : true,
+      "isInReading"     : true,
+      "isAway"          : false,
+      "phoneQueue"      : 26,  
+      "phoneQueuePosition": 0
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : false,
+      "isInReading"     : true,
+      "isAway"          : false,
+      "phoneQueue"      : 26,  
+      "phoneQueuePosition": 4
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : false,
+      "isInReading"     : true,
+      "isAway"          : false,
+      "phoneQueue"      : 0,  
+      "phoneQueuePosition": 0
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : true,
+      "isInReading"     : false,
+      "isAway"          : true,
+      "phoneQueue"      : 0,  
+      "phoneQueuePosition": 0
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : false,
+      "isInReading"     : false,
+      "isAway"          : true,
+      "phoneQueue"      : 6,  
+      "phoneQueuePosition": 13
+    },
+    {
+      "isAvailable"     : false,
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "returnIsAvailable" : false,
+      "isInReading"     : false,
+      "isAway"          : true,
+      "phoneQueue"      : 0,  
+      "phoneQueuePosition": 0
     }
   ]
 }

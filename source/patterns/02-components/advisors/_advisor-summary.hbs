@@ -1,5 +1,5 @@
 
-  <h1 class="bio-name text-primary">Psychic Mazie x1337</h1>
+  <h1 class="bio-name text-danger">Psychic Mazie x1337</h1>
   <p class="bio-headline">Insightful and Compassionate</p>
   <p><span class="stars stars-lg stars-4-5"><span class="sr-only">{{{formatFraction 4.5}}} stars</span></span> <span class="review-count">(<a href="#reviews">1204 Ratings</a>)</span></p>
   <div class="bio-audio-video">
@@ -7,8 +7,15 @@
     <p><a href="#" class="bio-av-btn"><svg class="icon icon-md"><use xlink:href="/images/symbol/svg/sprite.symbol.svg#audio" /></svg> Listen to <span class="hidden-xs hidden-lg">my </span>message</a></p>
   </div>
   <div class="bio-availability">
-    {{#ifOr phoneIsAvailable chatIsAvailable}}
-      <h4 class="text-success">Available until 8:27pm</h4>
+    {{#if isAvailable}}
+      <h4 class="text-success">Available until 8:27pm 
+        {{#if phoneQueue}}
+          ({{phoneQueue}} in line)
+        {{/if}}
+      </h4>
+      {{#if phoneQueuePosition}}
+        <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">{{phoneQueuePosition}}</strong></div>
+      {{/if}}
       <ul class="bio-actions">
         {{#if chatIsAvailable}}
           <li class="bio-action">
@@ -22,22 +29,42 @@
             <span class="bio-price"><del>$8.75</del> $1.00/min</span>
           </li>
         {{/if}}
+        {{#if returnIsAvailable}}
+          {{#unlessAnd phoneIsAvailable phoneQueuePosition}}
+            <li class="bio-action">
+              <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+              <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+            </li>
+          {{/unlessAnd}}
+        {{/if}}
       </ul>
+      <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
     {{else}}
       {{#if isInReading}}
-        {{#if phoneQueuePosition}}
-          <h4 class="text-primary">I'm in a reading</h4>
-          <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">4</strong></div>
-        {{else}}
-          <h4 class="text-primary">I'm in a reading (4 in line)</h4>
-          <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-          <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-        {{/if}}
+        <h4 class="text-danger">I'm in a reading - logged on till 9:00pm 
+          {{#if phoneQueue}}
+            ({{phoneQueue}} in line)
+          {{/if}}
+        </h4>
       {{else}}
-        <h4 class="text-muted">I'm away</h4>
-        <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-        <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+        <h4 class="text-muted">I'm away 
+          {{#if phoneQueue}}
+            ({{phoneQueue}} in line)
+          {{/if}}
+        </h4>
       {{/if}}
-    {{/ifOr}}
-    <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p>  
+      {{#if phoneQueuePosition}}
+        <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">{{phoneQueuePosition}}</strong></div>
+      {{else}}
+        {{#if returnIsAvailable}}
+          <ul class="bio-actions">
+            <li class="bio-action">
+              <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+              <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+            </li>
+          </ul>
+          <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
+        {{/if}}
+      {{/if}}
+    {{/if}}
   </div>
