@@ -1,3 +1,4 @@
+/* global jQuery, window, document */
 /**
  * A rif on bootstrap's collapse. On the first
  * click on a collapse-trigger (elements w/
@@ -8,61 +9,186 @@
  *
  */
 
-(function responsiveCollapse($) {
-  'use strict';
+ (function (factory) {
+   'use strict';
+   if (typeof define === 'function' && define.amd) {
+     // AMD. Register as an anonymous module.
+     define(['jquery'], factory);
+   } else if (typeof exports === 'object') {
+     // Node/CommonJS
+     factory(require('jquery'));
+   } else {
+     // Browser globals
+     factory(jQuery);
+   }
+ }(function ($) {
+   'use strict';
 
-  var init = function initResponsiveCollapse() {
-    $(['[data-responsive-toggle="collapse"]']).each(function() {
-      $(this).off('click.toggle-trigger');
-      $(this).one('click', function(event) {
-        event.preventDefault();
-        var targetHref = $(this).attr('href'),
-            $hiddenTargets =  $(targetHref + ':hidden');
+  var Plugin = function( elem, options ) {
+    this.elem    = elem;
+    this.$elem   = $(elem);
+    this.options = options;
+  };
 
-        if (targetHref && $hiddenTargets.length) {
-          $hiddenTargets.collapse('show');
-          $(this).toggleClass('collapsed'); // https://github.com/twbs/bootstrap/issues/13636
-          $(this).on('click.toggle-trigger', function(event) {
-            event.preventDefault();
-            $hiddenTargets.collapse('toggle');
-            $(this).toggleClass('collapsed');
-          });
-        } else {
-          $(this).on('click.toggle-trigger', function(event) {
-            event.preventDefault();
-          });
-        }
+  var _getTargetElem = function($trigger) {
+    var href;
+    var target = $trigger.attr('data-target') ||
+                 (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, ''); // strip for ie7
+    return target;
+  };
+  // Default test for whether something should be a toggle
+  var isToggle = function($elem) {
+    var targetElem     = _getTargetElem($elem);
+    var $hiddenTargets = $(targetElem + ':hidden');
+    if (targetElem && $hiddenTargets.length) {
+      return true;
+    }
+    return false;
+  };
+  // Default enable callback
+  // Some of this is pulled from collapse.js's initialization
+  var enableToggle = function(config) {
+    var $elem          = this.$elem;
+    var targetElem     = _getTargetElem($elem);
+    var $hiddenTargets = $(targetElem + ':hidden');
+    var data           = $hiddenTargets.data('bs.collapse');
+    var option         = data ? 'toggle' : $.extend({}, $elem.data(), { trigger: this.elem, show: true });
+
+    $.fn.collapse.call($hiddenTargets, option);
+
+    $elem.on('click.toggle-trigger', function(event) {
+      $hiddenTargets.collapse('toggle');
+      event.preventDefault();
+    });
+    $hiddenTargets.on('hidden.bs.collapse', function(event) {
+      $(this).attr('style', '');
+    });
+  };
+  // Default disable callback
+  var disableToggle = function(config) {
+    // Default behavior to "do nothing"
+    // This allows there to be `href` attributes
+    this.$elem.on('click.toggle-trigger', function(event) {
+      event.preventDefault();
+    });
+  };
+  // Behavior on "first" click of trigger
+  // Default to "do nothing" and squelch click event
+  var onInit = function(event) {
+    event.preventDefault();
+  };
+
+  Plugin.prototype = {
+    defaults: {
+      isToggle      : isToggle,
+      enableToggle  : enableToggle,
+      disableToggle : disableToggle,
+      onInit        : onInit
+    },
+    init: function() {
+      var config = $.extend({}, this.defaults, this.options);
+      this.$elem.off('click.toggle-trigger');
+      if (config.isToggle(this.$elem)) {
+        config.enableToggle.call(this, config);
+      } else {
+        config.disableToggle.call(this, config);
+      }
+      if (typeof config.onInit === 'function') {
+        config.onInit.call(this, event);
+      }
+      return this;
+    }
+  };
+
+  Plugin.defaults = Plugin.prototype.defaults;
+
+  $.fn.responsiveCollapse = function(options) {
+    return this.each(function() {
+      $(this).one('click', function() { // Lazy init
+        new Plugin(this, options).init();
       });
     });
   };
-
-  // Returns a function, that, as long as it continues to be invoked, will not
-  // be triggered. The function will be called after it stops being called for
-  // N milliseconds. If `immediate` is passed, trigger the function on the
-  // leading edge, instead of the trailing.
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  }
-
   $(function() {
-    init.call();
-    $(window).on('resize', debounce(init, 250));
-  });
-})(jQuery);
+    $(document).off('.collapse.data-api');
+    // Reattach default bootstrap handling, but only
+    // for a subset. This requires fully re-defining what
+    // it was doing as there is no API-supported way to inspect
+    // event handlers in modern versions of jQuery.
+    $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]:not([data-responsive])', function (e) {
+      var $this   = $(this);
 
+      if (!$this.attr('data-target')) e.preventDefault();
+      var $target = $(_getTargetElem($this));
+      var data    = $target.data('bs.collapse');
+      var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this });
+      $.fn.collapse.call($target, option);
+    });
+  });
+
+}));
+
+/*! fixed-fixed - v0.1.0 - 2014-05-23
+* Copyright (c) 2014 ; Licensed MIT */
+/*! Fixedfixed: a CSS position:fixed qualifier. (c)2012 @scottjehl, Filament Group, Inc. Dual license: MIT and/or GPLv2 */
+(function(w, undefined) {
+    var htmlclass = "fixed-supported", el = w.document.createElement("div"), ua = w.navigator.userAgent, docEl = w.document.documentElement;
+    // fix the test element
+    el.style.position = "fixed";
+    el.style.top = 0;
+    // support test
+    function checkFixed() {
+        var scroll = "scrollTop" in w.document.body ? w.document.body.scrollTop : docEl.scrollTop;
+        // only run test if there's a scroll we can compare
+        if (scroll !== undefined && scroll > 0 && w.document.body) {
+            w.document.body.insertBefore(el, w.document.body.firstChild);
+            if (!el.getBoundingClientRect || el.getBoundingClientRect().top !== 0) {
+                // Fixed is not working or can't be tested
+                docEl.className = docEl.className.replace(htmlclass, "");
+            }
+            // remove the test element
+            w.document.body.removeChild(el);
+            // unbind the handlers
+            if (w.removeEventListener) {
+                w.removeEventListener("scroll", checkFixed, false);
+            } else {
+                w.detachEvent("onscroll", checkFixed);
+            }
+        }
+    }
+    // if a particular UA is known to return false results with this feature test, try and avoid that UA here.
+    if (// Android 2.1, 2.2, 2.5, and 2.6 Webkit
+    !(ua.match(/Android 2\.[1256]/) && ua.indexOf("AppleWebKit") > -1) || // Opera Mobile less than version 11.0 (7458)
+    !(ua.match(/Opera Mobi\/([0-9]+)/) && RegExp.$1 < 7458) || // Opera Mini
+    !(w.operamini && {}.toString.call(w.operamini) === "[object OperaMini]") || // Firefox Mobile less than version 6
+    !(ua.match(/Fennec\/([0-9]+)/) && RegExp.$1 < 6)) {
+        //add the HTML class for now.
+        docEl.className += " " + htmlclass;
+        // bind to scroll event so we can test and potentially degrade
+        if (w.addEventListener) {
+            w.addEventListener("scroll", checkFixed, false);
+        } else {
+            w.attachEvent("onscroll", checkFixed);
+        }
+    }
+    w.FixedFixed = checkFixed;
+})(this);
 $(function() {
+  'use strict';
   FastClick.attach(document.body);
+
+  // Truncate (succinct) plugin
+  // Elements with `[data-truncate]` attr
+  // Initialize to truncate them.
+  $('[data-truncate]').each(function() {
+    var length = $(this).data('truncate') || 240;
+    if ($(this).html().length > length) {
+      $(this).succinct({
+        size: length
+      });
+      $(this).siblings('[data-truncate-more]').removeClass('hidden');
+    }
+  });
 });
 
 /**
@@ -583,6 +709,66 @@ $(function() {
 }));
 
 /**
+ * jQuery Mobile has a really useful zoom enable/disable component that doesn't
+ * actually depend on any other aspects of jQuery Mobile. Unfortunately if you
+ * build it using the jQuery Mobile build tool, it includes all of "core," so
+ * we're including it here on its own in a very manual fashion.
+ *
+ * https://github.com/jquery/jquery-mobile
+ */
+
+(function (factory) {
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    factory(require('jquery'));
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+  'use strict';
+
+  var	meta = $( 'meta[name=viewport]' ),
+		  initialContent = meta.attr( 'content' ),
+		  disabledZoom = initialContent + ',maximum-scale=1, user-scalable=no',
+		  enabledZoom = initialContent + ',maximum-scale=10, user-scalable=yes',
+		  disabledInitially = /(user-scalable[\s]*=[\s]*no)|(maximum-scale[\s]*=[\s]*1)[$,\s]/.test( initialContent );
+
+  $.mobile = $.mobile || {};
+
+	$.mobile.zoom = $.extend( {}, {
+		enabled: !disabledInitially,
+		locked: false,
+		disable: function( lock ) {
+			if ( !disabledInitially && !$.mobile.zoom.locked ) {
+				meta.attr( 'content', disabledZoom );
+				$.mobile.zoom.enabled = false;
+				$.mobile.zoom.locked = lock || false;
+			}
+		},
+		enable: function( unlock ) {
+			if ( !disabledInitially && ( !$.mobile.zoom.locked || unlock === true ) ) {
+				meta.attr( 'content', enabledZoom );
+				$.mobile.zoom.enabled = true;
+				$.mobile.zoom.locked = false;
+			}
+		},
+		restore: function() {
+			if ( !disabledInitially ) {
+				meta.attr( 'content', initialContent );
+				$.mobile.zoom.enabled = true;
+			}
+		}
+	});
+
+
+}));
+
+/**
  * I'm doing my best Bootstrap impression here for how this is structured.
  * Life's short, y'know?
  *
@@ -751,6 +937,194 @@ $(function() {
   });
 
 })(jQuery);
+
+/* global jQuery */
+/**
+ * Editable star rating components that play nice with mouse and touch.
+ */
+
+(function (factory) {
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    factory(require('jquery'));
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+  'use strict';
+
+  // CONSTRUCTOR
+  // ===========
+
+  var StarRating = function (element, options) {
+    this.options   = options;
+    this.$element  = $(element);
+    this.$target   = (this.options.target) ? $(this.options.target) : this.$element;
+    this.isEditing = null;
+
+    // Update value and appearance
+    this.setValue(this.$target.is('[value]') ? this.$target.val() : this.options.value, true);
+
+    // Bind events
+    this.$element.on({
+      'mouseenter.vse.star-rating': $.proxy(this.mouseEnterHandler, this),
+      'mouseleave.vse.star-rating': $.proxy(this.mouseLeaveHandler, this),
+      'click.vse.star-rating':      $.proxy(this.clickHandler, this),
+      'touchstart.vse.star-rating': $.proxy(this.touchStartHandler, this),
+      'touchend.vse.star-rating':   $.proxy(this.touchEndHandler, this)
+    });
+  };
+
+  StarRating.DEFAULTS = {
+    value: null,
+
+    min:  0,
+    max:  5,
+    step: 1,
+
+    snapToMin: 0.5,
+    zeroValue:  null,
+
+    classTemplate: 'stars-${rating}',
+    classDecimal:  '-',
+    editingClass:  'editing'
+  };
+
+  StarRating.prototype.setValue = function (value, forceUpdate) {
+    if (!$.isNumeric(value)) return;
+    value = this.cleanValue(value, this.options.zeroValue);
+
+    if (value !== this.options.value || forceUpdate) {
+      this.options.value = value;
+      this.$target.val( (value === null) ? '' : value);
+      this.updateAppearance();
+      this.$target.trigger('change.vse.star-rating');
+    }
+  };
+
+  StarRating.prototype.cleanValue = function (value, zeroValue) {
+    // If not a number, make it a number
+    if (typeof value !== 'number') {
+      value = parseFloat(value);
+    }
+    // If zero or close enough to snap to zero, set to zero
+    if (value <= Math.max(this.options.min, this.options.snapToMin)) {
+      value = this.options.min;
+    }
+    // If greater than or equal to max, cap off at max
+    else if (value >= this.options.max) {
+      value = this.options.max;
+    }
+    // Otherwise, round up to nearest step
+    else {
+      value = Math.ceil(value * (1 / this.options.step)) / (1 / this.options.step);
+    }
+    // If zeroValue is provided, replace zero with that
+    if (value === 0 && typeof zeroValue !== 'undefined') {
+      value = zeroValue;
+    }
+    return value;
+  };
+
+  StarRating.prototype.updateAppearance = function (value) {
+    // if value is not defined...
+    if (typeof value === 'undefined') {
+      // ...use the stored value or assume zero
+      value = this.options.value || 0;
+    }
+
+    // editing class to preview rating state
+    this.$element.toggleClass('editing', !!this.isEditing);
+
+    // toggle step-specific class names
+    var valueString, className, i;
+    for (i = this.options.min; i <= this.options.max; i += this.options.step) {
+      valueString = ('' + i).replace(/\./g, this.options.classDecimal);
+      className = this.options.classTemplate.replace('${rating}', valueString);
+      this.$element.toggleClass(className, i === value);
+    }
+  };
+
+  StarRating.prototype.eventToValue = function (event) {
+    var eventX = event.pageX || event.originalEvent.pageX;
+    var offset = this.$element.offset();
+    var width  = this.$element.outerWidth();
+    var ratio  = (eventX - offset.left) / width;
+    var value  = (this.options.max - this.options.min) * ratio + this.options.min;
+
+    return this.cleanValue(value);
+  };
+
+  // EVENT HANDLERS
+  // ==============
+
+  StarRating.prototype.mouseEnterHandler = function (event) {
+    this.isEditing = true;
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('mousemove.vse.star-rating', $.proxy(this.mouseMoveHandler, this));
+  };
+
+  StarRating.prototype.mouseMoveHandler = function (event) {
+    this.updateAppearance(this.eventToValue(event));
+  };
+
+  StarRating.prototype.mouseLeaveHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.updateAppearance();
+  };
+
+  StarRating.prototype.clickHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.setValue(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchStartHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('touchmove.vse.star-rating', $.proxy(this.touchMoveHandler, this));
+  };
+
+  StarRating.prototype.touchMoveHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchEndHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.$element.off('touchmove.vse.star-rating');
+    this.setValue(this.eventToValue(event));
+  };
+
+  // PLUGIN
+  // ======
+
+  function Plugin (option) {
+    return this.each(function () {
+      var $this = $(this);
+      var data  = $this.data('vse.star-rating');
+      if (!data) {
+        var options = $.extend(
+          {},
+          StarRating.DEFAULTS,
+          $this.data(),
+          typeof option === 'object' && option
+        );
+        $this.data('vse.star-rating', new StarRating(this, options));
+      }
+    });
+  }
+
+  $.fn.starRating             = Plugin;
+  $.fn.starRating.Constructor = StarRating;
+
+}));
 
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
 * Build: http://modernizr.com/download/#-csstransforms3d-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
@@ -1083,6 +1457,168 @@ $(function() {
 
     Plugin.call($target, option)
   })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.3.1
+ * http://getbootstrap.com/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.3.1'
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
+      }
+
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
+
+      $parent
+        .toggleClass('open')
+        .trigger('shown.bs.dropdown', relatedTarget)
+    }
+
+    return false
+  }
+
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+
+    var $this = $(this)
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    if ((!isActive && e.which != 27) || (isActive && e.which == 27)) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
+
+    var desc = ' li:not(.divider):visible a'
+    var $items = $parent.find('[role="menu"]' + desc + ', [role="listbox"]' + desc)
+
+    if (!$items.length) return
+
+    var index = $items.index(e.target)
+
+    if (e.which == 38 && index > 0)                 index--                        // up
+    if (e.which == 40 && index < $items.length - 1) index++                        // down
+    if (!~index)                                      index = 0
+
+    $items.eq(index).trigger('focus')
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
+    })
+  }
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.dropdown
+
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
+
+
+  // DROPDOWN NO CONFLICT
+  // ====================
+
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
+
+
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
+
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
 
 }(jQuery);
 
@@ -3592,6 +4128,57 @@ JSON.stringify(result);
         };
     }
 });
+/*
+ * Copyright (c) 2014 Mike King (@micjamking)
+ *
+ * jQuery Succinct plugin
+ * Version 1.1.0 (October 2014)
+ *
+ * Licensed under the MIT License
+ */
+
+ /*global jQuery*/
+(function($) {
+  'use strict';
+
+  $.fn.succinct = function(options) {
+
+    var settings = $.extend({
+        size: 240,
+        omission: '...',
+        ignore: true
+      }, options);
+
+    return this.each(function() {
+
+      var textDefault,
+        textTruncated,
+        elements = $(this),
+        regex    = /[!-\/:-@\[-`{-~]$/,
+        init     = function() {
+          elements.each(function() {
+            textDefault = $(this).html();
+
+            if (textDefault.length > settings.size) {
+              textTruncated = $.trim(textDefault)
+                      .substring(0, settings.size)
+                      .split(' ')
+                      .slice(0, -1)
+                      .join(' ');
+
+              if (settings.ignore) {
+                textTruncated = textTruncated.replace(regex, '');
+              }
+
+              $(this).html(textTruncated + settings.omission);
+            }
+          });
+        };
+      init();
+    });
+  };
+})(jQuery);
+
 (function (factory) {
 
   if (typeof define === 'function' && define.amd) {

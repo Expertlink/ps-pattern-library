@@ -83,6 +83,7 @@
     <ul class="c4-nav__list">
       <li><a class="c4-nav__item " href="../../02-components/advisors">Advisors</a></li>
       <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/masthead">Masthead</a></li>
@@ -101,6 +102,7 @@
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../pages/account">Account</a></li>
       <li><a class="c4-nav__item " href="../../pages/advisor-bio">Advisor Bio</a></li>
       <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
       <li><a class="c4-nav__item " href="../../pages/signup">Signup</a></li>
@@ -109,11 +111,58 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_21">
+  <div class="c4-pattern" id="c4-pattern_22">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_21">Masthead</a>
+          <a href="#c4-pattern_22">Pre Masthead</a>
+          <span class="c4-status c4-status--inprogress">
+            
+              In progress
+            
+          </span>
+        </h2>
+        
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<a class="pre-masthead" href="tel:18009653049">
+  <svg class="icon icon-md">
+    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+  </svg>
+  1.800.965.3049
+</a>
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_22" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_22"><code class="language-markup">&lt;a class=&quot;pre-masthead&quot; href=&quot;tel:18009653049&quot;&gt;
+  &lt;svg class=&quot;icon icon-md&quot;&gt;
+    &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#phone&quot; /&gt;
+  &lt;/svg&gt;
+  1.800.965.3049
+&lt;/a&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_52">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_52">Masthead</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -139,16 +188,23 @@
 
     <div class="masthead-controls">
       <ul class="masthead-menu">
-        <li>
-          <a href="" class="btn btn-link text-default">
-            Login
-          </a>
-        </li>
-        <li class="hidden-xs hidden-sm hidden-md">
-          <a href="" class="btn btn-link text-default">
+          <li>
+            <a href="" class="btn btn-link text-default">
+              Login
+            </a>
+          </li>
+        <li class="hidden-xs hidden-sm hidden-md dropdown">
+          <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
             Customer Care
             <span class="arrow-down text-muted"></span>
           </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+          </ul>
         </li>
         <li class="masthead-search-toggle">
           <a href="" class="btn btn-sunrise btn-shaded">
@@ -158,18 +214,22 @@
           </a>
         </li>
       </ul>
-      <form class="masthead-search">
+      <form action="" class="masthead-search">
         <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default">
+          <div class="input-group-btn select">
+            <div class="btn btn-default js-select-delegate" aria-hidden="true">
               <svg class="icon icon-md">
                 <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
               </svg>
-              Psychics
+              <span class="js-select-value" aria-hidden="true"></span>
               <span class="arrow-down text-muted"></span>
-            </button>
+            </div>
+            <select id="search-types">
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
           </div>
-          <input id="q" type="text" class="form-control">
+          <input id="q" type="search" class="form-control">
           <div class="input-group-btn">
             <button type="button" class="btn btn-info btn-shaded">Go</button>
           </div>
@@ -201,14 +261,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_21" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_52" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_21"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_52"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
 
   &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
     &lt;picture class=&quot;picture-responsive&quot;&gt;
@@ -221,16 +281,23 @@
 
     &lt;div class=&quot;masthead-controls&quot;&gt;
       &lt;ul class=&quot;masthead-menu&quot;&gt;
-        &lt;li&gt;
-          &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot;&gt;
-            Login
-          &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;hidden-xs hidden-sm hidden-md&quot;&gt;
-          &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot;&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot;&gt;
+              Login
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;li class=&quot;hidden-xs hidden-sm hidden-md dropdown&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot; id=&quot;customer-care-label&quot; data-toggle=&quot;dropdown&quot; data-target=&quot;#&quot; aria-haspopup=&quot;true&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;
             Customer Care
             &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
           &lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot; role=&quot;menu&quot; aria-labelledby=&quot;customer-care-label&quot;&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;LIVE Help&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Psychic? Apply Now&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;More&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
         &lt;/li&gt;
         &lt;li class=&quot;masthead-search-toggle&quot;&gt;
           &lt;a href=&quot;&quot; class=&quot;btn btn-sunrise btn-shaded&quot;&gt;
@@ -240,18 +307,22 @@
           &lt;/a&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
-      &lt;form class=&quot;masthead-search&quot;&gt;
+      &lt;form action=&quot;&quot; class=&quot;masthead-search&quot;&gt;
         &lt;div class=&quot;input-group&quot;&gt;
-          &lt;div class=&quot;input-group-btn&quot;&gt;
-            &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;
+          &lt;div class=&quot;input-group-btn select&quot;&gt;
+            &lt;div class=&quot;btn btn-default js-select-delegate&quot; aria-hidden=&quot;true&quot;&gt;
               &lt;svg class=&quot;icon icon-md&quot;&gt;
                 &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#search&quot; /&gt;
               &lt;/svg&gt;
-              Psychics
+              &lt;span class=&quot;js-select-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
               &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
-            &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;select id=&quot;search-types&quot;&gt;
+              &lt;option&gt;Psychics&lt;/option&gt;
+              &lt;option&gt;Articles&lt;/option&gt;
+            &lt;/select&gt;
           &lt;/div&gt;
-          &lt;input id=&quot;q&quot; type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+          &lt;input id=&quot;q&quot; type=&quot;search&quot; class=&quot;form-control&quot;&gt;
           &lt;div class=&quot;input-group-btn&quot;&gt;
             &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-shaded&quot;&gt;Go&lt;/button&gt;
           &lt;/div&gt;
@@ -281,12 +352,40 @@ $(function(){
 
   var $masthead = $(&#39;.masthead&#39;);
   var $toggle   = $(&#39;.masthead-search-toggle&#39;);
-  var $field    = $(&#39;#q&#39;);
+  var $fields   = $masthead.find(&#39;input, select, button&#39;);
+  var $types    = $(&#39;#search-types&#39;);
+  var $query    = $(&#39;#q&#39;);
 
-  $toggle.click(function (event) {
+  var hideDelay = 2000;
+  var hideTimeout;
+
+  // When the toggle is clicked, make sure the masthead is in the &quot;open search&quot;
+  // state (so the search is visible but other elements are not)
+  $toggle.on(&#39;click&#39;, function (event) {
     event.preventDefault();
     $masthead.addClass(&#39;is-search-open&#39;);
-    $field.click().focus();
+    $query.click().focus();
+  });
+
+  // When the search type is changed, automatically focus the query field
+  $types.on(&#39;change&#39;, function () {
+    $query.click().focus();
+  });
+
+  // With any of the form fields...
+  $fields.on({
+    // On focus, disable browser zoom and stop any hiding that may occur
+    &#39;focus&#39;: function () {
+      $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
+    },
+    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    &#39;blur&#39;: function () {
+      hideTimeout = setTimeout(function () {
+        $.mobile.zoom.enable(true);
+        $masthead.removeClass(&#39;is-search-open&#39;);
+      },  hideDelay);
+    }
   });
 
 });
@@ -298,11 +397,11 @@ $(function(){
 
 
 
-  <div class="c4-pattern" id="c4-pattern_47">
+  <div class="c4-pattern" id="c4-pattern_72">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_47">Pre Masthead</a>
+          <a href="#c4-pattern_72">Masthead (Logged In)</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -315,30 +414,409 @@ $(function(){
 
     <div class="c4-pattern__body ">
       
-<a class="pre-masthead" href="tel:18009653049">
-  <svg class="icon icon-md">
-    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-  </svg>
-  1.800.965.3049
-</a>
+
+<div class="masthead">
+
+  <a class="masthead-logo" href="">
+    <picture class="picture-responsive">
+      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
+      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+    </picture>
+  </a>
+
+  <div class="masthead-body">
+
+    <div class="masthead-controls">
+      <ul class="masthead-menu">
+          <li class="dropdown">
+            <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+              <span class="hidden-xs">Sally&rsquo;s </span>Account
+              <span class="arrow-down text-muted"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="">
+                  <span class="visible-xs-inline">Sally&rsquo;s </span>
+                  Account
+                  <span class="hidden-xs">Home</span>
+                </a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
+            </ul>
+          </li>
+        <li class="hidden-xs hidden-sm hidden-md dropdown">
+          <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+            Customer Care
+            <span class="arrow-down text-muted"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+          </ul>
+        </li>
+        <li class="masthead-search-toggle">
+          <a href="" class="btn btn-sunrise btn-shaded">
+            <svg class="icon icon-md">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <form action="" class="masthead-search">
+        <div class="input-group">
+          <div class="input-group-btn select">
+            <div class="btn btn-default js-select-delegate" aria-hidden="true">
+              <svg class="icon icon-md">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+              </svg>
+              <span class="js-select-value" aria-hidden="true"></span>
+              <span class="arrow-down text-muted"></span>
+            </div>
+            <select id="search-types">
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
+          </div>
+          <input id="q" type="search" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-info btn-shaded">Go</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="masthead-messaging text-right u-padding-top visible-lg-block">
+      <p><a class="text-default text-underline" href="">Our Satisfaction Guarantee</a></p>
+      <p class="h2 u-no-margin-top">
+        <a class="text-danger" href="tel:18009653049">
+          <svg class="icon icon-md">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+          </svg>
+          1.800.965.3049
+        </a>
+      </p>
+      <p class="u-no-margin-bottom">Since 1989, the Most Respected Psychic Service</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_47" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_72" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_47"><code class="language-markup">&lt;a class=&quot;pre-masthead&quot; href=&quot;tel:18009653049&quot;&gt;
-  &lt;svg class=&quot;icon icon-md&quot;&gt;
-    &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#phone&quot; /&gt;
-  &lt;/svg&gt;
-  1.800.965.3049
-&lt;/a&gt;</code></pre>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_72"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
+
+  &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
+    &lt;picture class=&quot;picture-responsive&quot;&gt;
+      &lt;source srcset=&quot;/images/logo/ps-logo-tagline.png&quot; media=&quot;(min-width: 994px)&quot;&gt;
+      &lt;img srcset=&quot;/images/logo/ps-logo.png&quot; src=&quot;/images/logo/ps-logo.png&quot; alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+
+  &lt;div class=&quot;masthead-body&quot;&gt;
+
+    &lt;div class=&quot;masthead-controls&quot;&gt;
+      &lt;ul class=&quot;masthead-menu&quot;&gt;
+          &lt;li class=&quot;dropdown&quot;&gt;
+            &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot; id=&quot;account-label&quot; data-toggle=&quot;dropdown&quot; data-target=&quot;#&quot; aria-haspopup=&quot;true&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;
+              &lt;span class=&quot;hidden-xs&quot;&gt;Sally&amp;rsquo;s &lt;/span&gt;Account
+              &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot; role=&quot;menu&quot; aria-labelledby=&quot;account-label&quot;&gt;
+              &lt;li role=&quot;presentation&quot;&gt;
+                &lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;
+                  &lt;span class=&quot;visible-xs-inline&quot;&gt;Sally&amp;rsquo;s &lt;/span&gt;
+                  Account
+                  &lt;span class=&quot;hidden-xs&quot;&gt;Home&lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Special Offers&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Return Call&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Log Out&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;li class=&quot;hidden-xs hidden-sm hidden-md dropdown&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot; id=&quot;customer-care-label&quot; data-toggle=&quot;dropdown&quot; data-target=&quot;#&quot; aria-haspopup=&quot;true&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;
+            Customer Care
+            &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot; role=&quot;menu&quot; aria-labelledby=&quot;customer-care-label&quot;&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;LIVE Help&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Psychic? Apply Now&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;More&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;masthead-search-toggle&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;btn btn-sunrise btn-shaded&quot;&gt;
+            &lt;svg class=&quot;icon icon-md&quot;&gt;
+              &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#search&quot; /&gt;
+            &lt;/svg&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form action=&quot;&quot; class=&quot;masthead-search&quot;&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+          &lt;div class=&quot;input-group-btn select&quot;&gt;
+            &lt;div class=&quot;btn btn-default js-select-delegate&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;svg class=&quot;icon icon-md&quot;&gt;
+                &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#search&quot; /&gt;
+              &lt;/svg&gt;
+              &lt;span class=&quot;js-select-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;select id=&quot;search-types&quot;&gt;
+              &lt;option&gt;Psychics&lt;/option&gt;
+              &lt;option&gt;Articles&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;input id=&quot;q&quot; type=&quot;search&quot; class=&quot;form-control&quot;&gt;
+          &lt;div class=&quot;input-group-btn&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-shaded&quot;&gt;Go&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;masthead-messaging text-right u-padding-top visible-lg-block&quot;&gt;
+      &lt;p&gt;&lt;a class=&quot;text-default text-underline&quot; href=&quot;&quot;&gt;Our Satisfaction Guarantee&lt;/a&gt;&lt;/p&gt;
+      &lt;p class=&quot;h2 u-no-margin-top&quot;&gt;
+        &lt;a class=&quot;text-danger&quot; href=&quot;tel:18009653049&quot;&gt;
+          &lt;svg class=&quot;icon icon-md&quot;&gt;
+            &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#phone&quot; /&gt;
+          &lt;/svg&gt;
+          1.800.965.3049
+        &lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p class=&quot;u-no-margin-bottom&quot;&gt;Since 1989, the Most Respected Psychic Service&lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_86">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_86">Masthead (Cookied)</a>
+          <span class="c4-status c4-status--inprogress">
+            
+              In progress
+            
+          </span>
+        </h2>
+        
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+
+<div class="masthead">
+
+  <a class="masthead-logo" href="">
+    <picture class="picture-responsive">
+      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
+      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+    </picture>
+  </a>
+
+  <div class="masthead-body">
+
+    <div class="masthead-controls">
+      <ul class="masthead-menu">
+            <li class="hidden-xs hidden-sm">
+              <a href="" class="btn btn-link text-default">
+                Not Sally?
+              </a>
+            </li>
+          <li>
+            <a href="" class="btn btn-link text-default">
+              Login
+            </a>
+          </li>
+        <li class="hidden-xs hidden-sm hidden-md dropdown">
+          <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+            Customer Care
+            <span class="arrow-down text-muted"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+          </ul>
+        </li>
+        <li class="masthead-search-toggle">
+          <a href="" class="btn btn-sunrise btn-shaded">
+            <svg class="icon icon-md">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <form action="" class="masthead-search">
+        <div class="input-group">
+          <div class="input-group-btn select">
+            <div class="btn btn-default js-select-delegate" aria-hidden="true">
+              <svg class="icon icon-md">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+              </svg>
+              <span class="js-select-value" aria-hidden="true"></span>
+              <span class="arrow-down text-muted"></span>
+            </div>
+            <select id="search-types">
+              <option>Psychics</option>
+              <option>Articles</option>
+            </select>
+          </div>
+          <input id="q" type="search" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-info btn-shaded">Go</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="masthead-messaging text-right u-padding-top visible-lg-block">
+      <p><a class="text-default text-underline" href="">Our Satisfaction Guarantee</a></p>
+      <p class="h2 u-no-margin-top">
+        <a class="text-danger" href="tel:18009653049">
+          <svg class="icon icon-md">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+          </svg>
+          1.800.965.3049
+        </a>
+      </p>
+      <p class="u-no-margin-bottom">Since 1989, the Most Respected Psychic Service</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_86" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_86"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
+
+  &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
+    &lt;picture class=&quot;picture-responsive&quot;&gt;
+      &lt;source srcset=&quot;/images/logo/ps-logo-tagline.png&quot; media=&quot;(min-width: 994px)&quot;&gt;
+      &lt;img srcset=&quot;/images/logo/ps-logo.png&quot; src=&quot;/images/logo/ps-logo.png&quot; alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+
+  &lt;div class=&quot;masthead-body&quot;&gt;
+
+    &lt;div class=&quot;masthead-controls&quot;&gt;
+      &lt;ul class=&quot;masthead-menu&quot;&gt;
+            &lt;li class=&quot;hidden-xs hidden-sm&quot;&gt;
+              &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot;&gt;
+                Not Sally?
+              &lt;/a&gt;
+            &lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot;&gt;
+              Login
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;li class=&quot;hidden-xs hidden-sm hidden-md dropdown&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;btn btn-link text-default&quot; id=&quot;customer-care-label&quot; data-toggle=&quot;dropdown&quot; data-target=&quot;#&quot; aria-haspopup=&quot;true&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;
+            Customer Care
+            &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot; role=&quot;menu&quot; aria-labelledby=&quot;customer-care-label&quot;&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;LIVE Help&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;Psychic? Apply Now&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;&quot;&gt;More&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;masthead-search-toggle&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;btn btn-sunrise btn-shaded&quot;&gt;
+            &lt;svg class=&quot;icon icon-md&quot;&gt;
+              &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#search&quot; /&gt;
+            &lt;/svg&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form action=&quot;&quot; class=&quot;masthead-search&quot;&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+          &lt;div class=&quot;input-group-btn select&quot;&gt;
+            &lt;div class=&quot;btn btn-default js-select-delegate&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;svg class=&quot;icon icon-md&quot;&gt;
+                &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#search&quot; /&gt;
+              &lt;/svg&gt;
+              &lt;span class=&quot;js-select-value&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;arrow-down text-muted&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;select id=&quot;search-types&quot;&gt;
+              &lt;option&gt;Psychics&lt;/option&gt;
+              &lt;option&gt;Articles&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;input id=&quot;q&quot; type=&quot;search&quot; class=&quot;form-control&quot;&gt;
+          &lt;div class=&quot;input-group-btn&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-shaded&quot;&gt;Go&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;masthead-messaging text-right u-padding-top visible-lg-block&quot;&gt;
+      &lt;p&gt;&lt;a class=&quot;text-default text-underline&quot; href=&quot;&quot;&gt;Our Satisfaction Guarantee&lt;/a&gt;&lt;/p&gt;
+      &lt;p class=&quot;h2 u-no-margin-top&quot;&gt;
+        &lt;a class=&quot;text-danger&quot; href=&quot;tel:18009653049&quot;&gt;
+          &lt;svg class=&quot;icon icon-md&quot;&gt;
+            &lt;use xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#phone&quot; /&gt;
+          &lt;/svg&gt;
+          1.800.965.3049
+        &lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p class=&quot;u-no-margin-bottom&quot;&gt;Since 1989, the Most Respected Psychic Service&lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
       
     </div>
   </div>
@@ -348,7 +826,7 @@ $(function(){
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, January 30th, 2015, 9:45AM (PST).
+      This page was generated Thursday, February 12th, 2015, 11:06AM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

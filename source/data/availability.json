@@ -1,0 +1,38 @@
+{
+  "phoneIsAvailable": false,
+  "chatIsAvailable" : false,
+  "isInReading"     : true,
+  "phoneQueuePosition": 0,
+  "list": [
+    {
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : true,
+      "isInReading"     : false,
+      "phoneQueuePosition": 0
+    },
+    {
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : false,
+      "isInReading"     : false,
+      "phoneQueuePosition": 0
+    },
+    {
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "isInReading"     : false,
+      "phoneQueuePosition": 0
+    },
+    {
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "isInReading"     : true,
+      "phoneQueuePosition": 0
+    },
+    {
+      "phoneIsAvailable": false,
+      "chatIsAvailable" : false,
+      "isInReading"     : true,
+      "phoneQueuePosition": 4
+    }
+  ]
+}

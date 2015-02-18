@@ -1,0 +1,24 @@
+---
+name: Add new payment method
+---
+
+{{> forms/payment-fields }}
+      <div class="form-group form-group-required">
+        <label class="control-label" for="signupStreet">Street address 1</label>
+        <input type="text" class="form-control" id="signupStreet" />
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="signupStreet2">Street address 2</label>
+        <input type="text" class="form-control" id="signupStreet2" />
+      </div>
+      <div class="form-group arrange arrange-equal arrange-gutter">
+        <div class="form-group-required arrange-fit">
+          <label class="control-label" for="signupCity">City</label>
+          <input type="text" class="form-control" id="signupCity" />
+        </div>
+        <div class="form-group-required arrange-fit">
+          <label class="control-label" for="signupCCZip">Zip or postal code</label>
+          <input type="text" class="form-control" id="signupCCZip" />
+        </div>
+      </div>
+{{> forms/phone-country }}

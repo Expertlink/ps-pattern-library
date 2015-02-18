@@ -1,9 +1,12 @@
 <div class="review">
   <p class="review-meta">
+    {{#if featured}}
+      <strong class="u-block">Featured Review</strong>
+    {{/if}}
     <span class="review-date">{{date}}</span>
     <span class="hidden-xs bio-hidden-lg"> with </span>
     <span class="reviewer">{{reviewer}}</span>
-    <span class="review-stars stars stars-{{replace rating "." "-"}}">{{{formatFraction rating}}} stars</span>
+    <span class="review-stars stars stars-{{replace rating "." "-"}}"><span class="sr-only">{{{formatFraction rating}}} stars</span></span>
     <span class="review-type">
       {{#if call}}
         Phone Reading
@@ -14,6 +17,6 @@
     </span>
   </p>
   <p class="review-content">
-    {{review}}&hellip;<a href="#">Full Review</a>
+    <span data-truncate="160">{{review}}</span><a class="hidden" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review{{reviewID}}">Read more</a>
   </p>
 </div>

@@ -124,6 +124,39 @@
       "loggedInTill": "12:45pm",
       "chat": true,
       "call": true
+    },
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "staffPick": false,
+      "showcase": true,
+      "rating": 4.5,
+      "basePrice": 10,
+      "channel": "Chat",
+      "channelPromo": "10% off",
+      "channelPrice": 9,
+      "online": true,
+      "available": true,
+      "loggedInTill": "7:45pm",
+      "chat": true,
+      "call": true
+    },
+    {
+      "firstName": "Saul Goodman",
+      "ext": "7777",
+      "photo": "/images/fpo/saul.jpg",
+      "staffPick": false,
+      "showcase": true,
+      "rating": 4.5,
+      "basePrice": 7.45,
+      "promoPrice": 1,
+      "online": true,
+      "available": true,
+      "loggedInTill": "10:55pm",
+      "chat": true,
+      "call": false,
+      "returnCall": true
     }
   ]
 }

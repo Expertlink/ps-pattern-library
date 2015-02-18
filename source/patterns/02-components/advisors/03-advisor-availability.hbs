@@ -1,0 +1,14 @@
+---
+fullWidth: true
+status: inprogress
+description: Variations on advisor availability combinations
+---
+
+<div class="advisor-availabilities">
+  {{#each availability.list}}
+    {{> advisors/_advisor-summary}}
+    <div style="height:200px">
+      {{! just for spacing }}
+    </div>
+  {{/each}}
+</div>

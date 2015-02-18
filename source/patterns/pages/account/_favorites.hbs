@@ -1,0 +1,18 @@
+<div class="account-home-section account-home-section-favorites">
+  <h3  class="account-home-section-heading"><a href="#favorite-advisors"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Your Favorite Advisors</a></h3>
+  <div id="favorite-advisors" class="collapse account-show-sm">
+    <div class="account-favorites">
+      <div class="row">
+        {{#withFirst advisor.list 6}}
+          <div class="col-md-2">
+            {{> advisors/_advisor-tile-fave }}
+          </div>
+        {{/withFirst}}
+      </div>
+    </div>
+    <div class="arrange arrange-gutter arrange-equal">
+      <div class="arrange-fill"><a href="/pages/our-psychics/01-our-psychics.html" class="btn btn-default btn-shaded btn-block"><span class="hidden-xs">Meet </span>More Psychics</a></div>
+      <div class="arrange-fill"><a href="/pages/account/03-offers.html" class="btn btn-primary btn-block">Manage Fav<span class="hidden-xs">orit</span>es</a></div>  
+    </div>
+  </div>
+</div>

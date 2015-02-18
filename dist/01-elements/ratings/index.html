@@ -83,6 +83,7 @@
     <ul class="c4-nav__list">
       <li><a class="c4-nav__item " href="../../02-components/advisors">Advisors</a></li>
       <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
       <li><a class="c4-nav__item " href="../../02-components/masthead">Masthead</a></li>
@@ -101,6 +102,7 @@
     </ul>
     <h4 class="c4-nav__heading">Pages</h4>
     <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../pages/account">Account</a></li>
       <li><a class="c4-nav__item " href="../../pages/advisor-bio">Advisor Bio</a></li>
       <li><a class="c4-nav__item " href="../../pages/our-psychics">Our Psychics</a></li>
       <li><a class="c4-nav__item " href="../../pages/signup">Signup</a></li>
@@ -118,23 +120,23 @@
             
           </span>
         </h2>
-        <p>Min, max and step (currently &frac12;) can be adjusted via Sass variables. Star uses SVG format so it will look nice at any resolution.</p>
+        <p>Min, max and step (currently &frac12;) can be adjusted via Sass variables. <code>.stars</code> uses SVG format so it will look nice at any resolution.</p>
 
       </div>
     
 
     <div class="c4-pattern__body ">
-      <p><span class="stars">No stars</span></p>
-<p><span class="stars stars-0-5">&frac12; star</span></p>
-<p><span class="stars stars-1">1 star</span></p>
-<p><span class="stars stars-1-5">1&frac12; stars</span></p>
-<p><span class="stars stars-2">2 stars</span></p>
-<p><span class="stars stars-2-5">2&frac12; stars</span></p>
-<p><span class="stars stars-3">3 stars</span></p>
-<p><span class="stars stars-3-5">3&frac12; stars</span></p>
-<p><span class="stars stars-4">4 stars</span></p>
-<p><span class="stars stars-4-5">4&frac12; stars</span></p>
-<p><span class="stars stars-5">5 stars</span></p>
+      <p><span class="stars"><span class="sr-only">No stars</span></span></p>
+<p><span class="stars stars-0-5"><span class="sr-only">&frac12; star</span></span></p>
+<p><span class="stars stars-1"><span class="sr-only">1 star</span></span></p>
+<p><span class="stars stars-1-5"><span class="sr-only">1&frac12; stars</span></span></p>
+<p><span class="stars stars-2"><span class="sr-only">2 stars</span></span></p>
+<p><span class="stars stars-2-5"><span class="sr-only">2&frac12; stars</span></span></p>
+<p><span class="stars stars-3"><span class="sr-only">3 stars</span></span></p>
+<p><span class="stars stars-3-5"><span class="sr-only">3&frac12; stars</span></span></p>
+<p><span class="stars stars-4"><span class="sr-only">4 stars</span></span></p>
+<p><span class="stars stars-4-5"><span class="sr-only">4&frac12; stars</span></span></p>
+<p><span class="stars stars-5"><span class="sr-only">5 stars</span></span></p>
 
     </div>
 
@@ -148,17 +150,106 @@
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_15"><code class="language-markup">&lt;p&gt;&lt;span class=&quot;stars&quot;&gt;No stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-0-5&quot;&gt;&amp;frac12; star&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-1&quot;&gt;1 star&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-1-5&quot;&gt;1&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-2&quot;&gt;2 stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-2-5&quot;&gt;2&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-3&quot;&gt;3 stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-3-5&quot;&gt;3&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-4&quot;&gt;4 stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-4-5&quot;&gt;4&amp;frac12; stars&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;stars stars-5&quot;&gt;5 stars&lt;/span&gt;&lt;/p&gt;</code></pre>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_15"><code class="language-markup">&lt;p&gt;&lt;span class=&quot;stars&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;No stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-0-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;&amp;frac12; star&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-1&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;1 star&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-1-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;1&amp;frac12; stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-2&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;2 stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-2-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;2&amp;frac12; stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-3&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;3 stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-3-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;3&amp;frac12; stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-4&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;4 stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-4-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;4&amp;frac12; stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;5 stars&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_48">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_48">Star Sizes</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p><code>.stars</code> bases its size on the parent <code>font-size</code>, but you can also overtly size it using the <code>.stars-lg</code> modifier.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<p><span class="stars stars-lg stars-4-5"><span class="sr-only">4&frac12; stars</span></span> (Large)</p>
+<p><span class="stars stars-4-5"><span class="sr-only">4&frac12; stars</span></span> (Default)</p>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_48" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_48"><code class="language-markup">&lt;p&gt;&lt;span class=&quot;stars stars-lg stars-4-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;4&amp;frac12; stars&lt;/span&gt;&lt;/span&gt; (Large)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;stars stars-4-5&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;4&amp;frac12; stars&lt;/span&gt;&lt;/span&gt; (Default)&lt;/p&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_68">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_68">Editable Stars</a>
+          <span class="c4-status c4-status--inprogress">
+            
+              In progress
+            
+          </span>
+        </h2>
+        <p>Adding the <code>.stars-control</code> class will allow the rating to be modified via mouse or touch. This works with any size rating.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<div class="stars stars-lg stars-control" data-target="#demo-rating">
+  <input id="demo-rating" type="hidden" value="3" />
+</div>
+
+
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_68" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_68"><code class="language-markup">&lt;div class=&quot;stars stars-lg stars-control&quot; data-target=&quot;#demo-rating&quot;&gt;
+  &lt;input id=&quot;demo-rating&quot; type=&quot;hidden&quot; value=&quot;3&quot; /&gt;
+&lt;/div&gt;
+&lt;script&gt;
+$(function(){
+  $(&#39;.stars-control&#39;).starRating();
+});
+&lt;/script&gt;</code></pre>
       
     </div>
   </div>
@@ -168,7 +259,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Friday, January 30th, 2015, 9:45AM (PST).
+      This page was generated Thursday, February 12th, 2015, 11:06AM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
