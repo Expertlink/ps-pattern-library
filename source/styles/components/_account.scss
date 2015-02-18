@@ -1,66 +1,92 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 .account-box {
   margin: 0 0 $account-padding;
+  padding: 0;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-large;
+  overflow: hidden;
 }
-.account-home-heading, .account-menu li, .account-home { 
+.account-home-heading, .account-menu li, .account-home  li { 
   margin:0;
   font-size: 1em;
-  background: lighten($gray-light,20%);
-  border: 1px solid $gray-light;
-  padding: 0 $account-padding;
   a {
     font-weight: normal;
     display: block;
-    padding: ($account-padding * 0.75) 0;
-    color: $red-dark;
-    background-size: auto 1.3em;
+    padding: ($account-padding * 0.75) ($account-padding * 3) ($account-padding * 0.75) $account-padding;
+    border-bottom: 1px solid $gray-lighter;
+    color: black;
+    background-repeat: no-repeat;
     &:hover,
     &:focus {
-      color: $red;
+      color: black;
       text-decoration: none;
+      background-color: $gray-lighter;
     }
   }
 }
-.account-home-heading {
-  border-radius: $border-radius-large $border-radius-large 0 0;
-}
-.account-menu li {
+
+.account-menu li:last-of-type a, .account-home li a  {
   border-bottom-width: 0;
-  &:first-of-type {
-    border-radius: $border-radius-large $border-radius-large 0 0;
-  }
-  &:last-of-type {
-    border-radius: 0 0 $border-radius-large $border-radius-large;
-    border-bottom-width: 1px;
-  }
 }
-.account-home-heading a, .account-menu li a {
-  background: url(/images/icons/points-right.svg) right 50% no-repeat; 
-  background-size: 1.3em;
-}
-.account-home {
-  border: 0;
-  a {
-    background: url(/images/icons/points-left.svg) ($line-height-computed / 3) 50% no-repeat; 
-    background-size: 1em;
-    padding-left: $line-height-computed;
+
+.account-home-heading a {
+  background-image: 
+    url(/images/icons/points-right.svg),
+    linear-gradient(
+      to bottom,
+      lighten($gray-lighter, 15%),
+      lighten($gray-lighter, 10%)
+    );
+  background-position: right 50%, 0 0; 
+  &:hover,
+  &:focus {
+    background:  url(/images/icons/points-right.svg) right 50% no-repeat $gray-lighter;
   }
 }
+
+.account-menu {
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+  li a {
+    background: url(/images/icons/points-right.svg) right 50% no-repeat;
+  }
+}
+
+.account-menu, .account-home {
+  list-style: none;
+}
+
+.account-home li a {
+  padding-left: ($account-padding * 2);
+  background-image: 
+    url(/images/icons/points-left.svg),
+    linear-gradient(
+      to bottom,
+      lighten($gray-lighter, 15%),
+      lighten($gray-lighter, 10%)
+    );
+  background-position: left 50%, 0 0; 
+  &:hover,
+  &:focus {
+    background:  url(/images/icons/points-left.svg) 0 50% no-repeat $gray-lighter;
+  }
+}
+
+
+
 .account-box-inner {
-  background: white;
-  border-style: solid;
-  border-color: $gray-light;
-  border-width: 0 1px 1px 1px;
-  border-radius: 0 0 $border-radius-large $border-radius-large;
   padding: ($account-padding * 0.75) $account-padding;
-  color: $gray;
+  color: darken($gray-light, 30%);
   ul {
     list-style: none;
     margin-left: 0;
     padding: 0;
     li {
       padding: ($account-padding * 0.25) 0;
-      border-bottom: 1px dotted $gray-light;
+      border-bottom: 1px dotted $gray-lighter;
       
     }
   }
@@ -89,8 +115,8 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 }
 .line-position {
   float: right; 
-  background: lighten($gray-light,20%);
-  border: 1px solid $gray-light;
+  background: lighten($gray-lighter,20%);
+  border: 1px solid $gray-lighter;
   padding: 2px;
   border-radius: $border-radius-small;
   min-width: 3.5em;
@@ -105,14 +131,4 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 }
 
 
-.account-menu, .account-home {
-  margin: 0;
-  padding:0;
-  list-style: none;
-}
-.box-full > .account-home {
-  margin: ($line-height-computed / -2) ($line-height-computed * -1) ($line-height-computed / 2);
-  @media (min-width: $screen-lg-min)  {
-    border-radius: $border-radius-large $border-radius-large 0 0;
-  }
-}
+
