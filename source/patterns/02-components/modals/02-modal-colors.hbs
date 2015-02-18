@@ -1,0 +1,45 @@
+---
+name: Color Variations
+description: >
+  Background and border colors can be altered by applying additional classes
+  to the `.modal-content` element.
+bootstrap: http://getbootstrap.com/javascript/#modals
+---
+
+{{! Teal Example }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-teal">
+  Teal Theme
+</button>
+
+<div class="modal" id="modal-example-teal">
+  <div class="modal-dialog">
+    <div class="modal-content modal-teal">
+      <div class="modal-body clearfix">
+        {{> modals/_close-btn }}
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! Tan Example }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-tan">
+  Tan Theme
+</button>
+
+<div class="modal" id="modal-example-tan">
+  <div class="modal-dialog">
+    <div class="modal-content modal-tan">
+      <div class="modal-body clearfix">
+        {{> modals/_close-btn }}
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>

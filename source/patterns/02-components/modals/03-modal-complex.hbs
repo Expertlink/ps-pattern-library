@@ -1,0 +1,59 @@
+---
+name: Complex Modals
+description: >
+  Additional elements, `.modal-header` and `.modal-footer`, can be used to
+  section off the top or bottom of the modal content.
+bootstrap: http://getbootstrap.com/javascript/#modals
+---
+
+{{! Header Example }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-header">
+  Header
+</button>
+
+<div class="modal" id="modal-example-header">
+  <div class="modal-dialog">
+    <div class="modal-content modal-teal">
+      <div class="modal-header clearfix">
+        {{> modals/_close-btn }}
+        <h1 class="modal-title">Header</h1>
+      </div>
+      <div class="modal-body">
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! Header + Footer Example }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-header-footer">
+  Header + Footer
+</button>
+
+<div class="modal" id="modal-example-header-footer">
+  <div class="modal-dialog">
+    <div class="modal-content modal-tan">
+      <div class="modal-header clearfix">
+        {{> modals/_close-btn }}
+        <h1 class="modal-title">Header</h1>
+      </div>
+      <div class="modal-body">
+        <p>This is clearly some text.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" type="button">
+          Close
+        </button>
+        <button class="btn btn-primary" type="button">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
