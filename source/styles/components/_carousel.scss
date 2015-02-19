@@ -1,13 +1,146 @@
 .carousel {
-	width: 100%;
+ border-radius: $border-radius-large;
+ margin: 10px auto;
+ max-width: 400px;
+ font-family: sans-serif;
+ position: relative;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  width: 100%;
+}
+.carousel-nav a {
+  text-decoration: none;
+  font-size: .8em;
+  background: #fff;
+  color: #333;
+  opacity: .8;
+  padding: .5em;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+}
+.carousel-nav a.prev {
+  left: 0;
+}
+.carousel-nav a.next {
+  right: 0;
+}
+.carousel-nav-paginated .carousel-active-page a {
+	background: #333;
+	color: #fff;
+	opacity: .8;
+}
+
+/* styled arrows */
+
+.arrows .carousel-nav {
+  bottom: auto;
+  top: 50%;
+}
+.arrows .carousel-nav a {
+  text-indent: -9999px;
+  width: 2em;
+  height: 2em;
+  background: #fff;
+  opacity: .5;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+}
+.arrows .carousel-nav a:hover,
+.arrows .carousel-nav a:focus {
+  opacity: 1;
+}
+.arrows .carousel-nav a.next {
+  background-image: url(/images/rotator/arrow-right.png);
+  right: 1em;
+}
+.arrows .carousel-nav a.prev {
+  background-image: url(/images/rotator/arrow-left.png);
+  left: 1em;
+}
+
+/* slide transition */
+
+.carousel-slide {
 	position: relative;
+	overflow: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
-.carousel .carousel-item {
-	display: none;
+.carousel-slide .carousel-item {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 100%; /* necessary for non-active slides */
+	display: block; /* overrides basic carousel styles */
+	z-index: 1;
+	-webkit-transition: left .2s ease;
+	-moz-transition: left .2s ease;
+	-ms-transition: left .2s ease;
+	-o-transition: left .2s ease;
+	transition: left .2s ease;
 }
-.carousel .carousel-active {
-	display: block;
+.carousel-no-transition .carousel-item {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
 }
-.carousel .carousel-nav:nth-child(2) {
-	display: none;
+.carousel-slide .carousel-active {
+	left: 0;
+	position: relative;
+	z-index: 2;
 }
+.carousel-slide .carousel-in {
+	left: 0;
+}
+.carousel-slide-reverse .carousel-out {
+	left: 100%;
+}
+.carousel-slide .carousel-out,
+.carousel-slide-reverse .carousel-in {
+	left: -100%;
+}
+.carousel-slide-reverse .carousel-item {
+	-webkit-transition: left .1s ease;
+	-moz-transition: left .1s ease;
+	-ms-transition: left .1s ease;
+	-o-transition: left .1s ease;
+	transition: left .1s ease;
+}
+.carousel-slide-reverse .carousel-active {
+	left: 0;
+}
+
+/* small */
+
+.carousel-small .carousel-item {
+	width: 70%;
+}
+
+.carousel-small .carousel-active {
+	left: 15%;
+}
+
+.carousel-small .carousel-item-next {
+	left: 89%;
+}
+
+.carousel-small .carousel-item-prev {
+	left: -59%;
+}
+
