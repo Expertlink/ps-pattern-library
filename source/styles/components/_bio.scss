@@ -221,6 +221,9 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
     color: $gray-light;
     font-weight: normal;
   }
+  &.bio-unavailable {
+    text-align: left;
+  }
 }
 .bio-availability {
   text-align: center;

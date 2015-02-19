@@ -30,7 +30,6 @@
           {{/unlessAnd}}
         {{/if}}
       </ul>
-      <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
     {{else}}
       {{#if isInReading}}
         <h4 class="text-danger">I'm in a reading - logged on till 9:00pm 
@@ -47,16 +46,22 @@
       {{/if}}
       {{#if phoneQueuePosition}}
         <div class="box box-lighter box-sm box-success">Your position in line: <strong class="text-success">{{phoneQueuePosition}}</strong></div>
-      {{else}}
-        {{#if returnIsAvailable}}
-          <ul class="bio-actions">
-            <li class="bio-action">
-              <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
-              <span class="bio-price"><del>$8.75</del> $1.00/min</span>
-            </li>
-          </ul>
-          <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
-        {{/if}}
       {{/if}}
+      <ul class="bio-actions">
+         <li class="bio-action">
+          {{#if returnIsAvailable}}
+            <a class="btn btn-block btn-default btn-shaded" href="#">Get a Return Call</a>
+            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+          {{else}}
+            {{#if chatIsAvailable}}
+              <span class="bio-price bio-unavailable">Chat: <del>$8.75</del> $1.00/min</span>
+            {{/if}}
+            {{#if phoneIsAvailable}}
+              <span class="bio-price bio-unavailable">Phone: <del>$8.75</del> $1.00/min</span>
+            {{/if}}
+          {{/if}}
+        </li>
+      </ul>
     {{/if}}
+   <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
   </div>

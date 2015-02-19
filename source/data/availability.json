@@ -60,8 +60,8 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : true,
       "returnIsAvailable" : true,
       "isInReading"     : true,
       "isAway"          : false,
@@ -70,8 +70,8 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : true,
       "returnIsAvailable" : false,
       "isInReading"     : true,
       "isAway"          : false,
@@ -80,7 +80,7 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
+      "phoneIsAvailable": true,
       "chatIsAvailable" : false,
       "returnIsAvailable" : false,
       "isInReading"     : true,
@@ -90,8 +90,8 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : true,
       "returnIsAvailable" : true,
       "isInReading"     : false,
       "isAway"          : true,
@@ -100,7 +100,7 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
+      "phoneIsAvailable": true,
       "chatIsAvailable" : false,
       "returnIsAvailable" : false,
       "isInReading"     : false,
@@ -110,8 +110,8 @@
     },
     {
       "isAvailable"     : false,
-      "phoneIsAvailable": false,
-      "chatIsAvailable" : false,
+      "phoneIsAvailable": true,
+      "chatIsAvailable" : true,
       "returnIsAvailable" : false,
       "isInReading"     : false,
       "isAway"          : true,
