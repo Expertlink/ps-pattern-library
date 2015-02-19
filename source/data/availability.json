@@ -105,8 +105,8 @@
       "returnIsAvailable" : false,
       "isInReading"     : false,
       "isAway"          : true,
-      "phoneQueue"      : 6,  
-      "phoneQueuePosition": 13
+      "phoneQueue"      : 13,  
+      "phoneQueuePosition": 6
     },
     {
       "isAvailable"     : false,
