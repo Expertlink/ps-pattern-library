@@ -1,0 +1,65 @@
+---
+name: Simple Modals
+description: >
+  Modals are based off of the Bootstrap Modal component. They are full-width
+  at small screen layouts, with various width constraining options at larger
+  screen layouts, applied with modifier classes.
+bootstrap: http://getbootstrap.com/javascript/#modals
+---
+
+{{! Default }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-basic">
+  Default
+</button>
+
+<div class="modal" id="modal-example-basic">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        {{> modals/_close-btn }}
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! Small }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-small">
+  Small
+</button>
+
+<div class="modal" id="modal-example-small">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        {{> modals/_close-btn }}
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! Large }}
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-large">
+  Large
+</button>
+
+<div class="modal" id="modal-example-large">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        {{> modals/_close-btn }}
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
