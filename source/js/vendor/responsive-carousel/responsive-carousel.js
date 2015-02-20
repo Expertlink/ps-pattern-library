@@ -177,8 +177,8 @@
 				var $nav, $this = $( this ), $items, $active;
 
 				$nav = $("<nav class='"+ navClass +"'>" +
-					"<a href='#prev' class='prev' aria-hidden='true' title='Previous'>Prev</a>" +
-					"<a href='#next' class='next' aria-hidden='true' title='Next'>Next</a>" +
+					"<a href='#prev' class='prev' aria-hidden='true' title='Previous'></a>" +
+					"<a href='#next' class='next' aria-hidden='true' title='Next'></a>" +
 					"</nav>");
 
 				$this.trigger( "beforecreatenav." + pluginName, { $nav: $nav });
