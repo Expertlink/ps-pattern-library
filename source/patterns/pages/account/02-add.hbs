@@ -6,15 +6,15 @@ status: inprogress
 
 <div class="container-page">
   <div class="box-full box-default-lg box-lighter">
-    {{> account/_account-back }} 
-    <h1 class="u-no-margin-top">Add Dollars</h1>    
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-4 col-lg-3">
+        {{> account/_account-nav-sub }}
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <h1 style="margin-top:6px">Add Dollars</h1>    
         {{> account/_account-add-dollars-form }}
       </div>
-      <div class="col-md-4 hidden-xs hidden-sm">
-        {{> account/_account-nav }}
-      </div>
+
     </div>
   </div>
 </div>

@@ -8,11 +8,12 @@ status: inprogress
   <div class="box-full  box-default-lg box-lighter">
     <h1 class="u-no-margin-top">Welcome, Sally!</h1>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-9 col-md-push-3">
         {{> account/_balance }}
-        {{> account/_no-returns }}
+        {{> account/_manage-returns }}
+        {{> account/_special-offers }}
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3 col-md-pull-9">
         {{> account/_account-nav }}
       </div>
     </div>

@@ -22,6 +22,9 @@ $account-padding: ($line-height-computed * (2/3)) !default;
       text-decoration: none;
       background-color: $gray-lighter;
     }
+    &.on {
+      background: $gray-lighter;
+    }
   }
 }
 
@@ -42,6 +45,17 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   &:focus {
     background:  url(/images/icons/points-right.svg) right 50% no-repeat $gray-lighter;
   }
+  @media (min-width: $screen-md-min)  {
+    background-image: linear-gradient(
+      to bottom,
+      lighten($gray-lighter, 15%),
+      lighten($gray-lighter, 10%)
+    );
+    &:hover,
+    &:focus {
+       background:  $gray-lighter;
+    }
+  }
 }
 
 .account-menu {
@@ -52,6 +66,9 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   );
   li a {
     background: url(/images/icons/points-right.svg) right 50% no-repeat;
+    @media (min-width: $screen-md-min)  {
+      background: transparent;
+    }
   }
 }
 .account-home-page .hidden-home {
@@ -65,6 +82,10 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
   border-radius: 0;
   border-width: 0 0 1px; 
+  @media (min-width: $screen-md-min)  {  
+    border-radius: $border-radius-large $border-radius-large 0 0;
+    display: none;
+  }
 }
 
 .account-home {  
@@ -98,6 +119,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
       border-bottom: 1px dotted $gray-lighter;
       
     }
+    
   }
   ol {
     margin-left: 0.75em;
@@ -142,5 +164,63 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-
-
+.account-home-back {
+  margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
+  border-radius: 0;
+  border-width: 0; 
+  @media (min-width: $screen-md-min)  {  
+    border-radius: $border-radius-large;
+    margin: 0;
+    border-width: 1px;
+  }
+  .account-home-heading a {
+    padding-left: ($line-height-computed * 2);
+    background-image: 
+      url(/images/icons/points-left.svg),
+      linear-gradient(
+        to bottom,
+        lighten($gray-lighter, 15%),
+        lighten($gray-lighter, 10%)
+      );
+    background-position: $line-height-computed 50%, 0 0; 
+    &:hover,
+    &:focus {
+      background:  url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
+    }
+    @media (min-width: $screen-md-min)  {
+      &,
+      &:hover,
+      &:focus {
+        background-position:($account-padding * 0.75) 50%, 0 0;   
+      }
+      padding-left: ($account-padding * 2);
+    }
+  }
+  .account-box-inner  {
+    display: none;
+  }  
+  @media (min-width: $screen-md-min)  {
+    .account-box-inner  {
+      display: block;
+    }
+  }
+}
+.account-menu-sub {
+  margin-bottom:0;
+  li {
+    padding:0;
+    a {
+      display: block;
+      padding: ($account-padding * 0.25) $account-padding ;
+    }
+    &:first-of-type a {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      border-bottom:0;
+      a {
+        padding-bottom: 0;
+      } 
+    }
+  }
+}
