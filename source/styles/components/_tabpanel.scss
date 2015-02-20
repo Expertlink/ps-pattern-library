@@ -1,0 +1,127 @@
+.tabpanel {
+
+}
+
+.tabpanel-tabs {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin-bottom: -1px;
+  padding-left: 0;
+  list-style: none;
+  table-layout: fixed;
+
+  > li {
+    position: relative;
+    z-index: 1;
+    display: table-cell;
+
+    > a {
+      display: block;
+      margin-left: ($line-height-computed / 2);
+      padding: ($line-height-computed / 2) $line-height-computed;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &:first-child > a {
+      margin-left: 0;
+    }
+  }
+}
+
+.tabpanel-pane,
+.tabpanel-tabs > li > a {
+  padding: ($line-height-computed / 2) $line-height-computed;
+  background-color: #fff;
+  border-color: transparent;
+  border-radius: $border-radius-large;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.tabpanel-pane {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.tabpanel-tabs > li > a {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+//== Tab hide/show behavior
+
+.tabpanel-content {
+  > .tabpanel-pane {
+    display: none;
+    visibility: hidden;
+  }
+
+  > .tabpanel-pane.active {
+    display: block;
+    visibility: visible;
+  }
+}
+
+//== Border Color Modifiers
+
+.tabpanel-dark {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $blue;
+  }
+}
+
+.tabpanel-light {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $blue-gray;
+  }
+}
+
+.tabpanel-lighter {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $gray-light;
+  }
+}
+
+//== Background Modifiers
+
+.tabpanel-teal {
+  .tabpanel-tabs > li > a {
+    background: linear-gradient(to bottom, lighten($teal-light, 10%), darken($teal-light, 20%));
+  }
+
+  .tabpanel-pane {
+    background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
+  }
+}
+
+.tabpanel-tan {
+  .tabpanel-tabs > li > a {
+    background: linear-gradient(to bottom, lighten($tan-light, 10%), darken($tan-light, 20%));
+  }
+
+  .tabpanel-pane {
+    background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
+  }
+}
+
+//== Active State Modifiers
+
+.tabpanel-tabs > li.active {
+  & > a {
+    font-weight: bold;
+    background: #fff;
+    border-bottom-color: #fff;
+  }
+}
