@@ -211,6 +211,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     padding:0;
     a {
       display: block;
+      color: black;
       padding: ($account-padding * 0.25) $account-padding ;
     }
     &:first-of-type a {
