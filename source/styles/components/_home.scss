@@ -38,9 +38,11 @@
   border-radius: $border-radius-small;
   display: inline-block;
   padding-top: 10px;
+  text-align: center;
   width: 35%;
     @media (min-width: $screen-md-min) {
-  width: 16%;
+      width: 21%;
+      margin-left: 20px;
   }
   a {
     color: #000;
@@ -54,13 +56,16 @@
 
 .home-advisor-main-body {
   font-size: .7em;
-  font-weight: normal;
   p, span {
     display: block;
   }
   p {
     margin-top: -6px;
   }
+}
+
+.home-adivsor-stars {
+  margin: 0px auto 10px auto;
 }
 
 .home-subcontent {
@@ -129,6 +134,7 @@
       }
     img {
       float: right;
+      margin-left: 1em;
       max-height: 7em;
       max-width: 7em;
     }
