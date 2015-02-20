@@ -1,4 +1,5 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
+
 .account-box {
   margin: 0 0 $account-padding;
   padding: 0;
@@ -6,106 +7,42 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   border-radius: $border-radius-large;
   overflow: hidden;
 }
-.account-home-heading, .account-menu li, .account-home  li { 
+
+.account-home-heading, .account-menu-home { 
   margin:0;
   font-size: 1em;
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
   a {
     font-weight: normal;
     display: block;
     padding: ($account-padding * 0.75) ($account-padding * 3) ($account-padding * 0.75) $account-padding;
     border-bottom: 1px solid $gray-lighter;
     color: black;
-    background-repeat: no-repeat;
+    background:  url(/images/icons/points-right.svg) right 50% no-repeat transparent;
     &:hover,
-    &:focus {
+    &:focus,
+    &.on {
       color: black;
       text-decoration: none;
       background-color: $gray-lighter;
     }
-    &.on {
-      background: $gray-lighter;
-    }
-  }
-}
-
-.account-menu li:last-of-type a, .account-home li a  {
-  border-bottom-width: 0;
-}
-
-.account-home-heading a {
-  background-image: 
-    url(/images/icons/points-right.svg),
-    linear-gradient(
-      to bottom,
-      lighten($gray-lighter, 15%),
-      lighten($gray-lighter, 10%)
-    );
-  background-position: right 50%, 0 0; 
-  &:hover,
-  &:focus {
-    background:  url(/images/icons/points-right.svg) right 50% no-repeat $gray-lighter;
-  }
-  @media (min-width: $screen-md-min)  {
-    background-image: linear-gradient(
-      to bottom,
-      lighten($gray-lighter, 15%),
-      lighten($gray-lighter, 10%)
-    );
-    &:hover,
-    &:focus {
-       background:  $gray-lighter;
-    }
-  }
-}
-
-.account-menu {
-  background-image: linear-gradient(
-    to bottom,
-    lighten($gray-lighter, 15%),
-    lighten($gray-lighter, 10%)
-  );
-  li a {
-    background: url(/images/icons/points-right.svg) right 50% no-repeat;
     @media (min-width: $screen-md-min)  {
       background: transparent;
     }
   }
 }
+
+.account-menu-home li:last-of-type a  {
+  border-bottom-width: 0;
+}
+// hides menu items when they are included in summary boxes
 .account-home-page .hidden-home {
   display: none;
 }
-.account-menu, .account-home {
-  list-style: none;
-}
-
-.account-home, .box-full > .account-home:first-child {
-  margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
-  border-radius: 0;
-  border-width: 0 0 1px; 
-  @media (min-width: $screen-md-min)  {  
-    border-radius: $border-radius-large $border-radius-large 0 0;
-    display: none;
-  }
-}
-
-.account-home {  
-  li a {
-    padding-left: ($line-height-computed * 2);
-    background-image: 
-      url(/images/icons/points-left.svg),
-      linear-gradient(
-        to bottom,
-        lighten($gray-lighter, 15%),
-        lighten($gray-lighter, 10%)
-      );
-    background-position: $line-height-computed 50%, 0 0; 
-    &:hover,
-    &:focus {
-      background:  url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
-    }
-  }
-}
-
 
 .account-box-inner {
   padding: ($account-padding * 0.75) $account-padding;
@@ -117,9 +54,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     li {
       padding: ($account-padding * 0.25) 0;
       border-bottom: 1px dotted $gray-lighter;
-      
     }
-    
   }
   ol {
     margin-left: 0.75em;
@@ -129,9 +64,11 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     color: $gray;
   }
 }
+
 .amount {
   float: right;
 }
+
 .account-box-inner ul li.current-balance {
   padding-top: ($account-padding );
   .amount {
@@ -139,14 +76,17 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     margin-top: -0.4em;
   }
 }
+
 .has-footnote {
   margin-right: -0.6em;
   color: $gray;
 }
+
 .account-footnote {
   font-size: 0.9em;
   color: $gray;
 }
+
 .line-position {
   float: right; 
   background: lighten($gray-lighter,20%);
@@ -175,36 +115,28 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   }
   .account-home-heading a {
     padding-left: ($line-height-computed * 2);
-    background-image: 
-      url(/images/icons/points-left.svg),
-      linear-gradient(
-        to bottom,
-        lighten($gray-lighter, 15%),
-        lighten($gray-lighter, 10%)
-      );
-    background-position: $line-height-computed 50%, 0 0; 
+    background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat transparent;
     &:hover,
     &:focus {
-      background:  url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
+      background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
     }
     @media (min-width: $screen-md-min)  {
+      padding-left: ($account-padding * 2);
       &,
       &:hover,
       &:focus {
-        background-position:($account-padding * 0.75) 50%, 0 0;   
+        background-position: ($account-padding * 0.75) 50%;   
       }
-      padding-left: ($account-padding * 2);
     }
   }
   .account-box-inner  {
     display: none;
-  }  
-  @media (min-width: $screen-md-min)  {
-    .account-box-inner  {
-      display: block;
+    @media (min-width: $screen-md-min)  {
+       display: block;
     }
-  }
+  }  
 }
+
 .account-menu-sub {
   margin-bottom:0;
   li {
@@ -212,7 +144,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     a {
       display: block;
       color: black;
-      padding: ($account-padding * 0.25) $account-padding ;
+      padding: ($account-padding * 0.25) $account-padding;
     }
     &:first-of-type a {
       padding-top: 0;
@@ -224,4 +156,8 @@ $account-padding: ($line-height-computed * (2/3)) !default;
       } 
     }
   }
+}
+
+.account-heading-sub {
+  margin-top: ($account-padding * 0.5)
 }
