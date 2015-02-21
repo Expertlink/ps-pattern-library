@@ -1,22 +1,22 @@
 .carousel {
-	width: 100%;
-	position: relative;
+  width: 100%;
+  position: relative;
 }
 .carousel .carousel-item {
-	display: none;
+  display: none;
 }
 .carousel .carousel-active {
-	display: block;
+  display: block;
 }
 .carousel .carousel-nav:nth-child(2) {
-	display: none;
+  display: none;
 }
 
 .carousel {
- margin: 10px auto;
- max-width: 400px;
- font-family: sans-serif;
- position: relative;
+  margin: 10px auto;
+  max-width: 400px;
+  font-family: sans-serif;
+  position: relative;
 }
 .carousel-item img {
   width: 100%;
@@ -34,23 +34,21 @@
 
 /* peek */
 .carousel.peek {
-   max-width: 400px;
-   	@media (min-width: $screen-md-min) {
-   	}
+  max-width: 400px;
 }
 
 .carousel.peek .carousel-item {
-	-webkit-transition: opacity .5s ease;
-	-moz-transition: opacity .5s ease;
-	-ms-transition: opacity .5s ease;
-	-o-transition: opacity .5s ease;
-	transition: opacity .5s ease;
-		img {
-			border-radius: $border-radius-large;
-		}
-		@media (min-width: $screen-md-min) {
-			display: none;
-   		}  
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  img {
+    border-radius: $border-radius-large;
+  }
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
 }
 
 .carousel.peek .carousel-item-prev,
@@ -67,16 +65,16 @@
 .carousel.peek .carousel-item-next {
   right: -50%;
   left: auto;
-  	@media (min-width: $screen-md-min) {
-  		right: 0;
-  	}
+  @media (min-width: $screen-md-min) {
+    right: 0;
+  }
 }
 
 .carousel.peek .carousel-item-prev {
-	left: -47%;
-		@media (min-width: $screen-md-min) {
-			left: 0;
-		}
+  left: -47%;
+  @media (min-width: $screen-md-min) {
+    left: 0;
+  }
 }
 
 .carousel.peek .carousel-active {
@@ -88,17 +86,16 @@
   border-radius: $border-radius-large;
   box-shadow: .2em .2em .5em #aaa;
   @media (min-width: $screen-md-min) {
-		display: block;
-		left: 0;
-		width: 100%;		
-	}
+    display: block;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .carousel.peek .carousel-nav {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
 }
 .carousel.peek .carousel-nav a {
   background-color: transparent;
