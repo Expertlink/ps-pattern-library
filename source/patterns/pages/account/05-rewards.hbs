@@ -1,0 +1,52 @@
+---
+status: inprogress
+---
+
+{{> pages/_header }}
+
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter">
+    <div class="row">
+      <div class="col-md-4 col-lg-3">
+        {{> account/_account-nav-sub }}
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <h1 class="account-heading-sub">Membership Rewards</h1>    
+        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="tabpanel-tabs" role="tablist">
+            <li class="active" role="presentation">
+              <a role="tab" data-toggle="tab" href="#purchase-rewards">
+                Purchase Rewards
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="tab" data-toggle="tab" href="#reading-rewards">
+                Reading Rewards
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="tab" data-toggle="tab" href="#talk-time-rewards">
+                Talk Time Rewards
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tabpanel-content">
+            <div class="tabpanel-pane active" role="tabpanel" id="purchase-rewards">
+              {{> account/_rewards-purchase }}
+            </div>
+            <div class="tabpanel-pane" role="tabpanel" id="reading-rewards">
+              {{> account/_rewards-reading }}
+            </div>
+            <div class="tabpanel-pane" role="tabpanel" id="talk-time-rewards">
+              {{> account/_rewards-talk-time }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> pages/_footer }}
