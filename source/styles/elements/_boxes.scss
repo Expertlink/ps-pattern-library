@@ -127,6 +127,15 @@
 
 }
 
+.box-nofleuron-sm {
+  @media (max-width: $screen-sm-max) {
+    background: none;
+    &:before, &:after {
+    background: none;
+    }
+  }
+}
+
 //== Inner fleurons
 
 %fleuron-base {
