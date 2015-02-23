@@ -108,6 +108,9 @@
   margin-right: -2.4em;
   padding-right: 4em;
   padding-top: 2.8em;
+    @media (max-width: $screen-sm-max) {
+    background: none;
+    } 
 }
 
 .box-scroll {
