@@ -10,11 +10,11 @@ $progress-marker-border-color:  $gray-lighter !default;
 $progress-marker-border-width:  2px !default;
 $progress-marker-border-radius: $border-radius-base !default;
 
-$progress-marker-caret-size:              $font-size-base !default;
+$progress-marker-caret-size:              10px !default;
 $progress-marker-caret-inner-size:        ($progress-marker-caret-size - $progress-marker-border-width * 1.5);
 $progress-marker-caret-offset-horizontal: ($progress-marker-caret-size + $progress-marker-border-radius) !default;
 
-$progress-marker-offset-vertical:   20px !default;
+$progress-marker-offset-vertical:   15px !default;
 $progress-marker-offset-horizontal: ($progress-marker-caret-size + $progress-marker-border-radius + $progress-marker-border-width) !default;
 
 
