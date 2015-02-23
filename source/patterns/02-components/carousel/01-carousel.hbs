@@ -1,5 +1,5 @@
 <div class="container-page">
-  <div class="carousel peek" data-interval="3000" data-autoplay>
+  <div class="carousel peek" data-interval="3000">
     <div>
       <a href="#">
         <img src="/images/rotator/1214-winter-newsletter.png">
@@ -17,3 +17,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  /* Auto-play only if there is ONE slide showing (desktop layout) */
+  $(function () {
+    var $carousel = $('.carousel');
+    var visibleCount = $carousel.find('.carousel-item:visible').length;
+    var autoPlay = visibleCount === 1;
+
+    if (autoPlay) {
+      $carousel.carousel('play');
+    }
+  });
+</script>

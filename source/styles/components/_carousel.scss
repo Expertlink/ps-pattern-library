@@ -60,7 +60,14 @@
   left: 0;
   top: 0;
   z-index: 1;
+  /* For larger layouts, make inactive slides :hidden */
+  @media (min-width: $screen-md-min) {
+    width: 0;
+    height: 0;
+  }
 }
+
+
 
 .carousel.peek .carousel-item-next {
   right: -50%;
@@ -79,6 +86,7 @@
 
 .carousel.peek .carousel-active {
   width: 65%;
+  height: auto;
   opacity: 1;
   position: relative;
   left: 19%;
