@@ -41,8 +41,7 @@
   text-align: center;
   width: 35%;
     @media (min-width: $screen-md-min) {
-      width: 21%;
-      margin-left: 20px;
+      width: 24%;
   }
   a {
     color: #000;
@@ -68,7 +67,7 @@
   margin: 0px auto 10px auto;
 }
 
-.home-subcontent {
+.home-seocontent {
   background-color: transparent;
   h3 {
     color: $red;
