@@ -108,6 +108,9 @@
   margin-right: -2.4em;
   padding-right: 4em;
   padding-top: 2.8em;
+    @media (max-width: $screen-sm-max) {
+    background: none;
+    } 
 }
 
 .box-scroll {
@@ -125,15 +128,6 @@
   margin: ($line-height-computed / 2) ($line-height-computed * -1);
   width: auto;
 
-}
-
-.box-nofleuron-sm {
-  @media (max-width: $screen-sm-max) {
-    background: none;
-    &:before, &:after {
-    background: none;
-    }
-  }
 }
 
 //== Inner fleurons
