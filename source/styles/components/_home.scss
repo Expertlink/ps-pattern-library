@@ -78,8 +78,8 @@
   font-weight: bold;
   overflow: auto;
   margin: 0em 0 2em 0;
-   @media (min-width: $screen-md-min) {
-    margin-top: -10em;
+   @media (min-width: $screen-lg-min) {
+    margin-top: -16em;
    }
 	
   img {
@@ -125,6 +125,13 @@
   }
 }
 
+.home-video {
+  margin-top: 0;
+  @media (min-width: $screen-md-min) {
+    margin-top: 6em;
+  }  
+}
+
 .home-box-scroll {
   h3 {
     color: $red;
@@ -142,12 +149,14 @@
 }
 
 .home-promopod {
-    padding: 1em;
     border-bottom: dotted 1px $tan-dark;
+    margin-left: .6em;
+    padding: 1em;
       @media (min-width: $screen-md-min) {
         border-bottom: none;
         border-top: dotted 1px $tan-dark;
         height: 180px;
+        margin-left: 0;
         padding: 1.5em;
       }
     img {
