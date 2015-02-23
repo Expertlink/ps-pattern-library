@@ -1,18 +1,48 @@
-.with-progress-marker {
-  margin:
-    ($line-height-computed + $padding-base-vertical * 2 + 2px * 2 + $font-size-base * 1.25)
-    ($font-size-base + $border-radius-base + 2px)
-    ;
+$progress-marker-font-size:            $font-size-base !default;
+$progress-marker-line-height:          $line-height-base !default;
+$progress-marker-line-height-computed: ($font-size-base * $line-height-base) !default;
+$progress-marker-padding-vertical:     $padding-base-vertical !default;
+$progress-marker-padding-horizontal:   $padding-base-horizontal !default;
 
+$progress-marker-color:         $brand-primary !default;
+$progress-marker-bg:            #fff !default;
+$progress-marker-border-color:  $gray-lighter !default;
+$progress-marker-border-width:  2px !default;
+$progress-marker-border-radius: $border-radius-base !default;
+
+$progress-marker-caret-size:              $font-size-base !default;
+$progress-marker-caret-inner-size:        ($progress-marker-caret-size - $progress-marker-border-width * 1.5);
+$progress-marker-caret-offset-horizontal: ($progress-marker-caret-size + $progress-marker-border-radius) !default;
+
+$progress-marker-offset-vertical:   20px !default;
+$progress-marker-offset-horizontal: ($progress-marker-caret-size + $progress-marker-border-radius + $progress-marker-border-width) !default;
+
+
+/**
+ * Modifier for `.progress` element. Allows the `.progress-marker` elements to
+ * position themselves properly (and visibly).
+ */
+
+.with-progress-marker {
+  // whitespace around progress to allow room for markers
+  margin:
+    ($progress-marker-line-height-computed + $progress-marker-padding-vertical * 2 + $progress-marker-border-width * 2 + $progress-marker-offset-vertical)
+    ($progress-marker-caret-size + $progress-marker-border-radius + $progress-marker-border-width);
+
+  // override styles to allow content to show outside of progress elements
   &,
   .progress-bar {
     overflow: visible;
     position: relative;
   }
 
+  // in lieue of overflow: hidden, manually set and manage border-radius values
+  // for progress-bar elements
   .progress-bar {
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
 
     &[style*="width:100%"],
     &[style*="width: 100%"] {
@@ -22,17 +52,19 @@
   }
 }
 
-// ===
+/**
+ * Marker pattern
+ */
 
 .progress-marker {
-  background-color: #fff;
-  border: 2px solid $gray-lighter;
-  border-radius: $border-radius-base;
+  background-color: $progress-marker-bg;
+  border: $progress-marker-border-width solid $progress-marker-border-color;
+  border-radius: $progress-marker-border-radius;
   bottom: 100%;
-  color: $brand-primary;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  padding: $padding-base-vertical $padding-base-horizontal;
+  color: $progress-marker-color;
+  font-size: $progress-marker-font-size;
+  line-height: $progress-marker-line-height;
+  padding: $progress-marker-padding-vertical $progress-marker-padding-horizontal;
   position: absolute;
   right: 0;
   transform: translateX(50%);
@@ -50,19 +82,23 @@
   }
 
   &:before {
-    border-width: $font-size-base $font-size-base 0 $font-size-base;
-    border-color: $gray-lighter transparent transparent transparent;
+    border-width: $progress-marker-caret-size $progress-marker-caret-size 0 $progress-marker-caret-size;
+    border-color: $progress-marker-border-color transparent transparent transparent;
   }
 
   &:after {
-    border-width: ($font-size-base - 3px) ($font-size-base - 3px) 0 ($font-size-base - 3px);
-    border-color: #fff transparent transparent transparent;
+    border-width: $progress-marker-caret-inner-size $progress-marker-caret-inner-size 0 $progress-marker-caret-inner-size;
+    border-color: $progress-marker-bg transparent transparent transparent;
   }
 }
 
+/**
+ * Layout modifiers
+ */
+
 .progress-marker-offset {
-  margin-bottom: ($font-size-base * 1.25);
-  margin-top: ($font-size-base * 1.25);
+  margin-bottom: $progress-marker-offset-vertical;
+  margin-top: $progress-marker-offset-vertical;
 }
 
 .progress-marker-down {
@@ -76,60 +112,79 @@
   }
 
   &:before {
-    border-width: 0 $font-size-base $font-size-base $font-size-base;
-    border-color: transparent transparent $gray-lighter transparent;
+    border-width: 0 $progress-marker-caret-size $progress-marker-caret-size $progress-marker-caret-size;
+    border-color: transparent transparent $progress-marker-border-color transparent;
   }
 
   &:after {
-    border-width: 0 ($font-size-base - 3px) ($font-size-base - 3px) ($font-size-base - 3px);
-    border-color: transparent transparent #fff transparent;
+    border-width: 0 $progress-marker-caret-inner-size $progress-marker-caret-inner-size $progress-marker-caret-inner-size;
+    border-color: transparent transparent $progress-marker-bg transparent;
   }
 }
 
 .progress-marker-left {
-  transform: translateX($font-size-base + $border-radius-base + 2px);
+  transform: translateX($progress-marker-offset-horizontal);
 
   &:before,
   &:after {
-    right: ($font-size-base + $border-radius-base);
+    right: $progress-marker-caret-offset-horizontal;
   }
 }
 
 .progress-marker-right {
   left: 100%;
   right: auto;
-  transform: translateX(($font-size-base + $border-radius-base + 2px) * -1);
+  transform: translateX($progress-marker-offset-horizontal * -1);
 
   &:before,
   &:after {
-    left: ($font-size-base + $border-radius-base);
+    left: $progress-marker-caret-offset-horizontal;
     right: auto;
     transform: translateX(-50%);
   }
 }
 
-.progress-marker-jazzy {
-  background-color: lighten($red-bright, 30%);
-  background-image: linear-gradient(
-    to bottom,
-    lighten($red-bright, 30%),
-    lighten($red-bright, 15%)
-    );
-  border-color: $brand-primary;
-  text-shadow: 0 0 5px #fff;
+/**
+ * Style modifiers
+ */
+
+@mixin progress-marker-variant(
+  $bg,
+  $border,
+  $bg-bottom: false
+) {
+  @if $bg-bottom == false {
+    $bg-bottom: $bg;
+  }
+
+  background-color: $bg;
+  border-color: $border;
+
+  @if $bg-bottom {
+    background-image: linear-gradient(to bottom, $bg, $bg-bottom);
+  } @else {
+    $bg-bottom: $bg;
+  }
 
   &:before {
-    border-color: $brand-primary transparent transparent transparent;
+    border-color: $border transparent transparent transparent;
   }
   &:after {
-    border-color: lighten($red-bright, 30%) transparent transparent transparent;
+    border-color: $bg-bottom transparent transparent transparent;
   }
 
-  &.progress-marker-down:before {
-    border-color: transparent transparent $brand-primary transparent;
+  &.progress-marker-down {
+    &:before {
+      border-color: transparent transparent $border transparent;
+    }
+    &:after {
+      border-color: transparent transparent $bg transparent;
+    }
   }
+}
 
-  &.progress-marker-down:after {
-    border-color: transparent transparent lighten($red-bright, 30%) transparent;
-  }
+.progress-marker-jazzy {
+  @include progress-marker-variant(lighten($red-bright, 30%), $brand-primary, lighten($red-bright, 15%));
+
+  text-shadow: 0 0 5px #fff;
 }
