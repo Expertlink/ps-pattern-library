@@ -1,6 +1,7 @@
 .carousel {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .carousel-item {
   display: none;
