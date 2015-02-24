@@ -38,10 +38,6 @@
 }
 
 .carousel-peek .carousel-item {
-  -webkit-transition: opacity .5s ease;
-  -moz-transition: opacity .5s ease;
-  -ms-transition: opacity .5s ease;
-  -o-transition: opacity .5s ease;
   transition: opacity .5s ease;
   img {
     border-radius: $border-radius-large;
