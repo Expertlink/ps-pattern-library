@@ -209,6 +209,32 @@
   @include fleuron('star-corner-red', 2px, 1px);
 }
 
+.fleuron-star-two {
+  @include fleuron('star-corner-two', 2px, 1px);
+  &.top.left {
+    transform: rotate(180deg);
+  }
+  &.top.right {
+    transform: rotate(90deg);
+  }
+  &.bottom.left {
+    transform: rotate(-90deg);
+  }
+}
+
+.fleuron-star-three {
+  @include fleuron('star-corner-three', 2px, 1px);
+  &.top.left {
+    transform: rotate(180deg);
+  }
+  &.top.right {
+    transform: rotate(90deg);
+  }
+  &.bottom.left {
+    transform: rotate(-90deg);
+  }
+}
+
 .fleuron-star-wide {
   @include fleuron('top-flourish', 84px, 1px);
 }
