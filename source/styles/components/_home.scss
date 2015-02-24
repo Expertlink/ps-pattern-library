@@ -15,6 +15,7 @@
 }
 
 .home-available-advisors {
+  margin: 0;
   text-align: left;
   a {
     margin: 0;
@@ -41,7 +42,7 @@
   text-align: center;
   width: 35%;
     @media (min-width: $screen-md-min) {
-      width: 24%;
+      width: 25%;
   }
   a {
     color: #000;
@@ -79,7 +80,7 @@
   overflow: auto;
   margin: 0em 0 2em 0;
    @media (min-width: $screen-lg-min) {
-    margin-top: -16em;
+    margin-top: -14em;
    }
 	
   img {
@@ -99,7 +100,7 @@
       font-weight: normal;
       text-decoration: underline;
     }
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-lg-min) {
       font-size: .7em;
     }
 	}
@@ -127,8 +128,8 @@
 
 .home-video {
   margin-top: 0;
-  @media (min-width: $screen-md-min) {
-    margin-top: 6em;
+  @media (min-width: $screen-lg-min) {
+    margin-top: 5em;
   }  
 }
 
