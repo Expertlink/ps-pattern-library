@@ -201,11 +201,11 @@
   }
 }
 
-.fleuron-star {
+.fleuron-star-one {
   @include fleuron('star-corner-orange', 2px, 1px);
 }
 
-.fleuron-star-alt {
+.fleuron-star-one-red {
   @include fleuron('star-corner-red', 2px, 1px);
 }
 
