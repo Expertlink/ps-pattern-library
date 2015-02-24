@@ -4,6 +4,10 @@
   font-family: $font-family-cursive;
 }
 
+.text-normal {
+  font-weight: normal;
+}
+
 //** Extends Bootstrap headings to accountfor differing x-height
 
 h1, .h1 {

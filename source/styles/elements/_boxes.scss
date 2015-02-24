@@ -32,6 +32,9 @@
 .box-full {
   @extend %box-base;
   border-width: 1px 0;
+  &.box-thick {
+    border-width: 2px 0;
+  }
 }
 
 .box-default-sm {
@@ -47,6 +50,17 @@
 .box-default-lg {
   @media (min-width: $screen-lg-min) {
     @include make-default-box;
+  }
+}
+
+.box-nopad-xs {
+  @media (max-width: $screen-xs-max) {
+    padding: 0;
+  }
+}
+.box-nopad-sm {
+  @media (max-width: $screen-sm-max) {
+    padding: 0;
   }
 }
 
