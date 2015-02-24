@@ -1,0 +1,134 @@
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-item {
+  display: none;
+}
+.carousel-active {
+  display: block;
+}
+.carousel-nav:nth-child(2) {
+  display: none;
+}
+
+.carousel {
+  margin: 10px auto;
+  max-width: 400px;
+  font-family: sans-serif;
+  position: relative;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  width: 25%;
+}
+
+
+
+/* peek */
+.carousel-peek {
+  max-width: 400px;
+}
+
+.carousel-peek .carousel-item {
+  transition: opacity .5s ease;
+  img {
+    border-radius: $border-radius-large;
+  }
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.carousel-peek .carousel-item-prev,
+.carousel-peek .carousel-item-next {
+  width: 65%;
+  display: block;
+  opacity: .5;
+  position:  absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  /* For larger layouts, make inactive slides :hidden */
+  @media (min-width: $screen-md-min) {
+    width: 0;
+    height: 0;
+  }
+}
+
+
+
+.carousel-peek .carousel-item-next {
+  right: -50%;
+  left: auto;
+  @media (min-width: $screen-md-min) {
+    right: 0;
+  }
+}
+
+.carousel-peek .carousel-item-prev {
+  left: -47%;
+  @media (min-width: $screen-md-min) {
+    left: 0;
+  }
+}
+
+.carousel-peek .carousel-active {
+  width: 65%;
+  height: auto;
+  opacity: 1;
+  position: relative;
+  left: 19%;
+  z-index: 2;
+  border-radius: $border-radius-large;
+  box-shadow: .2em .2em .5em $gray;
+  a {
+    display: block;
+  }
+  @media (min-width: $screen-md-min) {
+    display: block;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.carousel-peek .carousel-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carousel-peek .carousel-nav a {
+  background-color: rgba(132, 121, 109, .7);
+  background-image: url(/images/rotator/arrow-left.svg);
+  background-position: 5px 8px;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 40%;
+  &:hover {
+    background-color: rgba(132, 121, 109, 1);
+  }
+  &.next {
+    background-image: url(/images/rotator/arrow-right.svg);
+    background-position: 10px 8px;
+    left: auto;
+    right: -290%;
+  }
+    @media (min-width: $screen-md-min) {
+        width: 50px;
+        height: 50px;
+    }
+}
