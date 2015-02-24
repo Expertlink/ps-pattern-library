@@ -26,7 +26,7 @@ $progress-marker-offset-horizontal: ($progress-marker-caret-size + $progress-mar
 .with-progress-marker {
   // whitespace around progress to allow room for markers
   margin:
-    ($progress-marker-line-height-computed + $progress-marker-padding-vertical * 2 + $progress-marker-border-width * 2 + $progress-marker-offset-vertical)
+    ($progress-marker-line-height-computed + $progress-marker-padding-vertical * 2 + $progress-marker-border-width * 2 + $progress-marker-offset-vertical * 2)
     ($progress-marker-caret-size + $progress-marker-border-radius + $progress-marker-border-width);
 
   // override styles to allow content to show outside of progress elements
