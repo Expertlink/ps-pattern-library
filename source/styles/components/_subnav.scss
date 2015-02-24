@@ -1,0 +1,113 @@
+$subnav-padding-horizontal: $padding-base-horizontal !default;
+$subnav-padding-vertical: ($padding-base-vertical + 2px) !default;
+
+.subnav {
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-large;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+.subnav-group,
+.subnav-heading {
+  background-color: lighten($gray-lighter, 10%);
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+}
+
+.subnav-heading {
+  font: inherit;
+  margin: 0;
+}
+
+.subnav-body {
+  background-color: #fff;
+  margin: 0;
+  padding: $subnav-padding-vertical $subnav-padding-horizontal;
+}
+
+ul.subnav-body,
+ol.subnav-body {
+  list-style: none;
+  padding: 0;
+}
+
+.subnav-item {
+  border-bottom: 1px solid $gray-lighter;
+  display: block;
+  padding: $subnav-padding-vertical $subnav-padding-horizontal;
+  position: relative;
+
+  *:last-child > & {
+    border-bottom-width: 0;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba($gray-lighter,0.25);
+  }
+
+  &:active,
+  &.active {
+    background-color: rgba($gray-lighter,0.35);
+    box-shadow: inset 0 1px 4px rgba(#000,0.1);
+  }
+
+  .subnav-body & {
+    border-bottom-style: dotted;
+    box-shadow: none;
+    padding-left: ($subnav-padding-horizontal * 1.75 + svg-sprite-property('item-arrow-left', 'width'));
+  }
+}
+
+@mixin subnav-item-decoration(
+  $svg-sprite-key,
+  $where: after,
+  $distance: $subnav-padding-horizontal,
+  $gutter: $subnav-padding-horizontal / 1.5,
+  $base: 'extend'
+) {
+  $edge: right;
+
+  @if $where == 'before' {
+    $edge: left;
+  }
+
+  padding-#{$edge}: ($distance + svg-sprite-property($svg-sprite-key, 'width') + $gutter);
+
+  &:#{$where} {
+    content: '';
+    display: block;
+    margin-top: (svg-sprite-property($svg-sprite-key, 'height') / -2);
+    position: absolute;
+    top: 50%;
+
+    #{$edge}: $distance;
+
+    @include svg-sprite($svg-sprite-key, $base);
+  }
+
+}
+
+.subnav-item-next {
+  @media (max-width: $screen-sm-max) {
+    @include subnav-item-decoration($svg-sprite-key: 'item-arrow-right', $base: 'reset');
+  }
+}
+
+.subnav-item-prev {
+  @include subnav-item-decoration('item-arrow-left', before);
+}
