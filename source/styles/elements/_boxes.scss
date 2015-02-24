@@ -110,7 +110,7 @@
   padding-top: 2.8em;
     @media (max-width: $screen-sm-max) {
     background: none;
-    } 
+    }
 }
 
 .box-scroll {
@@ -231,8 +231,8 @@
 
 .fleuron-star-wide {
   @include fleuron(
-    $width: em(156px),
-    $height: em(26px),
+    $width: em(154px),
+    $height: em(32px),
     $url: '/images/fleurons/top-flourish.svg',
     $edge-adjust-x: 6.5em,
     $edge-adjust-y: 0.1em
