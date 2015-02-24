@@ -71,6 +71,49 @@
   }
 }
 
+//== Full-width modifiers
+
+@mixin make-tabpanel-full() {
+  .tabpanel-pane {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+  }
+
+  .tabpanel-tabs {
+    padding-left: $line-height-computed;
+    padding-right: $line-height-computed;
+  }
+}
+
+.tabpanel-full {
+  @include make-tabpanel-full();
+}
+
+.tabpanel-full-xs {
+  @media (max-width: $screen-xs-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-lg {
+  @media (min-width: $screen-lg-min) {
+    @include make-tabpanel-full();
+  }
+}
+
 //== Border Color Modifiers
 
 .tabpanel-dark {
