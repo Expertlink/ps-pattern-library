@@ -79,7 +79,7 @@
         cvvLength: 4
       },
       dinersclub: {
-        pattern: /3(?:0[0-5]|[68][0-9])/,
+        pattern: /^3(?:0[0-5]|[68][0-9])/,
         minLength: 14,
         maxLength: 14,
         chunks: [5,4,5],
