@@ -105,19 +105,31 @@
   left: 0;
 }
 .carousel-peek .carousel-nav a {
-  background-color: transparent;
-  background-image: url(/images/rotator/arrow-left.png);
-  background-position: 20px;
+  background-color: $gray;
+  background-image: url(/images/rotator/arrow-left.svg);
+  background-position: 5px 8px;
   background-repeat: no-repeat;
-  background-size: 50%;
-  width: 80%;
-  height: 100%;
+  background-size: 65%;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  left: 10px;
+  opacity: .7;
   overflow: hidden;
   position: absolute;
-  left: 0;
+  top: 40%;
+  &:hover {
+    opacity: 1;
+    transition: opacity .1s ease-in;
+  }
+    @media (min-width: $screen-md-min) {
+        width: 50px;
+        height: 50px;
+    }
 }
 .carousel-peek .carousel-nav a.next {
-  background-image: url(/images/rotator/arrow-right.png);
+  background-image: url(/images/rotator/arrow-right.svg);
+  background-position: 10px 8px;
   left: auto;
-  right: -300%;
+  right: -290%;
 }
