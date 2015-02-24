@@ -36,3 +36,31 @@
   border-left-width: 1px;
   padding-left: $line-height-computed;
 }
+
+.border-thick {
+  border-style: solid;
+  border-color: $gray-lighter;
+  &.border {
+    border-width: 2px;
+  }
+  &.border-sides {
+    border-width: 0 2px;
+  }
+  &.border-ends {
+    border-width: 2px 0;
+  }
+}
+
+.no-border-xs {
+  @media (max-width: $screen-xs-max) {
+    border-width: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.no-border-sm {
+  @media (max-width: $screen-sm-max) {
+    border-width: 0 !important;
+    padding: 0 !important;
+  }
+}
