@@ -3,15 +3,7 @@
 }
 
 .home-rotator {
-  width: 100%;
-  overflow-x:scroll;
-  white-space: nowrap;
-  margin-bottom: 1em;
-  position: relative;
-  img {
-    margin: 0 .5em;
-    width: 75%;
-  }
+  margin-bottom: 2em;
 }
 
 .home-available-advisors {
@@ -27,8 +19,9 @@
   overflow-x:scroll;
   white-space: nowrap;
   float:left;
+  margin: 1em;
   position: relative;
-  @media (min-width: 850px) {
+  @media (min-width: $screen-lg-min)  {
     overflow-x: normal;
     white-space: normal;
   }
@@ -38,20 +31,18 @@
   display: inline-block;
   border-radius: $border-radius-small;
   display: inline-block;
-  padding-top: 10px;
   text-align: center;
-  width: 35%;
-    @media (min-width: $screen-md-min) {
-      width: 25%;
-  }
+  width: 40%;
   a {
     color: #000;
-    font-weight: normal;
     text-decoration: none;
   }
   &:hover {
     background: $tan-light;
   }
+   @media (min-width: $screen-md-min) {
+    width: 23%;
+   }
 }
 
 .home-advisor-main-body {
