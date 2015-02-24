@@ -105,7 +105,7 @@
   left: 0;
 }
 .carousel-peek .carousel-nav a {
-  background-color: $gray;
+  background-color: rgba(132, 121, 109, .7);
   background-image: url(/images/rotator/arrow-left.svg);
   background-position: 5px 8px;
   background-repeat: no-repeat;
@@ -114,13 +114,11 @@
   width: 44px;
   height: 44px;
   left: 10px;
-  opacity: .7;
   overflow: hidden;
   position: absolute;
   top: 40%;
   &:hover {
-    opacity: 1;
-    transition: opacity .1s ease-in;
+    background-color: rgba(132, 121, 109, 1);
   }
     @media (min-width: $screen-md-min) {
         width: 50px;
