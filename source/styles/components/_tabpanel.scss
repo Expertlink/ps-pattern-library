@@ -15,15 +15,14 @@
     position: relative;
     z-index: 1;
     display: table-cell;
+    vertical-align: bottom;
 
     > a {
       display: block;
       margin-left: ($line-height-computed / 2);
-      padding: ($line-height-computed / 2) $line-height-computed;
+      padding: ($line-height-computed / 2) ($line-height-computed / 3);
       text-align: center;
       overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
 
       &:hover,
       &:focus {
@@ -39,7 +38,6 @@
 
 .tabpanel-pane,
 .tabpanel-tabs > li > a {
-  padding: ($line-height-computed / 2) $line-height-computed;
   background-color: #fff;
   border-color: transparent;
   border-radius: $border-radius-large;
@@ -48,6 +46,7 @@
 }
 
 .tabpanel-pane {
+  padding: ($line-height-computed / 2) $line-height-computed;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
