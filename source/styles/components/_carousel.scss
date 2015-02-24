@@ -33,11 +33,11 @@
 
 
 /* peek */
-.carousel.peek {
+.carousel-peek {
   max-width: 400px;
 }
 
-.carousel.peek .carousel-item {
+.carousel-peek .carousel-item {
   -webkit-transition: opacity .5s ease;
   -moz-transition: opacity .5s ease;
   -ms-transition: opacity .5s ease;
@@ -51,8 +51,8 @@
   }
 }
 
-.carousel.peek .carousel-item-prev,
-.carousel.peek .carousel-item-next {
+.carousel-peek .carousel-item-prev,
+.carousel-peek .carousel-item-next {
   width: 65%;
   display: block;
   opacity: .5;
@@ -69,7 +69,7 @@
 
 
 
-.carousel.peek .carousel-item-next {
+.carousel-peek .carousel-item-next {
   right: -50%;
   left: auto;
   @media (min-width: $screen-md-min) {
@@ -77,14 +77,14 @@
   }
 }
 
-.carousel.peek .carousel-item-prev {
+.carousel-peek .carousel-item-prev {
   left: -47%;
   @media (min-width: $screen-md-min) {
     left: 0;
   }
 }
 
-.carousel.peek .carousel-active {
+.carousel-peek .carousel-active {
   width: 65%;
   height: auto;
   opacity: 1;
@@ -103,12 +103,12 @@
   }
 }
 
-.carousel.peek .carousel-nav {
+.carousel-peek .carousel-nav {
   position: absolute;
   top: 0;
   left: 0;
 }
-.carousel.peek .carousel-nav a {
+.carousel-peek .carousel-nav a {
   background-color: transparent;
   background-image: url(/images/rotator/arrow-left.png);
   background-position: 20px;
@@ -120,7 +120,7 @@
   position: absolute;
   left: 0;
 }
-.carousel.peek .carousel-nav a.next {
+.carousel-peek .carousel-nav a.next {
   background-image: url(/images/rotator/arrow-right.png);
   left: auto;
   right: -300%;
