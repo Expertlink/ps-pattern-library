@@ -2,13 +2,13 @@
   width: 100%;
   position: relative;
 }
-.carousel .carousel-item {
+.carousel-item {
   display: none;
 }
-.carousel .carousel-active {
+.carousel-active {
   display: block;
 }
-.carousel .carousel-nav:nth-child(2) {
+.carousel-nav:nth-child(2) {
   display: none;
 }
 
