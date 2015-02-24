@@ -40,3 +40,7 @@ $svg-sprite-map: (
     }
   }
 }
+
+@function svg-sprite-property($key, $property) {
+  @return map-get(map-get($svg-sprite-map, $key), $property);
+}
