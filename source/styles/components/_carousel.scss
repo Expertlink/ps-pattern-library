@@ -1,7 +1,9 @@
 .carousel {
   width: 100%;
-  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
   overflow: hidden;
+  position: relative;
 }
 .carousel-item {
   display: none;
@@ -11,13 +13,6 @@
 }
 .carousel-nav:nth-child(2) {
   display: none;
-}
-
-.carousel {
-  margin: 10px auto;
-  max-width: 400px;
-  font-family: sans-serif;
-  position: relative;
 }
 .carousel-item img {
   width: 100%;
