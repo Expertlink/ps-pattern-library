@@ -13,10 +13,10 @@
       </p>
       <p class="advisor-tile-meta-group">
         {{#if promoPrice}}
-        <del class="text-muted">${{formatCurrency basePrice}}</del>
-            <b>${{formatCurrency promoPrice}}/min</b>
-          {{else}}
-            <b>${{formatCurrency basePrice}}/min</b>
+          <del class="text-muted">${{formatCurrency basePrice}}</del>
+          <b>${{formatCurrency promoPrice}}/min</b>
+        {{else}}
+          <b>${{formatCurrency basePrice}}/min</b>
           {{/if}}
       </p>
     </div>
