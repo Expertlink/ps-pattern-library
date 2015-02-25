@@ -1,22 +1,5 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 
-.line-position {
-  float: right;
-  background: lighten($gray-lighter,20%);
-  border: 1px solid $gray-lighter;
-  padding: 2px;
-  border-radius: $border-radius-small;
-  min-width: 3.5em;
-  text-align: center;
-  font-weight: bold;
-  line-height: 1.2em;
-  span {
-    display: block;
-    font-size: 0.8em;
-    font-weight: normal;
-  }
-}
-
 .account-home-back {
   @media (max-width: $screen-sm-max) {
     border-radius: 0;
