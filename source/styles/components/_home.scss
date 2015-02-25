@@ -118,6 +118,12 @@
   }
 }
 
+.home-story-hide {
+   @media (max-width: $screen-md-min) { 
+    display:none;
+  }
+}
+
 .home-video {
   margin-top: 0;
   @media (min-width: $screen-lg-min) {
