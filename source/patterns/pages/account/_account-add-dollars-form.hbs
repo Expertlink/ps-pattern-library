@@ -1,39 +1,43 @@
   <form role="form">
   {{> forms/_promo-code }}
-  <div class="form-group form-group-required">
+  <div class="form-group form-group-required js-payment-options">
     <label>Please select an amount:</label>
     <div class="radio">
        <label>
-        <input type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
        </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
       </label>
     </div>
-    <div class="form-group">
-      <label class="control-label" for="addDollarsAmountOther">Or, enter a custom amount:</label>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" data-target="#custom-amount" type="radio" name="addDollarsAmount" value="custom"  /> Or, enter a custom amount
+      </label>
+    </div>
+    <div id="custom-amount" class="collapse account-add-custom form-group">
       <div class="input-group">
         <span class="input-group-addon">$</span>
         <input type="number"  min="5" max="500" name="addDollarsAmount" class="form-control" id="addDollarsAmountOther" />
