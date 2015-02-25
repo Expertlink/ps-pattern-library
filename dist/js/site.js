@@ -60,6 +60,9 @@
       $hiddenTargets.collapse('toggle');
       event.preventDefault();
     });
+    $hiddenTargets.on('hidden.bs.collapse', function(event) {
+      $(this).attr('style', '');
+    });
   };
   // Default disable callback
   var disableToggle = function(config) {
@@ -292,7 +295,7 @@ $(function() {
         cvvLength: 4
       },
       dinersclub: {
-        pattern: /3(?:0[0-5]|[68][0-9])/,
+        pattern: /^3(?:0[0-5]|[68][0-9])/,
         minLength: 14,
         maxLength: 14,
         chunks: [5,4,5],
@@ -935,6 +938,194 @@ $(function() {
 
 })(jQuery);
 
+/* global jQuery */
+/**
+ * Editable star rating components that play nice with mouse and touch.
+ */
+
+(function (factory) {
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    factory(require('jquery'));
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+  'use strict';
+
+  // CONSTRUCTOR
+  // ===========
+
+  var StarRating = function (element, options) {
+    this.options   = options;
+    this.$element  = $(element);
+    this.$target   = (this.options.target) ? $(this.options.target) : this.$element;
+    this.isEditing = null;
+
+    // Update value and appearance
+    this.setValue(this.$target.is('[value]') ? this.$target.val() : this.options.value, true);
+
+    // Bind events
+    this.$element.on({
+      'mouseenter.vse.star-rating': $.proxy(this.mouseEnterHandler, this),
+      'mouseleave.vse.star-rating': $.proxy(this.mouseLeaveHandler, this),
+      'click.vse.star-rating':      $.proxy(this.clickHandler, this),
+      'touchstart.vse.star-rating': $.proxy(this.touchStartHandler, this),
+      'touchend.vse.star-rating':   $.proxy(this.touchEndHandler, this)
+    });
+  };
+
+  StarRating.DEFAULTS = {
+    value: null,
+
+    min:  0,
+    max:  5,
+    step: 1,
+
+    snapToMin: 0.5,
+    zeroValue:  null,
+
+    classTemplate: 'stars-${rating}',
+    classDecimal:  '-',
+    editingClass:  'editing'
+  };
+
+  StarRating.prototype.setValue = function (value, forceUpdate) {
+    if (!$.isNumeric(value)) return;
+    value = this.cleanValue(value, this.options.zeroValue);
+
+    if (value !== this.options.value || forceUpdate) {
+      this.options.value = value;
+      this.$target.val( (value === null) ? '' : value);
+      this.updateAppearance();
+      this.$target.trigger('change.vse.star-rating');
+    }
+  };
+
+  StarRating.prototype.cleanValue = function (value, zeroValue) {
+    // If not a number, make it a number
+    if (typeof value !== 'number') {
+      value = parseFloat(value);
+    }
+    // If zero or close enough to snap to zero, set to zero
+    if (value <= Math.max(this.options.min, this.options.snapToMin)) {
+      value = this.options.min;
+    }
+    // If greater than or equal to max, cap off at max
+    else if (value >= this.options.max) {
+      value = this.options.max;
+    }
+    // Otherwise, round up to nearest step
+    else {
+      value = Math.ceil(value * (1 / this.options.step)) / (1 / this.options.step);
+    }
+    // If zeroValue is provided, replace zero with that
+    if (value === 0 && typeof zeroValue !== 'undefined') {
+      value = zeroValue;
+    }
+    return value;
+  };
+
+  StarRating.prototype.updateAppearance = function (value) {
+    // if value is not defined...
+    if (typeof value === 'undefined') {
+      // ...use the stored value or assume zero
+      value = this.options.value || 0;
+    }
+
+    // editing class to preview rating state
+    this.$element.toggleClass('editing', !!this.isEditing);
+
+    // toggle step-specific class names
+    var valueString, className, i;
+    for (i = this.options.min; i <= this.options.max; i += this.options.step) {
+      valueString = ('' + i).replace(/\./g, this.options.classDecimal);
+      className = this.options.classTemplate.replace('${rating}', valueString);
+      this.$element.toggleClass(className, i === value);
+    }
+  };
+
+  StarRating.prototype.eventToValue = function (event) {
+    var eventX = event.pageX || event.originalEvent.pageX;
+    var offset = this.$element.offset();
+    var width  = this.$element.outerWidth();
+    var ratio  = (eventX - offset.left) / width;
+    var value  = (this.options.max - this.options.min) * ratio + this.options.min;
+
+    return this.cleanValue(value);
+  };
+
+  // EVENT HANDLERS
+  // ==============
+
+  StarRating.prototype.mouseEnterHandler = function (event) {
+    this.isEditing = true;
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('mousemove.vse.star-rating', $.proxy(this.mouseMoveHandler, this));
+  };
+
+  StarRating.prototype.mouseMoveHandler = function (event) {
+    this.updateAppearance(this.eventToValue(event));
+  };
+
+  StarRating.prototype.mouseLeaveHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.updateAppearance();
+  };
+
+  StarRating.prototype.clickHandler = function (event) {
+    this.$element.off('mousemove.vse.star-rating');
+    this.isEditing = false;
+    this.setValue(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchStartHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+    this.$element.on('touchmove.vse.star-rating', $.proxy(this.touchMoveHandler, this));
+  };
+
+  StarRating.prototype.touchMoveHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.updateAppearance(this.eventToValue(event));
+  };
+
+  StarRating.prototype.touchEndHandler = function (event) {
+    event.preventDefault(); // disable mouse emulation
+    this.$element.off('touchmove.vse.star-rating');
+    this.setValue(this.eventToValue(event));
+  };
+
+  // PLUGIN
+  // ======
+
+  function Plugin (option) {
+    return this.each(function () {
+      var $this = $(this);
+      var data  = $this.data('vse.star-rating');
+      if (!data) {
+        var options = $.extend(
+          {},
+          StarRating.DEFAULTS,
+          $this.data(),
+          typeof option === 'object' && option
+        );
+        $this.data('vse.star-rating', new StarRating(this, options));
+      }
+    });
+  }
+
+  $.fn.starRating             = Plugin;
+  $.fn.starRating.Constructor = StarRating;
+
+}));
+
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
 * Build: http://modernizr.com/download/#-csstransforms3d-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
 */
@@ -1428,6 +1619,331 @@ $(function() {
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: modal.js v3.3.1
+ * http://getbootstrap.com/javascript/#modals
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // MODAL CLASS DEFINITION
+  // ======================
+
+  var Modal = function (element, options) {
+    this.options        = options
+    this.$body          = $(document.body)
+    this.$element       = $(element)
+    this.$backdrop      =
+    this.isShown        = null
+    this.scrollbarWidth = 0
+
+    if (this.options.remote) {
+      this.$element
+        .find('.modal-content')
+        .load(this.options.remote, $.proxy(function () {
+          this.$element.trigger('loaded.bs.modal')
+        }, this))
+    }
+  }
+
+  Modal.VERSION  = '3.3.1'
+
+  Modal.TRANSITION_DURATION = 300
+  Modal.BACKDROP_TRANSITION_DURATION = 150
+
+  Modal.DEFAULTS = {
+    backdrop: true,
+    keyboard: true,
+    show: true
+  }
+
+  Modal.prototype.toggle = function (_relatedTarget) {
+    return this.isShown ? this.hide() : this.show(_relatedTarget)
+  }
+
+  Modal.prototype.show = function (_relatedTarget) {
+    var that = this
+    var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+
+    this.$element.trigger(e)
+
+    if (this.isShown || e.isDefaultPrevented()) return
+
+    this.isShown = true
+
+    this.checkScrollbar()
+    this.setScrollbar()
+    this.$body.addClass('modal-open')
+
+    this.escape()
+    this.resize()
+
+    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+
+    this.backdrop(function () {
+      var transition = $.support.transition && that.$element.hasClass('fade')
+
+      if (!that.$element.parent().length) {
+        that.$element.appendTo(that.$body) // don't move modals dom position
+      }
+
+      that.$element
+        .show()
+        .scrollTop(0)
+
+      if (that.options.backdrop) that.adjustBackdrop()
+      that.adjustDialog()
+
+      if (transition) {
+        that.$element[0].offsetWidth // force reflow
+      }
+
+      that.$element
+        .addClass('in')
+        .attr('aria-hidden', false)
+
+      that.enforceFocus()
+
+      var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
+
+      transition ?
+        that.$element.find('.modal-dialog') // wait for modal to slide in
+          .one('bsTransitionEnd', function () {
+            that.$element.trigger('focus').trigger(e)
+          })
+          .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        that.$element.trigger('focus').trigger(e)
+    })
+  }
+
+  Modal.prototype.hide = function (e) {
+    if (e) e.preventDefault()
+
+    e = $.Event('hide.bs.modal')
+
+    this.$element.trigger(e)
+
+    if (!this.isShown || e.isDefaultPrevented()) return
+
+    this.isShown = false
+
+    this.escape()
+    this.resize()
+
+    $(document).off('focusin.bs.modal')
+
+    this.$element
+      .removeClass('in')
+      .attr('aria-hidden', true)
+      .off('click.dismiss.bs.modal')
+
+    $.support.transition && this.$element.hasClass('fade') ?
+      this.$element
+        .one('bsTransitionEnd', $.proxy(this.hideModal, this))
+        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+      this.hideModal()
+  }
+
+  Modal.prototype.enforceFocus = function () {
+    $(document)
+      .off('focusin.bs.modal') // guard against infinite focus loop
+      .on('focusin.bs.modal', $.proxy(function (e) {
+        if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
+          this.$element.trigger('focus')
+        }
+      }, this))
+  }
+
+  Modal.prototype.escape = function () {
+    if (this.isShown && this.options.keyboard) {
+      this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
+        e.which == 27 && this.hide()
+      }, this))
+    } else if (!this.isShown) {
+      this.$element.off('keydown.dismiss.bs.modal')
+    }
+  }
+
+  Modal.prototype.resize = function () {
+    if (this.isShown) {
+      $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
+    } else {
+      $(window).off('resize.bs.modal')
+    }
+  }
+
+  Modal.prototype.hideModal = function () {
+    var that = this
+    this.$element.hide()
+    this.backdrop(function () {
+      that.$body.removeClass('modal-open')
+      that.resetAdjustments()
+      that.resetScrollbar()
+      that.$element.trigger('hidden.bs.modal')
+    })
+  }
+
+  Modal.prototype.removeBackdrop = function () {
+    this.$backdrop && this.$backdrop.remove()
+    this.$backdrop = null
+  }
+
+  Modal.prototype.backdrop = function (callback) {
+    var that = this
+    var animate = this.$element.hasClass('fade') ? 'fade' : ''
+
+    if (this.isShown && this.options.backdrop) {
+      var doAnimate = $.support.transition && animate
+
+      this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
+        .prependTo(this.$element)
+        .on('click.dismiss.bs.modal', $.proxy(function (e) {
+          if (e.target !== e.currentTarget) return
+          this.options.backdrop == 'static'
+            ? this.$element[0].focus.call(this.$element[0])
+            : this.hide.call(this)
+        }, this))
+
+      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
+
+      this.$backdrop.addClass('in')
+
+      if (!callback) return
+
+      doAnimate ?
+        this.$backdrop
+          .one('bsTransitionEnd', callback)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callback()
+
+    } else if (!this.isShown && this.$backdrop) {
+      this.$backdrop.removeClass('in')
+
+      var callbackRemove = function () {
+        that.removeBackdrop()
+        callback && callback()
+      }
+      $.support.transition && this.$element.hasClass('fade') ?
+        this.$backdrop
+          .one('bsTransitionEnd', callbackRemove)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callbackRemove()
+
+    } else if (callback) {
+      callback()
+    }
+  }
+
+  // these following methods are used to handle overflowing modals
+
+  Modal.prototype.handleUpdate = function () {
+    if (this.options.backdrop) this.adjustBackdrop()
+    this.adjustDialog()
+  }
+
+  Modal.prototype.adjustBackdrop = function () {
+    this.$backdrop
+      .css('height', 0)
+      .css('height', this.$element[0].scrollHeight)
+  }
+
+  Modal.prototype.adjustDialog = function () {
+    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
+
+    this.$element.css({
+      paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
+    })
+  }
+
+  Modal.prototype.resetAdjustments = function () {
+    this.$element.css({
+      paddingLeft: '',
+      paddingRight: ''
+    })
+  }
+
+  Modal.prototype.checkScrollbar = function () {
+    this.bodyIsOverflowing = document.body.scrollHeight > document.documentElement.clientHeight
+    this.scrollbarWidth = this.measureScrollbar()
+  }
+
+  Modal.prototype.setScrollbar = function () {
+    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
+    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
+  }
+
+  Modal.prototype.resetScrollbar = function () {
+    this.$body.css('padding-right', '')
+  }
+
+  Modal.prototype.measureScrollbar = function () { // thx walsh
+    var scrollDiv = document.createElement('div')
+    scrollDiv.className = 'modal-scrollbar-measure'
+    this.$body.append(scrollDiv)
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    this.$body[0].removeChild(scrollDiv)
+    return scrollbarWidth
+  }
+
+
+  // MODAL PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option, _relatedTarget) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.modal')
+      var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
+      if (typeof option == 'string') data[option](_relatedTarget)
+      else if (options.show) data.show(_relatedTarget)
+    })
+  }
+
+  var old = $.fn.modal
+
+  $.fn.modal             = Plugin
+  $.fn.modal.Constructor = Modal
+
+
+  // MODAL NO CONFLICT
+  // =================
+
+  $.fn.modal.noConflict = function () {
+    $.fn.modal = old
+    return this
+  }
+
+
+  // MODAL DATA-API
+  // ==============
+
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+    var $this   = $(this)
+    var href    = $this.attr('href')
+    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
+    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+
+    if ($this.is('a')) e.preventDefault()
+
+    $target.one('show.bs.modal', function (showEvent) {
+      if (showEvent.isDefaultPrevented()) return // only register focus restorer if modal will actually get shown
+      $target.one('hidden.bs.modal', function () {
+        $this.is(':visible') && $this.trigger('focus')
+      })
+    })
+    Plugin.call($target, option, this)
+  })
 
 }(jQuery);
 

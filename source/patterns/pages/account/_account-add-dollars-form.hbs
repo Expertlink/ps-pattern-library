@@ -1,0 +1,100 @@
+  <form role="form">
+  {{> forms/_promo-code }}
+  <div class="form-group form-group-required js-payment-options">
+    <label>Please select an amount:</label>
+    <div class="radio">
+       <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
+       </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option" data-target="#custom-amount" type="radio" name="addDollarsAmount" value="custom"  /> Or, enter a custom amount
+      </label>
+    </div>
+    <div id="custom-amount" class="collapse account-add-custom form-group">
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="number"  min="5" max="500" name="addDollarsAmount" class="form-control" id="addDollarsAmountOther" />
+      </div>
+      <p class="help-block">Minimum 5.00, maximum 500.00, use format 00.00.</p>
+    </div>
+  </div>
+  <div class="form-group form-group-required js-payment-options">
+    <label>Please select a payment method:</label>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         type="radio"
+         name="addDollarsPayment"
+         value="3870"  />
+         Visa ending in 3870
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         type="radio"
+         name="addDollarsPayment"
+         value="89791"  />
+         Diner's Club Card ending in 89791
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input class="js-payment-option"
+         data-target="#new-payment"
+         type="radio"
+         name="addDollarsPayment"
+         value="new"  />
+        Add a new payment method
+      </label>
+    </div>
+    <div id="new-payment" class="collapse">
+      {{> forms/_add-new-payment }}
+    </div>
+  </div>
+  <div class="form-group form-group-required">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
+      </label>
+      <div id="terms-block" class="collapse u-margin-top">
+        <h4>Conditions of Sale and Payment Terms</h4>
+        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+        <h4>Methods of Payment, Credit Card Terms</h4>
+        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+        <h4>Order Acceptance Policy</h4>
+        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary arrow-right-equilateral-after">Continue </button>
+  </div>
+</form>

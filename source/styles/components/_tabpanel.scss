@@ -1,0 +1,169 @@
+.tabpanel {
+
+}
+
+.tabpanel-tabs {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin-bottom: -1px;
+  padding-left: 0;
+  list-style: none;
+  table-layout: fixed;
+
+  > li {
+    position: relative;
+    z-index: 1;
+    display: table-cell;
+    vertical-align: bottom;
+
+    > a {
+      display: block;
+      margin-left: ($line-height-computed / 2);
+      padding: ($line-height-computed / 2) ($line-height-computed / 3);
+      text-align: center;
+      overflow: hidden;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &:first-child > a {
+      margin-left: 0;
+    }
+  }
+}
+
+.tabpanel-pane,
+.tabpanel-tabs > li > a {
+  background-color: #fff;
+  border-color: transparent;
+  border-radius: $border-radius-large;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.tabpanel-pane {
+  padding: ($line-height-computed / 2) $line-height-computed;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.tabpanel-tabs > li > a {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+//== Tab hide/show behavior
+
+.tabpanel-content {
+  > .tabpanel-pane {
+    display: none;
+    visibility: hidden;
+  }
+
+  > .tabpanel-pane.active {
+    display: block;
+    visibility: visible;
+  }
+}
+
+//== Full-width modifiers
+
+@mixin make-tabpanel-full() {
+  .tabpanel-pane {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+  }
+
+  .tabpanel-tabs {
+    padding-left: $line-height-computed;
+    padding-right: $line-height-computed;
+  }
+}
+
+.tabpanel-full {
+  @include make-tabpanel-full();
+}
+
+.tabpanel-full-xs {
+  @media (max-width: $screen-xs-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include make-tabpanel-full();
+  }
+}
+
+.tabpanel-full-lg {
+  @media (min-width: $screen-lg-min) {
+    @include make-tabpanel-full();
+  }
+}
+
+//== Border Color Modifiers
+
+.tabpanel-dark {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $blue;
+  }
+}
+
+.tabpanel-light {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $blue-gray;
+  }
+}
+
+.tabpanel-lighter {
+  .tabpanel-pane,
+  .tabpanel-tabs > li > a {
+    border-color: $gray-light;
+  }
+}
+
+//== Background Modifiers
+
+.tabpanel-teal {
+  .tabpanel-tabs > li > a {
+    background: linear-gradient(to bottom, lighten($teal-light, 10%), darken($teal-light, 20%));
+  }
+
+  .tabpanel-pane {
+    background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
+  }
+}
+
+.tabpanel-tan {
+  .tabpanel-tabs > li > a {
+    background: linear-gradient(to bottom, lighten($tan-light, 10%), darken($tan-light, 20%));
+  }
+
+  .tabpanel-pane {
+    background: linear-gradient(to bottom, #fff, #fff 50%, $tan-light);
+  }
+}
+
+//== Active State Modifiers
+
+.tabpanel-tabs > li.active {
+  & > a {
+    font-weight: bold;
+    background: #fff;
+    border-bottom-color: #fff;
+  }
+}

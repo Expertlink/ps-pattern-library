@@ -1,148 +1,24 @@
-$account-padding: ($line-height-computed * (2/3)) !default;
-.account-box {
-  padding-left: $account-padding;
-  padding-right: $account-padding;  
-
-}
-
-.account-home-section { 
-  padding: $account-padding;
-  border: 1px solid $gray-lighter;
-  box-shadow: 0 0 8px $gray-lighter;
-  border-radius: $border-radius-large;
-  margin: 0 0 $account-padding;
-  position: relative;
-  @media (max-width: $screen-sm-min)  {
-    border: 0;
+.account-home-back {
+  @media (max-width: $screen-sm-max) {
     border-radius: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
   }
 }
 
-.account-home-section-heading {
-  margin-top: 0;
-  @media (max-width: $screen-sm-min)  {
-    margin: 0 ($account-padding * -1);
-  }
-}
-a.account-section-parent {
-  display: block;
-  position: relative;
-  padding: ($account-padding/2) ($account-padding*3) ($account-padding/2) $account-padding;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  border-color: $gray-lighter;
-  border-style: solid;
-  border-width: 1px 0 0;
-  background-color: lighten($gray-lighter, 10%);
-  background-image: linear-gradient(
-    to bottom,
-    lighten($gray-lighter, 15%),
-    lighten($gray-lighter, 10%)
-  );
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(to bottom, #fff, $tan-light);
-    border-color: $tan;
-  }
-  &:after {
-    position: absolute;
-    right: $account-padding;
-    top: ($account-padding/2);
-    content: '\2013';
-    height: $filter-control-size;
-    font-weight: bold;
-    line-height: $filter-control-size;
-    text-align: center;
-    width: $filter-control-size;
-  }
-  &.collapsed:after {
-    content: '+';
-  }
-  @media (min-width: $screen-sm-min) {
-    background: transparent;
-    border: 0;
-    padding: 0;
-    cursor: default;
-    display: inline-block;
-    &.collapsed:after, &:after {
-      content:'';
-    }
-    &:hover,
-    &:focus {
-      background: transparent;
-    }
+.account-table-full-xs {
+   @media (max-width: $screen-xs-max)  {
+    margin-left: ($line-height-computed * -1);
+    margin-right: ($line-height-computed * -1);
+    width: calc(100% + #{$line-height-computed * 2});
   }
 }
 
-.account-current-balance {
-  text-align: center;
-  font-size: 0.9em;
-}
-
-.account-balance {
-  display: block;
-  font-size: 3em;
-  font-weight: 800;
-  line-height: 1em;
-  sup {
-    vertical-align: middle;
-    font-size: 0.6em;
-  }
-}
-
-.balance-summary {
-  li {
-    padding: 0.5em;
-  }
-}
-.has-balance-footnote {
-  margin-right: -0.6em;
-}
-.balance-footnote {
-  font-size: 0.9em;
-  display: block; 
-}
-
-.account-favorites {
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    .advisor-tile-main-object {
-      display: none;
-    }
-    margin-top: ($account-padding * -1);
-  }
-  @media (max-width: $screen-md-min)  {
-    margin-right: ($account-padding * -1);
-    margin-left: ($account-padding * -1);
-  }
-} 
-
-.tabs-horoscope {
-  margin-left: ($account-padding * -1);
-  margin-right: ($account-padding * -1);
-  padding-left: $account-padding;
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    > li > a {
-      padding-left: ($padding-base-horizontal * 0.75);
-      padding-right: ($padding-base-horizontal * 0.75);
-    }
-  }
-}
-
-// This overrides the default behavior of collapse once the page is large enough to show all content at once.
-.account-show-sm {
-  padding-top: $account-padding;
-  padding-bottom: $account-padding;
-  @media (min-width: $screen-sm-min) {
-    display: block;
-    visibility: visible;
-    padding:0;
-  }
+.account-add-custom {
+  max-width: 28em;
+  margin-left: 1.6em;
 }
 
 .reviews-guide {

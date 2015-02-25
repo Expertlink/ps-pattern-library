@@ -1,14 +1,29 @@
 .table.table-collapse-xs {
-  @media (max-width: $screen-sm-max) {
-    &, tr, td {
+  @media (max-width: $screen-xs-max) {
+    thead {
+      display: none;
+    }
+    &, tr, td, tbody {
       display: block;
+      width: 100%;
     }
     tr {
-      padding-bottom: $arrange-gutter-size;
+      padding: ($arrange-gutter-size * 0.5) 0;
+      border-bottom: 1px solid $tan;
+      &:last-of-type {
+        border-bottom:0;
+      }
     }
     td {
       padding:0;
       border:0;
     }
+  }
+}
+
+.table-sortable-control {
+  color: $blue;
+  &.active {
+    color: $red;
   }
 }

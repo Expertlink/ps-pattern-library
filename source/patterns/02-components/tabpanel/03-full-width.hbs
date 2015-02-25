@@ -1,0 +1,32 @@
+---
+description: >
+  The `.tabpanel-full` modifier will allow each pane to reach the edge of its
+  container. Variants exist to apply selectively for different breakpoints,
+  such as `.tabpanel-full-xs`.
+fullWidth: true
+---
+
+<div class="tabpanel tabpanel-full tabpanel-light" role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="tabpanel-tabs" role="tablist">
+    <li class="active" role="presentation">
+      <a role="tab" data-toggle="tab" href="#ren-tab-example">
+        Ren
+      </a>
+    </li>
+    <li role="presentation">
+      <a role="tab" data-toggle="tab" href="#stimpy-tab-example">
+        Stimpy
+      </a>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tabpanel-content">
+    <div class="tabpanel-pane active" role="tabpanel" id="ren-tab-example">
+      Ren H&ouml;ek
+    </div>
+    <div class="tabpanel-pane" role="tabpanel" id="stimpy-tab-example">
+      Stimpson J. Cat
+    </div>
+  </div>
+</div>

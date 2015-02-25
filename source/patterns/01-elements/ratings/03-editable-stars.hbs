@@ -1,0 +1,16 @@
+---
+description: >
+  Adding the `.stars-control` class will allow the rating to be modified via
+  mouse or touch. This works with any size rating.
+status: inprogress
+---
+
+<div class="stars stars-lg stars-control" data-target="#demo-rating">
+  <input id="demo-rating" type="hidden" value="3" />
+</div>
+
+<script>
+$(function(){
+  $('.stars-control').starRating();
+});
+</script>
