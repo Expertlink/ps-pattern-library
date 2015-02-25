@@ -1,0 +1,18 @@
+.stat {
+  background: #fff;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-small;
+  display: inline-block;
+  min-width: 3.5em;
+  padding: $padding-xs-vertical $padding-xs-horizontal;
+  text-align: center;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8em;
+}

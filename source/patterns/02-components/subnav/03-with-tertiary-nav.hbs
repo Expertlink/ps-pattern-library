@@ -1,0 +1,21 @@
+---
+description: >
+  If `.subnav-body` is a list, it can accomodate `.subnav-item` elements
+  presented as tertiary navigation.
+---
+<div class="subnav">
+  <h3 class="subnav-heading">
+    <a href="" class="subnav-item subnav-item-prev">
+      Heading text
+    </a>
+  </h3>
+  <ul class="subnav-body">
+    {{#times 5}}
+      <li>
+        <a class="subnav-item" href="">
+          Link text
+        </a>
+      </li>
+    {{/times}}
+  </ul>
+</div>
