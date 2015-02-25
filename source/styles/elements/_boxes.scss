@@ -32,6 +32,9 @@
 .box-full {
   @extend %box-base;
   border-width: 1px 0;
+  &.box-thick {
+    border-width: 2px 0;
+  }
 }
 
 .box-default-sm {
@@ -47,17 +50,6 @@
 .box-default-lg {
   @media (min-width: $screen-lg-min) {
     @include make-default-box;
-  }
-}
-
-.box-nopad-xs {
-  @media (max-width: $screen-xs-max) {
-    padding: 0;
-  }
-}
-.box-nopad-sm {
-  @media (max-width: $screen-sm-max) {
-    padding: 0;
   }
 }
 
@@ -110,7 +102,10 @@
   background: lighten($green, 45%);
   border-color: $green;
 }
-
+.box-orange {
+  background: linear-gradient(to bottom, #fff, #fff 50%, $orange-light);
+  border-color: $orange;
+}
 //== Style variants
 
 .box-leaf-tr {
@@ -243,6 +238,12 @@
   }
   &.bottom.left {
     transform: rotate(-90deg);
+  }
+  &.bottom {
+    margin-bottom: -15px;
+  }
+  &.top {
+    margin-top: -15px;
   }
 }
 
