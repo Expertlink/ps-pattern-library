@@ -28,3 +28,13 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
 .u-shift-down {
   margin-bottom: -1px !important;
 }
+
+// Especially useful for hanging characters, such as asterisks
+
+// .u-nudge-left {
+//   margin-left: -0.5em;
+// }
+
+.u-nudge-right {
+  margin-right: -0.5em;
+}

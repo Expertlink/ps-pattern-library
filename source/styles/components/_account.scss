@@ -1,27 +1,5 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
 
-.amount {
-  float: right;
-}
-
-.current-balance {
-  padding-top: ($account-padding );
-  .amount {
-    font-size: 1.6em;
-    margin-top: -0.4em;
-  }
-}
-
-.has-footnote {
-  margin-right: -0.6em;
-  color: $gray;
-}
-
-.account-footnote {
-  font-size: 0.9em;
-  color: $gray;
-}
-
 .line-position {
   float: right;
   background: lighten($gray-lighter,20%);
