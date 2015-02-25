@@ -5,8 +5,10 @@ $subnav-padding-vertical: ($padding-base-vertical + 2px) !default;
   border: 1px solid $gray-lighter;
   border-radius: $border-radius-large;
   list-style: none;
+  margin-bottom: ($line-height-computed / 1.5);
   overflow: hidden;
   padding-left: 0;
+  position: relative;
 }
 
 .subnav-group,
@@ -21,12 +23,12 @@ $subnav-padding-vertical: ($padding-base-vertical + 2px) !default;
 
 .subnav-heading {
   font: inherit;
-  margin: 0;
+  margin: 0 0 -1px 0;
 }
 
 .subnav-body {
   background-color: #fff;
-  margin: 0;
+  margin: 1px 0 0;
   padding: $subnav-padding-vertical $subnav-padding-horizontal;
 }
 
