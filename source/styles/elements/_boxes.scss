@@ -109,8 +109,9 @@
   padding-right: 4em;
   padding-top: 2.8em;
     @media (max-width: $screen-sm-max) {
-    background: none;
-    padding-right: 0;
+      background: none;
+      padding-right: 0;
+      padding-top: 1em;
     }
 }
 
