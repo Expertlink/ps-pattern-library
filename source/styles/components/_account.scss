@@ -17,3 +17,8 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     width: calc(100% + #{$line-height-computed * 2});
   }
 }
+
+.account-add-custom {
+  max-width: 28em;
+  margin-left: 1.6em;
+}
