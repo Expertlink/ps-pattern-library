@@ -240,6 +240,12 @@
   &.bottom.left {
     transform: rotate(-90deg);
   }
+  &.bottom {
+    margin-bottom: -15px;
+  }
+  &.top {
+    margin-top: -15px;
+  }
 }
 
 .fleuron-star-wide {
