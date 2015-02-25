@@ -1,3 +1,10 @@
+/**
+ * Note: There is an open issue on this script regarding its accuracy in
+ * iOS8. To resolve issues in the meantime, we are using a fix proposed to
+ * the repository in this pull request:
+ * https://github.com/filamentgroup/fixed-fixed/pull/5
+ */
+
 /*! fixed-fixed - v0.1.0 - 2014-05-23
 * Copyright (c) 2014 ; Licensed MIT */
 /*! Fixedfixed: a CSS position:fixed qualifier. (c)2012 @scottjehl, Filament Group, Inc. Dual license: MIT and/or GPLv2 */
@@ -12,7 +19,7 @@
         // only run test if there's a scroll we can compare
         if (scroll !== undefined && scroll > 0 && w.document.body) {
             w.document.body.insertBefore(el, w.document.body.firstChild);
-            if (!el.getBoundingClientRect || el.getBoundingClientRect().top !== 0) {
+            if (!el.getBoundingClientRect || el.getBoundingClientRect().top !== 0 && !ua.match(/OS 8_\d+(?:_\d+)? like Mac OS X/)) {
                 // Fixed is not working or can't be tested
                 docEl.className = docEl.className.replace(htmlclass, "");
             }
