@@ -29,6 +29,14 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
   margin-bottom: -1px !important;
 }
 
+@media (max-width: $screen-xs-max) {
+  @include make-whitespace-utilities(padding, 0, 'u-no-', '-xs');
+}
+
+@media (max-width: $screen-sm-max) {
+  @include make-whitespace-utilities(padding, 0, 'u-no-', '-sm');
+}
+
 // Especially useful for hanging characters, such as asterisks
 
 // .u-hang-left {
