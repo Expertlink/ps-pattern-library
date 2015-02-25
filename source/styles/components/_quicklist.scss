@@ -98,7 +98,7 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
     .fixed-supported & {
       display: block;
-      
+
       &.open,
       &.in {
         transform: none;
@@ -214,10 +214,10 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
     position: absolute;
     right: $quicklist-item-padding;
     top: 50%;
-    margin-top: -9px;
-    opacity: 0.15;
+    margin-top: (svg-sprite-property('item-arrow-right', 'height') / -2);
+    opacity: 0.25;
 
-    @include svg-sprite("item-arrow-right");
+    @include svg-sprite('item-arrow-right');
   }
 }
 
