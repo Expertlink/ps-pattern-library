@@ -41,9 +41,9 @@
   &:hover {
     background: $tan-light;
   }
-   @media (min-width: $screen-md-min) {
+  @media (min-width: 450px) {
     width: 23%;
-   }
+  }
 }
 
 .home-advisor-main-body {
