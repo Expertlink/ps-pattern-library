@@ -1,146 +1,180 @@
 $account-padding: ($line-height-computed * (2/3)) !default;
+
 .account-box {
-  padding-left: $account-padding;
-  padding-right: $account-padding;  
-
-}
-
-.account-home-section { 
-  padding: $account-padding;
-  border: 1px solid $gray-lighter;
-  box-shadow: 0 0 8px $gray-lighter;
-  border-radius: $border-radius-large;
   margin: 0 0 $account-padding;
-  position: relative;
-  @media (max-width: $screen-sm-min)  {
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-  }
+  padding: 0;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-large;
+  overflow: hidden;
 }
 
-.account-home-section-heading {
-  margin-top: 0;
-  @media (max-width: $screen-sm-min)  {
-    margin: 0 ($account-padding * -1);
-  }
-}
-a.account-section-parent {
-  display: block;
-  position: relative;
-  padding: ($account-padding/2) ($account-padding*3) ($account-padding/2) $account-padding;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  border-color: $gray-lighter;
-  border-style: solid;
-  border-width: 1px 0 0;
-  background-color: lighten($gray-lighter, 10%);
+.account-home-heading, 
+.account-menu-home { 
+  margin:0;
+  font-size: 1em;
   background-image: linear-gradient(
     to bottom,
     lighten($gray-lighter, 15%),
     lighten($gray-lighter, 10%)
   );
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(to bottom, #fff, $tan-light);
-    border-color: $tan;
-  }
-  &:after {
-    position: absolute;
-    right: $account-padding;
-    top: ($account-padding/2);
-    content: '\2013';
-    height: $filter-control-size;
-    font-weight: bold;
-    line-height: $filter-control-size;
-    text-align: center;
-    width: $filter-control-size;
-  }
-  &.collapsed:after {
-    content: '+';
-  }
-  @media (min-width: $screen-sm-min) {
-    background: transparent;
-    border: 0;
-    padding: 0;
-    cursor: default;
-    display: inline-block;
-    &.collapsed:after, &:after {
-      content:'';
-    }
+  a {
+    font-weight: normal;
+    display: block;
+    padding: ($account-padding * 0.75) ($account-padding * 3) ($account-padding * 0.75) $account-padding;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray-dark;
+    background:  url(/images/icons/points-right.svg) right 50% no-repeat transparent;
     &:hover,
-    &:focus {
+    &:focus,
+    &.on {
+      color: $gray-dark;
+      text-decoration: none;
+      background-color: $gray-lighter;
+    }
+    @media (min-width: $screen-md-min)  {
       background: transparent;
     }
   }
 }
 
-.account-current-balance {
-  text-align: center;
-  font-size: 0.9em;
+.account-menu-home li:last-of-type a  {
+  border-bottom-width: 0;
+}
+// hides menu items when they are included in summary boxes
+.account-home-page .hidden-home {
+  display: none;
 }
 
-.account-balance {
-  display: block;
-  font-size: 3em;
-  font-weight: 800;
-  line-height: 1em;
-  sup {
-    vertical-align: middle;
-    font-size: 0.6em;
+.account-box-inner {
+  padding: ($account-padding * 0.75) $account-padding;
+  color: darken($gray-light, 30%);
+  ul {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+    li {
+      padding: ($account-padding * 0.25) 0;
+      border-bottom: 1px dotted $gray-lighter;
+    }
+  }
+  ol {
+    margin-left: 0.75em;
+    padding-left: 1em;
+  }
+  a {
+    color: $gray;
   }
 }
 
-.balance-summary {
-  li {
-    padding: 0.5em;
+.amount {
+  float: right;
+}
+
+.account-box-inner ul li.current-balance {
+  padding-top: ($account-padding );
+  .amount {
+    font-size: 1.6em;
+    margin-top: -0.4em;
   }
 }
-.has-balance-footnote {
+
+.has-footnote {
   margin-right: -0.6em;
+  color: $gray;
 }
-.balance-footnote {
+
+.account-footnote {
   font-size: 0.9em;
-  display: block; 
+  color: $gray;
 }
 
-.account-favorites {
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    .advisor-tile-main-object {
-      display: none;
-    }
-    margin-top: ($account-padding * -1);
-  }
-  @media (max-width: $screen-md-min)  {
-    margin-right: ($account-padding * -1);
-    margin-left: ($account-padding * -1);
-  }
-} 
-
-.tabs-horoscope {
-  margin-left: ($account-padding * -1);
-  margin-right: ($account-padding * -1);
-  padding-left: $account-padding;
-  margin-bottom: $account-padding;
-  @media (max-width: $screen-sm-min)  {
-    > li > a {
-      padding-left: ($padding-base-horizontal * 0.75);
-      padding-right: ($padding-base-horizontal * 0.75);
-    }
-  }
-}
-
-// This overrides the default behavior of collapse once the page is large enough to show all content at once.
-.account-show-sm {
-  padding-top: $account-padding;
-  padding-bottom: $account-padding;
-  @media (min-width: $screen-sm-min) {
+.line-position {
+  float: right; 
+  background: lighten($gray-lighter,20%);
+  border: 1px solid $gray-lighter;
+  padding: 2px;
+  border-radius: $border-radius-small;
+  min-width: 3.5em;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2em;
+  span {  
     display: block;
-    visibility: visible;
-    padding:0;
+    font-size: 0.8em;
+    font-weight: normal;
   }
+}
+
+.account-home-back {
+  margin: 0 0 1em;
+  border-radius: 0;
+  border-width: 0; 
+  @media (min-width: $screen-sm-min)  {  
+    margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
+  }
+  @media (min-width: $screen-md-min)  {  
+    border-radius: $border-radius-large;
+    margin: 0;
+    border-width: 1px;
+  }
+  .account-home-heading a {
+    padding-left: ($line-height-computed * 2);
+    background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat transparent;
+    &:hover,
+    &:focus {
+      background: url(/images/icons/points-left.svg) $line-height-computed 50% no-repeat $gray-lighter;
+    }
+    @media (min-width: $screen-md-min)  {
+      padding-left: ($account-padding * 2);
+      &,
+      &:hover,
+      &:focus {
+        background-position: ($account-padding * 0.75) 50%;   
+      }
+    }
+  }
+  .account-box-inner  {
+    display: none;
+    @media (min-width: $screen-md-min)  {
+       display: block;
+    }
+  }  
+}
+
+.account-menu-sub {
+  margin-bottom:0;
+  li {
+    padding:0;
+    a {
+      display: block;
+      color: $gray-dark;
+      padding: ($account-padding * 0.25) $account-padding;
+    }
+    &:first-of-type a {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      border-bottom:0;
+      a {
+        padding-bottom: 0;
+      } 
+    }
+  }
+}
+
+.account-heading-sub {
+  margin-top: ($account-padding * 0.5)
+}
+
+.account-table-full-xs {
+   @media (max-width: $screen-xs-max)  {
+    margin-left: ($line-height-computed * -1);
+    margin-right: ($line-height-computed * -1);
+    width: calc(100% + #{$line-height-computed * 2});
+  }
+}
+
+.account-add-custom {
+  max-width: 28em;
+  margin-left: 1.6em;
 }

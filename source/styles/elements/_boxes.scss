@@ -32,6 +32,9 @@
 .box-full {
   @extend %box-base;
   border-width: 1px 0;
+  &.box-thick {
+    border-width: 2px 0;
+  }
 }
 
 .box-default-sm {
@@ -99,7 +102,10 @@
   background: lighten($green, 45%);
   border-color: $green;
 }
-
+.box-orange {
+  background: linear-gradient(to bottom, #fff, #fff 50%, $orange-light);
+  border-color: $orange;
+}
 //== Style variants
 
 .box-leaf-tr {
@@ -108,6 +114,9 @@
   margin-right: -2.4em;
   padding-right: 4em;
   padding-top: 2.8em;
+    @media (max-width: $screen-sm-max) {
+    background: none;
+    }
 }
 
 .box-scroll {
@@ -130,9 +139,6 @@
 //== Inner fleurons
 
 %fleuron-base {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
   display: inline-block;
   vertical-align: middle;
 
@@ -166,26 +172,16 @@
   }
 }
 
-@mixin fleuron (
-  $width,
-  $height: null,
-  $url: false,
+@mixin fleuron(
+  $svg-sprite-key,
   $edge-adjust-x: 0,
   $edge-adjust-y: 0
 ) {
-
-  @if $height == null {
-    $height: $width;
-  }
-
   @extend %fleuron-base;
+  @include svg-sprite($svg-sprite-key);
 
-  width: $width;
-  height: $height;
-
-  @if $url {
-    background-image: url($url);
-  }
+  $width: svg-sprite-property($svg-sprite-key, width);
+  $height: svg-sprite-property($svg-sprite-key, height);
 
   &.top,
   &.bottom {
@@ -211,27 +207,46 @@
   }
 }
 
-.fleuron-star,
-.fleuron-star-alt {
-  @include fleuron(
-    $width: 1.6em,
-    $edge-adjust-x: 0.15em,
-    $edge-adjust-y: 0.1em
-  );
+.fleuron-star-one {
+  @include fleuron('star-corner-orange', 2px, 1px);
 }
-.fleuron-star {
-  background-image: url('/images/fleurons/star-corner-orange.svg');
+
+.fleuron-star-one-red {
+  @include fleuron('star-corner-red', 2px, 1px);
 }
-.fleuron-star-alt {
-  background-image: url('/images/fleurons/star-corner-red.svg');
+
+.fleuron-star-two {
+  @include fleuron('star-corner-two', 2px, 1px);
+  &.top.left {
+    transform: rotate(180deg);
+  }
+  &.top.right {
+    transform: rotate(90deg);
+  }
+  &.bottom.left {
+    transform: rotate(-90deg);
+  }
+}
+
+.fleuron-star-three {
+  @include fleuron('star-corner-three', 2px, 1px);
+  &.top.left {
+    transform: rotate(180deg);
+  }
+  &.top.right {
+    transform: rotate(90deg);
+  }
+  &.bottom.left {
+    transform: rotate(-90deg);
+  }
+  &.bottom {
+    margin-bottom: -15px;
+  }
+  &.top {
+    margin-top: -15px;
+  }
 }
 
 .fleuron-star-wide {
-  @include fleuron(
-    $width: em(156px),
-    $height: em(26px),
-    $url: '/images/fleurons/top-flourish.svg',
-    $edge-adjust-x: 6.5em,
-    $edge-adjust-y: 0.1em
-  );
+  @include fleuron('top-flourish', 84px, 1px);
 }
