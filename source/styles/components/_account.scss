@@ -9,7 +9,3 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
   }
 }
-
-.account-heading-sub {
-  margin-top: ($account-padding * 0.5)
-}

@@ -11,6 +11,10 @@ $subnav-padding-vertical: ($padding-base-vertical + 2px) !default;
   position: relative;
 }
 
+.subnav-adjacent-heading {
+  margin-top: ($subnav-padding-vertical / 2 + 1px);
+}
+
 .subnav-group,
 .subnav-heading {
   background-color: lighten($gray-lighter, 10%);
