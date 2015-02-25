@@ -37,6 +37,22 @@ h6, .h6 {
   }
 }
 
+//== Lists
+
+.list-ruled {
+  @include list-unstyled;
+
+  > li {
+    border-bottom: 1px dotted $gray-lighter;
+    padding-bottom: $padding-small-vertical;
+    padding-top: $padding-small-vertical;
+  }
+
+  &:last-child > li:last-child {
+    border-bottom-width: 0;
+  }
+}
+
 //== Other text variations
 
 @include text-emphasis-variant('.text-default', $text-color);
