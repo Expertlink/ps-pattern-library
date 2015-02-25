@@ -8,8 +8,8 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   overflow: hidden;
 }
 
-.account-home-heading, 
-.account-menu-home { 
+.account-home-heading,
+.account-menu-home {
   margin:0;
   font-size: 1em;
   background-image: linear-gradient(
@@ -70,7 +70,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   float: right;
 }
 
-.account-box-inner ul li.current-balance {
+.subnav-body ul li.current-balance {
   padding-top: ($account-padding );
   .amount {
     font-size: 1.6em;
@@ -89,7 +89,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 }
 
 .line-position {
-  float: right; 
+  float: right;
   background: lighten($gray-lighter,20%);
   border: 1px solid $gray-lighter;
   padding: 2px;
@@ -98,7 +98,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
   text-align: center;
   font-weight: bold;
   line-height: 1.2em;
-  span {  
+  span {
     display: block;
     font-size: 0.8em;
     font-weight: normal;
@@ -108,8 +108,8 @@ $account-padding: ($line-height-computed * (2/3)) !default;
 .account-home-back {
   margin: ($line-height-computed / -2) ($line-height-computed * -1) 1em;
   border-radius: 0;
-  border-width: 0; 
-  @media (min-width: $screen-md-min)  {  
+  border-width: 0;
+  @media (min-width: $screen-md-min)  {
     border-radius: $border-radius-large;
     margin: 0;
     border-width: 1px;
@@ -126,7 +126,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
       &,
       &:hover,
       &:focus {
-        background-position: ($account-padding * 0.75) 50%;   
+        background-position: ($account-padding * 0.75) 50%;
       }
     }
   }
@@ -135,7 +135,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
     @media (min-width: $screen-md-min)  {
        display: block;
     }
-  }  
+  }
 }
 
 .account-menu-sub {
@@ -154,7 +154,7 @@ $account-padding: ($line-height-computed * (2/3)) !default;
       border-bottom:0;
       a {
         padding-bottom: 0;
-      } 
+      }
     }
   }
 }
