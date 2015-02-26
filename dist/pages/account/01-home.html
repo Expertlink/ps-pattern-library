@@ -48,15 +48,23 @@
     
         <div class="masthead-controls">
           <ul class="masthead-menu">
-                <li class="hidden-xs hidden-sm">
-                  <a href="" class="btn btn-link text-default">
-                    Not Sally?
-                  </a>
-                </li>
-              <li>
-                <a href="" class="btn btn-link text-default">
-                  Login
+              <li class="dropdown">
+                <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+                  <span class="hidden-xs">Sally&rsquo;s </span>Account
+                  <span class="arrow-down text-muted"></span>
                 </a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="">
+                      <span class="visible-xs-inline">Sally&rsquo;s </span>
+                      Account
+                      <span class="hidden-xs">Home</span>
+                    </a>
+                  </li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
+                </ul>
               </li>
             <li class="hidden-xs hidden-sm hidden-md dropdown">
               <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
@@ -298,194 +306,122 @@
     
   </header>
 
-<div class="container-page">
-  <div class="box-full account-box box-default-lg box-lighter">
-    <div class="account-home-section account-home-section-welcome ">
-      <h1 class="text-primary u-no-margin-top h2">Welcome, Sally!<a href="/pages/account/05-edit.html" class="btn btn-sm btn-default btn-shaded pull-right">Edit Account</a></h1>
-      <p>You are currently number <strong>3 in line</strong> for a return call from <a href="#">Psychic Mazie x3102</a>. You are also <a href="#">scheduled for a 
-      return call</a> from <strong>4</strong> other advisors.</p>
-       <p><a href="/pages/account/02-return-calls.html" class="btn btn-default btn-shaded btn-block">Manage your Return Calls</a></p>  
-        <div class="box box-lighter box-teal">
-        <p class="account-current-balance"><span class="text-primary account-balance"><sup>$</sup>360.65</span>Current Balance</p>
-      </div>
-      <ul class="list-unstyled balance-summary">
-        <li class="border-bottom">New Member Offer Dollars: <strong class="pull-right">$10.00<span class="has-balance-footnote">*</span></strong></li>
-        <li class="border-bottom">Dollars you put on Account: <strong class="pull-right">$250.65</strong></li>
-        <li class="border-bottom">Bonus Dollars we gave you: <strong class="pull-right">$100.00</strong></li>
-      </ul>
-      <p class="balance-footnote text-muted">* at $1.00 per minute.</p>
-      <p><a href="/pages/account/02-add.html" class="btn btn-primary btn-block">Add Dollars</a></p>
-    </div>    <div class="account-home-section account-home-section-offers ">
-      <h3  class="account-home-section-heading u-no-margin-bottom"><a href="#featured-offer"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Special Offer: the 6 Days of Love</a></h3>
-      <div id="featured-offer" class="collapse account-show-sm">
-        <p><strong>Get answers to your questions – big or small.</strong></p>
-        <p class="border-bottom border-top">Add $100 - Get $15 free<br />
-        Add $50 - Get $5 free<br />
-        Add $200 - Get $40 free</p>
-        <p class="text-center"><span class="text-muted">Expires 02/11/2015 11:59PM ET</span><br />
-        <strong class="u-block">Use Promo Code <span class="text-primary">745864</span></strong></p>
-        <div class="arrange arrange-gutter arrange-equal">
-          <div class="arrange-fill"><a href="/pages/account/03-offers.html" class="btn btn-default btn-shaded btn-block"><span class="hidden-xs">View </span>More Offers</a></div>
-          <div class="arrange-fill"><a href="/pages/account/03-offers.html" class="btn btn-primary btn-block">Redeem<span class="hidden-xs"> this</span> Offer</a></div>
-        </div>  
-      </div>
-    </div>    <div class="account-home-section account-home-section-favorites">
-      <h3  class="account-home-section-heading"><a href="#favorite-advisors"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Your Favorite Advisors</a></h3>
-      <div id="favorite-advisors" class="collapse account-show-sm">
-        <div class="account-favorites">
-          <div class="row">
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="/images/fpo/7777-sml.jpg"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Mystery Reader x7777</h4>
-                     
-                          <p class="text-success"><b>Available</b> till 7:45pm</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="/images/fpo/saul.jpg"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Saul Goodman x7777</h4>
-                     
-                          <p class="text-success"><b>Available</b> till 10:55pm</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="http://placeimg.com/164/216/animals"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Zaphod Beeblebrox x1337</h4>
-                     
-                          <p class="text-success"><b>Available</b> till 2:30pm</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="/images/fpo/liz.jpg"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Liz Lemon x3030</h4>
-                     
-                          <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="/images/fpo/jet.jpg"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Jet Jaguar x1122</h4>
-                     
-                          <p class="text-danger"><b>Busy</b> logged on till 7:45pm</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="advisor-tile advisor-tile-simple">
-                  <a class="link-block advisor-tile-main advisor-tile-main-simple advisor-tile-group" href="#">
-                    <div class="advisor-tile-main-object">
-                      <div class="advisor-tile-photo">
-                        <img
-                          class="img-rounded img-shadow"
-                          src="/images/fpo/jesse.jpg"
-                          alt=" ">
-                      </div>
-                    </div>
-                    <div class="advisor-tile-main-body advisor-tile-main-body-simple">
-                      <h4>Uncle Jesse x7777</h4>
-                     
-                        <p class="text-muted"><b>Offline</b></p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+<div class="container-page account-home-page">
+  <div class="box-full  box-default-lg box-lighter">
+    <h1 class="u-no-margin-top">Welcome, Sally!</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-push-4 col-lg-9 col-lg-push-3">
+        <div class="subnav">
+          <h3 class="subnav-heading">
+            <a class="subnav-item subnav-item-next" href="/pages/account/02-add.html" >Add Dollars</a>
+          </h3>
+          <div class="subnav-body text-neutral">
+            <ul class="list-ruled">
+              <li class="arrange arrange-bottom">
+                <span class="arrange-fill">
+                  Current balance:
+                </span>
+                <span class="arrange-fit big">
+                  <sup>$</sup>360.65
+                </span>
+              </li>
+              <li class="arrange arrange-bottom">
+                <span class="arrange-fill">
+                  New Member Offer Dollars:
+                </span>
+                <span class="arrange-fit text-right">
+                  $10.00<span class="u-hang-right">*</span>
+                </span>
+              </li>
+              <li class="arrange arrange-bottom">
+                <span class="arrange-fill">
+                  Dollars you added
+                </span>
+                <span class="arrange-fit text-right">
+                  $250.65
+                </span>
+              </li>
+              <li class="arrange arrange-bottom">
+                <span class="arrange-fill">
+                  Bonus Dollars
+                </span>
+                <span class="arrange-fit text-right">
+                  $100.00
+                </span>
+              </li>
+            </ul>
+            <p class="text-right small">* at $1.00 per minute.</p>
           </div>
         </div>
-        <div class="arrange arrange-gutter arrange-equal">
-          <div class="arrange-fill"><a href="/pages/our-psychics/01-our-psychics.html" class="btn btn-default btn-shaded btn-block"><span class="hidden-xs">Meet </span>More Psychics</a></div>
-          <div class="arrange-fill"><a href="/pages/account/03-offers.html" class="btn btn-primary btn-block">Manage Fav<span class="hidden-xs">orit</span>es</a></div>  
+        <div class="subnav">
+          <h3 class="subnav-heading">
+            <a class="subnav-item subnav-item-next" href="#">Manage Return Calls</a>
+          </h3>
+          <div class="subnav-body text-neutral">
+            <ul class="list-ruled">
+              <li>
+                <a class="link-block" href="">
+                  <span class="text-neutral">Psychic Mazie x1233</span>
+                  <span class="stat pull-right">
+                    <span class="stat-value">3rd</span>
+                    <span class="stat-label">in line</span>
+                  </span>
+                  <span class="text-primary u-block">In a Reading</span>
+                </a>
+              </li>
+              <li>
+                <a class="link-block" href="">
+                  <span class="text-neutral">Psychic Billy x1033</span>
+                  <span class="stat pull-right">
+                    <span class="stat-value">14th</span>
+                    <span class="stat-label">in line</span>
+                  </span>
+                  <span class="text-muted u-block">Unavailable</span>
+                </a>
+              </li>
+              <li>
+                <a class="link-block" href="">
+                  <span class="text-neutral">Psychic Brynhildr x1922</span>
+                  <span class="stat pull-right">
+                    <span class="stat-value">1st</span>
+                    <span class="stat-label">in line</span>
+                  </span>
+                  <span class="text-muted u-block">Unavailable</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="subnav">
+          <h3 class="subnav-heading">
+            <a class="subnav-item subnav-item-next" href="#">Special Offers</a>
+          </h3>
+          <div class="subnav-body text-neutral">
+            <h3 class="u-no-margin">The 6 Days of Love</h3>
+            <p>Get answers to your questions – big or small.</p>
+            <ul class="list-ruled">
+              <li>Add $100 - Get $15 free</li>
+              <li>Add $50 - Get $5 free</li>
+              <li>Add $200 - Get $40 free</li>
+            </ul>
+            <p><strong>Use Promo Code <span class="text-primary">745864</span></strong></p>
+            <p class="account-footnote">Expires 02/11/2015 11:59PM ET</p>
+          </div>
         </div>
       </div>
-    </div>    <div class="account-home-section account-home-section-articles">
-      <h3  class="account-home-section-heading"><a href="#your-reviews"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Your Reviews</a></h3>
-      <div id="your-reviews" class="collapse account-show-sm">
-        <p>You have rated or reviewed <strong>17 of your 38</strong> readings.</p>
-        <p><a href="/pages/account/06-reviews.html" class="btn btn-primary btn-block">Review your Readings</a></p>  
+      <div class="col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+        <ul class="subnav subnav-group">
+          <li><a class="subnav-item subnav-item-next" href="#">Messages</a></li>
+          <li><a class="subnav-item subnav-item-next" href="/pages/account/05-rewards.html">Rewards</a></li>
+          <li><a class="subnav-item subnav-item-next" href="#">Favorite advisors</a></li>
+          <li><a class="subnav-item subnav-item-next" href="#">Review readings</a></li>
+          <li><a class="subnav-item subnav-item-next" href="#">Personal info</a></li>
+          <li><a class="subnav-item subnav-item-next" href="#">Communication preferences</a></li>
+          <li><a class="subnav-item subnav-item-next" href="#">Account history</a></li>
+        </ul>
       </div>
-    </div>    <div class="account-home-section account-home-section-horoscope">
-      <h3  class="account-home-section-heading u-no-margin-bottom"><a href="#horoscope-today"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Capricorn Horoscope for <span class="text-nowrap">February 09, 2015</span></a></h3>
-      <div id="horoscope-today" class="collapse account-show-sm">
-        <p class="border-bottom">Daily Horoscope provided by <a href="#">astroSOURCE.com</a></p>
-        <p>You might believe you have accurate measure of a person or situation and might even feel comfortable about what you know and what you know is missing with regard to the whole picture. Perhaps, knowing a proportion of it is enough to satisfy your belief that whatever's missing is unimportant, irrelevant or unnecessary. The sky insists there is more to a situation or story than is immediately evident and it will be up to you to make effort to gain a more accurate snapshot of where things truly stand. Even if you believe this to be unnecessary now, expect to believe it to be necessary soon. <a href="#">Click here to find out what you need from your partner</a>.</p>
-        <div class="arrange arrange-gutter arrange-equal">
-          <div class="arrange-fill"><a href="#" class="btn btn-default btn-shaded btn-block arrow-left-equilateral-before"> Yesterday</a></div>
-          <div class="arrange-fill"><a href="#" class="btn btn-default btn-shaded btn-block arrow-right-equilateral-after">Tomorrow </a></div>
-        </div>  
-      </div>
-    </div>    <div class="account-home-section account-home-section-articles">
-      <h3  class="account-home-section-heading"><a href="#top-articles"  data-toggle="collapse" data-responsive="bio" class="account-section-parent collapsed">Recent Articles</a></h3>
-      <div id="top-articles" class="collapse account-show-sm">
-        <div class="article">
-          <h4 class="u-no-margin-bottom">Dealing With Office Politics</h4>
-          <p><a href="#">Psychic Mazie</a></p>
-          <p>Dealing with office politics means gaining perspective, building relationships, and understanding the informal power structure within your organizations. [<a href="#" class="u-nowrap">Continue Reading</a>]</p>
-        </div>
-        <div class="article">
-          <h4 class="u-no-margin-bottom">Myths and Truths About Soul Mates</h4>
-          <p><a href="#">Psychic Miriam</a></p>
-          <p>We hear a lot about soul mates. When will you find yours? How do you know if you're with your soul mate? Does everyone in this world have a soul mate? But there's one important truth we're overlooking. [<a href="#" class="u-nowrap">Continue Reading</a>]</p>
-        </div>
-      </div>
-    </div>  </div>
+    </div>
+  </div>
 </div>
 
   
@@ -526,20 +462,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
               </a>
             </li>
             <li>
@@ -615,9 +537,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -635,42 +554,14 @@
               </a>
             </li>
             <li>
-              <a class="quicklist-item " href="">
+              <a class="quicklist-item text-success" href="">
                 <h6 class="quicklist-item-heading">Firstname x5555</h6>
                 <small class="quicklist-item-status">
-                    Currently busy
+                    Available now
                 </small>
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -743,6 +634,48 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -770,8 +703,6 @@
     </p>
     <div class="col-xs-12 col-lg-8">
       <ul class="list-inline with-social-btn small-xs text-left-lg text-nowrap-lg u-margin-ends">
-        
-          <li class="hidden-md hidden-lg"><a href="">Not Sally?</a></li>
         
         <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
         <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
