@@ -1,0 +1,33 @@
+<div class="u-overflow-hidden">
+  <div class="carousel carousel-peek" data-interval="3000">
+    <div>
+      <a href="#">
+        <img src="/images/rotator/1214-winter-newsletter.png">
+      </a>
+    </div>
+    <div>
+      <a href="#">
+       <img src="/images/rotator/021414-vday.jpg">
+      </a>
+    </div>
+    <div>
+      <a href="#">
+        <img src="/images/rotator/053114-25th-anniv-new-mbr.jpg">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  /* Auto-play only if there is ONE slide showing (desktop layout) */
+  $(function () {
+    var $carousel = $('.carousel');
+    var visibleCount = $carousel.find('.carousel-item:visible').length;
+    var autoPlay = visibleCount === 1;
+
+    if (autoPlay) {
+      $carousel.carousel('play');
+    }
+  });
+</script>
