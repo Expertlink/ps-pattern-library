@@ -5,14 +5,48 @@ status: inprogress
 {{> pages/_header }}
 
 <div class="container-page">
-  <div class="box-full account-box box-default-lg box-lighter">
+  <div class="box-full box-default-lg u-no-padding-xs box-lighter">
     <div class="row">
-      <div class="col-md-8">
-        {{> account/_reviews-tips }}
-        {{> account/_reviews-eligible }}</div> 
-      <div class="col-md-4">{{> account/_reviews-howto }}</div> 
-    </div>    
+      <div class="col-md-4 col-lg-3">
+        {{> account/_account-nav-sub }}
+        
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="tabpanel-tabs" role="tablist">
+            <li class="active" role="presentation">
+              <a role="tab" data-toggle="tab" href="#post-review">
+                Post Review
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="tab" data-toggle="tab" href="#review-history">
+                Review History
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tabpanel-content">
+            <div class="tabpanel-pane active" role="tabpanel" id="post-review">
+              {{> account/_reviews-howto }}
+              {{> account/_reviews-tips }}
+              {{> account/_reviews-eligible }}
+            </div>
+            <div class="tabpanel-pane" role="tabpanel" id="review-history">
+              {{> account/_rewards-talk-time }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+$(function(){
+  $('.stars-control').starRating();
+});
+</script>
 
 {{> pages/_footer }}

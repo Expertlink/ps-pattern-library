@@ -1,40 +1,48 @@
 <div class="eligible-reading">
-  <div class="eligible-reading-advisor-photo">
-    <img class="img-rounded img-shadow" src="{{photo}}" alt="{{firstName}}">
+  <div class="eligible-reading-summary">
+    <div class="eligible-reading-advisor-photo">
+      <img class="img-rounded img-shadow" src="{{photo}}" alt="{{firstName}}">
+    </div>
+    <div class="eligible-reading-main"> 
+      <p class="eligible-reading-rate">
+        <div class="stars stars-lg stars-control" data-target="#demo-rating">
+          <input id="demo-rating" type="hidden" value="3" />
+        </div>
+      </p> 
+      <p class="eligible-reading-advisor-name">{{firstName}} x{{ext}}</p>
+      <p class="eligible-reading-date">{{date}}</p>
+      <p class="eligible-reading-type">
+        {{#if chat}}
+          Chat Reading
+        {{/if}}
+        {{#if call}}
+          Phone Reading
+        {{/if}}
+      </p>
+    </div>
   </div>
-  <div class="eligible-reading-main">  
-    <p class="eligible-reading-advisor-name h4">{{firstName}} x{{ext}}</p>
-    <p class="eligible-reading-date">Reading Date:	{{date}}</p>
-    <p class="eligible-reading-type">Reading Type: 
-      {{#if chat}}
-        Chat
-      {{/if}}
-      {{#if call}}
-        Call
-      {{/if}}
-    </p>
-   
-    
-  </div>
-  <div class="eligible-reading-actions">
-    <p class="eligible-reading-rate"><span class="stars stars-lg stars-0"><span class="sr-only">0 stars</span></span></p>
-    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-primary btn-block">Add Review</a>
-    <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="toggle-trigger btn btn-sm btn-default btn-shaded btn-block">Add Note</a>
-  </div>
-</div>
-  <div id="add-review-block-{{readingID}}" class="collapse eligible-reading-input">
+  <h3 class="eligible-header eligible-header-review">
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent eligible-review-parent collapsed">
+      Add a Review
+    </a>
+  </h3>
+  <div id="add-review-block-{{readingID}}" class="collapse bio-show-md eligible-reading-input">
     <p>Once a review is posted on the website, you cannot edit it.</p>
-    <div class="form-group">
+    <div class="form-group u-margin-bottom">
       <textarea class="form-control" rows="5"></textarea>
     </div>
-    <button class="btn btn-primary btn-block">Submit Review</button>
   </div>
-  <div id="add-note-block-{{readingID}}" class="collapse eligible-reading-input">
-    <h3 class="u-no-margin">Reading Notes</h3>
+  <h3 class="eligible-header eligible-header-notes">
+    <a href="#add-note-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent eligible-notes-parent collapsed">
+      Add Reading Notes
+    </a>
+  </h3>
+  <div id="add-note-block-{{readingID}}" class="collapse eligible-reading-input eligible-reading-input-notes">
     <p>You can leave reading notes for yourself at any time. Your reading notes will be saved in your Review History for up to 90 days. You can edit them at anytime.</p>
-    <div class="form-group">
+    <div class="form-group u-margin-bottom">
       <textarea class="form-control" rows="5"></textarea>
     </div>
-    <button class="btn btn-primary btn-block">Add Note</button>
+    <button class="btn btn-default btn-shaded btn-block">Add Note</button>
   </div>
-
+  <button class="btn btn-disabled btn-block u-margin-top">Submit Rating/Review</button>
+</div>
