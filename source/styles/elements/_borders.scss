@@ -64,3 +64,10 @@
     padding: 0 !important;
   }
 }
+
+.no-border-md {
+  @media (max-width: $screen-md-max) {
+    border-width: 0 !important;
+    padding: 0 !important;
+  }
+}
