@@ -4,17 +4,21 @@ status: inprogress
 
 {{> pages/_header }}
 
-<div class="container-page account-home-page">
-  <div class="box-full  box-default-lg box-lighter">
-    <h1 class="u-no-margin-top">Welcome, Sally!</h1>
-    <div class="row">
-      <div class="col-md-8 col-md-push-4 col-lg-9 col-lg-push-3">
-        {{> account/_balance }}
-        {{> account/_manage-returns }}
-        {{> account/_special-offers }}
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter">
+    <div class="container-fluid no-gutters-xs no-gutters-sm">
+      <div class="row">
+        <div class="col-md-12"><h1 class="u-no-margin-top">Welcome, Sally!</h1></div>
       </div>
-      <div class="col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
-        {{> account/_account-nav }}
+      <div class="row">
+        <div class="col-md-8 col-md-push-4 col-lg-9 col-lg-push-3">
+         {{> account/_balance }}
+          {{> account/_manage-returns }}
+          {{> account/_special-offers }}
+        </div>
+        <div class="col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+          {{> account/_account-nav }}
+        </div>
       </div>
     </div>
   </div>

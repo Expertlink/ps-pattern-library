@@ -15,31 +15,23 @@ status: inprogress
         <!-- Nav tabs -->
           <ul class="tabpanel-tabs" role="tablist">
             <li class="active" role="presentation">
-              <a role="tab" data-toggle="tab" href="#purchase-rewards">
-                Purchase Rewards
+              <a role="tab" data-toggle="tab" href="#purchase-offers">
+                Purchase Offers
               </a>
             </li>
             <li role="presentation">
-              <a role="tab" data-toggle="tab" href="#reading-rewards">
-                Reading Rewards
-              </a>
-            </li>
-            <li role="presentation">
-              <a role="tab" data-toggle="tab" href="#talk-time-rewards">
-                Talk Time Rewards
+              <a role="tab" data-toggle="tab" href="#reading-offers">
+                Reading Offers
               </a>
             </li>
           </ul>
           <!-- Tab panes -->
           <div class="tabpanel-content">
-            <div class="tabpanel-pane active" role="tabpanel" id="purchase-rewards">
-              {{> account/_rewards-purchase }}
+            <div class="tabpanel-pane active" role="tabpanel" id="purchase-offers">
+              {{> account/_purchase-offers }}
             </div>
-            <div class="tabpanel-pane" role="tabpanel" id="reading-rewards">
-              {{> account/_rewards-reading }}
-            </div>
-            <div class="tabpanel-pane" role="tabpanel" id="talk-time-rewards">
-              {{> account/_rewards-talk-time }}
+            <div class="tabpanel-pane" role="tabpanel" id="reading-offers">
+              {{> account/_reading-offers }}
             </div>
           </div>
         </div>
@@ -47,5 +39,5 @@ status: inprogress
     </div>
   </div>
 </div>
-
 {{> pages/_footer }}
+
