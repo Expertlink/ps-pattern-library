@@ -63,6 +63,19 @@ $(window).load(function(){
   });
 });
 
+// Scripts for pattern at ../source/patterns/02-components/carousel/01-carousel.hbs
+
+  /* Auto-play only if there is ONE slide showing (desktop layout) */
+  $(function () {
+    var $carousel = $('.carousel');
+    var visibleCount = $carousel.find('.carousel-item:visible').length;
+    var autoPlay = visibleCount === 1;
+
+    if (autoPlay) {
+      $carousel.carousel('play');
+    }
+  });
+
 // Scripts for pattern at ../source/patterns/02-components/forms/06-phone-country.hbs
 
 $(function() {
@@ -195,7 +208,7 @@ $(function(){
 });
 
 
-// Scripts for pattern at ../source/patterns/02-components/nav/overflow-nav.hbs
+// Scripts for pattern at ../source/patterns/02-components/overflow-nav/01-overflow-nav.hbs
 
 +function ($) {
   'use strict';
@@ -313,6 +326,19 @@ $(function () {
 $(function() {
   $('[data-toggle="collapse"][data-responsive="bio"]').responsiveCollapse();
 });
+
+// Scripts for pattern at ../source/patterns/pages/home/_rotating-promo.hbs
+
+  /* Auto-play only if there is ONE slide showing (desktop layout) */
+  $(function () {
+    var $carousel = $('.carousel');
+    var visibleCount = $carousel.find('.carousel-item:visible').length;
+    var autoPlay = visibleCount === 1;
+
+    if (autoPlay) {
+      $carousel.carousel('play');
+    }
+  });
 
 // Scripts for pattern at ../source/patterns/pages/our-psychics/_sidebar-sort.hbs
 

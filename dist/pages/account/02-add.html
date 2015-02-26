@@ -48,15 +48,23 @@
     
         <div class="masthead-controls">
           <ul class="masthead-menu">
-                <li class="hidden-xs hidden-sm">
-                  <a href="" class="btn btn-link text-default">
-                    Not Sally?
-                  </a>
-                </li>
-              <li>
-                <a href="" class="btn btn-link text-default">
-                  Login
+              <li class="dropdown">
+                <a href="" class="btn btn-link text-default" id="account-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+                  <span class="hidden-xs">Sally&rsquo;s </span>Account
+                  <span class="arrow-down text-muted"></span>
                 </a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="account-label">
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="">
+                      <span class="visible-xs-inline">Sally&rsquo;s </span>
+                      Account
+                      <span class="hidden-xs">Home</span>
+                    </a>
+                  </li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Special Offers</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Return Call</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Log Out</a></li>
+                </ul>
               </li>
             <li class="hidden-xs hidden-sm hidden-md dropdown">
               <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
@@ -299,209 +307,280 @@
   </header>
 
 <div class="container-page">
-  <div class="box-full box-account box-default-lg box-lighter">
-  <h1 class="text-primary">Existing Member Pricing</h1>
-<form role="form">
-  
-    <div class="help-block" data-promo-success-for="form-group-promo">
-      <p class="is-success-msg">Promo code <strong class="js-code-slot">654123</strong> applied.</p>
-    </div>
-  
-    <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
-    <div class="collapse promo-group" id="form-group-promo">
-      <div class="form-group arrange arrange-gutter">
-        <div class="arrange-fill">
-          <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-          <p class="help-block is-error-msg">Invalid code.</p>
-        </div>
-        <div class="arrange-fill">
-          <button class="btn btn-primary apply-btn">Apply</button>
-        </div>
-      </div>
-    </div>
-  
-  
-  <div class="form-group form-group-required">
-    <label>Please select an amount:</label>
-    <div class="radio">
-       <label>
-        <input type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
-       </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="addDollarsAmountOther">Or, enter a custom amount:</label>
-      <div class="input-group">
-        <span class="input-group-addon">$</span>
-        <input type="number"  min="5" max="500" name="addDollarsAmount" class="form-control" id="addDollarsAmountOther" />
-      </div>
-      <p class="help-block">Minimum 5.00, maximum 500.00, use format 00.00.</p>
-    </div>
-  </div>
-  <div class="form-group form-group-required js-payment-options">
-    <label>Please select a payment method:</label>
-    <div class="radio">
-      <label>
-        <input class="js-payment-option"
-         type="radio"
-         name="addDollarsPayment"
-         value="3870"  />
-         Visa ending in 3870
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input class="js-payment-option"
-         type="radio"
-         name="addDollarsPayment"
-         value="89791"  />
-         Diner's Club Card ending in 89791
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input class="js-payment-option"
-         data-target="#new-payment"
-         type="radio"
-         name="addDollarsPayment"
-         value="new"  />
-        Add a new payment method
-      </label>
-    </div>
-    <div id="new-payment" class="collapse">
-      
-      
-        <div class="form-group form-group-required">
-          <label class="control-label" for="signupCCName">Name on card</label>
-          <input type="text" class="form-control" id="signupCCName" value="" >
-        </div>
-        <div class="form-group form-group-required has-cards knows-card" data-mask data-mask-type="CreditCard">
-          <label class="control-label" for="signupCCNumber">Credit card number</label>
-          <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-          <ul class="creditcards">
-            <li class="creditcard  creditcard-visa">Visa</li>
-            <li class="creditcard  creditcard-mastercard">MasterCard</li>
-            <li class="creditcard  creditcard-discover">Discover</li>
-            <li class="creditcard  creditcard-amex">American Express</li>
-            <li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+  <div class="box-full box-default-lg u-no-padding-xs box-lighter">
+    <div class="row">
+      <div class="col-md-4 col-lg-3">
+        <div class="subnav subnav-full account-home-back">
+          <h3 class="subnav-heading">
+            <a href="/pages/account/01-home.html" class="subnav-item subnav-item-prev">
+              Sally&rsquo;s Account
+            </a>
+          </h3>
+          <ul class="subnav-body hidden-xs hidden-sm">
+            <li><a class="subnav-item" href="/pages/account/02-add.html">Add Dollars</a></li>
+            <li><a class="subnav-item" href="#">Manage Return Calls</a></li>
+            <li><a class="subnav-item" href="#">Special Offers</a></li>
+            <li><a class="subnav-item" href="#">Messages</a></li>
+            <li><a class="subnav-item" href="/pages/account/05-rewards.html">Rewards</a></li>
+            <li><a class="subnav-item" href="#">Favorite advisors</a></li>
+            <li><a class="subnav-item" href="#">Review readings</a></li>
+            <li><a class="subnav-item" href="#">Personal info</a></li>
+            <li><a class="subnav-item" href="#">Communication preferences</a></li>
+            <li><a class="subnav-item" href="#">Account history</a></li>
           </ul>
-          <p class="help-block is-error-msg">Sorry, that doesn't look like a valid credit card number.</p>
         </div>
-        <div class="form-group arrange arrange-equal arrange-gutter">
-          <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="ExpirationDate">
-            <label class="control-label" for="signupCCExp">Expiration</label>
-            <input type="text" class="form-control" id="signupCCExp" placeholder="MM/YY" pattern="[0-9]*" maxlength="5" />
-            <p class="help-block is-error-msg">Please enter a future expiration date in the format 'MM/YY'.</p>
-          </div>
-          <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
-            <label class="control-label" for="signupCCCode">Security code</label>
-            <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
-            <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
-            <p class="help-block is-error-msg">Sorry, that doesn't look like a valid CVV.</p>
+        
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="tabpanel-tabs" role="tablist">
+            <li class="active" role="presentation">
+              <a role="tab" data-toggle="tab" href="#add-dollars">
+                Add Dollars
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="tab" data-toggle="tab" href="#purchase-offers">
+                Purchase Offers
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tabpanel-content">
+            <div class="tabpanel-pane active" role="tabpanel" id="add-dollars">
+              <h2>Existing Member Pricing (Web)</h1>
+                <form role="form">
+                
+                  <div class="help-block" data-promo-success-for="form-group-promo">
+                    <p class="is-success-msg">Promo code <strong class="js-code-slot">654123</strong> applied.</p>
+                  </div>
+                
+                  <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
+                  <div class="collapse promo-group" id="form-group-promo">
+                    <div class="form-group arrange arrange-gutter">
+                      <div class="arrange-fill">
+                        <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
+                        <p class="help-block is-error-msg">Invalid code.</p>
+                      </div>
+                      <div class="arrange-fill">
+                        <button class="btn btn-primary apply-btn">Apply</button>
+                      </div>
+                    </div>
+                  </div>
+                
+                
+                <div class="form-group form-group-required js-payment-options">
+                  <label>Please select an amount:</label>
+                  <div class="radio">
+                     <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
+                     </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option" data-target="#custom-amount" type="radio" name="addDollarsAmount" value="custom"  /> Or, enter a custom amount
+                    </label>
+                  </div>
+                  <div id="custom-amount" class="collapse account-add-custom form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon">$</span>
+                      <input type="number"  min="5" max="500" name="addDollarsAmount" class="form-control" id="addDollarsAmountOther" />
+                    </div>
+                    <p class="help-block">Minimum 5.00, maximum 500.00, use format 00.00.</p>
+                  </div>
+                </div>
+                <div class="form-group form-group-required js-payment-options">
+                  <label>Please select a payment method:</label>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option"
+                       type="radio"
+                       name="addDollarsPayment"
+                       value="3870"  />
+                       Visa ending in 3870
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option"
+                       type="radio"
+                       name="addDollarsPayment"
+                       value="89791"  />
+                       Diner's Club Card ending in 89791
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input class="js-payment-option"
+                       data-target="#new-payment"
+                       type="radio"
+                       name="addDollarsPayment"
+                       value="new"  />
+                      Add a new payment method
+                    </label>
+                  </div>
+                  <div id="new-payment" class="collapse">
+                    
+                    
+                      <div class="form-group form-group-required">
+                        <label class="control-label" for="signupCCName">Name on card</label>
+                        <input type="text" class="form-control" id="signupCCName" value="" >
+                      </div>
+                      <div class="form-group form-group-required has-cards knows-card" data-mask data-mask-type="CreditCard">
+                        <label class="control-label" for="signupCCNumber">Credit card number</label>
+                        <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
+                        <ul class="creditcards">
+                          <li class="creditcard  creditcard-visa">Visa</li>
+                          <li class="creditcard  creditcard-mastercard">MasterCard</li>
+                          <li class="creditcard  creditcard-discover">Discover</li>
+                          <li class="creditcard  creditcard-amex">American Express</li>
+                          <li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+                        </ul>
+                        <p class="help-block is-error-msg">Sorry, that doesn't look like a valid credit card number.</p>
+                      </div>
+                      <div class="form-group arrange arrange-equal arrange-gutter">
+                        <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="ExpirationDate">
+                          <label class="control-label" for="signupCCExp">Expiration</label>
+                          <input type="text" class="form-control" id="signupCCExp" placeholder="MM/YY" pattern="[0-9]*" maxlength="5" />
+                          <p class="help-block is-error-msg">Please enter a future expiration date in the format 'MM/YY'.</p>
+                        </div>
+                        <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
+                          <label class="control-label" for="signupCCCode">Security code</label>
+                          <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
+                          <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
+                          <p class="help-block is-error-msg">Sorry, that doesn't look like a valid CVV.</p>
+                        </div>
+                      </div>
+                          <div class="form-group form-group-required">
+                            <label class="control-label" for="signupStreet">Street address 1</label>
+                            <input type="text" class="form-control" id="signupStreet" />
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label" for="signupStreet2">Street address 2</label>
+                            <input type="text" class="form-control" id="signupStreet2" />
+                          </div>
+                          <div class="form-group arrange arrange-equal arrange-gutter">
+                            <div class="form-group-required arrange-fit">
+                              <label class="control-label" for="signupCity">City</label>
+                              <input type="text" class="form-control" id="signupCity" />
+                            </div>
+                            <div class="form-group-required arrange-fit">
+                              <label class="control-label" for="signupCCZip">Zip or postal code</label>
+                              <input type="text" class="form-control" id="signupCCZip" />
+                            </div>
+                          </div>
+                    <form role="form">
+                      <div class="form-group arrange arrange-equal arrange-gutter">
+                        <div class="form-group form-group-required arrange-fit">
+                          <label class="control-label" for="signupCountry">Country</label>
+                          <select id="signupCountry" class="form-control">
+                    
+                          </select>
+                        </div>
+                    
+                        <div class="form-group form-group-required arrange-fit">
+                          <label class="control-label" for="signupState">State or province</label>
+                          <select id="signupState"  class="form-control">
+                            <option selected="selected" value="">Select</option>
+                            <option value="1">Other</option>
+                            <option value="3">Alaska</option>
+                            <option value="4">Alabama</option>
+                            <option value="5">Arkansas</option>
+                            <option value="6">Arizona</option>
+                    
+                          </select>
+                        </div>
+                      </div>
+                    
+                      
+                        <div class="form-group form-group-required">
+                          <label class="control-label" for="signupPhone">Phone number</label>
+                          <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
+                        </div>
+                      
+                      
+                    </form>
+                    
+                    
+                  </div>
+                </div>
+                <div class="form-group form-group-required">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
+                    </label>
+                    <div id="terms-block" class="collapse u-margin-top">
+                      <h4>Conditions of Sale and Payment Terms</h4>
+                      <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
+                      <h4>Methods of Payment, Credit Card Terms</h4>
+                      <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
+                      <h4>Order Acceptance Policy</h4>
+                      <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary arrow-right-equilateral-after">Continue </button>
+                </div>
+              </form>
+            </div>
+            <div class="tabpanel-pane" role="tabpanel" id="purchase-offers">
+              <p>Choose an offer, click the “Redeem” button and the promo code will be added to your order. You can also call 1.800.732.0797 to redeem your promo code when you purchase through our phone system.</p>
+              
+              <p>Remember: You can receive more offers and free bonus dollars through our <a href="/pages/account/05-rewards.html">Membership Rewards</a> program!</p>
+              
+              <div class="box box-dark box-thick">
+                <div class="row">
+                  <div class="col-md-4 text-center">
+                    <p><strong>Which path has the most potential?</strong></p>
+                    <p>Stop saying and start doing. Don’t let yourself down this year.</p>
+                  </div>
+                  <div class="col-md-4 text-center border-thick border-sides no-border-sm">
+                    <p>Add $50 - Get $12.50 in free bonus dollars.</p>
+                    <p>Add $25 - Get $6.25 in free bonus dollars.</p>
+                    <p>Add $10 - Get $2.50 in free bonus dollars.</p>
+                    <p><em>One time only</em></p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="text-primary"><strong>Expires 2/28/2015 11:59:59 PM</strong></p>
+                    <p>Use Promo Code <strong class="text-primary u-block">622148</strong></p>
+                    <a href="#" class="btn btn-block btn-primary">Redeem Now</a>
+                  </div>
+                </div>
+                <span class="fleuron-star-three bottom right" aria-hidden="true"></span>
+              </div>            </div>
           </div>
         </div>
-            <div class="form-group form-group-required">
-              <label class="control-label" for="signupStreet">Street address 1</label>
-              <input type="text" class="form-control" id="signupStreet" />
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="signupStreet2">Street address 2</label>
-              <input type="text" class="form-control" id="signupStreet2" />
-            </div>
-            <div class="form-group arrange arrange-equal arrange-gutter">
-              <div class="form-group-required arrange-fit">
-                <label class="control-label" for="signupCity">City</label>
-                <input type="text" class="form-control" id="signupCity" />
-              </div>
-              <div class="form-group-required arrange-fit">
-                <label class="control-label" for="signupCCZip">Zip or postal code</label>
-                <input type="text" class="form-control" id="signupCCZip" />
-              </div>
-            </div>
-      <form role="form">
-        <div class="form-group arrange arrange-equal arrange-gutter">
-          <div class="form-group form-group-required arrange-fit">
-            <label class="control-label" for="signupCountry">Country</label>
-            <select id="signupCountry" class="form-control">
-      
-            </select>
-          </div>
-      
-          <div class="form-group form-group-required arrange-fit">
-            <label class="control-label" for="signupState">State or province</label>
-            <select id="signupState"  class="form-control">
-              <option selected="selected" value="">Select</option>
-              <option value="1">Other</option>
-              <option value="3">Alaska</option>
-              <option value="4">Alabama</option>
-              <option value="5">Arkansas</option>
-              <option value="6">Arizona</option>
-      
-            </select>
-          </div>
-        </div>
-      
-        
-          <div class="form-group form-group-required">
-            <label class="control-label" for="signupPhone">Phone number</label>
-            <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
-          </div>
-        
-        
-      </form>
-      
-      
-    </div>
-  </div>
-  <div class="form-group form-group-required">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
-      </label>
-      <div id="terms-block" class="collapse u-margin-top">
-        <h4>Conditions of Sale and Payment Terms</h4>
-        <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
-        <h4>Methods of Payment, Credit Card Terms</h4>
-        <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
-        <h4>Order Acceptance Policy</h4>
-        <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
       </div>
     </div>
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary arrow-right-equilateral-after">Continue </button>
-  </div>
-</form>
-
   </div>
 </div>
-
-
-
   
   <button class="quicklist-toggle" id="quicklist-toggle" type="button">
     <span class="quicklist-toggle-inner">Show who&rsquo;s logged on</span>
@@ -529,28 +608,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
                   <svg class="icon quicklist-item-chat">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
                   </svg>
@@ -565,6 +622,9 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -643,32 +703,10 @@
               </a>
             </li>
             <li>
-              <a class="quicklist-item " href="">
+              <a class="quicklist-item text-success" href="">
                 <h6 class="quicklist-item-heading">Firstname x5555</h6>
                 <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
+                    Available now
                 </small>
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
@@ -676,6 +714,17 @@
                   <svg class="icon quicklist-item-chat">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
                   </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
               </a>
             </li>
             <li>
@@ -712,9 +761,42 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
                   <svg class="icon quicklist-item-chat">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
                   </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
               </a>
             </li>
             <li>
@@ -782,8 +864,6 @@
     <div class="col-xs-12 col-lg-8">
       <ul class="list-inline with-social-btn small-xs text-left-lg text-nowrap-lg u-margin-ends">
         
-          <li class="hidden-md hidden-lg"><a href="">Not Sally?</a></li>
-        
         <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
         <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
         <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
@@ -808,3 +888,5 @@
 
 </body>
 </html>
+
+
