@@ -12,7 +12,6 @@
   &:hover,
   &:focus {
     opacity: 1;
-    background-color: $orange-lighter;
   }
   &:last-of-type {
     border-bottom: 1px solid $gray-lighter;
@@ -32,25 +31,22 @@
   vertical-align: top;
 }
 .eligible-reading-advisor-photo {
-   width: 25%;
+   width: 50px;
 }
 .eligible-reading-main {
   padding: 0 0 0 ($padding-base-vertical * 2);
 }
 
-.eligible-reading-rate,
 .eligible-reading-advisor-name,
 .eligible-reading-type,
 .eligible-reading-date {
   margin:0;
 }
 
-.eligible-reading-rate {
-  padding: 2px 0;
-}
 .eligible-reading-advisor-name {
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: bold;
+  line-height: 1.2em;
 }
 .eligible-reading-date {
   font-weight: bold;
@@ -90,7 +86,7 @@
     color: $gray-dark;
   }
 }
-.eligible-review-parent {
+.parent-first {
   border-radius: $border-radius-large $border-radius-large 0 0;
   background-color: rgba($gray-lighter,0.25);
   &.collapsed {
@@ -101,7 +97,7 @@
     );
   }
 }
-.eligible-notes-parent {
+.parent-second {
   border-top: 0;
   &.collapsed {
     background-image: linear-gradient(
@@ -121,7 +117,7 @@
   border-style: solid;
 }
 
-.eligible-reading-input-notes {
+.reading-input-second {
   border-radius: 0 0 $border-radius-large $border-radius-large;
   padding-bottom: $padding-base-horizontal;
 }
