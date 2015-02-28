@@ -25,8 +25,8 @@ $(window).load(function(){
     cssSelector: '.advisor-tile-actions',
     cssProperty: 'margin-top'
   });
-  $(window).resize(function(){
+  $(window).resize($.debounce(function(){
     $tiles.leveller();
-  });
+  }, 250));
 });
 </script>
