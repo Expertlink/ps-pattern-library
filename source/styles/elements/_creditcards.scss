@@ -1,0 +1,56 @@
+// This should match what's in the SVG CSS sprite.
+
+$creditcard-types: (
+  amex,
+  cvv,
+  dinersclub,
+  discover,
+  mastercard,
+  visa
+) !default;
+
+$creditcard-sprite-prefix: 'creditcard-' !default;
+
+// Position a credit card "within" a form-control. Requires a wrapper.
+
+.with-inset-creditcard {
+  position: relative;
+
+  .form-control {
+    padding-left: ($padding-base-horizontal + 32px);
+  }
+}
+
+// Base styles applied to every credit card
+
+%creditcard-base {
+  border: 1px solid $gray-light;
+  box-sizing: content-box;
+  display: inline-block;
+
+  .knows-card & {
+    opacity: 0.25;
+  }
+
+  .with-inset-creditcard & {
+    top: ($padding-base-vertical * 0.75);
+    left: ($padding-base-horizontal * 0.5);
+    position: absolute;
+    // pass through pointer events
+    pointer-events: none;
+  }
+}
+
+// Loop through each type, extending the base but including card-specific
+// sprite and states
+
+@each $type in $creditcard-types {
+  .creditcard-#{$type} {
+    @extend %creditcard-base;
+    @include svg-sprite($creditcard-sprite-prefix + $type);
+
+    .is-#{$type} & {
+      opacity: 1;
+    }
+  }
+}
