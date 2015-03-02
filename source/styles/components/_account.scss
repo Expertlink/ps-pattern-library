@@ -20,3 +20,49 @@
   max-width: 28em;
   margin-left: 1.6em;
 }
+
+.account-unified-xs {
+  @media (max-width: $screen-xs-max)  {
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius-large;
+    .col-xs-4 {
+      padding: 0;
+    } 
+    .box {
+      border-radius: 0;
+      border-width: 0;
+      margin: 0;
+      padding: ($grid-gutter-width / 4);
+      &.box-teal {
+        border-radius: $border-radius-large 0 0 $border-radius-large;
+        *[class*="fleuron-star-"] {
+          display: none;
+        }
+      }
+      &.box-tan {
+        border-width: 0 1px;
+        border-color: $gray-lighter;
+        *[class*="fleuron-star-"] {
+          display: none;
+        }
+      }
+      &.box-orange {
+        border-radius: 0 $border-radius-large $border-radius-large 0;
+      }
+    }   
+    .h3 {
+      font-size: 2em;
+    }
+    .h4 {
+      font-size: 0.9em;
+      line-height: 1.1em;
+      font-weight: normal;
+    }
+    .border-bottom {
+      padding-bottom: ($grid-gutter-width / 4);
+      margin-bottom: ($grid-gutter-width / 4);
+    }
+  }
+}
