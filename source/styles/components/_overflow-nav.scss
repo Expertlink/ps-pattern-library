@@ -80,14 +80,14 @@ $zindex-overflow-nav: 500 !default;
     > a.active,
     &.dropdown > a[aria-expanded="true"] {
       background-image: none;
-      @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
     }
 
     @media (min-width: $screen-lg-min) {
       > a[aria-expanded="true"] {
         background-color: darken(#feeed7, 7%);
         background-image: none;
-        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
       }
     }
   }

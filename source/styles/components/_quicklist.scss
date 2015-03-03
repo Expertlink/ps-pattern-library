@@ -3,11 +3,12 @@ $quicklist-item-padding: ($line-height-computed / 2) !default;
 $quicklist-icon-size: 18px !default;
 $quicklist-full-max: $screen-xs-max !default;
 $quicklist-narrow-min: $screen-sm-min !default;
+$quicklist-screen-height-min: 200px !default;
 $zindex-quicklist: $zindex-navbar-fixed !default;
 $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
 
 .fixed-supported .quicklist-open {
-  @media (max-width: $quicklist-full-max) {
+  @media (max-width: $quicklist-full-max) and (min-height: $quicklist-screen-height-min) {
     overflow: hidden;
   }
 }
@@ -41,10 +42,8 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   }
 
   .fixed-supported & {
-    display: block;
-
-    @media (min-width: $quicklist-narrow-min) {
-      display: none;
+    @media (max-width: $quicklist-full-max) and (min-height: $quicklist-screen-height-min) {
+      display: block;
     }
   }
 }
@@ -54,10 +53,9 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   background-position: center -48px;
   display: block;
   height: 48px;
-  overflow: hidden;
-  text-indent: -99em;
   transition: background-position 300ms ease;
   width: 48px;
+  @include text-hide();
 
   .quicklist-open & {
     background-position: center 0;
@@ -76,17 +74,19 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   z-index: $zindex-quicklist;
 
   .fixed-supported & {
-    &.open {
-      display: block;
-      transform: translateY(100%);
-    }
+    @media (min-height: $quicklist-screen-height-min) {
+      &.open {
+        display: block;
+        transform: translateY(100%);
+      }
 
-    &.in {
-      transform: translateY(0);
+      &.in {
+        transform: translateY(0);
+      }
     }
   }
 
-  @media (min-width: $quicklist-narrow-min) {
+  @media (min-width: $quicklist-narrow-min) and (min-height: $quicklist-screen-height-min) {
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
     box-shadow: 0 0 1em rgba(#000, 0.2);
