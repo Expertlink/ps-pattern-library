@@ -1,0 +1,6 @@
+.home-alert {
+  @media (max-width: $screen-sm-max) {
+  background-color: $red;
+  color: white;
+  }
+}
