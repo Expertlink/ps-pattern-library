@@ -6,8 +6,15 @@ status: inprogress
 
   <a class="masthead-logo" href="">
     <picture class="picture-responsive">
-      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
-      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source
+        srcset="/images/logo.png, /images/logo-2x.png 2x"
+        media="(min-width: 994px)">
+      <!--[if IE 9]></video><![endif]-->
+      <img
+        srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+        src="/images/logo.png"
+        alt="Psychic Source - Life's possibilites. Revealed.">
     </picture>
   </a>
 
