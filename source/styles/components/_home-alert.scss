@@ -1,6 +1,9 @@
 .home-alert {
   @media (max-width: $screen-sm-max) {
-  background-color: $red;
+  background-color: $blue-light;
+  border-radius: $border-radius-large;
   color: white;
+  padding: .5em 1em .2em;
+
   }
 }
