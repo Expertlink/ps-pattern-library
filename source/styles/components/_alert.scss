@@ -1,0 +1,8 @@
+.home-alert {
+  background-color: $red;
+  color: white;
+  @media (min-width: $screen-md-min) {
+    background-color: transparent;
+    color: black;
+  }
+}
