@@ -3,7 +3,66 @@ status: inprogress
 description: Uses custom JavaScript logic for handling navigation behavior (included in pattern).
 ---
 
-<nav class="overflow-nav js-custom-nav">
+<div class="main-nav">
+  <nav>
+    <ul class="main-nav-bar">
+      <li>
+        <a class="main-nav-bar-item" href="#">
+          <span class="main-nav-bar-item-highlight">
+            New Customer<span class="hidden-lg">s</span> <span class="hidden-xs hidden-sm hidden-md">Offers</span>
+          </span>
+          <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li>
+        <a class="main-nav-bar-item" href="#">
+          Our Psychics
+          <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="hidden-xs">
+        <a class="main-nav-bar-item" href="#">
+          Horoscopes
+          <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="hidden-xs hidden-sm">
+        <a class="main-nav-bar-item" href="#">
+          About Psychic Readings
+          <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="hidden-xs hidden-sm hidden-md">
+        <a class="main-nav-bar-item" href="#">
+          Articles &amp; Resources
+          <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="hidden-lg">
+        <a class="main-nav-bar-item main-nav-bar-item-expandable" href="#main-nav-overflow" data-toggle="collapse">
+          More
+          <span class="arrow-down" aria-hidden="true"></span>
+        </a>
+      </li>
+    </ul>
+    <ul class="main-nav-overflow hidden-lg collapse" id="main-nav-overflow">
+      <li class="hidden-sm hidden-md">
+        <a class="main-nav-overflow-item" href="#">Horoscopes</a>
+      </li>
+      <li class="hidden-md">
+        <a class="main-nav-overflow-item" href="#">About Psychic Readings</a>
+      </li>
+      <li>
+        <a class="main-nav-overflow-item" href="#">Articles &amp; Resources</a>
+      </li>
+      <li>
+        <a class="main-nav-overflow-item" href="#">Customer Care</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+{{!-- <nav class="overflow-nav js-custom-nav">
   <ul class="overflow-nav-primary">
     <li>
       <a href="#" class="visible-lg collapsed" data-target="#nav-customer-offers" data-toggle="collapse">
@@ -175,59 +234,59 @@ description: Uses custom JavaScript logic for handling navigation behavior (incl
       <a href="">Customer Care</a>
     </li>
   </ul>
-</nav>
+</nav> --}}
 
 <script>
-+function ($) {
-  'use strict';
-
-  var CustomNav = function (element) {
-    this.$element = $(element);
-    this.$element.on('click', '[data-toggle="collapse"]:not(.js-custom-nav-more)', $.proxy(this.show, this));
-  };
-
-  CustomNav.prototype.show = function (event) {
-    var $trigger = $(event.currentTarget);
-    var $target = $($trigger.data('target'));
-    var $current = this.$element.find('.collapse.in, .collapsing').not($target);
-    var shouldBypass = this.$element.find('.js-custom-nav-more:visible').length;
-
-    if (shouldBypass) {
-      event.stopPropagation();
-      return true;
-    }
-    // If you're being a click-happy maniac, be patient
-    if ($current.hasClass('collapsing')) {
-      return false;
-    }
-    // If there is one showing, collapse it first...
-    if ($current.length) {
-      $current.one('hidden.bs.collapse', function () {
-        $target.collapse('show');
-      });
-      $current.collapse('hide');
-    } else {
-      // Otherwise just show the selection
-      $target.collapse('toggle');
-    }
-    // Don't let the document do our collapsing
-    return false;
-  };
-
-  function Plugin () {
-    return this.each(function () {
-      var $this = $(this);
-      var instance = $this.data('customNav');
-      if (!instance) {
-        $this.data('customNav', new CustomNav(this));
-      }
-    });
-  }
-
-  $.fn.customNav = Plugin;
-}(jQuery);
-
-$(function() {
-  $('.js-custom-nav').customNav();
-});
+// +function ($) {
+//   'use strict';
+//
+//   var CustomNav = function (element) {
+//     this.$element = $(element);
+//     this.$element.on('click', '[data-toggle="collapse"]:not(.js-custom-nav-more)', $.proxy(this.show, this));
+//   };
+//
+//   CustomNav.prototype.show = function (event) {
+//     var $trigger = $(event.currentTarget);
+//     var $target = $($trigger.data('target'));
+//     var $current = this.$element.find('.collapse.in, .collapsing').not($target);
+//     var shouldBypass = this.$element.find('.js-custom-nav-more:visible').length;
+//
+//     if (shouldBypass) {
+//       event.stopPropagation();
+//       return true;
+//     }
+//     // If you're being a click-happy maniac, be patient
+//     if ($current.hasClass('collapsing')) {
+//       return false;
+//     }
+//     // If there is one showing, collapse it first...
+//     if ($current.length) {
+//       $current.one('hidden.bs.collapse', function () {
+//         $target.collapse('show');
+//       });
+//       $current.collapse('hide');
+//     } else {
+//       // Otherwise just show the selection
+//       $target.collapse('toggle');
+//     }
+//     // Don't let the document do our collapsing
+//     return false;
+//   };
+//
+//   function Plugin () {
+//     return this.each(function () {
+//       var $this = $(this);
+//       var instance = $this.data('customNav');
+//       if (!instance) {
+//         $this.data('customNav', new CustomNav(this));
+//       }
+//     });
+//   }
+//
+//   $.fn.customNav = Plugin;
+// }(jQuery);
+//
+// $(function() {
+//   $('.js-custom-nav').customNav();
+// });
 </script>

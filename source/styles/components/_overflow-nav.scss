@@ -1,101 +1,126 @@
-$zindex-overflow-nav: 500 !default;
+$zindex-main-nav: 500 !default;
 
-.overflow-nav {
+//= container
+
+.main-nav {
   position: relative;
-  z-index: $zindex-overflow-nav;
+  z-index: $zindex-main-nav;
 
   @media (min-width: $screen-lg-min) {
     margin-bottom: $line-height-computed;
   }
 }
 
-.overflow-nav-primary {
+//= nav elements
+
+.main-nav-bar,
+.main-nav-overflow {
+  margin: 0;
+  @include list-unstyled;
+}
+
+//= main nav
+
+.main-nav-bar {
   background-color: $tan-light;
-      background-image: linear-gradient(
-        to bottom,
-        darken($tan-light, 1%),
-        #fff 15%,
-        #ffe6c2
-      );
-      // background-color: $orange-lighter;
-      // background-image: $btn-shading;
+  background-image: linear-gradient(
+    to bottom,
+    darken($tan-light, 1%),
+    #fff 15%,
+    #ffe6c2);
   border-color: $tan $tan-dark darken($tan, 17%);
   border-style: solid;
   border-width: 1px 0;
   box-shadow: $nav-shadow;
   display: table;
-  list-style: none;
-  margin: 0;
-  /*overflow: hidden;*/
-  padding: 0;
-  position: relative;
-  text-align: center;
+  overflow: hidden;
   width: 100%;
   z-index: 2;
 
   @media (min-width: $screen-lg-min) {
     border-radius: $border-radius-large;
     border-width: 1px;
-    font-size: (14px / 13px * 1em);
   }
 
   > li {
     display: table-cell;
     width: 1%;
+  }
+}
 
-    > a {
-      color: $gray-dark;
-      display: block;
-      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
-      text-align: center;
-      text-decoration: none;
-      white-space: nowrap;
+.main-nav-bar-item {
+  color: $gray-dark;
+  display: block;
+  padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+  text-align: center;
+  white-space: nowrap;
+
+  @media (min-width: $screen-lg-min) {
+    font-size: (14px / 13px * 1em);
+  }
+
+  .arrow-down {
+    opacity: 0.5;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: darken(#feeed7, 7%);
+    background-image: linear-gradient(
+      to bottom,
+      darken($tan-light, 8%),
+      darken(#fff, 5%) 15%,
+      darken($tan-light, 5%),
+      darken(#ffe6c2, 5%));
+
+    .arrow-down {
+      opacity: 1;
     }
+  }
 
-    // Link states here are a little complicated. What we want is for a visible
-    // "active" state for dropdowns (i.e. the "more" menu) at all sizes, but
-    // we do not want the "active" state to be visible for subnavs that are
-    // only visible at _some_ sizes. Crazy, huh?
+  &:active,
+  &.active {
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  }
+}
 
-    > a:hover,
-    > a:focus,
-    > a:active,
-    > a.active,
-    &.dropdown > a[aria-expanded="true"] {
-      background-color: darken(#feeed7, 7%);
-    }
+.main-nav-bar-item-highlight {
+  @media (min-width: $screen-lg-min) {
+    background: url(/images/newmember-bg.png) no-repeat center;
+    display: inline-block;
+    margin: ($padding-base-vertical * -1.5) 0;
+    padding: ($padding-base-vertical * 1.5);
+    min-width: 177px;
 
-    > a:hover,
-    > a:focus {
-      background-image: linear-gradient(
-        to bottom,
-        darken($tan-light, 8%),
-        darken(#fff, 5%) 15%,
-        darken($tan-light, 5%),
-        darken(#ffe6c2, 5%)
-      );
-    }
-
-    > a:active,
-    > a.active,
-    &.dropdown > a[aria-expanded="true"] {
-      background-image: none;
-      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-    }
-
-    @media (min-width: $screen-lg-min) {
-      > a[aria-expanded="true"] {
-        background-color: darken(#feeed7, 7%);
-        background-image: none;
-        box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-      }
+    .main-nav-bar-item:hover &,
+    .main-nav-bar-item:focus &,
+    .main-nav-bar-item:active &,
+    .main-nav-bar-item.active & {
+      color: $red-dark;
     }
   }
 }
 
-.overflow-nav-secondary {
+//= overflow nav
+
+.main-nav-overflow {
   background-color: $gray;
-  background-image: linear-gradient(to bottom, rgba(#fff, 0) 0.125em, rgba(#fff, 0.1), rgba(#fff, 0) 50%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(#fff, 0) 0.125em,
+    rgba(#fff, 0.1),
+    rgba(#fff, 0) 50%);
   border-color: darken($gray, 8%);
   border-style: solid;
   border-width: 0 0 1px 1px;
@@ -107,197 +132,335 @@ $zindex-overflow-nav: 500 !default;
   position: absolute;
   right: 0;
   top: 100%;
+}
 
-  > li {
-    > a {
-      border-color: darken($gray, 8%);
-      border-style: solid;
-      border-width: 1px 0;
-      color: #fff;
-      display: block;
-      margin-top: -1px;
-      padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
-      position: relative;
-      text-decoration: none;
+.main-nav-overflow-item {
+  border-top: 1px solid darken($gray, 8%);
+  display: block;
+  margin-top: -1px;
+  padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+  position: relative;
 
-      &:hover,
-      &:focus,
-      &.focus,
-      &:active,
-      &.active {
-        background-color: darken($gray, 8%);
-      }
-    }
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: #fff;
+    text-decoration: none;
+  }
 
-    &:last-child > a {
-      border-bottom-width: 0;
-    }
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: darken($gray, 8%);
   }
 }
 
-.nav-customer-offer {
-  background-image: url(/images/newmember-bg.png);
-  background-position: 1px;
-  background-repeat: no-repeat;
-  padding: 1em;
-}
+//= dropdown sections for large screens
 
-.overflow-nav-dropdown {
-  background-color: $blue-gray;
-  background-image: linear-gradient(to bottom, rgba(#fff, 0) 0.125em, rgba(#fff, 0.1), rgba(#fff, 0) 50%);
-  border-color: darken($gray, 8%);
-  border-style: solid;
-  border-width: 1px;
-  border-bottom-left-radius: $border-radius-base;
-  border-bottom-right-radius: $border-radius-base;
-  color: #fff;
-  left: 0;
-  top: 100%;
-  right: 0;
-  padding: 0;
-  position: absolute;
-}
 
-.special-offer {
-  background-color: $red;
-  display: inline-block;
-  margin-left: -60px;
-  text-align: center;
-  width: 300px;
-  
-  > h1 {
-    font-size: 2.6em;
-    margin: 0;
-    padding: 10px 0;
-    text-shadow: black 2px 2px;
 
-  }
-  
-  > p {
-    background-color: #8a323a;
-    font-size: 1.2em;
-    padding: 5px 0 0 0;
-    
-    > span {
-      font-size: 3em;
-      font-weight: bold;
-      display: block;
-    }
-  }  
-
-    > a {
-      margin-bottom: 10px;
-  }
-}
-
-.special-offer-add {
-  display: inline-block;
-  text-align: center;
-  width: 300px;
-  vertical-align: top;
-  padding: 1em;
-  overflow: hidden;
-
-    &:before {
-    content: "+";
-    display: block;
-    font-size: 4em;
-    font-weight: bold;
-    float: left;
-    height: 200px;
-    margin: 40px 0 -37px 0;
-  }
-
-    > a {
-      color: #fff;
-    }
-    
-    > img {
-      padding-right: 2em;
-    }
-}
-
-.our-psychics-readings {
-    > a {
-      color: #fff;
-      display: inline-block;
-      padding: 10px 0;
-      text-decoration: none;
-      width: 320px;
-      
-        > h4 {
-            color: $tan-light;
-        }
-        p {
-          span {
-            font-size: 1.5em;
-            text-decoration: underline;
-
-            &:hover {
-              color: $red;
-            }
-          }
-        }
-      }
-}
-
-.link-only-dropdown {
-  display: inline-block;
-  float:left;
-  height: 260px;
-  text-align: left;
-
-  > h4 {
-    color: $tan-light;
-  }
-
-  > p {
-    font-size: .9em;
-  }
-
-  > ul {
-    font-size: .9em;
-    list-style: none;
-    margin: 20px 0 40px 0;
-    padding: 0;
-
-    > li {
-    > a {
-        color: #fff;
-        display: block;
-        font-weight: bold;
-        padding: 5px 15px;
-
-        &:hover{
-          color: $red;
-          text-decoration: none;
-          background-color: $tan;
-          }
-      
-      > h4 {
-        color: $tan-light;
-        margin: 0;
-        font-size: 1.1em;
-          &:hover {
-            color: $red;
-          }
-        }
-      }
-    }  
-  }
-}
-
-.link-only-dropdown-intro {
-  width: 350px;
-  padding: 15px;
-}
-
-.link-only-border {
-  border-left: 1px solid $tan-dark;
-}
-
-.link-only-divider {
-  border-bottom: 1px dotted #fff;
-  height: 15px;
-  margin: 0 0 15px 15px;
-}
+//
+// .overflow-nav {
+//   position: relative;
+//   z-index: $zindex-overflow-nav;
+//
+//   @media (min-width: $screen-lg-min) {
+//     margin-bottom: $line-height-computed;
+//   }
+// }
+//
+// .overflow-nav-primary {
+//   background-color: $tan-light;
+//       background-image: linear-gradient(
+//         to bottom,
+//         darken($tan-light, 1%),
+//         #fff 15%,
+//         #ffe6c2
+//       );
+//       // background-color: $orange-lighter;
+//       // background-image: $btn-shading;
+//   border-color: $tan $tan-dark darken($tan, 17%);
+//   border-style: solid;
+//   border-width: 1px 0;
+//   box-shadow: $nav-shadow;
+//   display: table;
+//   list-style: none;
+//   margin: 0;
+//   /*overflow: hidden;*/
+//   padding: 0;
+//   position: relative;
+//   text-align: center;
+//   width: 100%;
+//   z-index: 2;
+//
+//   @media (min-width: $screen-lg-min) {
+//     border-radius: $border-radius-large;
+//     border-width: 1px;
+//     font-size: (14px / 13px * 1em);
+//   }
+//
+//   > li {
+//     display: table-cell;
+//     width: 1%;
+//
+//     > a {
+//       color: $gray-dark;
+//       display: block;
+//       padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+//       text-align: center;
+//       text-decoration: none;
+//       white-space: nowrap;
+//     }
+//
+//     // Link states here are a little complicated. What we want is for a visible
+//     // "active" state for dropdowns (i.e. the "more" menu) at all sizes, but
+//     // we do not want the "active" state to be visible for subnavs that are
+//     // only visible at _some_ sizes. Crazy, huh?
+//
+//     > a:hover,
+//     > a:focus,
+//     > a:active,
+//     > a.active,
+//     &.dropdown > a[aria-expanded="true"] {
+//       background-color: darken(#feeed7, 7%);
+//     }
+//
+//     > a:hover,
+//     > a:focus {
+//       background-image: linear-gradient(
+//         to bottom,
+//         darken($tan-light, 8%),
+//         darken(#fff, 5%) 15%,
+//         darken($tan-light, 5%),
+//         darken(#ffe6c2, 5%)
+//       );
+//     }
+//
+//     > a:active,
+//     > a.active,
+//     &.dropdown > a[aria-expanded="true"] {
+//       background-image: none;
+//       box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+//     }
+//
+//     @media (min-width: $screen-lg-min) {
+//       > a[aria-expanded="true"] {
+//         background-color: darken(#feeed7, 7%);
+//         background-image: none;
+//         box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+//       }
+//     }
+//   }
+// }
+//
+// .overflow-nav-secondary {
+//   background-color: $gray;
+//   background-image: linear-gradient(to bottom, rgba(#fff, 0) 0.125em, rgba(#fff, 0.1), rgba(#fff, 0) 50%);
+//   border-color: darken($gray, 8%);
+//   border-style: solid;
+//   border-width: 0 0 1px 1px;
+//   border-bottom-left-radius: $border-radius-base;
+//   box-shadow: 0 0 2em rgba(#000, 0.2);
+//   list-style: none;
+//   overflow: hidden;
+//   padding: 0;
+//   position: absolute;
+//   right: 0;
+//   top: 100%;
+//
+//   > li {
+//     > a {
+//       border-color: darken($gray, 8%);
+//       border-style: solid;
+//       border-width: 1px 0;
+//       color: #fff;
+//       display: block;
+//       margin-top: -1px;
+//       padding: ($padding-base-vertical * 1.5) $padding-base-horizontal;
+//       position: relative;
+//       text-decoration: none;
+//
+//       &:hover,
+//       &:focus,
+//       &.focus,
+//       &:active,
+//       &.active {
+//         background-color: darken($gray, 8%);
+//       }
+//     }
+//
+//     &:last-child > a {
+//       border-bottom-width: 0;
+//     }
+//   }
+// }
+//
+// .nav-customer-offer {
+//   background-image: url(/images/newmember-bg.png);
+//   background-position: 1px;
+//   background-repeat: no-repeat;
+//   padding: 1em;
+// }
+//
+// .overflow-nav-dropdown {
+//   background-color: $blue-gray;
+//   background-image: linear-gradient(to bottom, rgba(#fff, 0) 0.125em, rgba(#fff, 0.1), rgba(#fff, 0) 50%);
+//   border-color: darken($gray, 8%);
+//   border-style: solid;
+//   border-width: 1px;
+//   border-bottom-left-radius: $border-radius-base;
+//   border-bottom-right-radius: $border-radius-base;
+//   color: #fff;
+//   left: 0;
+//   top: 100%;
+//   right: 0;
+//   padding: 0;
+//   position: absolute;
+// }
+//
+// .special-offer {
+//   background-color: $red;
+//   display: inline-block;
+//   margin-left: -60px;
+//   text-align: center;
+//   width: 300px;
+//
+//   > h1 {
+//     font-size: 2.6em;
+//     margin: 0;
+//     padding: 10px 0;
+//     text-shadow: black 2px 2px;
+//
+//   }
+//
+//   > p {
+//     background-color: #8a323a;
+//     font-size: 1.2em;
+//     padding: 5px 0 0 0;
+//
+//     > span {
+//       font-size: 3em;
+//       font-weight: bold;
+//       display: block;
+//     }
+//   }
+//
+//     > a {
+//       margin-bottom: 10px;
+//   }
+// }
+//
+// .special-offer-add {
+//   display: inline-block;
+//   text-align: center;
+//   width: 300px;
+//   vertical-align: top;
+//   padding: 1em;
+//   overflow: hidden;
+//
+//     &:before {
+//     content: "+";
+//     display: block;
+//     font-size: 4em;
+//     font-weight: bold;
+//     float: left;
+//     height: 200px;
+//     margin: 40px 0 -37px 0;
+//   }
+//
+//     > a {
+//       color: #fff;
+//     }
+//
+//     > img {
+//       padding-right: 2em;
+//     }
+// }
+//
+// .our-psychics-readings {
+//     > a {
+//       color: #fff;
+//       display: inline-block;
+//       padding: 10px 0;
+//       text-decoration: none;
+//       width: 320px;
+//
+//         > h4 {
+//             color: $tan-light;
+//         }
+//         p {
+//           span {
+//             font-size: 1.5em;
+//             text-decoration: underline;
+//
+//             &:hover {
+//               color: $red;
+//             }
+//           }
+//         }
+//       }
+// }
+//
+// .link-only-dropdown {
+//   display: inline-block;
+//   float:left;
+//   height: 260px;
+//   text-align: left;
+//
+//   > h4 {
+//     color: $tan-light;
+//   }
+//
+//   > p {
+//     font-size: .9em;
+//   }
+//
+//   > ul {
+//     font-size: .9em;
+//     list-style: none;
+//     margin: 20px 0 40px 0;
+//     padding: 0;
+//
+//     > li {
+//     > a {
+//         color: #fff;
+//         display: block;
+//         font-weight: bold;
+//         padding: 5px 15px;
+//
+//         &:hover{
+//           color: $red;
+//           text-decoration: none;
+//           background-color: $tan;
+//           }
+//
+//       > h4 {
+//         color: $tan-light;
+//         margin: 0;
+//         font-size: 1.1em;
+//           &:hover {
+//             color: $red;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// .link-only-dropdown-intro {
+//   width: 350px;
+//   padding: 15px;
+// }
+//
+// .link-only-border {
+//   border-left: 1px solid $tan-dark;
+// }
+//
+// .link-only-divider {
+//   border-bottom: 1px dotted #fff;
+//   height: 15px;
+//   margin: 0 0 15px 15px;
+// }
