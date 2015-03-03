@@ -4,16 +4,14 @@
     <div class="advisor-tile-main">
       <div class="advisor-tile u-overflow-hidden">
         <div class="col-xs-2">
-          <img class="img-rounded u-margin-top" src="/images/fpo/7777-sml.jpg" alt=" ">
+          <img class="img-rounded u-margin-top u-margin-bottom" src="/images/fpo/7777-sml.jpg" alt=" ">
         </div>
         <div class="col-xs-9"> 
           <div class="advisor-tile-main-body u-padding-top u-padding-bottom">
             <h4>Bridgette x8133</h4>
-            <p class="text-success"><strong>Next Availabliity:</strong></p>
-            <p class="text-success">2/27/2015 7:00:00 PM</p>
-            <p><strong>Recommended Alternative:</strong></p>
-            <p><a href="#">Jonay x7502</a></p>
-            <a class="btn btn-default" href="#">Delete</a>
+            <p class="text-success small"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00:00 PM<span></p>
+            <p class="small"><strong>Recommended Alternative:</strong> <span class="text-nowrap"><a href="#">Jonay x7502</a></span></p>
+            <a class="btn btn-default u-margin-top" href="#">Delete</a>
           </div>
         </div>
         <div class="col-xs-1 u-padding-top">
@@ -25,57 +23,50 @@
       </div>
     </div>
   </div>
-
 </div>
 
-
 <div class="row u-margin-top"> 
-  <div class="col-md-7">
-    <h3 class="u-no-margin">Return Call Settings</h3>
+  <div class="col-md-8">
+    <h3 class="u-no-margin u-padding-bottom">Return Call Settings</h3>
     <form role="form">
       <div class="form-group form-group-required">
-        <h4>Return Call Number:</h4>
-        <label class="control-label" for="signupPhone">Phone number</label>
-        <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
-        <p class="text-center">(ex. 555-555-5555)</p>
-        <h4>Return Call Availability:</h4>
-        <select class="form-control">
-          <option>1 hour</option>
-          <option>2 hours</option>
-          <option>3 hours</option>
-          <option>4 hours</option>
-          <option>5 hours</option>
-          <option>6 hours</option>
-          <option>7 hours</option>
-          <option>8 hours</option>
-          <option>9 hours</option>
-          <option>10 hours</option>
-          <option>11 hours</option>
-          <option>12 hours</option>
-        </select>
-        <a class="btn btn-primary btn-block u-margin-top" href="#">Confirm</a>
+        <div class="row">
+          <div class="col-md-6">
+            <label class="control-label u-block" for="signupPhone">Return Call Number:</label>
+            <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
+            <p>(ex. 555-555-5555)</p>
+          </div>
+          <div class="col-md-6">
+            <h4 class="u-no-margin-top">Return Call Availability:</h4>
+              <select class="form-control">
+                <option>1 hour</option>
+                <option>2 hours</option>
+                <option>3 hours</option>
+                <option>4 hours</option>
+                <option>5 hours</option>
+                <option>6 hours</option>
+                <option>7 hours</option>
+                <option>8 hours</option>
+                <option>9 hours</option>
+                <option>10 hours</option>
+                <option>11 hours</option>
+                <option>12 hours</option>
+              </select>
+            <a class="btn btn-primary u-margin-top pull-right" href="#">Confirm</a>
+          </div>
+        </div>
       </div>
     </form>
     <h5 class="border-top">Return Call Alerts</h5>
       <p><a class="arrow" href="#">Receive Return Call <span class="text-nowrap">cell phone alerts <span class="arrow-right text-primary"></span></span></a></p>
   </div>
-  <div class="col-md-5 text-center">
-    <div class="subnav">
-      <h3 class="subnav-heading">
-        <a class="subnav-item subnav-item-next" href="/pages/account/02-add.html" >Add Dollars</a>
-      </h3>
-      <div class="subnav-body text-neutral">
-        <ul class="list-ruled">
-          <li class="arrange arrange-bottom">
-            <span class="arrange-fill">
-            Current balance:
-            </span>
-            <span class="arrange-fit big">
-            <sup>$</sup>160.00
-            </span>
-          </li>
-        </ul>
-      </div>
+  <div class="col-sm-4 col-lg-3 pull-right">
+    <div class="box box-light text-center">
+      Current balance:
+      <span class="big">
+        <sup>$</sup>160.00
+      </span>
+      <a class="btn btn-default" href="#">Add Dollars</a>
     </div>
   </div>
 </div>
