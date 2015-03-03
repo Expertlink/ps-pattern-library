@@ -47,9 +47,7 @@ $social-btn-services: (
   background-repeat: no-repeat;
   display: inline-block;
   height: $social-btn-size;
-  overflow: hidden;
   text-align: left;
-  text-indent: -99em;
   vertical-align: middle;
   width: $social-btn-size;
   // Bootstrap mixin for including a separate image for high-res displays
@@ -59,6 +57,7 @@ $social-btn-services: (
     $social-btn-size,
     ($social-btn-size * length($social-btn-services))
   );
+  @include text-hide();
 }
 
 @each $service in $social-btn-services {

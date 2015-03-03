@@ -1,13 +1,13 @@
 .close {
   font-size: $close-font-size;
   color: $close-color;
+  opacity: $close-opacity-default;
   -webkit-appearance: none;
-  @include opacity($close-opacity-default);
 
   &:hover,
   &:focus {
     color: $close-color;
+    opacity: $close-opacity-hover;
     text-decoration: none;
-    @include opacity($close-opacity-hover);
   }
 }
