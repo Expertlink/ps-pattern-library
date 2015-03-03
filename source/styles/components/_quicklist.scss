@@ -54,10 +54,9 @@ $zindex-quicklist-toggle: ($zindex-quicklist + 1) !default;
   background-position: center -48px;
   display: block;
   height: 48px;
-  overflow: hidden;
-  text-indent: -99em;
   transition: background-position 300ms ease;
   width: 48px;
+  @include text-hide();
 
   .quicklist-open & {
     background-position: center 0;
