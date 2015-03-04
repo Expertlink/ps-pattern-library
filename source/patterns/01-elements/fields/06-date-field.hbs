@@ -1,5 +1,10 @@
 ---
-status: inprogress
+description: >
+  HTML5 `<input type="date">` with a `<select>`-based fallback for un-fancy
+  browsers. Fallback markup is contained with an HTML comment, so it can be
+  easily customized per instance. Fallback will update the original element
+  value on `change` events. `min` and `max` values are required on the default
+  element to use the fallback.
 ---
 
 <div class="js-datefield">
