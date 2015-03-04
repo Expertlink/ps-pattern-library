@@ -21,7 +21,6 @@
 @import "elements/borders";
 @import "elements/boxes";
 @import "elements/images";
-@import "elements/logo";
 @import "elements/stars";
 @import "elements/creditcards";
 @import "elements/hide-show-pwd";
@@ -33,7 +32,7 @@
 
 // Components
 @import "components/masthead";
-@import "components/overflow-nav";
+@import "components/main-nav";
 @import "components/subnav";
 @import "components/advisor-tiles";
 @import "components/advisor-promo";
@@ -54,3 +53,4 @@
 @import "components/promo-pod";
 @import "components/home-advisors";
 @import "components/home-video";
+@import "components/home-alert";
