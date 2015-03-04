@@ -50,68 +50,9 @@ description: step one of the signup form (account).
   </div>
   <div class="form-group form-group-required">
     <label class="control-label" for="signupDOB">Date of birth</label>
-    <div class="dateinput js-dateinput">
-      <input class="form-control js-dateinput-replacement shidden" id="signupDOB" type="date" />
-      <div class="arrange arrange-gutter arrange-equal js-dateinput-default">
-        <div class="arrange-fit">
-          <select class="form-control js-dateinput-month">
-            <option selected disabled>Month</option>
-            {{#each dates.months}}
-              <option value="{{.}}">{{.}}</option>
-            {{/each}}
-          </select>
-        </div>
-        <div class="arrange-fit">
-          <select class="form-control js-dateinput-day">
-            <option selected disabled>Day</option>
-            {{#each dates.days}}
-              <option value="{{.}}">{{.}}</option>
-            {{/each}}
-          </select>
-        </div>
-        <div class="arrange-fit">
-          <select class="form-control js-dateinput-year">
-            <option selected disabled>Year</option>
-            {{#each dates.years}}
-              <option value="{{.}}">{{.}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-    </div>
+    {{> fields/date-field }}
   </div>
   <div class="form-group">
     <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
   </div>
 </form>
-
-<script>
-  $(function () {
-    $('.js-dateinput').each(function () {
-      var $this = $(this);
-      var $defaultField = $this.find('.js-dateinput-default');
-      var $replacementField = $this.find('.js-dateinput-replacement');
-      var $dayField = $this.find('.js-dateinput-day');
-      var $monthField = $this.find('.js-dateinput-month');
-      var $yearField = $this.find('.js-dateinput-year');
-      var useReplacement = Modernizr.inputtypes.date;
-
-      // Hide or show fallback input(s) based on feature-detection
-      $defaultField.toggleClass('hidden', useReplacement);
-      $replacementField.toggleClass('hidden', !useReplacement);
-
-      // If the replacement input was never shown, we're done
-      if ($replacementField.hasClass('hidden')) return;
-      
-      // Bind event handler to sync date-picker input with fallback inputs
-      $replacementField.on('change', function (event) {
-        var $this = $(event.target);
-        var dateChunks = $this.val().split('-');
-
-        $dayField.val(dateChunks[2]);
-        $monthField.val(dateChunks[1]);
-        $yearField.val(dateChunks[0]);
-      });
-    });
-  });
-</script>
