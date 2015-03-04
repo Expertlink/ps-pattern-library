@@ -77,6 +77,9 @@ $filter-control-size: 20px !default;
   right: $filter-padding-horizontal;
   position: absolute;
   top: 50%;
+  // corrects an Android issue where direct taps to this element correctly
+  // toggled the control but did not update the visual appearance
+  pointer-events: none;
 }
 
 .filter-checkbox,
