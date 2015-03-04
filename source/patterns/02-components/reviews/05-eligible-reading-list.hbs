@@ -2,6 +2,9 @@
 description: List of readings, eligible for review.
 status: inprogress
 ---
-{{#withFirst eligible-readings.list 6}}
-  {{> reviews/_eligible-reading }}
-{{/withFirst}}
+<p>Only readings that lasted <strong>3 minutes or longer</strong> are eligible for review. You have up to <strong>3 months</strong> to rate your reading.</p>
+<div class="eligible-readings">
+  {{#withFirst eligible-readings.list 6}}
+    {{> reviews/_eligible-reading }}
+  {{/withFirst}}
+</div>
