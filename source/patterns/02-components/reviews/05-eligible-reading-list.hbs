@@ -1,10 +1,28 @@
 ---
-description: List of readings, eligible for review.
+description: >
+  List of readings, eligible for review. Note the script for interaction behavior.
 status: inprogress
 ---
 <p>Only readings that lasted <strong>3 minutes or longer</strong> are eligible for review. You have up to <strong>3 months</strong> to rate your reading.</p>
-<div class="eligible-readings">
+<div class="eligible-readings" id="eligible-readings">
   {{#withFirst eligible-readings.list 6}}
     {{> reviews/_eligible-reading }}
   {{/withFirst}}
 </div>
+
+<script>
+  $(function() {
+    $(document).on('show.bs.collapse', '[data-deemphasize]', function() {
+      var $element     = $(this);
+      var $leaveMeOpen = $element.find('.collapse');
+      var $parent      = $($element.data('parent'));
+      if ($parent) {
+        $parent.find('.collapse.in').not($leaveMeOpen).each(function() {
+          $(this).collapse('hide');
+        });
+        $parent.find('[data-deemphasize]').not($element).addClass('is-deemphasized');
+        $element.removeClass('is-deemphasized');
+      }
+    });
+  });
+</script>

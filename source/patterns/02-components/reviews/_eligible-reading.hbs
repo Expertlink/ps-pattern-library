@@ -1,4 +1,4 @@
-<div class="eligible-reading">
+<div class="eligible-reading" data-parent="#eligible-readings" data-deemphasize="true">
   <div class="eligible-reading-summary">
     <div class="eligible-reading-advisor-photo">
       <img class="img-rounded" src="{{photo}}" alt="{{firstName}}">
@@ -18,7 +18,7 @@
     </div>
   </div>
   {{#if isEligible}}
-    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
       Rate and Review
     </a>
     {{else}}
