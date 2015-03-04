@@ -6,6 +6,7 @@
   "call": true,
   "chat": false,
   "readingID" : "1",
+  "isEligible" : true,
   "list": [
     {
       "firstName": "Mystery Reader",
@@ -14,7 +15,8 @@
       "date": "02/11/2015",
       "call": true,
       "chat": false,
-      "readingID" : "1"
+      "readingID" : "1",
+      "isEligible" : true
     },
     {
       "firstName": "Saul Goodman",
@@ -23,7 +25,8 @@
       "date": "02/01/2015",
       "call": true,
       "chat": false,
-      "readingID" : "2"
+      "readingID" : "2",
+      "isEligible" : false
     },
     {
       "firstName": "Zaphod Beeblebrox",
@@ -32,7 +35,8 @@
       "date": "01/21/2015",
       "call": true,
       "chat": false,
-      "readingID" : "3"
+      "readingID" : "3",
+      "isEligible" : true
     },
     {
       "firstName": "Uncle Jesse",
@@ -41,7 +45,8 @@
       "date": "01/07/2015",
       "call": false,
       "chat": true,
-      "readingID" : "4"
+      "readingID" : "4",
+      "isEligible" : false
     },
     {
       "firstName": "The Amazing Gusto",
@@ -50,7 +55,8 @@
       "date": "01/02/2015",
       "call": false,
       "chat": true,
-      "readingID" : "5"
+      "readingID" : "5",
+      "isEligible" : true
     },
     {
       "firstName": "Mystery Reader",
@@ -59,7 +65,8 @@
       "date": "01/01/2015",
       "call": true,
       "chat": false,
-      "readingID" : "6"
+      "readingID" : "6",
+      "isEligible" : true
     }
   ]
 }

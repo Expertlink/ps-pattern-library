@@ -17,9 +17,13 @@
       </p>
     </div>
   </div>
-  <a href="#add-review-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
-    Rate and Review
-  </a>
+  {{#if isEligible}}  
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
+      Rate and Review
+    </a>
+    {{else}}
+      <p>Because this reading lasted for less than 3 minutes, it is not eligible for review.</p>
+  {{/if}}
   <div id="add-review-block-{{readingID}}" class="collapse box box-lighter box-teal add-review">
     <p class="eligible-reading-rate text-center u-margin-top">
       <span class="stars stars-lg stars-control" data-target="#demo-rating">

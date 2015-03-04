@@ -1,17 +1,14 @@
+
 .eligible-reading {
   width: 100%;
   border-top: 1px solid $gray-lighter;
   background: white;
-  opacity: 0.5;
+  
   padding: $padding-base-horizontal;
   @media (max-width: $screen-xs-max)  {
     margin-left: ($line-height-computed * -1);
     margin-right: ($line-height-computed * -1);
     width: calc(100% + #{$line-height-computed * 2});
-  }
-  &:hover,
-  &:focus {
-    opacity: 1;
   }
   &:last-of-type {
     border-bottom: 1px solid $gray-lighter;
