@@ -24,6 +24,9 @@
 /** See also: http://blog.cloudfour.com/styling-form-elements/ */
 
 .select {
+  // set font-size to insure options are visible in some browsers that
+  // respect that (especially important if used in .input-group-btn)
+  font-size: $font-size-base;
   position: relative;
 
   select {
