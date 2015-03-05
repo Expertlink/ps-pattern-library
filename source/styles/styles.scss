@@ -28,7 +28,6 @@
 @import "elements/forms";
 @import "elements/tables";
 @import "elements/stats";
-@import "elements/utilities";
 
 // Components
 @import "components/masthead";
@@ -54,3 +53,7 @@
 @import "components/home-advisors";
 @import "components/home-video";
 @import "components/home-alert";
+
+// Helpers and Utils
+@import "helpers/utilities";
+@import "helpers/states";

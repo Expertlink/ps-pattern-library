@@ -52,8 +52,3 @@
 .add-review {
  margin: -2.5em 0 0 0;
 }
-
-.is-deemphasized {
-  opacity: 0.5;
-  @include transition(opacity .6s ease);
-}
