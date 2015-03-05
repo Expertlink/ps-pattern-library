@@ -1,5 +1,6 @@
 $bio-padding: ($line-height-computed * (2/3)) !default;
-.box-bio { 
+
+.box-bio {
   padding: $bio-padding;
   position: relative;
   @media (min-width: $screen-md-min) {
@@ -7,177 +8,217 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.bio-advisor-summary {
-  text-align: center;
-  margin: 0 0 $line-height-computed;
-  @media (min-width: $screen-md-min)  {
-    text-align: left;
-    border: 1px solid $gray-lighter;
-    box-shadow: 0 0 8px $gray-lighter;
-    padding: $bio-padding;
-    border-radius: $border-radius-large;
+.bio-summary {
+  padding-bottom: $bio-padding;
+  padding-top: $bio-padding;
+}
+
+.bio-summary-photo {
+  max-width: 50%;
+  width: 175px;
+}
+
+.bio-summary-heading {
+  margin-bottom: ($line-height-computed / 3);
+  margin-top: 0;
+}
+
+.bio-summary-av {
+  border-color: $gray-lighter;
+  border-style: solid;
+  border-width: 1px 0;
+  margin-left: ($bio-padding / -1);
+  margin-right: ($bio-padding / -1);
+  padding-bottom: ($line-height-computed / 3);
+  padding-top: ($line-height-computed / 3);
+
+  .bio-summary-fave-btn + & {
+    padding-top: ($line-height-computed);
+    margin-top: (($padding-base-vertical * 2 + $line-height-computed) / -2);
   }
 }
-.bio-name {
-  margin:0;
-}
-.bio-headline {
-  font-weight: bold;
-  margin:0 0 0.3em;
-}
-.bio-photo {
-  display: block;
-  position: relative;
-  max-width: 175px;
-  margin: 0 auto $bio-padding;
-  img {
-    display: block;
-    border-radius: $border-radius-small;
-  }
-  @media (min-width: $screen-md-min)  {
-    max-width: 100%;
-  }
-  @media (min-width: $screen-lg-min) {
-    img {
-      border-radius: $border-radius-large;
-    }
-  }
-}
-.bio-photo-fave {
-  position: absolute;
-  bottom: ($bio-padding/2);
-  right: -1.25em;
-  margin:0;
-  display: block;
-  a {
-    display:block;
-    width: 2.5em;
-    height: 2.5em;
-    text-align: center;
-    line-height: 2.5em;
-    border-radius: 0.5em;
-    background: lighten($red,20%);
-    color: white;
-    border-top: 1px solid white;
-    border-bottom: 1px solid $red-darker;
-    .icon-lg {
-      vertical-align: -0.55em;
-    }
-    &:hover,
-    &:focus { 
-      background: $red;
-    }
-  }
-}
-.bio-photo-fave.is-faved a,
-.bio-photo-fave.is-faved a:hover,
-.bio-photo-fave.is-faved a:focus { 
-  background: lighten($red, 30%);
-  color: $red;
-  border-color: $red;
-}  
-.bio-photo-heart {
-  position: absolute;
-  bottom: ($bio-padding * 0.5);
-  right: ($bio-padding * 0.5);
-  display: block;
-  background-image: linear-gradient(to bottom, #fff, $tan-light);
-  border: 1px solid $tan-dark;
-  border-radius: $border-radius-large; 
-  width: 36px;
-  height: 36px;
-  padding-top: 8px;
-  color: $gray;
-  text-align: center;  
-  transition: box-shadow 0.5s;
- 
-  .icon {
-    font-size: 24px;
-  }
-  &:hover {
-    border-color: $red-dark;
-    box-shadow: 0 0 10px $red;
-    color: $red-dark;
-  }
-  &:focus {
-    border-color: $red-dark;
-    color: $red;
-    .icon {
-      transform: scale(1.08); 
-    }
-  } 
-  &.is-faved {
-    border-color: $red-dark;
-    color: $red;
-    padding-top: 6px;
-    .icon {
-        font-size: 26px;
-    }
-    &:hover {
-      color: $gray;
-      border-color: $tan-dark;
-      box-shadow: none;
-    }
-    &:focus {
-      color: $gray;
-      border-color: $tan-dark;
-      .icon {
-        transform: scale(0.92); 
-      }  
-    }
-  }
-}
-.bio-add-fave {
-  .icon {
-    color: $gray-light;
-    margin-right: 0.5em;
-  }
-  &:hover .icon {
-    color: $red;
-  }
-}
-.bio-audio-video {
-  background: $gray-lighter;
-  border-radius: $border-radius-small; 
-  display: table;
-  width: 100%;
-  > p {
-    width: 50%;
-    display: table-cell;
-    @media (min-width: $screen-md-min)  {
-      display: inline-block;
-      width: auto;
-      text-align: left;  
-      margin:0;
-    }
-    @media (min-width: $screen-lg-min)  {
-      width: 50%;  
-    }
-  }
-  @media (min-width: $screen-md-min)  {
-    background: transparent;
-    margin-bottom: ($bio-padding / 2);
-    border-top: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
-    border-radius: 0;
-  }
-}
-.bio-av-btn {
-  font-weight: normal;
-  display: inline-block;
-  white-space: nowrap;
-  color: $blue;
-  padding: 0.3em;
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-    color: $blue;
-  }
-  @media (min-width: $screen-md-min)  {
-    padding-left: 0;
-    margin-right: 1em;
-  }
-}
+
+// .bio-summary-info {
+//   margin-top: ($line-height-computed);
+//   margin-bottom: ($line-height-computed);
+//
+//   > * {
+//     margin-bottom: ($line-height-computed / 4);
+//     margin-top: ($line-height-computed / 4);
+//   }
+// }
+
+// .bio-advisor-summary {
+//   text-align: center;
+//   margin: 0 0 $line-height-computed;
+//   @media (min-width: $screen-md-min)  {
+//     text-align: left;
+//     border: 1px solid $gray-lighter;
+//     box-shadow: 0 0 8px $gray-lighter;
+//     padding: $bio-padding;
+//     border-radius: $border-radius-large;
+//   }
+// }
+// .bio-name {
+//   margin:0;
+// }
+// .bio-headline {
+//   font-weight: bold;
+//   margin:0 0 0.3em;
+// }
+// .bio-photo {
+//   display: block;
+//   position: relative;
+//   max-width: 175px;
+//   margin: 0 auto $bio-padding;
+//   img {
+//     display: block;
+//     border-radius: $border-radius-small;
+//   }
+//   @media (min-width: $screen-md-min)  {
+//     max-width: 100%;
+//   }
+//   @media (min-width: $screen-lg-min) {
+//     img {
+//       border-radius: $border-radius-large;
+//     }
+//   }
+// }
+// .bio-photo-fave {
+//   position: absolute;
+//   bottom: ($bio-padding/2);
+//   right: -1.25em;
+//   margin:0;
+//   display: block;
+//   a {
+//     display:block;
+//     width: 2.5em;
+//     height: 2.5em;
+//     text-align: center;
+//     line-height: 2.5em;
+//     border-radius: 0.5em;
+//     background: lighten($red,20%);
+//     color: white;
+//     border-top: 1px solid white;
+//     border-bottom: 1px solid $red-darker;
+//     .icon-lg {
+//       vertical-align: -0.55em;
+//     }
+//     &:hover,
+//     &:focus {
+//       background: $red;
+//     }
+//   }
+// }
+// .bio-photo-fave.is-faved a,
+// .bio-photo-fave.is-faved a:hover,
+// .bio-photo-fave.is-faved a:focus {
+//   background: lighten($red, 30%);
+//   color: $red;
+//   border-color: $red;
+// }
+// .bio-photo-heart {
+//   position: absolute;
+//   bottom: ($bio-padding * 0.5);
+//   right: ($bio-padding * 0.5);
+//   display: block;
+//   background-image: linear-gradient(to bottom, #fff, $tan-light);
+//   border: 1px solid $tan-dark;
+//   border-radius: $border-radius-large;
+//   width: 36px;
+//   height: 36px;
+//   padding-top: 8px;
+//   color: $gray;
+//   text-align: center;
+//   transition: box-shadow 0.5s;
+//
+//   .icon {
+//     font-size: 24px;
+//   }
+//   &:hover {
+//     border-color: $red-dark;
+//     box-shadow: 0 0 10px $red;
+//     color: $red-dark;
+//   }
+//   &:focus {
+//     border-color: $red-dark;
+//     color: $red;
+//     .icon {
+//       transform: scale(1.08);
+//     }
+//   }
+//   &.is-faved {
+//     border-color: $red-dark;
+//     color: $red;
+//     padding-top: 6px;
+//     .icon {
+//         font-size: 26px;
+//     }
+//     &:hover {
+//       color: $gray;
+//       border-color: $tan-dark;
+//       box-shadow: none;
+//     }
+//     &:focus {
+//       color: $gray;
+//       border-color: $tan-dark;
+//       .icon {
+//         transform: scale(0.92);
+//       }
+//     }
+//   }
+// }
+// .bio-add-fave {
+//   .icon {
+//     color: $gray-light;
+//     margin-right: 0.5em;
+//   }
+//   &:hover .icon {
+//     color: $red;
+//   }
+// }
+// .bio-audio-video {
+//   background: $gray-lighter;
+//   border-radius: $border-radius-small;
+//   display: table;
+//   width: 100%;
+//   > p {
+//     width: 50%;
+//     display: table-cell;
+//     @media (min-width: $screen-md-min)  {
+//       display: inline-block;
+//       width: auto;
+//       text-align: left;
+//       margin:0;
+//     }
+//     @media (min-width: $screen-lg-min)  {
+//       width: 50%;
+//     }
+//   }
+//   @media (min-width: $screen-md-min)  {
+//     background: transparent;
+//     margin-bottom: ($bio-padding / 2);
+//     border-top: 1px solid $gray-lighter;
+//     border-bottom: 1px solid $gray-lighter;
+//     border-radius: 0;
+//   }
+// }
+// .bio-av-btn {
+//   font-weight: normal;
+//   display: inline-block;
+//   white-space: nowrap;
+//   color: $blue;
+//   padding: 0.3em;
+//   &:hover,
+//   &:focus {
+//     text-decoration: underline;
+//     color: $blue;
+//   }
+//   @media (min-width: $screen-md-min)  {
+//     padding-left: 0;
+//     margin-right: 1em;
+//   }
+// }
 .bio-actions {
   width: calc(100% + #{$arrange-gutter-size});
   margin: 0 ($arrange-gutter-size * -0.5);
@@ -215,7 +256,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   font-size: 0.9em;
   display: block;
   text-align:center;
-  font-weight: 800;  
+  font-weight: 800;
   margin-top: 0.2em;
   del {
     color: $gray-light;
@@ -325,7 +366,7 @@ a.section-parent {
   }
 }
 
-// These rules optimize the display of reviews within a narrow column. 
+// These rules optimize the display of reviews within a narrow column.
 // Since this is specific to the Advisor Bio page layout,
 // I am putting them here instead of _reviews.scss
 .bio-reviews-col-lg {
@@ -340,7 +381,7 @@ a.section-parent {
       font-size: 1em;
       padding-top: 0.25em;
       padding-bottom: 0.75em;
-    }  
+    }
     .review {
       padding-left: 0;
       padding-right: 0;
