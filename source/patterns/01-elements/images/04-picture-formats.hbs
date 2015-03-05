@@ -1,0 +1,12 @@
+---
+name: Multiple Formats
+description: >
+  The `<picture>` tag can also be used to provide multiple formats of the same
+  image by specifying a `type` attribute for applicable `<source>` elements.
+  More info [here](http://scottjehl.github.io/picturefill/).
+---
+
+<picture class="demo-responsive-img">
+  <source type="image/webp" srcset="/images/fpo/peeg.webp"> {{! ~41kb }}
+  <img src="/images/fpo/peeg.jpg" alt="peeg"> {{! ~ 110kb }}
+</picture>
