@@ -1,17 +1,19 @@
-.eligible-reading {
-  border-top: 1px solid $gray-lighter;
+.tabpanel-pane .eligible-readings {
   background: white;
-  padding: $padding-base-horizontal $line-height-computed;
-  margin-left: ($line-height-computed * -1);
-  margin-right: ($line-height-computed * -1);
+  margin: 0 ($line-height-computed * -1) ($line-height-computed * -0.5);
   width: calc(100% + #{$line-height-computed * 2});
-  position: relative;
-  &:last-of-type {
-    margin-bottom: ($line-height-computed * -0.5);
-    @media (min-width: $screen-sm-min)  {
+  @media (min-width: $screen-sm-min)  {
+    &,
+    .eligible-reading:last-of-type {
       border-radius: 0 0 $border-radius-large $border-radius-large;
     }
   }
+}
+.eligible-reading {
+  border-top: 1px solid $gray-lighter;
+  background: white;
+  padding: ($padding-base-vertical * 2) $line-height-computed;
+  position: relative;
 }
 .eligible-reading-summary {
   display: table;
@@ -28,15 +30,13 @@
    width: 50px;
 }
 .eligible-reading-main {
-  padding: 0 0 0 ($padding-base-vertical * 2);
+  padding: 0 0 0 $padding-base-horizontal;
 }
-
 .eligible-reading-advisor-name,
 .eligible-reading-type,
 .eligible-reading-date {
   margin:0;
 }
-
 .eligible-reading-advisor-name {
   font-size: 1.2em;
   font-weight: bold;
@@ -46,21 +46,21 @@
   font-weight: bold;
   color: $gray;
 }
-.eligible-reading-input-parent {
+.add-review-parent {
   display: block;
-  margin-top: $padding-base-horizontal;
+  margin-top: ($padding-base-vertical * 2);
   @media (min-width: $screen-sm-min)  {
     width: 12em;
     position: absolute;
-    top: $padding-base-horizontal;
+    top: ($padding-base-vertical * 2);
     right: $line-height-computed;
     margin: 0;
   }
 }
-
 .add-review {
   margin-top: $padding-base-horizontal;
+  // on narrow screens, the form replaces the triggering button
   @media (max-width: $screen-xs-max)  {
-    margin: -2.6em 0 0 0;
+    margin-top: -2.6em;
   }
 }

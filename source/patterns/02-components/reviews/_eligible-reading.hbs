@@ -18,11 +18,11 @@
     </div>
   </div>
   {{#if isEligible}}
-    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="eligible-reading-input-parent btn btn-primary collapsed">
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="add-review-parent btn btn-primary collapsed">
       Rate and Review
     </a>
     {{else}}
-      <p class="eligible-reading-input-parent"><small>This reading lasted for less than 3 minutes so it is not eligible for review.</small></p>
+      <p class="add-review-parent"><small>This reading lasted for less than 3 minutes so it is not eligible for review.</small></p>
   {{/if}}
   <div id="add-review-block-{{readingID}}" class="collapse box box-lighter box-teal add-review">
     <p class="eligible-reading-rate text-center u-margin-top">
