@@ -74,7 +74,6 @@
       <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/ratings">Ratings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/stats">Stats</a></li>
@@ -88,10 +87,10 @@
       <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/main-nav">Main Nav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/masthead">Masthead</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/modals">Modals</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/overflow-nav">Overflow Nav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
       <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
       <li><a class="c4-nav__item " href="../../02-components/progress-bars">Progress Bars</a></li>
@@ -118,11 +117,11 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_24">
+  <div class="c4-pattern" id="c4-pattern_22">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_24">Offer Selection</a>
+          <a href="#c4-pattern_22">Offer Selection</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -182,14 +181,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_24" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_22" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_24"><code class="language-markup">&lt;label&gt;Select an offer &lt;/label&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_22"><code class="language-markup">&lt;label&gt;Select an offer &lt;/label&gt;
   &lt;div class=&quot;arrange arrange-equal arrange-gutter btn-group&quot; data-toggle=&quot;buttons&quot;&gt;
     &lt;div class=&quot;arrange-fit&quot;&gt;
       &lt;label for=&quot;30min&quot; class=&quot;btn btn-primary enrollment-plan-option active&quot; data-discount-for=&quot;form-group-promo&quot;&gt;
@@ -235,11 +234,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_59">
+  <div class="c4-pattern" id="c4-pattern_57">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_59">Account Information</a>
+          <a href="#c4-pattern_57">Account Information</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -295,7 +294,7 @@
      </div>
    
    
-  
+
   <div class="form-group arrange arrange-equal arrange-gutter">
     <div class="form-group form-group-required arrange-fit">
       <label class="control-label" for="signupFirstName">First name</label>
@@ -303,7 +302,7 @@
     </div>
     <div class="form-group form-group-required arrange-fit">
       <label class="control-label" for="signupLastName">Last name</label>
-      <input type="text" class="form-control" id="signupLastName" />    
+      <input type="text" class="form-control" id="signupLastName" />
     </div>
   </div>
   <div class="form-group form-group-required">
@@ -340,7 +339,43 @@
   </div>
   <div class="form-group form-group-required">
     <label class="control-label" for="signupDOB">Date of birth</label>
-    <input type="date" class="form-control" id="signupDOB" />
+    
+    <div class="js-datefield">
+      <input class="form-control js-datefield-default" id="signupDOB" type="date" min="1900-01-01" max="1997-12-31" />
+      <div class="js-datefield-template hidden" aria-hidden="true">
+        <!-- <div class="arrange arrange-gutter arrange-equal js-datefield-fallback">
+          <div class="arrange-fit">
+            <select class="form-control js-datefield-month">
+              <option selected disabled>Month</option>
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Jul</option>
+              <option value="8">Aug</option>
+              <option value="9">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+          </div>
+          <div class="arrange-fit">
+            <select class="form-control js-datefield-day">
+              <option selected disabled>Day</option>
+            </select>
+          </div>
+          <div class="arrange-fit">
+            <select class="form-control js-datefield-year">
+              <option selected disabled>Year</option>
+            </select>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    
+    
   </div>
   <div class="form-group">
     <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
@@ -352,14 +387,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_59" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_57" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_59"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_57"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
   
     &lt;label&gt;Select an offer &lt;/label&gt;
     &lt;div class=&quot;arrange arrange-equal arrange-gutter btn-group&quot; data-toggle=&quot;buttons&quot;&gt;
@@ -403,7 +438,7 @@
      &lt;/div&gt;
    
    
-  
+
   &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
     &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
       &lt;label class=&quot;control-label&quot; for=&quot;signupFirstName&quot;&gt;First name&lt;/label&gt;
@@ -411,7 +446,7 @@
     &lt;/div&gt;
     &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
       &lt;label class=&quot;control-label&quot; for=&quot;signupLastName&quot;&gt;Last name&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupLastName&quot; /&gt;    
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupLastName&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-group form-group-required&quot;&gt;
@@ -448,7 +483,43 @@
   &lt;/div&gt;
   &lt;div class=&quot;form-group form-group-required&quot;&gt;
     &lt;label class=&quot;control-label&quot; for=&quot;signupDOB&quot;&gt;Date of birth&lt;/label&gt;
-    &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;signupDOB&quot; /&gt;
+    
+    &lt;div class=&quot;js-datefield&quot;&gt;
+      &lt;input class=&quot;form-control js-datefield-default&quot; id=&quot;signupDOB&quot; type=&quot;date&quot; min=&quot;1900-01-01&quot; max=&quot;1997-12-31&quot; /&gt;
+      &lt;div class=&quot;js-datefield-template hidden&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;!-- &lt;div class=&quot;arrange arrange-gutter arrange-equal js-datefield-fallback&quot;&gt;
+          &lt;div class=&quot;arrange-fit&quot;&gt;
+            &lt;select class=&quot;form-control js-datefield-month&quot;&gt;
+              &lt;option selected disabled&gt;Month&lt;/option&gt;
+              &lt;option value=&quot;1&quot;&gt;Jan&lt;/option&gt;
+              &lt;option value=&quot;2&quot;&gt;Feb&lt;/option&gt;
+              &lt;option value=&quot;3&quot;&gt;Mar&lt;/option&gt;
+              &lt;option value=&quot;4&quot;&gt;Apr&lt;/option&gt;
+              &lt;option value=&quot;5&quot;&gt;May&lt;/option&gt;
+              &lt;option value=&quot;6&quot;&gt;Jun&lt;/option&gt;
+              &lt;option value=&quot;7&quot;&gt;Jul&lt;/option&gt;
+              &lt;option value=&quot;8&quot;&gt;Aug&lt;/option&gt;
+              &lt;option value=&quot;9&quot;&gt;Sep&lt;/option&gt;
+              &lt;option value=&quot;10&quot;&gt;Oct&lt;/option&gt;
+              &lt;option value=&quot;11&quot;&gt;Nov&lt;/option&gt;
+              &lt;option value=&quot;12&quot;&gt;Dec&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;arrange-fit&quot;&gt;
+            &lt;select class=&quot;form-control js-datefield-day&quot;&gt;
+              &lt;option selected disabled&gt;Day&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;arrange-fit&quot;&gt;
+            &lt;select class=&quot;form-control js-datefield-year&quot;&gt;
+              &lt;option selected disabled&gt;Year&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+        &lt;/div&gt; --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    
   &lt;/div&gt;
   &lt;div class=&quot;form-group&quot;&gt;
     &lt;button class=&quot;btn btn-primary&quot;&gt;Next step &lt;span class=&quot;arrow-right&quot;&gt;&lt;/span&gt;&lt;/button&gt;
@@ -460,11 +531,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_84">
+  <div class="c4-pattern" id="c4-pattern_81">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_84">Phone-Country Widget</a>
+          <a href="#c4-pattern_81">Phone-Country Widget</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -518,14 +589,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_84" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_81" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_84"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_81"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
   &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
     &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
       &lt;label class=&quot;control-label&quot; for=&quot;signupCountry&quot;&gt;Country&lt;/label&gt;
@@ -587,11 +658,11 @@ $(function() {
 
 
 
-  <div class="c4-pattern" id="c4-pattern_102">
+  <div class="c4-pattern" id="c4-pattern_100">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_102">Payment Fields</a>
+          <a href="#c4-pattern_100">Payment Fields</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -607,15 +678,15 @@ $(function() {
     <label class="control-label" for="signupCCName">Name on card</label>
     <input type="text" class="form-control" id="signupCCName" value="" >
   </div>
-  <div class="form-group form-group-required has-cards knows-card" data-mask data-mask-type="CreditCard">
+  <div class="form-group form-group-required knows-card" data-mask data-mask-type="CreditCard">
     <label class="control-label" for="signupCCNumber">Credit card number</label>
     <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-    <ul class="creditcards">
-      <li class="creditcard  creditcard-visa">Visa</li>
-      <li class="creditcard  creditcard-mastercard">MasterCard</li>
-      <li class="creditcard  creditcard-discover">Discover</li>
-      <li class="creditcard  creditcard-amex">American Express</li>
-      <li class="creditcard  creditcard-dinersclub">Diner's Club</li>
+    <ul class="list-unstyled u-margin-top">
+      <li class="creditcard-visa"><span class="sr-only">Visa</span></li>
+      <li class="creditcard-mastercard"><span class="sr-only">MasterCard</span></li>
+      <li class="creditcard-discover"><span class="sr-only">Discover</span></li>
+      <li class="creditcard-amex"><span class="sr-only">American Express</span></li>
+      <li class="creditcard-dinersclub"><span class="sr-only">Diner's Club</span></li>
     </ul>
     <p class="help-block is-error-msg">Sorry, that doesn't look like a valid credit card number.</p>
   </div>
@@ -625,10 +696,12 @@ $(function() {
       <input type="text" class="form-control" id="signupCCExp" placeholder="MM/YY" pattern="[0-9]*" maxlength="5" />
       <p class="help-block is-error-msg">Please enter a future expiration date in the format 'MM/YY'.</p>
     </div>
-    <div class="form-group form-group-required form-group form-group-signupCCCode arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
+    <div class="form-group form-group-required form-group arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
       <label class="control-label" for="signupCCCode">Security code</label>
-      <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
-      <span class="creditcard  creditcard-cvv" aria-hidden="true"></span>
+      <div class="with-inset-creditcard">
+        <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
+        <span class="creditcard-cvv" aria-hidden="true"></span>
+      </div>
       <p class="help-block is-error-msg">Sorry, that doesn't look like a valid CVV.</p>
     </div>
   </div>
@@ -638,26 +711,26 @@ $(function() {
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_102" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_100" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_102"><code class="language-markup">&lt;div class=&quot;form-group form-group-required&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_100"><code class="language-markup">&lt;div class=&quot;form-group form-group-required&quot;&gt;
     &lt;label class=&quot;control-label&quot; for=&quot;signupCCName&quot;&gt;Name on card&lt;/label&gt;
     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCName&quot; value=&quot;&quot; &gt;
   &lt;/div&gt;
-  &lt;div class=&quot;form-group form-group-required has-cards knows-card&quot; data-mask data-mask-type=&quot;CreditCard&quot;&gt;
+  &lt;div class=&quot;form-group form-group-required knows-card&quot; data-mask data-mask-type=&quot;CreditCard&quot;&gt;
     &lt;label class=&quot;control-label&quot; for=&quot;signupCCNumber&quot;&gt;Credit card number&lt;/label&gt;
     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCNumber&quot; name=&quot;signupCCNumber&quot; placeholder=&quot;1234 5678 9012 3456&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;19&quot; /&gt;
-    &lt;ul class=&quot;creditcards&quot;&gt;
-      &lt;li class=&quot;creditcard  creditcard-visa&quot;&gt;Visa&lt;/li&gt;
-      &lt;li class=&quot;creditcard  creditcard-mastercard&quot;&gt;MasterCard&lt;/li&gt;
-      &lt;li class=&quot;creditcard  creditcard-discover&quot;&gt;Discover&lt;/li&gt;
-      &lt;li class=&quot;creditcard  creditcard-amex&quot;&gt;American Express&lt;/li&gt;
-      &lt;li class=&quot;creditcard  creditcard-dinersclub&quot;&gt;Diner&#39;s Club&lt;/li&gt;
+    &lt;ul class=&quot;list-unstyled u-margin-top&quot;&gt;
+      &lt;li class=&quot;creditcard-visa&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Visa&lt;/span&gt;&lt;/li&gt;
+      &lt;li class=&quot;creditcard-mastercard&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;MasterCard&lt;/span&gt;&lt;/li&gt;
+      &lt;li class=&quot;creditcard-discover&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Discover&lt;/span&gt;&lt;/li&gt;
+      &lt;li class=&quot;creditcard-amex&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;American Express&lt;/span&gt;&lt;/li&gt;
+      &lt;li class=&quot;creditcard-dinersclub&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Diner&#39;s Club&lt;/span&gt;&lt;/li&gt;
     &lt;/ul&gt;
     &lt;p class=&quot;help-block is-error-msg&quot;&gt;Sorry, that doesn&#39;t look like a valid credit card number.&lt;/p&gt;
   &lt;/div&gt;
@@ -667,10 +740,12 @@ $(function() {
       &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCExp&quot; placeholder=&quot;MM/YY&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;5&quot; /&gt;
       &lt;p class=&quot;help-block is-error-msg&quot;&gt;Please enter a future expiration date in the format &#39;MM/YY&#39;.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;form-group form-group-required form-group form-group-signupCCCode arrange-fill&quot; data-mask data-mask-type=&quot;CVV&quot; data-mask-cvv-for=&quot;signupCCNumber&quot;&gt;
+    &lt;div class=&quot;form-group form-group-required form-group arrange-fill&quot; data-mask data-mask-type=&quot;CVV&quot; data-mask-cvv-for=&quot;signupCCNumber&quot;&gt;
       &lt;label class=&quot;control-label&quot; for=&quot;signupCCCode&quot;&gt;Security code&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCCode&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;5&quot; /&gt;
-      &lt;span class=&quot;creditcard  creditcard-cvv&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;div class=&quot;with-inset-creditcard&quot;&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCCode&quot; pattern=&quot;[0-9]*&quot; maxlength=&quot;5&quot; /&gt;
+        &lt;span class=&quot;creditcard-cvv&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;/div&gt;
       &lt;p class=&quot;help-block is-error-msg&quot;&gt;Sorry, that doesn&#39;t look like a valid CVV.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;</code></pre>
@@ -683,7 +758,7 @@ $(function() {
 
   <footer class="c4-footer">
     <p>
-      This page was generated Wednesday, February 25th, 2015, 4:14PM (PST).
+      This page was generated Thursday, March 5th, 2015, 12:04PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

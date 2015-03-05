@@ -38,6 +38,123 @@ $(function(){
 });
 
 
+// Scripts for pattern at ../source/patterns/01-elements/fields/06-date-field.hbs
+
+$(function(){
+
+  // use fallback when date input is not supported
+  var useFallback = !Modernizr.inputtypes.date;
+
+  // helper for getting number of days in month
+  function getDaysInMonth (month, year) {
+    // generous defaults (assume leap year)
+    var days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    // if month is not provided, default to January
+    var index = month ? month - 1 : 0;
+    // if year is provided, correct leap year if there isn't one
+    if (year && new Date(year, 1, 29).getMonth() != 1) {
+      days[1] = 28;
+    }
+    // return value
+    return days[index];
+  }
+
+  // helper for updating day options based on optional month and year
+  function updateDayOptions ($element, month, year) {
+    // if month and year are provided, parse them first
+    if (month) month = parseInt(month);
+    if (year) year = parseInt(year);
+
+    // determine max days to render based on month and year
+    var max = getDaysInMonth(month, year);
+    // find options that are not disabled (label) options
+    var $options = $element.find('option:not(:disabled)');
+
+    if ($options.length < max) {
+      // if there are too few options, render the remainder
+      for (var i = $options.length + 1; i <= max; i++) {
+        $element.append('<option>' + i + '</option>');
+      }
+    } else if ($options.length > max) {
+      // if there are too many options, remove the remainder
+      var $remainder = $options.slice(max).remove();
+      // if one of the removed options was the current selected value, move
+      // the selection to the last possible day
+      if ($remainder.filter(':selected').length) {
+        $options.eq(max - 1).attr('selected', 'selected');
+      }
+    }
+  }
+
+  // for each js-datefield occurrence
+  $('.js-datefield').each(function(){
+    // store elements and instantiate variables
+    var $element = $(this);
+    var $default = $element.find('.js-datefield-default');
+    var $template = $element.find('.js-datefield-template');
+    var $fallback, $month, $day, $year, minYear, maxYear, i;
+
+    if (useFallback) {
+      // hide default field
+      $default.hide();
+
+      // replace template container with the fallback itself
+      $template.uncomment();
+      $fallback = $template.find('.js-datefield-fallback');
+      $fallback.unwrap();
+
+      // store the individual fallback fields
+      $month = $fallback.find('.js-datefield-month');
+      $day = $fallback.find('.js-datefield-day');
+      $year = $fallback.find('.js-datefield-year');
+
+      // build the date options
+      updateDayOptions($day);
+
+      // build the year options based on min and max
+      minYear = $default.attr('min').split('-')[0];
+      maxYear = $default.attr('max').split('-')[0];
+      for (i = maxYear; i >= minYear; i--) {
+        $year.append('<option>' + i + '</option>');
+      }
+
+      // adjust days when month or year changes
+      $month.add($year).on('change.vse.dateMonthOrYear', function () {
+        updateDayOptions($day, $month.val(), $year.val());
+      });
+
+      // when the date changes, update the default input value
+      $day.add($month).add($year).on('change.vse.dateAll', function () {
+        var fullDate = [$year.val(), $month.val(), $day.val()];
+        var val, i;
+        // loop through date portions
+        for (i = 0; i < fullDate.length; i++) {
+          val = fullDate[i];
+          // if any date portions are undefined or null or zero, clear the
+          // current date value and don't bother doing any more
+          if (!val) {
+            $default.val('');
+            return;
+          }
+          // add a leading zero for short values
+          if (val.length < 2) {
+            fullDate[i] = '0' + val;
+          }
+        }
+        // join the full date and update the default input value
+        fullDate = fullDate.join('-');
+        $default.val(fullDate);
+      });
+
+    } else {
+      // if date inputs are supported, we can just remove the template to keep
+      // the markup a little cleaner
+      $template.remove();
+    }
+  });
+
+});
+
 // Scripts for pattern at ../source/patterns/01-elements/fields/09-tel-field.hbs
 
 $(function() {
@@ -58,9 +175,9 @@ $(window).load(function(){
     cssSelector: '.advisor-tile-actions',
     cssProperty: 'margin-top'
   });
-  $(window).resize(function(){
+  $(window).resize($.debounce(function(){
     $tiles.leveller();
-  });
+  }, 250));
 });
 
 // Scripts for pattern at ../source/patterns/02-components/carousel/01-carousel.hbs
@@ -162,53 +279,7 @@ $(function() {
   });
 
 
-// Scripts for pattern at ../source/patterns/02-components/masthead/02-masthead.hbs
-
-
-$(function(){
-
-  var $masthead = $('.masthead');
-  var $toggle   = $('.masthead-search-toggle');
-  var $fields   = $masthead.find('input, select, button');
-  var $types    = $('#search-types');
-  var $query    = $('#q');
-
-  var hideDelay = 2000;
-  var hideTimeout;
-
-  // When the toggle is clicked, make sure the masthead is in the "open search"
-  // state (so the search is visible but other elements are not)
-  $toggle.on('click', function (event) {
-    event.preventDefault();
-    $masthead.addClass('is-search-open');
-    $query.click().focus();
-  });
-
-  // When the search type is changed, automatically focus the query field
-  $types.on('change', function () {
-    $query.click().focus();
-  });
-
-  // With any of the form fields...
-  $fields.on({
-    // On focus, disable browser zoom and stop any hiding that may occur
-    'focus': function () {
-      $.mobile.zoom.disable(true);
-      clearTimeout(hideTimeout);
-    },
-    // On blur, wait the time of hideDelay before enabling zoom and hiding
-    'blur': function () {
-      hideTimeout = setTimeout(function () {
-        $.mobile.zoom.enable(true);
-        $masthead.removeClass('is-search-open');
-      },  hideDelay);
-    }
-  });
-
-});
-
-
-// Scripts for pattern at ../source/patterns/02-components/overflow-nav/01-overflow-nav.hbs
+// Scripts for pattern at ../source/patterns/02-components/main-nav/01-main-nav.hbs
 
 +function ($) {
   'use strict';
@@ -263,6 +334,52 @@ $(function() {
   $('.js-custom-nav').customNav();
 });
 
+// Scripts for pattern at ../source/patterns/02-components/masthead/02-masthead.hbs
+
+
+$(function(){
+
+  var $masthead = $('.masthead');
+  var $toggle   = $('.masthead-search-toggle');
+  var $fields   = $masthead.find('input, select, button');
+  var $types    = $('#search-types');
+  var $query    = $('#q');
+
+  var hideDelay = 2000;
+  var hideTimeout;
+
+  // When the toggle is clicked, make sure the masthead is in the "open search"
+  // state (so the search is visible but other elements are not)
+  $toggle.on('click', function (event) {
+    event.preventDefault();
+    $masthead.addClass('is-search-open');
+    $query.click().focus();
+  });
+
+  // When the search type is changed, automatically focus the query field
+  $types.on('change', function () {
+    $query.click().focus();
+  });
+
+  // With any of the form fields...
+  $fields.on({
+    // On focus, disable browser zoom and stop any hiding that may occur
+    'focus': function () {
+      $.mobile.zoom.disable(true);
+      clearTimeout(hideTimeout);
+    },
+    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    'blur': function () {
+      hideTimeout = setTimeout(function () {
+        $.mobile.zoom.enable(true);
+        $masthead.removeClass('is-search-open');
+      },  hideDelay);
+    }
+  });
+
+});
+
+
 // Scripts for pattern at ../source/patterns/02-components/quicklist/01-quicklist.hbs
 
 $(function(){
@@ -273,6 +390,7 @@ $(function(){
 
   function hideQuicklist () {
     $quicklist.removeClass('open');
+    $.mobile.zoom.enable(true);
   }
 
   $toggle.click(function (event) {
@@ -290,6 +408,7 @@ $(function(){
       }
     }
     else {
+      $.mobile.zoom.disable(true);
       $body.addClass('quicklist-open');
       $quicklist.addClass('open');
       $quicklist[0].offsetWidth;

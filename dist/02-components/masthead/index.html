@@ -74,7 +74,6 @@
       <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/ratings">Ratings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/stats">Stats</a></li>
@@ -88,10 +87,10 @@
       <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/main-nav">Main Nav</a></li>
       <li><a class="c4-nav__item c4-is-current" href="../../02-components/masthead">Masthead</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/modals">Modals</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/overflow-nav">Overflow Nav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
       <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
       <li><a class="c4-nav__item " href="../../02-components/progress-bars">Progress Bars</a></li>
@@ -186,8 +185,15 @@
 
   <a class="masthead-logo" href="">
     <picture class="picture-responsive">
-      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
-      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source
+        srcset="/images/logo.png, /images/logo-2x.png 2x"
+        media="(min-width: 994px)">
+      <!--[if IE 9]></video><![endif]-->
+      <img
+        srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+        src="/images/logo.png"
+        alt="Psychic Source - Life's possibilites. Revealed.">
     </picture>
   </a>
 
@@ -279,8 +285,15 @@
 
   &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
     &lt;picture class=&quot;picture-responsive&quot;&gt;
-      &lt;source srcset=&quot;/images/logo/ps-logo-tagline.png&quot; media=&quot;(min-width: 994px)&quot;&gt;
-      &lt;img srcset=&quot;/images/logo/ps-logo.png&quot; src=&quot;/images/logo/ps-logo.png&quot; alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;video style=&quot;display: none;&quot;&gt;&lt;![endif]--&gt;
+      &lt;source
+        srcset=&quot;/images/logo.png, /images/logo-2x.png 2x&quot;
+        media=&quot;(min-width: 994px)&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+      &lt;img
+        srcset=&quot;/images/logo-simple.png, /images/logo-simple-2x.png 2x&quot;
+        src=&quot;/images/logo.png&quot;
+        alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
     &lt;/picture&gt;
   &lt;/a&gt;
 
@@ -426,8 +439,15 @@ $(function(){
 
   <a class="masthead-logo" href="">
     <picture class="picture-responsive">
-      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
-      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source
+        srcset="/images/logo.png, /images/logo-2x.png 2x"
+        media="(min-width: 994px)">
+      <!--[if IE 9]></video><![endif]-->
+      <img
+        srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+        src="/images/logo.png"
+        alt="Psychic Source - Life's possibilites. Revealed.">
     </picture>
   </a>
 
@@ -532,8 +552,15 @@ $(function(){
 
   &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
     &lt;picture class=&quot;picture-responsive&quot;&gt;
-      &lt;source srcset=&quot;/images/logo/ps-logo-tagline.png&quot; media=&quot;(min-width: 994px)&quot;&gt;
-      &lt;img srcset=&quot;/images/logo/ps-logo.png&quot; src=&quot;/images/logo/ps-logo.png&quot; alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;video style=&quot;display: none;&quot;&gt;&lt;![endif]--&gt;
+      &lt;source
+        srcset=&quot;/images/logo.png, /images/logo-2x.png 2x&quot;
+        media=&quot;(min-width: 994px)&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+      &lt;img
+        srcset=&quot;/images/logo-simple.png, /images/logo-simple-2x.png 2x&quot;
+        src=&quot;/images/logo.png&quot;
+        alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
     &lt;/picture&gt;
   &lt;/a&gt;
 
@@ -647,8 +674,15 @@ $(function(){
 
   <a class="masthead-logo" href="">
     <picture class="picture-responsive">
-      <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
-      <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source
+        srcset="/images/logo.png, /images/logo-2x.png 2x"
+        media="(min-width: 994px)">
+      <!--[if IE 9]></video><![endif]-->
+      <img
+        srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+        src="/images/logo.png"
+        alt="Psychic Source - Life's possibilites. Revealed.">
     </picture>
   </a>
 
@@ -745,8 +779,15 @@ $(function(){
 
   &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
     &lt;picture class=&quot;picture-responsive&quot;&gt;
-      &lt;source srcset=&quot;/images/logo/ps-logo-tagline.png&quot; media=&quot;(min-width: 994px)&quot;&gt;
-      &lt;img srcset=&quot;/images/logo/ps-logo.png&quot; src=&quot;/images/logo/ps-logo.png&quot; alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;video style=&quot;display: none;&quot;&gt;&lt;![endif]--&gt;
+      &lt;source
+        srcset=&quot;/images/logo.png, /images/logo-2x.png 2x&quot;
+        media=&quot;(min-width: 994px)&quot;&gt;
+      &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+      &lt;img
+        srcset=&quot;/images/logo-simple.png, /images/logo-simple-2x.png 2x&quot;
+        src=&quot;/images/logo.png&quot;
+        alt=&quot;Psychic Source - Life&#39;s possibilites. Revealed.&quot;&gt;
     &lt;/picture&gt;
   &lt;/a&gt;
 
@@ -833,7 +874,7 @@ $(function(){
 
   <footer class="c4-footer">
     <p>
-      This page was generated Wednesday, February 25th, 2015, 4:14PM (PST).
+      This page was generated Thursday, March 5th, 2015, 12:04PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
