@@ -12,17 +12,19 @@ status: inprogress
 
 <script>
   $(function() {
-    $(document).on('show.bs.collapse', '[data-deemphasize]', function() {
-      var $element     = $(this);
-      var $leaveMeOpen = $element.find('.collapse');
-      var $parent      = $($element.data('parent'));
-      if ($parent) {
-        $parent.find('.collapse.in').not($leaveMeOpen).each(function() {
-          $(this).collapse('hide');
-        });
-        $parent.find('[data-deemphasize]').not($element).addClass('is-deemphasized');
-        $element.removeClass('is-deemphasized');
-      }
+    $('[data-deemphasize]').each(function() {
+      var $elem = $(this);
+      var $parent = $($elem.data('parent'));
+      var $myCollapse = $elem.find('.collapse');
+      $elem.on('show.bs.collapse', function() {
+        $parent.find('.collapse.in').not($myCollapse).collapse('hide');
+        $parent.find('[data-deemphasize]').not($elem).addClass('is-deemphasized');
+        $elem.removeClass('is-deemphasized');
+      });
+      $elem.on('click', '.js-dismiss-rating', function() {
+        $myCollapse.collapse('hide');
+        $parent.find('[data-deemphasize]').removeClass('is-deemphasized');
+      });
     });
   });
 </script>
