@@ -1,10 +1,10 @@
-<div class="eligible-reading">
+<div class="eligible-reading" data-parent="#eligible-readings" data-deemphasize="true">
   <div class="eligible-reading-summary">
     <div class="eligible-reading-advisor-photo">
       <img class="img-rounded" src="{{photo}}" alt="{{firstName}}">
     </div>
-    <div class="eligible-reading-main"> 
-      
+    <div class="eligible-reading-main">
+
       <p class="eligible-reading-advisor-name">{{firstName}} x{{ext}}</p>
       <p class="eligible-reading-date">{{date}}</p>
       <p class="eligible-reading-type">
@@ -17,8 +17,8 @@
       </p>
     </div>
   </div>
-  {{#if isEligible}}  
-    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" data-responsive="bio" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
+  {{#if isEligible}}
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
       Rate and Review
     </a>
     {{else}}
@@ -29,15 +29,15 @@
       <span class="stars stars-lg stars-control" data-target="#demo-rating">
         <input id="demo-rating" type="hidden" value="0" />
       </span>
-    </p>  
+    </p>
     <p>Once a review is posted on the website, you cannot edit it.</p>
     <div class="form-group u-margin-bottom">
       <textarea class="form-control" rows="5"></textarea>
     </div>
     <div class="arrange arrange-equal arrange-gutter">
       <div class="arrange-fill">
-        <button class="btn btn-shaded btn-block">Nevermind</button>
-      </div>  
+        <button class="btn btn-shaded btn-block js-dismiss-rating">Nevermind</button>
+      </div>
       <div class="arrange-fill">
         <button class="btn btn-primary btn-block">Submit</button>
       </div>
