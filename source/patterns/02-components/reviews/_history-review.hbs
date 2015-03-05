@@ -19,30 +19,29 @@
   <p class="review-content">
     {{review}}
   </p>
-  <p> 
-    {{#if note}}
-      <a href="#add-note-block-{{reviewID}}" data-toggle="collapse" class="btn btn-default btn-shaded collapsed">
-        See Your Reading Note
+  {{#if note}}
+    <h3 class="border-top">Your Reading Notes</h3>
+    <p>
+      {{note}}
+    </p>
+  {{/if}}
+  <div class="toggle-box">
+    <h3 class="toggle-box-heading">
+      <a href="#add-note-block-{{reviewID}}" data-toggle="collapse" class="toggle-box-parent collapsed arrow-down-after arrow-toggle">
+        {{#if note}}
+          Edit Your Reading note
+        {{else}}
+           Add a Reading Note
+         {{/if}} 
       </a>
-    {{else}}
-      <a href="#add-note-block-{{reviewID}}" data-toggle="collapse" class="btn btn-default btn-shaded collapsed">
-        Add a Reading Note
-      </a>
-    {{/if}}
-  </p>
-  <div id="add-note-block-{{reviewID}}" class="collapse box box-lighter box-teal">
-    <p>Your reading notes will be saved in your Review History for up to 90 days. You can edit them at anytime.</p>
-    <div class="form-group u-margin-bottom">
-      <textarea class="form-control" rows="5" name="reading-note">{{#if note}}{{note}}{{/if}}
-      </textarea>
-    </div>
-    <div class="arrange arrange-equal arrange-gutter">
-      <div class="arrange-fill">
-        <button class="btn btn-shaded btn-block js-dismiss-rating">Nevermind</button>
+    </h3>
+    <div class="toggle-box-body collapse" id="add-note-block-{{reviewID}}">
+      <p>Your reading notes will be saved in your Review History for up to 90 days. You can edit them at anytime.</p>
+      <div class="form-group u-margin-bottom">
+        <textarea class="form-control" rows="5" name="reading-note">{{#if note}}{{note}}{{/if}}</textarea>
       </div>
-      <div class="arrange-fill">
-        <button class="btn btn-primary btn-block">Edit Note</button>
-      </div>
+      <p><button class="btn btn-primary">{{#if note}}Edit{{else}}Add{{/if}}  Note</button></p>
     </div>
   </div>
 </div>
+
