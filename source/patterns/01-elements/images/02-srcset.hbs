@@ -13,11 +13,11 @@ fullWidth: true
 
 <img
   class="demo-responsive-img" {{! for demo purposes }}
-  src="http://placehold.it/320x240&text=Small" {{! fallback image }}
-  srcset="http://placehold.it/2048x1536&text=Extra%20Large 2048w, {{! high-res }}
-          http://placehold.it/1024x768&text=Large 1024w,
-          http://placehold.it/640x480&text=Medium 640w,
-          http://placehold.it/320x240&text=Small 320w"
+  src="//placehold.it/320x240&text=Small" {{! fallback image }}
+  srcset="//placehold.it/2048x1536&text=Extra%20Large 2048w, {{! high-res }}
+          //placehold.it/1024x768&text=Large 1024w,
+          //placehold.it/640x480&text=Medium 640w,
+          //placehold.it/320x240&text=Small 320w"
   sizes="(min-width: 71.25em) 1024px, {{! cap out at 1024px past this point }}
          (min-width: 48em) 75vw, {{! ~ 75% width past this size }}
          100vw" {{! otherwise, it will take up 100% of the viewport }}
