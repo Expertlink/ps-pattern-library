@@ -18,25 +18,25 @@
     </div>
   </div>
   {{#if isEligible}}
-    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="eligible-reading-input-parent btn btn-primary btn-block collapsed">
+    <a href="#add-review-block-{{readingID}}" data-toggle="collapse" class="eligible-reading-input-parent btn btn-primary collapsed">
       Rate and Review
     </a>
     {{else}}
-      <p>Because this reading lasted for less than 3 minutes, it is not eligible for review.</p>
+      <p class="eligible-reading-input-parent"><small>This reading lasted for less than 3 minutes so it is not eligible for review.</small></p>
   {{/if}}
   <div id="add-review-block-{{readingID}}" class="collapse box box-lighter box-teal add-review">
     <p class="eligible-reading-rate text-center u-margin-top">
-      <span class="stars stars-lg stars-control" data-target="#demo-rating">
+      <span class="stars stars-xl stars-control" data-target="#demo-rating">
         <input id="demo-rating" type="hidden" value="0" />
       </span>
     </p>
     <p>Once a review is posted on the website, you cannot edit it.</p>
     <div class="form-group u-margin-bottom">
-      <textarea class="form-control" rows="5"></textarea>
+      <textarea class="form-control" rows="5" name="reading-review"></textarea>
     </div>
     <div class="arrange arrange-equal arrange-gutter">
       <div class="arrange-fill">
-        <button class="btn btn-shaded btn-block js-dismiss-rating">Nevermind</button>
+        <button class="btn btn-shaded btn-default btn-block js-dismiss-rating">Nevermind</button>
       </div>
       <div class="arrange-fill">
         <button class="btn btn-primary btn-block">Submit</button>

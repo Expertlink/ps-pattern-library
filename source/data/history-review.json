@@ -1,0 +1,118 @@
+{
+  "date": "01/01/2015",
+  "reviewed": "username",
+  "ext": "7777",
+  "call": true,
+  "chat": false,
+  "rating": 4.5,
+  "review": "I really appreciate your highly detailed insight and advice - thank you!!!",
+  "reviewID": "1",
+  "featured": false,
+  "note" : "Seemed really confident in predictions.",
+  "list": [
+    {
+      "date": "05/14/2013",
+      "reviewed": "Saul Goodman",
+      "ext": "1245",
+      "call": true,
+      "chat": false,
+      "rating": 4.5,
+      "review" : "First time speaking with Saul and definitely felt I was speaking with an old friend. He is highly accurate and was spot on. Some things does not make sense at the moment but I am sure it will all fall in place as she said. Now waiting for prediction to pass and will definitely speak to Saul again. Thank you Saul! Blessings!",
+      "reviewID": "2",
+      "featured": true,
+      "note" : "Call him again after St Patrick's Day party."
+    },
+    {
+      "date": "01/20/2015",
+      "reviewed": "Zaphod Beeblebrox",
+      "ext": "1205",
+      "call": true,
+      "chat": false,
+      "rating": 5,
+      "review" : "What can I even say about Zaphod Beeblebrox... She is quite amazing. I have to say, and I'm sure she picks up that every time I call I'm skeptical. As much as I beliieve, I also don't believe. But this man has told me some crazy things that have come to fruition!! My situation is quite interesting, and I can't imagine very easy for anyone to read. But, Zaphod Beeblebroxe somehow does it. I have to say the very last prediction she made to me I actually shook my head and thought no way that's never gonna happen. Well, I spoke to him on a Monday and it happened that Friday. I was so shocked that i actually felt ill for about 2 days!! Anyway, Zaphod Beeblebrox you're awesome and I LOVE speaking to you and hearing what you have to say... Have an awesome day!!! P.s.... I don't usually leave reviews.. :)",
+      "reviewID": "3"
+    },
+    {
+      "date": "01/15/2015",
+      "reviewed": "Liz Lemon",
+      "ext": "1845",
+      "call": false,
+      "chat": true,
+      "rating": 4.5,
+      "review" : "waiting for prediction to happen before posting my testimony.",
+      "reviewID": "4",
+      "note" : "I hope this doesn't happen!"
+    },
+    {
+      "date": "01/13/2015",
+      "reviewed": "The Amazing Gusto",
+      "ext": "1895",
+      "call": false,
+      "chat": true,
+      "rating": 3.5,
+      "review" : "This is my third reading with Amazing Gusto and it will not be my last. She always remembers me and our prior readings. I was feeling empty and a little out of sorts, Really did not know which way to turn. Within 10 minutes of our last read she had put my heart and mind at ease. Amazing Gusto is understanding and very compassionate. She truly does see things and tells you exactly as she sees everything good or bad. One of his predictions came to pass and she really hit the nail on the head even with the two delays. Once again she told me things that I would only know. She has such a gentle and soothing voice and really takes an interest in your situation. Amazing Gusto is truly happy when your predictions come to fruition. I am praying that the next few major predictions happen exactly as she does see it. I ended our call with a lighter heart and a better frame of mind. I will update and will most definitely be calling Mazie again. The only person that I was ever able to talk to about everything was my mom who has passed away. I have found the next best to my mom. Amazing Gusto, you are a treasured angel and I thank you from the bottom of my heart. I will never speak to anyone but him, feels like I have known him all my life. God Bless You!!!!!",
+      "reviewID": "5"
+    },
+    {
+      "date": "01/08/2015",
+      "reviewed": "Mazie",
+      "ext": "3045",
+      "call": false,
+      "chat": true,
+      "rating": 5,
+      "review" : "Mazie, my sister you are one of the very special soul that touched my heart through your kindness. My life and forthcoming would not be the same without your guidance and love. You’re genuine and you care about your clients, there is no better human being that empathize with others and help them in their tough times and intern no better blessing. You have been accurate with your readings and I would never read with anyone other than you. I just wish you to come online a bit more for those who truly seek your help. Best Wishes",
+      "reviewID": "6"
+    },
+    {
+      "date": "01/07/2015",
+      "reviewed": "Jet Jaguar",
+      "ext": "8905",
+      "call": false,
+      "chat": true,
+      "rating": 5,
+      "review" : "This was my first reading and Jet Jaguar was very compassionate and super accurate. The real deal and well worth the wait! He even knew about an upcoming dental appointment which is my only health appointment left for this month. He also knew the exact state for 2 upcoming trips as well as one I took in November. I look forward to updating Jet Jaguar and all of you when his predictions come to pass. Thank you for such a lovely connection and I look forward to our next chat. Johanna",
+      "reviewID": "6"
+
+    },
+    {
+      "date": "12/23/2014",
+      "reviewed": "CatFancy",
+      "ext": "1111",
+      "call": true,
+      "chat": false,
+      "rating": 3.5,
+      "review" : "Am not sure.",
+      "reviewID": "7"
+    },
+    {
+      "date": "12/10/2014",
+      "reviewed": "Uncle Jesse",
+      "ext": "7989",
+      "call": true,
+      "chat": false,
+      "rating": 4.5,
+      "review" : "Thank you again Uncle Jesse! You are my blessing! I can feel with my heart that what you see is true! Hugs!!! *)",
+      "reviewID": "8"
+    },
+    {
+      "date": "12/05/2014",
+      "reviewed": "Ricky",
+      "ext": "9989",
+      "call": true,
+      "chat": false,
+      "rating": 5,
+      "review" : "Always fast and insightful!",
+      "reviewID": "9"
+    },
+    {
+      "date": "12/01/2014",
+      "reviewed": "Mazie",
+      "ext": "3045",
+      "call": true,
+      "chat": false,
+      "rating": 5,
+      "review" : "She was direct but very comforting. I will chat with her again! Also, very accurate!",
+      "reviewID": "10"
+    }
+  ]
+}
