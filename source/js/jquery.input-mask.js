@@ -361,7 +361,7 @@
   };
 
   InputMask.ExpirationDateMask = function(element, options) {
-    this.charPatterns = [/[01]/,/[0-9]/,/[012]/,/[0-9]/];
+    this.charPatterns = [/[01]/, /[0-9]/, /[0-4]/, /[0-9]/];
 
     this.fetchValue = function() {
       // Strip out `/`s from value

@@ -5,7 +5,7 @@ description: step one of the signup form (account).
 
 <form role="form">
   {{> forms/offer-select }}
-  
+
   <div class="form-group arrange arrange-equal arrange-gutter">
     <div class="form-group form-group-required arrange-fit">
       <label class="control-label" for="signupFirstName">First name</label>
@@ -13,7 +13,7 @@ description: step one of the signup form (account).
     </div>
     <div class="form-group form-group-required arrange-fit">
       <label class="control-label" for="signupLastName">Last name</label>
-      <input type="text" class="form-control" id="signupLastName" />    
+      <input type="text" class="form-control" id="signupLastName" />
     </div>
   </div>
   <div class="form-group form-group-required">
@@ -50,7 +50,7 @@ description: step one of the signup form (account).
   </div>
   <div class="form-group form-group-required">
     <label class="control-label" for="signupDOB">Date of birth</label>
-    <input type="date" class="form-control" id="signupDOB" />
+    {{> fields/date-field }}
   </div>
   <div class="form-group">
     <button class="btn btn-primary">Next step <span class="arrow-right"></span></button>
