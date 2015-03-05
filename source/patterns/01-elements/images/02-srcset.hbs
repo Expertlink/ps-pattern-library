@@ -1,0 +1,24 @@
+---
+name: Multiple Resolutions
+description: >
+  We can define multiple resolutions of an image using a good ol' `<img>` tag
+  plus the `srcset` attribute. Where possible, providing a `sizes` attribute as
+  well will give the browser even more info for image selection.
+  More info about `<img srcset>` [here](http://blog.cloudfour.com/responsive-images-audits/)
+  and [here](http://ericportis.com/posts/2014/srcset-sizes/).
+  Relies on [Picturefill](http://scottjehl.github.io/picturefill/) for
+  [certain browsers](http://caniuse.com/#feat=picture).
+fullWidth: true
+---
+
+<img
+  class="demo-responsive-img" {{! for demo purposes }}
+  src="http://placehold.it/320x240&text=Small" {{! fallback image }}
+  srcset="http://placehold.it/2048x1536&text=Extra%20Large 2048w, {{! high-res }}
+          http://placehold.it/1024x768&text=Large 1024w,
+          http://placehold.it/640x480&text=Medium 640w,
+          http://placehold.it/320x240&text=Small 320w"
+  sizes="(min-width: 71.25em) 1024px, {{! cap out at 1024px past this point }}
+         (min-width: 48em) 75vw, {{! ~ 75% width past this size }}
+         100vw" {{! otherwise, it will take up 100% of the viewport }}
+  alt="srcset and sizes example">

@@ -1,0 +1,27 @@
+---
+name: Art Direction
+description: >
+  If multiple versions of an image are desired _not_ simply for resolution
+  switching but also for art direction, use a `<picture>` element with
+  multiple `<source>` elements therein.
+  More info [here](http://blog.cloudfour.com/a-framework-for-discussing-responsive-images-solutions/#artdirection)
+  and [here](http://www.smashingmagazine.com/2014/05/14/responsive-images-done-right-guide-picture-srcset/).
+  Relies on [Picturefill](http://scottjehl.github.io/picturefill/) for
+  [certain browsers](http://caniuse.com/#feat=picture).
+---
+
+<picture class="demo-responsive-img">
+  {{! use this image for breakpoints over 40em }}
+  <source
+    media="(min-width: 40em)"
+    srcset="/images/fpo/business-2x.jpg 1920w,
+            /images/fpo/business.jpg 960w"
+    sizes="960px"> {{! cap these out at 960px wide }}
+  {{! otherwise, use this one }}
+  <source
+    srcset="/images/fpo/business-crop-2x.jpg 640w,
+            /images/fpo/business-crop.jpg 320w"
+    sizes="100vw"> {{! fill viewport width }}
+  {{! fallback image }}
+  <img src="/images/fpo/business.jpg" alt="stock photos FTW">
+</picture>
