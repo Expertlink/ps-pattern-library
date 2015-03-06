@@ -28,6 +28,19 @@ status: inprogress
 <script>
 $(function() {
   $('[data-toggle="collapse"][data-responsive="bio"]').responsiveCollapse();
+
+  $('.js-fave-btn').each(function(){
+    var $element = $(this);
+    var $textElement = $element.find('.js-fave-btn-text');
+    var defaultText = $textElement.html();
+    var favoritedText = $element.data('favorited-text');
+
+    $element.on('click.vse.faveBtn', function () {
+      $textElement.html(
+        $element.hasClass('active') ? defaultText : favoritedText
+      );
+    });
+  });
 });
 </script>
 {{> pages/_footer }}
