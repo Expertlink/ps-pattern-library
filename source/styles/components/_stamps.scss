@@ -1,0 +1,40 @@
+.with-stamp {
+  display: inline-block;
+  position: relative;
+}
+
+%stamp-base {
+  position: absolute;
+  @include text-hide();
+}
+
+.stamp-showcase {
+  @extend %stamp-base;
+
+  bottom: -6px;
+  left: -20px;
+
+  @include svg-sprite('showcase');
+
+  @media (max-width: $screen-sm-max) {
+    bottom: -4px;
+    left: -7px;
+    transform-origin: bottom left;
+    transform: scale(0.5);
+  }
+}
+
+.stamp-staffpick {
+  @extend %stamp-base;
+
+  left: -20px;
+  top: -10px;
+
+  @include svg-sprite('staffpick');
+
+  @media (max-width: $screen-sm-max) {
+    left: -10px;
+    transform-origin: top left;
+    transform: scale(0.64);
+  }
+}
