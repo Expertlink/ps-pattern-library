@@ -209,82 +209,42 @@ $zindex-main-nav: 500 !default;
 
 .special-offer {
   background-color: $red;
-  display: inline-block;
-  text-align: center;
-  width: 290px;
-
-  > h1 {
+  h1 {
     font-size: 2.6em;
-    margin: 0;
-    padding: 10px 0;
     text-shadow: black 2px 2px;
-
   }
-
-  > p {
-    background-color: #8a323a;
+  p {
+    background-color: $red-dark;
     font-size: 1.2em;
-    padding: 5px 0 0 0;
-
-    > span {
+    span {
       font-size: 3em;
       font-weight: bold;
-      display: block;
     }
-  }
-
-    > a {
-      margin-bottom: 10px;
   }
 }
 
 .special-offer-add {
-  display: inline-block;
-  text-align: center;
-  width: 290px;
-  vertical-align: top;
-  padding: 1em;
-  overflow: hidden;
-
-    &:before {
-    content: "+";
-    display: block;
-    font-size: 4em;
-    font-weight: bold;
-    float: left;
-    height: 200px;
-    margin: 40px 0 -37px 0;
-  }
-
-    > a {
-      color: #fff;
-    }
-
-    > img {
-      padding-right: 2em;
-    }
+  font-size: 4em;
+  font-weight: bold;
+  padding-top: 1em;
 }
 
 .our-psychics-readings {
   font-size: (14px / 13px * 1em);
   text-align: center;
-
-  > a {
+  a {
     color: #fff;
     display: inline-block;
     padding: 10px 0;
     text-decoration: none;
     width: 310px;
-
-    > h4 {
-        color: $tan-light;
+    h4 {
+      color: $tan-light;
     }
-
     p {
       span {
         font-size: 1.5em;
         text-decoration: underline;
-
         &:hover {
           color: $red;
         }
@@ -293,41 +253,35 @@ $zindex-main-nav: 500 !default;
   }
 }
 
-.link-only-dropdown {
+.nav-section-prose {
   display: inline-block;
   float:left;
   font-size: (14px / 13px * 1em);
   height: 260px;
   text-align: left;
-
-  > h4 {
+  h4 {
     color: $tan-light;
   }
-
-  > p {
+  p {
     font-size: .9em;
   }
-
-  > ul {
+  ul {
     font-size: .9em;
     list-style: none;
     margin: 20px 0 40px 0;
     padding: 0;
-
-    > li {
-    > a {
-        color: #fff;
-        display: block;
-        font-weight: bold;
-        padding: 5px 15px;
-
-        &:hover{
-          color: $red;
-          text-decoration: none;
-          background-color: $tan;
-          }
-
-      > h4 {
+    li {
+    a {
+      color: #fff;
+      display: block;
+      font-weight: bold;
+      padding: 5px 15px;
+      &:hover {
+        color: $red;
+        text-decoration: none;
+        background-color: $tan;
+      }
+      h4 {
         color: $tan-light;
         margin: 0;
         font-size: 1.1em;
