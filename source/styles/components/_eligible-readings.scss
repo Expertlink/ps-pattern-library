@@ -8,6 +8,10 @@
   background: white;
   padding: ($padding-base-vertical * 2) $line-height-computed;
   position: relative;
+  &.is-deemphasized .btn-primary {
+    background: $gray-light;
+    border-color: $gray;
+  }
 }
 .eligible-reading-summary {
   display: table;
