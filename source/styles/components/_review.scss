@@ -92,9 +92,3 @@ $review-padding: ($line-height-computed * (2/3)) !default;
     }
   }
 }
-
-.reviews-guide dd {
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 1px dotted $gray-lighter; 
-}

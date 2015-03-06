@@ -1,11 +1,8 @@
 ---
+description: Single review, repeated in a review list.
 fullWidth: true
 status: inprogress
 ---
-
-<div class="reviews">
-  {{> reviews/_review-history-summary}}
-  {{#each history-review.list}}
-    {{> reviews/_history-review}}
-  {{/each}}
-</div>
+{{#with history-review}}
+  {{> reviews/_history-review }}
+{{/with}}

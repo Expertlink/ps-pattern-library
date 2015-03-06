@@ -2,12 +2,6 @@
   background: white;
   margin: 0 ($line-height-computed * -1) ($line-height-computed * -0.5);
   width: calc(100% + #{$line-height-computed * 2});
-  @media (min-width: $screen-sm-min)  {
-    &,
-    .eligible-reading:last-of-type {
-      border-radius: 0 0 $border-radius-large $border-radius-large;
-    }
-  }
 }
 .eligible-reading {
   border-top: 1px solid $gray-lighter;
@@ -58,7 +52,7 @@
   }
 }
 .add-review {
-  margin-top: $padding-base-horizontal;
+  margin-top: ($padding-base-vertical * 2);
   // on narrow screens, the form replaces the triggering button
   @media (max-width: $screen-xs-max)  {
     margin-top: -2.6em;
