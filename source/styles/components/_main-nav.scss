@@ -229,15 +229,10 @@ $zindex-main-nav: 500 !default;
   padding-top: 1em;
 }
 
-.our-psychics-readings {
-  font-size: (14px / 13px * 1em);
-  text-align: center;
+.nav-psychics {
   a {
     color: #fff;
-    display: inline-block;
-    padding: 10px 0;
     text-decoration: none;
-    width: 310px;
     h4 {
       color: $tan-light;
     }
@@ -299,9 +294,6 @@ $zindex-main-nav: 500 !default;
   padding: 15px;
 }
 
-.link-only-border {
-  border-left: 1px solid $tan-dark;
-}
 
 .link-only-divider {
   border-bottom: 1px dotted #fff;
