@@ -1,0 +1,34 @@
+.return-call-line {
+  span.stat {
+    margin-top: .4em;
+  }
+  a {
+    margin-top: .5em;
+  }
+  a.close {
+    position: absolute;
+    right: 0;
+    top: .5em;
+    @media (max-width: $screen-md-min) {
+      right: -28%;
+      top: 0;
+    }
+    @media (max-width: $screen-sm-min) {
+      margin-right: 1em;
+    }
+  }
+}
+
+.return-call-settings {
+  @media (max-width: $screen-sm-max) {
+    div.box {
+      border-bottom: solid 1px #ccc;
+      border-radius: 0;
+      margin-left: 0;
+      padding-left: 0;
+      padding-bottom: 1.5em;
+    }
+  }
+}
+
+
