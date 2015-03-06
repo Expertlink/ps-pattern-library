@@ -222,9 +222,14 @@ $zindex-main-nav: 500 !default;
 }
 
 .nav-section-offer-add {
-  font-size: 4em;
-  font-weight: bold;
-  padding-top: 1em;
+  &:before { 
+    content: '+';
+    position: absolute;
+    font-size: 4em;
+    font-weight: bold;
+    left: 0;
+    padding-top: 1em;
+  }
 }
 
 .nav-section-psychics {
