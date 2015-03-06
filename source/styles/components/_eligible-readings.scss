@@ -22,6 +22,8 @@
   vertical-align: top;
 }
 .eligible-reading-advisor-photo {
+  // the text next to this photo will almost always be 3 lines, 
+  // 50px is large enough to be clear and balances the text well.
    width: 50px;
 }
 .eligible-reading-main {
