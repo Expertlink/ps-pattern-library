@@ -207,7 +207,7 @@ $zindex-main-nav: 500 !default;
 
 // TODO: These need some cleanup, they're pretty messy.
 
-.special-offer {
+.nav-offer {
   background-color: $red;
   h1 {
     font-size: 2.6em;
@@ -223,7 +223,7 @@ $zindex-main-nav: 500 !default;
   }
 }
 
-.special-offer-add {
+.nav-offer-add {
   font-size: 4em;
   font-weight: bold;
   padding-top: 1em;
