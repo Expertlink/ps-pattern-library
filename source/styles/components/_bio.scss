@@ -70,13 +70,6 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 }
 
 .bio-summary-fave-btn {
-  &.active {
-    background-color: #fff;
-    border-color: $pink;
-    box-shadow: inset 0 0 0 1px $pink;
-    color: $pink;
-  }
-
   @media (min-width: $screen-md-min) {
     position: absolute;
     right: $bio-padding;
