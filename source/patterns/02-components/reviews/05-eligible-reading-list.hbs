@@ -1,0 +1,48 @@
+---
+description: >
+  List of readings, eligible for review. Behavior:
+    * Tapping on an eligible reading's `Rate and Review` button will expand the rating form for that reading and collapse any other open rating form
+    * Opening a rating form will add an `is-deemphasized` class to other readings (opacity 50%)
+    * Tapping on the `Nevermind` button will re-collapse the form and remove the opacity de-emphasis from other elements.
+    * We know that the behavior on the tap of `Submit` will need to be implemented based on integration needs, so we've opted not to implement "fake" behavior for now.
+
+status: inprogress
+---
+<p>Only readings that lasted <strong>3 minutes or longer</strong> are eligible for review. You have up to <strong>3 months</strong> to rate and review your reading.</p>
+<div class="eligible-readings" id="eligible-readings">
+  {{#withFirst eligible-readings.list 6}}
+    {{> reviews/_eligible-reading }}
+  {{/withFirst}}
+</div>
+
+<script>
+  $(function() {
+    $('[data-deemphasize]').each(function() {
+      var $elem       = $(this);
+      // Only one rating-form per parent can be open
+      // This is a stripped-down version of Bootstrap's accordion
+      var $parent     = $($elem.data('parent'));
+      var $myCollapse = $elem.find('.collapse');
+      if ($parent) {
+        $elem.on('show.bs.collapse', function() {
+          // Whenever I am shown, close all of the other open
+          // collapses under my parent
+          $parent.find('.collapse.in').not($myCollapse).collapse('hide');
+          // "Deemphasize" all other rating lines
+          $parent.find('[data-deemphasize]').not($elem).addClass('is-deemphasized');
+          // Except not me
+          $elem.removeClass('is-deemphasized');
+        });
+        // For prototyping, both buttons in the rating form have the
+        // `.js-submit-rating` class. Both will simply hide the form
+        // via collapse and remove the deemphasis "focus"
+        $elem.on('click', '.js-dismiss-rating', function() {
+          // Hide me and remove deemphasis from everyone
+          $myCollapse.collapse('hide');
+          $parent.find('[data-deemphasize]').removeClass('is-deemphasized');
+        });
+      }
+    });
+  });
+</script>
+

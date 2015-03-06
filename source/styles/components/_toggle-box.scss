@@ -1,0 +1,52 @@
+$toggle-box-padding-horizontal: $padding-base-horizontal !default;
+$toggle-box-padding-vertical: ($padding-base-vertical + 2px) !default;
+
+.toggle-box {
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-large;
+  list-style: none;
+  margin-bottom: ($line-height-computed / 1.5);
+  overflow: hidden;
+  padding-left: 0;
+  position: relative;
+}
+
+
+.toggle-box-heading {
+  font: inherit;
+  margin: 0 0 -1px 0;
+}
+.toggle-box-parent {
+  display: block;
+  padding: $toggle-box-padding-vertical $toggle-box-padding-horizontal;
+  background-color: lighten($gray-lighter, 10%);
+  background-image: linear-gradient(
+    to bottom,
+    lighten($gray-lighter, 15%),
+    lighten($gray-lighter, 10%)
+  );
+  &, 
+  &:hover,
+  &:focus {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+  &:after {
+    display: block;
+    content: "-";
+    float: right;
+    font-weight: bold;
+  } 
+  &.collapsed:after {
+    content: "+";
+  }
+}
+
+
+.toggle-box-body {
+  background-color: #fff;
+  margin: 1px 0 0;
+  padding: $toggle-box-padding-vertical $toggle-box-padding-horizontal;
+  border-top: 1px solid $gray-lighter;
+}
+

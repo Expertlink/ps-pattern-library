@@ -1,0 +1,23 @@
+<div class="review" id="review{{reviewID}}">
+  <p class="review-meta">
+    {{#if featured}}
+      <strong class="u-block">This is a Featured Review!</strong>
+    {{/if}}
+    <span class="review-date">{{date}}</span>
+    <span class="hidden-xs"> with </span>
+    <span class="reviewed"><a href="/pages/advisor-bio/01-advisor-bio.html">{{reviewed}} x{{ext}}</a></span>
+    <span class="review-stars stars stars-{{replace rating "." "-"}}"><span class="sr-only">{{{formatFraction rating}}} stars</span></span>
+    <span class="review-type">
+      {{#if call}}
+        Phone Reading
+      {{/if}}
+      {{#if chat}}
+        Chat Reading
+      {{/if}}
+    </span>
+  </p>
+  <p class="review-content">
+    {{review}}
+  </p>
+</div>
+

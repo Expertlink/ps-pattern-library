@@ -78,6 +78,11 @@ $star-rating-step: .5 !default;
   @include star-size(22px);
 }
 
+.stars-xl {
+  @include star-size(40px);
+}
+
+
 // = Editable variation
 
 .stars-control {

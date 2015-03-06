@@ -21,6 +21,11 @@
   margin-left: 1.6em;
 }
 
+
+.reviews-guide {
+  margin-bottom: 1em;
+}
+
 .account-unified-xs {
   @media (max-width: $screen-xs-max)  {
     padding-left: ($grid-gutter-width / 2);
@@ -66,3 +71,4 @@
     }
   }
 }
+

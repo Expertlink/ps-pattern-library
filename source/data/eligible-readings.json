@@ -1,0 +1,72 @@
+{
+  "firstName": "Mystery Reader",
+  "ext": "7777",
+  "photo": "/images/fpo/7777-sml.jpg",
+  "date": "01/01/2015",
+  "call": true,
+  "chat": false,
+  "readingID" : "100",
+  "isEligible" : true,
+  "list": [
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "date": "02/11/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "1",
+      "isEligible" : true
+    },
+    {
+      "firstName": "Saul Goodman",
+      "ext": "7777",
+      "photo": "/images/fpo/saul.jpg",
+      "date": "02/01/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "2",
+      "isEligible" : false
+    },
+    {
+      "firstName": "Zaphod Beeblebrox",
+      "ext": "1456",
+      "photo": "http://placeimg.com/164/216/animals",
+      "date": "01/21/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "3",
+      "isEligible" : true
+    },
+    {
+      "firstName": "Uncle Jesse",
+      "ext": "7777",
+      "photo": "/images/fpo/jesse.jpg",
+      "date": "01/07/2015",
+      "call": false,
+      "chat": true,
+      "readingID" : "4",
+      "isEligible" : false
+    },
+    {
+      "firstName": "The Amazing Gusto",
+      "ext": "8888",
+      "photo": "/images/fpo/gusto.jpg",
+      "date": "01/02/2015",
+      "call": false,
+      "chat": true,
+      "readingID" : "5",
+      "isEligible" : true
+    },
+    {
+      "firstName": "Mystery Reader",
+      "ext": "7777",
+      "photo": "/images/fpo/7777-sml.jpg",
+      "date": "01/01/2015",
+      "call": true,
+      "chat": false,
+      "readingID" : "6",
+      "isEligible" : true
+    }
+  ]
+}
