@@ -16,12 +16,13 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 .review-meta {
+  // provides space for stars on small screens
   padding-right: 80px;
 }
 .reviewer, 
 .review-date,
 .reviewed {
-  font-weight: 800;
+  font-weight: bold;
   white-space: nowrap;
 }
 .review-date, 

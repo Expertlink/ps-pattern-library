@@ -12,6 +12,7 @@
 .eligible-reading-summary {
   display: table;
   @media (min-width: $screen-sm-min)  {
+    // provides space for rate and review button or ineligible text
     margin-right: 13em;
   }
 }
@@ -44,6 +45,7 @@
   display: block;
   margin-top: ($padding-base-vertical * 2);
   @media (min-width: $screen-sm-min)  {
+    // width based on button label
     width: 12em;
     position: absolute;
     top: ($padding-base-vertical * 2);
