@@ -11,16 +11,77 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 .bio-summary {
   padding-bottom: $bio-padding;
   padding-top: $bio-padding;
+  position: relative;
+  @include clearfix();
+
+  @media (min-width: $screen-md-min) {
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius-large;
+    box-shadow: 0 0 8px $gray-lighter;
+    margin-bottom: $bio-padding;
+    padding: $bio-padding;
+  }
 }
 
-.bio-summary-photo {
+.bio-summary-object,
+.bio-summary-body {
+  @media (min-width: $screen-md-min) {
+    float: left;
+  }
+}
+
+.bio-summary-object {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 50%;
   width: 175px;
+
+  @media (min-width: $screen-md-min) {
+    max-width: 100%;
+    padding-right: $bio-padding;
+    width: percentage(4/12);
+  }
+}
+
+.bio-summary-body {
+  @media (min-width: $screen-md-min) {
+    padding-left: ($bio-padding / 2);
+    padding-right: ($bio-padding / 2);
+    width: percentage(8/12);
+  }
+}
+
+.bio-summary-info {
+  margin-bottom: $bio-padding;
+  margin-top: $bio-padding;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: ($bio-padding / 2);
+  }
 }
 
 .bio-summary-heading {
   margin-bottom: ($line-height-computed / 3);
   margin-top: 0;
+
+  @media (min-width: $screen-md-min) {
+    padding-right: 130px; // clearance for favorite button
+  }
+}
+
+.bio-summary-fave-btn {
+  &.active {
+    background-color: #fff;
+    border-color: $pink;
+    box-shadow: inset 0 0 0 1px $pink;
+    color: $pink;
+  }
+
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+    right: $bio-padding;
+    top: $bio-padding;
+  }
 }
 
 .bio-summary-av {
@@ -29,12 +90,22 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   border-width: 1px 0;
   margin-left: ($bio-padding / -1);
   margin-right: ($bio-padding / -1);
+  margin-top: $bio-padding;
   padding-bottom: ($line-height-computed / 3);
   padding-top: ($line-height-computed / 3);
 
   .bio-summary-fave-btn + & {
-    padding-top: ($line-height-computed);
-    margin-top: (($padding-base-vertical * 2 + $line-height-computed) / -2);
+    @media (max-width: $screen-sm-max) {
+      padding-top: ($line-height-computed);
+      margin-top: (($padding-base-vertical * 2 + $line-height-computed) / -2);
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding-left: ($bio-padding * 1);
+    padding-right: ($bio-padding * 1);
+    margin-left: ($bio-padding * -1.5);
+    margin-right: ($bio-padding * -1.5);
   }
 }
 
