@@ -201,13 +201,14 @@ $zindex-main-nav: 500 !default;
   position: absolute;
   right: $grid-gutter-width;
   top: 100%;
+  h2, h3 {
+    color: $tan-light;
+  }
 }
 
 //= specific dropdown section content
 
-// TODO: These need some cleanup, they're pretty messy.
-
-.nav-offer {
+.nav-section-offer {
   background-color: $red;
   h1 {
     font-size: 2.6em;
@@ -223,19 +224,16 @@ $zindex-main-nav: 500 !default;
   }
 }
 
-.nav-offer-add {
+.nav-section-offer-add {
   font-size: 4em;
   font-weight: bold;
   padding-top: 1em;
 }
 
-.nav-psychics {
+.nav-section-psychics {
   a {
     color: #fff;
     text-decoration: none;
-  }
-  h4 {
-      color: $tan-light;
   }
   span {
       font-size: 1.5em;
@@ -246,16 +244,18 @@ $zindex-main-nav: 500 !default;
   }
 }
 
-.nav-section-prose {
-  h4 {
-    color: $tan-light;
+.nav-section-offer-heading {
+  h2, p { color: white;
   }
+}
+
+.nav-section-prose {
   p {
     font-size: .9em;
   }
 }
   
- .nav-section-links { 
+.nav-section-links { 
   ul {
     font-size: .9em;
     list-style: none;
@@ -273,19 +273,11 @@ $zindex-main-nav: 500 !default;
       background-color: $tan;
     }
   }
-  h4 {
-    color: $tan-light;
+  h2 {
     margin: 0;
     font-size: 1.1em;
     &:hover {
       color: $red;
     }
   }
-}
-
-
-.link-only-divider {
-  border-bottom: 1px dotted #fff;
-  height: 15px;
-  margin: 0 0 15px 15px;
 }
