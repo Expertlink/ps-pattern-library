@@ -9,40 +9,34 @@ description: >
 status: inprogress
 ---
 <p>Only readings that lasted <strong>3 minutes or longer</strong> are eligible for review. You have up to <strong>3 months</strong> to rate and review your reading.</p>
-<div class="eligible-readings" id="eligible-readings">
+<div class="eligible-readings" id="eligible-readings" data-deemphasis="ratings">
   {{#withFirst eligible-readings.list 6}}
     {{> reviews/_eligible-reading }}
   {{/withFirst}}
 </div>
 
 <script>
-  $(function() {
-    $('[data-deemphasize]').each(function() {
-      var $elem       = $(this);
-      // Only one rating-form per parent can be open
-      // This is a stripped-down version of Bootstrap's accordion
-      var $parent     = $($elem.data('parent'));
-      var $myCollapse = $elem.find('.collapse');
-      if ($parent) {
-        $elem.on('show.bs.collapse', function() {
-          // Whenever I am shown, close all of the other open
-          // collapses under my parent
-          $parent.find('.collapse.in').not($myCollapse).collapse('hide');
-          // "Deemphasize" all other rating lines
-          $parent.find('[data-deemphasize]').not($elem).addClass('is-deemphasized');
-          // Except not me
-          $elem.removeClass('is-deemphasized');
-        });
-        // For prototyping, both buttons in the rating form have the
-        // `.js-submit-rating` class. Both will simply hide the form
-        // via collapse and remove the deemphasis "focus"
-        $elem.on('click', '.js-dismiss-rating', function() {
-          // Hide me and remove deemphasis from everyone
-          $myCollapse.collapse('hide');
-          $parent.find('[data-deemphasize]').removeClass('is-deemphasized');
-        });
+$(function() {
+  $('[data-deemphasis]').each(function() {
+    var $parent   = $(this);
+    var dID       = $parent.data('deemphasis');
+    var $children = $parent.find('[data-deemphasis-parent="' + dID + '"]');
+    $parent.on('shown.bs.collapse', '[data-deemphasis-parent]', function() {
+      // Anyone else visible? I should hide them
+      var $collapse = $(this).find('.collapse');
+      $parent.find('.collapse.in').not($collapse).collapse('hide');
+      // Deemphasize everyone but me
+      $children.not($(this)).addClass('is-deemphasized');
+      $(this).removeClass('is-deemphasized');
+    });
+    $parent.on('hidden.bs.collapse', function() {
+      // Any time an item is collapsed, see if there are
+      // any open items left under this parent. If not,
+      // remove the deemphasis from all elements.
+      if (!$parent.find('.collapse.in').length) {
+        $children.removeClass('is-deemphasized');
       }
     });
   });
+});
 </script>
-
