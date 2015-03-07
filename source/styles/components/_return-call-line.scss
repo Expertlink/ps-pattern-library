@@ -9,25 +9,21 @@
     position: absolute;
     right: 0;
     top: .4em;
+    @media (max-width: $screen-sm-min) {
+      margin-right: 1em;
+    }
     @media (max-width: $screen-md-min) {
       right: -28%;
       top: 0;
     }
-    @media (max-width: $screen-sm-min) {
-      margin-right: 1em;
-    }
   }
 }
 
-.return-call-settings {
+.return-call-settings-box {
   @media (max-width: $screen-sm-max) {
-    div.box {
-      border-bottom: solid 1px #ccc;
-      border-radius: 0;
-      margin-left: 0;
-      padding-left: 0;
-      padding-bottom: 1.5em;
-    }
+    border-bottom: solid 1px #ccc;
+    border-radius: 0;
+    padding-bottom: 1em;
   }
 }
 
