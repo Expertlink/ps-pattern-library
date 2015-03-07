@@ -97,7 +97,6 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
 
 .advisor-tile-photo {
   display: inline-block;
-  position: relative;
   width: em(72px - ($line-height-computed / 2));
 
   @media (min-width: $screen-md-min) {
@@ -108,44 +107,6 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   img {
     display: block;
     max-width: 100%;
-  }
-}
-
-.advisor-tile-staff-pick,
-.advisor-tile-showcase {
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-
-  @include text-hide();
-}
-
-.advisor-tile-staff-pick {
-  background-image: url(/images/badges/staffpick.svg);
-  height: 35px;
-  left: -10px;
-  top: -10px;
-  width: 35px;
-
-  @media (min-width: $screen-md-min) {
-    left: -20px;
-    height: 54px;
-    width: 54px;
-  }
-}
-
-.advisor-tile-showcase {
-  background-image: url(/images/badges/showcase.svg);
-  bottom: -6px;
-  height: (52 / 117 * 64px);
-  left: -7px;
-  width: 64px;
-
-  @media (min-width: $screen-md-min) {
-    bottom: -4px;
-    height: 52px;
-    left: -20px;
-    width: 117px;
   }
 }
 
@@ -179,12 +140,12 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 .advisor-tile-main-simple {
-  @media (min-width: $screen-md-min) {  
+  @media (min-width: $screen-md-min) {
     padding:0;
   }
 }
 .advisor-tile-main-body-simple {
-  @media (min-width: $screen-md-min) {  
+  @media (min-width: $screen-md-min) {
     font-size: 0.9em;
   }
-} 
+}

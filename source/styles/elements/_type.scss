@@ -61,6 +61,7 @@ h6, .h6 {
 
 @include text-emphasis-variant('.text-default', $text-color);
 @include text-emphasis-variant('.text-secondary', $orange);
+@include text-emphasis-variant('.text-tertiary', $blue);
 @include text-emphasis-variant('.text-neutral', $gray);
 
 //== Misc. modifiers

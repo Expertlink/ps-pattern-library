@@ -39,8 +39,15 @@
     
       <a class="masthead-logo" href="">
         <picture class="picture-responsive">
-          <source srcset="/images/logo/ps-logo-tagline.png" media="(min-width: 994px)">
-          <img srcset="/images/logo/ps-logo.png" src="/images/logo/ps-logo.png" alt="Psychic Source - Life's possibilites. Revealed.">
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source
+            srcset="/images/logo.png, /images/logo-2x.png 2x"
+            media="(min-width: 994px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img
+            srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+            src="/images/logo.png"
+            alt="Psychic Source - Life's possibilites. Revealed.">
         </picture>
       </a>
     
@@ -129,186 +136,187 @@
     
     
     
-    <nav class="overflow-nav js-custom-nav">
-      <ul class="overflow-nav-primary">
-        <li>
-          <a href="#" class="visible-lg collapsed" data-target="#nav-customer-offers" data-toggle="collapse">
-            <span class="nav-customer-offer">New Customer Offers</span>
-            <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <a href="" class="hidden-lg">New Customers
-            <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-customer-offers">
-            <div class="special-offer">
-              <h1 class="text-cursive">Special Offer</h1>
-              <p>As low as
-              <span>$1.00</span>per minute</p>
-              <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
-            </div>
-            <div class="special-offer-add">
-              <a href="#">
-              <img src="/images/minutes-icon.png" />
-              <h4>3 free minutes with your first paid reading!</h4>
-              </a>
-            </div>
-            <div class="special-offer-add">
-              <a href="#">
-              <img src="/images/satisfaction-seal.png" />
-              <h4>100% Satisfaction Gurantee</h4>
-              <p>If you're not happy with your last paid reading, it's free!</p>
-              </a>
-            </div>
-          </aside>
-        </li>
-        <li>
-          <a href="#" class="collapsed" data-target="#nav-psychics" data-toggle="collapse">Our Psychics
-            <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <aside class="visible-lg overflow-nav-dropdown our-psychics-readings arrange arrange-equal collapse" id="nav-psychics">
-            <a href="#">
-              <h4>Phone Readings</h4>
-                <p>Get live psychic readings by phone</p>
-                <img src="/images/dropdown-phone.png" />
-                <p><span class="text-cursive">View Phone Psychics</span></p>
+    <div class="main-nav js-custom-nav">
+      <nav>
+        <ul class="main-nav-bar">
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-offer">
+              <span class="main-nav-item-highlight">
+                New Customer<span class="hidden-lg">s</span> <span class="hidden-xs hidden-sm hidden-md">Offers</span>
+              </span>
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
             </a>
-            <a class="link-only-border" href="#">
-              <h4>Chat Readings</h4>
-              <p>Get live psychic readings by chat</p>
-              <img src="/images/dropdown-chat.png" />
-              <p><span class="text-cursive">View Chat Psychics</span></p>
+            <div class="main-nav-section collapse visible-lg-block" id="nav-section-offer">
+              <div class="special-offer">
+                <h1 class="text-cursive">Special Offer</h1>
+                <p>As low as
+                <span>$1.00</span>per minute</p>
+                <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+              </div>
+              <div class="special-offer-add">
+                <a href="#">
+                  <img src="/images/minutes-icon.png" />
+                  <h4>3 free minutes with your first paid reading!</h4>
+                </a>
+              </div>
+              <div class="special-offer-add">
+                <a href="#">
+                  <img src="/images/satisfaction-seal.png" />
+                  <h4>100% Satisfaction Gurantee</h4>
+                  <p>If you're not happy with your last paid reading, it's free!</p>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-psychics">
+              Our Psychics
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
             </a>
-            <a class="link-only-border" href="#">
-              <h4>All Reading Types</h4>
-              <p>View all our psychic readers</p>
-              <img src="/images/dropdown-both.png" />
-              <p><span class="text-cursive">View All Psychics</span></p>
+            <div class="main-nav-section collapse visible-lg-block" id="nav-section-psychics">
+              <div class="our-psychics-readings arrange arrange-equal">
+                <a href="#">
+                  <h4>Phone Readings</h4>
+                    <p>Get live psychic readings by phone</p>
+                    <img src="/images/dropdown-phone.png" />
+                    <p><span class="text-cursive">View Phone Psychics</span></p>
+                </a>
+                <a class="link-only-border" href="#">
+                  <h4>Chat Readings</h4>
+                  <p>Get live psychic readings by chat</p>
+                  <img src="/images/dropdown-chat.png" />
+                  <p><span class="text-cursive">View Chat Psychics</span></p>
+                </a>
+                <a class="link-only-border" href="#">
+                  <h4>All Reading Types</h4>
+                  <p>View all our psychic readers</p>
+                  <img src="/images/dropdown-both.png" />
+                  <p><span class="text-cursive">View All Psychics</span></p>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="hidden-xs">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-horoscopes">
+              Horoscopes
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
             </a>
-          </aside>
-        </li>
-        <li class="hidden-xs">
-          <a href="#" data-target="#nav-horoscopes" class="collapsed" data-toggle="collapse">
-            Horoscopes <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-horoscopes">
-            <div class="link-only-dropdown link-only-dropdown-intro">
-              <h4>Weekly Love Horoscope</h4>
-              <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
-              <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+            <div class="main-nav-section collapse visible-lg-block" id="nav-section-horoscopes">
+              <div class="link-only-dropdown link-only-dropdown-intro">
+                <h4>Weekly Love Horoscope</h4>
+                <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
+                <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#">Aries</a></li>
+                  <li><a href="#">Taurus</a></li>
+                  <li><a href="#">Gemini</a></li>
+                  <li><a href="#">Cancer</a></li>
+                  <li><a href="#">Leo</a></li>
+                  <li><a href="#">Virgo</a></li>
+                </ul>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#">Libra</a></li>
+                  <li><a href="#">Scorpio</a></li>
+                  <li><a href="#">Sagittarius</a></li>
+                  <li><a href="#">Capricorn</a></li>
+                  <li><a href="#">Aquarius</a></li>
+                  <li><a href="#">Pisces</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#">Aries</a></li>
-                <li><a href="#">Taurus</a></li>
-                <li><a href="#">Gemini</a></li>
-                <li><a href="#">Cancer</a></li>
-                <li><a href="#">Leo</a></li>
-                <li><a href="#">Virgo</a></li>
-              </ul>
+          </li>
+          <li class="hidden-xs hidden-sm">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-about">
+              About Psychic Readings
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <div class="main-nav-section collapse visible-lg-block" id="nav-section-about">
+              <div class="link-only-dropdown link-only-dropdown-intro">
+                <h4>About Psychic Readings</h4>
+                <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#"><h4>Types of Psychics</h4></a></li>
+                  <li><a href="#">Love Psychics</a></li>
+                  <li><a href="#">Psychic Mediums</a></li>
+                  <li><a href="#">Clairvoyants</a></li>
+                  <li><a href="#">Clairaudients</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#"><h4>Types of Psychic Readings</h4></a></li>
+                  <li><a href="#">Cartomancy</a></li>
+                  <li><a href="#">Tarot Readings</a></li>
+                  <li><a href="#">Angel Card Readings</a></li>
+                  <li><a href="#">Numerology Readings</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#"><h4>Ways to Get A...</h4></a></li>
+                  <li><a href="#">Psychic Phone Readings</a></li>
+                  <li><a href="#">Psychic Chat</a></li>
+                  <li class="link-only-divider"></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Glossary of Terms</a></li>
+                  <li><a href="#">Psychic? Apply Now</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#">Libra</a></li>
-                <li><a href="#">Scorpio</a></li>
-                <li><a href="#">Sagittarius</a></li>
-                <li><a href="#">Capricorn</a></li>
-                <li><a href="#">Aquarius</a></li>
-                <li><a href="#">Pisces</a></li>
-              </ul>
+          </li>
+          <li class="hidden-xs hidden-sm hidden-md">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-articles">
+              Articles &amp; Resources
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <div class="main-nav-section collapse visible-lg-block" id="nav-section-articles">
+              <div class="link-only-dropdown link-only-dropdown-intro">
+                <h4>Articles and Resources</h4>
+                <p>Like a Blog, Only Better!</p>
+                <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
+              </div>
+              <div class="link-only-dropdown link-only-border">
+                <ul>
+                  <li><a href="#">Career &amp; Finance</a></li>
+                  <li><a href="#">Health &amp; Wellness</a></li>
+                  <li><a href="#">Life, Destiny &amp; Meaning</a></li>
+                  <li><a href="#">Love, Relationships &amp; Family</a></li>
+                  <li><a href="#">Other Psychic Topics</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
             </div>
-          </aside>
-        </li>
-        <li class="hidden-xs hidden-sm">
-          <a href="" data-target="#nav-readings" class="collapsed" data-toggle="collapse">About Psychic Readings
-            <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-readings">
-            <div class="link-only-dropdown link-only-dropdown-intro">
-              <h4>About Psychic Readings</h4>
-              <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
-            </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#"><h4>Types of Psychics</h4></a></li>
-                <li><a href="#">Love Psychics</a></li>
-                <li><a href="#">Psychic Mediums</a></li>
-                <li><a href="#">Clairvoyants</a></li>
-                <li><a href="#">Clairaudients</a></li>
-                <li><a href="#">More...</a></li>
-              </ul>
-            </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#"><h4>Types of Psychic Readings</h4></a></li>
-                <li><a href="#">Cartomancy</a></li>
-                <li><a href="#">Tarot Readings</a></li>
-                <li><a href="#">Angel Card Readings</a></li>
-                <li><a href="#">Numerology Readings</a></li>
-                <li><a href="#">More...</a></li>
-              </ul>
-            </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#"><h4>Ways to Get A...</h4></a></li>
-                <li><a href="#">Psychic Phone Readings</a></li>
-                <li><a href="#">Psychic Chat</a></li>
-                <li class="link-only-divider"></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Glossary of Terms</a></li>
-                <li><a href="#">Psychic? Apply Now</a></li>
-              </ul>
-            </div>
-          </aside>
-        </li>
-        <li class="hidden-xs hidden-sm hidden-md">
-          <a href="" data-target="#nav-articles" class="collapsed" data-toggle="collapse">Articles &amp; Resources
-            <span class="arrow-down visible-lg-inline-block text-muted"></span>
-          </a>
-          <aside class="visible-lg overflow-nav-dropdown collapse" id="nav-articles">
-            <div class="link-only-dropdown link-only-dropdown-intro">
-              <h4>Articles and Resources</h4>
-              <p>Like a Blog, Only Better!</p>
-              <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
-            </div>
-            <div class="link-only-dropdown link-only-border">
-              <ul>
-                <li><a href="#">Career & Finance</a></li>
-                <li><a href="#">Health & Wellness</a></li>
-                <li><a href="#">Life, Destiny & Meaning</a></li>
-                <li><a href="#">Love, Relationships & Family</a></li>
-                <li><a href="#">Other Psychic Topics</a></li>
-                <li><a href="#">Newsletter</a></li>
-              </ul>
-            </div>
-          </aside>
-        </li>
-        <li class="hidden-lg dropdown">
-          <a data-toggle="collapse" href="#nav-overflow" class="js-custom-nav-more">More <span class="arrow-down text-muted"></span></a>
-        </li>
-      </ul>
-    
-      <ul class="overflow-nav-secondary collapse hidden-lg" id="nav-overflow">
-        <li class="hidden-sm hidden-md">
-          <a href="">Horoscopes</a>
-        </li>
-        <li class="hidden-md">
-          <a href="">About Psychic Readings</a>
-        </li>
-        <li>
-          <a href="">Articles &amp; Resources</a>
-        </li>
-        <li>
-          <a href="">Customer Care</a>
-        </li>
-      </ul>
-    </nav>
+          </li>
+          <li class="hidden-lg">
+            <a class="main-nav-item main-nav-item-expandable js-custom-nav-more" href="#main-nav-overflow" data-toggle="collapse">
+              More
+              <span class="arrow-down" aria-hidden="true"></span>
+            </a>
+            <ul class="main-nav-overflow collapse" id="main-nav-overflow">
+              <li class="hidden-sm hidden-md"><a href="#">Horoscopes</a></li>
+              <li class="hidden-md"><a href="#">About Psychic Readings</a></li>
+              <li><a href="#">Articles &amp; Resources</a></li>
+              <li><a href="#">Customer Care</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
     
     
   </header>
 
 <div class="container-page">
-  <div class="box-full box-default-lg u-no-padding-xs box-lighter">
-    <div class="row">
+  <div class="box-full box-default-lg box-lighter box-sheer-sides">
+    <div class="container-fluid no-gutters-xs no-gutters-sm">
       <div class="col-md-4 col-lg-3">
         <div class="subnav subnav-full account-home-back">
           <h3 class="subnav-heading">
@@ -319,7 +327,7 @@
           <ul class="subnav-body hidden-xs hidden-sm">
             <li><a class="subnav-item" href="/pages/account/02-add.html">Add Dollars</a></li>
             <li><a class="subnav-item" href="#">Manage Return Calls</a></li>
-            <li><a class="subnav-item" href="#">Special Offers</a></li>
+            <li><a class="subnav-item" href="/pages/account/04-offers.html">Special Offers</a></li>
             <li><a class="subnav-item" href="#">Messages</a></li>
             <li><a class="subnav-item" href="/pages/account/05-rewards.html">Rewards</a></li>
             <li><a class="subnav-item" href="#">Favorite advisors</a></li>
@@ -332,7 +340,7 @@
         
       </div>
       <div class="col-md-8 col-lg-9">
-        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs" role="tabpanel">
+        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs tabpanel-full-sm" role="tabpanel">
         <!-- Nav tabs -->
           <ul class="tabpanel-tabs" role="tablist">
             <li class="active" role="presentation">
@@ -391,14 +399,14 @@
                 </div>
               </div>
                 
-              <div class="box-full box-default-md box-lighter u-no-padding-xs account-table-full-xs table-responsive">
+              <div class="box-full box-default-md box-lighter u-no-padding-xs account-table-full-xs">
                 <table class="table table-sortable">
                   <thead>
                     <tr>
-                      <th><a href="#" class="table-sortable-control active arrow-down-after">Purchased On&nbsp;</a></th>
-                      <th><a href="#" class="table-sortable-control">Purchased Amount</a></th>
-                      <th><a href="#" class="table-sortable-control">Reward Dollars</a></th>
-                      <th><a href="#" class="table-sortable-control">Applied Bonus</a></th>
+                      <th><a href="#" class="table-sortable-control active arrow-down-after">Date </a></th>
+                      <th><a href="#" class="table-sortable-control"><span class="hidden-xs">Purchased </span>Amount</a></th>
+                      <th><a href="#" class="table-sortable-control">Reward<span class="hidden-xs"> Dollars</span></a></th>
+                      <th><a href="#" class="table-sortable-control"><span class="hidden-xs">Applied </span>Bonus</a></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -474,43 +482,44 @@
               </div>
               
               <p>Once you reach $30.00 in Reward Dollars, we will deposit the reward in your account as $30.00 Bonus Dollars, which you can use toward your readings. <a href="#">Need Help?</a></p>
+              <p class="text-primary">Rewards period ends 2/28/2015 <span class="text-nowrap">11:59pm ET.</span></p>
               
               <div class="progress with-progress-marker">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="30" style="width: 10%">
-                  <div class="progress-marker progress-marker-offset progress-marker-right">
-                    <span class="text-nowrap">You've had <b>1 reading(s)</b></span>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="30" style="width: 90%">
+                  <div class="progress-marker progress-marker-offset progress-marker-left">
+                    <span class="text-nowrap">You've had <b>9 reading(s)</b></span>
                   </div>
                 </div>
                 <div class="progress-marker progress-marker-left progress-marker-down progress-marker-jazzy">
                   <b>$10 Bonus Dollars</b>
                 </div>
               </div>
-              
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="box box-light box-md box-teal">
-                    <p class="border-bottom text-center">10 Readings</p>
-                    <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$10 Free</span><span class="h4">Bonus Dollars</span></p>
-                    <span class="fleuron-star-two top left" aria-hidden="true"></span>
+               
+              <div class="container-fluid no-gutters-sm account-unified-xs u-margin-bottom">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="box box-light box-md box-teal">
+                      <p class="border-bottom text-center">10 Readings</p>
+                      <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$10<span class="hidden-xs"> Free</span></span><span class="h4">Bonus<span class="hidden-xs"> Dollars</span></span></p>
+                      <span class="fleuron-star-two top left" aria-hidden="true"></span>
                   </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box box-light box-md box-tan">
-                    <p class="border-bottom text-center">20 Readings</p>
-                    <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$25 Free</span><span class="h4">Bonus Dollars</span></p>
-                    <span class="fleuron-star-one top left" aria-hidden="true"></span> 
-                 </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box box-light box-md box-orange">
-                    <p class="border-bottom text-center">30 Readings</p>
-                    <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$50 Free</span><span class="h4">Bonus Dollars</span></p>
-                    <span class="fleuron-star-three bottom right" aria-hidden="true"></span>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="box box-light box-md box-tan">
+                      <p class="border-bottom text-center">20 Readings</p>
+                      <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$25<span class="hidden-xs"> Free</span></span><span class="h4">Bonus<span class="hidden-xs"> Dollars</span></span></p>
+                      <span class="fleuron-star-one top left" aria-hidden="true"></span> 
+                  </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="box box-light box-md box-orange">
+                      <p class="border-bottom text-center">30 Readings</p>
+                      <p class="text-primary text-uppercase text-center"><span class="h3 u-block u-no-margin">$50<span class="hidden-xs"> Free</span></span><span class="h4">Bonus<span class="hidden-xs"> Dollars</span></span></p>
+                      <span class="fleuron-star-three bottom right" aria-hidden="true"></span>
+                    </div>
                   </div>
                 </div>
               </div>
-               
-              <p class="text-center text-primary">Rewards period ends <span class="text-nowrap">2/28/2015 11:59pm ET.</span></p>
               
               <div class="arrange arrange-middle arrange-gutter u-margin-bottom">
                 <div class="arrange-fit select"><span class="hidden-xs">Show </span>
@@ -526,7 +535,7 @@
                 </div>
                 <div class="arrange-fit text-right"><strong>Bonus Dollars Redeemed: $0.00</strong></div>
               </div>
-              	
+              
               <div class="box box-lighter">
                 <table class="table table-sortable table-collapse-xs">
                   <thead>
@@ -540,6 +549,21 @@
                     <tr>
                       <td><a href="#">Psychic Mazie x1243</a></td>
                       <td>02/20/2015 04:20 PM</td>
+                      <td>21 min 28 sec</td>
+                    </tr>
+                    <tr>  
+                      <td><a href="#">Psychic Hilda x11233</a></td>
+                      <td>02/18/2015 04:23 PM</td>
+                      <td>21 min 28 sec</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Psychic Ethel x10013</a></td>
+                      <td>02/16/2015 04:24 PM</td>
+                      <td>21 min 28 sec</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Psychic Beatrice x00123</a></td>
+                      <td>02/12/2015 04:25 PM</td>
                       <td>21 min 28 sec</td>
                     </tr>
                   </tbody>
@@ -683,9 +707,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -730,9 +751,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -769,67 +787,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
               </a>
             </li>
             <li>
@@ -897,6 +854,70 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
         </ul>

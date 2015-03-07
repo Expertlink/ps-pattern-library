@@ -5,13 +5,25 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   padding: ($line-height-computed/2) $review-padding;
   border-bottom: 1px solid $gray-lighter;
   @media (max-width: $screen-md-min) {
-    margin-left: (-$review-padding);
-    margin-right: (-$review-padding);
+    margin-left: ($review-padding * -1);
+    margin-right: ($review-padding * -1);
   }
 }
+.tabpanel-pane .review {
+  @media (max-width: $screen-md-min) {
+    margin-left: ($line-height-computed * -1);
+    margin-right: ($line-height-computed * -1);
+  }
+}
+.review-meta {
+  // provides space for stars on small screens
+  padding-right: 80px;
+}
 .reviewer, 
-.review-date {
-  font-weight: 800;
+.review-date,
+.reviewed {
+  font-weight: bold;
+  white-space: nowrap;
 }
 .review-date, 
 .review-helpful {
@@ -33,12 +45,18 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   border-width: 0 0 1px;
 
   @media (max-width: $screen-md-min) {
-    margin-left: (-$review-padding);
-    margin-right: (-$review-padding);
+    margin-left: ($review-padding * -1);
+    margin-right: ($review-padding * -1);
   }
   @media (min-width: $screen-md-min) {
     border-radius: $border-radius-large;
     border-width: 1px;
+  }
+}
+
+.tabpanel-pane .reviews-summary {
+  @media (max-width: $screen-md-min) {
+    margin: ($line-height-computed * -0.5) ($line-height-computed * -1) 0;
   }
 }
 

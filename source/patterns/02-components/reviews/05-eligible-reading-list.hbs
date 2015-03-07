@@ -1,0 +1,42 @@
+---
+description: >
+  List of readings, eligible for review. Behavior:
+    * Tapping on an eligible reading's `Rate and Review` button will expand the rating form for that reading and collapse any other open rating form
+    * Opening a rating form will add an `is-deemphasized` class to other readings (opacity 50%)
+    * Tapping on the `Nevermind` button will re-collapse the form and remove the opacity de-emphasis from other elements.
+    * We know that the behavior on the tap of `Submit` will need to be implemented based on integration needs, so we've opted not to implement "fake" behavior for now.
+
+status: inprogress
+---
+<p>Only readings that lasted <strong>3 minutes or longer</strong> are eligible for review. You have up to <strong>3 months</strong> to rate and review your reading.</p>
+<div class="eligible-readings" id="eligible-readings" data-deemphasis="ratings">
+  {{#withFirst eligible-readings.list 6}}
+    {{> reviews/_eligible-reading }}
+  {{/withFirst}}
+</div>
+
+<script>
+$(function() {
+  $('[data-deemphasis]').each(function() {
+    var $parent   = $(this);
+    var dID       = $parent.data('deemphasis');
+    var $children = $parent.find('[data-deemphasis-parent="' + dID + '"]');
+    $parent.on('shown.bs.collapse', '[data-deemphasis-parent]', function() {
+      // Anyone else visible? I should hide them
+      var $collapse = $(this).find('.collapse');
+      $parent.find('.collapse.in').not($collapse).collapse('hide');
+      // Deemphasize everyone but me
+      $children.not($(this)).addClass('is-deemphasized');
+      $(this).removeClass('is-deemphasized');
+    });
+    $parent.on('hidden.bs.collapse', function() {
+      // Any time an item is collapsed, see if there are
+      // any open items left under this parent. If not,
+      // remove the deemphasis from all elements.
+      if (!$parent.find('.collapse.in').length) {
+        $children.removeClass('is-deemphasized');
+      }
+    });
+  });
+});
+</script>

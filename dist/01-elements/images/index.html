@@ -74,7 +74,6 @@
       <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
       <li><a class="c4-nav__item c4-is-current" href="../../01-elements/images">Images</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
-      <li><a class="c4-nav__item " href="../../01-elements/logo">Logo</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/ratings">Ratings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/stats">Stats</a></li>
@@ -88,10 +87,10 @@
       <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
       <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
       <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/main-nav">Main Nav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/masthead">Masthead</a></li>
       <li><a class="c4-nav__item " href="../../02-components/media-object">Media Object</a></li>
       <li><a class="c4-nav__item " href="../../02-components/modals">Modals</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/overflow-nav">Overflow Nav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
       <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
       <li><a class="c4-nav__item " href="../../02-components/progress-bars">Progress Bars</a></li>
@@ -118,11 +117,11 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_13">
+  <div class="c4-pattern" id="c4-pattern_11">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_13">Image Shapes</a>
+          <a href="#c4-pattern_11">Image Shapes</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -143,7 +142,7 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_13" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_11" type="button">
             Source
           </button>
         
@@ -154,9 +153,168 @@
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_13"><code class="language-markup">&lt;img src=&quot;http://placeimg.com/140/140/nature&quot; alt=&quot;...&quot; class=&quot;img-rounded img-shadow&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_11"><code class="language-markup">&lt;img src=&quot;http://placeimg.com/140/140/nature&quot; alt=&quot;...&quot; class=&quot;img-rounded img-shadow&quot;&gt;
 &lt;img src=&quot;http://placeimg.com/140/140/animals&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt;
 &lt;img src=&quot;http://placeimg.com/140/140/arch&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_52">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_52">Multiple Resolutions</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>We can define multiple resolutions of an image using a good ol&#39; <code>&lt;img&gt;</code> tag plus the <code>srcset</code> attribute. Where possible, providing a <code>sizes</code> attribute as well will give the browser even more info for image selection. More info about <code>&lt;img srcset&gt;</code> <a href="http://blog.cloudfour.com/responsive-images-audits/">here</a> and <a href="http://ericportis.com/posts/2014/srcset-sizes/">here</a>. Relies on <a href="http://scottjehl.github.io/picturefill/">Picturefill</a> for <a href="http://caniuse.com/#feat=picture">certain browsers</a>.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body c4-pattern__body--full-width">
+      
+<img
+  class="demo-responsive-img" 
+  src="//placehold.it/320x240&text=Small" 
+  srcset="//placehold.it/2048x1536&text=Extra%20Large 2048w, 
+          //placehold.it/1024x768&text=Large 1024w,
+          //placehold.it/640x480&text=Medium 640w,
+          //placehold.it/320x240&text=Small 320w"
+  sizes="(min-width: 71.25em) 1024px, 
+         (min-width: 48em) 75vw, 
+         100vw" 
+  alt="srcset and sizes example">
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_52" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_52"><code class="language-markup">&lt;img
+  class=&quot;demo-responsive-img&quot; 
+  src=&quot;//placehold.it/320x240&amp;text=Small&quot; 
+  srcset=&quot;//placehold.it/2048x1536&amp;text=Extra%20Large 2048w, 
+          //placehold.it/1024x768&amp;text=Large 1024w,
+          //placehold.it/640x480&amp;text=Medium 640w,
+          //placehold.it/320x240&amp;text=Small 320w&quot;
+  sizes=&quot;(min-width: 71.25em) 1024px, 
+         (min-width: 48em) 75vw, 
+         100vw&quot; 
+  alt=&quot;srcset and sizes example&quot;&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_76">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_76">Art Direction</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>If multiple versions of an image are desired <em>not</em> simply for resolution switching but also for art direction, use a <code>&lt;picture&gt;</code> element with multiple <code>&lt;source&gt;</code> elements therein. More info <a href="http://blog.cloudfour.com/a-framework-for-discussing-responsive-images-solutions/#artdirection">here</a> and <a href="http://www.smashingmagazine.com/2014/05/14/responsive-images-done-right-guide-picture-srcset/">here</a>. Relies on <a href="http://scottjehl.github.io/picturefill/">Picturefill</a> for <a href="http://caniuse.com/#feat=picture">certain browsers</a>.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<picture class="demo-responsive-img">
+  <source
+    media="(min-width: 40em)"
+    srcset="/images/fpo/business-2x.jpg 1920w,
+            /images/fpo/business.jpg 960w"
+    sizes="960px"> 
+  <source
+    srcset="/images/fpo/business-crop-2x.jpg 640w,
+            /images/fpo/business-crop.jpg 320w"
+    sizes="100vw"> 
+  <img src="/images/fpo/business.jpg" alt="stock photos FTW">
+</picture>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_76" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_76"><code class="language-markup">&lt;picture class=&quot;demo-responsive-img&quot;&gt;
+  &lt;source
+    media=&quot;(min-width: 40em)&quot;
+    srcset=&quot;/images/fpo/business-2x.jpg 1920w,
+            /images/fpo/business.jpg 960w&quot;
+    sizes=&quot;960px&quot;&gt; 
+  &lt;source
+    srcset=&quot;/images/fpo/business-crop-2x.jpg 640w,
+            /images/fpo/business-crop.jpg 320w&quot;
+    sizes=&quot;100vw&quot;&gt; 
+  &lt;img src=&quot;/images/fpo/business.jpg&quot; alt=&quot;stock photos FTW&quot;&gt;
+&lt;/picture&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_97">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_97">Multiple Formats</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>The <code>&lt;picture&gt;</code> tag can also be used to provide multiple formats of the same image by specifying a <code>type</code> attribute for applicable <code>&lt;source&gt;</code> elements. Relies on <a href="http://scottjehl.github.io/picturefill/">Picturefill</a> for <a href="http://caniuse.com/#feat=picture">certain browsers</a>.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+<picture class="demo-responsive-img">
+  <source type="image/webp" srcset="/images/fpo/peeg.webp"> 
+  <img src="/images/fpo/peeg.jpg" alt="peeg"> 
+</picture>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_97" type="button">
+            Source
+          </button>
+        
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_97"><code class="language-markup">&lt;picture class=&quot;demo-responsive-img&quot;&gt;
+  &lt;source type=&quot;image/webp&quot; srcset=&quot;/images/fpo/peeg.webp&quot;&gt; 
+  &lt;img src=&quot;/images/fpo/peeg.jpg&quot; alt=&quot;peeg&quot;&gt; 
+&lt;/picture&gt;</code></pre>
       
     </div>
   </div>
@@ -166,7 +324,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Wednesday, February 25th, 2015, 4:14PM (PST).
+      This page was generated Thursday, March 5th, 2015, 12:09PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
