@@ -16,7 +16,7 @@
   margin: 1em;
   position: relative;
   @media (min-width: $screen-lg-min)  {
-    overflow-x: normal;
+    overflow-x: hidden;
     white-space: normal;
   }
 }
