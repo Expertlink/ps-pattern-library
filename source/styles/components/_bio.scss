@@ -43,6 +43,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
+.bio-summary-photo {
+  max-width: 100%;
+}
+
 .bio-summary-body {
   @media (min-width: $screen-md-min) {
     padding-left: ($bio-padding / 2);
