@@ -346,257 +346,146 @@
         
       </div>
       <div class="col-md-8 col-lg-9">
-        <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs tabpanel-full-sm" role="tabpanel">
-        <!-- Nav tabs -->
-          <ul class="tabpanel-tabs" role="tablist">
-            <li class="active" role="presentation">
-              <a role="tab" data-toggle="tab" href="#add-dollars">
-                Add Dollars
-              </a>
-            </li>
-            <li role="presentation">
-              <a role="tab" data-toggle="tab" href="#purchase-offers">
-                Purchase Offers
-              </a>
-            </li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tabpanel-content">
-            <div class="tabpanel-pane active" role="tabpanel" id="add-dollars">
-              <h2>Existing Member Pricing (Web)</h1>
-                <form role="form">
-                
-                  <div class="help-block" data-promo-success-for="form-group-promo">
-                    <p class="is-success-msg">Promo code <strong class="js-code-slot">654123</strong> applied.</p>
-                  </div>
-                
-                  <p class="help-block"><a class="promo-link collapsed" data-toggle="collapse" href="#form-group-promo">Have a promo code?</a></p>
-                  <div class="collapse promo-group" id="form-group-promo">
-                    <div class="form-group arrange arrange-gutter">
-                      <div class="arrange-fill">
-                        <input type="text" class="form-control" id="signupPromo" placeholder="Promo code" />
-                        <p class="help-block is-error-msg">Invalid code.</p>
-                      </div>
-                      <div class="arrange-fill">
-                        <button class="btn btn-primary apply-btn">Apply</button>
-                      </div>
-                    </div>
-                  </div>
-                
-                
-                <div class="form-group form-group-required js-payment-options">
-                  <label>Please select an amount:</label>
-                  <div class="radio">
-                     <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="250.00"  /> $250.00
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="200.00"  /> $200.00
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="150.00"  /> $150.00
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="100.00"  /> $100.00
-                     </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="65.00"  /> $65.00
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" type="radio" name="addDollarsAmount" value="30.00"  /> $30.00
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option" data-target="#custom-amount" type="radio" name="addDollarsAmount" value="custom"  /> Or, enter a custom amount
-                    </label>
-                  </div>
-                  <div id="custom-amount" class="collapse account-add-custom form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">$</span>
-                      <input type="number"  min="5" max="500" name="addDollarsAmount" class="form-control" id="addDollarsAmountOther" />
-                    </div>
-                    <p class="help-block">Minimum 5.00, maximum 500.00, use format 00.00.</p>
-                  </div>
-                </div>
-                <div class="form-group form-group-required js-payment-options">
-                  <label>Please select a payment method:</label>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option"
-                       type="radio"
-                       name="addDollarsPayment"
-                       value="3870"  />
-                       Visa ending in 3870
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option"
-                       type="radio"
-                       name="addDollarsPayment"
-                       value="89791"  />
-                       Diner's Club Card ending in 89791
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input class="js-payment-option"
-                       data-target="#new-payment"
-                       type="radio"
-                       name="addDollarsPayment"
-                       value="new"  />
-                      Add a new payment method
-                    </label>
-                  </div>
-                  <div id="new-payment" class="collapse">
-                    
-                    
-                      <div class="form-group form-group-required">
-                        <label class="control-label" for="signupCCName">Name on card</label>
-                        <input type="text" class="form-control" id="signupCCName" value="" >
-                      </div>
-                      <div class="form-group form-group-required knows-card" data-mask data-mask-type="CreditCard">
-                        <label class="control-label" for="signupCCNumber">Credit card number</label>
-                        <input type="text" class="form-control" id="signupCCNumber" name="signupCCNumber" placeholder="1234 5678 9012 3456" pattern="[0-9]*" maxlength="19" />
-                        <ul class="list-unstyled u-margin-top">
-                          <li class="creditcard-visa"><span class="sr-only">Visa</span></li>
-                          <li class="creditcard-mastercard"><span class="sr-only">MasterCard</span></li>
-                          <li class="creditcard-discover"><span class="sr-only">Discover</span></li>
-                          <li class="creditcard-amex"><span class="sr-only">American Express</span></li>
-                          <li class="creditcard-dinersclub"><span class="sr-only">Diner's Club</span></li>
-                        </ul>
-                        <p class="help-block is-error-msg">Sorry, that doesn't look like a valid credit card number.</p>
-                      </div>
-                      <div class="form-group arrange arrange-equal arrange-gutter">
-                        <div class="form-group form-group-required arrange-fill" data-mask data-mask-type="ExpirationDate">
-                          <label class="control-label" for="signupCCExp">Expiration</label>
-                          <input type="text" class="form-control" id="signupCCExp" placeholder="MM/YY" pattern="[0-9]*" maxlength="5" />
-                          <p class="help-block is-error-msg">Please enter a future expiration date in the format 'MM/YY'.</p>
-                        </div>
-                        <div class="form-group form-group-required form-group arrange-fill" data-mask data-mask-type="CVV" data-mask-cvv-for="signupCCNumber">
-                          <label class="control-label" for="signupCCCode">Security code</label>
-                          <div class="with-inset-creditcard">
-                            <input type="text" class="form-control" id="signupCCCode" pattern="[0-9]*" maxlength="5" />
-                            <span class="creditcard-cvv" aria-hidden="true"></span>
-                          </div>
-                          <p class="help-block is-error-msg">Sorry, that doesn't look like a valid CVV.</p>
-                        </div>
-                      </div>
-                          <div class="form-group form-group-required">
-                            <label class="control-label" for="signupStreet">Street address 1</label>
-                            <input type="text" class="form-control" id="signupStreet" />
-                          </div>
-                          <div class="form-group">
-                            <label class="control-label" for="signupStreet2">Street address 2</label>
-                            <input type="text" class="form-control" id="signupStreet2" />
-                          </div>
-                          <div class="form-group arrange arrange-equal arrange-gutter">
-                            <div class="form-group-required arrange-fit">
-                              <label class="control-label" for="signupCity">City</label>
-                              <input type="text" class="form-control" id="signupCity" />
-                            </div>
-                            <div class="form-group-required arrange-fit">
-                              <label class="control-label" for="signupCCZip">Zip or postal code</label>
-                              <input type="text" class="form-control" id="signupCCZip" />
-                            </div>
-                          </div>
-                    <form role="form">
-                      <div class="form-group arrange arrange-equal arrange-gutter">
-                        <div class="form-group form-group-required arrange-fit">
-                          <label class="control-label" for="signupCountry">Country</label>
-                          <select id="signupCountry" class="form-control">
-                    
-                          </select>
-                        </div>
-                    
-                        <div class="form-group form-group-required arrange-fit">
-                          <label class="control-label" for="signupState">State or province</label>
-                          <select id="signupState"  class="form-control">
-                            <option selected="selected" value="">Select</option>
-                            <option value="1">Other</option>
-                            <option value="3">Alaska</option>
-                            <option value="4">Alabama</option>
-                            <option value="5">Arkansas</option>
-                            <option value="6">Arizona</option>
-                    
-                          </select>
-                        </div>
-                      </div>
-                    
-                      
-                        <div class="form-group form-group-required">
-                          <label class="control-label" for="signupPhone">Phone number</label>
-                          <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
-                        </div>
-                      
-                      
-                    </form>
-                    
-                    
-                  </div>
-                </div>
-                <div class="form-group form-group-required">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" />I agree to Psychic Source <a href="#terms-block" data-toggle="collapse" class="toggle-trigger arrow-down-after arrow-toggle u-inline-block">terms and conditions</a>
-                    </label>
-                    <div id="terms-block" class="collapse u-margin-top">
-                      <h4>Conditions of Sale and Payment Terms</h4>
-                      <p>To purchase any goods and/or services on our website, You must be (a) at least eighteen (18) years of age or the applicable state age of majority, whichever is older (b) a natural person (no corporations, partnerships or other legal entities. Prior to the purchase of any services on our website, You must provide us with a valid credit card number and associated payment information including all of the following: (i) your name as it appears on the card, (ii) your credit card number, (iii) the credit card type, (iv) the date of expiration and (v) any activation numbers or codes needed to charge your card. By submitting that information to us, you hereby agree that you authorize us to charge your card at our convenience but within thirty (30) days of credit card authorization.</p>
-                      <h4>Methods of Payment, Credit Card Terms</h4>
-                      <p>All payments must be made by VISA, MasterCard, American Express, Discover or Diners club (each of which may be removed by PsychicSource.com in its sole discretion). Unless expressly set forth on the PsychicSource.com site, we do not accept any other payment form. If we offer or accept any other form of payment, You hereby agree to all restrictions, terms and conditions associated with such additional form of payment. Your card issuer agreement governs your use of your designated card, and you must refer to that agreement and not this Terms of Use to determine your rights and liabilities as a cardholder. YOU, AND NOT PsychicSource.com, ARE RESPONSIBLE FOR PAYING ANY UNAUTHORIZED AMOUNTS BILLED TO YOUR CREDIT CARD BY A THIRD PARTY. You agree to pay all fees and charges incurred in connection with your purchases at the rates in effect when the charges were incurred. Unless you notify PsychicSource.com of any discrepancies within thirty (30) days after they first appear on your credit card statement, you agree they will be deemed accepted by You for all purposes. If PsychicSource.com does not receive payment from your credit card issuer or its agent, You agree to pay all amounts due upon demand by PsychicSource.com or its agents.</p>
-                      <h4>Order Acceptance Policy</h4>
-                      <p>Your receipt of an electronic or other form of order confirmation does not signify our acceptance of your order, nor does it constitute confirmation of our offer to provide service. PsychicSource.com reserves the right at any time after receipt of your order to accept or decline your order for any reason. All payment information must obtain pre-approval with an acceptable method of payment, as established by our credit and fraud avoidance department. We may require additional verifications or information before accepting any purchase.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-primary arrow-right-equilateral-after">Continue </button>
-                </div>
-              </form>
-            </div>
-            <div class="tabpanel-pane" role="tabpanel" id="purchase-offers">
-              <p>Choose an offer, click the “Redeem” button and the promo code will be added to your order. You can also call 1.800.732.0797 to redeem your promo code when you purchase through our phone system.</p>
-              
-              <p>Remember: You can receive more offers and free bonus dollars through our <a href="/pages/account/05-rewards.html">Membership Rewards</a> program!</p>
-              
-              <div class="box box-dark box-thick">
-                <div class="row">
-                  <div class="col-md-4 text-center">
-                    <p><strong>Which path has the most potential?</strong></p>
-                    <p>Stop saying and start doing. Don’t let yourself down this year.</p>
-                  </div>
-                  <div class="col-md-4 text-center border-thick border-sides no-border-sm">
-                    <p>Add $50 - Get $12.50 in free bonus dollars.</p>
-                    <p>Add $25 - Get $6.25 in free bonus dollars.</p>
-                    <p>Add $10 - Get $2.50 in free bonus dollars.</p>
-                    <p><em>One time only</em></p>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <p class="text-primary"><strong>Expires 2/28/2015 11:59:59 PM</strong></p>
-                    <p>Use Promo Code <strong class="text-primary u-block">622148</strong></p>
-                    <a href="#" class="btn btn-block btn-primary">Redeem Now</a>
-                  </div>
-                </div>
-                <span class="fleuron-star-three bottom right" aria-hidden="true"></span>
-              </div>            </div>
-          </div>
+        <div class="box">
+          <h2>Manage Your Return Call Lines</h2>
         </div>
-      </div>
+        <div class="box-full box-lighter box-sheer box-default-sm">
+            <div class="advisor-tile-main return-call-line">
+              <div class="u-overflow-hidden">
+                <div class="container-fluid u-margin-top u-margin-bottom">
+                  <div class="col-md-6">
+                    <div class="col-md-1 hidden-xs hidden-sm hidden-md no-gutters u-margin-right">
+                      <img class="img-rounded" src="/images/fpo/7777-sml.jpg" alt=" ">
+                    </div>
+                    <div class="col-xs-9 col-md-6 no-gutters"> 
+                      <div class="advisor-tile-main-body">
+                        <h4>Bridgette x8133</h4>
+                        <p class="text-success small"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00 PM</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <span class="stat pull-right">
+                        <span class="stat-value">3rd</span>
+                        <span class="stat-label">in line</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-xs-9 col-md-10 no-gutters">
+                      <a class="btn btn-success btn-block">Get Answers Now</a>
+                    </div>
+                    <div class="col-xs-2">
+                      <a class="text-danger close" href="#">  
+                        <svg class="icon icon-md">
+                          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#close" />
+                        </svg>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>            <div class="advisor-tile-main return-call-line">
+              <div class="u-overflow-hidden">
+                <div class="container-fluid u-margin-top u-margin-bottom">
+                  <div class="col-md-6">
+                    <div class="col-md-1 hidden-xs hidden-sm hidden-md no-gutters u-margin-right">
+                      <img class="img-rounded" src="/images/fpo/7777-sml.jpg" alt=" ">
+                    </div>
+                    <div class="col-xs-9 col-md-6 no-gutters"> 
+                      <div class="advisor-tile-main-body">
+                        <h4>Bridgette x8133</h4>
+                        <p class="text-success small"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00 PM</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <span class="stat pull-right">
+                        <span class="stat-value">3rd</span>
+                        <span class="stat-label">in line</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-xs-9 col-md-10 no-gutters">
+                      <a class="btn btn-success btn-block">Get Answers Now</a>
+                    </div>
+                    <div class="col-xs-2">
+                      <a class="text-danger close" href="#">  
+                        <svg class="icon icon-md">
+                          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#close" />
+                        </svg>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>            <div class="advisor-tile-main return-call-line">
+              <div class="u-overflow-hidden">
+                <div class="container-fluid u-margin-top u-margin-bottom">
+                  <div class="col-md-6">
+                    <div class="col-md-1 hidden-xs hidden-sm hidden-md no-gutters u-margin-right">
+                      <img class="img-rounded" src="/images/fpo/7777-sml.jpg" alt=" ">
+                    </div>
+                    <div class="col-xs-9 col-md-6 no-gutters"> 
+                      <div class="advisor-tile-main-body">
+                        <h4>Bridgette x8133</h4>
+                        <p class="text-success small"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00 PM</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <span class="stat pull-right">
+                        <span class="stat-value">3rd</span>
+                        <span class="stat-label">in line</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-xs-9 col-md-10 no-gutters">
+                      <a class="btn btn-success btn-block">Get Answers Now</a>
+                    </div>
+                    <div class="col-xs-2">
+                      <a class="text-danger close" href="#">  
+                        <svg class="icon icon-md">
+                          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#close" />
+                        </svg>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>        </div>
+        <div class="container-fluid no-gutters u-margin-top">
+          <div class="col-md-4 no-gutters">
+            <div class="box return-call-settings-box">
+              <h4>Current Balance</h4>
+              <span class="big u-block">
+                <sup>$</sup>160.00
+              </span>
+              <a class="btn btn-default btn-shaded btn-block u-margin-top" href="#">Add Dollars</a>
+            </div>
+          </div>
+          <div class="col-md-4 no-gutters border-right border-left no-border-xm no-border-sm">
+            <div class="box return-call-settings-box">
+              <h4>Settings <a class="btn btn-default btn-shaded btn-xs pull-right hidden-xs hidden-sm hidden-md" href="#">Edit</a></h4>
+              <p class="small"><strong><span class="u-block">Return Call Number:</span></strong> 555-555-5555</p>
+              <p class="small"><strong>Availability:</strong> 1 hour</p>
+              <a class="btn btn-default btn-shaded btn-block hidden-lg" href="#">Edit</a>
+            </div>
+          </div>
+          <div class="col-md-4 no-gutters">
+            <div class="box">
+              <h4>Phone Alerts</h4>
+              <p>Receive Return Call cell phone alerts.</p>
+              <a class="btn btn-default btn-shaded btn-block" href="#">Set up <span class="arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </div>      </div>
     </div>
   </div>
 </div>
+
   
   <button class="quicklist-toggle" id="quicklist-toggle" type="button">
     <span class="quicklist-toggle-inner">Show who&rsquo;s logged on</span>
@@ -635,51 +524,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
               </a>
             </li>
             <li>
@@ -738,6 +582,98 @@
               </a>
             </li>
             <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
               <a class="quicklist-item " href="">
                 <h6 class="quicklist-item-heading">Firstname x5555</h6>
                 <small class="quicklist-item-status">
@@ -810,53 +746,9 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
                   <svg class="icon quicklist-item-chat">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
                   </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
               </a>
             </li>
         </ul>
@@ -898,5 +790,3 @@
 
 </body>
 </html>
-
-
