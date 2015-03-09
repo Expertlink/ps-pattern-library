@@ -14,7 +14,7 @@
   white-space: nowrap;
   float:left;
   position: relative;
-  @media (min-width: $screen-lg-min)  {
+  @media (min-width: $screen-md-min)  {
     overflow-x: hidden;
     white-space: normal;
   }
@@ -43,7 +43,6 @@
     margin-top: -1em;
   }
   h4 {
-    margin-top: 0;
     margin-bottom: 1.2em;
   }
 }
