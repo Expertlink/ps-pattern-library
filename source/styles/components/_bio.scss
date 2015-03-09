@@ -241,6 +241,10 @@ a.section-parent {
   }
 }
 .time-zone-picker {
+  // solves cut off descenders in IE11, also some of the options are quite long
+  .form-control {
+    font-size: 0.9em;
+  }
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     float: right;
     margin-top: -2.7em;
