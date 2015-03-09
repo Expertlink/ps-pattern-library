@@ -4,13 +4,15 @@ status: inprogress
 
 <div class="container-fluid">
   <p class="home-available-advisors">48 of 287 Psychics are available <a class="btn btn-default btn-sm u-margin" href="#">View all</a></p>
-  <div class="row">
-    <div class="home-advisor-horizontal u-margin-top">
-       {{#withFirst advisor.list 8}}
-          <div class="col-md-2 home-advisor-tile-simple">
+  <div class="container-fluid no-gutters">
+    <div class="home-advisor-horizontal col-md-12 u-margin-top">
+      <div class="container-fluid no-gutters">
+        {{#withFirst advisor.list 8}}
+          <div class="col-md-3 home-advisor-tile-simple">
             {{> advisors/_advisor-tile-home }}
           </div>
         {{/withFirst}}
+      </div>
     </div>
   </div>
 </div>
