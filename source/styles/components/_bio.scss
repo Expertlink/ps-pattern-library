@@ -165,9 +165,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin:0;
   position: relative;
   clear: both;
+  // removes col padding
   @media (max-width: $screen-md-min) {
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
+    margin-left: ($grid-gutter-width * -0.5);
+    margin-right: ($grid-gutter-width * -0.5);
   }
   @media (min-width: $screen-md-min) {
     position: static;
@@ -182,7 +183,9 @@ a.section-parent {
   text-decoration: none;
   border-color: $gray-lighter;
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 1px 0 ;
+  // fixes double borders
+  margin-top: -1px;
   background-color: lighten($gray-lighter, 10%);
   background-image: linear-gradient(
     to bottom,
