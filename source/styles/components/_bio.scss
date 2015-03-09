@@ -172,6 +172,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
   @media (min-width: $screen-md-min) {
     position: static;
+    margin-bottom: ($grid-gutter-width / 2);
   }
 }
 a.section-parent {
@@ -216,6 +217,7 @@ a.section-parent {
     border:0;
     cursor: default;
     display: inline-block;
+    padding: 0;
     &.collapsed:after, &:after {
       content:'';
     }
@@ -247,10 +249,6 @@ a.section-parent {
   // solves cut off descenders in IE11, also some of the options are quite long
   .form-control {
     font-size: 0.9em;
-  }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    float: right;
-    margin-top: -2.7em;
   }
 }
 .similar-advisors {
