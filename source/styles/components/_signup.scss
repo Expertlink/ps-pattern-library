@@ -5,6 +5,7 @@
   border-radius: $border-radius-large;
   margin-bottom: ($line-height-computed / 2);
   padding: ($line-height-computed / 2) ;
+  background: $teal-light;
   background: linear-gradient(to bottom, #fff, #fff 50%, $teal-light);
   text-align: center;
   font-weight: normal;
