@@ -7,13 +7,20 @@ status: inprogress
 <h3 class="bio-section-header"><a href="#more-advisors"  data-toggle="collapse" data-responsive="bio" class="section-parent collapsed">You may also like... </a></h3>
 <div id="more-advisors" class="collapse bio-show-md">
   <div class="similar-advisors">
-    <div class="row">
-     {{#withFirst advisor.list 4}}
-        <div class="col-md-3">
-          {{> advisors/_advisor-tile-simple }}
-        </div>
-      {{/withFirst}}
+    <div class="container-fluid no-gutters-xs no-gutters-sm no-gutters-md">
+      <div class="row">
+        {{#withFirst advisor.list 4}}
+          <div class="col-lg-3">
+            {{> advisors/_advisor-tile-simple}}
+          </div>
+        {{/withFirst}}
+      </div>
     </div>
   </div>
   <p class="u-margin-top"><a href="/pages/our-psychics/01-our-psychics.html" class="btn btn-default btn-shaded btn-block">Meet More Advisors</a></p>
 </div>
+
+
+
+
+
