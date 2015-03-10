@@ -2,6 +2,9 @@
   border-bottom: dotted 1px $tan-dark;
   margin-left: .6em;
   padding: 1em;
+  @media (max-width: $screen-sm-min) {
+    border-right: none;
+  }
   @media (min-width: $screen-md-min) {
     border-bottom: none;
     border-top: dotted 1px $tan-dark;
@@ -27,11 +30,5 @@
   position: relative;
   @media (min-width: $screen-md-min) {
     position: absolute;
-  }
-}
-
-.home-promopod-border {
-  @media (min-width: $screen-md-min) {
-    border-right: dotted 1px $tan-dark;
   }
 }
