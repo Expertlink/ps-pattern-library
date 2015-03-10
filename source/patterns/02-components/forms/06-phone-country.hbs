@@ -7,31 +7,30 @@ description: >
     * Changes to country drop-down will change applied dialing code in the `tel` field.
 
 ---
-<form role="form">
-  <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupCountry">Country</label>
-      <select id="signupCountry" class="form-control">
 
-      </select>
-    </div>
+<div class="form-group arrange arrange-equal arrange-gutter">
+  <div class="form-group form-group-required arrange-fit">
+    <label class="control-label" for="signupCountry">Country</label>
+    <select id="signupCountry" class="form-control">
 
-    <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupState">State or province</label>
-      <select id="signupState"  class="form-control">
-        <option selected="selected" value="">Select</option>
-        <option value="1">Other</option>
-        <option value="3">Alaska</option>
-        <option value="4">Alabama</option>
-        <option value="5">Arkansas</option>
-        <option value="6">Arizona</option>
-
-      </select>
-    </div>
+    </select>
   </div>
 
-  {{> fields/tel-field }}
-</form>
+  <div class="form-group form-group-required arrange-fit">
+    <label class="control-label" for="signupState">State or province</label>
+    <select id="signupState"  class="form-control">
+      <option selected="selected" value="">Select</option>
+      <option value="1">Other</option>
+      <option value="3">Alaska</option>
+      <option value="4">Alabama</option>
+      <option value="5">Arkansas</option>
+      <option value="6">Arizona</option>
+
+    </select>
+  </div>
+</div>
+
+{{> fields/tel-field }}
 
 <script>
 $(function() {
