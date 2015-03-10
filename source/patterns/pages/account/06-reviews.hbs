@@ -14,7 +14,7 @@ status: inprogress
         <div class="tabpanel tabpanel-light tabpanel-teal tabpanel-full-xs tabpanel-full-sm" role="tabpanel">
         <!-- Nav tabs -->
           <ul class="tabpanel-tabs" role="tablist">
-            <li class="active" role="presentation">
+            <li role="presentation">
               <a role="tab" data-toggle="tab" href="#post-review">
                 Post Review
               </a>
@@ -24,16 +24,24 @@ status: inprogress
                 Review History
               </a>
             </li>
+            <li class="active" role="presentation">
+              <a role="tab" data-toggle="tab" href="#private-notes">
+                Private Notes
+              </a>
+            </li>
           </ul>
           <!-- Tab panes -->
           <div class="tabpanel-content">
-            <div class="tabpanel-pane active" role="tabpanel" id="post-review">
+            <div class="tabpanel-pane" role="tabpanel" id="post-review">
               {{> account/_reviews-howto }}
               {{> account/_reviews-tips }}
               {{> reviews/eligible-reading-list }}
             </div>
             <div class="tabpanel-pane" role="tabpanel" id="review-history">
               {{> reviews/review-history-list }}
+            </div>
+            <div class="tabpanel-pane active" role="tabpanel" id="private-notes">
+              {{> reviews/eligible-reading-notes-list }}
             </div>
           </div>
         </div>

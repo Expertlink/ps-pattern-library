@@ -1,0 +1,43 @@
+<div class="eligible-reading" data-deemphasis-parent="ratings">
+  <div class="eligible-reading-summary">
+    <div class="eligible-reading-advisor-photo">
+      <img class="img-rounded" src="{{photo}}" alt="{{firstName}}">
+    </div>
+    <div class="eligible-reading-main">
+
+      <p class="eligible-reading-advisor-name"><a href="/pages/advisor-bio/01-advisor-bio.html">{{firstName}} x{{ext}}</a></p>
+      <p class="eligible-reading-date">{{date}}</p>
+      <p class="eligible-reading-type">
+        {{#if chat}}
+          Chat Reading
+        {{/if}}
+        {{#if call}}
+          Phone Reading
+        {{/if}}
+      </p>
+      <p class="eligible-reading-review">
+        {{#if reviewID}}
+          <a href="#{{reviewID}}">Read your review of this reading</a>
+          {{else}}
+            <a href="#add-review-block-{{readingID}}">Rate and review this reading</a>
+        {{/if}}
+      </p>
+    </div>
+  </div>
+  <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="add-review-parent btn btn-primary collapsed">
+    Note
+  </a>
+  <div id="add-note-block-{{readingID}}" class="collapse box box-lighter box-teal add-review">
+    <div class="form-group u-margin-bottom">
+      <textarea class="form-control" rows="5" name="reading-review">{{note}}</textarea>
+    </div>
+    <div class="arrange arrange-equal arrange-gutter">
+      <div class="arrange-fill">
+        <button class="btn btn-shaded btn-default btn-block js-dismiss-rating">Nevermind</button>
+      </div>
+      <div class="arrange-fill">
+        <button class="btn btn-primary btn-block">Edit Note</button>
+      </div>
+    </div>
+  </div>
+</div>
