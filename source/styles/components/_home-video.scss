@@ -1,8 +1,9 @@
 .home-video {
-  margin-top: 2em;
+  margin-top: 3em;
   @media (min-width: $screen-md-min) {
     position: absolute;
     right: 0px;
     top: 2em;
+    margin-top: 0;
   }
 }
