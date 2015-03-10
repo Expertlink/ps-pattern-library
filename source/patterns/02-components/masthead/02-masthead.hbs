@@ -144,15 +144,13 @@ $(function(){
 
   // With any of the form fields...
   $fields.on({
-    // On focus, disable browser zoom and stop any hiding that may occur
+    // On focus, stop any hiding that may occur
     'focus': function () {
-      $.mobile.zoom.disable(true);
       clearTimeout(hideTimeout);
     },
-    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    // On blur, wait the time of hideDelay before hiding
     'blur': function () {
       hideTimeout = setTimeout(function () {
-        $.mobile.zoom.enable(true);
         $masthead.removeClass('is-search-open');
       },  hideDelay);
     }
