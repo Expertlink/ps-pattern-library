@@ -263,10 +263,6 @@ a.section-parent {
 // I am putting them here instead of _reviews.scss
 .bio-reviews-col-md {
   @media (min-width: $screen-md-min) {
-    .reviews-count {
-      font-size: 1em;
-      padding-top: 0.25em;
-    }
     .review {
       padding-left: 0;
       padding-right: 0;
@@ -274,19 +270,9 @@ a.section-parent {
     .bio-hidden-md {
       display: none;
     }
-  }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    .review-stars-average, .review-stars-average .ratings-total {
-      float: none;
-    }
     .reviews-count {
-      margin: 0;
-    }
-  }
-  @media (min-width: $screen-lg-min) {
-    .reviews-count {
-      padding-top: 0;
       padding-bottom: 0.75em;
+      font-size: 1em;
     }
     .reviews-summary {
       border-radius: 0;
