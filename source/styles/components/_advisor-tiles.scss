@@ -124,7 +124,9 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
 // If both buttons can take up 1/2 the space, they will be of equal width,
 // but if need a button can consume more of the available space.
 .advisor-tile-actions {
+  width: 100%;
   width: calc(100% + #{$arrange-gutter-size});
+
   > .arrange-fill {
     width: 50%;
   }
