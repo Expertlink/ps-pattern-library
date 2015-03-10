@@ -43,3 +43,14 @@
     z-index: 2;
   }
 }
+
+//= Setting display type of intl-tel-input plugin element
+
+.intl-tel-input {
+  display: block;
+}
+
+.intl-tel-input .country-list {
+  max-width: 430px;
+  width: 100%;
+}
