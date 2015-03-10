@@ -43,11 +43,3 @@
     z-index: 2;
   }
 }
-
-//= Helper for avoiding browser zoom on form elements
-
-.no-zoom {
-  &:not(.no-zoom-focused) {
-    font-size: 16px;
-  }
-}
