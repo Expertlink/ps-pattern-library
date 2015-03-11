@@ -51,6 +51,27 @@
   }
 }
 
+@media (min-width: $screen-lg-min) {
+  .border-sides-pseudo:before,
+  .border-sides-pseudo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 2px;
+    height: 300px;
+    background-color: $gray-lighter;
+  }
+
+  .border-sides-pseudo:before {
+    left: 0;
+  }
+
+  .border-sides-pseudo:after {
+    right: 0;
+  }
+}
+
 .no-border-xs {
   @media (max-width: $screen-xs-max) {
     border-width: 0 !important;

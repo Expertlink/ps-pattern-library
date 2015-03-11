@@ -21,6 +21,15 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
 }
 
 /**
+* Allows use of intentionally overflowing, absolutely-positioned "pseudo-borders"
+* on columns to give appearance of equal height. 
+*/
+
+.row {
+  overflow: hidden;
+}
+
+/**
  * Inspired by: http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/
  */
 
