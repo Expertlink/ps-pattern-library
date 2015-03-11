@@ -115,10 +115,10 @@
 
 .box-leaf-tr {
   background: transparent url(/images/fleurons/top-right-leaf.svg) top right no-repeat;
-  background-size: 23em auto;
-  margin-right: -2.4em;
-  padding-right: 4em;
-  padding-top: 2.8em;
+  background-size: 20em auto;
+  margin-right: -1em;
+  padding-right: 2em;
+  padding-top: .5em;
   @media (max-width: $screen-md-max) {
     background: none;
     margin-right: 0;
