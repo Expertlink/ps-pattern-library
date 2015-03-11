@@ -10,6 +10,20 @@
   margin-top: -1px;
   padding: ($line-height-computed / 2);
   position: relative;
+
+  @media (min-width: $screen-md-min) {
+    border-width: 1px;
+
+    &:first-child {
+      border-top-left-radius: $border-radius-large;
+      border-top-right-radius: $border-radius-large;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius-large;
+      border-bottom-right-radius: $border-radius-large;
+    }
+  }
 }
 
 .return-line-info {
@@ -33,7 +47,7 @@
 
 .return-line-photo {
   width: em(72px - ($line-height-computed / 2));
-  
+
   img {
     width: 100%;
   }
@@ -46,11 +60,11 @@
 .return-line-actions {
   display: table;
   width: 100%;
-  
+
   > li {
     display: table-cell;
     width: 1%;
-    
+
     &:first-child {
       padding-right: 10px;
       width: auto;
@@ -58,37 +72,23 @@
   }
 }
 
-@media (min-width: $screen-md-min) {
+// change layout substantially from this breakpoint, grouping these together
+// because they're _just_ shy of understandable in context
+@media (min-width: $screen-lg-min) {
   .return-line {
     border-width: 1px;
     display: table;
     width: 100%;
   }
-  
+
   .return-line-info,
   .return-line-actions {
     display: table-cell;
     vertical-align: middle;
   }
-  
+
   .return-line-actions {
     width: 1%;
-  }
-  
-  .return-lines {
-    border-radius: $border-radius-large;
-    
-    > li {
-      &:first-child {
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-      }
-      
-      &:last-child {
-        border-bottom-left-radius: inherit;
-        border-bottom-right-radius: inherit;
-      }
-    }
   }
 }
 
@@ -99,5 +99,3 @@
     padding-bottom: 1em;
   }
 }
-
-
