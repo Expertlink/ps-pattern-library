@@ -6,6 +6,14 @@
   }
 }
 
+%arrow-base-before {
+  margin-right: 0.25em;
+}
+
+%arrow-base-after {
+  margin-left: 0.25em;
+}
+
 @each $arrow-direction in up, down, left, right {
   .arrow-#{$arrow-direction},
   .arrow-#{$arrow-direction}-before:before,
@@ -25,5 +33,13 @@
       $triangle-type: equilateral,
       $triangle-reset: false
     );
+  }
+  .arrow-#{$arrow-direction}-before:before,
+  .arrow-#{$arrow-direction}-equilateral-before:before {
+    @extend %arrow-base-before;
+  }
+  .arrow-#{$arrow-direction}-after:after,
+  .arrow-#{$arrow-direction}-equilateral-after:after {
+    @extend %arrow-base-after;
   }
 }
