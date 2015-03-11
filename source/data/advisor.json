@@ -32,7 +32,7 @@
       "call": true
     },
     {
-      "firstName": "Saul Goodman",
+      "firstName": "Saul",
       "ext": "7777",
       "photo": "/images/fpo/saul.jpg",
       "staffPick": false,
@@ -48,7 +48,7 @@
       "returnCall": true
     },
     {
-      "firstName": "Zaphod Beeblebrox",
+      "firstName": "Zaphod",
       "ext": "1337",
       "photo": "http://placeimg.com/164/216/animals",
       "staffPick": true,
@@ -62,7 +62,7 @@
       "call": true
     },
     {
-      "firstName": "Liz Lemon",
+      "firstName": "Liz",
       "ext": "3030",
       "photo": "/images/fpo/liz.jpg",
       "staffPick": false,
@@ -79,7 +79,7 @@
       "call": false
     },
     {
-      "firstName": "Jet Jaguar",
+      "firstName": "Jet",
       "ext": "1122",
       "photo": "/images/fpo/jet.jpg",
       "staffPick": false,
@@ -95,7 +95,7 @@
       "returnCall": true
     },
     {
-      "firstName": "Uncle Jesse",
+      "firstName": "Jesse",
       "ext": "7777",
       "photo": "/images/fpo/jesse.jpg",
       "staffPick": false,
@@ -111,7 +111,7 @@
       "returnCall": true
     },
     {
-      "firstName": "The Amazing Gusto",
+      "firstName": "Gusto",
       "ext": "8888",
       "photo": "/images/fpo/gusto.jpg",
       "staffPick": true,
@@ -143,7 +143,7 @@
       "call": true
     },
     {
-      "firstName": "Saul Goodman",
+      "firstName": "Saul",
       "ext": "7777",
       "photo": "/images/fpo/saul.jpg",
       "staffPick": false,

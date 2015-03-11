@@ -1,36 +1,35 @@
-<div class="advisor-tile-main return-call-line">
-  <div class="u-overflow-hidden">
-    <div class="container-fluid u-margin-top u-margin-bottom">
-      <div class="col-md-6">
-        <div class="col-md-1 hidden-xs hidden-sm hidden-md no-gutters u-margin-right">
+<ul class="return-lines">
+  {{#times 3}}
+    <li class="return-line">
+      <div clas="return-line-info">
+        <div class="return-line-photo">
           <img class="img-rounded" src="/images/fpo/7777-sml.jpg" alt=" ">
         </div>
-        <div class="col-xs-9 col-md-6 no-gutters"> 
-          <div class="advisor-tile-main-body">
-            <h4>Bridgette x8133</h4>
-            <p class="text-success small"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00 PM</span></p>
-          </div>
+        <div class="return-line-details">
+          <h4 class="h5 u-no-margin">Firstname x5555</h4>
+          <p class="text-muted small u-no-margin"><strong>Next Availabliity:</strong> <span class="text-nowrap">2/27/2015 7:00 PM</span></p>
         </div>
-        <div class="col-md-4">
-          <span class="stat pull-right">
+        <div class="return-line-place">
+          <div class="stat">
             <span class="stat-value">3rd</span>
             <span class="stat-label">in line</span>
-          </span>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="col-xs-9 col-md-10 no-gutters">
-          <a class="btn btn-success btn-block">Get Answers Now</a>
-        </div>
-        <div class="col-xs-2">
-          <a class="text-danger close" href="#">  
+      <ul class="return-line-actions">
+        <li>
+          <a class="btn btn-block btn-default" href="#">
+            View Alternatives
+          </a>
+        </li>
+        <li>
+          <a class="text-danger close u-block close" href="#">  
             <svg class="icon icon-md">
               <use xlink:href="/images/symbol/svg/sprite.symbol.svg#close" />
             </svg>
-            </svg>
           </a>
-        </div>
-      </div>
-    </div>  
-  </div>
-</div>
+        </li>
+      </ul>
+    </li>
+  {{/times}}
+</ul>
