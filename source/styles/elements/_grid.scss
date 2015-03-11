@@ -21,13 +21,42 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
 }
 
 /**
-* Allows use of intentionally overflowing, absolutely-positioned "pseudo-borders"
-* on columns to give appearance of equal height. 
+* Add vertical divider bars between columns that span the height of the row.
 */
 
-.row {
-  overflow: hidden;
+@mixin add-vertical-dividers ($suffix: '') {
+  .row.with-vertical-dividers#{$suffix} {
+    overflow: hidden;
+
+    div:nth-last-child(n+2) {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 2px;
+        height: 1000px;
+        background-color: $gray-lighter;
+      }
+    }
+  }
 }
+
+@include add-vertical-dividers();
+
+@media (min-width: $screen-sm-min) {
+  @include add-vertical-dividers('-sm');
+}
+
+@media (min-width: $screen-md-min) {
+  @include add-vertical-dividers('-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include add-vertical-dividers('-lg');
+}
+
 
 /**
  * Inspired by: http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/
