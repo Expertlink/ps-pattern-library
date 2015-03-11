@@ -1,7 +1,7 @@
 {
-  "isAvailable"       : false,  
-  "phoneIsAvailable"  : false,
-  "chatIsAvailable"   : false,
+  "isAvailable"       : true,  
+  "phoneIsAvailable"  : true,
+  "chatIsAvailable"   : true,
   "returnIsAvailable" : true,
   "isInReading"       : true,
   "isAway"            : false,  
