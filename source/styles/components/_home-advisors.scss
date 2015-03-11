@@ -1,7 +1,7 @@
 /* Horizontal advisors on homepage */
 
 .home-available-advisors {
-  margin: 0;
+  margin: 1em 0 0 1.6em;
   text-align: left;
   a {
     margin: 0;
@@ -13,6 +13,7 @@
   overflow-x:scroll;
   white-space: nowrap;
   float:left;
+  text-align: center;
   position: relative;
   @media (min-width: $screen-md-min)  {
     overflow-x: hidden;
@@ -23,7 +24,8 @@
 .home-advisor-tile-simple {
   display: inline-block;
   border-radius: $border-radius-small;
-  text-align: center;
+  width: 24%;
+  vertical-align: top;
   a {
     color: #000;
     text-decoration: none;
@@ -32,8 +34,13 @@
     background: $tan-light;
   }
   @media (max-width: $screen-sm-min)  {
-    width: 40%;
+    width: 35%;
   }
+}
+
+.home-advisor-image {
+  margin: 0 auto;
+  width: 90%
 }
 
 .home-advisor-main-body {
