@@ -3,7 +3,8 @@
     <{{#if primary}}h4{{else}}h5{{/if}} class="filter-heading">
       <a
         data-toggle="collapse"
-        class="filter-item filter-parent {{#unless open}}collapsed{{/unless}} {{#if primary}}filter-primary{{/if}}"
+        class="filter-item filter-parent {{#unless open}}collapsed{{/unless}} {{#if primary}}filter-primary text-truncate{{/if}}"
+        {{#if primary}}title="{{title}}"{{/if}}
         href="#filters-{{formatSlug title}}">
         {{title}}
         {{#if summary}}

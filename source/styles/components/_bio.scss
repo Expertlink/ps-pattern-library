@@ -43,6 +43,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
+.bio-summary-photo {
+  max-width: 100%;
+}
+
 .bio-summary-body {
   @media (min-width: $screen-md-min) {
     padding-left: ($bio-padding / 2);
@@ -161,12 +165,14 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin:0;
   position: relative;
   clear: both;
+  // removes col padding
   @media (max-width: $screen-md-min) {
-    margin-left: -($bio-padding);
-    margin-right: -($bio-padding);
+    margin-left: ($grid-gutter-width * -0.5);
+    margin-right: ($grid-gutter-width * -0.5);
   }
   @media (min-width: $screen-md-min) {
     position: static;
+    margin-bottom: ($grid-gutter-width / 2);
   }
 }
 a.section-parent {
@@ -178,7 +184,9 @@ a.section-parent {
   text-decoration: none;
   border-color: $gray-lighter;
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 1px 0 ;
+  // fixes double borders
+  margin-top: -1px;
   background-color: lighten($gray-lighter, 10%);
   background-image: linear-gradient(
     to bottom,
@@ -209,6 +217,7 @@ a.section-parent {
     border:0;
     cursor: default;
     display: inline-block;
+    padding: 0;
     &.collapsed:after, &:after {
       content:'';
     }
@@ -237,9 +246,9 @@ a.section-parent {
   }
 }
 .time-zone-picker {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    float: right;
-    margin-top: -2.7em;
+  // solves cut off descenders in IE11, also some of the options are quite long
+  .form-control {
+    font-size: 0.9em;
   }
 }
 .similar-advisors {

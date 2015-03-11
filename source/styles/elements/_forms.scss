@@ -44,10 +44,13 @@
   }
 }
 
-//= Helper for avoiding browser zoom on form elements
+//= Setting display type of intl-tel-input plugin element
 
-.no-zoom {
-  &:not(.no-zoom-focused) {
-    font-size: 16px;
-  }
+.intl-tel-input {
+  display: block;
+}
+
+.intl-tel-input .country-list {
+  max-width: 430px;
+  width: 100%;
 }

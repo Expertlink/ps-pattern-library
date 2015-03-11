@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    VSE Responsive Pilot Pattern Library: Arrows
+    VSE Responsive Pilot Pattern Library: Toggle Box
   </title>
     <!-- CSS Goes here -->
     <link href="../../css/pattern-library.css" rel="stylesheet">
@@ -45,7 +45,7 @@
           VSE Responsive Pilot Pattern Library
         </a>
         <h1 class="c4-header__title-segment">
-          Arrows
+          Toggle Box
         </h1>
       </div>
       <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
@@ -66,7 +66,7 @@
       <li><a class="c4-nav__item " href="../../01-elements/02-text">Text</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/03-headings">Headings</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/04-arrange">Arrange</a></li>
-      <li><a class="c4-nav__item c4-is-current" href="../../01-elements/arrows">Arrows</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/arrows">Arrows</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
       <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
@@ -100,7 +100,7 @@
       <li><a class="c4-nav__item " href="../../02-components/subnav">Subnav</a></li>
       <li><a class="c4-nav__item " href="../../02-components/tabpanel">Tabpanel</a></li>
       <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
-      <li><a class="c4-nav__item " href="../../02-components/toggle-box">Toggle Box</a></li>
+      <li><a class="c4-nav__item c4-is-current" href="../../02-components/toggle-box">Toggle Box</a></li>
       <li><a class="c4-nav__item " href="../../02-components/toolbar">Toolbar</a></li>
     </ul>
     <h4 class="c4-nav__heading">Regions</h4>
@@ -119,193 +119,59 @@
 
   <main class="c4-main">
     
-  <div class="c4-pattern" id="c4-pattern_5">
+  <div class="c4-pattern" id="c4-pattern_36">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_5">Arrows</a>
+          <a href="#c4-pattern_36">Heading And Content</a>
           <span class="c4-status c4-status--none">
             
           </span>
         </h2>
-        <p>Nifty arrows generated using CSS borders. Size and color are based on the parent <code>currentColor</code> and <code>font-size</code> by default. Custom arrows can be generated using the <code>triangle</code> mixin.</p>
+        <p>A pattern for a linked heading that expands an associated box of content</p>
 
       </div>
     
 
     <div class="c4-pattern__body ">
-      <p>Up: <span class="arrow-up"></span></p>
-<p>Right: <span class="arrow-right"></span></p>
-<p>Down: <span class="arrow-down"></span></p>
-<p>Left: <span class="arrow-left"></span></p>
-
-    </div>
-
-    <div class="c4-pattern__footer">
-      <div class="c4-pattern__footer__actions">
-        
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_5" type="button">
-            Source
-          </button>
-        
-        
-      </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_5"><code class="language-markup">&lt;p&gt;Up: &lt;span class=&quot;arrow-up&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Right: &lt;span class=&quot;arrow-right&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Down: &lt;span class=&quot;arrow-down&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Left: &lt;span class=&quot;arrow-left&quot;&gt;&lt;/span&gt;&lt;/p&gt;</code></pre>
-      
+<div class="toggle-box">
+  <h3 class="toggle-box-heading">
+    <a href="#toggle-box-body" data-toggle="collapse" class="toggle-box-parent collapsed ">
+      Heading text
+    </a>
+  </h3>
+  <div class="collapse" id="toggle-box-body">
+    <div class="toggle-box-body"> 
+      Content, content, content!
     </div>
   </div>
-
-
-
-  <div class="c4-pattern" id="c4-pattern_49">
-    
-      <div class="c4-pattern__header">
-        <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_49">Equilateral</a>
-          <span class="c4-status c4-status--none">
-            
-          </span>
-        </h2>
-        <p>Variation of arrows that are equilateral (rather than isosceles). These can appear more balanced in certain contexts.</p>
-
-      </div>
-    
-
-    <div class="c4-pattern__body ">
-      
-<button class="btn btn-info btn-rounded">
-  <span class="arrow-left-equilateral" aria-hidden="true"></span>
-  Previous
-</button>
-
-<button class="btn btn-info btn-rounded">
-  Next
-  <span class="arrow-right-equilateral" aria-hidden="true"></span>
-</button>
+</div>
 
     </div>
 
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_49" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_36" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_49"><code class="language-markup">&lt;button class=&quot;btn btn-info btn-rounded&quot;&gt;
-  &lt;span class=&quot;arrow-left-equilateral&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-  Previous
-&lt;/button&gt;
-
-&lt;button class=&quot;btn btn-info btn-rounded&quot;&gt;
-  Next
-  &lt;span class=&quot;arrow-right-equilateral&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-&lt;/button&gt;</code></pre>
-      
-    </div>
-  </div>
-
-
-
-  <div class="c4-pattern" id="c4-pattern_76">
-    
-      <div class="c4-pattern__header">
-        <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_76">Before & After</a>
-          <span class="c4-status c4-status--none">
-            
-          </span>
-        </h2>
-        <p>You can also include arrows as an element&#39;s <code>:before</code> or <code>:after</code> pseudo-elements by appending <code>-before</code> or <code>-after</code> to the arrow class name, applied to the desired parent element.</p>
-
-      </div>
-    
-
-    <div class="c4-pattern__body ">
-      
-<button class="btn btn-info btn-rounded arrow-left-equilateral-before">
-  Previous
-</button>
-
-<button class="btn btn-info btn-rounded arrow-right-equilateral-after">
-  Next
-</button>
-
-    </div>
-
-    <div class="c4-pattern__footer">
-      <div class="c4-pattern__footer__actions">
-        
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_76" type="button">
-            Source
-          </button>
-        
-        
-      </div>
-      
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_76"><code class="language-markup">&lt;button class=&quot;btn btn-info btn-rounded arrow-left-equilateral-before&quot;&gt;
-  Previous
-&lt;/button&gt;
-
-&lt;button class=&quot;btn btn-info btn-rounded arrow-right-equilateral-after&quot;&gt;
-  Next
-&lt;/button&gt;</code></pre>
-      
-    </div>
-  </div>
-
-
-
-  <div class="c4-pattern" id="c4-pattern_97">
-    
-      <div class="c4-pattern__header">
-        <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_97">Toggle</a>
-          <span class="c4-status c4-status--none">
-            
-          </span>
-        </h2>
-        <p>Including the class <code>arrow-toggle</code> on any of these elements will allow the arrow to flip <code>180deg</code> when the class <code>active</code> is applied.</p>
-
-      </div>
-    
-
-    <div class="c4-pattern__body ">
-      
-<button class="btn btn-default arrow-down-after arrow-toggle">
-  You spin me right round
-</button>
-
-<button class="btn btn-default arrow-down-after arrow-toggle active">
-  Like a record, baby
-</button>
-
-    </div>
-
-    <div class="c4-pattern__footer">
-      <div class="c4-pattern__footer__actions">
-        
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_97" type="button">
-            Source
-          </button>
-        
-        
-      </div>
-      
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_97"><code class="language-markup">&lt;button class=&quot;btn btn-default arrow-down-after arrow-toggle&quot;&gt;
-  You spin me right round
-&lt;/button&gt;
-
-&lt;button class=&quot;btn btn-default arrow-down-after arrow-toggle active&quot;&gt;
-  Like a record, baby
-&lt;/button&gt;</code></pre>
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_36"><code class="language-markup">&lt;div class=&quot;toggle-box&quot;&gt;
+  &lt;h3 class=&quot;toggle-box-heading&quot;&gt;
+    &lt;a href=&quot;#toggle-box-body&quot; data-toggle=&quot;collapse&quot; class=&quot;toggle-box-parent collapsed &quot;&gt;
+      Heading text
+    &lt;/a&gt;
+  &lt;/h3&gt;
+  &lt;div class=&quot;collapse&quot; id=&quot;toggle-box-body&quot;&gt;
+    &lt;div class=&quot;toggle-box-body&quot;&gt; 
+      Content, content, content!
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
       
     </div>
   </div>
