@@ -135,13 +135,13 @@
 .box-scroll:after,
 .box-scroll-top:before,
 .box-scroll-bottom:after {
-  background: url(/images/fleurons/scroll.svg) 0 center repeat-x;
+  background-image: url(/images/fleurons/scroll.svg);
+  background-repeat: repeat-x;
   content: '';
   display: block;
   height: 14px;
   margin: ($line-height-computed / 2) ($line-height-computed * -1);
   width: auto;
-
 }
 
 //== Inner fleurons
