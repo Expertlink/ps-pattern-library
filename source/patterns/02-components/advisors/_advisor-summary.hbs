@@ -32,15 +32,15 @@
       </ul>
     {{else}}
       {{#if isInReading}}
-        <h4 class="text-danger">I'm in a reading - logged on till 9:00pm 
+        <h4 class="text-danger"><span class="text-nowrap">I'm in a reading</span> - <span class="text-nowrap">logged on till 9:00pm</span> 
           {{#if phoneQueue}}
-            ({{phoneQueue}} in line)
+            <span class="text-nowrap">({{phoneQueue}} in line)</span>
           {{/if}}
         </h4>
       {{else}}
         <h4 class="text-muted">I'm away 
           {{#if phoneQueue}}
-            ({{phoneQueue}} in line)
+            <span class="text-nowrap">({{phoneQueue}} in line)</span>
           {{/if}}
         </h4>
       {{/if}}
