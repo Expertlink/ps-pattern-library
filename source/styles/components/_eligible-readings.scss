@@ -35,7 +35,8 @@
 }
 .eligible-reading-advisor-name,
 .eligible-reading-type,
-.eligible-reading-date {
+.eligible-reading-date,
+.eligible-reading-review {
   margin:0;
 }
 .eligible-reading-advisor-name {
@@ -47,16 +48,26 @@
   font-weight: bold;
   color: $gray;
 }
-.add-review-parent {
+.add-review-parent,
+.add-note-parent {
   display: block;
-  margin-top: ($padding-base-vertical * 2);
   @media (min-width: $screen-sm-min)  {
     // width based on button label
-    width: 12em;
     position: absolute;
     top: ($padding-base-vertical * 2);
     right: $line-height-computed;
+  }
+}
+.add-review-parent {
+  margin-top: ($padding-base-vertical * 2);
+  @media (min-width: $screen-sm-min)  {
+    width: 12em;
     margin: 0;
+  }
+}
+.add-note-parent {
+  @media (min-width: $screen-sm-min)  {
+    width: 8em;
   }
 }
 .add-review {
@@ -64,5 +75,13 @@
   // on narrow screens, the form replaces the triggering button
   @media (max-width: $screen-xs-max)  {
     margin-top: -2.6em;
+  }
+}
+
+.add-note {
+  margin: 0;
+  // on narrow screens, the form replaces the triggering button
+  @media (max-width: $screen-xs-max)  {
+    margin-bottom: -2.6em;
   }
 }

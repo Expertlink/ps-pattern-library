@@ -24,10 +24,10 @@
       </p>
     </div>
   </div>
-  <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="add-review-parent btn btn-primary collapsed">
-    Note
-  </a>
-  <div id="add-note-block-{{readingID}}" class="collapse box box-lighter box-teal add-review">
+  <div class="reading-note u-margin-top {{#if note}}box box-lighter box-teal{{/if}}">
+    <p>{{note}}</p>
+  </div>
+  <div id="add-note-block-{{readingID}}" class="collapse box box-lighter box-teal add-note">
     <div class="form-group u-margin-bottom">
       <textarea class="form-control" rows="5" name="reading-review">{{note}}</textarea>
     </div>
@@ -37,7 +37,15 @@
       </div>
       <div class="arrange-fill">
         <button class="btn btn-primary btn-block">Edit Note</button>
-      </div>
+       </div>
     </div>
   </div>
+  <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="add-note-parent btn btn-primary collapsed">
+    {{#if note}}
+      Edit 
+        {{else}}
+          Add
+    {{/if}} 
+    Note
+  </a>
 </div>
