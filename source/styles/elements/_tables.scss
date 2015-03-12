@@ -6,6 +6,7 @@
     &, tr, td, tbody {
       display: block;
       width: 100%;
+      float: left;
     }
     tr {
       padding: ($arrange-gutter-size * 0.5) 0;
