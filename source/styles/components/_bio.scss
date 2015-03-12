@@ -151,15 +151,7 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   }
 
 }
-.bio-availability {
-  text-align: center;
-  @media (min-width: $screen-lg-min)  {
-    text-align: left;
-    .bio-price.bio-unavailable {
-      text-align: left;
-    }
-  }
-}
+
 
 .bio-section-header {
   margin:0;
