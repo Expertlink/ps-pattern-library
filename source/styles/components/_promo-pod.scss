@@ -1,10 +1,8 @@
 .home-promopod {
-  color: #000;
-  padding: 1em;
+  padding: ($padding-base-vertical * 2);
   border-bottom: dotted 1px $tan-dark;
   @media (max-width: $screen-sm-max) {
     border-right: none;
-    padding: 0 1em;
   }
   @media (min-width: $screen-md-min) {
     border-bottom: none;
@@ -16,10 +14,11 @@
     margin-left: 1em;
     margin-right: .5em;
     max-height: 7em;
-    max-width: 7em;
+    max-width: 6em;
   }
-}
-
-.home-promopod-btn {
-
+  a {
+    @media (max-width: $screen-sm-max) {
+      padding: 0 ($padding-base-vertical * 2);
+    }
+  }
 }

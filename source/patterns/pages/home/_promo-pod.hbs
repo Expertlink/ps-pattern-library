@@ -1,40 +1,40 @@
 <div class="container-fluid no-gutters-xs no-gutters-sm">
-  <a href="#"> 
-    <div class="col-md-4 home-promopod border-right u-padding-bottom">
+  <div class="col-md-4 home-promopod border-right u-padding-bottom">
+    <a class="link-block" href="#">
       <img src="/images/satisfaction-seal.png">
       <h4>Satisfaction Guaranteed</h4>
       <p>If you're not happy with your last live reading, it's <strong>FREE!</strong></p>
       <span class="btn btn-default btn-shaded home-promopod-btn">Find out more <span class="arrow-right" aria-hidden="true"></span></span>
-    </div>
-  </a>
-  <a href="#">
-    <div class="col-md-4 home-promopod border-right u-padding-bottom">
+    </a>
+  </div>
+  <div class="col-md-4 home-promopod border-right u-padding-bottom">
+    <a class="link-block" href="#">
       <img src="/images/questions-chat.png">
       <h4>Call to talk <i>or</i> login to chat online.</h4>
       <p>There's more than one way to get a reading!</p>
       <span class="btn btn-default btn-shaded home-promopod-btn">Find out how <span class="arrow-right" aria-hidden="true"></span></span>
-    </div>
-  </a>
-  <a href="#">
-    <div class="col-md-4 home-promopod u-padding-bottom">
+    </a>
+  </div>
+  <div class="col-md-4 home-promopod u-padding-bottom">
+    <a class="link-block" href="#">
       <img src="/images/open-sign.png">
       <h4>Our Customer Care Center</h4>
       <p>Is open 24/7 (and it's not outsourced!)</p>
       <span class="btn btn-default btn-shaded home-promopod-btn">Read More <span class="arrow-right" aria-hidden="true"></span></span>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
 
 
 <script>
 $(window).load(function(){
-  var $tiles = $('.home-promopod');
-  $tiles.leveller({
+  var $pods = $('.home-promopod');
+  $pods.leveller({
     cssSelector: '.home-promopod-btn',
     cssProperty: 'margin-top'
   });
   $(window).resize($.debounce(function(){
-    $tiles.leveller();
+    $pods.leveller();
   }, 250));
 });
 </script>
