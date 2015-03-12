@@ -39,6 +39,16 @@
 .eligible-reading-review {
   margin:0;
 }
+.eligible-reading-advisor-name,
+.eligible-reading-review  {
+  a {
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: $blue-bright;
+    }
+  }
+}
 .eligible-reading-advisor-name {
   font-size: 1.2em;
   font-weight: bold;

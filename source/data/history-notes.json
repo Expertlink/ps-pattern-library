@@ -8,6 +8,7 @@
   "rating": 4.5,
   "readingID": "1",
   "reviewID": "1",
+  "editingOpen": false,
   "note" : "Seemed really confident in predictions.",
   "list": [
     {
@@ -43,7 +44,7 @@
       "rating": 4.5,
       "readingID": "4",
       "reviewID": "2",
-      "note" : "This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing. This is a pretty long note because we need one for testing."
+      "note" : "This reading was so good! Def. call her again."
     },
     {
       "firstName": "Uncle Jesse",
@@ -54,7 +55,9 @@
       "chat": true,
       "rating": 3.5,
       "readingID": "5",
-      "reviewID": "5"
+      "reviewID": "5",
+      "editingOpen": true,
+      "note": "This is an existing note that you can edit."
     },
     {
       "firstName": "The Amazing Gusto",
