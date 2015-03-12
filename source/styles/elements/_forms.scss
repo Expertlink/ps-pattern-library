@@ -44,13 +44,23 @@
   }
 }
 
-//= Setting display type of intl-tel-input plugin element
+//= International telephone input tweaks/hacks
+
+/* Setting display type of intl-tel-input plugin element */
 
 .intl-tel-input {
   display: block;
 }
 
+/* Fixing width on small screens */
+
 .intl-tel-input .country-list {
-  max-width: 430px;
-  width: 100%;
+  // add momentum scrolling support for webkit
+  -webkit-overflow-scrolling: touch;
+
+  // Up to the natural width (with affordance for left/right gutters)
+  @media (max-width: (430px + $grid-gutter-width * 2 - 1)) {
+    // More modest width (must be hard value because of plugin structure)
+    width: (320px - $grid-gutter-width * 2) !important; // Must be !important to override mysterious JS inline styles
+  }
 }

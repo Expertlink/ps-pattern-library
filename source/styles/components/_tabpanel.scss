@@ -49,7 +49,7 @@
   padding: ($line-height-computed / 2) $line-height-computed;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  overflow: hidden;
+  @include clearfix();
 }
 
 .tabpanel-tabs > li > a {
