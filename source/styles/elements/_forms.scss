@@ -58,6 +58,6 @@
   // Up to the natural width (with affordance for left/right gutters)
   @media (max-width: (430px + $grid-gutter-width * 2 - 1)) {
     // More modest width (must be hard value because of plugin structure)
-    width: (320px - $grid-gutter-width * 2);
+    width: (320px - $grid-gutter-width * 2) !important; // Must be !important to override mysterious JS inline styles
   }
 }
