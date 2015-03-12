@@ -55,6 +55,9 @@
 /* Fixing width on small screens */
 
 .intl-tel-input .country-list {
+  // add momentum scrolling support for webkit
+  -webkit-overflow-scrolling: touch;
+
   // Up to the natural width (with affordance for left/right gutters)
   @media (max-width: (430px + $grid-gutter-width * 2 - 1)) {
     // More modest width (must be hard value because of plugin structure)
