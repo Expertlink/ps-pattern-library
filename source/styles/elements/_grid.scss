@@ -22,41 +22,40 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
 
 /**
  * Inspired by: http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/
+ *
+ * This uses attribute selectors instead of column selectors to avoid selector
+ * bloat (especially important given IE's selector limit).
  */
 
 @mixin make-no-gutters-helpers ($suffix: '') {
-  .row.no-gutters#{$suffix} {
-    margin-left: 0;
-    margin-right: 0;
+  %no-gutters#{$suffix}-padding-base {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /**
-   * Note, this avoids @extends and placeholders so it can work from within
-   * media queries, a current shortcoming of Sass. I've chosen to keep this
-   * readable here rather than resorting to string concatenation to decrease
-   * duplication (especially since the rules themselves are much smaller than
-   * the selectors themselves).
-   */
-
-  .container,
-  .container-fluid,
-  .container-page {
-    &.no-gutters#{$suffix} {
-      padding-left: 0;
-      padding-right: 0;
+  .no-gutters#{$suffix}[class^='container'],
+  .no-gutters#{$suffix}[class*=' container'] {
+    &,
+    > [class^='col-'],
+    > [class^=' col-'] {
+      @extend %no-gutters#{$suffix}-padding-base;
     }
   }
 
-  @for $i from 1 through $grid-columns {
-    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
-      .container.no-gutters#{$suffix} > &,
-      .container-fluid.no-gutters#{$suffix} > &,
-      .container-page.no-gutters#{$suffix} > &,
-      .row.no-gutters#{$suffix} > &,
-      &.no-gutters#{$suffix} {
-        padding-left: 0;
-        padding-right: 0;
-      }
+  .no-gutters#{$suffix}.row {
+    margin-left: 0;
+    margin-right: 0;
+
+    > [class^='col-'],
+    > [class^=' col-'] {
+      @extend %no-gutters#{$suffix}-padding-base;
+    }
+  }
+
+  .no-gutters#{$suffix} {
+    &[class^='col-'],
+    &[class^=' col-'] {
+      @extend %no-gutters#{$suffix}-padding-base;
     }
   }
 }
@@ -80,7 +79,7 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
 }
 
 /**
-* Create helper class for .row that adds full height vertical divider bars 
+* Create helper class for .row that adds full height vertical divider bars
 * between columns.
 */
 
@@ -89,7 +88,7 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
     overflow: hidden;
 
     > [class^="col-"],
-    > [class*=" col-"] { 
+    > [class*=" col-"] {
       :nth-last-child(n+2) {
         &:after {
           content: '';
