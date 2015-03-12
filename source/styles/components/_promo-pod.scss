@@ -11,8 +11,8 @@
   }
   img {
     float: right;
-    margin-left: 1em;
-    margin-right: .5em;
+    margin-left: ($padding-base-vertical * 2);
+    margin-right: ($padding-base-vertical / 2);
     max-height: 7em;
     max-width: 6em;
   }
