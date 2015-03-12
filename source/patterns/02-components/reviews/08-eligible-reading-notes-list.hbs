@@ -1,11 +1,11 @@
 ---
 description: >
-  List of readings, eligible for review. Behavior:
-    * Tapping on an eligible reading's `Rate and Review` button will expand the rating form for that reading and collapse any other open rating form
-    * Opening a rating form will add an `is-deemphasized` class to other readings (opacity 50%)
+  List of readings from the past 90 days and your private notes. Behavior:
+    * Tapping on a reading's `Add Note` button will expand the note adding form for that reading and collapse any other open form
+    * Opening a form will add an `is-deemphasized` class to other readings (opacity 50%)
     * Tapping on the `Nevermind` button will re-collapse the form and remove the opacity de-emphasis from other elements.
     * We know that the behavior on the tap of `Submit` will need to be implemented based on integration needs, so we've opted not to implement "fake" behavior for now.
-
+    * Also, since edit-in-place requires integration with the back end, we've provided examples of both views but have not built edit in place.
 status: inprogress
 ---
 <p>Your reading notes will be saved for up to 90 days. You can edit them at anytime.</p>
