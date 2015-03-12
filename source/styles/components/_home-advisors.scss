@@ -14,7 +14,7 @@
   white-space: nowrap;
   float:left;
   text-align: center;
-  padding-top: $padding-base-vertical 0;
+  padding-top: $padding-base-vertical;
   position: relative;
   @media (min-width: $screen-md-min)  {
     overflow: hidden;
@@ -25,6 +25,7 @@
 .home-advisor-tile-simple {
   display: inline-block;
   border-radius: $border-radius-large;
+  white-space: normal;
   padding: ($padding-base-vertical * 1.2);
   width: 24%;
   vertical-align: top;
@@ -52,6 +53,9 @@
   }
   h4 {
     margin-bottom: 1.2em;
+  }
+  .advisor-tile-meta-group {
+    white-space: normal;
   }
 }
 
