@@ -11,15 +11,9 @@ status: inprogress
         {{> account/_account-nav-sub }}
       </div>
       <div class="col-md-8 col-lg-9">
-        <div class="box">
-          <h2>Manage Your Return Call Lines</h2>
-        </div>
-        <div class="box-full box-lighter box-sheer box-default-sm">
-          {{#times 3}}
-            {{> account/_return-call-line }}
-          {{/times}}
-        </div>
-        {{> account/_return-call }}
+        <h2 class="u-margin-left">Manage Your Return Call Lines</h2>
+          {{> account/_return-call-line }}
+          {{> account/_return-call }}
       </div>
     </div>
   </div>

@@ -107,6 +107,8 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
 }
 
 .bio-actions {
+  // width of 100% a fallback for browsers that cannot do calculated widths
+  width: 100%;
   width: calc(100% + #{$arrange-gutter-size});
   margin: 0 ($arrange-gutter-size * -0.5);
   padding: 0;
