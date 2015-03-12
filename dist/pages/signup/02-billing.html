@@ -308,7 +308,7 @@
   </header>
 
 <div class="container-page">
-  <div class="box box-lighter">
+  <div class="box-full box-default-lg box-lighter">
     <form role="form">
       <h3>Billing Information</h3>
       
@@ -361,37 +361,36 @@
           <input type="text" class="form-control" id="signupCCZip" />
         </div>
       </div>
-      <form role="form">
-        <div class="form-group arrange arrange-equal arrange-gutter">
-          <div class="form-group form-group-required arrange-fit">
-            <label class="control-label" for="signupCountry">Country</label>
-            <select id="signupCountry" class="form-control">
       
-            </select>
-          </div>
+      <div class="form-group arrange arrange-equal arrange-gutter">
+        <div class="form-group form-group-required arrange-fit">
+          <label class="control-label" for="signupCountry">Country</label>
+          <select id="signupCountry" class="form-control">
       
-          <div class="form-group form-group-required arrange-fit">
-            <label class="control-label" for="signupState">State or province</label>
-            <select id="signupState"  class="form-control">
-              <option selected="selected" value="">Select</option>
-              <option value="1">Other</option>
-              <option value="3">Alaska</option>
-              <option value="4">Alabama</option>
-              <option value="5">Arkansas</option>
-              <option value="6">Arizona</option>
-      
-            </select>
-          </div>
+          </select>
         </div>
       
-        
-          <div class="form-group form-group-required">
-            <label class="control-label" for="signupPhone">Phone number</label>
-            <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
-          </div>
-        
-        
-      </form>
+        <div class="form-group form-group-required arrange-fit">
+          <label class="control-label" for="signupState">State or province</label>
+          <select id="signupState"  class="form-control">
+            <option selected="selected" value="">Select</option>
+            <option value="1">Other</option>
+            <option value="3">Alaska</option>
+            <option value="4">Alabama</option>
+            <option value="5">Arkansas</option>
+            <option value="6">Arizona</option>
+      
+          </select>
+        </div>
+      </div>
+      
+      
+        <div class="form-group form-group-required">
+          <label class="control-label" for="signupPhone">Phone number</label>
+          <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
+        </div>
+      
+      
       
       
       <div class="form-group form-group-required">
@@ -480,20 +479,6 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-                  <svg class="icon quicklist-item-chat">
-                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item text-success" href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Available now
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
               </a>
             </li>
             <li>
@@ -533,6 +518,9 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -558,6 +546,9 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -569,49 +560,16 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
                   <svg class="icon quicklist-item-chat">
                     <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
                   </svg>
               </a>
             </li>
             <li>
-              <a class="quicklist-item " href="">
+              <a class="quicklist-item text-success" href="">
                 <h6 class="quicklist-item-heading">Firstname x5555</h6>
                 <small class="quicklist-item-status">
-                    Currently busy
-                </small>
-                <svg class="icon quicklist-item-phone">
-                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="quicklist-item " href="">
-                <h6 class="quicklist-item-heading">Firstname x5555</h6>
-                <small class="quicklist-item-status">
-                    Currently busy
+                    Available now
                 </small>
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
@@ -641,6 +599,34 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
             <li>
@@ -688,6 +674,34 @@
                 <svg class="icon quicklist-item-phone">
                   <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
                 </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
               </a>
             </li>
         </ul>

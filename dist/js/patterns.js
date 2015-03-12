@@ -208,6 +208,9 @@ $(window).load(function(){
     var autoPlay = visibleCount === 1;
 
     if (autoPlay) {
+      // This invocation is necessary because it won't happen
+      // otherwise without the data-autoplay attr
+      $carousel.carousel('_bindStopListener');
       $carousel.carousel('play');
     }
   });
@@ -308,6 +311,36 @@ $(function() {
     this.$element.on('click', '[data-toggle="collapse"]:not(.js-custom-nav-more)', $.proxy(this.show, this));
   };
 
+  CustomNav.prototype.bindHideAll = function() {
+    // Bind clicks on the document to hide all navigation...
+    // listen subsequently for
+    // clicks on the document *NOT* within the nav, which is a
+    // signal to close all nav elements. We only want to handle
+    // that once, and then unbind
+    $(document).on('click.customNav', $.proxy(function(event) {
+      // On any given click, see if the click is from within
+      // the navigation element.
+      if (!$(event.target).parents('.js-custom-nav').length) {
+        // If NOT (no parents are the nav)
+        this.hideAll();
+        // Hide all nav and then remove the event listener
+        this.unbindHideAll();
+      }
+    }, this));
+  };
+
+  CustomNav.prototype.unbindHideAll = function() {
+    $(document).off('click.customNav');
+  };
+
+  CustomNav.prototype.hideAll = function(event) {
+    // Hide all children currently showing
+    this.$element.find('.collapse.in').each(function() {
+      $(this).collapse('hide');
+    });
+    return false;
+  };
+
   CustomNav.prototype.show = function (event) {
     var $trigger = $(event.currentTarget);
     var $target = $($trigger.data('target'));
@@ -322,6 +355,10 @@ $(function() {
     if ($current.hasClass('collapsing')) {
       return false;
     }
+    // We know now there is at least one nav element to be toggled.
+    this.unbindHideAll(); // Remove any previously-bound listeners
+    // Listen for when it's shown.
+    $target.one('shown.bs.collapse', $.proxy(this.bindHideAll, this));
     // If there is one showing, collapse it first...
     if ($current.length) {
       $current.one('hidden.bs.collapse', function () {
@@ -382,15 +419,13 @@ $(function(){
 
   // With any of the form fields...
   $fields.on({
-    // On focus, disable browser zoom and stop any hiding that may occur
+    // On focus, stop any hiding that may occur
     'focus': function () {
-      $.mobile.zoom.disable(true);
       clearTimeout(hideTimeout);
     },
-    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    // On blur, wait the time of hideDelay before hiding
     'blur': function () {
       hideTimeout = setTimeout(function () {
-        $.mobile.zoom.enable(true);
         $masthead.removeClass('is-search-open');
       },  hideDelay);
     }
@@ -491,18 +526,18 @@ $(function() {
   $('[data-toggle="collapse"][data-responsive="bio"]').responsiveCollapse();
 });
 
-// Scripts for pattern at ../source/patterns/pages/home/_rotating-promo.hbs
+// Scripts for pattern at ../source/patterns/pages/home/_promo-pod.hbs
 
-  /* Auto-play only if there is ONE slide showing (desktop layout) */
-  $(function () {
-    var $carousel = $('.carousel');
-    var visibleCount = $carousel.find('.carousel-item:visible').length;
-    var autoPlay = visibleCount === 1;
-
-    if (autoPlay) {
-      $carousel.carousel('play');
-    }
+$(window).load(function(){
+  var $pods = $('.home-promopod');
+  $pods.leveller({
+    cssSelector: '.home-promopod-btn',
+    cssProperty: 'margin-top'
   });
+  $(window).resize($.debounce(function(){
+    $pods.leveller();
+  }, 250));
+});
 
 // Scripts for pattern at ../source/patterns/pages/our-psychics/_sidebar-sort.hbs
 

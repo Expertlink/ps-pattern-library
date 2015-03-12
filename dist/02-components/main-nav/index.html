@@ -519,6 +519,36 @@
     this.$element.on(&#39;click&#39;, &#39;[data-toggle=&quot;collapse&quot;]:not(.js-custom-nav-more)&#39;, $.proxy(this.show, this));
   };
 
+  CustomNav.prototype.bindHideAll = function() {
+    // Bind clicks on the document to hide all navigation...
+    // listen subsequently for
+    // clicks on the document *NOT* within the nav, which is a
+    // signal to close all nav elements. We only want to handle
+    // that once, and then unbind
+    $(document).on(&#39;click.customNav&#39;, $.proxy(function(event) {
+      // On any given click, see if the click is from within
+      // the navigation element.
+      if (!$(event.target).parents(&#39;.js-custom-nav&#39;).length) {
+        // If NOT (no parents are the nav)
+        this.hideAll();
+        // Hide all nav and then remove the event listener
+        this.unbindHideAll();
+      }
+    }, this));
+  };
+
+  CustomNav.prototype.unbindHideAll = function() {
+    $(document).off(&#39;click.customNav&#39;);
+  };
+
+  CustomNav.prototype.hideAll = function(event) {
+    // Hide all children currently showing
+    this.$element.find(&#39;.collapse.in&#39;).each(function() {
+      $(this).collapse(&#39;hide&#39;);
+    });
+    return false;
+  };
+
   CustomNav.prototype.show = function (event) {
     var $trigger = $(event.currentTarget);
     var $target = $($trigger.data(&#39;target&#39;));
@@ -533,6 +563,10 @@
     if ($current.hasClass(&#39;collapsing&#39;)) {
       return false;
     }
+    // We know now there is at least one nav element to be toggled.
+    this.unbindHideAll(); // Remove any previously-bound listeners
+    // Listen for when it&#39;s shown.
+    $target.one(&#39;shown.bs.collapse&#39;, $.proxy(this.bindHideAll, this));
     // If there is one showing, collapse it first...
     if ($current.length) {
       $current.one(&#39;hidden.bs.collapse&#39;, function () {
@@ -573,7 +607,7 @@ $(function() {
 
   <footer class="c4-footer">
     <p>
-      This page was generated Monday, March 9th, 2015, 2:16PM (PST).
+      This page was generated Thursday, March 12th, 2015, 12:46PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

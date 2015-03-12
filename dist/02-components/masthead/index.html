@@ -396,15 +396,13 @@ $(function(){
 
   // With any of the form fields...
   $fields.on({
-    // On focus, disable browser zoom and stop any hiding that may occur
+    // On focus, stop any hiding that may occur
     &#39;focus&#39;: function () {
-      $.mobile.zoom.disable(true);
       clearTimeout(hideTimeout);
     },
-    // On blur, wait the time of hideDelay before enabling zoom and hiding
+    // On blur, wait the time of hideDelay before hiding
     &#39;blur&#39;: function () {
       hideTimeout = setTimeout(function () {
-        $.mobile.zoom.enable(true);
         $masthead.removeClass(&#39;is-search-open&#39;);
       },  hideDelay);
     }
@@ -654,11 +652,11 @@ $(function(){
 
 
 
-  <div class="c4-pattern" id="c4-pattern_103">
+  <div class="c4-pattern" id="c4-pattern_104">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_103">Masthead (Cookied)</a>
+          <a href="#c4-pattern_104">Masthead (Cookied)</a>
           <span class="c4-status c4-status--inprogress">
             
               In progress
@@ -770,14 +768,14 @@ $(function(){
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_103" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_104" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_103"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_104"><code class="language-markup">&lt;div class=&quot;masthead&quot;&gt;
 
   &lt;a class=&quot;masthead-logo&quot; href=&quot;&quot;&gt;
     &lt;picture class=&quot;picture-responsive&quot;&gt;
@@ -876,7 +874,7 @@ $(function(){
 
   <footer class="c4-footer">
     <p>
-      This page was generated Monday, March 9th, 2015, 2:16PM (PST).
+      This page was generated Thursday, March 12th, 2015, 12:46PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

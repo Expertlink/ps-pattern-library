@@ -236,11 +236,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_58">
+  <div class="c4-pattern" id="c4-pattern_59">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_58">Account Information</a>
+          <a href="#c4-pattern_59">Account Information</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -326,16 +326,12 @@
   <div class="form-group form-group-required">
     <label>Gender</label>
     <div class="form-group arrange arrange-gutter">
-      <div class="radio arrange-fit">
-        <label>
-          <input type="radio" name="signupGender" value="female" checked="checked" /> Female
-        </label>
-      </div>
-      <div class="radio arrange-fill">
-        <label>
-          <input type="radio" name="signupGender"  value="male" /> Male
-        </label>
-      </div>
+      <label class="radio-inline">
+        <input type="radio" name="signupGender" value="female" checked> Female
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="signupGender" value="male"> Male
+      </label>
     </div>
 
   </div>
@@ -389,14 +385,14 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_58" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_59" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_58"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_59"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
   
     &lt;label&gt;Select an offer &lt;/label&gt;
     &lt;div class=&quot;arrange arrange-equal arrange-gutter btn-group&quot; data-toggle=&quot;buttons&quot;&gt;
@@ -470,16 +466,12 @@
   &lt;div class=&quot;form-group form-group-required&quot;&gt;
     &lt;label&gt;Gender&lt;/label&gt;
     &lt;div class=&quot;form-group arrange arrange-gutter&quot;&gt;
-      &lt;div class=&quot;radio arrange-fit&quot;&gt;
-        &lt;label&gt;
-          &lt;input type=&quot;radio&quot; name=&quot;signupGender&quot; value=&quot;female&quot; checked=&quot;checked&quot; /&gt; Female
-        &lt;/label&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;radio arrange-fill&quot;&gt;
-        &lt;label&gt;
-          &lt;input type=&quot;radio&quot; name=&quot;signupGender&quot;  value=&quot;male&quot; /&gt; Male
-        &lt;/label&gt;
-      &lt;/div&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;signupGender&quot; value=&quot;female&quot; checked&gt; Female
+      &lt;/label&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;signupGender&quot; value=&quot;male&quot;&gt; Male
+      &lt;/label&gt;
     &lt;/div&gt;
 
   &lt;/div&gt;
@@ -533,11 +525,11 @@
 
 
 
-  <div class="c4-pattern" id="c4-pattern_83">
+  <div class="c4-pattern" id="c4-pattern_84">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_83">Phone-Country Widget</a>
+          <a href="#c4-pattern_84">Phone-Country Widget</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -552,37 +544,36 @@
     
 
     <div class="c4-pattern__body ">
-      <form role="form">
-  <div class="form-group arrange arrange-equal arrange-gutter">
-    <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupCountry">Country</label>
-      <select id="signupCountry" class="form-control">
+      
+<div class="form-group arrange arrange-equal arrange-gutter">
+  <div class="form-group form-group-required arrange-fit">
+    <label class="control-label" for="signupCountry">Country</label>
+    <select id="signupCountry" class="form-control">
 
-      </select>
-    </div>
-
-    <div class="form-group form-group-required arrange-fit">
-      <label class="control-label" for="signupState">State or province</label>
-      <select id="signupState"  class="form-control">
-        <option selected="selected" value="">Select</option>
-        <option value="1">Other</option>
-        <option value="3">Alaska</option>
-        <option value="4">Alabama</option>
-        <option value="5">Arkansas</option>
-        <option value="6">Arizona</option>
-
-      </select>
-    </div>
+    </select>
   </div>
 
-  
-    <div class="form-group form-group-required">
-      <label class="control-label" for="signupPhone">Phone number</label>
-      <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
-    </div>
-  
-  
-</form>
+  <div class="form-group form-group-required arrange-fit">
+    <label class="control-label" for="signupState">State or province</label>
+    <select id="signupState"  class="form-control">
+      <option selected="selected" value="">Select</option>
+      <option value="1">Other</option>
+      <option value="3">Alaska</option>
+      <option value="4">Alabama</option>
+      <option value="5">Arkansas</option>
+      <option value="6">Arizona</option>
+
+    </select>
+  </div>
+</div>
+
+
+  <div class="form-group form-group-required">
+    <label class="control-label" for="signupPhone">Phone number</label>
+    <input type="tel" class="form-control" id="signupPhone" data-mask-type="tel" data-country-select="#signupCountry"/>
+  </div>
+
+
 
 
 
@@ -591,44 +582,40 @@
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_83" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_84" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_83"><code class="language-markup">&lt;form role=&quot;form&quot;&gt;
-  &lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
-    &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
-      &lt;label class=&quot;control-label&quot; for=&quot;signupCountry&quot;&gt;Country&lt;/label&gt;
-      &lt;select id=&quot;signupCountry&quot; class=&quot;form-control&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_84"><code class="language-markup">&lt;div class=&quot;form-group arrange arrange-equal arrange-gutter&quot;&gt;
+  &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+    &lt;label class=&quot;control-label&quot; for=&quot;signupCountry&quot;&gt;Country&lt;/label&gt;
+    &lt;select id=&quot;signupCountry&quot; class=&quot;form-control&quot;&gt;
 
-      &lt;/select&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
-      &lt;label class=&quot;control-label&quot; for=&quot;signupState&quot;&gt;State or province&lt;/label&gt;
-      &lt;select id=&quot;signupState&quot;  class=&quot;form-control&quot;&gt;
-        &lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;Select&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Other&lt;/option&gt;
-        &lt;option value=&quot;3&quot;&gt;Alaska&lt;/option&gt;
-        &lt;option value=&quot;4&quot;&gt;Alabama&lt;/option&gt;
-        &lt;option value=&quot;5&quot;&gt;Arkansas&lt;/option&gt;
-        &lt;option value=&quot;6&quot;&gt;Arizona&lt;/option&gt;
-
-      &lt;/select&gt;
-    &lt;/div&gt;
+    &lt;/select&gt;
   &lt;/div&gt;
 
-  
-    &lt;div class=&quot;form-group form-group-required&quot;&gt;
-      &lt;label class=&quot;control-label&quot; for=&quot;signupPhone&quot;&gt;Phone number&lt;/label&gt;
-      &lt;input type=&quot;tel&quot; class=&quot;form-control&quot; id=&quot;signupPhone&quot; data-mask-type=&quot;tel&quot; data-country-select=&quot;#signupCountry&quot;/&gt;
-    &lt;/div&gt;
-  
-  
-&lt;/form&gt;
+  &lt;div class=&quot;form-group form-group-required arrange-fit&quot;&gt;
+    &lt;label class=&quot;control-label&quot; for=&quot;signupState&quot;&gt;State or province&lt;/label&gt;
+    &lt;select id=&quot;signupState&quot;  class=&quot;form-control&quot;&gt;
+      &lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;Select&lt;/option&gt;
+      &lt;option value=&quot;1&quot;&gt;Other&lt;/option&gt;
+      &lt;option value=&quot;3&quot;&gt;Alaska&lt;/option&gt;
+      &lt;option value=&quot;4&quot;&gt;Alabama&lt;/option&gt;
+      &lt;option value=&quot;5&quot;&gt;Arkansas&lt;/option&gt;
+      &lt;option value=&quot;6&quot;&gt;Arizona&lt;/option&gt;
+
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+  &lt;div class=&quot;form-group form-group-required&quot;&gt;
+    &lt;label class=&quot;control-label&quot; for=&quot;signupPhone&quot;&gt;Phone number&lt;/label&gt;
+    &lt;input type=&quot;tel&quot; class=&quot;form-control&quot; id=&quot;signupPhone&quot; data-mask-type=&quot;tel&quot; data-country-select=&quot;#signupCountry&quot;/&gt;
+  &lt;/div&gt;
 &lt;script&gt;
 $(function() {
   var countryData     = $.fn.intlTelInput.getCountryData(),
@@ -660,11 +647,11 @@ $(function() {
 
 
 
-  <div class="c4-pattern" id="c4-pattern_102">
+  <div class="c4-pattern" id="c4-pattern_103">
     
       <div class="c4-pattern__header">
         <h2 class="c4-pattern__heading">
-          <a href="#c4-pattern_102">Payment Fields</a>
+          <a href="#c4-pattern_103">Payment Fields</a>
           <span class="c4-status c4-status--none">
             
           </span>
@@ -713,14 +700,14 @@ $(function() {
     <div class="c4-pattern__footer">
       <div class="c4-pattern__footer__actions">
         
-          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_102" type="button">
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_103" type="button">
             Source
           </button>
         
         
       </div>
       
-        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_102"><code class="language-markup">&lt;div class=&quot;form-group form-group-required&quot;&gt;
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_103"><code class="language-markup">&lt;div class=&quot;form-group form-group-required&quot;&gt;
     &lt;label class=&quot;control-label&quot; for=&quot;signupCCName&quot;&gt;Name on card&lt;/label&gt;
     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;signupCCName&quot; value=&quot;&quot; &gt;
   &lt;/div&gt;
@@ -760,7 +747,7 @@ $(function() {
 
   <footer class="c4-footer">
     <p>
-      This page was generated Monday, March 9th, 2015, 2:16PM (PST).
+      This page was generated Thursday, March 12th, 2015, 12:46PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>

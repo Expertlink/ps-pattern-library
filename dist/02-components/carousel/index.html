@@ -194,6 +194,9 @@
     var autoPlay = visibleCount === 1;
 
     if (autoPlay) {
+      // This invocation is necessary because it won&#39;t happen
+      // otherwise without the data-autoplay attr
+      $carousel.carousel(&#39;_bindStopListener&#39;);
       $carousel.carousel(&#39;play&#39;);
     }
   });
@@ -207,7 +210,7 @@
 
   <footer class="c4-footer">
     <p>
-      This page was generated Monday, March 9th, 2015, 2:16PM (PST).
+      This page was generated Thursday, March 12th, 2015, 12:46PM (PST).
       <a href="#c4-top">Back to top</a>
     </p>
   </footer>
