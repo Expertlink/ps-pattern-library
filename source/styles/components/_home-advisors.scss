@@ -14,16 +14,18 @@
   white-space: nowrap;
   float:left;
   text-align: center;
+  padding-top: $padding-base-vertical 0;
   position: relative;
   @media (min-width: $screen-md-min)  {
-    overflow-x: hidden;
+    overflow: hidden;
     white-space: normal;
   }
 }
 
 .home-advisor-tile-simple {
   display: inline-block;
-  border-radius: $border-radius-small;
+  border-radius: $border-radius-large;
+  padding: ($padding-base-vertical * 1.2);
   width: 24%;
   vertical-align: top;
   a {
@@ -40,7 +42,6 @@
 
 .home-advisor-image {
   margin: 0 auto;
-  width: 90%
 }
 
 .home-advisor-main-body {
