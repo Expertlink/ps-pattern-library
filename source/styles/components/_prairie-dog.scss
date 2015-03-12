@@ -85,14 +85,19 @@
   }
 }
 
-.prairie-dog-md {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    @include make-prairie-dog;
-  }
-}
+/*
+ * These are commented out because they are not used anywhere yet. Uncomment
+ * if you need them for larger breakpoints.
+ */
 
-.prairie-dog-lg {
-  @media (min-width: $screen-lg-min) {
-    @include make-prairie-dog;
-  }
-}
+// .prairie-dog-md {
+//   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+//     @include make-prairie-dog;
+//   }
+// }
+//
+// .prairie-dog-lg {
+//   @media (min-width: $screen-lg-min) {
+//     @include make-prairie-dog;
+//   }
+// }
