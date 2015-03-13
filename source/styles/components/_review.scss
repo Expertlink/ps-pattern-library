@@ -83,14 +83,4 @@ $review-padding: ($line-height-computed * (2/3)) !default;
 .bio-review-helpful {
   margin-bottom: 0;
 }
-.bio-review-helpful, .review-content {
-  a {
-    color: $blue;
-    text-decoration: underline;
-    white-space: nowrap;
-    &:hover,
-    &:focus {
-      color: $blue-bright;
-    }
-  }
-}
+
