@@ -2,7 +2,7 @@
 fullWidth: true
 status: inprogress
 ---
-<div class="advisor-tiles u-shift-up">
+<div class="advisor-tiles advisor-tiles-tall-md u-shift-up js-advisor-tiles">
   <div class="row">
     {{#each advisor.list}}
       <div class="col-xs-12 col-md-6 col-lg-4">
@@ -20,9 +20,9 @@ status: inprogress
 
 <script>
 $(window).load(function(){
-  var $tiles = $('.advisor-tiles .advisor-tile');
+  var $tiles = $('.js-advisor-tiles .js-advisor-tile');
   $tiles.leveller({
-    cssSelector: '.advisor-tile-actions',
+    cssSelector: '.js-advisor-tile-actions',
     cssProperty: 'margin-top'
   });
   $(window).resize($.debounce(function(){

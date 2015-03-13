@@ -1,4 +1,4 @@
-<div class="advisor-tile">
+<div class="advisor-tile js-advisor-tile">
   <a class="link-block advisor-tile-main advisor-tile-group" href="#">
     <div class="advisor-tile-main-object">
       <div class="advisor-tile-photo with-stamp">
@@ -19,12 +19,12 @@
       </div>
     </div>
     <div class="advisor-tile-main-body">
-      <h4>{{firstName}} x{{ext}}</h4>
+      <h4 class="advisor-tile-heading">{{firstName}} x{{ext}}</h4>
       <div class="advisor-tile-meta">
         <p class="advisor-tile-meta-group stars stars-{{replace rating "." "-"}}">
           <span class="sr-only">{{{formatFraction rating}}} stars</span>
         </p>
-        <p class="advisor-tile-meta-group">
+        <p class="advisor-tile-meta-group text-nowrap">
           {{#if promoPrice}}
             <del class="text-muted">${{formatCurrency basePrice}}</del>
             <b>${{formatCurrency promoPrice}}/min</b>
@@ -33,13 +33,10 @@
           {{/if}}
         </p>
         {{#if channel}}
-          <p class="advisor-tile-meta-group">
+          <p class="advisor-tile-meta-group text-nowrap">
             {{channel}} <del class="text-muted">${{formatCurrency basePrice}}</del> ${{formatCurrency channelPrice}}/min
           </p>
         {{/if}}
-      </div>
-      <div class="advisor-tile-meta">
-
       </div>
       {{#if online}}
         {{#if available}}
@@ -52,7 +49,7 @@
       {{/if}}
     </div>
   </a>
-  <ul class="arrange advisor-tile-actions arrange-gutter advisor-tile-group">
+  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
     {{#if available}}
       {{#if chat}}
         <li class="arrange-fill">
