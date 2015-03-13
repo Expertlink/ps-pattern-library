@@ -7,7 +7,8 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
 //   }
 // }
 
-.advisor-tile {
+.advisor-tile,
+.advisor-tile-simple   {
   background-color: #fff;
   border-color: $gray-lighter;
   border-style: solid;
@@ -21,7 +22,8 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     border-color: $tan;
     z-index: 2;
   }
-
+}
+.advisor-tile {
   @media (min-width: $screen-md-min) {
     border-radius: $border-radius-large;
     border-width: 1px;
@@ -35,6 +37,17 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   .btn-block {
     padding-left: 0.3em;
     padding-right: 0.3em;
+  }
+}
+.advisor-tile-simple {
+  @media (min-width: $screen-lg-min) {
+    border-width: 0;
+    .advisor-tile-group {
+      padding:0;
+    }
+    .advisor-tile-meta-group {
+      white-space: normal;
+    }
   }
 }
 
@@ -51,38 +64,65 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.advisor-tile-main {
+.advisor-tile-main,
+.advisor-tile-main-simple {
   display: table;
   width: 100%;
-
+}
+.advisor-tile-main {
   @media (min-width: $screen-md-min) {
+    display: block;
+  }
+}
+.advisor-tile-main-simple {
+  @media (min-width: $screen-lg-min) {
     display: block;
   }
 }
 
 .advisor-tile-main-object,
-.advisor-tile-main-body {
+.advisor-tile-main-body,
+.advisor-tile-main-object-simple,
+.advisor-tile-main-body-simple {
   display: table-cell;
   vertical-align: middle;
-
+}
+.advisor-tile-main-object,
+.advisor-tile-main-body {
   @media (min-width: $screen-md-min) {
     display: block;
   }
 }
+.advisor-tile-main-object-simple,
+.advisor-tile-main-body-simple {
+  @media (min-width: $screen-lg-min) {
+    display: block;
+  }
+}
 
-.advisor-tile-main-object {
+.advisor-tile-main-object,
+.advisor-tile-main-object-simple {
   padding-right: ($line-height-computed / 2);
   text-align: center;
   width: 1%;
-
+}
+.advisor-tile-main-object {
   @media (min-width: $screen-md-min) {
     margin-bottom: ($line-height-computed / 2);
     padding-right: 0;
     width: 100%;
   }
 }
+.advisor-tile-main-object-simple {
+  @media (min-width: $screen-lg-min) {
+    margin-bottom: ($line-height-computed / 2);
+    padding-right: 0;
+    width: 100%;
+  }
+}
 
-.advisor-tile-main-body {
+.advisor-tile-main-body,
+.advisor-tile-main-body-simple {
   > *:first-child {
     margin-top: 0;
     margin-bottom: 0.2em;
@@ -95,18 +135,25 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   }
 }
 
-.advisor-tile-photo {
+.advisor-tile-photo,
+.advisor-tile-photo-simple  {
   display: inline-block;
   width: em(72px - ($line-height-computed / 2));
-
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+.advisor-tile-photo {
   @media (min-width: $screen-md-min) {
     max-width: 100%;
     width: auto;
   }
-
-  img {
-    display: block;
+}
+.advisor-tile-photo-simple {
+  @media (min-width: $screen-lg-min) {
     max-width: 100%;
+    width: auto;
   }
 }
 
@@ -115,7 +162,6 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
   margin-right: ($line-height-computed / 3);
   vertical-align: middle;
   white-space: nowrap;
-
   &:last-child {
     margin-right: 0;
   }
@@ -126,28 +172,9 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
 .advisor-tile-actions {
   width: 100%;
   width: calc(100% + #{$arrange-gutter-size});
-
   > .arrange-fill {
     width: 50%;
   }
 }
 
-.advisor-tile-simple {
-  @media (min-width: $screen-md-min) {
-    border:0;
-    &:hover,
-    &:focus {
-      background: transparent;
-    }
-  }
-}
-.advisor-tile-main-simple {
-  @media (min-width: $screen-md-min) {
-    padding:0;
-  }
-}
-.advisor-tile-main-body-simple {
-  @media (min-width: $screen-md-min) {
-    font-size: 0.9em;
-  }
-}
+
