@@ -45,26 +45,22 @@ status: inprogress
 
 <script>
 $(function () {
+  var $paymentOptions = $('.js-payment-options');
 
-  $('.js-payment-options').each(function(){
-    var $paymentOptions = $(this);
+  $paymentOptions.on('change', '.js-payment-option', function (event) {
+    var $trigger = $(event.currentTarget);
+    var triggerData = $trigger.data();
+    var hasCollapseTarget = triggerData.target !== undefined;
 
-    $paymentOptions.on('change', '.js-payment-option', function (event) {
-      var $trigger = $(event.currentTarget);
-      var triggerData = $trigger.data();
-      var hasCollapseTarget = triggerData.target !== undefined;
-
-      if (hasCollapseTarget) {
-        $(triggerData.target)
-          .collapse('show')
-          .addClass('js-expanded')
-      } else {
-        $paymentOptions.find('.js-expanded')
-          .collapse('hide')
-          .removeClass('js-expanded');
-      }
-    });
+    if (hasCollapseTarget) {
+      $(triggerData.target)
+        .collapse('show')
+        .addClass('js-expanded')
+    } else {
+      $paymentOptions.find('.js-expanded')
+        .collapse('hide')
+        .removeClass('js-expanded');
+    }
   });
-  
 });
 </script>
