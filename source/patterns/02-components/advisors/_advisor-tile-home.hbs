@@ -5,21 +5,17 @@
       src="{{photo}}"
       alt=" ">
   </div>
-  <div class="home-advisor-main-body">
-    <h4 class="text-normal">{{firstName}} x{{ext}}</h4>
-    <div class="advisor-tile-meta">
-      <p class="advisor-tile-meta-group stars home-advisor-stars stars-{{replace rating "." "-"}}">
-        <span class="sr-only">{{{formatFraction rating}}} stars</span>
-      </p>
-      <p class="advisor-tile-meta-group">
-        {{#if promoPrice}}
-          <del class="text-muted">${{formatCurrency basePrice}}</del>
-          <b>${{formatCurrency promoPrice}}/min</b>
-        {{else}}
-          <b>${{formatCurrency basePrice}}/min</b>
-        {{/if}}
-      </p>
-    </div>
-  </div>
+  <h4 class="text-normal u-no-margin-bottom">{{firstName}} x{{ext}}</h4>
+  <p class="stars home-advisor-stars stars-{{replace rating "." "-"}}">
+      <span class="sr-only">{{{formatFraction rating}}} stars</span>
+  </p>
+  <p class="u-no-margin">
+    {{#if promoPrice}}
+      <del class="text-muted">${{formatCurrency basePrice}}</del>
+      <b>${{formatCurrency promoPrice}}/min</b>
+    {{else}}
+      <b>${{formatCurrency basePrice}}/min</b>
+    {{/if}}
+  </p>
 </a>
 
