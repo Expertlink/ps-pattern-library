@@ -89,7 +89,7 @@ $container-page-gutter-breakpoint: $screen-lg-min !default;
 
     > [class^="col-"],
     > [class*=" col-"] {
-      :nth-last-child(n+2) {
+      &:nth-last-child(n+2) {
         &:after {
           content: '';
           position: absolute;
