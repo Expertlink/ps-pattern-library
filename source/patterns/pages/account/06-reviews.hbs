@@ -24,6 +24,11 @@ status: inprogress
                 Review History
               </a>
             </li>
+            <li role="presentation">
+              <a role="tab" data-toggle="tab" href="#private-notes">
+                Private Notes
+              </a>
+            </li>
           </ul>
           <!-- Tab panes -->
           <div class="tabpanel-content">
@@ -34,6 +39,9 @@ status: inprogress
             </div>
             <div class="tabpanel-pane" role="tabpanel" id="review-history">
               {{> reviews/review-history-list }}
+            </div>
+            <div class="tabpanel-pane" role="tabpanel" id="private-notes">
+              {{> reviews/eligible-reading-notes-list }}
             </div>
           </div>
         </div>
