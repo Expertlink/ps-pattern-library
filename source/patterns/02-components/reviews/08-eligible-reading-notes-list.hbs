@@ -14,29 +14,3 @@ status: inprogress
     {{> reviews/_eligible-reading-notes }}
   {{/withFirst}}
 </div>
-
-<script>
-$(function() {
-  $('[data-deemphasis]').each(function() {
-    var $parent   = $(this);
-    var dID       = $parent.data('deemphasis');
-    var $children = $parent.find('[data-deemphasis-parent="' + dID + '"]');
-    $parent.on('shown.bs.collapse', '[data-deemphasis-parent]', function() {
-      // Anyone else visible? I should hide them
-      var $collapse = $(this).find('.collapse');
-      $parent.find('.collapse.in').not($collapse).collapse('hide');
-      // Deemphasize everyone but me
-      $children.not($(this)).addClass('is-deemphasized');
-      $(this).removeClass('is-deemphasized');
-    });
-    $parent.on('hidden.bs.collapse', function() {
-      // Any time an item is collapsed, see if there are
-      // any open items left under this parent. If not,
-      // remove the deemphasis from all elements.
-      if (!$parent.find('.collapse.in').length) {
-        $children.removeClass('is-deemphasized');
-      }
-    });
-  });
-});
-</script>

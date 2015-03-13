@@ -4,7 +4,6 @@
       <img class="img-rounded" src="{{photo}}" alt="{{firstName}}">
     </div>
     <div class="eligible-reading-main">
-
       <p class="eligible-reading-advisor-name"><a href="/pages/advisor-bio/01-advisor-bio.html">{{firstName}} x{{ext}}</a></p>
       <p class="eligible-reading-date">{{date}}</p>
       <p class="eligible-reading-type">
@@ -17,9 +16,9 @@
       </p>
       <p class="eligible-reading-review">
         {{#if reviewID}}
-          <a href="#{{reviewID}}">Read your review<span class="hidden-md hidden-sm"> of this reading</span></a>
-          {{else}}
-            <a href="#add-review-block-{{readingID}}">Rate and review this reading</a>
+          <a href="#">Read your review<span class="hidden-md hidden-sm"> of this reading</span></a>
+        {{else}}
+          <a href="#">Rate and review this reading</a>
         {{/if}}
       </p>
     </div>
@@ -38,22 +37,11 @@
         <button class="btn btn-shaded btn-default btn-block js-dismiss-rating">Nevermind</button>
       </div>
       <div class="arrange-fill">
-        <button class="btn btn-primary btn-block">
-          {{#if note}}
-            Edit 
-            {{else}}
-              Add
-            {{/if}} 
-          Note</button>
+        <button class="btn btn-primary btn-block">{{#if note}}Edit{{else}}Add{{/if}} Note</button>
        </div>
     </div>
   </div>
   <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="add-note-parent btn btn-primary collapsed">
-    {{#if note}}
-      Edit 
-        {{else}}
-          Add
-    {{/if}} 
-    Note
+    {{#if note}}Edit{{else}}Add{{/if}} Note
   </a>
 </div>
