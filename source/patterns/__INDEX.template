@@ -21,7 +21,7 @@
 
     <!-- Favicons can go here if desired -->
     <!-- Any desired scripts in HEAD -->
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="{{ pathRoot }}/js/pattern-library.js"></script>
 
     <!-- Site behavior/UI JS -->
