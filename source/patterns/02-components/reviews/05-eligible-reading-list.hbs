@@ -38,5 +38,9 @@ $(function() {
       }
     });
   });
+
+  $('.js-dismiss-rating').click(function() {
+    $(this).parents('.collapse').first().collapse('hide');
+  });
 });
 </script>
