@@ -1,5 +1,7 @@
 .home-promopod {
   padding: ($padding-base-vertical * 2);
+  padding-bottom: ($padding-base-vertical * 4);
+  margin-bottom: ($padding-base-vertical * 2);
   border-bottom: dotted 1px $tan-dark;
   @media (max-width: $screen-sm-max) {
     border-right: none;

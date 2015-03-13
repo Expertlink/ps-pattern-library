@@ -1,11 +1,7 @@
 /* Horizontal advisors on homepage */
 
 .home-available-advisors {
-  margin: 1em 0 0 1.6em;
-  text-align: left;
-  a {
-    margin: 0;
-  }
+  padding: 1em 1.4em 0 1.4em;
 }
 
 .home-advisor-horizontal {
@@ -25,8 +21,9 @@
 .home-advisor-tile-simple {
   display: inline-block;
   border-radius: $border-radius-large;
+  font-size: 10px;
   white-space: normal;
-  padding: ($padding-base-vertical * 1.2);
+  padding: ($padding-base-vertical);
   width: 24%;
   vertical-align: top;
   a {
@@ -45,20 +42,8 @@
   margin: 0 auto;
 }
 
-.home-advisor-main-body {
-  font-size: 10px;
-  p {
-    display: block;
-    margin-top: -1em;
-  }
-  h4 {
-    margin-bottom: 1.2em;
-  }
-  .advisor-tile-meta-group {
-    white-space: normal;
-  }
-}
-
 .home-advisor-stars {
-  margin: 1em auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
 } 
