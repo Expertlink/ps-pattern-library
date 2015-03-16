@@ -33,7 +33,7 @@
   width: 50px;
   // without this, IE9 displays the image at a much larger size
   img {
-     width: 50px;
+     width: 100%;
   }
 }
 .eligible-reading-main {
@@ -45,16 +45,7 @@
 .eligible-reading-review {
   margin:0;
 }
-.eligible-reading-advisor-name,
-.eligible-reading-review  {
-  a {
-    color: $blue;
-    &:hover,
-    &:focus {
-      color: $blue-bright;
-    }
-  }
-}
+
 .eligible-reading-advisor-name {
   font-size: 1.2em;
   font-weight: bold;

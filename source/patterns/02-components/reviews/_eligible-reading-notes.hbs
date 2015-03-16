@@ -4,7 +4,7 @@
       <img class="img-rounded" src="{{photo}}" alt="{{firstName}}">
     </div>
     <div class="eligible-reading-main">
-      <p class="eligible-reading-advisor-name"><a href="/pages/advisor-bio/01-advisor-bio.html">{{firstName}} x{{ext}}</a></p>
+      <p class="eligible-reading-advisor-name"><a href="/pages/advisor-bio/01-advisor-bio.html" class="text-tertiary">{{firstName}} x{{ext}}</a></p>
       <p class="eligible-reading-date">{{date}}</p>
       <p class="eligible-reading-type">
         {{#if chat}}
@@ -16,9 +16,9 @@
       </p>
       <p class="eligible-reading-review">
         {{#if reviewID}}
-          <a href="#">Read your review<span class="hidden-md hidden-sm"> of this reading</span></a>
+          <a href="#" class="text-tertiary">Read your review<span class="hidden-md hidden-sm"> of this reading</span></a>
         {{else}}
-          <a href="#">Rate and review this reading</a>
+          <a href="#" class="text-tertiary">Rate and review this reading</a>
         {{/if}}
       </p>
     </div>
