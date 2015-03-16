@@ -1,6 +1,6 @@
   <div class="bio-availability  text-center-xs text-center-sm text-center-md text-left-lg">
     {{#if isAvailable}}
-      <h4 class="text-success">Available until 8:27pm 
+      <h4 class="text-success">Available until 8:27pm
         {{#if phoneQueue}}
           ({{phoneQueue}} in line)
         {{/if}}
@@ -32,13 +32,13 @@
       </ul>
     {{else}}
       {{#if isInReading}}
-        <h4 class="text-danger"><span class="text-nowrap">I'm in a reading</span> - <span class="text-nowrap">logged on till 9:00pm</span> 
+        <h4 class="text-danger"><span class="text-nowrap">I'm in a reading</span> - <span class="text-nowrap">logged on till 9:00pm</span>
           {{#if phoneQueue}}
             <span class="text-nowrap">({{phoneQueue}} in line)</span>
           {{/if}}
         </h4>
       {{else}}
-        <h4 class="text-muted">I'm away 
+        <h4 class="text-muted">I'm away
           {{#if phoneQueue}}
             <span class="text-nowrap">({{phoneQueue}} in line)</span>
           {{/if}}
@@ -63,5 +63,5 @@
         </li>
       </ul>
     {{/if}}
-   <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p> 
+   <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p>
   </div>
