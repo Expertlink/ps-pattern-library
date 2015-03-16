@@ -4,6 +4,9 @@ $review-padding: ($line-height-computed * (2/3)) !default;
   position: relative;
   padding: ($line-height-computed/2) $review-padding;
   border-bottom: 1px solid $gray-lighter;
+  &:last-of-type {
+    border: 0;
+  }
   @media (max-width: $screen-md-min) {
     margin-left: ($review-padding * -1);
     margin-right: ($review-padding * -1);
