@@ -32,7 +32,6 @@
     height: 0;
     display: inline-block;
     vertical-align: middle;
-    border-style: solid;
   }
 
   // if this is an isosceles triangle, the fill size is the same
@@ -46,18 +45,22 @@
   @if $triangle-direction == up {
     border-width: 0 $triangle-size $triangle-fill-size $triangle-size;
     border-color: transparent transparent $triangle-color transparent;
+    border-style: inset inset solid inset;
   }
   @if $triangle-direction == down {
     border-width: $triangle-fill-size $triangle-size 0 $triangle-size;
     border-color: $triangle-color transparent transparent transparent;
+    border-style: solid inset inset inset;
   }
   @if $triangle-direction == left {
     border-width: $triangle-size $triangle-fill-size $triangle-size 0;
     border-color: transparent $triangle-color transparent transparent;
+    border-style: inset solid inset inset;
   }
   @if $triangle-direction == right {
     border-width: $triangle-size 0 $triangle-size $triangle-fill-size;
     border-color: transparent transparent transparent $triangle-color;
+    border-style: inset inset inset solid;
   }
 }
 
