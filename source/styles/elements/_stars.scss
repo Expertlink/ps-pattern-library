@@ -29,7 +29,7 @@ $star-edit-url: 'data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3
   $star-max: $star-rating-max
 ) {
   @if $relative-to {
-    $star-size: ($star-size / $font-size-base * 1em);
+    $star-size: ($star-size / $relative-to * 1em);
   }
   height: $star-size;
   width: $star-size * $star-max;
