@@ -58,7 +58,7 @@ $(function(){
           toolbarY = $toolbar.offset().top,
           toolbarHeight = $toolbar.height();
       if (windowHeight - (toolbarY + toolbarHeight - scrollY) < minimumAffordance) {
-        $html.stop().animate({ scrollTop: toolbarY }, 300);
+        $html.stop().animate({ scrollTop: toolbarY }, duration);
       }
     });
 
