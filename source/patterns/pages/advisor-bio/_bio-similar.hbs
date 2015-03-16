@@ -10,7 +10,9 @@ status: inprogress
     <div class="container-fluid no-gutters advisor-tiles-nested-md">
       {{#withFirst advisor.list 4}}
         <div class="col-lg-3">
-          {{> advisors/_advisor-tile-simple}}
+          <div class="advisor-tile advisor-tile-tall-lg">
+            {{> advisors/_main }}
+          </div>
         </div>
       {{/withFirst}}
     </div>
