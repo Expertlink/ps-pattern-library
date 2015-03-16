@@ -1,0 +1,36 @@
+---
+description: >
+  `.advisor-tile` elements contained within `.advisor-tiles` will be separated
+  by a border. Control when they shift to the "tall" layout using a breakpoint-
+  specific `.advisor-tiles-tall-*` modifier. Heights are normalized using
+  [leveller.js](https://github.com/cloudfour/leveller.js).
+fullWidth: true
+---
+<div class="advisor-tiles advisor-tiles-tall-md stamps-condensed-sm u-shift-up js-advisor-tiles">
+  <div class="row">
+    {{#each advisor.list}}
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        {{> advisor-tiles/_advisor-tile}}
+      </div>
+      {{#ifNth 2 @index}}
+        <div class="clearfix visible-md-block"></div>
+      {{/ifNth}}
+      {{#ifNth 3 @index}}
+        <div class="clearfix visible-lg-block"></div>
+      {{/ifNth}}
+    {{/each}}
+  </div>
+</div>
+
+<script>
+$(window).load(function(){
+  var $tiles = $('.js-advisor-tiles .js-advisor-tile');
+  $tiles.leveller({
+    cssSelector: '.js-advisor-tile-actions',
+    cssProperty: 'margin-top'
+  });
+  $(window).resize($.debounce(function(){
+    $tiles.leveller();
+  }, 250));
+});
+</script>

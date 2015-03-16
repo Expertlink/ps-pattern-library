@@ -96,15 +96,6 @@ $arrange-gutter-size: 10px !default;
   vertical-align: bottom;
 }
 
-/* Horizontal alignment modifiers
-   ========================================================================== */
-.arrange-center {
-  text-align: center;
-}   
-.arrange-right {
-  text-align: right;
-}
-
 /* Equal-width modifier
    ========================================================================== */
 
@@ -161,4 +152,37 @@ $arrange-gutter-size: 10px !default;
   width: calc(100% + #{$arrange-gutter-size});
 }
 
+/* "Soft" percentage modifiers
+   ========================================================================== */
 
+/**
+ * Will attempt to meet percentage, but will allow buttons to arrange themselves
+ * however if they require more space.
+ */
+
+%arrange-soft-percentage-base {
+  width: 100%;
+
+  &.arrange-gutter {
+    width: calc(100% + #{$arrange-gutter-size});
+  }
+}
+
+@mixin make-arrange-soft-percentage($percentage) {
+  @extend %arrange-soft-percentage-base;
+
+  $percentage: percentage($percentage);
+
+  @if $percentage > 100% {
+    $percentage: $percentage / 100;
+  }
+
+  > .arrange-fit,
+  > .arrange-fill {
+    width: $percentage;
+  }
+}
+
+.arrange-50 {
+  @include make-arrange-soft-percentage(50);
+}

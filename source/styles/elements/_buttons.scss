@@ -27,6 +27,11 @@
   appearance: none;
 }
 
+.btn-narrow {
+  padding-left: $padding-xs-horizontal;
+  padding-right: $padding-xs-horizontal;
+}
+
 //= Favorite button
 
 /* Note: Normally, it isn't a good idea to...

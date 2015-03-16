@@ -16,23 +16,22 @@ status: inprogress
       <div class="container-fluid">
         {{#withFirst advisor.list 4}}
           <div class="home-advisor-tile-simple">
-            {{> advisors/_advisor-tile-home }}
+            {{> home/_advisor }}
           </div>
         {{/withFirst}}
         {{#withFirst advisor.list 4}}
           <div class="home-advisor-tile-simple hidden-md hidden-lg">
-            {{> advisors/_advisor-tile-home }}
+            {{> home/_advisor }}
           </div>
         {{/withFirst}}
       </div>
       <div class="container-fluid hidden-xs hidden-sm">
         {{#withFirst advisor.list 4}}
           <div class="home-advisor-tile-simple">
-            {{> advisors/_advisor-tile-home }}
+            {{> home/_advisor }}
           </div>
         {{/withFirst}}
       </div>
     </div>
   </div>
 </div>
-

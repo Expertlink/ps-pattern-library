@@ -1,19 +1,15 @@
-$advisor-tile-padding: ($line-height-computed * (2/3)) !default;
+//= variables
 
-// .advisor-tiles {
-//   @media (min-width: $screen-md-min) {
-//     margin-left: $grid-gutter-width;
-//     margin-right: $grid-gutter-width;
-//   }
-// }
+$advisor-tile-padding-horizontal: ($line-height-computed * (2/3)) !default;
+$advisor-tile-padding-vertical: ($advisor-tile-padding-horizontal / 1.5) !default;
+$advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;
 
-.advisor-tile,
-.advisor-tile-simple   {
+//= core component
+
+.advisor-tile {
   background-color: #fff;
-  border-color: $gray-lighter;
-  border-style: solid;
-  border-width: 1px 0;
-  margin-top: -1px;
+  border: 0 solid $gray-lighter;
+  border-radius: $border-radius-large;
   position: relative;
 
   &:hover,
@@ -22,159 +18,140 @@ $advisor-tile-padding: ($line-height-computed * (2/3)) !default;
     border-color: $tan;
     z-index: 2;
   }
-}
-.advisor-tile {
-  @media (min-width: $screen-md-min) {
-    border-radius: $border-radius-large;
-    border-width: 1px;
-    margin-bottom: ($grid-gutter-width / 2);
-    margin-top: ($grid-gutter-width / 2);
-  }
 
-  /**
-   * TODO: This should be a utility class or a .btn modifier.
-   */
-  .btn-block {
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-  }
-}
-.advisor-tile-simple {
-  @media (min-width: $screen-lg-min) {
-    border-width: 0;
-    .advisor-tile-group {
-      padding:0;
-    }
-    .advisor-tile-meta-group {
-      white-space: normal;
-    }
+  .advisor-tiles & {
+    border-radius: 0;
+    border-width: 1px 0;
+    margin-top: -1px;
   }
 }
 
 .advisor-tile-group {
   margin-bottom: 0;
   margin-top: 0;
-  padding: 0 $advisor-tile-padding ($advisor-tile-padding / 1.5);
+  padding: 0 $advisor-tile-padding-horizontal $advisor-tile-padding-vertical;
 
   &:first-child {
-    padding-top: $advisor-tile-padding;
+    padding-top: $advisor-tile-padding-horizontal;
   }
   &:last-child {
-    padding-bottom: $advisor-tile-padding;
+    padding-bottom: $advisor-tile-padding-horizontal;
   }
 }
 
-.advisor-tile-main,
-.advisor-tile-main-simple {
+.advisor-tile-main {
   display: table;
   width: 100%;
 }
-.advisor-tile-main {
-  @media (min-width: $screen-md-min) {
-    display: block;
-  }
-}
-.advisor-tile-main-simple {
-  @media (min-width: $screen-lg-min) {
-    display: block;
-  }
-}
 
 .advisor-tile-main-object,
-.advisor-tile-main-body,
-.advisor-tile-main-object-simple,
-.advisor-tile-main-body-simple {
+.advisor-tile-main-body {
   display: table-cell;
   vertical-align: middle;
 }
-.advisor-tile-main-object,
-.advisor-tile-main-body {
-  @media (min-width: $screen-md-min) {
-    display: block;
-  }
-}
-.advisor-tile-main-object-simple,
-.advisor-tile-main-body-simple {
-  @media (min-width: $screen-lg-min) {
-    display: block;
-  }
-}
 
-.advisor-tile-main-object,
-.advisor-tile-main-object-simple {
+.advisor-tile-main-object {
   padding-right: ($line-height-computed / 2);
   text-align: center;
   width: 1%;
 }
-.advisor-tile-main-object {
-  @media (min-width: $screen-md-min) {
-    margin-bottom: ($line-height-computed / 2);
-    padding-right: 0;
-    width: 100%;
-  }
-}
-.advisor-tile-main-object-simple {
-  @media (min-width: $screen-lg-min) {
-    margin-bottom: ($line-height-computed / 2);
-    padding-right: 0;
-    width: 100%;
-  }
-}
 
-.advisor-tile-main-body,
-.advisor-tile-main-body-simple {
+.advisor-tile-main-body {
   > *:first-child {
     margin-top: 0;
-    margin-bottom: 0.2em;
   }
   > *:last-child {
     margin-bottom: 0;
   }
-  p {
-    margin-bottom: 0.2em;
-  }
 }
 
-.advisor-tile-photo,
-.advisor-tile-photo-simple  {
+.advisor-tile-photo {
   display: inline-block;
-  width: em(72px - ($line-height-computed / 2));
+  width: $advisor-tile-photo-width;
+
   img {
     display: block;
     max-width: 100%;
   }
 }
-.advisor-tile-photo {
-  @media (min-width: $screen-md-min) {
-    max-width: 100%;
-    width: auto;
-  }
-}
-.advisor-tile-photo-simple {
-  @media (min-width: $screen-lg-min) {
-    max-width: 100%;
-    width: auto;
-  }
+
+.advisor-tile-heading,
+.advisor-tile-meta-group {
+  margin-bottom: ($advisor-tile-padding-vertical / 2);
 }
 
 .advisor-tile-meta-group {
   display: inline-block;
   margin-right: ($line-height-computed / 3);
   vertical-align: middle;
-  white-space: nowrap;
+  // white-space: nowrap;
+
   &:last-child {
     margin-right: 0;
   }
 }
 
-// If both buttons can take up 1/2 the space, they will be of equal width,
-// but if need a button can consume more of the available space.
-.advisor-tile-actions {
-  width: 100%;
-  width: calc(100% + #{$arrange-gutter-size});
-  > .arrange-fill {
-    width: 50%;
+//= modifiers
+
+@mixin make-advisor-tile-tall() {
+  border-radius: $border-radius-large;
+
+  .advisor-tile-main,
+  .advisor-tile-main-object,
+  .advisor-tile-main-body {
+    display: block;
+  }
+
+  .advisor-tile-main-object {
+    margin-bottom: $advisor-tile-padding-vertical;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .advisor-tile-photo {
+    max-width: 100%;
+    width: auto;
   }
 }
 
+@mixin make-advisor-tiles-tall() {
+  .advisor-tile {
+    border-width: 1px;
+    margin-bottom: ($grid-gutter-width / 2);
+    margin-top: ($grid-gutter-width / 2);
+    @include make-advisor-tile-tall();
+  }
+}
 
+@mixin make-advisor-tiles-nested() {
+  margin-left: ($advisor-tile-padding-horizontal * -1);
+  margin-right: ($advisor-tile-padding-horizontal * -1);
+}
+
+@media (min-width: $screen-md-min) {
+  .advisor-tiles-tall-md {
+    @include make-advisor-tiles-tall();
+  }
+
+  // .advisor-tile-tall-md {
+  //   @include make-advisor-tile-tall();
+  // }
+
+  .advisor-tiles-nested-md {
+    @include make-advisor-tiles-nested();
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  // .advisor-tiles-tall-lg {
+  //   @include make-advisor-tiles-tall();
+  // }
+
+  .advisor-tile-tall-lg {
+    @include make-advisor-tile-tall();
+  }
+
+  // .advisor-tiles-nested-lg {
+  //   @include make-advisor-tiles-nested();
+  // }
+}
