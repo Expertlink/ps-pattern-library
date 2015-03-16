@@ -26,6 +26,7 @@
     this.$element  = $(element);
     this.$target   = (this.options.target) ? $(this.options.target) : this.$element;
     this.isEditing = null;
+    this.lastValue = null;
 
     // Update value and appearance
     this.setValue(this.$target.is('[value]') ? this.$target.val() : this.options.value, true);
@@ -108,10 +109,12 @@
       className = this.options.classTemplate.replace('${rating}', valueString);
       this.$element.toggleClass(className, i === value);
     }
+
+    this.lastValue = value;
   };
 
   StarRating.prototype.eventToValue = function (event) {
-    var eventX = event.pageX || event.originalEvent.pageX;
+    var eventX = (typeof event.pageX === 'undefined') ? event.originalEvent.touches[0].pageX : event.pageX;
     var offset = this.$element.offset();
     var width  = this.$element.outerWidth();
     var ratio  = (eventX - offset.left) / width;
@@ -159,7 +162,7 @@
   StarRating.prototype.touchEndHandler = function (event) {
     event.preventDefault(); // disable mouse emulation
     this.$element.off('touchmove.vse.star-rating');
-    this.setValue(this.eventToValue(event));
+    this.setValue(this.lastValue);
   };
 
   // PLUGIN
