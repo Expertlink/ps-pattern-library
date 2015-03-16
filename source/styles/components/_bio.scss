@@ -224,9 +224,15 @@ a.section-parent {
   }
 }
 .similar-advisors {
-  @media (max-width: $screen-md-min) {
+  @media (max-width: $screen-sm-max) {
     margin-left: -($bio-padding);
     margin-right: -($bio-padding);
+  }
+
+  .advisor-tile-main-body {
+    @media (min-width: $screen-md-min) {
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -254,7 +260,7 @@ a.section-parent {
     }
     .review-stars-average {
       margin: 0;
-    } 
+    }
     .review-stars {
       right: 0;
     }

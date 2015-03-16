@@ -11,6 +11,7 @@ $advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;
 .advisor-tile {
   background-color: #fff;
   border: 0 solid $gray-lighter;
+  border-radius: $border-radius-large;
   position: relative;
 
   &:hover,
@@ -21,6 +22,7 @@ $advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;
   }
 
   .advisor-tiles & {
+    border-radius: 0;
     border-width: 1px 0;
     margin-top: -1px;
   }
@@ -96,12 +98,6 @@ $advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;
 @mixin make-advisor-tile-tall() {
   border-radius: $border-radius-large;
 
-  // .advisor-tiles & {
-  //   border-width: 1px;
-  //   margin-bottom: ($grid-gutter-width / 2);
-  //   margin-top: ($grid-gutter-width / 2);
-  // }
-
   .advisor-tile-main,
   .advisor-tile-main-object,
   .advisor-tile-main-body {
@@ -129,14 +125,35 @@ $advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;
   }
 }
 
+@mixin make-advisor-tiles-nested() {
+  margin-left: ($advisor-tile-padding-horizontal * -1);
+  margin-right: ($advisor-tile-padding-horizontal * -1);
+}
+
 @media (min-width: $screen-md-min) {
   .advisor-tiles-tall-md {
     @include make-advisor-tiles-tall();
   }
+
+  // .advisor-tile-tall-md {
+  //   @include make-advisor-tile-tall();
+  // }
+
+  .advisor-tiles-nested-md {
+    @include make-advisor-tiles-nested();
+  }
 }
 
 @media (min-width: $screen-lg-min) {
+  // .advisor-tiles-tall-lg {
+  //   @include make-advisor-tiles-tall();
+  // }
+
   .advisor-tile-tall-lg {
     @include make-advisor-tile-tall();
   }
+
+  // .advisor-tiles-nested-lg {
+  //   @include make-advisor-tiles-nested();
+  // }
 }
