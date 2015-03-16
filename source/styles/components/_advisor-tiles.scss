@@ -1,7 +1,5 @@
 //= variables
 
-$advisor-tile-padding: ($line-height-computed * (2/3)) !default;
-
 $advisor-tile-padding-horizontal: ($line-height-computed * (2/3)) !default;
 $advisor-tile-padding-vertical: ($advisor-tile-padding-horizontal / 1.5) !default;
 $advisor-tile-photo-width: em(72px - ($line-height-computed / 2)) !default;

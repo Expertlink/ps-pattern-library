@@ -1,5 +1,7 @@
+$advisor-promo-padding: ($line-height-computed * (2/3)) !default;
+
 .advisor-promo {
-  padding: ($advisor-tile-padding / 1.5); // matches small screen advisor list layout
+  padding: ($advisor-promo-padding / 1.5); // matches small screen advisor list layout
   a {
     display: block;
     border-radius: $border-radius-large;
@@ -20,7 +22,7 @@
       height: 5em;
       background: url(/images/promotion/offer-sale-25.svg) right 0 no-repeat;
       background-size: 100% auto;
-    }  
+    }
   }
   @media (min-width: $screen-md-min) {
     padding-right: $grid-gutter-width; // matches larger screen advisor tile layout
@@ -36,8 +38,8 @@
       font-size: 0.9em;
       &:after {
         width: 5em;
-        top: ($advisor-tile-padding / 3);
-        right: ($advisor-tile-padding / 4);
+        top: ($advisor-promo-padding / 3);
+        right: ($advisor-promo-padding / 4);
       }
     }
   }
