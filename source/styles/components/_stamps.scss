@@ -8,6 +8,19 @@
   @include text-hide();
 }
 
+@mixin make-stamp-condensed-showcase() {
+  bottom: -4px;
+  left: -7px;
+  transform-origin: bottom left;
+  transform: scale(0.5);
+}
+
+@mixin make-stamp-condensed-staffpick() {
+  left: -10px;
+  transform-origin: top left;
+  transform: scale(0.64);
+}
+
 .stamp-showcase {
   @extend %stamp-base;
 
@@ -16,11 +29,18 @@
 
   @include svg-sprite('showcase');
 
-  @media (max-width: $screen-sm-max) {
-    bottom: -4px;
-    left: -7px;
-    transform-origin: bottom left;
-    transform: scale(0.5);
+  // &.stamp-condensed-sm,
+  .stamps-condensed-sm & {
+    @media (max-width: $screen-sm-max) {
+      @include make-stamp-condensed-showcase();
+    }
+  }
+
+  // &.stamp-condensed-md,
+  .stamps-condensed-md & {
+    @media (max-width: $screen-md-max) {
+      @include make-stamp-condensed-showcase();
+    }
   }
 }
 
@@ -32,9 +52,17 @@
 
   @include svg-sprite('staffpick');
 
-  @media (max-width: $screen-sm-max) {
-    left: -10px;
-    transform-origin: top left;
-    transform: scale(0.64);
+  // &.stamp-condensed-sm,
+  .stamps-condensed-sm & {
+    @media (max-width: $screen-sm-max) {
+      @include make-stamp-condensed-staffpick();
+    }
+  }
+
+  // &.stamp-condensed-md,
+  .stamps-condensed-md & {
+    @media (max-width: $screen-md-max) {
+      @include make-stamp-condensed-staffpick();
+    }
   }
 }
