@@ -5,7 +5,7 @@ description: >
 fullWidth: true
 ---
 
-<ul class="toolbar" role="tablist">
+<ul class="toolbar js-toolbar" role="tablist">
   <li role="presentation">
     <a role="tab" href="#our-psychics-search" aria-selected="false" data-toggle="prairie-dog">
       <svg class="icon toolbar-icon">
@@ -39,3 +39,37 @@ fullWidth: true
     </a>
   </li>
 </ul>
+
+<script>
+
+$(function(){
+
+  var $window = $(window),      // most consistent GETTER for scrollTop
+      $html = $('html,body'),   // most consistent SETTER for scrollTop
+      minimumAffordance = 200,  // minimum pixels below toolbar allowed
+      duration = 300;           // duration of animation in milliseconds
+
+  $('.js-toolbar').each(function(){
+
+    var $toolbar = $(this),
+        $links = $toolbar.find('a');
+
+    $links.on('click.vse.toolbar', function(){
+      // don't bother if we're dismissing this link is already active
+      if ($(this).hasClass('active')) return;
+
+      var windowHeight = $window.height(),
+          scrollY = $window.scrollTop(),
+          toolbarY = $toolbar.offset().top,
+          toolbarHeight = $toolbar.height();
+
+      if (windowHeight - (toolbarY + toolbarHeight - scrollY) < minimumAffordance) {
+        $html.stop().animate({ scrollTop: toolbarY }, 300);
+      }
+    });
+
+  });
+
+});
+
+</script>
