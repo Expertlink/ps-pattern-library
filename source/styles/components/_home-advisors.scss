@@ -6,15 +6,15 @@
 
 .home-advisor-horizontal {
   width: 100%;
-  overflow-x:scroll;
-  white-space: nowrap;
-  float:left;
+  float: left;
   text-align: center;
   padding-top: $padding-base-vertical;
   position: relative;
-  @media (min-width: $screen-md-min)  {
-    overflow: hidden;
-    white-space: normal;
+
+  @media (max-width: $screen-sm-max) {
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -46,4 +46,4 @@
   display: block;
   margin: 0 auto;
   padding: 0;
-} 
+}
