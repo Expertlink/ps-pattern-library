@@ -31,6 +31,10 @@
   // the text next to this photo will almost always be 3 lines, 
   // 50px is large enough to be clear and readable and balances the text well.
   width: 50px;
+  // without this, IE9 displays the image at a much larger size
+  img {
+     width: 50px;
+  }
 }
 .eligible-reading-main {
   padding: 0 0 0 $padding-base-horizontal;
