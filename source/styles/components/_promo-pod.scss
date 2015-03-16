@@ -1,15 +1,21 @@
+.home-promopods {
+  margin: 1em 0;
+  @media (min-width: $screen-md-min) {
+    border-bottom: dotted 1px $tan-dark;
+    border-top: dotted 1px $tan-dark;
+  }
+}
+
 .home-promopod {
   padding: ($padding-base-vertical * 2);
   padding-bottom: ($padding-base-vertical * 4);
-  margin-bottom: ($padding-base-vertical * 2);
-  border-bottom: dotted 1px $tan-dark;
   @media (max-width: $screen-sm-max) {
     border-right: none;
+    border-bottom: dotted 1px $tan-dark;
   }
   @media (min-width: $screen-md-min) {
-    border-top: dotted 1px $tan-dark;
     margin-left: 0;
-    margin-top: ($padding-base-vertical * 2);
+    border-right: dotted 1px $tan-dark;
   }
   img {
     float: right;
@@ -22,5 +28,8 @@
     @media (max-width: $screen-sm-max) {
       padding: 0 ($padding-base-vertical * 2);
     }
+  }
+  &:nth-child(3n) {
+    border-right: none;
   }
 }
