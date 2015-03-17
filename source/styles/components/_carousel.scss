@@ -100,8 +100,8 @@
 }
 .carousel-peek .carousel-nav a {
   background-color: rgba(132, 121, 109, .7);
-  background-image: url(/images/rotator/arrow-left.svg);  
-  background-repeat: no-repeat;  
+  background-image: url(/images/carousel-prev.svg);
+  background-repeat: no-repeat;
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -113,7 +113,7 @@
     background-color: rgba(132, 121, 109, 1);
   }
   &.next {
-    background-image: url(/images/rotator/arrow-right.svg);    
+    background-image: url(/images/carousel-next.svg);    
     left: auto;
     right: -290%;
   }

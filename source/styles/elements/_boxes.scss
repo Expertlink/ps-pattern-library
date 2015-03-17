@@ -114,7 +114,7 @@
 //== Style variants
 
 .box-leaf-tr {
-  background: transparent url(/images/fleurons/top-right-leaf.svg) top right no-repeat;
+  background: transparent url(/images/top-right-leaf.svg) top right no-repeat;
   background-size: 20em auto;
   margin-right: -1em;
   padding-right: 2em;
@@ -135,7 +135,7 @@
 .box-scroll:after,
 .box-scroll-top:before,
 .box-scroll-bottom:after {
-  background-image: url(/images/fleurons/scroll.svg);
+  background-image: url(/images/scroll.svg);
   background-repeat: repeat-x;
   content: '';
   display: block;
