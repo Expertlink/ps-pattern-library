@@ -21,15 +21,15 @@
 @import "elements/borders";
 @import "elements/boxes";
 @import "elements/images";
-@import "elements/stars";
-@import "elements/creditcards";
-@import "elements/hide-show-pwd";
 @import "elements/close";
 @import "elements/forms";
 @import "elements/tables";
-@import "elements/stats";
 
 // Components
+@import "components/creditcards";
+@import "components/hide-show-pwd";
+@import "components/stars";
+@import "components/stats";
 @import "components/masthead";
 @import "components/main-nav";
 @import "components/subnav";
@@ -41,21 +41,23 @@
 @import "components/tabs";
 @import "components/tabpanel";
 @import "components/toolbar";
-@import "components/signup";
 @import "components/quicklist";
 @import "components/review";
-@import "components/bio";
-@import "components/account";
 @import "components/eligible-readings";
 @import "components/modal";
 @import "components/carousel";
 @import "components/progress-bars";
-@import "components/promo-pod";
-@import "components/home-advisors";
-@import "components/home-video";
-@import "components/home-alert";
 @import "components/return-lines";
 @import "components/toggle-box";
+
+// Section-specific=
+@import "sections/signup";
+@import "sections/bio";
+@import "sections/home-promo-pod";
+@import "sections/home-advisors";
+@import "sections/home-video";
+@import "sections/home-alert";
+@import "sections/account";
 
 // Helpers and Utils
 @import "helpers/utilities";
