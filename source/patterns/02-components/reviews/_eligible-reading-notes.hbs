@@ -26,17 +26,19 @@
     <div class="reading-note u-margin-top {{#if note}}box box-lighter{{/if}}">
       <p>{{note}}</p>
     </div>
-  <div id="add-note-block-{{readingID}}" class="collapse box box-lighter box-teal u-margin-top add-note">
-    <div class="form-group u-margin-bottom">
-      <textarea class="form-control" rows="5" name="reading-review">{{note}}</textarea>
-    </div>
-    <div class="arrange arrange-equal arrange-gutter">
-      <div class="arrange-fill">
-        <button class="btn btn-shaded btn-default btn-block js-dismiss-rating">Nevermind</button>
+  <div id="add-note-block-{{readingID}}" class="collapse">
+    <div class="box box-lighter box-teal u-margin-top add-note">
+      <div class="form-group u-margin-bottom">
+        <textarea class="form-control" rows="5" name="reading-review">{{note}}</textarea>
       </div>
-      <div class="arrange-fill">
-        <button class="btn btn-primary btn-block">{{#if note}}Edit{{else}}Add{{/if}} Note</button>
-       </div>
+      <div class="arrange arrange-equal arrange-gutter">
+        <div class="arrange-fill">
+          <button class="btn btn-shaded btn-default btn-block js-dismiss-rating">Nevermind</button>
+        </div>
+        <div class="arrange-fill">
+          <button class="btn btn-primary btn-block">{{#if note}}Edit{{else}}Add{{/if}} Note</button>
+        </div>
+      </div> 
     </div>
   </div>
   <a href="#add-note-block-{{readingID}}" data-toggle="collapse" class="add-note-parent btn btn-primary collapsed">
