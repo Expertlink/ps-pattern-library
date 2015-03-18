@@ -1,4 +1,6 @@
 <div class="c4-page-tile">
-  <iframe src="<%= file.meta.link %>" allowfullscreen="true" allowtransparency="true"></iframe>
+  <!--[if gte IE 10]>-->
+    <iframe src="<%= file.meta.link %>" allowfullscreen="true" allowtransparency="true"></iframe>
+  <!--<![endif]-->
   <a href="<%= file.meta.link %>"><span><%= file.meta.name %></span></a>
 </div>

@@ -106,6 +106,7 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 
 .c4-header__logo {
   display: block;
+  height: 2.125rem;
   margin-bottom: -0.25rem;
   width: 2.5rem;
 
@@ -564,11 +565,15 @@ a.c4-header__title-segment {
 /* Pages */
 
 .c4-page-tile {
-  background-color: $gray-lighter;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2018.1.1%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_2%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20width%3D%2248px%22%20height%3D%2260px%22%20viewBox%3D%220%200%2048%2060%22%20enable-background%3D%22new%200%200%2048%2060%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23BBBBBB%22%20points%3D%2229%2C19%2029%2C0%200%2C0%200%2C60%2048%2C60%2048%2C19%20%22%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23BBBBBB%22%20points%3D%2232%2C16%2048%2C16%2032%2C0%20%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A');
+  background-position: center 25%;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   height: 10rem;
   font-family: $sans !important;
   margin: 1rem;
+  overflow: hidden;
   position: relative;
   width: auto;
 
@@ -585,6 +590,10 @@ a.c4-header__title-segment {
 
     transform: scale(0.5);
     transform-origin: top left;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   a {
