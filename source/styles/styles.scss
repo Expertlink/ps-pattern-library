@@ -35,7 +35,6 @@
 @import "components/subnav";
 @import "components/advisor-tiles";
 @import "components/stamps";
-@import "components/advisor-promo";
 @import "components/filters";
 @import "components/prairie-dog";
 @import "components/tabs";
@@ -43,16 +42,17 @@
 @import "components/toolbar";
 @import "components/quicklist";
 @import "components/review";
-@import "components/eligible-readings";
 @import "components/modal";
 @import "components/carousel";
 @import "components/progress-bars";
 @import "components/return-lines";
 @import "components/toggle-box";
 
-// Section-specific=
+// Section-specific
 @import "sections/signup";
+@import "sections/advisor-promo";
 @import "sections/bio";
+@import "sections/eligible-readings";
 @import "sections/home-promo-pod";
 @import "sections/home-advisors";
 @import "sections/home-video";
