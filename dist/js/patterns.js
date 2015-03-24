@@ -543,12 +543,6 @@ $(window).load(function(){
   }, 250));
 });
 
-// Scripts for pattern at ../source/patterns/pages/03-advisor-bio/01-advisor-bio.hbs
-
-$(function() {
-  $('[data-toggle="collapse"][data-responsive="bio"]').responsiveCollapse();
-});
-
 // Scripts for pattern at ../source/patterns/pages/02-our-psychics/_sidebar-sort.hbs
 
 
@@ -578,6 +572,12 @@ $(function(){
 
 });
 
+
+// Scripts for pattern at ../source/patterns/pages/03-advisor-bio/01-advisor-bio.hbs
+
+$(function() {
+  $('[data-toggle="collapse"][data-responsive="bio"]').responsiveCollapse();
+});
 
 // Scripts for pattern at ../source/patterns/pages/11-account/02-add.hbs
 
