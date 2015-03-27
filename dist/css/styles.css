@@ -6859,8 +6859,10 @@ ol.subnav-body {
   width: calc(100% + 10px);
   margin: 0 -5px;
   padding: 0;
-  display: table;
-  max-width: 30em; }
+  display: table; }
+  @media (min-width: 994px) {
+    .bio-actions {
+      max-width: 30em; } }
 
 .bio-action {
   width: 50%;
