@@ -125,7 +125,10 @@ $bio-padding: ($line-height-computed * (2/3)) !default;
   margin: 0 ($arrange-gutter-size * -0.5);
   padding: 0;
   display: table;
-  max-width: 30em;
+
+  @media (min-width: $screen-lg-min) {
+    max-width: 30em;
+  }
 }
 .bio-action {
   width: 50%;
