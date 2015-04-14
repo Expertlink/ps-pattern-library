@@ -73,3 +73,18 @@ Having trouble running the `gulp` command?
 
 * Make sure you're in the project's root directory.
 * Try running `npm install` (sometimes we add new node packages to the project's requirements as we go).
+
+
+## SVG creation
+
+Find '/source/sprites/svg' - This contains two folders, `css` and `inline`. Each with SVG files in them. When you run `gulp` (or `gulp dist`), it combs through those folders and assembles two files containing all of the SVG assets therein. These end up in the output `images` directory, and are usually identifiable as `sprite-(something).svg`. The _inline_ SVG is pretty straightforward, because it gets included directly into files just like any image. You can see an example of this in the `icons` pattern. The _CSS_ SVG is the one that's probably giving you trouble. It's designed to be included as a `background-image`. In addition to the SVG files, the script outputs a Sass include to `/source/build/out/sprite.scss`. This is included in our base stylesheet like so: ```// Generated SCSS in source/build/out
+@import "sprite";
+```
+It includes the path to the generated SVG, as well as information about the icons contained therein and a mixin for using it. So_... if you wanted to use this stuff _outside_ of this environment, the steps you'd need to take would be...
+
+1. Run `gulp` to make sure you have the latest.
+2. Copy over any new image assets or whatever.
+3. Copy `/source/build/out/sprite.scss` somewhere accessible.
+4. Change the `@import` line in `styles.scss` to point to wherever that SCSS file is.
+
+
