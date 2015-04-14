@@ -1,4 +1,4 @@
-vse-responsive-pilot
+ExpertLink's vse-responsive-pilot
 ====================
 
 ## Installation
