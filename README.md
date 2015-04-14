@@ -59,7 +59,6 @@ https://vse-responsive-pilot.herokuapp.com
 * You need to be a collaborator or better on the heroku project `vse-responsive-pilot`
 * You need to have the heroku remote set up
 
-
 ### Do It
 
 * `$ gulp dist`
@@ -76,6 +75,13 @@ Having trouble running the `gulp` command?
 
 
 ## SVG creation
+
+1. Add new svg file to '/source/sprites/svg/css' folder
+2. Run 'gulp'
+3. Grab '/source/build/out/sprite.scss' -> replaces existing scss file
+4. Grab '/source/build/out/images/svg-sprite.css-(something).svg' -> replaces existing svg file
+
+Other notes:
 
 Find '/source/sprites/svg' - This contains two folders, `css` and `inline`. Each with SVG files in them. When you run `gulp` (or `gulp dist`), it combs through those folders and assembles two files containing all of the SVG assets therein. These end up in the output `images` directory, and are usually identifiable as `sprite-(something).svg`. The _inline_ SVG is pretty straightforward, because it gets included directly into files just like any image. You can see an example of this in the `icons` pattern. The _CSS_ SVG is the one that's probably giving you trouble. It's designed to be included as a `background-image`. In addition to the SVG files, the script outputs a Sass include to `/source/build/out/sprite.scss`. This is included in our base stylesheet like so: ```// Generated SCSS in source/build/out
 @import "sprite";
