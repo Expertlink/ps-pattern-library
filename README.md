@@ -76,7 +76,7 @@ Having trouble running the `gulp` command?
 
 ## SVG creation
 
-1. Add new svg file to '/source/sprites/svg/css' folder
+1. Add new svg file to '/source/sprites/svg/css (for background images) or '/source/sprites/svg/inline' (for inline icons)
 2. Run 'gulp'
 3. Grab '/source/build/out/sprite.scss' -> replaces existing scss file
 4. Grab '/source/build/out/images/svg-sprite.css-(something).svg' -> replaces existing svg file
