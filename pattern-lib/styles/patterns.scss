@@ -88,14 +88,14 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 /* Header */
 
 .c4-header {
-  background-color: $blue-medium;
-  color: $white;
+  background-color: #feeed7;
+  color: black;
   font-family: $sans;
   font-size: 1rem;
   padding: 0.5rem;
 
   a {
-    color: inherit !important;
+    color: black;
     text-decoration: none !important;
   }
 }
@@ -126,16 +126,16 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 a.c4-header__title-segment {
-  color: lighten($blue, 35%) !important;
+  color: black !important;
   text-decoration: none !important;
 
   &:hover,
   &:focus {
-    color: $white !important;
+    color: black !important;
   }
 
   &:after {
-    color: lighten($blue, 20%) !important;
+    color: black !important;
     content: '\00a0/\00a0';
   }
 }
