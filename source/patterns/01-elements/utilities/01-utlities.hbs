@@ -1,0 +1,184 @@
+---
+name: Utility Styles
+description: >
+  Concatinate in markup to extend current style to avoid writting extra styles directly to existing class
+---
+
+
+.u-margin { margin: 10px; }
+
+.u-margin-sides { margin-left: 10px; margin-right: 10px; }
+
+.u-margin-ends { margin-top: 10px; margin-bottom: 10px; }
+
+.u-margin-top { margin-top: 10px; }
+
+.u-margin-right { margin-right: 10px; }
+
+.u-margin-bottom { margin-bottom: 10px; }
+
+.u-margin-left { margin-left: 10px; }
+
+.u-padding { padding: 10px; }
+
+.u-padding-sides { padding-left: 10px; padding-right: 10px; }
+
+.u-padding-ends { padding-top: 10px; padding-bottom: 10px; }
+
+.u-padding-top { padding-top: 10px; }
+
+.u-padding-right { padding-right: 10px; }
+
+.u-padding-bottom { padding-bottom: 10px; }
+
+.u-padding-left { padding-left: 10px; }
+
+.u-no-margin { margin: 0; }
+
+.u-no-margin-sides { margin-left: 0; margin-right: 0; }
+
+.u-no-margin-ends { margin-top: 0; margin-bottom: 0; }
+
+.u-no-margin-top { margin-top: 0; }
+
+.u-no-margin-right { margin-right: 0; }
+
+.u-no-margin-bottom { margin-bottom: 0; }
+
+.u-no-margin-left { margin-left: 0; }
+
+.u-no-padding { padding: 0; }
+
+.u-no-padding-sides { padding-left: 0; padding-right: 0; }
+
+.u-no-padding-ends { padding-top: 0; padding-bottom: 0; }
+
+.u-no-padding-top { padding-top: 0; }
+
+.u-no-padding-right { padding-right: 0; }
+
+.u-no-padding-bottom { padding-bottom: 0; }
+
+.u-no-padding-left { padding-left: 0; }
+
+.u-block { display: block; }
+
+.u-inline-block { display: inline-block; }
+
+.u-overflow-hidden { overflow: hidden; }
+
+.u-shift-up { margin-top: -1px !important; }
+
+.u-shift-down { margin-bottom: -1px !important; }
+
+@media (max-width: 479px) {
+  .u-no-padding-xs { padding: 0; }
+
+  .u-no-padding-sides-xs { padding-left: 0; padding-right: 0; }
+
+  .u-no-padding-ends-xs { padding-top: 0; padding-bottom: 0; }
+
+  .u-no-padding-top-xs { padding-top: 0; }
+
+  .u-no-padding-right-xs { padding-right: 0; }
+
+  .u-no-padding-bottom-xs { padding-bottom: 0; }
+
+  .u-no-padding-left-xs { padding-left: 0; }
+ }
+
+@media (max-width: 703px) {
+  .u-no-padding-sm { padding: 0; }
+
+  .u-no-padding-sides-sm { padding-left: 0; padding-right: 0; }
+
+  .u-no-padding-ends-sm { padding-top: 0; padding-bottom: 0; }
+
+  .u-no-padding-top-sm { padding-top: 0; }
+
+  .u-no-padding-right-sm { padding-right: 0; }
+
+  .u-no-padding-bottom-sm { padding-bottom: 0; }
+
+  .u-no-padding-left-sm { padding-left: 0; }
+ }
+
+.u-hang-right { margin-right: -0.5em; }
+
+.u-line-height-reset { line-height: 1; }
+
+.top-buffer-15 { margin-top: 15px; }
+
+.u-margin-t-none { margin-top: 0; }
+
+.u-block { display: block; }
+
+.u-inline-block { display: inline-block; }
+
+.u-overflow-hidden { overflow: hidden; }
+
+.u-shift-up { margin-top: -1px !important; }
+
+.u-shift-down { margin-bottom: -1px !important; }
+
+.u-no-margin { margin: 0; }
+
+.u-no-margin-sides { margin-left: 0; margin-right: 0; }
+
+.u-margin-ends { margin-top: 10px; margin-bottom: 10px; }
+
+.box-sheer-sides { padding-left: 0; padding-right: 0; }
+
+.box-md { padding: 18px; }
+
+.box-thick { border-width: 2px; }
+
+.top-buffer-15 { margin-top:15px; }
+
+.u-hang-right { margin-right: -0.5em; }
+
+.u-line-height-reset{ line-height: 1; }
+
+.u-margin-t-none{ margin-top:0; }
+
+// adds 20px padding to top and bottom if on desktop, 10px top bottom if on mobile. Used for my account sections
+.u-padding-20-ends{
+    padding-top:10px;
+    padding-bottom:10px;
+    @media (min-width: $screen-sm-max) {
+       padding-top:20px; 
+       padding-bottom:20px;
+    }
+}
+
+// used to give padding to area on left and right if on mobile. Used on my account Account history page right panel 
+.u-sm-padding-20-sides{
+    padding-left:20px;
+    padding-right:20px;
+    @media (min-width: $screen-sm-max) {
+       padding-left:0; 
+       padding-right:0;
+    }
+}
+
+// Used to wrap 2 columns and get rid of margin on desktop. Mobile makes it full width. Use 'overflow-hidden' on
+// the parent to elimiate hor scroll bars on mobile
+.u-sm-mar-10-sides{
+    margin-left:-10px;
+    margin-right:-10px;
+    @media (min-width: $screen-sm-max) {
+       margin-left:0; 
+       margin-right:0;
+    }
+}
+
+.u-padding-65-sides{
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+    @media (min-width: $screen-xs-max) {
+        padding-left:65px;
+        padding-right:65px;
+        width:auto;
+    }
+}
