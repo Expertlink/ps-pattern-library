@@ -46,3 +46,12 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
 .bright-red{
 	color: $red-bright;
 }
+
+// Style guide only
+.swatch{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	margin:3px 0;
+	vertical-align: middle;
+}
