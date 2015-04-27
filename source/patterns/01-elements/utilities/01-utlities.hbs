@@ -1,0 +1,184 @@
+---
+name: Utility Styles
+description: >
+  Concatinate in markup to extend current style to avoid writting extra styles directly to existing class
+---
+
+
+<p>.u-margin { margin: 10px; }</p>
+
+<p>.u-margin-sides { margin-left: 10px; margin-right: 10px; }</p>
+
+<p>.u-margin-ends { margin-top: 10px; margin-bottom: 10px; }</p>
+
+<p>.u-margin-top { margin-top: 10px; }</p>
+
+<p>.u-margin-right { margin-right: 10px; }</p>
+
+<p>.u-margin-bottom { margin-bottom: 10px; }</p>
+
+<p>.u-margin-left { margin-left: 10px; }</p>
+
+<p>.u-padding { padding: 10px; }</p>
+
+<p>.u-padding-sides { padding-left: 10px; padding-right: 10px; }</p>
+
+<p>.u-padding-ends { padding-top: 10px; padding-bottom: 10px; }</p>
+
+<p>.u-padding-top { padding-top: 10px; }</p>
+
+<p>.u-padding-right { padding-right: 10px; }</p>
+
+<p>.u-padding-bottom { padding-bottom: 10px; }</p>
+
+<p>.u-padding-left { padding-left: 10px; }</p>
+
+<p>.u-no-margin { margin: 0; }</p>
+
+<p>.u-no-margin-sides { margin-left: 0; margin-right: 0; }</p>
+
+<p>.u-no-margin-ends { margin-top: 0; margin-bottom: 0; }</p>
+
+<p>.u-no-margin-top { margin-top: 0; }</p>
+
+<p>.u-no-margin-right { margin-right: 0; }</p>
+
+<p>.u-no-margin-bottom { margin-bottom: 0; }</p>
+
+<p>.u-no-margin-left { margin-left: 0; }</p>
+
+<p>.u-no-padding { padding: 0; }</p>
+
+<p>.u-no-padding-sides { padding-left: 0; padding-right: 0; }</p>
+
+<p>.u-no-padding-ends { padding-top: 0; padding-bottom: 0; }</p>
+
+<p>.u-no-padding-top { padding-top: 0; }</p>
+
+<p>.u-no-padding-right { padding-right: 0; }</p>
+
+<p>.u-no-padding-bottom { padding-bottom: 0; }</p>
+
+<p>.u-no-padding-left { padding-left: 0; }</p>
+
+<p>.u-block { display: block; }</p>
+
+<p>.u-inline-block { display: inline-block; }</p>
+
+<p>.u-overflow-hidden { overflow: hidden; }</p>
+
+<p>.u-shift-up { margin-top: -1px !important; }</p>
+
+<p>.u-shift-down { margin-bottom: -1px !important; }</p>
+
+<p>@media (max-width: 479px) {
+  .u-no-padding-xs { padding: 0; }
+
+  .u-no-padding-sides-xs { padding-left: 0; padding-right: 0; }
+
+  .u-no-padding-ends-xs { padding-top: 0; padding-bottom: 0; }
+
+  .u-no-padding-top-xs { padding-top: 0; }
+
+  .u-no-padding-right-xs { padding-right: 0; }
+
+  .u-no-padding-bottom-xs { padding-bottom: 0; }
+
+  .u-no-padding-left-xs { padding-left: 0; }
+ }<</p>
+
+<p>@media (max-width: 703px) {
+  .u-no-padding-sm { padding: 0; }
+
+  .u-no-padding-sides-sm { padding-left: 0; padding-right: 0; }
+
+  .u-no-padding-ends-sm { padding-top: 0; padding-bottom: 0; }
+
+  .u-no-padding-top-sm { padding-top: 0; }
+
+  .u-no-padding-right-sm { padding-right: 0; }
+
+  .u-no-padding-bottom-sm { padding-bottom: 0; }
+
+  .u-no-padding-left-sm { padding-left: 0; }
+ }</p>
+
+<p>.u-hang-right { margin-right: -0.5em; }</p>
+
+<p>.u-line-height-reset { line-height: 1; }</p>
+
+<p>.top-buffer-15 { margin-top: 15px; }</p>
+
+<p>.u-margin-t-none { margin-top: 0; }</p>
+
+<p>.u-block { display: block; }</p>
+
+<p>.u-inline-block { display: inline-block; }</p>
+
+<p>.u-overflow-hidden { overflow: hidden; }</p>
+
+<p>.u-shift-up { margin-top: -1px !important; }</p>
+
+<p>.u-shift-down { margin-bottom: -1px !important; }</p>
+
+<p>.u-no-margin { margin: 0; }<</p>
+
+<p>.u-no-margin-sides { margin-left: 0; margin-right: 0; }</p>
+
+<p>.u-margin-ends { margin-top: 10px; margin-bottom: 10px; }</p>
+
+<p>.box-sheer-sides { padding-left: 0; padding-right: 0; }</p>
+
+<p>.box-md { padding: 18px; }</p>
+
+<p>.box-thick { border-width: 2px; }</p>
+
+<p>.top-buffer-15 { margin-top:15px; }</p>
+
+<p>.u-hang-right { margin-right: -0.5em; }</p>
+
+<p>.u-line-height-reset{ line-height: 1; }</p>
+
+<p>.u-margin-t-none{ margin-top:0; }</p>
+
+<p>// adds 20px padding to top and bottom if on desktop, 10px top bottom if on mobile. Used for my account sections
+.u-padding-20-ends{
+    padding-top:10px;
+    padding-bottom:10px;
+    @media (min-width: $screen-sm-max) {
+       padding-top:20px; 
+       padding-bottom:20px;
+    }
+}</p>
+<p>
+// used to give padding to area on left and right if on mobile. Used on my account Account history page right panel 
+.u-sm-padding-20-sides{
+    padding-left:20px;
+    padding-right:20px;
+    @media (min-width: $screen-sm-max) {
+       padding-left:0; 
+       padding-right:0;
+    }
+}</p>
+<p>
+// Used to wrap 2 columns and get rid of margin on desktop. Mobile makes it full width. Use 'overflow-hidden' on
+// the parent to elimiate hor scroll bars on mobile
+.u-sm-mar-10-sides{
+    margin-left:-10px;
+    margin-right:-10px;
+    @media (min-width: $screen-sm-max) {
+       margin-left:0; 
+       margin-right:0;
+    }
+}</p>
+<p>
+.u-padding-65-sides{
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+    @media (min-width: $screen-xs-max) {
+        padding-left:65px;
+        padding-right:65px;
+        width:auto;
+    }
+}</p>

@@ -42,3 +42,16 @@ $utility-gutter-width: ($grid-gutter-width / 2) !default;
 .u-hang-right {
   margin-right: -0.5em;
 }
+
+.bright-red{
+	color: $red-bright;
+}
+
+// Style guide only
+.swatch{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	margin:3px 0;
+	vertical-align: middle;
+}

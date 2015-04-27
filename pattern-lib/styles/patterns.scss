@@ -88,14 +88,14 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 /* Header */
 
 .c4-header {
-  background-color: $blue-medium;
-  color: $white;
+  background-color: #feeed7;
+  color: black;
   font-family: $sans;
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0rem;
 
   a {
-    color: inherit !important;
+    color: black;
     text-decoration: none !important;
   }
 }
@@ -126,16 +126,16 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 a.c4-header__title-segment {
-  color: lighten($blue, 35%) !important;
+  color: black !important;
   text-decoration: none !important;
 
   &:hover,
   &:focus {
-    color: $white !important;
+    color: black !important;
   }
 
   &:after {
-    color: lighten($blue, 20%) !important;
+    color: black !important;
     content: '\00a0/\00a0';
   }
 }
@@ -151,14 +151,16 @@ a.c4-header__title-segment {
   border-radius: 0.25rem;
   cursor: pointer;
   display: block;
-  height: 2.5rem;
+  height: 2rem;
   outline: 0;
   padding: 0;
-  width: 2.75rem;
+  width: 2.5rem;
+  background-color: #EFCD9C !important;
+  margin-right:5px;
 
   &:hover,
   &:focus {
-    background-color: lighten($blue, 20%) !important;
+    background-color: #feeed7e !important;
   }
 }
 

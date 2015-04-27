@@ -1,6 +1,8 @@
 ExpertLink's vse-responsive-pilot
 ====================
 
+http://ps-pattern-library.herokuapp.com/
+
 ## Installation
 
 ### Requirements
@@ -52,7 +54,7 @@ Follow these steps to contribute to the repository:
 
 ## Build and Deploy
 
-https://vse-responsive-pilot.herokuapp.com
+http://ps-pattern-library.herokuapp.com/
 
 ### Pre-Requisites
 
