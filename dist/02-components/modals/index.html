@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="c4-html" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Psychic Source Responsive Pattern Library: Modals
+  </title>
+    <!-- CSS Goes here -->
+    <link href="../../css/pattern-library.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons can go here if desired -->
+    <!-- Any desired scripts in HEAD -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="../../js/pattern-library.js"></script>
+
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
+
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
+  </head>
+<body class="c4-body">
+
+  <header class="c4-header" id="c4-top">
+    <div class="c4-arrange">
+      <div class="c4-arrange__size-fit  c4-header__segment">
+        <a class="c4-header__logo" href="/">
+          <svg class="icon icon-xl">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#ps-star" />
+          </svg>
+        </a>
+      </div>
+      <div class="c4-arrange__size-fill  c4-header__segment">
+        <a class="c4-header__title-segment  c4-hidden-xs  c4-hidden-sm" href="/">
+          <strong><span class="bright-red">Psychic Source</span></strong> Responsive Pattern Library
+        </a>
+        <h1 class="c4-header__title-segment">
+          Modals
+        </h1>
+      </div>
+      <div class="c4-arrange__size-fit  c4-hidden-md  c4-hidden-lg  c4-hidden-xl">
+        <button class="c4-header__menu-button  js-c4-nav-toggle" type="button">
+          <span class="c4-visuallyhidden">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="c4-nav  js-c4-nav">
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../..">Welcome</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Elements</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../01-elements/01-grid">Grid</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/02-text">Text</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/03-headings">Headings</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/04-arrange">Arrange</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/arrows">Arrows</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/borders">Borders</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/boxes">Boxes</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/buttons">Buttons</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/fields">Fields</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/icons">Icons</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/images">Images</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/lists">Lists</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/media">Media</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/tables">Tables</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/utilities">Utilities</a></li>
+      <li><a class="c4-nav__item " href="../../01-elements/variables">Variables</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Components</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../02-components/advisor-tiles">Advisor Tiles</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/badges">Badges</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/carousel">Carousel</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/dropdowns">Dropdowns</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/filters">Filters</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/forms">Forms</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/main-nav">Main Nav</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/masthead">Masthead</a></li>
+      <li><a class="c4-nav__item c4-is-current" href="../../02-components/modals">Modals</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/pagination">Pagination</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/prairie-dog">Prairie Dog</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/progress-bars">Progress Bars</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/quicklist">Quicklist</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/ratings">Ratings</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/return-line">Return Line</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/reviews">Reviews</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/stamps">Stamps</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/stats">Stats</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/subnav">Subnav</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/tabpanel">Tabpanel</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/tabs">Tabs</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/toggle-box">Toggle Box</a></li>
+      <li><a class="c4-nav__item " href="../../02-components/toolbar">Toolbar</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Regions</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../03-regions/01-global">Global</a></li>
+      <li><a class="c4-nav__item " href="../../03-regions/availability">Availability</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Pages</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../pages/01-home">Home</a></li>
+      <li><a class="c4-nav__item " href="../../pages/02-our-psychics">Our Psychics</a></li>
+      <li><a class="c4-nav__item " href="../../pages/03-advisor-bio">Advisor Bio</a></li>
+      <li><a class="c4-nav__item " href="../../pages/10-signup">Signup</a></li>
+      <li><a class="c4-nav__item " href="../../pages/11-account">Account</a></li>
+    </ul>
+    <h4 class="c4-nav__heading">Tutorials</h4>
+    <ul class="c4-nav__list">
+      <li><a class="c4-nav__item " href="../../tutorials/01-sprite-generation">Sprite Generation</a></li>
+      <li><a class="c4-nav__item " href="../../tutorials/02-git">Git</a></li>
+    </ul>
+  </nav>
+
+  <main class="c4-main">
+    
+  <div class="c4-pattern" id="c4-pattern_26">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_26">Simple Modals</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Modals are based off of the Bootstrap Modal component. They are full-width at small screen layouts, with various width constraining options at larger screen layouts, applied with modifier classes.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-basic">
+  Default
+</button>
+
+<div class="modal" id="modal-example-basic">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-small">
+  Small
+</button>
+
+<div class="modal" id="modal-example-small">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-large">
+  Large
+</button>
+
+<div class="modal" id="modal-example-large">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_26" type="button">
+            Source
+          </button>
+        
+        
+          <a class="c4-pattern__footer__action  c4-pattern__footer__action--bootstrap" href="http://getbootstrap.com/javascript/#modals">
+            Bootstrap docs
+          </a>
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_26"><code class="language-markup">&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-basic&quot;&gt;
+  Default
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-basic&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-body clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-small&quot;&gt;
+  Small
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-small&quot;&gt;
+  &lt;div class=&quot;modal-dialog modal-sm&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-body clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-large&quot;&gt;
+  Large
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-large&quot;&gt;
+  &lt;div class=&quot;modal-dialog modal-lg&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-body clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_65">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_65">Color Variations</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Background and border colors can be altered by applying additional classes to the <code>.modal-content</code> element.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-teal">
+  Teal Theme
+</button>
+
+<div class="modal" id="modal-example-teal">
+  <div class="modal-dialog">
+    <div class="modal-content modal-teal">
+      <div class="modal-body clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-tan">
+  Tan Theme
+</button>
+
+<div class="modal" id="modal-example-tan">
+  <div class="modal-dialog">
+    <div class="modal-content modal-tan">
+      <div class="modal-body clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_65" type="button">
+            Source
+          </button>
+        
+        
+          <a class="c4-pattern__footer__action  c4-pattern__footer__action--bootstrap" href="http://getbootstrap.com/javascript/#modals">
+            Bootstrap docs
+          </a>
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_65"><code class="language-markup">&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-teal&quot;&gt;
+  Teal Theme
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-teal&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content modal-teal&quot;&gt;
+      &lt;div class=&quot;modal-body clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-tan&quot;&gt;
+  Tan Theme
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-tan&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content modal-tan&quot;&gt;
+      &lt;div class=&quot;modal-body clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+
+  <div class="c4-pattern" id="c4-pattern_90">
+    
+      <div class="c4-pattern__header">
+        <h2 class="c4-pattern__heading">
+          <a href="#c4-pattern_90">Complex Modals</a>
+          <span class="c4-status c4-status--none">
+            
+          </span>
+        </h2>
+        <p>Additional elements, <code>.modal-header</code> and <code>.modal-footer</code>, can be used to section off the top or bottom of the modal content.</p>
+
+      </div>
+    
+
+    <div class="c4-pattern__body ">
+      
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-header">
+  Header
+</button>
+
+<div class="modal" id="modal-example-header">
+  <div class="modal-dialog">
+    <div class="modal-content modal-teal">
+      <div class="modal-header clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <h1 class="modal-title">Header</h1>
+      </div>
+      <div class="modal-body">
+        <p>This is clearly some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-lg btn-default"
+ data-toggle="modal"
+ data-target="#modal-example-header-footer">
+  Header + Footer
+</button>
+
+<div class="modal" id="modal-example-header-footer">
+  <div class="modal-dialog">
+    <div class="modal-content modal-tan">
+      <div class="modal-header clearfix">
+        <button class="btn btn-blank close pull-right"
+         data-dismiss="modal"
+         aria-hidden="true"
+         type="button">
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/svg/sprite.symbol.svg#close"></use>
+          </svg>
+        </button>
+        <h1 class="modal-title">Header</h1>
+      </div>
+      <div class="modal-body">
+        <p>This is clearly some text.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" type="button">
+          Close
+        </button>
+        <button class="btn btn-primary" type="button">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="c4-pattern__footer">
+      <div class="c4-pattern__footer__actions">
+        
+          <button class="c4-pattern__footer__action  c4-pattern__footer__action--default  c4-pattern__footer__action--source" data-c4-toggle-source="pattern_90" type="button">
+            Source
+          </button>
+        
+        
+          <a class="c4-pattern__footer__action  c4-pattern__footer__action--bootstrap" href="http://getbootstrap.com/javascript/#modals">
+            Bootstrap docs
+          </a>
+        
+      </div>
+      
+        <pre class="c4-pattern__footer__source" data-c4-source-id="pattern_90"><code class="language-markup">&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-header&quot;&gt;
+  Header
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-header&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content modal-teal&quot;&gt;
+      &lt;div class=&quot;modal-header clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;h1 class=&quot;modal-title&quot;&gt;Header&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;button class=&quot;btn btn-lg btn-default&quot;
+ data-toggle=&quot;modal&quot;
+ data-target=&quot;#modal-example-header-footer&quot;&gt;
+  Header + Footer
+&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;modal-example-header-footer&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content modal-tan&quot;&gt;
+      &lt;div class=&quot;modal-header clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-blank close pull-right&quot;
+         data-dismiss=&quot;modal&quot;
+         aria-hidden=&quot;true&quot;
+         type=&quot;button&quot;&gt;
+          &lt;svg class=&quot;icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/images/symbol/svg/sprite.symbol.svg#close&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;h1 class=&quot;modal-title&quot;&gt;Header&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;This is clearly some text.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot; type=&quot;button&quot;&gt;
+          Close
+        &lt;/button&gt;
+        &lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;
+          Save changes
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+    </div>
+  </div>
+
+
+  </main>
+
+  <footer class="c4-footer">
+    <p>
+      This page was generated Tuesday, July 7th, 2015, 3:27PM (PST).
+      <a href="#c4-top">Back to top</a>
+    </p>
+  </footer>
+
+</body>
+
+
+</html>

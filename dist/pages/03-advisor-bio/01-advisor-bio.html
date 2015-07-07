@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Sample Composed Template
+  </title>
+    <!-- CSS Goes here -->
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+    <!-- Favicons and Apple Touch icons can go here if desired -->
+    <link rel="icon" type="image/x-icon" href="../../images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../../images/favicons/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch/60x60-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-touch/76x76-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-touch/120x120-precomposed.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-touch/152x152-precomposed.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch/180x180-precomposed.png">
+    <!-- Any desired scripts in HEAD -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
+  </head>
+<body>
+
+  
+  <header role="banner" class="container-page">
+    <div class="hidden-lg">
+      <a class="pre-masthead" href="tel:18009653049">
+        <svg class="icon icon-md">
+          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+        </svg>
+        1.800.965.3049
+      </a>
+    </div>
+    <div class="masthead">
+    
+      <a class="masthead-logo" href="">
+        <picture class="picture-responsive">
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source
+            srcset="/images/logo.png, /images/logo-2x.png 2x"
+            media="(min-width: 994px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img
+            srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+            src="/images/logo.png"
+            alt="Psychic Source - Life's possibilites. Revealed.">
+        </picture>
+      </a>
+    
+      <div class="masthead-body">
+    
+        <div class="masthead-controls">
+          <ul class="masthead-menu">
+              <li>
+                <a href="" class="btn btn-link text-default">
+                  Login
+                </a>
+              </li>
+            <li class="hidden-xs hidden-sm hidden-md dropdown">
+              <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+                Customer Care
+                <span class="arrow-down text-muted"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+              </ul>
+            </li>
+            <li class="masthead-search-toggle">
+              <a href="" class="btn btn-sunrise btn-shaded">
+                <svg class="icon icon-md">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <form action="" class="masthead-search">
+            <div class="input-group">
+              <div class="input-group-btn select">
+                <div class="btn btn-default js-select-delegate" aria-hidden="true">
+                  <svg class="icon icon-md">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+                  </svg>
+                  <span class="js-select-value" aria-hidden="true"></span>
+                  <span class="arrow-down text-muted"></span>
+                </div>
+                <select id="search-types">
+                  <option>Psychics</option>
+                  <option>Articles</option>
+                </select>
+              </div>
+              <input id="q" type="search" class="form-control">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-info btn-shaded">Go</button>
+              </div>
+            </div>
+          </form>
+        </div>
+    
+        <div class="masthead-messaging text-right u-padding-top visible-lg-block">
+          <p><a class="text-default text-underline" href="">Our Satisfaction Guarantee</a></p>
+          <p class="h2 u-no-margin-top">
+            <a class="text-danger" href="tel:18009653049">
+              <svg class="icon icon-md">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+              </svg>
+              1.800.965.3049
+            </a>
+          </p>
+          <p class="u-no-margin-bottom">Since 1989, the Most Respected Psychic Service</p>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+    
+    <div class="main-nav js-custom-nav">
+      <nav>
+        <ul class="main-nav-bar">
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-offer">
+              <span class="main-nav-item-highlight">
+                New Customer<span class="hidden-lg">s</span> <span class="hidden-xs hidden-sm hidden-md">Offers</span>
+              </span>
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-offer">
+              <div class="col-md-4 no-gutters nav-section-offer text-center u-padding-bottom">
+                <h1 class="text-cursive">Special Offer</h1>
+                <p class="u-padding">As low as <span class="u-block">$1.00</span>per minute</p>
+                <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+              </div>
+              <div class="col-md-8 u-margin-top">
+                <div class="col-md-6 no-gutters nav-section-offer-add text-center u-margin-top">
+                  <a class="nav-section-offer-heading" href="#">
+                    <img src="/images/minutes-icon.png" alt=" "/>
+                    <h2 class="h4">3 free minutes with<span class="text-nowrap">your first paid reading!</span></h2>
+                  </a>
+                </div>
+                <div class="col-md-6 no-gutters nav-section-offer-add text-center u-margin-top">
+                  <a class="nav-section-offer-heading" href="#">
+                    <img src="/images/satisfaction-seal.png" alt=" "/>
+                    <h2 class="h4">100% Satisfaction Gurantee</h2>
+                    <p>If you're not happy with your last paid reading, it's free!</p>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </li>
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-psychics">
+              Our Psychics
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-psychics">
+              <div class="nav-section-psychics text-center">
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom border-right">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">Phone Readings</h2>
+                    <p>Get live psychic readings by phone</p>
+                    <img src="/images/dropdown-phone.png" alt=" "/>
+                    <p><span class="text-cursive">View Phone Psychics</span></p>
+                  </a>
+                </div>
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom border-right">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">Chat Readings</h2>
+                    <p>Get live psychic readings by chat</p>
+                    <img src="/images/dropdown-chat.png" alt=" "/>
+                    <p><span class="text-cursive">View Chat Psychics</span></p>
+                  </a>
+                </div>
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">All Reading Types</h2>
+                    <p>View all our psychic readers</p>
+                    <img src="/images/dropdown-both.png" alt=" "/>
+                    <p><span class="text-cursive">View All Psychics</span></p>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-horoscopes">
+              Horoscopes
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-horoscopes">
+              <div class="col-md-4 nav-section-prose u-padding-right">
+                <h3 class="nav-section-heading">Weekly Love Horoscope</h3>
+                <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
+                <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+              </div>
+              <div class="col-md-1 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#">Aries</a></li>
+                  <li><a href="#">Taurus</a></li>
+                  <li><a href="#">Gemini</a></li>
+                  <li><a href="#">Cancer</a></li>
+                  <li><a href="#">Leo</a></li>
+                  <li><a href="#">Virgo</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#">Libra</a></li>
+                  <li><a href="#">Scorpio</a></li>
+                  <li><a href="#">Sagittarius</a></li>
+                  <li><a href="#">Capricorn</a></li>
+                  <li><a href="#">Aquarius</a></li>
+                  <li><a href="#">Pisces</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs hidden-sm">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-about">
+              About Psychic Readings
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-about">
+              <div class="col-md-4 nav-section-prose">
+                <h3 class="nav-section-heading">About Psychic Readings</h3>
+                <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
+              </div>
+              <div class="col-md-2 no-gutters nav-section-links border-left u-padding-bottom">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Types of Psychics</h3></a></li>
+                  <li><a href="#">Love Psychics</a></li>
+                  <li><a href="#">Psychic Mediums</a></li>
+                  <li><a href="#">Clairvoyants</a></li>
+                  <li><a href="#">Clairaudients</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links border-left u-padding-bottom">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Types of Psychic Readings</h3></a></li>
+                  <li><a href="#">Cartomancy</a></li>
+                  <li><a href="#">Tarot Readings</a></li>
+                  <li><a href="#">Angel Card Readings</a></li>
+                  <li><a href="#">Numerology Readings</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Ways to Get A...</h3></a></li>
+                  <li><a href="#">Psychic Phone Readings</a></li>
+                  <li class="u-margin-bottom"><a href="#">Psychic Chat</a></li>
+                  <li class="border-top"><a href="#">Testimonials</a></li>
+                  <li><a href="#">Glossary of Terms</a></li>
+                  <li><a href="#">Psychic? Apply Now</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs hidden-sm hidden-md">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-articles">
+              Articles &amp; Resources
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-articles">
+              <div class="col-md-4 nav-section-prose border-right u-padding-bottom">
+                <h3 class="nav-section-heading">Articles and Resources</h3>
+                <p>Like a Blog, Only Better!</p>
+                <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links">
+                <ul>
+                  <li><a href="#">Career &amp; Finance</a></li>
+                  <li><a href="#">Health &amp; Wellness</a></li>
+                  <li><a href="#">Life, Destiny &amp; Meaning</a></li>
+                  <li><a href="#">Love, Relationships &amp; Family</a></li>
+                  <li><a href="#">Other Psychic Topics</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-lg">
+            <a class="main-nav-item main-nav-item-expandable js-custom-nav-more" href="#main-nav-overflow" data-toggle="collapse">
+              More
+              <span class="arrow-down" aria-hidden="true"></span>
+            </a>
+            <ul class="main-nav-overflow collapse" id="main-nav-overflow">
+              <li class="hidden-sm hidden-md"><a href="#">Horoscopes</a></li>
+              <li class="hidden-md"><a href="#">About Psychic Readings</a></li>
+              <li><a href="#">Articles &amp; Resources</a></li>
+              <li><a href="#">Customer Care</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    
+  </header>
+
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter box-bio u-shift-up">
+    <div class="container-fluid no-gutters-xs no-gutters-sm">
+      <div class="row">
+        <div class="col-md-7 col-lg-8">
+          <div class="bio-summary text-center-xs text-center-sm text-center-md text-left-lg">
+            <div class="bio-summary-object">
+              <div class="bio-summary-photo with-stamp">
+                <img class="img-rounded img-shadow" src="/images/fpo/137.jpg" alt=" ">
+                <div class="stamp-staffpick">
+                  Psychic Source is pleased to highlight this gifted Advisor
+                </div>
+              </div>
+            </div>
+            <div class="bio-summary-body">
+              <div class="bio-summary-info">
+                <h1 class="bio-summary-heading h2 text-primary">Psychic Mazie x1337</h1>
+                <p class="text-neutral">Insightful and compassionate</p>
+                <p>
+                  <span class="stars stars-4-5">
+                    <span class="sr-only">4&#189; stars</span>
+                  </span>
+                  <span class="text-muted">(<a href="">1204 Ratings</a>)</span>
+                </p>
+              </div>
+              <button
+                type="button"
+                class="bio-summary-fave-btn btn btn-fave btn-rounded btn-shaded"
+                data-toggle="button"
+                data-favorite-text="Favorited"
+                aria-pressed="false">
+                Favorite
+              </button>
+              <ul class="bio-summary-av list-inline">
+                <li>
+                  <a class="btn u-no-padding-sides text-normal text-tertiary" href="#">
+                    <svg class="icon icon-md">
+                      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#video" />
+                    </svg>
+                    Watch my video
+                  </a>
+                </li>
+                <li>
+                  <a class="btn u-no-padding-sides text-normal text-tertiary" href="#">
+                    <svg class="icon icon-md">
+                      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#audio" />
+                    </svg>
+                    Listen to <span class="hidden-xs hidden-lg">my </span>message
+                  </a>
+                </li>
+              </ul>
+                  <div class="bio-availability  text-center-xs text-center-sm text-center-md text-left-lg">
+                      <h4 class="text-success">Available until 8:27pm
+                          (12 in line)
+                      </h4>
+                      <ul class="bio-actions">
+                          <li class="bio-action">
+                            <a class="btn btn-block  btn-success btn-shaded" href="#">Chat Now</a>
+                            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+                          </li>
+                          <li class="bio-action">
+                            <a class="btn btn-block  btn-success btn-shaded" href="#">Call Now</a>
+                            <span class="bio-price"><del>$8.75</del> $1.00/min</span>
+                          </li>
+                      </ul>
+                   <p class="text-muted u-no-margin">Pricing valid for first purchase only.</p>
+                  </div>
+            </div>
+          </div>
+          <h3 class="bio-section-header"><a href="#more-about"  data-toggle="collapse" data-responsive="bio" class="section-parent collapsed">About Mazie </a></h3>
+          <div id="more-about" class="collapse bio-show-md">
+            <ul class="list-unstyled u-margin-top">
+              <li><strong class="text-primary">Mazie's Specialties:</strong> Clairvoyant, Intuitive/Empath, Psychic Medium</li>
+              <li><strong class="text-primary">Tools:</strong> Spirit Guides, Tarot, Astrology</li>
+              <li><strong class="text-primary">Reading Style:</strong> Compassionate</li>
+            </ul>
+            <h4 class="text-primary border-top">Subject &amp; Expertise</h4>
+            <div class="row">
+              <div class="col-lg-4">
+                <p><strong>Love, Relationships &amp; Family</strong>
+                <ul>
+                  <li>Finding love/Soulmates</li>
+                  <li>Breakups/Divorce</li>
+                  <li>Sex/Intimacy</li>
+                </ul>
+              </div>
+              <div class="col-lg-4">
+                <p><strong>Career &amp; Finances</strong>
+                <ul>
+                  <li>Career Changes</li>
+                  <li>Work/Life Balance</li>
+                  <li>Financial Stress</li>
+                </ul>
+              </div>
+              <div class="col-lg-4">
+                <p><strong>Life, Destiny &amp; Meaning</strong>
+                <ul>
+                  <li>Law of Attraction</li>
+                  <li>Reiki/Healing</li>
+                </ul>
+              </div>
+            </div>
+          
+            <h4 class="text-primary border-top">More About Mazie</h4>
+            <p>Let Mazie guide you towards help with relationships, stress management, interpreting dreams, voices from beyond, career counseling, financial insights, and spiritualty. Feeling lost? Mazie exceeds in helping locate lost objects or connecting with lost people.</p>
+            <p>Mazie's Philosophy on Life is: "Be true to thyself, love is always first. Celebrate your life. Love fun. God didn't make us perfect because we’re just learning free will. Have no regrets." See why Mazie is always a favorite reader among our customer’s by dialing extension 7124!</p>
+          
+            <h4 class="text-primary border-top">Words of Wisdom</h4>
+            <p>"Today is the first day of the rest of your life"- Abbie Hoffman</p>
+          
+            <h4 class="text-primary border-top">Latest Article by Psychic Mazie</h4>
+            <div class="box box-sm">
+              <p class="u-no-margin-bottom"><strong>Dealing with Depression (I Went Through it Too) by Psychic Mazie</strong></p>
+              <p><small>26 September 2014</small></p>
+              <p>Sadly, there’s still a stigma around getting help for anything to do with mental health. Talking to someone doesn't mean you're crazy&hellip; <a href="#" class="text-tertiary text-underline">Read more</a></p>
+            </div>
+          </div>
+          <h3 class="bio-section-header"><a href="#more-advisors"  data-toggle="collapse" data-responsive="bio" class="section-parent collapsed">You may also like... </a></h3>
+          <div id="more-advisors" class="collapse bio-show-md">
+            <div class="similar-advisors">
+              <div class="container-fluid no-gutters advisor-tiles-nested-md stamps-condensed-md">
+                  <div class="col-lg-3">
+                    <div class="advisor-tile advisor-tile-tall-lg">
+                      <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                        <div class="advisor-tile-main-object">
+                          <div class="advisor-tile-photo with-stamp">
+                            <img
+                              class="img-rounded img-shadow"
+                              src="/images/fpo/7777-sml.jpg"
+                              alt=" ">
+                              <div class="stamp-showcase">
+                                Recommendations from the Psychic Source team
+                              </div>
+                          </div>
+                        </div>
+                        <div class="advisor-tile-main-body">
+                          <h4 class="advisor-tile-heading">Mystery Reader x7777</h4>
+                          <div class="advisor-tile-meta">
+                            <p class="advisor-tile-meta-group stars stars-4-5">
+                              <span class="sr-only">4&#189; stars</span>
+                            </p>
+                            <p class="advisor-tile-meta-group text-nowrap">
+                                <b>$10.00/min</b>
+                            </p>
+                              <p class="advisor-tile-meta-group text-nowrap">
+                                Chat <del class="text-muted">$10.00</del> $9.00/min
+                              </p>
+                          </div>
+                              <p class="text-success"><b>Available</b> till 7:45pm</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="advisor-tile advisor-tile-tall-lg">
+                      <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                        <div class="advisor-tile-main-object">
+                          <div class="advisor-tile-photo with-stamp">
+                            <img
+                              class="img-rounded img-shadow"
+                              src="/images/fpo/saul.jpg"
+                              alt=" ">
+                              <div class="stamp-showcase">
+                                Recommendations from the Psychic Source team
+                              </div>
+                          </div>
+                        </div>
+                        <div class="advisor-tile-main-body">
+                          <h4 class="advisor-tile-heading">Saul x7777</h4>
+                          <div class="advisor-tile-meta">
+                            <p class="advisor-tile-meta-group stars stars-4-5">
+                              <span class="sr-only">4&#189; stars</span>
+                            </p>
+                            <p class="advisor-tile-meta-group text-nowrap">
+                                <del class="text-muted">$7.45</del>
+                                <b>$1.00/min</b>
+                            </p>
+                          </div>
+                              <p class="text-success"><b>Available</b> till 10:55pm</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="advisor-tile advisor-tile-tall-lg">
+                      <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                        <div class="advisor-tile-main-object">
+                          <div class="advisor-tile-photo with-stamp">
+                            <img
+                              class="img-rounded img-shadow"
+                              src="http://placeimg.com/164/216/animals"
+                              alt=" ">
+                              <div class="stamp-staffpick">
+                                Psychic Source is pleased to highlight this gifted Advisor
+                              </div>
+                          </div>
+                        </div>
+                        <div class="advisor-tile-main-body">
+                          <h4 class="advisor-tile-heading">Zaphod x1337</h4>
+                          <div class="advisor-tile-meta">
+                            <p class="advisor-tile-meta-group stars stars-2">
+                              <span class="sr-only">2 stars</span>
+                            </p>
+                            <p class="advisor-tile-meta-group text-nowrap">
+                                <b>$9.45/min</b>
+                            </p>
+                          </div>
+                              <p class="text-success"><b>Available</b> till 2:30pm</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="advisor-tile advisor-tile-tall-lg">
+                      <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                        <div class="advisor-tile-main-object">
+                          <div class="advisor-tile-photo with-stamp">
+                            <img
+                              class="img-rounded img-shadow"
+                              src="/images/fpo/liz.jpg"
+                              alt=" ">
+                          </div>
+                        </div>
+                        <div class="advisor-tile-main-body">
+                          <h4 class="advisor-tile-heading">Liz x3030</h4>
+                          <div class="advisor-tile-meta">
+                            <p class="advisor-tile-meta-group stars stars-4">
+                              <span class="sr-only">4 stars</span>
+                            </p>
+                            <p class="advisor-tile-meta-group text-nowrap">
+                                <b>$5.00/min</b>
+                            </p>
+                              <p class="advisor-tile-meta-group text-nowrap">
+                                Chat <del class="text-muted">$5.00</del> $4.00/min
+                              </p>
+                          </div>
+                              <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <p class="u-margin-top"><a href="/pages/our-psychics/01-our-psychics.html" class="btn btn-default btn-shaded btn-block">Meet More Advisors</a></p>
+          </div>
+        </div>
+        <div class="col-md-5 col-lg-4 bio-reviews-col-md">
+          <h3 class="bio-section-header"><a href="#more-schedule"  data-toggle="collapse" data-responsive="bio" class="section-parent collapsed">Schedule </a></h3>
+          <div id="more-schedule" class="collapse bio-show-md">
+            <form class="form time-zone-picker u-margin-top">
+              <div class="form-group">
+                <select class="form-control">
+                  <option value="Dateline Standard Time">Dateline Daylight Time</option>
+                  <option value="UTC-11">UTC-11</option>
+                  <option value="Hawaiian Standard Time">Hawaiian Daylight Time</option>
+                  <option value="Alaskan Standard Time">Alaskan Daylight Time</option>
+                  <option value="Pacific Standard Time">Pacific Daylight Time</option>
+                  <option selected="selected" value="Eastern Standard Time">Eastern Daylight Time</option>
+                </select>
+              </div>
+            </form>
+            <table class="table table-condensed table-bordered table-striped table-schedule u-margin-top">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Phone</th>
+                  <th>Chat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mon<span class="hidden-xs hidden-md">day</span></td>
+                  <td>6am - 10am</td>
+                  <td>No schedule</td>
+                </tr>
+                <tr>
+                  <td>Tue<span class="hidden-xs hidden-md">sday</span></td>
+                  <td>6am - 10am</td>
+                  <td>No schedule</td>
+                </tr>
+                <tr>
+                  <td>Wed<span class="hidden-xs hidden-md">nesday</span></td>
+                  <td>6am - 10am</td>
+                  <td>10am - 12pm</td>
+                </tr>
+                <tr>
+                  <td>Thu<span class="hidden-xs hidden-md">rsday</span></td>
+                  <td>6am - 10am</td>
+                  <td>No schedule</td>
+                </tr>
+                <tr>
+                  <td>Fri<span class="hidden-xs hidden-md">day</span></td>
+                  <td>6am - 10am</td>
+                  <td>10am - 12pm</td>
+                </tr>
+                <tr>
+                  <td>Sat<span class="hidden-xs hidden-md">urday</span></td>
+                  <td>No schedule</td>
+                  <td>No schedule</td>
+                </tr>
+                <tr>
+                  <td>Sun<span class="hidden-xs hidden-md">day</span></td>
+                  <td>No schedule</td>
+                  <td>No schedule</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="bio-section-header" id="reviews"><a data-target="#more-reviews" data-toggle="collapse" data-responsive="bio" class="section-parent collapsed">Mazie's Ratings &amp; Reviews </a></h3>
+          <div class="reviews-summary">
+            <p class="review-stars-average"><span class="stars stars-4-5"><span class="sr-only">4.55 stars</span></span><span class="ratings-total"> (10 Ratings)</span></p>
+            <p class="reviews-count"><strong>10</strong> <span class="hidden-xs hidden-sm bio-hidden-lg">Psychic Source member</span> reviews since <strong class="text-nowrap">Mar 2012</strong></p>
+          </div>
+          <div id="more-reviews" class="collapse bio-show-md">
+              <div class="review">
+                <p class="review-meta">
+                    <strong class="u-block">Featured<span class="bio-hidden-md"> Review</span></strong>
+                  <span class="review-date">05/14/2013</span>
+                  <span class="hidden-xs bio-hidden-md"> with </span>
+                  <span class="reviewer">Simone</span>
+                  <span class="review-stars stars stars-4-5"><span class="sr-only">4&#189; stars</span></span>
+                  <span class="review-type">
+                      Phone Reading
+                  </span>
+                </p>
+                <p class="review-content">
+                  <span data-truncate="160">First time speaking with Mazie and definitely felt I was speaking with an old friend. She is highly accurate and was spot on. Some things does not make sense at the moment but I am sure it will all fall in place as she said. Now waiting for prediction to pass and will definitely speak to Mazie again. Thank you Mazie! Blessings!</span> <a class="hidden text-tertiary text-underline text-nowrap" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review2">Read more</a>
+                </p>
+              </div>
+              <div class="review">
+                <p class="review-meta">
+                  <span class="review-date">01/20/2015</span>
+                  <span class="hidden-xs bio-hidden-md"> with </span>
+                  <span class="reviewer">Desjjmo</span>
+                  <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
+                  <span class="review-type">
+                      Phone Reading
+                  </span>
+                </p>
+                <p class="review-content">
+                  <span data-truncate="160">What can I even say about Mazie... She is quite amazing. I have to say, and I&#x27;m sure she picks up that every time I call I&#x27;m skeptical. As much as I beliieve, I also don&#x27;t believe. But this man has told me some crazy things that have come to fruition!! My situation is quite interesting, and I can&#x27;t imagine very easy for anyone to read. But, Mazie somehow does it. I have to say the very last prediction she made to me I actually shook my head and thought no way that&#x27;s never gonna happen. Well, I spoke to him on a Monday and it happened that Friday. I was so shocked that i actually felt ill for about 2 days!! Anyway, Mazie you&#x27;re awesome and I LOVE speaking to you and hearing what you have to say... Have an awesome day!!! P.s.... I don&#x27;t usually leave reviews.. :)</span> <a class="hidden text-tertiary text-underline text-nowrap" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review3">Read more</a>
+                </p>
+              </div>
+              <div class="review">
+                <p class="review-meta">
+                  <span class="review-date">01/15/2015</span>
+                  <span class="hidden-xs bio-hidden-md"> with </span>
+                  <span class="reviewer">Chocolatedrop</span>
+                  <span class="review-stars stars stars-4-5"><span class="sr-only">4&#189; stars</span></span>
+                  <span class="review-type">
+                      Chat Reading
+                  </span>
+                </p>
+                <p class="review-content">
+                  <span data-truncate="160">waiting for prediction to happen before posting my testimony.</span> <a class="hidden text-tertiary text-underline text-nowrap" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review4">Read more</a>
+                </p>
+              </div>
+              <div class="review">
+                <p class="review-meta">
+                  <span class="review-date">01/13/2015</span>
+                  <span class="hidden-xs bio-hidden-md"> with </span>
+                  <span class="reviewer">flower1048</span>
+                  <span class="review-stars stars stars-3-5"><span class="sr-only">3&#189; stars</span></span>
+                  <span class="review-type">
+                      Chat Reading
+                  </span>
+                </p>
+                <p class="review-content">
+                  <span data-truncate="160">This is my third reading with Mazie and it will not be my last. She always remembers me and our prior readings. I was feeling empty and a little out of sorts, Really did not know which way to turn. Within 10 minutes of our last read she had put my heart and mind at ease. Mazie is understanding and very compassionate. She truly does see things and tells you exactly as she sees everything good or bad. One of his predictions came to pass and she really hit the nail on the head even with the two delays. Once again she told me things that I would only know. She has such a gentle and soothing voice and really takes an interest in your situation. Mazie is truly happy when your predictions come to fruition. I am praying that the next few major predictions happen exactly as she does see it. I ended our call with a lighter heart and a better frame of mind. I will update and will most definitely be calling Mazie again. The only person that I was ever able to talk to about everything was my mom who has passed away. I have found the next best to my mom. Mazie, you are a treasured angel and I thank you from the bottom of my heart. I will never speak to anyone but him, feels like I have known him all my life. God Bless You!!!!!</span> <a class="hidden text-tertiary text-underline text-nowrap" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review5">Read more</a>
+                </p>
+              </div>
+              <div class="review">
+                <p class="review-meta">
+                  <span class="review-date">01/08/2015</span>
+                  <span class="hidden-xs bio-hidden-md"> with </span>
+                  <span class="reviewer">MazieIsTheBest</span>
+                  <span class="review-stars stars stars-5"><span class="sr-only">5 stars</span></span>
+                  <span class="review-type">
+                      Chat Reading
+                  </span>
+                </p>
+                <p class="review-content">
+                  <span data-truncate="160">Mazie, my brother you are one of the very special soul that touched my heart through your kindness. My life and forthcoming would not be the same without your guidance and love. You’re genuine and you care about your clients, there is no better human being that empathize with others and help them in their tough times and intern no better blessing. You have been accurate with your readings and I would never read with anyone other than you. I just wish you to come online a bit more for those who truly seek your help. Best Wishes</span> <a class="hidden text-tertiary text-underline text-nowrap" data-truncate-more href="/pages/advisor-bio/02-advisor-reviews.html#review6">Read more</a>
+                </p>
+              </div>
+            <p class="u-margin-top"><a href="02-advisor-reviews.html" class="btn btn-default btn-shaded btn-block">See More <span class="hidden-md">of Mazie's </span>Reviews</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <button class="quicklist-toggle" id="quicklist-toggle" type="button">
+    <span class="quicklist-toggle-inner">Show who&rsquo;s logged on</span>
+  </button>
+  
+  <aside class="quicklist" id="quicklist">
+    <div class="quicklist-inner">
+      <h5 class="quicklist-header">
+        <a href="#quicklist-body">
+          <svg class="icon icon-lg">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#people-list" />
+          </svg>
+          Who&rsquo;s logged on?
+          <span class="arrow-up quicklist-arrow"></span>
+        </a>
+      </h5>
+      <div class="quicklist-body" id="quicklist-body">
+        <ul class="list-unstyled u-no-margin">
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  
+  
+
+  
+  <footer role="contentinfo" class="container-page text-center">
+    <p class="col-xs-12 visible-xs-block u-margin-top">
+      <a class="btn btn-block btn-default" href="">Customer Care</a>
+    </p>
+    <div class="col-xs-12 col-lg-8">
+      <ul class="list-inline with-social-btn small-xs text-left-lg text-nowrap-lg u-margin-ends">
+        
+        <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
+        <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
+        <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
+        <li><a href="">Site Map</a></li>
+        <li><a href="">Affiliate Program</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Psychic? Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <ul class="list-inline text-right-lg u-margin-ends">
+        <li><a class="social-btn" href="http://www.facebook.com/PsychicSource1989">Facebook</a></li>
+        <li><a class="social-btn" href="http://twitter.com/PsychicSource">Twitter</a></li>
+        <li><a class="social-btn" href="http://www.youtube.com/user/psychicsource?feature=watch">YouTube</a></li>
+        <li><a class="social-btn" href="http://pinterest.com/psychicsource/">Pinterest</a></li>
+        <li><a class="social-btn" href="https://plus.google.com/u/0/b/101385836272062376146/">Google+</a></li>
+        <li><a class="social-btn" href="http://instagram.com/psychicsource">Instagram</a></li>
+      </ul>
+    </div>
+    <p class="col-xs-12 small text-muted u-margin-top">*New member offer valid for first time customers who have never made a Psychic Source purchase. Limit $30, some exclusions apply.  &copy; 2014 Psychic Source, LLC. All rights reserved. For guidance only. 18+</p>
+  </footer>
+
+</body>
+</html>

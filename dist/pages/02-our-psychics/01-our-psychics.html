@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    Sample Composed Template
+  </title>
+    <!-- CSS Goes here -->
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+    <!-- Favicons and Apple Touch icons can go here if desired -->
+    <link rel="icon" type="image/x-icon" href="../../images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../../images/favicons/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch/60x60-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-touch/76x76-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-touch/120x120-precomposed.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-touch/152x152-precomposed.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch/180x180-precomposed.png">
+    <!-- Any desired scripts in HEAD -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Site behavior/UI JS -->
+    <script src="../../js/site.js"></script>
+    <!-- Pattern-specific scripts -->
+    <script src="../../js/patterns.js"></script>
+
+  </head>
+<body>
+
+  
+  <header role="banner" class="container-page">
+    <div class="hidden-lg">
+      <a class="pre-masthead" href="tel:18009653049">
+        <svg class="icon icon-md">
+          <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+        </svg>
+        1.800.965.3049
+      </a>
+    </div>
+    <div class="masthead">
+    
+      <a class="masthead-logo" href="">
+        <picture class="picture-responsive">
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source
+            srcset="/images/logo.png, /images/logo-2x.png 2x"
+            media="(min-width: 994px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img
+            srcset="/images/logo-simple.png, /images/logo-simple-2x.png 2x"
+            src="/images/logo.png"
+            alt="Psychic Source - Life's possibilites. Revealed.">
+        </picture>
+      </a>
+    
+      <div class="masthead-body">
+    
+        <div class="masthead-controls">
+          <ul class="masthead-menu">
+                <li class="hidden-xs hidden-sm">
+                  <a href="" class="btn btn-link text-default">
+                    Not Sally?
+                  </a>
+                </li>
+              <li>
+                <a href="" class="btn btn-link text-default">
+                  Login
+                </a>
+              </li>
+            <li class="hidden-xs hidden-sm hidden-md dropdown">
+              <a href="" class="btn btn-link text-default" id="customer-care-label" data-toggle="dropdown" data-target="#" aria-haspopup="true" role="button" aria-expanded="false">
+                Customer Care
+                <span class="arrow-down text-muted"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="customer-care-label">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">LIVE Help</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Contact Us</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">FAQs</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">Psychic? Apply Now</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">More&hellip;</a></li>
+              </ul>
+            </li>
+            <li class="masthead-search-toggle">
+              <a href="" class="btn btn-sunrise btn-shaded">
+                <svg class="icon icon-md">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <form action="" class="masthead-search">
+            <div class="input-group">
+              <div class="input-group-btn select">
+                <div class="btn btn-default js-select-delegate" aria-hidden="true">
+                  <svg class="icon icon-md">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+                  </svg>
+                  <span class="js-select-value" aria-hidden="true"></span>
+                  <span class="arrow-down text-muted"></span>
+                </div>
+                <select id="search-types">
+                  <option>Psychics</option>
+                  <option>Articles</option>
+                </select>
+              </div>
+              <input id="q" type="search" class="form-control">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-info btn-shaded">Go</button>
+              </div>
+            </div>
+          </form>
+        </div>
+    
+        <div class="masthead-messaging text-right u-padding-top visible-lg-block">
+          <p><a class="text-default text-underline" href="">Our Satisfaction Guarantee</a></p>
+          <p class="h2 u-no-margin-top">
+            <a class="text-danger" href="tel:18009653049">
+              <svg class="icon icon-md">
+                <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+              </svg>
+              1.800.965.3049
+            </a>
+          </p>
+          <p class="u-no-margin-bottom">Since 1989, the Most Respected Psychic Service</p>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+    
+    <div class="main-nav js-custom-nav">
+      <nav>
+        <ul class="main-nav-bar">
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-offer">
+              <span class="main-nav-item-highlight">
+                New Customer<span class="hidden-lg">s</span> <span class="hidden-xs hidden-sm hidden-md">Offers</span>
+              </span>
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-offer">
+              <div class="col-md-4 no-gutters nav-section-offer text-center u-padding-bottom">
+                <h1 class="text-cursive">Special Offer</h1>
+                <p class="u-padding">As low as <span class="u-block">$1.00</span>per minute</p>
+                <a href="#" class="btn btn-default">Get the offer Now! <span class="arrow-right visible-lg-inline-block text-muted"></span></a>
+              </div>
+              <div class="col-md-8 u-margin-top">
+                <div class="col-md-6 no-gutters nav-section-offer-add text-center u-margin-top">
+                  <a class="nav-section-offer-heading" href="#">
+                    <img src="/images/minutes-icon.png" alt=" "/>
+                    <h2 class="h4">3 free minutes with<span class="text-nowrap">your first paid reading!</span></h2>
+                  </a>
+                </div>
+                <div class="col-md-6 no-gutters nav-section-offer-add text-center u-margin-top">
+                  <a class="nav-section-offer-heading" href="#">
+                    <img src="/images/satisfaction-seal.png" alt=" "/>
+                    <h2 class="h4">100% Satisfaction Gurantee</h2>
+                    <p>If you're not happy with your last paid reading, it's free!</p>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </li>
+          <li>
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-psychics">
+              Our Psychics
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-psychics">
+              <div class="nav-section-psychics text-center">
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom border-right">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">Phone Readings</h2>
+                    <p>Get live psychic readings by phone</p>
+                    <img src="/images/dropdown-phone.png" alt=" "/>
+                    <p><span class="text-cursive">View Phone Psychics</span></p>
+                  </a>
+                </div>
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom border-right">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">Chat Readings</h2>
+                    <p>Get live psychic readings by chat</p>
+                    <img src="/images/dropdown-chat.png" alt=" "/>
+                    <p><span class="text-cursive">View Chat Psychics</span></p>
+                  </a>
+                </div>
+                <div class="col-md-4 no-gutters u-padding-top u-padding-bottom">
+                  <a href="#">
+                    <h2 class="h4 nav-section-heading">All Reading Types</h2>
+                    <p>View all our psychic readers</p>
+                    <img src="/images/dropdown-both.png" alt=" "/>
+                    <p><span class="text-cursive">View All Psychics</span></p>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-horoscopes">
+              Horoscopes
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-horoscopes">
+              <div class="col-md-4 nav-section-prose u-padding-right">
+                <h3 class="nav-section-heading">Weekly Love Horoscope</h3>
+                <p>What's in the stars for you this week? How will your love life fare? Should you get closer to someone special or give them more space? Will your communication be at its best, or will you struggle to understand or to be understood? Our in-house astrologer Moira, x7776 takes an in depth astrological look at the week ahead.</p>
+                <a href="#" class="btn btn-default pull-right">Read More <span class="arrow-right visible-lg-inline-block text-muted"></a>
+              </div>
+              <div class="col-md-1 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#">Aries</a></li>
+                  <li><a href="#">Taurus</a></li>
+                  <li><a href="#">Gemini</a></li>
+                  <li><a href="#">Cancer</a></li>
+                  <li><a href="#">Leo</a></li>
+                  <li><a href="#">Virgo</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#">Libra</a></li>
+                  <li><a href="#">Scorpio</a></li>
+                  <li><a href="#">Sagittarius</a></li>
+                  <li><a href="#">Capricorn</a></li>
+                  <li><a href="#">Aquarius</a></li>
+                  <li><a href="#">Pisces</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs hidden-sm">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-about">
+              About Psychic Readings
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-about">
+              <div class="col-md-4 nav-section-prose">
+                <h3 class="nav-section-heading">About Psychic Readings</h3>
+                <p>Our web site offers many ways to make choosing from among our authentic, gifted Advisors easy, and fun. Review Types of Psychic Readings and Types of Psychics for valuable information on the most important psychic specialties and types of readings. You may also find it helpful to read about ways to get a psychic reading, so you can pick the communication channel (eg telephone, online) that's most comfortable for you.</p>
+              </div>
+              <div class="col-md-2 no-gutters nav-section-links border-left u-padding-bottom">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Types of Psychics</h3></a></li>
+                  <li><a href="#">Love Psychics</a></li>
+                  <li><a href="#">Psychic Mediums</a></li>
+                  <li><a href="#">Clairvoyants</a></li>
+                  <li><a href="#">Clairaudients</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links border-left u-padding-bottom">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Types of Psychic Readings</h3></a></li>
+                  <li><a href="#">Cartomancy</a></li>
+                  <li><a href="#">Tarot Readings</a></li>
+                  <li><a href="#">Angel Card Readings</a></li>
+                  <li><a href="#">Numerology Readings</a></li>
+                  <li><a href="#">More...</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links border-left">
+                <ul>
+                  <li><a href="#"><h3 class="h4">Ways to Get A...</h3></a></li>
+                  <li><a href="#">Psychic Phone Readings</a></li>
+                  <li class="u-margin-bottom"><a href="#">Psychic Chat</a></li>
+                  <li class="border-top"><a href="#">Testimonials</a></li>
+                  <li><a href="#">Glossary of Terms</a></li>
+                  <li><a href="#">Psychic? Apply Now</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-xs hidden-sm hidden-md">
+            <a class="main-nav-item main-nav-item-expandable-lg" href="#" data-toggle="collapse" data-target="#nav-section-articles">
+              Articles &amp; Resources
+              <span class="arrow-down visible-lg-inline-block" aria-hidden="true"></span>
+            </a>
+            <section class="main-nav-section collapse visible-lg-block" id="nav-section-articles">
+              <div class="col-md-4 nav-section-prose border-right u-padding-bottom">
+                <h3 class="nav-section-heading">Articles and Resources</h3>
+                <p>Like a Blog, Only Better!</p>
+                <p>Psychic wisdom can be applied to all areas of your life, from love and relationships, to work and money, to destiny and spirit. Daily articles written by our Advisors and staff cover important issues from an empowering, psychic perspective. Read, comment, learn, share – Psychic Source is your Psychic reSource for insight, inspiration and wisdom!</p>
+              </div>
+              <div class="col-md-3 no-gutters nav-section-links">
+                <ul>
+                  <li><a href="#">Career &amp; Finance</a></li>
+                  <li><a href="#">Health &amp; Wellness</a></li>
+                  <li><a href="#">Life, Destiny &amp; Meaning</a></li>
+                  <li><a href="#">Love, Relationships &amp; Family</a></li>
+                  <li><a href="#">Other Psychic Topics</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+            </section>
+          </li>
+          <li class="hidden-lg">
+            <a class="main-nav-item main-nav-item-expandable js-custom-nav-more" href="#main-nav-overflow" data-toggle="collapse">
+              More
+              <span class="arrow-down" aria-hidden="true"></span>
+            </a>
+            <ul class="main-nav-overflow collapse" id="main-nav-overflow">
+              <li class="hidden-sm hidden-md"><a href="#">Horoscopes</a></li>
+              <li class="hidden-md"><a href="#">About Psychic Readings</a></li>
+              <li><a href="#">Articles &amp; Resources</a></li>
+              <li><a href="#">Customer Care</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    
+  </header>
+
+<div class="container-page">
+  <div class="box-full box-default-lg box-lighter box-sheer u-shift-up">
+    <div class="advisor-promo hidden-md hidden-lg">
+      <a class="text-default" href="#">Save 25% on New Advisors!</a>
+    </div>    <div class="hidden-md hidden-lg">
+      
+      <ul class="toolbar js-toolbar" role="tablist">
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-search" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#search" />
+            </svg>
+            Search
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-sort" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#sort" />
+            </svg>
+            Sort
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-picks" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#picks" />
+            </svg>
+            Picks
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" href="#our-psychics-filters" aria-selected="false" data-toggle="prairie-dog">
+            <svg class="icon toolbar-icon">
+              <use xlink:href="/images/symbol/svg/sprite.symbol.svg#filter" />
+            </svg>
+            Filter
+          </a>
+        </li>
+      </ul>
+      
+      
+    </div>
+    <div class="container-fluid prairie-dog-xs prairie-dog-sm no-gutters-xs no-gutters-sm" id="our-psychics-container">
+      <div class="col-md-3">
+        <div class="box box-lighter box-shadow u-margin-ends hidden-xs hidden-sm">
+          <div class="advisor-promo-side">
+            <a class="text-default" href="#">Save 25% <span class="text-nowrap">on New Advisors!</span></a>
+          </div>        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-search" data-parent="#our-psychics-container">
+          <div class="form-group form-group-required u-padding">
+            <label class="control-label" for="advisor-search">Search advisors by name or extension</label>
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" id="advisor-search">
+              <span class="input-group-btn">
+                <button class="btn btn-sm btn-default btn-shaded" type="button">Go</button>
+              </span>
+            </div>
+          </div>        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends u-overflow-hidden" id="our-psychics-sort" data-parent="#our-psychics-container">
+          <div class="filter u-shift-down">
+            <h4 class="filter-heading hidden-xs hidden-sm">
+              <a data-toggle="collapse" class="filter-item filter-parent filter-primary filter-rounded collapsed" href="#sort-show">
+                Sort  <small class="filter-summary">Available</small>
+                <span class="badge filter-badge"></span>
+              </a>
+            </h4>
+            <div class="filter-collapse collapse" id="sort-show" aria-expanded="false">
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="available" checked>
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Available
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="busy">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Busy
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="rating">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Star Rating
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="alpha">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Alphabetical
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="new">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  New (Save 25%!)
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="highest-price">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Highest Price
+                </label>
+              </div>
+              <div class="filter">
+                <label class="filter-item">
+                  <span class="filter-radio">
+                    <input type="radio" name="sort-option" value="lowest-price">
+                    <span class="filter-radio-value" aria-hidden="true"></span>
+                  </span>
+                  Lowest Price
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-filters" data-parent="#our-psychics-container">
+          <h4 class="u-no-margin u-padding hidden-xs hidden-sm">Filter by</h4>
+          
+            <div class="filter hidden-md hidden-lg">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent  filter-primary text-truncate"
+                    title="Show"
+                    href="#filters-show">
+                    Show
+                      <small class="filter-summary">All Psychics</small>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse in" id="filters-show">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              checked>
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          All Psychics
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              >
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          Phone Psychics
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-radio">
+                            <input
+                              type="radio"
+                              name="filter-type"
+                              >
+                            <span class="filter-radio-value" aria-hidden="true"></span>
+                          </span>
+                          Chat Psychics
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary text-truncate"
+                    title="Specialties"
+                    href="#filters-specialties">
+                    Specialties
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-specialties">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Career Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairaudient
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairsentient
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Clairvoyant
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Intuitive/Empath
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Love Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Pet Psychic
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Psychic Medium
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary text-truncate"
+                    title="Subject/Expertises"
+                    href="#filters-subject-expertises">
+                    Subject/Expertises
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-subject-expertises">
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            
+                            href="#filters-love-relationships-family">
+                            Love, Relationships &amp; Family
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-love-relationships-family">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Breakups/Divorce
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Cheating/Wandering Hearts
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Finding love/Soulmates
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  LGBT Relationships
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Sex/Intimacy
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Sibling/Parental Issues
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Social Media Influence
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Toxic Relationships
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            
+                            href="#filters-career-finance">
+                            Career &amp; Finance
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-career-finance">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Career Changes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Co-Worker Disputes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Financial Stress
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Harassment
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Manifesting Wealth
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  New Job
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Office Romance
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Work/Life Balance
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            
+                            href="#filters-life-destiny-meaning">
+                            Life, Destiny &amp; Meaning
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-life-destiny-meaning">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Embracing Change/Getting Unstuck
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Law of Attraction
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Life coaching
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Reiki/Healing
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Spirituality
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Unlocking psychic abilities
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter ">
+                        <h5 class="filter-heading">
+                          <a
+                            data-toggle="collapse"
+                            class="filter-item filter-parent collapsed "
+                            
+                            href="#filters-loss-grieving">
+                            Loss &amp; Grieving
+                              <span class="badge filter-badge"></span>
+                          </a>
+                        </h5>
+                        <div class="filter-collapse collapse " id="filters-loss-grieving">
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Coping with Death
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Incomplete goodbyes
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Loss of a pet
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Moving past grief
+                                </label>
+                            </div>
+                            <div class="filter ">
+                                <label class="filter-item">
+                                  <span class="filter-checkbox">
+                                    <input
+                                      type="checkbox"
+                                      
+                                      >
+                                    <span class="filter-checkbox-value" aria-hidden="true"></span>
+                                  </span>
+                                  Signs of Connections
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary text-truncate"
+                    title="Tools"
+                    href="#filters-tools">
+                    Tools
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-tools">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Angel Cards
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Astrology
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Cartomancy
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Dream Interpretation
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Lost Object
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Numerology
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Past Life Interpretation
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Spirit Guides
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Tarot
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Uses No Tools
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary text-truncate"
+                    title="Language"
+                    href="#filters-language">
+                    Language
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-language">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          English
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Spanish
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter ">
+                <h4 class="filter-heading">
+                  <a
+                    data-toggle="collapse"
+                    class="filter-item filter-parent collapsed filter-primary text-truncate"
+                    title="Reading Style"
+                    href="#filters-reading-style">
+                    Reading Style
+                      <span class="badge filter-badge"></span>
+                  </a>
+                </h4>
+                <div class="filter-collapse collapse " id="filters-reading-style">
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Compassionate
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Direct
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Expressive
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Thoughtful
+                        </label>
+                    </div>
+                    <div class="filter ">
+                        <label class="filter-item">
+                          <span class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              
+                              >
+                            <span class="filter-checkbox-value" aria-hidden="true"></span>
+                          </span>
+                          Wise
+                        </label>
+                    </div>
+                </div>
+            </div>
+          <div class="u-padding">
+            <div class="arrange arrange-equal arrange-gutter">
+              <div class="arrange-fill">
+                <button class="btn btn-block btn-link u-no-padding-sides" type="button" data-dismiss="prairie-dog">Clear All</button>
+              </div>
+              <div class="arrange-fill">
+                <button class="btn btn-block btn-default btn-shaded u-no-padding-sides js-apply-button" type="button" data-dismiss="prairie-dog">Filter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prairie-dog-dialog box box-lighter box-sheer box-shadow u-margin-ends" id="our-psychics-picks" data-parent="#our-psychics-container">
+          <div class="box box-tan">
+            <h3>Not sure which of our advisors to connect with?</h3>
+            <p>See our <a href="#"><strong>staff picks</strong></a> or <a href="#"><strong>psychics you might like</strong></a> based on your history.</p>
+          </div>
+        </div>
+      </div>
+	<div class="prairie-dog-overlay"></div>
+      <div class="col-md-9 prairie-dog-bg prairie-dog-bg-unshift">
+        <div class="row u-margin-ends hidden-xs hidden-sm">
+          <div class="col-xs-5">
+            <div class="arrange arrange-middle arrange-gutter">
+              <div class="arrange-fit select">
+                <button class="btn btn-default js-select-delegate" type="button" aria-hidden="true">
+                  <span class="js-select-value"></span>
+                  <span class="arrow-down"></span>
+                </button>
+                <select>
+                  <option value="9">9 per page</option>
+                  <option value="15">15 per page</option>
+                  <option value="30">30 per page</option>
+                </select>
+              </div>
+              <div class="arrange-fill text-nowrap">
+                <b>1</b>-<b>9</b> of <b>289</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-7 text-right">
+            <ul class="pagination u-no-margin">
+              <li class="disabled"><a href="#"><span class="arrow-left-equilateral" aria-hidden="true"></span><span class="sr-only">Previous</span></a></li>
+              <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li class="disabled"><span>&hellip;</span></li>
+              <li><a href="#">35</a></li>
+              <li><a href="#"><span class="arrow-right-equilateral" aria-hidden="true"></span><span class="sr-only">Next</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="hidden-xs hidden-sm u-margin-top">
+          
+          <ul class="tabs" role="tablist">
+            <li role="presentation"><a role="tab" href="#" aria-selected="false" data-toggle="tab">Phone Psychics</a></li>
+            <li role="presentation"><a role="tab" href="#" aria-selected="false" data-toggle="tab">Chat Psychics</a></li>
+            <li role="presentation" class="active"><a role="tab" href="#" aria-selected="true" data-toggle="tab">All Psychics</a></li>
+          </ul>
+        </div>
+        <div class="advisor-tiles advisor-tiles-tall-md stamps-condensed-sm u-shift-up js-advisor-tiles">
+          <div class="row">
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/7777-sml.jpg"
+                          alt=" ">
+                          <div class="stamp-showcase">
+                            Recommendations from the Psychic Source team
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Mystery Reader x7777</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4-5">
+                          <span class="sr-only">4&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <b>$10.00/min</b>
+                        </p>
+                          <p class="advisor-tile-meta-group text-nowrap">
+                            Chat <del class="text-muted">$10.00</del> $9.00/min
+                          </p>
+                      </div>
+                          <p class="text-success"><b>Available</b> till 7:45pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Chat Now</a>
+                        </li>
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Call Now</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/saul.jpg"
+                          alt=" ">
+                          <div class="stamp-showcase">
+                            Recommendations from the Psychic Source team
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Saul x7777</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4-5">
+                          <span class="sr-only">4&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <del class="text-muted">$7.45</del>
+                            <b>$1.00/min</b>
+                        </p>
+                      </div>
+                          <p class="text-success"><b>Available</b> till 10:55pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Chat Now</a>
+                        </li>
+                          <li class="arrange-fill">
+                            <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">Get Return Call</a>
+                          </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-md-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="http://placeimg.com/164/216/animals"
+                          alt=" ">
+                          <div class="stamp-staffpick">
+                            Psychic Source is pleased to highlight this gifted Advisor
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Zaphod x1337</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-2">
+                          <span class="sr-only">2 stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <b>$9.45/min</b>
+                        </p>
+                      </div>
+                          <p class="text-success"><b>Available</b> till 2:30pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Call Now</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-lg-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/liz.jpg"
+                          alt=" ">
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Liz x3030</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4">
+                          <span class="sr-only">4 stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <b>$5.00/min</b>
+                        </p>
+                          <p class="advisor-tile-meta-group text-nowrap">
+                            Chat <del class="text-muted">$5.00</del> $4.00/min
+                          </p>
+                      </div>
+                          <p class="text-danger"><b>Busy</b> logged on till 9:00pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">View Schedule</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-md-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/jet.jpg"
+                          alt=" ">
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Jet x1122</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-3-5">
+                          <span class="sr-only">3&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <del class="text-muted">$7.45</del>
+                            <b>$1.00/min</b>
+                        </p>
+                      </div>
+                          <p class="text-danger"><b>Busy</b> logged on till 7:45pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">Get a Return Call</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/jesse.jpg"
+                          alt=" ">
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Jesse x7777</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4-5">
+                          <span class="sr-only">4&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <del class="text-muted">$7.45</del>
+                            <b>$1.00/min</b>
+                        </p>
+                      </div>
+                        <p class="text-muted"><b>Offline</b></p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">Get a Return Call</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-md-block"></div>
+                <div class="clearfix visible-lg-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/gusto.jpg"
+                          alt=" ">
+                          <div class="stamp-staffpick">
+                            Psychic Source is pleased to highlight this gifted Advisor
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Gusto x8888</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-5">
+                          <span class="sr-only">5 stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <del class="text-muted">$20.45</del>
+                            <b>$11.50/min</b>
+                        </p>
+                      </div>
+                        <p class="text-muted"><b>Offline</b></p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">View Schedule</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/7777-sml.jpg"
+                          alt=" ">
+                          <div class="stamp-showcase">
+                            Recommendations from the Psychic Source team
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Mystery Reader x7777</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4-5">
+                          <span class="sr-only">4&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <b>$10.00/min</b>
+                        </p>
+                          <p class="advisor-tile-meta-group text-nowrap">
+                            Chat <del class="text-muted">$10.00</del> $9.00/min
+                          </p>
+                      </div>
+                          <p class="text-success"><b>Available</b> till 7:45pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Chat Now</a>
+                        </li>
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Call Now</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-md-block"></div>
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="advisor-tile js-advisor-tile">
+                  <a class="link-block advisor-tile-main advisor-tile-group" href="#">
+                    <div class="advisor-tile-main-object">
+                      <div class="advisor-tile-photo with-stamp">
+                        <img
+                          class="img-rounded img-shadow"
+                          src="/images/fpo/saul.jpg"
+                          alt=" ">
+                          <div class="stamp-showcase">
+                            Recommendations from the Psychic Source team
+                          </div>
+                      </div>
+                    </div>
+                    <div class="advisor-tile-main-body">
+                      <h4 class="advisor-tile-heading">Saul x7777</h4>
+                      <div class="advisor-tile-meta">
+                        <p class="advisor-tile-meta-group stars stars-4-5">
+                          <span class="sr-only">4&#189; stars</span>
+                        </p>
+                        <p class="advisor-tile-meta-group text-nowrap">
+                            <del class="text-muted">$7.45</del>
+                            <b>$1.00/min</b>
+                        </p>
+                      </div>
+                          <p class="text-success"><b>Available</b> till 10:55pm</p>
+                    </div>
+                  </a>
+                  <ul class="arrange arrange-50 arrange-gutter advisor-tile-group js-advisor-tile-actions">
+                        <li class="arrange-fill">
+                          <a class="btn btn-block btn-sm btn-success btn-shaded btn-narrow" href="#">Chat Now</a>
+                        </li>
+                          <li class="arrange-fill">
+                            <a class="btn btn-block btn-sm btn-default btn-shaded btn-narrow" href="#">Get Return Call</a>
+                          </li>
+                  </ul>
+                </div>
+              </div>
+                <div class="clearfix visible-lg-block"></div>
+          </div>
+        </div>
+        
+        
+        <div class="text-center text-right-md text-right-lg">
+          <ul class="pagination">
+            <li class="disabled"><a href="#"><span class="arrow-left-equilateral" aria-hidden="true"></span><span class="sr-only">Previous</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="disabled"><span>&hellip;</span></li>
+            <li><a href="#">35</a></li>
+            <li><a href="#"><span class="arrow-right-equilateral" aria-hidden="true"></span><span class="sr-only">Next</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <button class="quicklist-toggle" id="quicklist-toggle" type="button">
+    <span class="quicklist-toggle-inner">Show who&rsquo;s logged on</span>
+  </button>
+  
+  <aside class="quicklist" id="quicklist">
+    <div class="quicklist-inner">
+      <h5 class="quicklist-header">
+        <a href="#quicklist-body">
+          <svg class="icon icon-lg">
+            <use xlink:href="/images/symbol/svg/sprite.symbol.svg#people-list" />
+          </svg>
+          Who&rsquo;s logged on?
+          <span class="arrow-up quicklist-arrow"></span>
+        </a>
+      </h5>
+      <div class="quicklist-body" id="quicklist-body">
+        <ul class="list-unstyled u-no-margin">
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item text-success" href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Available now
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+            <li>
+              <a class="quicklist-item " href="">
+                <h6 class="quicklist-item-heading">Firstname x5555</h6>
+                <small class="quicklist-item-status">
+                    Currently busy
+                </small>
+                <svg class="icon quicklist-item-phone">
+                  <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+                </svg>
+                  <svg class="icon quicklist-item-chat">
+                    <use xlink:href="/images/symbol/svg/sprite.symbol.svg#chat" />
+                  </svg>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  
+  
+
+  
+  <footer role="contentinfo" class="container-page text-center">
+    <p class="col-xs-12 visible-xs-block u-margin-top">
+      <a class="btn btn-block btn-default" href="">Customer Care</a>
+    </p>
+    <div class="col-xs-12 col-lg-8">
+      <ul class="list-inline with-social-btn small-xs text-left-lg text-nowrap-lg u-margin-ends">
+        
+          <li class="hidden-md hidden-lg"><a href="">Not Sally?</a></li>
+        
+        <li class="hidden-xs hidden-lg"><a href="">Customer Care</a></li>
+        <li><a href="">Privacy<span class="hidden-xs"> Policy</span></a></li>
+        <li><a href=""><span class="hidden-xs">Disclaimer &amp; </span>Terms</a></li>
+        <li><a href="">Site Map</a></li>
+        <li><a href="">Affiliate Program</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Psychic? Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <ul class="list-inline text-right-lg u-margin-ends">
+        <li><a class="social-btn" href="http://www.facebook.com/PsychicSource1989">Facebook</a></li>
+        <li><a class="social-btn" href="http://twitter.com/PsychicSource">Twitter</a></li>
+        <li><a class="social-btn" href="http://www.youtube.com/user/psychicsource?feature=watch">YouTube</a></li>
+        <li><a class="social-btn" href="http://pinterest.com/psychicsource/">Pinterest</a></li>
+        <li><a class="social-btn" href="https://plus.google.com/u/0/b/101385836272062376146/">Google+</a></li>
+        <li><a class="social-btn" href="http://instagram.com/psychicsource">Instagram</a></li>
+      </ul>
+    </div>
+    <p class="col-xs-12 small text-muted u-margin-top">*New member offer valid for first time customers who have never made a Psychic Source purchase. Limit $30, some exclusions apply.  &copy; 2014 Psychic Source, LLC. All rights reserved. For guidance only. 18+</p>
+  </footer>
+
+</body>
+</html>
