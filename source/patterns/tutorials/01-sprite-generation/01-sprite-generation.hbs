@@ -1,8 +1,48 @@
 
 <p>Add new svg file to '/source/sprites/svg/css (for background images)</p>
 
-<p>Add new svg file to '/source/sprites/svg/inline' (for inline icons)</p>
+<p>Add new svg file to '/source/sprites/svg/inline' (for layered inline icons)</p>
 
-Run 'gulp'
-Grab '/source/build/out/sprite.scss' -> replaces existing scss file
-Grab '/source/build/out/images/svg-sprite.css-(something).svg' -> replaces existing svg file
+
+<h2>How to generate the 'background image sprite' and matching scss file.</h2>
+<p>In Patterns Library:</p>
+<ol>
+<li>Copy/paste any new svg files that need to be added to the background sprite into '/source/sprites/svg/css'.</li>
+<li>Run 'gulp' in the Terminal window. </li>
+<li>'gulp' finishes a bunch of processes. When done, all svg graphics in this folder ('/source/sprites/svg/css') will be combined into 1 svg file here: '/source/build/out/images/svg-sprite.css-(something).svg'. The (something) is a random number generated at the same time the file gets generated. Also the file '/source/build/out/sprite.scss' is updated with css to control how to show the specific graphics in this 1 svg file.</li>
+</ol>
+<p>In PSRM:</p>
+<ol>
+<li>Grab the file '/source/build/out/images/svg-sprite.css-(something).svg' from Patterns Library</li>
+<li>Rename the file to 'svg-sprite.css-current.svg'</li>
+<li>Move file to '/images/svg/' in the PSRM project</li>
+<li>Grab the scss file '/source/build/out/sprite.scss' from the Patterns Library</li>
+
+<li>Move it to '/content/styles/sprite-generated/' in the PSRM project</li>
+<li>Edit line 1 of this scss file to point to the svg file you moved first: basically replace the line '$svg-sprite-url: "/images/svg-sprite.css-f4e3c5b6.svg";' with '$svg-sprite-url: "/images/svg/svg-sprite.css-current.svg";'</li>
+<li>Add a css class in 'box.scss' to compile the mixin var for example:
+
+.braket-right{ 
+
+    @include svg-sprite('braket-right');
+
+}
+</li>
+<li>Now the class will work!</li>
+</ol>
+
+<h2>How to generate the layered svg file.</h2>
+<p>In Patterns Library:</p>
+<ol>
+<li>Copy/paste any new svg files that need to be added to the layered sprite into '/source/sprites/svg/inline/'. *the name of the file will be used later*</li>
+<li>Run 'gulp dist' in the Terminal window. </li>
+<li>'gulp dist' finishes a bunch of processes. When done, all svg graphics in this folder ('/source/sprites/svg/css') will be combined into 1 svg file here: '/static/images/symbol/svg/sprite.symbol.svg'.</li>
+</ol>
+<p>In PSRM:</p>
+<ol>
+<li>Grab file '/static/images/symbol/svg/sprite.symbol.svg'.</li>
+<li>Move file to '/NoCDN/svg/' in the PSRM project</li>
+<li>Now you can reference the name of the file like so (using the original file name 'phone.svg' for example) :     <svg class="icon">
+      <use xlink:href="/images/symbol/svg/sprite.symbol.svg#phone" />
+    </svg></li>
+</ol>
