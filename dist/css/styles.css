@@ -20,7 +20,7 @@
  * Generate utility classes for a whitespace property (margin, padding).
  */
 .btn-fave:before, .fleuron-star-one, .fleuron-star-one-red, .fleuron-star-two, .fleuron-star-three, .fleuron-star-wide, .creditcard-amex, .creditcard-cvv, .creditcard-dinersclub, .creditcard-discover, .creditcard-mastercard, .creditcard-visa, .subnav-item-prev:before, .stamp-showcase, .stamp-staffpick, .quicklist-item:after {
-  background-image: url("/images/svg-sprite.css-7b8ca891.svg");
+  background-image: url("/images/svg-sprite.css-5a9cab1d.svg");
   background-repeat: no-repeat; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -4355,7 +4355,7 @@ a.text-neutral:hover {
     margin-left: -0.1em;
     margin-right: 0.35em;
     vertical-align: -0.2em;
-    background-position: 97.89474% 53.43511%;
+    background-position: 95.87629% 91.13924%;
     width: 14px;
     height: 14px; }
   .btn-fave.active {
@@ -4592,7 +4592,7 @@ a.text-neutral:hover {
     left: 0; }
 
 .fleuron-star-one {
-  background-position: 61.95652% 67.2032%;
+  background-position: 98.93617% 68.42105%;
   width: 20px;
   height: 20px; }
   .fleuron-star-one.top, .fleuron-star-one.bottom {
@@ -4611,7 +4611,7 @@ a.text-neutral:hover {
     margin-left: -8px; }
 
 .fleuron-star-one-red {
-  background-position: 72.82609% 67.2032%;
+  background-position: 98.93617% 81.57895%;
   width: 20px;
   height: 20px; }
   .fleuron-star-one-red.top, .fleuron-star-one-red.bottom {
@@ -4630,7 +4630,7 @@ a.text-neutral:hover {
     margin-left: -8px; }
 
 .fleuron-star-two {
-  background-position: 100% 0;
+  background-position: 97.46835% 44.2623%;
   width: 50px;
   height: 50px; }
   .fleuron-star-two.top, .fleuron-star-two.bottom {
@@ -4661,7 +4661,7 @@ a.text-neutral:hover {
             transform: rotate(-90deg); }
 
 .fleuron-star-three {
-  background-position: 0 98.82824%;
+  background-position: 47.83784% 75.00357%;
   width: 60px;
   height: 60px; }
   .fleuron-star-three.top, .fleuron-star-three.bottom {
@@ -4811,42 +4811,42 @@ a.text-neutral:hover {
     pointer-events: none; }
 
 .creditcard-amex {
-  background-position: 89.53488% 56%;
+  background-position: 87.5% 68.42105%;
   width: 32px;
   height: 20px; }
   .is-amex .creditcard-amex {
     opacity: 1; }
 
 .creditcard-cvv {
-  background-position: 89.53488% 88%;
+  background-position: 87.5% 94.73684%;
   width: 32px;
   height: 20px; }
   .is-cvv .creditcard-cvv {
     opacity: 1; }
 
 .creditcard-dinersclub {
-  background-position: 89.53488% 72%;
+  background-position: 87.5% 81.57895%;
   width: 32px;
   height: 20px; }
   .is-dinersclub .creditcard-dinersclub {
     opacity: 1; }
 
 .creditcard-discover {
-  background-position: 68.02326% 25.6032%;
+  background-position: 66.47727% 34.21316%;
   width: 32px;
   height: 20px; }
   .is-discover .creditcard-discover {
     opacity: 1; }
 
 .creditcard-mastercard {
-  background-position: 68.02326% 41.6032%;
+  background-position: 66.47727% 21.05526%;
   width: 32px;
   height: 20px; }
   .is-mastercard .creditcard-mastercard {
     opacity: 1; }
 
 .creditcard-visa {
-  background-position: 89.53488% 40%;
+  background-position: 40.22727% 94.73947%;
   width: 32px;
   height: 20px; }
   .is-visa .creditcard-visa {
@@ -5316,9 +5316,9 @@ ol.subnav-body {
       position: absolute;
       top: 50%;
       right: 12px;
-      background-image: url("/images/svg-sprite.css-7b8ca891.svg");
+      background-image: url("/images/svg-sprite.css-5a9cab1d.svg");
       background-repeat: no-repeat;
-      background-position: 97.98145% 67.50002%;
+      background-position: 99.50833% 89.81291%;
       width: 7.0118px;
       height: 11.6667px; } }
 
@@ -5331,7 +5331,7 @@ ol.subnav-body {
     position: absolute;
     top: 50%;
     left: 12px;
-    background-position: 94.42195% 67.50002%;
+    background-position: 58.2124% 44.90895%;
     width: 7.0119px;
     height: 11.6667px; }
 
@@ -5445,7 +5445,7 @@ ol.subnav-body {
 .stamp-showcase {
   bottom: -6px;
   left: -20px;
-  background-position: 0 34.4129%;
+  background-position: 0 26.67%;
   width: 117px;
   height: 52px; }
   @media (max-width: 703px) {
@@ -5472,7 +5472,7 @@ ol.subnav-body {
 .stamp-staffpick {
   left: -20px;
   top: -10px;
-  background-position: 40% 92.31209%;
+  background-position: 100% 0;
   width: 54px;
   height: 54px; }
   @media (max-width: 703px) {
@@ -6165,7 +6165,7 @@ ol.subnav-body {
     top: 50%;
     margin-top: -5.83335px;
     opacity: 0.25;
-    background-position: 97.98145% 67.50002%;
+    background-position: 99.50833% 89.81291%;
     width: 7.0118px;
     height: 11.6667px; }
 
