@@ -20,7 +20,7 @@
  * Generate utility classes for a whitespace property (margin, padding).
  */
 .btn-fave:before, .fleuron-star-one, .fleuron-star-one-red, .fleuron-star-two, .fleuron-star-three, .fleuron-star-wide, .creditcard-amex, .creditcard-cvv, .creditcard-dinersclub, .creditcard-discover, .creditcard-mastercard, .creditcard-visa, .subnav-item-prev:before, .stamp-showcase, .stamp-staffpick, .quicklist-item:after {
-  background-image: url("/images/svg-sprite.css-5a9cab1d.svg");
+  background-image: url("/images/svg-sprite.css-cd00b771.svg");
   background-repeat: no-repeat; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -1978,7 +1978,7 @@ select[multiple].form-group-lg .form-control {
   .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #9c3636;
-    border-color: #812d2d; }
+    border-color: #822d2d; }
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
@@ -5127,7 +5127,7 @@ a.text-neutral:hover {
     text-decoration: none; }
   .main-nav-item:hover, .main-nav-item:focus, .main-nav-item:active, .main-nav-item.active {
     background-color: #fddfb4;
-    background-image: linear-gradient(to bottom, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca8); }
+    background-image: linear-gradient(to bottom, #fdddaf, #f2f2f2 15%, #fde3be, #ffdca9); }
     .main-nav-item:hover .arrow-down, .main-nav-item:focus .arrow-down, .main-nav-item:active .arrow-down, .main-nav-item.active .arrow-down {
       opacity: 1; }
   .main-nav-item:active, .main-nav-item.active {
@@ -5316,7 +5316,7 @@ ol.subnav-body {
       position: absolute;
       top: 50%;
       right: 12px;
-      background-image: url("/images/svg-sprite.css-5a9cab1d.svg");
+      background-image: url("/images/svg-sprite.css-cd00b771.svg");
       background-repeat: no-repeat;
       background-position: 99.50833% 89.81291%;
       width: 7.0118px;
